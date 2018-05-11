@@ -87,6 +87,7 @@ iframe {
 img {
 	display: block;
 	max-width: 100%;
+	margin: 0 auto;
 }
 figure, figcaption {
 	margin: 0;
@@ -94,6 +95,10 @@ figure, figcaption {
 }
 .blind {
 	position: absolute; display: block; width: 1px; height: 1px; overflow: hidden; color: transparent; font-size: 1px; line-height: 1px; opacity: 0; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)'; filter: alpha(opacity=0);
+}
+input:focus,
+button:focus {
+	outline: 0;
 }
 .header-container {
 	background: #f2f2f2;
@@ -348,7 +353,18 @@ header .actions .search-wrap > button > span {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 2;
+	z-index: 0;
+	opacity: 0;
+/*	z-index: 2;*/
+}
+.global-search-layer .layer-close {
+	width: 43px;
+	height: 43px;
+	position: absolute;
+	right: calc(50% - 584px);
+	top: 53px;
+	border-radius: 50%;
+	background: #333333;
 }
 .global-search-layer .bg-dark {
 	background: rgba(8, 8, 8, 0.5);
@@ -430,6 +446,11 @@ header .actions .search-wrap > button > span {
 	font-size: 20px;
 	font-weight: 500;
 	letter-spacing: -1px;
+}
+
+html.layer-opened .global-search-layer {
+	opacity: 1;
+	z-index: 90;
 }
 .app-container {
 /*	min-width: 1400px;*/
