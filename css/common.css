@@ -349,6 +349,7 @@ header .actions .search-wrap > button > span {
 	width: 100vw;
 	height: 100vh;
 	z-index: 2;
+	display: none;
 }
 .global-search-layer .bg-dark {
 	background: rgba(8, 8, 8, 0.5);
