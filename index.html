@@ -20,12 +20,12 @@
 		<div class="app-container">
 			<div class="side-nav">
 				<div class="search-wrap magnet-wrap">
-					<button type="button" class="magnet-parent">
+					<button type="button" class="magnet-parent button-search">
 						<span class="magnet-child"></span>
 					</button>
 				</div>
 				<nav id="gnb">
-					<a href="">
+					<a href="javascript:void(0)" class="button-menu">
 						<div class="burger-wrap">
 								<span class="line top"></span>
 								<span class="line mid"></span>
@@ -93,6 +93,9 @@
 			<div class="global-search-layer">
 				<div class="bg-dark">
 					<div class="inner">
+						<button type="button" class="layer-close">
+							<img src="./images/close_x.png" alt="">
+						</button>
 						<div class="search-wrapper">
 							<div class="wrap">
 								<button type="button" class="button-refresh">새로고침</button>
@@ -189,7 +192,7 @@
 								<a href="#">LOGIN</a>
 							</div>
 							<div class="search-wrap magnet-wrap">
-								<button type="button" class="magnet-parent">
+								<button type="button" class="magnet-parent button-search">
 									<span class="magnet-child"></span>
 								</button>
 							</div>
@@ -622,6 +625,21 @@
 		$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 		$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 	});
+	
+//	기본 기능 테스트 코드
+	$doc = $(document),
+	$win = $(window),
+	$html = $('html');
+	$(document).on('click', '.button-search', function() {
+		$html.addClass('layer-opened');
+	});
+	$(document).on('click', '.layer-close', function() {
+		$html.removeClass('layer-opened');
+	});
+	$(document).on('click', '.button-menu', function() {
+		$html.toggleClass('menu-opened');
+	});
+	
 </script>
 </body>
 

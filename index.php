@@ -368,37 +368,51 @@
 							<a href="#" class="view-all">전체보기</a>
 						</div>
 						<div class="video-list">
+<?
+    $recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY idx DESC LIMIT 0, 8";
+    $recent_result 	= mysqli_query($my_db, $recent_query);
+    while ($recent_data = mysqli_fetch_array($recent_result))
+    {    
+        // 유튜브 영상 코드 자르기
+        $yt_code_arr1   = explode("v=", $recent_data["video_link"]);
+        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        // https://img.youtube.com/vi/BH9N-hxUOPQ/hqdefault.jpg
+?>                            
 							<div class="video col-lg-4 col-md-3 col-sm-2">
 								<a href="#">
 									<figure>
 										<div class="thumbnail box-bg">
-											<img src="./images/main_video_thumb.jpg" alt="">
+											<img src="<?=$yt_thumb?>" alt="">
 										</div>
 										<figcaption>
-											<span class="brand">[UNICEF]</span>
-											<span class="title">Furniture That Hides From Hurting copy 4</span>
+											<span class="brand">[<?=$recent_data["video_brand"]?>]</span>
+											<span class="title"><?=$recent_data["video_title"]?></span>
 											<span class="icon-wrap">
 												<span class="play">
 													<i class="icon"></i>
-													<span class="cnt">4</span>
+													<span class="cnt"><?=$recent_data["play_count"]?></span>
 												</span>
 												<span class="comment">
 													<i class="icon"></i>
-													<span class="cnt">0</span>
+													<span class="cnt"><?=$recent_data["comment_count"]?></span>
 												</span>
 												<span class="like">
 													<i class="icon"></i>
-													<span class="cnt">2</span>
+													<span class="cnt"><?=$recent_data["like_count"]?></span>
 												</span>
 												<span class="collect">
 													<i class="icon"></i>
-													<span class="cnt">2</span>
+													<span class="cnt"><?=$recent_data["collect_count"]?></span>
 												</span>
 											</span>
 										</figcaption>
 									</figure>
 								</a>
-							</div>
+                            </div>
+<?
+    }
+?>                            
 						</div>
 						<button type="button" class="read-more">
 							<img src="./images/plus_icon.png" alt="">
