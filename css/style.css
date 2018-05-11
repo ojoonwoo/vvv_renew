@@ -111,6 +111,7 @@
 }
 .content.main .list-container.best-area .video {
 	padding-bottom: 0;
+	width: 100%;
 }
 .content.main .list-container .title-area {
 	padding: 118px 0 30px;

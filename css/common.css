@@ -165,6 +165,7 @@ header .actions .search-wrap > button > span {
 	text-align: center;
 }
 .side-nav .search-wrap {
+	transition: all 0.2s ease-in-out;
 	opacity: 0;
 	margin-bottom: 24px;
 }
@@ -469,6 +470,7 @@ html.layer-opened .global-search-layer {
 	float: left;
 	padding: 0 0 68px;
 }
+.content .list-container .video 
 @media all and (max-width: 500px) {
 	.content .list-container .video {
 		width: 100%;
@@ -503,6 +505,11 @@ html.layer-opened .global-search-layer {
 	}
 	.content .list-container .col-lg-4:nth-of-type(4n) {
 		margin-right: 0;
+	}
+}
+@media all and (max-width: 1202px) {
+	.global-search-layer .layer-close {
+		right: 17px;
 	}
 }
 
