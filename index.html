@@ -5,12 +5,14 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -23,11 +25,13 @@
 					</button>
 				</div>
 				<nav id="gnb">
-					<div class="burger-wrap">
-						<span class="line top"></span>
-						<span class="line mid"></span>
-						<span class="line bot"></span>
-					</div>
+					<a href="">
+						<div class="burger-wrap">
+								<span class="line top"></span>
+								<span class="line mid"></span>
+								<span class="line bot"></span>
+						</div>
+					</a>
 				</nav>
 				<div class="direct-my-v">
 					<a href="#">
@@ -35,6 +39,143 @@
 					</a>
 				</div>
 			</div>
+			<!--햄버거 클릭 메뉴-->
+			<div class="global-menu">
+				<div class="inner">
+					<div class="list-wrap">
+						<ul class="list">
+							<li>
+								<a href="#" class="is-active">HOME</a>
+							</li>
+						</ul>
+						<ul class="list">
+							<li>
+								<a href="#">ALL VVV</a>
+							</li>
+							<li>
+								<a href="#">BEST</a>
+							</li>
+							<li>
+								<a href="#">NEW</a>
+							</li>
+						</ul>
+						<ul class="list">
+							<li>
+								<a href="#">AWARDS</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about-us">
+						<div class="logo">
+							<img src="./images/vvv_logo.png" alt="">
+						</div>
+						<div class="line"></div>
+						<div class="contacts">
+							<p><span>CONTACT US</span></p>
+							<p class="tel">
+								<i></i>
+								<span>+82 (02)532-2475</span>
+							</p>
+							<p class="sns">
+								<i class="mail"></i>
+								<i class="facebook"></i>
+								<i class="instagram"></i>
+							</p>
+						</div>
+					</div>
+					<div class="copyright">
+						COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
+					</div>
+				</div>
+			</div>
+			<!--햄버거 클릭 메뉴-->
+			<!--검색 메뉴-->
+			<div class="global-search-layer">
+				<div class="bg-dark">
+					<div class="inner">
+						<div class="search-wrapper">
+							<div class="wrap">
+								<button type="button" class="button-refresh">새로고침</button>
+								<div class="search-bar">
+									<input type="text">
+								</div>
+							</div>
+							<div class="wrap sortings">
+								<div class="sort-list">
+									<div class="row">
+										<div class="sort">
+											<select name="order-date" id="order-date">
+												<option disabled selected>Please pick one</option>
+												<option>Slower</option>
+												<option>Slow</option>
+												<option>Medium</option>
+												<option>Fast</option>
+												<option>Faster</option>
+											</select>
+										</div>
+										<div class="sort">
+											<select name="order-nation" id="order-nation">
+												<option disabled selected>Please pick one</option>
+												<option>Slower</option>
+												<option>Slow</option>
+												<option>Medium</option>
+												<option>Fast</option>
+												<option>Faster</option>
+											</select>
+										</div>
+										<div class="sort">
+											<select name="order-industry" id="order-industry">
+												<option disabled selected>Please pick one</option>
+												<option>Slower</option>
+												<option>Slow</option>
+												<option>Medium</option>
+												<option>Fast</option>
+												<option>Faster</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="sort">
+											<select name="order-genre" id="order-genre">
+												<option disabled selected>Please pick one</option>
+												<option>Slower</option>
+												<option>Slow</option>
+												<option>Medium</option>
+												<option>Fast</option>
+												<option>Faster</option>
+											</select>
+										</div>
+										<div class="sort">
+											<select name="order-awards" id="order-awards">
+												<option disabled selected>Please pick one</option>
+												<option>Slower</option>
+												<option>Slow</option>
+												<option>Medium</option>
+												<option>Fast</option>
+												<option>Faster</option>
+											</select>
+										</div>
+										<div class="sort">
+											<select name="order-sortby" id="order-sortby">
+												<option disabled selected>Please pick one</option>
+												<option>Slower</option>
+												<option>Slow</option>
+												<option>Medium</option>
+												<option>Fast</option>
+												<option>Faster</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="button-apply">
+									APPLY
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--검색 메뉴-->
 			<div class="header-container">
 				<header>
 					<div class="inner">
@@ -74,7 +215,36 @@
 									</figure>
 								</a>
 							</div>
+							<div class="swiper-slide">
+								<a href="">
+									<figure class="box-content">
+										<div class="img box-bg">
+											<img src="./images/main_banner_01.jpg" alt="">
+										</div>
+										<figcaption>
+											<p class="brand">MINIVERTISING</p>
+											<p class="title">2번 슬라이드</p>
+											<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="">
+									<figure class="box-content">
+										<div class="img box-bg">
+											<img src="./images/main_banner_01.jpg" alt="">
+										</div>
+										<figcaption>
+											<p class="brand">MINIVERTISING</p>
+											<p class="title">3번 슬라이드</p>
+											<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
 						</div>
+						<div id="main-banner-pagination" class="main-banner-pagination"></div>
 					</div>
 					<div class="list-container best-area">
 						<div class="title-area">
@@ -200,7 +370,7 @@
 								<a href="#">
 									<figure>
 										<div class="thumbnail box-bg">
-											<img src="./images/main_slide_thumb.jpg" alt="">
+											<img src="./images/main_video_thumb.jpg" alt="">
 										</div>
 										<figcaption>
 											<span class="brand">[UNICEF]</span>
@@ -231,7 +401,7 @@
 								<a href="#">
 									<figure>
 										<div class="thumbnail box-bg">
-											<img src="./images/main_slide_thumb.jpg" alt="">
+											<img src="./images/main_video_thumb.jpg" alt="">
 										</div>
 										<figcaption>
 											<span class="brand">[UNICEF]</span>
@@ -262,7 +432,7 @@
 								<a href="#">
 									<figure>
 										<div class="thumbnail box-bg">
-											<img src="./images/main_slide_thumb.jpg" alt="">
+											<img src="./images/main_video_thumb.jpg" alt="">
 										</div>
 										<figcaption>
 											<span class="brand">[UNICEF]</span>
@@ -293,7 +463,69 @@
 								<a href="#">
 									<figure>
 										<div class="thumbnail box-bg">
-											<img src="./images/main_slide_thumb.jpg" alt="">
+											<img src="./images/main_video_thumb.jpg" alt="">
+										</div>
+										<figcaption>
+											<span class="brand">[UNICEF]</span>
+											<span class="title">Furniture That Hides From Hurting copy 4</span>
+											<span class="icon-wrap">
+												<span class="play">
+													<i class="icon"></i>
+													<span class="cnt">4</span>
+												</span>
+												<span class="comment">
+													<i class="icon"></i>
+													<span class="cnt">0</span>
+												</span>
+												<span class="like">
+													<i class="icon"></i>
+													<span class="cnt">2</span>
+												</span>
+												<span class="collect">
+													<i class="icon"></i>
+													<span class="cnt">2</span>
+												</span>
+											</span>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="video col-lg-4 col-md-3 col-sm-2">
+								<a href="#">
+									<figure>
+										<div class="thumbnail box-bg">
+											<img src="./images/main_video_thumb.jpg" alt="">
+										</div>
+										<figcaption>
+											<span class="brand">[UNICEF]</span>
+											<span class="title">Furniture That Hides From Hurting copy 4</span>
+											<span class="icon-wrap">
+												<span class="play">
+													<i class="icon"></i>
+													<span class="cnt">4</span>
+												</span>
+												<span class="comment">
+													<i class="icon"></i>
+													<span class="cnt">0</span>
+												</span>
+												<span class="like">
+													<i class="icon"></i>
+													<span class="cnt">2</span>
+												</span>
+												<span class="collect">
+													<i class="icon"></i>
+													<span class="cnt">2</span>
+												</span>
+											</span>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="video col-lg-4 col-md-3 col-sm-2">
+								<a href="#">
+									<figure>
+										<div class="thumbnail box-bg">
+											<img src="./images/main_video_thumb.jpg" alt="">
 										</div>
 										<figcaption>
 											<span class="brand">[UNICEF]</span>
@@ -321,7 +553,9 @@
 								</a>
 							</div>
 						</div>
-						<button type="button" class="read-more"></button>
+						<button type="button" class="read-more">
+							<img src="./images/plus_icon.png" alt="">
+						</button>
 					</div>
 				</div>
 			</div>
@@ -330,8 +564,25 @@
 	</div>
 <script>
 	$(document).ready(function () {
+		var bannerSwiper = new Swiper ('.main-banner', {
+			// Optional parameters
+			direction: 'horizontal',
+			effect: 'fade',
+			speed: 650,
+			loop: true,
+			autoplay: {
+				delay: 4000	
+			},
+			pagination: {
+				el: '.main-banner-pagination',
+				clickable: true,
+				renderBullet: function (index, className) {
+					return '<span class="' + className + '">' + (index + 1) + '</span>';
+				},
+			},
+		})
 		//initialize swiper when document ready
-		var BestSwiper = new Swiper ('.best-slider', {
+		var bestSwiper = new Swiper ('.best-slider', {
 			// Optional parameters
 			direction: 'horizontal',
 			loop: true,
@@ -343,7 +594,7 @@
 			},
 			breakpoints: {
 				// when window width is <= 320px
-				320: {
+				500: {
 					slidesPerView: 1,
 					spaceBetween: 10
 				},
@@ -359,6 +610,17 @@
 				}
 			}
 		})
+	});
+	$(function() {
+//		$('.global-search-layer .sort').each(function() {
+//			$(this).selectmenu();
+//		});
+		$('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+		$('#order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+		$('#order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+		$('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+		$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+		$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 	});
 </script>
 </body>

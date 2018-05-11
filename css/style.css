@@ -51,6 +51,34 @@
 	background: #000000;
 	z-index: 0;
 }
+#main-banner-pagination {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	left: inherit;
+	width: 95px;
+	bottom: inherit;
+	transform: translate(0, -50%);
+	text-align: right;
+	z-index: 4;
+}
+#main-banner-pagination .swiper-pagination-bullet {
+	display: inline-block;
+	width: 70px;
+	background: #fffbf3;
+	height: 1px;
+	margin: 0;
+	transition: all 0.65s ease-in-out;
+	border-radius: 0;
+	opacity: 1;
+	font-size: 0;
+	vertical-align: top;
+	cursor: default;
+}
+#main-banner-pagination .swiper-pagination-bullet-active {
+	width: 100%;
+	background: #f7dd30;
+}
 .content.main .list-container {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -81,7 +109,9 @@
 .content.main .list-container.best-area .title-area {
 	padding: 118px 0 0;
 }
-
+.content.main .list-container.best-area .video {
+	padding-bottom: 0;
+}
 .content.main .list-container .title-area {
 	padding: 118px 0 30px;
 	text-align: center;
