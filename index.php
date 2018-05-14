@@ -184,14 +184,23 @@
         if ($title_count > 30)
             $video_title    = substr($recent_data["video_title"],0,30)."...";
         else
-            $video_title    = $recent_data["video_title"];
+			$video_title    = $recent_data["video_title"];
+			
+        // 브랜드 줄바꿈 방지 글자 자르기
+        $brand_count    = mb_strlen($recent_data["video_brand"],'utf-8');
+
+        if ($title_count > 30)
+            $video_brand    = substr($recent_data["video_brand"],0,30)."..";
+        else
+            $video_brand    = $recent_data["video_brand"];
+			
 ?>                            
 							<div class="video col-lg-4 col-md-3 col-sm-2">
 								<a href="detail.php?idx=<?=$recent_data['video_idx']?>">
 									<figure>
                                         <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 										<figcaption>
-											<span class="brand">[<?=$recent_data["video_brand"]?>]</span>
+											<span class="brand">[<?=$video_brand?>]</span>
 											<span class="title"><?=$video_title?></span>
 											<span class="icon-wrap">
 												<span class="play">
@@ -220,6 +229,7 @@
 ?>       
 							<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
 							<input type="hidden" id="total_page" value="<?=$total_page?>">                     
+							<input type="hidden" id="view_page" value="<?=$view_pg?>">                     
 						</div>
 						<button type="button" class="read-more">
 							<img src="./images/plus_icon.png" alt="">
@@ -234,6 +244,7 @@
 	var video_pg 	        = 0;
 	var total_video_num 	= $("#total_video_num").val();
 	var total_page 			= $("#total_page").val();
+	var view_page 			= $("#view_page").val();
 	var current_page        = 1;
 
 	$(document).ready(function () {
@@ -324,26 +335,26 @@
 
 	// RECENT 더보기 버튼 클릭
 	$doc.on('click', '.read-more', function() {
-		video_pg = video_pg + 30;
-
+		video_pg = video_pg + Number(view_page);
 		$.ajax({
 			type   : "POST",
 			async  : false,
 			url    : "./ajax_video.php",
 			data:{
 				"video_pg"				: video_pg,
+				"view_page"				: view_page,
 				"total_video_num"		: total_video_num,
 				"total_page"			: total_page,
 				"sort_val"				: "new"
 			},
 			success: function(response){
-				console.log(response);
+				// console.log(response);
 				// res_arr	= response.split("||");
-				// current_page = current_page + 1;
-				// if (current_page >= total_page)
-				// 	$("#main_more").hide();
-				// else
-				// 	$("#main_more").show();
+				current_page = current_page + 1;
+				if (current_page >= total_page)
+					$(".read-more").hide();
+				else
+					$(".read-more").show();
 				$("#recent_video").append(response);
 			}
 		});
@@ -351,16 +362,24 @@
 	});
 	// 검색 APPLY 클릭
 	$doc.on('click', '.button-apply', function() {
-        var search_keyword      = $("#search_keyword").val();
-        var search_year         = $("#order-date").val();
-        var search_nation       = $("#order-nation").val();
-        var search_category1    = $("#order-industry").val();
-        var search_genre        = $("#order-genre").val();
-        var search_prize        = $("#order-awards").val();
-        var search_sort         = $("#order-sortby").val();
+        var search_keyword      = nullToBlank($("#search_keyword").val());
+        var search_year         = nullToBlank($("#order-date").val());
+        var search_nation       = nullToBlank($("#order-nation").val());
+        var search_category1    = nullToBlank($("#order-industry").val());
+        var search_genre        = nullToBlank($("#order-genre").val());
+        var search_prize        = nullToBlank($("#order-awards").val());
+        var search_sort         = nullToBlank($("#order-sortby").val());
 
         location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
 	});
+
+	function nullToBlank(str)
+	{
+		if (str == null)
+			str = "";
+			
+		return str;
+	}
 
 	$doc.on('click', '.button-refresh', function() {
         $("#search_keyword").val("");

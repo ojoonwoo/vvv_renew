@@ -48,8 +48,7 @@
 										        <option value="<?=$category1_data["idx"]?>"><?=$category1_data["category_name"]?></option>
 <?
     }    
-?>        
-
+?>
 											</select>
 										</div>
 									</div>
@@ -63,18 +62,17 @@
     while ($genre_data = mysqli_fetch_array($genre_result))
     {
 ?>
-        <option value="<?=$genre_data["idx"]?>"><?=$genre_data["genre_name"]?></option>
+                                                <option value="<?=$genre_data["idx"]?>"><?=$genre_data["genre_name"]?></option>
 <?
     }    
-?>        
-
+?>
 											</select>
 										</div>
 										<div class="sort">
 											<select name="order-awards" id="order-awards">
 												<option value="" disabled selected>광고제</option>
 												<option value="CLIO">CLIO</option>
-												<option value="CAN">CANNE</option>
+												<option value="CANNE">CANNE</option>
 												<option value="NYF">NYF</option>
 											</select>
 										</div>
