@@ -124,4 +124,4 @@
 <?
     }
 ?>
-    "||<?=$all_video_num?>||<?=$all_page?>||<?=$view_pg?>;
+    ||<?=$all_video_num?>||<?=$all_page?>||<?=$view_pg?>;
