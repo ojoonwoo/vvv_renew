@@ -49,7 +49,7 @@
             $video_title    = $data["video_title"];
 ?>
 							<div class="video col-lg-4 col-md-3 col-sm-2">
-								<a href="#">
+								<a href="detail.php?idx=<?=$data['video_idx']?>">
 									<figure>
                                         <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 										<figcaption>
