@@ -3,13 +3,6 @@
 
     $mnv_f          = new mnv_function();
     $my_db          = $mnv_f->Connect_MySQL();
-    // "search_keyword"		: search_keyword,
-    // "search_year"			: search_year,
-    // "search_nation"			: search_nation,
-    // "search_category1"		: search_category1,
-    // "search_genre"			: search_genre,
-    // "search_prize"			: search_prize,
-    // "sort_val"				: search_sort
 
     $video_pg               = $_REQUEST["video_pg"];
     $total_video_num        = $_REQUEST["total_video_num"];
@@ -23,10 +16,10 @@
     $search_prize           = $_REQUEST["search_prize"];
     $sort_val               = $_REQUEST["sort_val"];
 
-    if ($sort_val == "new")
-        $order_by = " ORDER BY idx DESC";
-    else
+    if ($sort_val == "best")
         $order_by = " ORDER BY like_count DESC, play_count DESC, comment_count DESC";
+    else
+        $order_by = " ORDER BY video_idx DESC";
 	$view_pg            = $view_page;
 	$s_page				= $video_pg;
 
@@ -56,6 +49,9 @@
 	if ($search_genre != ""){
 		$WHERE	.= " AND video_genre = '".$search_genre."'";
 	}
+	if ($search_prize != ""){
+		$WHERE	.= " AND video_awards like '%".$search_prize."%'";
+	}
 
 	// 전체 상품 갯수
 	$all_query				= "SELECT * FROM video_info2 WHERE showYN='Y' ".$WHERE."";
@@ -71,6 +67,19 @@
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
+ 		// 영화제 검색
+		// if ($search_prize != "")
+		// {
+		// 	$prize_query	= "SELECT * FROM awards_list_info WHERE 1 AND video_idx='".$data["video_idx"]."'";
+		// 	$prize_result	= mysqli_query($my_db, $prize_query);
+		// 	$prize_num		= mysqli_num_rows($prize_result);
+
+		// 	if ($prize_num == 0)
+		// 	{
+		// 		continue;
+		// 	}
+		// }
+
         // 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
@@ -124,4 +133,4 @@
 <?
     }
 ?>
-    ||<?=$all_video_num?>||<?=$all_page?>||<?=$view_pg?>;
+    ||<?=$all_video_num?>||<?=$all_page?>||<?=$view_pg?>||<?=$query?>;

@@ -55,7 +55,7 @@
 											<select name="lc-order-date" id="lc-order-date">
 												<option value="" disabled selected>연 도</option>
 <?
-    $s_year = 2019;
+    $s_year = 2018;
     while( $s_year > 2000 )
     {
 ?>        
@@ -106,9 +106,9 @@
 										<div class="sort">
 											<select name="lc-order-awards" id="lc-order-awards">
 												<option value="" disabled selected>광고제</option>
-												<option value="CLIO" <?if($search_prize == "CLIO"){?>selected<?}?>>CLIO</option>
-												<option value="CANNE" <?if($search_prize == "CANNE"){?>selected<?}?>>CANNE</option>
-												<option value="NYF" <?if($search_prize == "NYF"){?>selected<?}?>>NYF</option>
+												<option value="1" <?if($search_prize == "1"){?>selected<?}?>>CLIO</option>
+												<option value="3" <?if($search_prize == "3"){?>selected<?}?>>CANNE</option>
+												<option value="2" <?if($search_prize == "2"){?>selected<?}?>>NYF</option>
 											</select>
 										</div>
 										<div class="sort">
@@ -157,9 +157,9 @@
 	if ($search_genre != ""){
 		$WHERE	.= " AND video_genre = '".$search_genre."'";
 	}
-	// if ($search_prize != ""){
-	// 	$where	.= " AND video_data like '%".$search_year."%'";
-	// }
+	if ($search_prize != ""){
+		$where	.= " AND video_awards like '%".$search_prize."%'";
+	}
 
 	if ($search_sort == "")
 	{
@@ -181,11 +181,23 @@
 	$total_result		= mysqli_query($my_db, $total_query);
 	$total_video_num	= mysqli_num_rows($total_result);
 	$total_page			= ceil($total_video_num / $view_pg);
-	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT 0, ".$view_pg."";
+	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$s_page.", ".$view_pg."";
 	// print_r($list_query);
     $list_result 	= mysqli_query($my_db, $list_query);
     while ($list_data = mysqli_fetch_array($list_result))
     {    
+		// 영화제 검색
+		// if ($search_prize != "")
+		// {
+		// 	$prize_query	= "SELECT * FROM awards_list_info WHERE 1 AND video_idx='".$list_data["video_idx"]."'";
+		// 	$prize_result	= mysqli_query($my_db, $prize_query);
+		// 	$prize_num		= mysqli_num_rows($prize_result);
+
+		// 	if ($prize_num == 0)
+		// 	{
+		// 		continue;
+		// 	}
+		// }
         // 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $list_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
@@ -207,7 +219,7 @@
 			
 ?>                            
 									<div class="video col-lg-4 col-md-3 col-sm-2">
-										<a href="#">
+										<a href="detail.php?idx=<?=$list_data['video_idx']?>">
 											<figure>
 												<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 												<figcaption>
@@ -341,11 +353,11 @@
 						"sort_val"				: search_sort
 					},
 					success: function(response){
-						console.log(response);
 						res_arr	= response.split("||");
+						console.log(res_arr[4]);
 						current_page = current_page + 1;
 						// console.log(current_page+"||"+res_arr[2]);
-						if (current_page >= res_arr[2])
+						if (current_page > res_arr[2])
 							$(".read-more").hide();
 						else
 							$(".read-more").show();
@@ -354,14 +366,6 @@
 					}
 				});
 			});
-
-			function nullToBlank(str)
-			{
-				if (str == null)
-					str = "";
-					
-				return str;
-			}
 
 			// RECENT 더보기 버튼 클릭
 			$doc.on('click', '.read-more', function() {
@@ -392,8 +396,8 @@
 						"sort_val"				: search_sort
 					},
 					success: function(response){
-						// console.log(response);
 						res_arr	= response.split("||");
+						// console.log(res_arr[4]);
 						current_page = current_page + 1;
 						// console.log(current_page+"||"+res_arr[2]);
 						if (current_page >= res_arr[2])
@@ -405,6 +409,38 @@
 					}
 				});
 			});
+
+			// 검색 APPLY 클릭
+			$doc.on('click', '#search-layer-submit', function() {
+				var search_keyword      = nullToBlank($("#search_keyword").val());
+				var search_year         = nullToBlank($("#order-date").val());
+				var search_nation       = nullToBlank($("#order-nation").val());
+				var search_category1    = nullToBlank($("#order-industry").val());
+				var search_genre        = nullToBlank($("#order-genre").val());
+				var search_prize        = nullToBlank($("#order-awards").val());
+				var search_sort         = nullToBlank($("#order-sortby").val());
+
+				location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
+			});
+
+			function nullToBlank(str)
+			{
+				if (str == null)
+					str = "";
+					
+				return str;
+			}
+
+			$doc.on('click', '#search-layer-refresh', function() {
+				$("#search_keyword").val("");
+				$("#order-date").val("");
+				$("#order-nation").val("");
+				$("#order-industry").val("");
+				$("#order-genre").val("");
+				$("#order-awards").val("");
+				$("#order-sortby").val("new");        
+			});
+			
 		</script>
 	</body>
 

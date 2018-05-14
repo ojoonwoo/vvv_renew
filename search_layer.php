@@ -6,7 +6,7 @@
 						</button>
 						<div class="search-wrapper">
 							<div class="wrap">
-								<button type="button" class="button-refresh">새로고침</button>
+								<button type="button" class="button-refresh" id="search-layer-refresh">새로고침</button>
 								<div class="search-bar">
 									<input type="text" id="search_keyword">
 								</div>
@@ -18,13 +18,13 @@
 											<select name="order-date" id="order-date">
 												<option value="" disabled selected>연 도</option>
 <?
-    $s_year = 2000;
-    while( $s_year < 2019 )
+    $s_year = 2018;
+    while( $s_year > 2000 )
     {
 ?>        
 										        <option value="<?=$s_year?>"><?=$s_year?></option>
 <?
-        $s_year++;
+        $s_year--;
     }
 ?>
 											</select>
@@ -71,9 +71,9 @@
 										<div class="sort">
 											<select name="order-awards" id="order-awards">
 												<option value="" disabled selected>광고제</option>
-												<option value="CLIO">CLIO</option>
-												<option value="CANNE">CANNE</option>
-												<option value="NYF">NYF</option>
+												<option value="1">CLIO</option>
+												<option value="3">CANNE</option>
+												<option value="2">NYF</option>
 											</select>
 										</div>
 										<div class="sort">
@@ -85,7 +85,7 @@
 										</div>
 									</div>
 								</div>
-								<button type="button" class="button-apply">
+								<button type="button" class="button-apply" id="search-layer-submit">
 									APPLY
 								</button>
 							</div>

@@ -361,7 +361,7 @@
 
 	});
 	// 검색 APPLY 클릭
-	$doc.on('click', '.button-apply', function() {
+	$doc.on('click', '#search-layer-submit', function() {
         var search_keyword      = nullToBlank($("#search_keyword").val());
         var search_year         = nullToBlank($("#order-date").val());
         var search_nation       = nullToBlank($("#order-nation").val());
@@ -381,7 +381,7 @@
 		return str;
 	}
 
-	$doc.on('click', '.button-refresh', function() {
+	$doc.on('click', '#search-layer-refresh', function() {
         $("#search_keyword").val("");
         $("#order-date").val("");
         $("#order-nation").val("");
