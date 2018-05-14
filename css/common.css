@@ -1,7 +1,8 @@
 @charset 'utf-8';
 
-/* @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); 
 
+/*
 @font-face {
 	font-family: 'Noto Sans Korean';
 	font-style: normal;
@@ -43,6 +44,7 @@
 	font-weight: 800;
 	src: local("Noto Sans Bold"), local("NotoSans-Bold"), url(../fonts/NotoSansKR-Bold.eot), url(../fonts/NotoSansKR-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/NotoSansKR-Bold.woff) format("woff"), url(../fonts/NotoSansKR-Bold.otf) format("opentype");
 }
+*/
 
 
 /* common */
@@ -470,7 +472,6 @@ html.layer-opened .global-search-layer {
 	float: left;
 	padding: 0 0 68px;
 }
-.content .list-container .video 
 @media all and (max-width: 500px) {
 	.content .list-container .video {
 		width: 100%;
@@ -503,7 +504,14 @@ html.layer-opened .global-search-layer {
 		width: 23.875%;
 		margin-right: 1.5%;
 	}
+	.content .list-container .col-lg-3 {
+		width: 31%;
+		margin-right: 3.5%;
+	}
 	.content .list-container .col-lg-4:nth-of-type(4n) {
+		margin-right: 0;
+	}
+	.content .list-container .col-lg-3:nth-of-type(3n) {
 		margin-right: 0;
 	}
 }
@@ -529,7 +537,7 @@ html.layer-opened .global-search-layer {
 .content .list-container .video figure figcaption .title {
 	margin: 6px 0 10px;
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 500;
 }
 .content .list-container .video figure figcaption .icon-wrap {
 	font-size: 0;
@@ -551,10 +559,10 @@ html.layer-opened .global-search-layer {
 .content .list-container .video figure figcaption .icon-wrap > span:last-child {
 	margin-right: 0;
 }
-.content .list-container .video figure figcaption .icon-wrap .play .icon {width: 16px;height: 17px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
-.content .list-container .video figure figcaption .icon-wrap .comment .icon {width: 21px;height: 17px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
-.content .list-container .video figure figcaption .icon-wrap .like .icon {width: 21px;height: 18px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
-.content .list-container .video figure figcaption .icon-wrap .collect .icon {width: 15px;height: 18px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
+.icon-wrap .play .icon {width: 16px;height: 17px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
+.icon-wrap .comment .icon {width: 17px;height: 15px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
+.icon-wrap .like .icon {width: 21px;height: 18px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
+.icon-wrap .collect .icon {width: 15px;height: 18px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
 
 .content .list-container .read-more {
 	display: block;
@@ -565,7 +573,7 @@ html.layer-opened .global-search-layer {
 	font-size: 50px;
 	font-weight: 100;
 	position: relative;
-	margin: 23px auto 110px;
+	margin: 0 auto;
 }
 .content .list-container .read-more img {
 /*	width: 23px;*/
