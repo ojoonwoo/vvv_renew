@@ -322,8 +322,17 @@
 							<h2 class="list-title">RECENT</h2>
 							<a href="#" class="view-all">전체보기</a>
 						</div>
-						<div class="video-list">
+						<div class="video-list" id="recent_video">
 <?
+	$view_pg            = 8;
+	$s_page				= 0;
+
+	// 전체 상품 갯수
+	$total_query		= "SELECT * FROM video_info2 WHERE showYN='Y'";
+	$total_result		= mysqli_query($my_db, $total_query);
+	$total_video_num	= mysqli_num_rows($total_result);
+	$total_page			= ceil($total_video_num / $view_pg);
+	
     $recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY idx DESC LIMIT 0, 8";
     $recent_result 	= mysqli_query($my_db, $recent_query);
     while ($recent_data = mysqli_fetch_array($recent_result))
@@ -371,7 +380,9 @@
                             </div>
 <?
     }
-?>                            
+?>       
+							<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
+							<input type="hidden" id="total_page" value="<?=$total_page?>">                     
 						</div>
 						<button type="button" class="read-more">
 							<img src="./images/plus_icon.png" alt="">
@@ -383,6 +394,11 @@
 		<div id="cursor" class="defualt"></div>
 	</div>
 <script>
+	var video_pg 	        = 0;
+	var total_video_num 	= $("#total_video_num").val();
+	var total_page 			= $("#total_page").val();
+	var current_page        = 1;
+
 	$(document).ready(function () {
 		var bannerSwiper = new Swiper ('.main-banner', {
 			// Optional parameters
@@ -441,6 +457,33 @@
 		$('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 		$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 		$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+	});
+
+	$(".read-more").on("click", function(){
+		video_pg = video_pg + 30;
+
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "./ajax_video.php",
+			data:{
+				"video_pg"				: video_pg,
+				"total_video_num"		: total_video_num,
+				"total_page"			: total_page,
+				"sort_val"				: "new"
+			},
+			success: function(response){
+				console.log(response);
+				// res_arr	= response.split("||");
+				// current_page = current_page + 1;
+				// if (current_page >= total_page)
+				// 	$("#main_more").hide();
+				// else
+				// 	$("#main_more").show();
+				$("#recent_video").append(response);
+			}
+		});
+
 	});
 </script>
 </body>
