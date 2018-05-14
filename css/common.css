@@ -470,7 +470,6 @@ html.layer-opened .global-search-layer {
 	float: left;
 	padding: 0 0 68px;
 }
-.content .list-container .video 
 @media all and (max-width: 500px) {
 	.content .list-container .video {
 		width: 100%;
@@ -558,10 +557,10 @@ html.layer-opened .global-search-layer {
 .content .list-container .video figure figcaption .icon-wrap > span:last-child {
 	margin-right: 0;
 }
-.content .list-container .video figure figcaption .icon-wrap .play .icon {width: 16px;height: 17px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
-.content .list-container .video figure figcaption .icon-wrap .comment .icon {width: 21px;height: 17px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
-.content .list-container .video figure figcaption .icon-wrap .like .icon {width: 21px;height: 18px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
-.content .list-container .video figure figcaption .icon-wrap .collect .icon {width: 15px;height: 18px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
+.icon-wrap .play .icon {width: 16px;height: 17px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
+.icon-wrap .comment .icon {width: 17px;height: 15px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
+.icon-wrap .like .icon {width: 21px;height: 18px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
+.icon-wrap .collect .icon {width: 15px;height: 18px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
 
 .content .list-container .read-more {
 	display: block;
