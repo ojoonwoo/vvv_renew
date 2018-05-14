@@ -20,185 +20,22 @@
 <body>
 	<div id="app">
 		<div class="app-container">
-			<div class="side-nav">
-				<div class="search-wrap magnet-wrap">
-					<button type="button" class="magnet-parent">
-						<span class="magnet-child"></span>
-					</button>
-				</div>
-				<nav id="gnb">
-					<a href="">
-						<div class="burger-wrap">
-								<span class="line top"></span>
-								<span class="line mid"></span>
-								<span class="line bot"></span>
-						</div>
-					</a>
-				</nav>
-				<div class="direct-my-v">
-					<a href="#">
-						<span>MY VVV</span>
-					</a>
-				</div>
-			</div>
+<?
+    include_once "./side_nav_layer.php";
+?>			
 			<!--햄버거 클릭 메뉴-->
-			<div class="global-menu">
-				<div class="inner">
-					<div class="list-wrap">
-						<ul class="list">
-							<li>
-								<a href="#" class="is-active">HOME</a>
-							</li>
-						</ul>
-						<ul class="list">
-							<li>
-								<a href="#">ALL VVV</a>
-							</li>
-							<li>
-								<a href="#">BEST</a>
-							</li>
-							<li>
-								<a href="#">NEW</a>
-							</li>
-						</ul>
-						<ul class="list">
-							<li>
-								<a href="#">AWARDS</a>
-							</li>
-						</ul>
-					</div>
-					<div class="about-us">
-						<div class="logo">
-							<img src="./images/vvv_logo.png" alt="">
-						</div>
-						<div class="line"></div>
-						<div class="contacts">
-							<p><span>CONTACT US</span></p>
-							<p class="tel">
-								<i></i>
-								<span>+82 (02)532-2475</span>
-							</p>
-							<p class="sns">
-								<i class="mail"></i>
-								<i class="facebook"></i>
-								<i class="instagram"></i>
-							</p>
-						</div>
-					</div>
-					<div class="copyright">
-						COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
-					</div>
-				</div>
-			</div>
+<?
+    include_once "./menu_layer.php";
+?>			
 			<!--햄버거 클릭 메뉴-->
 			<!--검색 메뉴-->
-			<div class="global-search-layer">
-				<div class="bg-dark">
-					<div class="inner">
-						<div class="search-wrapper">
-							<div class="wrap">
-								<button type="button" class="button-refresh">새로고침</button>
-								<div class="search-bar">
-									<input type="text">
-								</div>
-							</div>
-							<div class="wrap sortings">
-								<div class="sort-list">
-									<div class="row">
-										<div class="sort">
-											<select name="order-date" id="order-date">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-nation" id="order-nation">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-industry" id="order-industry">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-									</div>
-									<div class="row">
-										<div class="sort">
-											<select name="order-genre" id="order-genre">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-awards" id="order-awards">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-sortby" id="order-sortby">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<button type="button" class="button-apply">
-									APPLY
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<?
+    include_once "./search_layer.php";
+?>			
 			<!--검색 메뉴-->
-			<div class="header-container">
-				<header>
-					<div class="inner">
-						<h1>
-							<a href="#" class="logo">
-								<img src="./images/vvv_logo.png" alt="" class="retina">
-							</a>
-						</h1>
-						<div class="actions">
-							<div class="user-status">
-								<a href="#">LOGIN</a>
-							</div>
-							<div class="search-wrap magnet-wrap">
-								<button type="button" class="magnet-parent">
-									<span class="magnet-child"></span>
-								</button>
-							</div>
-						</div>
-					</div>
-				</header>
-			</div>
+<?
+    include_once "./header_layer.php";
+?>
 			<div class="main-container">
 				<div class="content main">
 					<div class="main-banner swiper-container">
@@ -458,8 +295,35 @@
 		$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 		$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 	});
+	
+//	기본 기능 테스트 코드
+	$doc = $(document),
+	$win = $(window),
+	$html = $('html');
+	$doc.on('click', '.button-search', function() {
+		console.log("search")
+		$html.addClass('layer-opened');
+	});
+	$doc.on('click', '.layer-close', function() {
+		$html.removeClass('layer-opened');
+	});
+	$doc.on('click', '.button-menu', function() {
+		$html.toggleClass('menu-opened');
+	});
+	$win.on('scroll', function() {
+		if(150 < $(this).scrollTop()) {
+			$('.side-nav .search-wrap').css({
+				opacity: 1
+			});
+		} else {
+			$('.side-nav .search-wrap').css({
+				opacity: 0
+			});
+		}
+	});
 
-	$(".read-more").on("click", function(){
+	// RECENT 더보기 버튼 클릭
+	$doc.on('click', '.read-more', function() {
 		video_pg = video_pg + 30;
 
 		$.ajax({
@@ -485,6 +349,29 @@
 		});
 
 	});
+	// 검색 APPLY 클릭
+	$doc.on('click', '.button-apply', function() {
+        var search_keyword      = $("#search_keyword").val();
+        var search_year         = $("#order-date").val();
+        var search_nation       = $("#order-nation").val();
+        var search_category1    = $("#order-industry").val();
+        var search_genre        = $("#order-genre").val();
+        var search_prize        = $("#order-awards").val();
+        var search_sort         = $("#order-sortby").val();
+
+        location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
+	});
+
+	$doc.on('click', '.button-refresh', function() {
+        $("#search_keyword").val("");
+        $("#order-date").val("");
+        $("#order-nation").val("");
+        $("#order-industry").val("");
+        $("#order-genre").val("");
+        $("#order-awards").val("");
+        $("#order-sortby").val("new");        
+	});
+
 </script>
 </body>
 
