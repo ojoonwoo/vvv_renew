@@ -141,6 +141,10 @@
 	max-width: 1400px;
 /*	width: 1400px;*/
 }
+.content.main .list-container .read-more {
+	margin: 23px auto 110px;
+}
+/* main */
 
 /* sub */
 .app-container.sub .header-container {
@@ -505,3 +509,81 @@
 	padding: 0 46px;
 }
 /* video detail */
+/* my vvv */
+.app-container.sub .content.user-page > .inner {
+	max-width: none;
+	padding: 0;
+}
+.content.user-page .user-info {
+	background: #333333;
+	padding: 172px 0 109px;
+}
+.content.user-page .user-info > .wrapper {
+	max-width: 930px;
+	margin: 0 auto;
+	display: flex;
+}
+.content.user-page .user-info .profile-img {
+	width: 224px;
+	height: 224px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.content.user-page .user-info .profile-img img {
+	width: 100%;
+	height: 100%;
+}
+.content.user-page .user-info .info-wrap {
+	width: 577px;
+	margin-left: 123px;
+	color: #ffffff;
+}
+.content.user-page .user-info .info-wrap .wrap-user {
+	border-bottom: 1px solid #7c7c7c;
+	padding: 41px 15px 22px;
+	width: 100%;
+}
+.content.user-page .user-info .info-wrap .wrap-user .user-id {
+	font-size: 40px;
+}
+
+.content.user-page .user-feed {
+	margin: 191px auto;
+	max-width: 1270px;
+	border: 1px solid #969696;
+	position: relative;
+}
+.content.user-page .user-feed .tab-wrap {
+	position: absolute;
+	left: 100px;
+	top: -70px;
+	width: 430px;
+}
+.content.user-page .user-feed .tab-wrap .tab {
+	text-align: center;
+	font-size: 35px;
+	color: #7f7f7f;
+	position: relative;
+	width: 50%;
+	padding: 17px 0;
+}
+.content.user-page .user-feed .tab-wrap:after {
+	content: "";
+	height: 4px;
+	width: 50%;
+	position: absolute;
+	bottom: -1px;
+	background: #333333;
+}
+.content.user-page .user-feed .tab-wrap .tab.is-active,
+.content.user-page .user-feed .tab-wrap .tab:hover {
+	color: #333333;
+}
+.content.user-page .user-feed .inner {
+	padding: 84px 117px 105px;
+}
+.content.user-page .user-feed .like .text-block {
+	margin-bottom: 64px;
+	font-size: 25px;
+}
+/* my vvv */

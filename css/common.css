@@ -1,7 +1,8 @@
 @charset 'utf-8';
 
-/* @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); 
 
+/*
 @font-face {
 	font-family: 'Noto Sans Korean';
 	font-style: normal;
@@ -43,6 +44,7 @@
 	font-weight: 800;
 	src: local("Noto Sans Bold"), local("NotoSans-Bold"), url(../fonts/NotoSansKR-Bold.eot), url(../fonts/NotoSansKR-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/NotoSansKR-Bold.woff) format("woff"), url(../fonts/NotoSansKR-Bold.otf) format("opentype");
 }
+*/
 
 
 /* common */
@@ -535,7 +537,7 @@ html.layer-opened .global-search-layer {
 .content .list-container .video figure figcaption .title {
 	margin: 6px 0 10px;
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 500;
 }
 .content .list-container .video figure figcaption .icon-wrap {
 	font-size: 0;
@@ -571,7 +573,7 @@ html.layer-opened .global-search-layer {
 	font-size: 50px;
 	font-weight: 100;
 	position: relative;
-	margin: 23px auto 110px;
+	margin: 0 auto;
 }
 .content .list-container .read-more img {
 /*	width: 23px;*/
