@@ -256,105 +256,60 @@
 						<div class="video-list">
 							<div class="swiper-container best-slider">
 								<div class="swiper-wrapper">
+<?
+    $best_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY like_count DESC, collect_count DESC, play_count DESC LIMIT 0, 6";
+    $best_result 	= mysqli_query($my_db, $best_query);
+    while ($best_data = mysqli_fetch_array($best_result))
+    {    
+        // 유튜브 영상 코드 자르기
+        $yt_code_arr1   = explode("v=", $best_data["video_link"]);
+        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+
+        $title_count    = mb_strlen($best_data["video_title"],'utf-8');
+
+        if ($title_count > 45)
+            $video_title    = substr($best_data["video_title"],0,45)."...";
+        else
+            $video_title    = $best_data["video_title"];
+?>                            
+                                    
 									<div class="swiper-slide">
 										<div class="video">
 											<a href="#">
 												<figure>
-													<div class="thumbnail box-bg">
-														<img src="./images/main_slide_thumb.jpg" alt="">
+													<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+														<!-- <img src="<?=$yt_thumb?>" alt=""> -->
 													</div>
 													<figcaption>
-														<span class="brand">[UNICEF]</span>
-														<span class="title">Furniture That Hides From Hurting copy 4</span>
+														<span class="brand">[<?=$best_data["video_brand"]?>]</span>
+														<span class="title"><?=$video_title?></span>
 														<span class="icon-wrap">
 															<span class="play">
 																<i class="icon"></i>
-																<span class="cnt">4</span>
+																<span class="cnt"><?=$best_data["play_count"]?></span>
 															</span>
 															<span class="comment">
 																<i class="icon"></i>
-																<span class="cnt">0</span>
+																<span class="cnt"><?=$best_data["comment_count"]?></span>
 															</span>
 															<span class="like">
 																<i class="icon"></i>
-																<span class="cnt">2</span>
+																<span class="cnt"><?=$best_data["like_count"]?></span>
 															</span>
 															<span class="collect">
 																<i class="icon"></i>
-																<span class="cnt">2</span>
+																<span class="cnt"><?=$best_data["collect_count"]?></span>
 															</span>
 														</span>
 													</figcaption>
 												</figure>
 											</a>
 										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="video">
-											<a href="#">
-												<figure>
-													<div class="thumbnail box-bg">
-														<img src="./images/main_slide_thumb.jpg" alt="">
-													</div>
-													<figcaption>
-														<span class="brand">[UNICEF]</span>
-														<span class="title">Furniture That Hides From Hurting copy 4</span>
-														<span class="icon-wrap">
-															<span class="play">
-																<i class="icon"></i>
-																<span class="cnt">4</span>
-															</span>
-															<span class="comment">
-																<i class="icon"></i>
-																<span class="cnt">0</span>
-															</span>
-															<span class="like">
-																<i class="icon"></i>
-																<span class="cnt">2</span>
-															</span>
-															<span class="collect">
-																<i class="icon"></i>
-																<span class="cnt">2</span>
-															</span>
-														</span>
-													</figcaption>
-												</figure>
-											</a>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="video">
-											<a href="#">
-												<figure>
-													<div class="thumbnail box-bg">
-														<img src="./images/main_slide_thumb.jpg" alt="">
-													</div>
-													<figcaption>
-														<span class="brand">[UNICEF]</span>
-														<span class="title">Furniture That Hides From Hurting copy 4</span>
-														<span class="icon-wrap">
-															<span class="play">
-																<i class="icon"></i>
-																<span class="cnt">4</span>
-															</span>
-															<span class="comment">
-																<i class="icon"></i>
-																<span class="cnt">0</span>
-															</span>
-															<span class="like">
-																<i class="icon"></i>
-																<span class="cnt">2</span>
-															</span>
-															<span class="collect">
-																<i class="icon"></i>
-																<span class="cnt">2</span>
-															</span>
-														</span>
-													</figcaption>
-												</figure>
-											</a>
-										</div>
-									</div>
+                                    </div>
+<?
+    }
+?>                                                                
 								</div>
 								<!-- Add Arrows -->
 								<div class="button-next"></div>
@@ -377,17 +332,21 @@
         $yt_code_arr1   = explode("v=", $recent_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
-        // https://img.youtube.com/vi/BH9N-hxUOPQ/hqdefault.jpg
+
+        $title_count    = mb_strlen($recent_data["video_title"],'utf-8');
+
+        if ($title_count > 30)
+            $video_title    = substr($recent_data["video_title"],0,30)."...";
+        else
+            $video_title    = $recent_data["video_title"];
 ?>                            
 							<div class="video col-lg-4 col-md-3 col-sm-2">
 								<a href="#">
 									<figure>
-										<div class="thumbnail box-bg">
-											<img src="<?=$yt_thumb?>" alt="">
-										</div>
+                                        <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 										<figcaption>
 											<span class="brand">[<?=$recent_data["video_brand"]?>]</span>
-											<span class="title"><?=$recent_data["video_title"]?></span>
+											<span class="title"><?=$video_title?></span>
 											<span class="icon-wrap">
 												<span class="play">
 													<i class="icon"></i>
