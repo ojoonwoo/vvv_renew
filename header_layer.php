@@ -8,7 +8,7 @@
 						</h1>
 						<div class="actions">
 							<div class="user-status">
-								<a href="#">LOGIN</a>
+								<a href="login.php">LOGIN</a>
 							</div>
 							<div class="search-wrap magnet-wrap">
 								<button type="button" class="magnet-parent button-search">
