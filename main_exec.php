@@ -35,7 +35,7 @@ include_once "./include/autoload.php";
 				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
 				$result   = mysqli_query($my_db, $query);
 			}
-
+print_r($login_num);
 			// 회원 이메일, 이름, 로그인 경로 세션 생성
 			$_SESSION['ss_vvv_email']		= "kakao";
 			$_SESSION['ss_vvv_name']		= $mb_kakao_name;
