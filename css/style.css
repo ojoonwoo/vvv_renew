@@ -252,15 +252,18 @@
 .awards .awards-banner .banner {
 	position: absolute;
 	top: 0;
+	height: 66.9vh;
 }
 .awards .awards-banner .banner .img img {
-	height: 69.4vh;
+/*	height: 69.4vh;*/
 /*	opacity: 0.9;*/
 }
 .awards .awards-banner a .box-bg img {
+/*
 	position: relative;
 	transition: all 0.3s ease-in-out;
 	z-index: 1;
+*/
 }
 .awards .awards-banner a:hover .box-bg img {
 /*	opacity: 0.9;*/
@@ -284,17 +287,17 @@
 .awards .awards-banner .banner._01 {
 	position: relative;
 	left: 0;
-	width: 43.85%;
+	width: 63.85%;
 	z-index: 1;
 }
 .awards .awards-banner .banner._02 {
 	left: 23.33%;
-	width: 53.43%;
+	width: 63.85%;
 	z-index: 2;
 }
 .awards .awards-banner .banner._03 {
 	left: 56.19%;
-	width: 43.8%;
+	width: 63.85%;
 	z-index: 3;
 }
 .awards .cate-wrap {
