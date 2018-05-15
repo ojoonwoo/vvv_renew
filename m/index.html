@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div class="app-container">
+<!--
+				<div class="side-nav">
+					<div class="search-wrap magnet-wrap">
+						<button type="button" class="magnet-parent button-search">
+							<span class="magnet-child"></span>
+						</button>
+					</div>
+					<nav id="gnb">
+						<a href="javascript:void(0)" class="button-menu">
+							<div class="burger-wrap">
+								<span class="line top"></span>
+								<span class="line mid"></span>
+								<span class="line bot"></span>
+							</div>
+						</a>
+					</nav>
+					<div class="direct-my-v">
+						<a href="#">
+							<span>MY VVV</span>
+						</a>
+					</div>
+				</div>
+-->
+				<!--햄버거 클릭 메뉴-->
+				<div class="global-menu">
+					<div class="inner">
+						<a href="#" class="btn-close button-menu">
+							<img src="./images/close_x_black.png" alt="">
+						</a>
+						<div class="list-wrap">
+							<ul class="list">
+								<li>
+									<a href="#" class="is-active">HOME</a>
+								</li>
+								<li>
+									<a href="#">ALL VVV</a>
+								</li>
+								<li>
+									<a href="#">BEST</a>
+								</li>
+								<li>
+									<a href="#">NEW</a>
+								</li>
+								<li>
+									<a href="#">AWARDS</a>
+								</li>
+							</ul>
+						</div>
+						<div class="about-us">
+							<div class="line"></div>
+							<div class="contacts">
+								<p><span>CONTACT US</span></p>
+								<p class="tel">
+									<i></i>
+									<span>+82 (02)532-2475</span>
+								</p>
+								<p class="sns">
+									<i class="mail"></i>
+									<i class="facebook"></i>
+									<i class="instagram"></i>
+								</p>
+							</div>
+						</div>
+						<div class="copyright">
+							COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
+						</div>
+					</div>
+				</div>
+				<!--햄버거 클릭 메뉴-->
+				<!--검색 메뉴-->
+				<div class="global-search-layer">
+					<div class="bg-dark">
+						<div class="inner">
+							<button type="button" class="layer-close"></button>
+							<div class="search-wrapper">
+								<div class="wrap">
+									<div class="search-bar">
+										<input type="text">
+									</div>
+									<button type="button" class="button-refresh">새로고침</button>
+								</div>
+								<div class="wrap sortings">
+									<div class="sort-list">
+										<div class="row">
+											<div class="sort">
+												<select name="order-date" id="order-date">
+													<option disabled selected>연도</option>
+													<option>Slower</option>
+													<option>Slow</option>
+													<option>Medium</option>
+													<option>Fast</option>
+													<option>Faster</option>
+												</select>
+											</div>
+											<div class="sort">
+												<select name="order-nation" id="order-nation">
+													<option disabled selected>국가</option>
+													<option>Slower</option>
+													<option>Slow</option>
+													<option>Medium</option>
+													<option>Fast</option>
+													<option>Faster</option>
+												</select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="sort">
+												<select name="order-industry" id="order-industry">
+													<option disabled selected>산업군</option>
+													<option>Slower</option>
+													<option>Slow</option>
+													<option>Medium</option>
+													<option>Fast</option>
+													<option>Faster</option>
+												</select>
+											</div>
+											<div class="sort">
+												<select name="order-genre" id="order-genre">
+													<option disabled selected>장르</option>
+													<option>Slower</option>
+													<option>Slow</option>
+													<option>Medium</option>
+													<option>Fast</option>
+													<option>Faster</option>
+												</select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="sort">
+												<select name="order-awards" id="order-awards">
+													<option disabled selected>광고제</option>
+													<option>Slower</option>
+													<option>Slow</option>
+													<option>Medium</option>
+													<option>Fast</option>
+													<option>Faster</option>
+												</select>
+											</div>
+											<div class="sort">
+												<select name="order-sortby" id="order-sortby">
+													<option disabled selected>분류</option>
+													<option>Slower</option>
+													<option>Slow</option>
+													<option>Medium</option>
+													<option>Fast</option>
+													<option>Faster</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<button type="button" class="button-apply">
+										APPLY
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--검색 메뉴-->
+				<div class="header-container">
+					<header>
+						<div class="inner">
+							<nav id="gnb">
+								<a href="javascript:void(0)" class="button-menu">
+									<div class="burger-wrap">
+										<span class="line top"></span>
+										<span class="line mid"></span>
+										<span class="line bot"></span>
+									</div>
+								</a>
+							</nav>
+							<h1>
+								<a href="#" class="logo">
+									<img src="./images/vvv_logo.png" alt="" class="retina">
+								</a>
+							</h1>
+							<div class="actions">
+<!--
+								<div class="user-status">
+									<a href="#">LOGIN</a>
+								</div>
+-->
+								<div class="search-wrap magnet-wrap">
+									<button type="button" class="magnet-parent button-search">
+										<span class="magnet-child"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</header>
+				</div>
+				<div class="main-container">
+					<div class="content main">
+						<div class="main-banner swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="">
+										<figure class="box-content">
+											<div class="img box-bg">
+												<img src="./images/main_banner_01.jpg" alt="">
+											</div>
+											<figcaption>
+												<p class="brand">ADEPOL SC</p>
+												<p class="title">We Understand Your Surffering</p>
+												<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="">
+										<figure class="box-content">
+											<div class="img box-bg">
+												<img src="./images/main_banner_01.jpg" alt="">
+											</div>
+											<figcaption>
+												<p class="brand">MINIVERTISING</p>
+												<p class="title">2번 슬라이드</p>
+												<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="">
+										<figure class="box-content">
+											<div class="img box-bg">
+												<img src="./images/main_banner_01.jpg" alt="">
+											</div>
+											<figcaption>
+												<p class="brand">MINIVERTISING</p>
+												<p class="title">3번 슬라이드</p>
+												<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+							</div>
+							<div id="main-banner-pagination" class="main-banner-pagination"></div>
+						</div>
+						<div class="list-container best-area">
+							<div class="title-area">
+								<h2 class="list-title">BEST</h2>
+								<a href="#" class="view-all">전체보기</a>
+							</div>
+							<div class="video-list">
+								<div class="swiper-container best-slider">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="video">
+												<a href="#">
+													<figure>
+														<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+															<!--														<img src="./images/best_slider_sample.jpg" alt="">-->
+														</div>
+														<figcaption>
+															<span class="brand">[UNICEF]</span>
+															<span class="title">Furniture That Hides From Hurting copy 4</span>
+															<span class="icon-wrap">
+																<span class="play">
+																	<i class="icon"></i>
+																	<span class="cnt">4</span>
+																</span>
+																<span class="comment">
+																	<i class="icon"></i>
+																	<span class="cnt">0</span>
+																</span>
+																<span class="like">
+																	<i class="icon"></i>
+																	<span class="cnt">2</span>
+																</span>
+																<span class="collect">
+																	<i class="icon"></i>
+																	<span class="cnt">2</span>
+																</span>
+															</span>
+														</figcaption>
+													</figure>
+												</a>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="video">
+												<a href="#">
+													<figure>
+														<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+															<!--														<img src="./images/best_slider_sample.jpg" alt="">-->
+														</div>
+														<figcaption>
+															<span class="brand">[UNICEF]</span>
+															<span class="title">Furniture That Hides From Hurting copy 4</span>
+															<span class="icon-wrap">
+																<span class="play">
+																	<i class="icon"></i>
+																	<span class="cnt">4</span>
+																</span>
+																<span class="comment">
+																	<i class="icon"></i>
+																	<span class="cnt">0</span>
+																</span>
+																<span class="like">
+																	<i class="icon"></i>
+																	<span class="cnt">2</span>
+																</span>
+																<span class="collect">
+																	<i class="icon"></i>
+																	<span class="cnt">2</span>
+																</span>
+															</span>
+														</figcaption>
+													</figure>
+												</a>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="video">
+												<a href="#">
+													<figure>
+														<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+															<!--														<img src="./images/best_slider_sample.jpg" alt="">-->
+														</div>
+														<figcaption>
+															<span class="brand">[UNICEF]</span>
+															<span class="title">Furniture That Hides From Hurting copy 4</span>
+															<span class="icon-wrap">
+																<span class="play">
+																	<i class="icon"></i>
+																	<span class="cnt">4</span>
+																</span>
+																<span class="comment">
+																	<i class="icon"></i>
+																	<span class="cnt">0</span>
+																</span>
+																<span class="like">
+																	<i class="icon"></i>
+																	<span class="cnt">2</span>
+																</span>
+																<span class="collect">
+																	<i class="icon"></i>
+																	<span class="cnt">2</span>
+																</span>
+															</span>
+														</figcaption>
+													</figure>
+												</a>
+											</div>
+										</div>
+									</div>
+									<!-- Add Arrows -->
+									<div class="button-next"></div>
+									<div class="button-prev"></div>
+								</div>
+							</div>
+						</div>
+						<div class="list-container">
+							<div class="title-area">
+								<h2 class="list-title">RECENT</h2>
+								<a href="#" class="view-all">전체보기</a>
+							</div>
+							<div class="video-list">
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="video col-lg-4 col-md-3 col-sm-2">
+									<a href="#">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[UNICEF]</span>
+												<span class="title">Furniture That Hides From Hurting copy 4</span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt">4</span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt">0</span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt">2</span>
+													</span>
+												</span>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+							</div>
+							<button type="button" class="read-more">
+								<img src="./images/plus_icon.png" alt="">
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="cursor" class="defualt"></div>
+		</div>
+		<script>
+			$(document).ready(function () {
+				var bannerSwiper = new Swiper ('.main-banner', {
+					// Optional parameters
+					direction: 'horizontal',
+					effect: 'fade',
+					speed: 650,
+					loop: true,
+					autoplay: {
+						delay: 4000	
+					},
+					pagination: {
+						el: '.main-banner-pagination',
+						clickable: true,
+						renderBullet: function (index, className) {
+							return '<span class="' + className + '">' + (index + 1) + '</span>';
+						},
+					},
+				})
+				//initialize swiper when document ready
+				var bestSwiper = new Swiper ('.best-slider', {
+					// Optional parameters
+					direction: 'horizontal',
+					loop: true,
+//					slidesPerView: 3,
+//					spaceBetween: 30,
+					navigation: {
+						nextEl: '.button-next',
+						prevEl: '.button-prev',
+					},
+					breakpoints: {
+						// when window width is <= 320px
+						500: {
+							slidesPerView: 1,
+							spaceBetween: 10
+						},
+						// when window width is <= 480px
+						800: {
+							slidesPerView: 2,
+							spaceBetween: 20
+						},
+						// when window width is <= 640px
+						1400: {
+							slidesPerView: 3,
+							spaceBetween: 30
+						}
+					}
+				})
+				});
+			$(function() {
+				//		$('.global-search-layer .sort').each(function() {
+				//			$(this).selectmenu();
+				//		});
+				$('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				$('#order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				$('#order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				$('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+			});
+
+			//	기본 기능 테스트 코드
+			$doc = $(document),
+				$win = $(window),
+				$html = $('html');
+			$doc.on('click', '.button-search', function() {
+				$html.addClass('layer-opened');
+			});
+			$doc.on('click', '.layer-close', function() {
+				$html.removeClass('layer-opened');
+			});
+			$doc.on('click', '.button-menu', function() {
+				$html.toggleClass('menu-opened');
+			});
+			$win.on('scroll', function() {
+				if(150 < $(this).scrollTop()) {
+					$('.side-nav .search-wrap').css({
+						opacity: 1
+					});
+				} else {
+					$('.side-nav .search-wrap').css({
+						opacity: 0
+					});
+				}
+			});
+		</script>
+	</body>
+
+</html>

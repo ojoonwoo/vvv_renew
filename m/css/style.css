@@ -1,0 +1,149 @@
+.main-banner .box-content {
+	position: relative;
+}
+.main-banner .box-content figcaption {
+	display: block;
+	position: absolute;
+	/*	top: 50%;*/
+	top: 31%;
+	left: 50%;
+	width: 100%;
+	z-index: 3;
+	transform: translate(-50%, 0);
+	text-align: center;
+}
+.main-banner .box-content figcaption .brand {
+	font-size: 10px;
+	color: #f7dd30;
+}
+.main-banner .box-content figcaption .title {
+	font-size: 19px;
+	color: #ffffff;
+	font-weight: 700;
+	margin: 19px auto 9px;
+}
+.main-banner .box-content figcaption .summary {
+	font-size: 11px;
+	color: #ffffff;
+	font-weight: 300;
+}
+.main-banner a .box-bg img {
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	z-index: 1;
+}
+.main-banner a:hover .box-bg img {
+	opacity: 0.9;
+}
+.main-banner .box-bg {
+	position: relative;
+}
+.main-banner .box-bg:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	z-index: 0;
+}
+#main-banner-pagination {
+	position: absolute;
+	bottom: 25px;
+	right: 0;
+	left: inherit;
+	width: 43px;
+	text-align: right;
+	z-index: 4;
+	font-size: 0;
+}
+#main-banner-pagination .swiper-pagination-bullet {
+	display: inline-block;
+	width: 33px;
+	background: #fffbf3;
+	height: 1px;
+	margin: 0;
+	transition: all 0.65s ease-in-out;
+	border-radius: 0;
+	opacity: 1;
+	font-size: 0;
+	vertical-align: top;
+	cursor: default;
+	margin-bottom: 9px;
+}
+#main-banner-pagination .swiper-pagination-bullet:last-child {
+	margin-bottom: 0;
+}
+#main-banner-pagination .swiper-pagination-bullet-active {
+	width: 100%;
+	background: #f7dd30;
+}
+.content.main .list-container {
+	padding: 0 24px;
+	margin: 0 auto;
+}
+.content.main .list-container .best-slider {
+	padding-top: 23px;
+}
+.content.main .list-container .best-slider .button-prev {
+	position: absolute;
+	top: 0;
+	left: 9px;
+	width: 25px;
+	height: 12px;
+	background: url(../images/arrow_left.png) center no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+.content.main .list-container .best-slider .button-next {
+	position: absolute;
+	top: 0;
+	right: 9px;
+	width: 25px;
+	height: 12px;
+	background: url(../images/arrow_right.png) center no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+.content.main .list-container.best-area .title-area {
+	padding: 47px 0 0;
+}
+.content.main .list-container.best-area .video {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	width: 100%;
+}
+.content.main .list-container .title-area {
+	padding: 42px 0 30px;
+	text-align: center;
+}
+.content.main .list-container .list-title {
+	position: relative;
+	font-size: 17px;
+	font-weight: 700;
+	margin-bottom: 26px;
+}
+.content.main .list-container .list-title:after {
+	content: '';
+	position: absolute;
+	bottom: -18px;
+	left: 50%;
+	width: 9px;
+	height: 1px;
+	background: #000000;
+	margin-left: -4px;
+}
+.content.main .list-container .list-title + a.view-all {
+	font-size: 11px;
+	font-weight: 600;
+}
+.content.main .list-container .video-list {
+/*	max-width: 1400px;*/
+	/*	width: 1400px;*/
+}
+.content.main .list-container .read-more {
+	margin: 20px auto 110px;
+}
+/* main */
