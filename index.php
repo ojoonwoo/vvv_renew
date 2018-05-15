@@ -13,7 +13,8 @@
     }else{
         $saveMedia     = $mnv_f->SaveMedia();
         $rs_tracking   = $mnv_f->InsertTrackingInfo($mobileYN);
-    }
+	}
+	print_r($_SESSION);
 
     include_once "./head.php";
 ?>
