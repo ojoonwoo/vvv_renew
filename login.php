@@ -207,8 +207,8 @@
 								data:{
 									"exec"				: "member_kakao_login",
 									"login_way"			: "kakao",
-									"mb_email"			: res.kaccount_email,
-									"mb_email_verified"	: res.kaccount_email_verified,
+									// "mb_email"			: res.kaccount_email,
+									// "mb_email_verified"	: res.kaccount_email_verified,
 									"mb_way_id"			: res.id,
 									"mb_profile_img"	: res.properties.profile_image,
 									"mb_name"			: res.properties.nickname,
