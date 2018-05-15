@@ -8,7 +8,18 @@
 						</h1>
 						<div class="actions">
 							<div class="user-status">
-								<a href="login.php">LOGIN</a>
+<?
+	if (!$_SESSION['ss_vvv_email'])
+	{
+?>                                
+                                <a href="login.php">LOGOUT</a>
+<?
+    }else{
+?>        
+                                <a href="login.php">LOGIN</a>
+<?
+    }
+?>                        
 							</div>
 							<div class="search-wrap magnet-wrap">
 								<button type="button" class="magnet-parent button-search">
