@@ -120,7 +120,7 @@
 ?>
 										<div class="row">
 											<div class="u-id">
-												<a href="my_vvv.php?idx=<?=$comment_data["mb_email"]?>"><?=$comment_data["mb_name"]?></a>
+												<a href="my_vvv.php?idx=<?=$comment_data["mb_idx"]?>"><?=$comment_data["mb_name"]?></a>
 											</div>
 											<div class="u-comment">
 												<?=$comment_data["comment_text"]?>
