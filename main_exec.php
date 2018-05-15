@@ -22,11 +22,11 @@ include_once "./include/autoload.php";
 			else
 				$mb_kakao_email_verified = "N";
 
-			$login_query		= "SELECT * FROM member_info WHERE mb_email='".$mb_email."' AND mb_kakao_way_id='".$mb_kakao_way_id."'";
+			$login_query		= "SELECT * FROM member_info WHERE 1 AND mb_kakao_way_id='".$mb_kakao_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
 			$login_data			= mysqli_fetch_array($login_result);
 
-			if ($login_data['mb_email'])
+			if ($login_data)
 			{
 				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
 				$result		= mysqli_query($my_db, $query);
