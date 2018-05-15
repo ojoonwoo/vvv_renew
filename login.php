@@ -215,6 +215,7 @@
 									"mb_thumbnail_img"	: res.properties.thumbnail_image
 								},
 								success: function(response){
+									console.log(response);
 									if (response.match("Y") == "Y")
 									{
 										if (refurl == "")
@@ -222,8 +223,8 @@
 										else
 											location.href	= refurl;
 									}else{
-										alert("다시 시도해 주세요!");
-										location.reload();
+										// alert("다시 시도해 주세요!");
+										// location.reload();
 									}
 
 								}
