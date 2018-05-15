@@ -172,6 +172,7 @@
 			$doc.on('click', '.btn-login.fb', function() {
 				//do the login
 				FB.login(function(response) {
+					console.log(response);
 					if (response.authResponse) {
 						access_token = response.authResponse.accessToken; //get access token
 						user_id = response.authResponse.userID; //get FB UID
