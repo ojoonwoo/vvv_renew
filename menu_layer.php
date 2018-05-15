@@ -3,7 +3,7 @@
 					<div class="list-wrap">
 						<ul class="list">
 							<li>
-								<a href="#" class="is-active">HOME</a>
+								<a href="index.php" class="is-active">HOME</a>
 							</li>
 						</ul>
 						<ul class="list">

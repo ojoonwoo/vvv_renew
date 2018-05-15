@@ -1,4 +1,4 @@
-<div class="side-nav">
+            <div class="side-nav">
 				<div class="search-wrap magnet-wrap">
 					<button type="button" class="magnet-parent button-search">
 						<span class="magnet-child"></span>
