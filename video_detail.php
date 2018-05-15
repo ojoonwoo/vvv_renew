@@ -84,8 +84,8 @@
 									</div>
 								</div>
 								<div class="player" id="video_area">
-									<!-- <img src="./images/loading.jpg" alt="로딩 이미지"> -->
-									<img src="./images/detail_video_sample.jpg" alt="">
+									<img src="./images/loading.jpg" alt="로딩 이미지">
+									<!-- <img src="./images/detail_video_sample.jpg" alt=""> -->
 								</div>
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
