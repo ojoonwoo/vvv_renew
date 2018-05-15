@@ -1,5 +1,5 @@
 <?
-	include_once "./header.php";
+    include_once "./include/autoload.php";
 
     if ($_SESSION['ss_vvv_way'] == "kakao")
     {
