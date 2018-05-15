@@ -126,7 +126,7 @@
 												<?=$comment_data["comment_text"]?>
 											</div>
 											<div class="date">
-												<?=substr($comment_data["comment_regdate"],0,16)?>
+												<?=substr($comment_data["comment_regdate"],0,10)?>
 											</div>
 										</div>
 <?
