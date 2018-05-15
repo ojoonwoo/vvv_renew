@@ -340,7 +340,7 @@
 							$("#like_count").html(Number($("#like_count").html()) + 1);
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
-							location.href = "login.php?refurl=<?=$video_idx?>";
+							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
 						}else{
 							alert("Like 에서 제외 되었습니다!");
 							$(".icon.liked").attr("class","icon like");
