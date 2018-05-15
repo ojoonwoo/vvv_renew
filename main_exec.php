@@ -5,39 +5,34 @@ include_once "./include/autoload.php";
 	{
 		// 카카오 회원 가입 및 로그인 처리
 		case "member_kakao_login" :
-            $mnv_f          = new mnv_function();
-            $my_db          = $mnv_f->Connect_MySQL();
-            $gubun          = $mnv_f->MobileCheck();
-
-            // $mb_email					= $_REQUEST["mb_email"];
+			$mb_email					= $_REQUEST["mb_email"];
 			$mb_login_way				= $_REQUEST["login_way"];
-			// $mb_kakao_email_verified	= $_REQUEST["mb_email_verified"];
+			$mb_kakao_email_verified	= $_REQUEST["mb_email_verified"];
 			$mb_kakao_way_id			= $_REQUEST["mb_way_id"];
 			$mb_kakao_profile_img		= $_REQUEST["mb_profile_img"];
 			$mb_kakao_name				= $_REQUEST["mb_name"];
 			$mb_kakao_thumbnail_img		= $_REQUEST["mb_thumbnail_img"];
 
-			// if ($mb_kakao_email_verified == "true")
-			// 	$mb_kakao_email_verified = "Y";
-			// else
+			if ($mb_kakao_email_verified == "true")
+				$mb_kakao_email_verified = "Y";
+			else
 				$mb_kakao_email_verified = "N";
 
-			$login_query		= "SELECT * FROM member_info WHERE 1 AND mb_kakao_way_id='".$mb_kakao_way_id."'";
+			$login_query		= "SELECT * FROM member_info WHERE mb_email='".$mb_email."' AND mb_kakao_way_id='".$mb_kakao_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
-			$login_num			= mysqli_num_rows($login_result);
+			$login_data			= mysqli_fetch_array($login_result);
 
-			if ($login_num > 0)
+			if ($login_data['mb_email'])
 			{
-				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_kakao_way_id='".$mb_kakao_way_id."'";
+				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
 				$result		= mysqli_query($my_db, $query);
 			}else{
-				// $query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_email."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
-				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
+				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_email."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
 				$result   = mysqli_query($my_db, $query);
 			}
-print_r($login_num);
+
 			// 회원 이메일, 이름, 로그인 경로 세션 생성
-			$_SESSION['ss_vvv_email']		= "kakao";
+			$_SESSION['ss_vvv_email']		= $mb_email;
 			$_SESSION['ss_vvv_name']		= $mb_kakao_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
 

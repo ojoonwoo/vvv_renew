@@ -57,7 +57,7 @@
 		</div>
 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>		
 		<script>
-			Kakao.init('8ba77260c74869e7b2f0370faa2b7c7f');
+			Kakao.init('ff013671b5f7b01d59770657a8787952');
 
 			$(function() {
 				//				global search
@@ -215,8 +215,8 @@
 									"mb_thumbnail_img"	: res.properties.thumbnail_image
 								},
 								success: function(response){
-									console.log(res);
-									console.log(response);
+									// console.log(res);
+									// console.log(response);
 									if (response.match("Y") == "Y")
 									{
 										if (refurl == "")
@@ -224,8 +224,8 @@
 										else
 											location.href	= refurl;
 									}else{
-										// alert("다시 시도해 주세요!");
-										// location.reload();
+										alert("다시 시도해 주세요!");
+										location.reload();
 									}
 
 								}
