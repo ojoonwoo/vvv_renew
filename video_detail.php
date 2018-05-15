@@ -89,8 +89,8 @@
 								</div>
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
-									<a href="" class="action collect"></a>
-									<a href="" class="action translate"><span>번역</span></a>
+									<a href="javascript:alert('준비중입니다.')" class="action collect"></a>
+									<a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a>
 									<a href="" class="action share"></a>
 									<ul class="share-spread">
 										<li><a href="#"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
@@ -354,6 +354,31 @@
 							alert("Like 에서 제외 되었습니다!");
 							$(".action.like").removeClass("is-active");
 							$("#like_count").html($("#like_count").html() - 1);
+						}
+					}
+				});
+			}
+
+			function request_translate(v_idx)
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "request_translate",
+						"v_idx"		            : v_idx
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							alert("번역 요청이 접수 되었습니다. 번역이 완료되면 이메일로 알려드리겠습니다.");
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 이용해 주세요!");
+							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
+						}else{
+							alert("다시 시도해 주세요.");
 						}
 					}
 				});

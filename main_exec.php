@@ -233,14 +233,19 @@ include_once "./include/autoload.php";
 
             $v_idx		= $_REQUEST["v_idx"];
 
-			$query 		= "INSERT INTO ".$_gl['translate_info_table']."(v_idx, requester_email, requester_ipaddr, request_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
-			$result 	= mysqli_query($my_db, $query);
-
-			if($result) {
-				$flag = "Y";
-			}else{
-				$flag = "N";
-			}
+            if ($_SESSION['ss_vvv_email'])
+            {
+                $query 		= "INSERT INTO translate_info(v_idx, requester_email, requester_ipaddr, request_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
+                $result 	= mysqli_query($my_db, $query);
+    
+                if($result) {
+                    $flag = "Y";
+                }else{
+                    $flag = "N";
+                }
+            }else{
+                $flag = "L";
+            }
 
 			echo $flag;
 		break;
