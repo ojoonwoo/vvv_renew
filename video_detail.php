@@ -9,9 +9,18 @@
 	// }
 	$video_idx	= $_REQUEST["idx"];
 
+	// 영상 정보
 	$detail_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$video_idx."'";
 	$detail_result 	= mysqli_query($my_db, $detail_query);
 	$detail_data	= mysqli_fetch_array($detail_result);
+
+	// Like 여부 체크
+	$like_query		= "SELECT * FROM like_info WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$video_idx."' AND like_flag='Y'";
+	$like_result	= mysqli_query($my_db, $like_query);
+
+	$like_flag = "";
+	if (mysqli_num_rows($like_result) > 0)
+		$like_flag = "is-active";
 
 	// 유튜브 영상 코드 자르기
 	$yt_code_arr1   = explode("v=", $detail_data["video_link"]);
@@ -79,7 +88,7 @@
 									<img src="./images/detail_video_sample.jpg" alt="">
 								</div>
 								<div class="actions">
-									<a href="javascript:like_video('<?=$video_idx?>')" class="action like is-active" id="like_img"></a>
+									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
 									<a href="" class="action collect"></a>
 									<a href="" class="action translate"><span>번역</span></a>
 									<a href="" class="action share"></a>
