@@ -94,27 +94,32 @@ include_once "./include/autoload.php";
 
             $v_idx			= $_REQUEST["v_idx"];
 
-			$like_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
-			$like_result	= mysqli_query($my_db, $like_query);
-			$like_count		= mysqli_num_rows($like_result);
-			$like_data		= mysqli_fetch_array($like_result);
-
-			if ($like_count == 0)
-			{
-				$query		= "INSERT INTO ".$_gl['like_info_table']."(v_idx, mb_email, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','Y','".date("Y-m-d H:i:s")."')";
-				$result		= mysqli_query($my_db, $query);
-
-				$query2		= "UPDATE ".$_gl['video_info_table']." SET like_count=like_count+1 WHERE idx='".$v_idx."'";
-				$result2	= mysqli_query($my_db, $query2);
-				$flag	= "Y";
-			}else{
-				$query		= "UPDATE ".$_gl['like_info_table']." SET like_flag='N' WHERE v_idx='".$v_idx."' AND mb_email='".$_SESSION['ss_vvv_email']."'";
-				$result		= mysqli_query($my_db, $query);
-
-				$query2		= "UPDATE ".$_gl['video_info_table']." SET like_count=like_count-1 WHERE idx='".$v_idx."'";
-				$result2	= mysqli_query($my_db, $query2);
-				$flag	= "N";
-			}
+            if ($_SESSION['ss_vvv_email'])
+            {
+                $like_query		= "SELECT * FROM like_info WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
+                $like_result	= mysqli_query($my_db, $like_query);
+                $like_count		= mysqli_num_rows($like_result);
+                $like_data		= mysqli_fetch_array($like_result);
+    
+                if ($like_count == 0)
+                {
+                    $query		= "INSERT INTO like_info(v_idx, mb_email, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','Y','".date("Y-m-d H:i:s")."')";
+                    $result		= mysqli_query($my_db, $query);
+    
+                    $query2		= "UPDATE video_info2 SET like_count=like_count+1 WHERE idx='".$v_idx."'";
+                    $result2	= mysqli_query($my_db, $query2);
+                    $flag	= "Y";
+                }else{
+                    $query		= "UPDATE like_info SET like_flag='N' WHERE v_idx='".$v_idx."' AND mb_email='".$_SESSION['ss_vvv_email']."'";
+                    $result		= mysqli_query($my_db, $query);
+    
+                    $query2		= "UPDATE video_info2 SET like_count=like_count-1 WHERE idx='".$v_idx."'";
+                    $result2	= mysqli_query($my_db, $query2);
+                    $flag	= "N";
+                }
+            }else{
+                $flag   = "L";
+            }
 
 			echo $flag;
 		break;
