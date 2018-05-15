@@ -112,7 +112,7 @@
 									</div>
 									<div class="comment-list">
 <?
-	$comment_query		= "SELECT * FROM ".$_gl['comment_info_table']." WHERE v_idx='".$idx."' AND showYN='Y' ORDER BY idx DESC";
+	$comment_query		= "SELECT * FROM comment_info WHERE v_idx='".$video_idx."' AND showYN='Y' ORDER BY idx DESC";
 	$comment_result		= mysqli_query($my_db, $comment_query);
 
 	while ($comment_data = mysqli_fetch_array($comment_result))
