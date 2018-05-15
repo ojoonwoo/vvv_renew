@@ -2,7 +2,7 @@
 				<header>
 					<div class="inner">
 						<h1>
-							<a href="#" class="logo">
+							<a href="index.php" class="logo">
 								<img src="./images/vvv_logo.png" alt="" class="retina">
 							</a>
 						</h1>

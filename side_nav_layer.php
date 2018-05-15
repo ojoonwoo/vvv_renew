@@ -14,7 +14,7 @@
 					</a>
 				</nav>
 				<div class="direct-my-v">
-					<a href="#">
+					<a href="my_vvv.php">
 						<span>MY VVV</span>
 					</a>
 				</div>
