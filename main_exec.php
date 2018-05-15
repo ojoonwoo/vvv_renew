@@ -29,14 +29,17 @@ include_once "./include/autoload.php";
             if ($login_data['mb_email'])
 			{
 				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
-				$result		= mysqli_query($my_db, $query);
+                $result		= mysqli_query($my_db, $query);
+                $uid        = $login_data["idx"];
 			}else{
 				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_email."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
 				$result   = mysqli_query($my_db, $query);
+                $uid      = mysql_insert_id($result);
 			}
 
 			// 회원 이메일, 이름, 로그인 경로 세션 생성
 			$_SESSION['ss_vvv_email']		= $mb_email;
+			$_SESSION['ss_vvv_idx']		    = $uid;
 			$_SESSION['ss_vvv_name']		= $mb_kakao_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
 
@@ -69,13 +72,16 @@ include_once "./include/autoload.php";
 			{
 				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
 				$result		= mysqli_query($my_db, $query);
+                $uid        = $login_data["idx"];
 			}else{
 				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_facebook_gender, mb_facebook_birthday, mb_facebook_way_id   , mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_facebook_name."','".$mb_email."','".$mb_facebook_gender."','".$mb_facebook_birthday."','".$mb_facebook_way_id."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
 				$result   = mysqli_query($my_db, $query);
+                $uid      = mysql_insert_id($result);
 			}
 
 			// 회원 이메일, 이름 세션 생성
 			$_SESSION['ss_vvv_email']		= $mb_email;
+			$_SESSION['ss_vvv_idx']		    = $uid;
 			$_SESSION['ss_vvv_name']		= $mb_facebook_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
 
@@ -155,7 +161,7 @@ include_once "./include/autoload.php";
 
             if ($_SESSION['ss_vvv_email'])
             {
-                $query		= "INSERT INTO comment_info(v_idx, mb_email, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
+                $query		= "INSERT INTO comment_info(v_idx, mb_email, mb_idx, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_idx']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
                 $result		= mysqli_query($my_db, $query);
     
                 $query2		= "UPDATE video_info2 SET comment_count=comment_count+1 WHERE idx='".$v_idx."'";
