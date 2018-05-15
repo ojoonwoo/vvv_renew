@@ -243,3 +243,229 @@
 	margin-bottom: 37px;
 }
 /* video list */
+/* video detail */
+.app-container.sub .content.detail > .inner {
+	padding: 51px 24px;
+}
+.content.detail .info-wrap {
+	position: relative;
+}
+.content.detail .info-wrap .brand {
+	font-size: 12px;
+	color: #666666;
+}
+.content.detail .info-wrap .title {
+	font-size: 22px;
+	margin: 10px 0;
+	font-weight: 700;
+}
+.content.detail .info-wrap .date {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 11px;
+	color: #666666;
+	font-weight: 500;
+}
+.content.detail .info-wrap .icon-wrap {
+	font-size: 0;
+}
+.content.detail .info-wrap .icon-wrap > span {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+.content.detail .info-wrap .icon-wrap > span > span {
+	display: inline-block;
+	font-size: 11px;
+	color: #333333;
+}
+.content.detail .info-wrap .icon-wrap span .icon {
+	display: inline-block;
+	margin-right: 4px;
+}
+.content.detail .info-wrap .icon-wrap > span:last-child {
+	margin-right: 0;
+}
+.content.detail .player {
+	margin: 12px 0 17px;
+}
+.content.detail .actions {
+	font-size: 0;
+	text-align: center;
+	position: relative;
+}
+.content.detail .actions .action {
+	display: inline-block;
+	border-radius: 50%;
+	border: 1px solid #d0d1d1;
+	text-align: center;
+	width: 32px;
+	height: 32px;
+	margin-right: 17px;
+	font-size: 11px;
+	vertical-align: top;
+	position: relative;
+}
+.content.detail .actions .action span {
+	color: #666666;
+	font-weight: 600;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.content.detail .actions .action.share {
+	margin-right: 0;
+}
+.content.detail .actions .action.like {
+	background: url(../images/detail_action_like_off.png) center no-repeat;
+	background-size: 14px auto;
+}
+.content.detail .actions .action.like:hover,
+.content.detail .actions .action.like.is-active {
+	background: url(../images/detail_action_like_on.png) center no-repeat;
+	background-size: 14px auto;
+}
+.content.detail .actions .action.collect {
+	background: url(../images/detail_action_collect_off.png) center no-repeat;
+	background-size: 10px auto;
+}
+.content.detail .actions .action.collect:hover,
+.content.detail .actions .action.collect.is-active {
+	background: url(../images/detail_action_collect_on.png) center no-repeat;
+	background-size: 10px auto;
+}
+.content.detail .actions .action.share {
+	background: url(../images/detail_action_share_off.png) 40% 50% no-repeat;
+	background-size: 16px auto;
+}
+.content.detail .actions .share-spread {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -6px;
+	font-size: 0;
+}
+.content.detail .actions .share-spread li {
+	opacity: 0;
+	display: inline-block;
+	margin-right: 15px;
+}
+.content.detail .actions .share-spread li:last-child {
+	margin-right: 0;
+}
+.content.detail .actions .share-spread li.fb img {
+	width: 6px;
+}
+.content.detail .actions .share-spread li.kt img {
+	width: 11px;
+}
+.content.detail .actions .share-spread li.url img {
+	width: 10px;
+}
+.content.detail .block-comment {
+	margin: 38px 0 36px;
+}
+.content.detail .block-comment h5,
+.content.detail .block-related h5 {
+	font-size: 12px;
+	font-weight: 700;
+	margin-bottom: 9px;
+}
+.content.detail .block-comment .input-group {
+	font-size: 0;
+	margin-bottom: 26px;
+}
+.content.detail .block-comment .input-group > div {
+	display: inline-block;
+	vertical-align: top;
+}
+.content.detail .block-comment .input-group .text-box {
+	width: 81%;
+	height: 46px;
+	margin-right: 1%;
+}
+.content.detail .block-comment .input-group .text-box input[type="text"] {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #dcdcdc;
+	background: #ffffff;
+	padding-left: 18px;
+	font-size: 14px;
+}
+.content.detail .block-comment .input-group .button {
+	width: 18%;
+	height: 46px;
+}
+.content.detail .block-comment .input-group .button .button-submit {
+	width: 100%;
+	height: 100%;
+	background: #333333;
+	color: #ffffff;
+	font-size: 11px;
+}
+.content.detail .block-comment .comment-list {
+/*	padding: 0 13px 0 23px;*/
+}
+.content.detail .block-comment .comment-list .row {
+	padding: 16px 0;
+	position: relative;
+	border-bottom: 1px solid #dcdcdc;
+}
+.content.detail .block-comment .comment-list .row .u-id {
+	font-size: 11px;
+	font-weight: 600;
+	margin-bottom: 12px;
+	padding: 0 5px 0 7px;
+}
+.content.detail .block-comment .comment-list .row .u-comment {
+	font-size: 11px;
+	font-weight: 400;
+	padding: 0 40px 0 7px;
+	line-height: 15px;
+}
+.content.detail .block-comment .comment-list .row .date {
+	position: absolute;
+	top: 16px;
+	right: 5px;
+	font-size: 10px;
+}
+.content.detail .block-comment .comment-list .row .actions {
+	position: absolute;
+	top: 36px;
+	right: 8px;
+}
+.content.detail .block-comment .comment-list .row .actions .remove-comment {
+	background: url(../images/close_x_black.png) center no-repeat;
+	background-size: 10px 10px;
+	width: 16px;
+	height: 16px;
+}
+.content.detail .block-related .video-list {
+	overflow: hidden;
+}
+.content.detail .block-related .video {
+	width: 49%;
+	float: left;
+	margin-right: 2%;
+	margin-bottom: 18px;
+}
+.content.detail .block-related .video:nth-of-type(2n) {
+	margin-right: 0;
+}
+/* video detail */
+
+
+
+
+
+
+@media all and (max-width: 350px) {
+	.content.detail .actions .share-spread {
+		right: 7px;
+		top: 50%;
+		margin-top: 25px;
+	}	
+}
