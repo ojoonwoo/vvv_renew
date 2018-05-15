@@ -16,7 +16,7 @@
 <?
     }else{
 ?>        
-                                <a href="login.php">LOGOUT</a>
+                                <a href="logout.php">LOGOUT</a>
 <?
     }
 ?>                        
