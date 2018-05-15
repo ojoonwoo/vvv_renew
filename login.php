@@ -46,7 +46,7 @@
 								<p>WELCOME TO VVV</p>
 							</div>
 							<div class="button-wrap">
-								<button type="button" class="btn-login fb">페이스북 로그인</button>
+								<button type="button" class="btn-login fb" id="fblogin">페이스북 로그인</button>
 								<button type="button" class="btn-login kt">카카오톡 로그인</button>
 							</div>
 						</div>
@@ -168,8 +168,8 @@
 			}(document, 'script', 'facebook-jssdk'));
 
 			//add event listener to login button
-			// document.getElementById('fblogin').addEventListener('click', function() {
-			$doc.on('click', '.btn-login.fb', function() {
+			document.getElementById('fblogin').addEventListener('click', function() {
+			// $doc.on('click', '.btn-login.fb', function() {
 				//do the login
 				FB.login(function(response) {
 					console.log(response);
