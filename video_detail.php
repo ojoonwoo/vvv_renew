@@ -146,100 +146,65 @@
 										</div> -->
 									</div>
 								</div>
+<?
+	$related_query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE video_company='".$data["video_company"]."' AND idx NOT IN ('".$data["idx"]."') ORDER BY like_count DESC LIMIT 4";
+	$related_result		= mysqli_query($my_db, $related_query);
+	$related_count 		= mysqli_num_rows($related_result);
+	if ($related_count > 0)
+	{
+?>
+								
 								<div class="block-related">
 									<h5>관련 영상</h5>
 									<div class="list-container">
 										<div class="video-list">
+<?
+		while ($related_data = mysqli_fetch_array($related_result))
+		{
+			// 유튜브 영상 코드 자르기
+			$rel_yt_code_arr1   = explode("v=", $related_data["video_link"]);
+			$rel_yt_code_arr2   = explode("&",$rel_yt_code_arr1[1]);
+			$rel_yt_thumb       = "https://img.youtube.com/vi/".$rel_yt_code_arr2[0]."/hqdefault.jpg";
+?>
+											
 											<div class="video col-lg-3 col-md-3 col-sm-2">
 												<a href="#">
 													<figure>
-														<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+														<div class="thumbnail box-bg" style="background: url(<?=$rel_yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 														<figcaption>
-															<span class="brand">[UNICEF]</span>
-															<span class="title">Furniture That Hides From Hurting copy 4</span>
+															<span class="brand">[<?=$related_data["video_brand"]?>]</span>
+															<span class="title"><?=$related_data["video_title"]?></span>
 															<span class="icon-wrap">
 																<span class="play">
 																	<i class="icon"></i>
-																	<span class="cnt">4</span>
+																	<span class="cnt"><?=number_format($related_data["play_count"])?></span>
 																</span>
 																<span class="comment">
 																	<i class="icon"></i>
-																	<span class="cnt">0</span>
+																	<span class="cnt"><?=number_format($related_data["comment_count"])?></span>
 																</span>
 																<span class="like">
 																	<i class="icon"></i>
-																	<span class="cnt">2</span>
+																	<span class="cnt"><?=number_format($related_data["like_count"])?></span>
 																</span>
 																<span class="collect">
 																	<i class="icon"></i>
-																	<span class="cnt">2</span>
+																	<span class="cnt"><?=number_format($related_data["collect_count"])?></span>
 																</span>
 															</span>
 														</figcaption>
 													</figure>
 												</a>
 											</div>
-											<div class="video col-lg-3 col-md-3 col-sm-2">
-												<a href="#">
-													<figure>
-														<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-														<figcaption>
-															<span class="brand">[UNICEF]</span>
-															<span class="title">Furniture That Hides From Hurting copy 4</span>
-															<span class="icon-wrap">
-																<span class="play">
-																	<i class="icon"></i>
-																	<span class="cnt">4</span>
-																</span>
-																<span class="comment">
-																	<i class="icon"></i>
-																	<span class="cnt">0</span>
-																</span>
-																<span class="like">
-																	<i class="icon"></i>
-																	<span class="cnt">2</span>
-																</span>
-																<span class="collect">
-																	<i class="icon"></i>
-																	<span class="cnt">2</span>
-																</span>
-															</span>
-														</figcaption>
-													</figure>
-												</a>
-											</div>
-											<div class="video col-lg-3 col-md-3 col-sm-2">
-												<a href="#">
-													<figure>
-														<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-														<figcaption>
-															<span class="brand">[UNICEF]</span>
-															<span class="title">Furniture That Hides From Hurting copy 4</span>
-															<span class="icon-wrap">
-																<span class="play">
-																	<i class="icon"></i>
-																	<span class="cnt">4</span>
-																</span>
-																<span class="comment">
-																	<i class="icon"></i>
-																	<span class="cnt">0</span>
-																</span>
-																<span class="like">
-																	<i class="icon"></i>
-																	<span class="cnt">2</span>
-																</span>
-																<span class="collect">
-																	<i class="icon"></i>
-																	<span class="cnt">2</span>
-																</span>
-															</span>
-														</figcaption>
-													</figure>
-												</a>
-											</div>
+<?
+		}
+?>											
 										</div>
 									</div>
 								</div>
+<?
+	}
+?>								
 							</div>
 						</div>
 					</div>
