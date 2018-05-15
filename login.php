@@ -141,7 +141,7 @@
 					appId      : '114805166063283',
 					cookie     : true,  // enable cookies to allow the server to access
 					xfbml      : true,  // parse social plugins on this page
-					version    : 'v3.0' 
+					version    : 'v2.8' 
 				});
 
 				//check user session and refresh it
