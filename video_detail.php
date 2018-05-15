@@ -111,18 +111,29 @@
 										</div>
 									</div>
 									<div class="comment-list">
+<?
+	$comment_query		= "SELECT * FROM ".$_gl['comment_info_table']." WHERE v_idx='".$idx."' AND showYN='Y' ORDER BY idx DESC";
+	$comment_result		= mysqli_query($my_db, $comment_query);
+
+	while ($comment_data = mysqli_fetch_array($comment_result))
+	{
+?>
 										<div class="row">
 											<div class="u-id">
-												ojoonwoo
+												<a href="my_vvv.php?email=<?=$comment_data["mb_email"]?>"><?=$comment_data["mb_name"]?></a>
 											</div>
 											<div class="u-comment">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+												<?=$comment_data["comment_text"]?>
 											</div>
 											<div class="date">
-												2018-01-01
+												<?=substr($comment_data["comment_regdate"],0,16)?>
 											</div>
 										</div>
-										<div class="row">
+<?
+	}
+?>
+										
+										<!-- <div class="row">
 											<div class="u-id">
 												ojoonwoo
 											</div>
@@ -132,7 +143,7 @@
 											<div class="date">
 												2018-01-01
 											</div>
-										</div>
+										</div> -->
 									</div>
 								</div>
 								<div class="block-related">
