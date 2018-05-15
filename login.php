@@ -215,7 +215,7 @@
 									"mb_thumbnail_img"	: res.properties.thumbnail_image
 								},
 								success: function(response){
-									console.log(response);
+									console.log(res);
 									if (response.match("Y") == "Y")
 									{
 										if (refurl == "")
