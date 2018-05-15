@@ -12,11 +12,11 @@
 	if (!$_SESSION['ss_vvv_email'])
 	{
 ?>                                
-                                <a href="login.php">LOGOUT</a>
+                                <a href="login.php">LOGIN</a>
 <?
     }else{
 ?>        
-                                <a href="login.php">LOGIN</a>
+                                <a href="login.php">LOGOUT</a>
 <?
     }
 ?>                        
