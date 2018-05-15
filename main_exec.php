@@ -24,11 +24,11 @@ include_once "./include/autoload.php";
 
 			$login_query		= "SELECT * FROM member_info WHERE 1 AND mb_kakao_way_id='".$mb_kakao_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
-			$login_data			= mysqli_fetch_array($login_result);
+			$login_num			= mysqli_num_rows($login_result);
 
-			if ($login_data)
+			if ($login_num > 0)
 			{
-				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
+				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_kakao_way_id='".$mb_kakao_way_id."'";
 				$result		= mysqli_query($my_db, $query);
 			}else{
 				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_email."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
