@@ -75,7 +75,7 @@
 										</span>
 										<span class="like">
 											<i class="icon"></i>
-											<span class="cnt"><?=number_format($detail_data["like_count"])?></span>
+											<span class="cnt" id="like_count"><?=number_format($detail_data["like_count"])?></span>
 										</span>
 										<span class="collect">
 											<i class="icon"></i>
@@ -345,14 +345,14 @@
 						if (response.match("Y") == "Y")
 						{
 							alert("Like 되었습니다!");
-							$(".icon.like").attr("class","icon liked");
+							$(".action.like").addClass("is-active");
 							$("#like_count").html(Number($("#like_count").html()) + 1);
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
 							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
 						}else{
 							alert("Like 에서 제외 되었습니다!");
-							$(".icon.liked").attr("class","icon like");
+							$(".action.like").removeClass("is-active");
 							$("#like_count").html($("#like_count").html() - 1);
 						}
 					}
