@@ -5,7 +5,11 @@ include_once "./include/autoload.php";
 	{
 		// 카카오 회원 가입 및 로그인 처리
 		case "member_kakao_login" :
-			$mb_email					= $_REQUEST["mb_email"];
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $mb_email					= $_REQUEST["mb_email"];
 			$mb_login_way				= $_REQUEST["login_way"];
 			$mb_kakao_email_verified	= $_REQUEST["mb_email_verified"];
 			$mb_kakao_way_id			= $_REQUEST["mb_way_id"];
