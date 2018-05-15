@@ -212,9 +212,16 @@ header #gnb .burger-wrap .line.mid {
 .global-menu .inner {
 	padding-top: 15vh;
 }
-.global-menu .list-wrap {
-	/*	margin-right: 9.6vw;*/
-	/*	justify-content: space-between;*/
+
+.global-menu .user-status {
+	position: absolute;
+	top: 27px;
+	right: 40px;
+}
+.global-menu .user-status a {
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0;
 }
 .global-menu .list-wrap .list {
 	text-align: center;
@@ -227,7 +234,7 @@ header #gnb .burger-wrap .line.mid {
 	margin-bottom: 0;
 }
 .global-menu .list-wrap .list li a {
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 400;
 	transition: text-shadow 0.17s ease;
 }
