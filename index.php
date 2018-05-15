@@ -88,13 +88,13 @@
 					<div class="list-container best-area">
 						<div class="title-area">
 							<h2 class="list-title">BEST</h2>
-							<a href="#" class="view-all">전체보기</a>
+							<a href="best_list.php" class="view-all">전체보기</a>
 						</div>
 						<div class="video-list">
 							<div class="swiper-container best-slider">
 								<div class="swiper-wrapper">
 <?
-    $best_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY like_count DESC, collect_count DESC, play_count DESC LIMIT 0, 6";
+    $best_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' AND best_pick='Y' ORDER BY best_num ASC LIMIT 0, 6";
     $best_result 	= mysqli_query($my_db, $best_query);
     while ($best_data = mysqli_fetch_array($best_result))
     {    
