@@ -109,8 +109,7 @@
             $video_title    = substr($best_data["video_title"],0,45)."...";
         else
             $video_title    = $best_data["video_title"];
-?>                            
-                                    
+?>                                    
 									<div class="swiper-slide">
 										<div class="video">
 											<a href="video_detail.php?idx=<?=$best_data['video_idx']?>">
