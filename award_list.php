@@ -85,6 +85,14 @@
 							</div>
 							<div class="cate-wrap">
 								<div class="main-cate">
+									<div class="sort">
+										<select name="lc-order-date" id="lc-order-date">
+											<option disabled>연도</option>
+											<option value="2017" selected>2017</option>
+											<option value="2016">2016</option>
+											<option value="2015">2015</option>
+										</select>
+									</div>
 									<ul>
 										<li>
 											<a href="javascript:sel_award(2)" class="award_name _2 is-active">NEWYORK</a>
@@ -100,72 +108,65 @@
 								<div class="sub-cate">
 									<ul class="award _3" style="display:none;">
 										<li>
-											<a href="javascript:sel_award(2)" class="is-active">ALL</a>
+											<a href="javascript:sel_award(3)" class="award_prize _3 is-active">ALL</a>
 										</li>
 										<li>
-											<a href="">Grand</a>
+											<a href="javascript:sel_award(15)" class="award_prize _15">Grand</a>
 										</li>
 										<li>
-											<a href="">Gold</a>
+											<a href="javascript:sel_award(16)" class="award_prize _16">Gold</a>
 										</li>
 										<li>
-											<a href="">Silver</a>
+											<a href="javascript:sel_award(17)" class="award_prize _17">Silver</a>
 										</li>
 									</ul>
 									<ul class="award _2">
 										<li>
-											<a href="javascript:sel_award(2)" class="is-active">ALL</a>
+											<a href="javascript:sel_award(2)" class="award_prize _2 is-active">ALL</a>
 										</li>
 										<li>
-											<a href="">Best</a>
+											<a href="javascript:sel_award(10)" class="award_prize _10">Best</a>
 										</li>
 										<li>
-											<a href="">Grand</a>
+											<a href="javascript:sel_award(11)" class="award_prize _11">Grand</a>
 										</li>
 										<li>
-											<a href="">First</a>
+											<a href="javascript:sel_award(12)" class="award_prize _12">First</a>
 										</li>
 										<li>
-											<a href="">Second</a>
+											<a href="javascript:sel_award(13)" class="award_prize _13">Second</a>
 										</li>
 										<li>
-											<a href="">Third</a>
+											<a href="javascript:sel_award(14)" class="award_prize _14">Third</a>
 										</li>
 									</ul>
 									<ul class="award _1" style="display:none;">
 										<li>
-											<a href="javascript:sel_award(2)" class="is-active">ALL</a>
+											<a href="javascript:sel_award(1)" class="award_prize _1 is-active">ALL</a>
 										</li>
 										<li>
-											<a href="">Grand</a>
+											<a href="javascript:sel_award(4)" class="award_prize _4">Grandprix</a>
 										</li>
 										<li>
-											<a href="">Hall of Fame</a>
+											<a href="javascript:sel_award(5)" class="award_prize _5">Grand</a>
 										</li>
 										<li>
-											<a href="">Gold</a>
+											<a href="javascript:sel_award(6)" class="award_prize _6">Hall of Fame</a>
 										</li>
 										<li>
-											<a href="">Silver</a>
+											<a href="javascript:sel_award(7)" class="award_prize _7">Gold</a>
 										</li>
 										<li>
-											<a href="">Bronze</a>
+											<a href="javascript:sel_award(8)" class="award_prize _8">Silver</a>
 										</li>
 										<li>
-											<a href="">Shortlist</a>
+											<a href="javascript:sel_award(9)" class="award_prize _9">Bronze</a>
 										</li>
 									</ul>
 								</div>
 							</div>
-							<div>
-								<ul>
-									<li><a href="">2017</a></li>
-									<li><a href="">2016</a></li>
-									<li><a href="">2015</a></li>
-								</ul>
-							</div>
 							<div class="list-container">
-								<div class="video-list">
+								<div class="video-list" id="award_list">
 <?
     $award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_name='1' AND awards_winner_year='2017' GROUP BY video_idx";
 	$award_result 	= mysqli_query($my_db, $award_query);
@@ -205,7 +206,7 @@
 			$video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
-											<a href="#">
+											<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
 												<figure>
 													<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 													<figcaption>
@@ -258,7 +259,7 @@
 			$video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
-											<a href="#">
+											<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
 												<figure>
 													<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 													<figcaption>
@@ -310,6 +311,8 @@
 				$('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 				$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 				$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				//				local search - award
+				$('#lc-order-date').selectmenu().selectmenu('menuWidget').addClass("overflow");
 			});
 
 			//	기본 기능 테스트 코드
@@ -402,20 +405,37 @@
 			
 			function sel_award(award)
 			{
-				$(".award").hide();
-				$(".award._"+award).show();
-				$(".award_name").removeClass("is-active");
-				$(".award_name._"+award).addClass("is-active");
-				// switch (award)
-				// {
-				// 	case 1:
+				var award_date = $("#lc-order-date").val();
+				if (award < 4)
+				{
+					$(".award").hide();
+					$(".award._"+award).show();
+					$(".award_name").removeClass("is-active");
+					$(".award_name._"+award).addClass("is-active");
+				}
+				$(".award_prize").removeClass("is-active");
+				$(".award_prize._"+award).addClass("is-active");
 
-				// 	break;
-				// 	case 2:
-				// 	break;
-				// 	case 3:
-				// 	break;
-				// }
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./ajax_award.php",
+					data:{
+						"award"					: award,
+						"award_date"			: award_date
+					},
+					success: function(response){
+						console.log(response);
+						// res_arr	= response.split("||");
+						// current_page = current_page + 1;
+						// if (current_page >= total_page)
+						// 	$(".read-more").hide();
+						// else
+						// 	$(".read-more").show();
+						$("#award_list").html(response);
+					}
+				});
 			}
 		</script>
 	</body>
