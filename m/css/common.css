@@ -344,40 +344,46 @@ header #gnb .burger-wrap .line.mid {
 	height: 100%;
 }
 .global-search-layer .inner {
-	background: rgba(242, 242, 242, 0.9);
-	padding: 112px 0 54px;
+/*	background: rgba(242, 242, 242, 0.9);*/
+	background: #f2f2f2;
+	padding: 57px 0;
 }
 .global-search-layer .search-wrapper {
-	width: 257px;
-	margin: 0 auto;
 }
+/*
 .global-search-layer .search-wrapper .wrap:first-child {
 	margin-bottom: 17px;
 	font-size: 0;
 }
-.global-search-layer .search-wrapper .wrap .button-refresh {
-	height: 15px;
-	padding-top: 18px;
-	background: url(../images/search_refresh.png) center center no-repeat;
-	background-size: 18px 15px;
-	font-size: 10px;
-	margin-left: 7px;
-	vertical-align: top;
-}
-.global-search-layer .search-wrapper .wrap .search-bar {
-	width: 213px;
-	display: inline-block;
+*/
+.global-search-layer .search-wrapper .search-bar {
 	position: relative;
-	background: url(../images/search_obj_black.png) 0 5px no-repeat;
+	background: url(../images/search_obj_black.png) 40px 9px no-repeat;
 	background-size: 15px 15px;
+	padding: 0 40px;
+	border-bottom: 1px solid #b3b3b3;
 	vertical-align: top;
 }
-.global-search-layer .search-wrapper .wrap .search-bar input[type="text"] {
+.global-search-layer .search-wrapper .search-bar input[type="text"] {
 	width: 100%;
-	padding: 5px 0 5px 26px;
+	padding: 9px 0 9px 26px;
 	font-size: 13px;
 }
-.global-search-layer .search-wrapper .wrap .search-bar:after {
+
+input::-webkit-input-placeholder {
+	font-size: 13px;
+	color: #c5c5c5;
+}
+input:-ms-input-placeholder {
+	font-size: 13px;
+	color: #c5c5c5;
+}
+input::placeholder {
+	font-size: 13px;
+	color: #c5c5c5;
+}
+/*
+.global-search-layer .search-wrapper .search-bar:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -387,6 +393,7 @@ header #gnb .burger-wrap .line.mid {
 	height: 1px;
 	background: #333333;
 }
+*/
 .global-search-layer .search-wrapper .sortings {
 	font-size: 0;
 }
@@ -425,6 +432,15 @@ header #gnb .burger-wrap .line.mid {
 	font-size: 11px;
 	font-weight: 500;
 /*	letter-spacing: -1px;*/
+}
+.global-search-layer .search-wrapper .button-refresh {
+	height: 15px;
+	padding-top: 18px;
+	background: url(../images/search_refresh.png) center center no-repeat;
+	background-size: 18px 15px;
+	font-size: 10px;
+	margin-left: 7px;
+	vertical-align: top;
 }
 
 html.layer-opened .global-search-layer {
