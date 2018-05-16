@@ -107,7 +107,6 @@
         else
             $video_title    = $best_data["video_title"];
 ?>                                    
-										
 										<div class="swiper-slide">
 											<div class="video">
 												<a href="video_detail.php?idx=<?=$best_data['video_idx']?>">
@@ -295,12 +294,12 @@
 				//		$('.global-search-layer .sort').each(function() {
 				//			$(this).selectmenu();
 				//		});
-				$('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				$('#order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				$('#order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				$('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				// $('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				// $('#order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				// $('#order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				// $('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				// $('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				// $('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 			});
 
 			//	기본 기능 테스트 코드
