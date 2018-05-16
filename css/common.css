@@ -583,6 +583,9 @@ html.layer-opened .global-search-layer {
 
 
 /* jquery ui customize */
+.ui-widget {
+	font-family: inherit;
+}
 .ui-selectmenu-button.ui-button {
 	height: 100%;
 	vertical-align: top;
