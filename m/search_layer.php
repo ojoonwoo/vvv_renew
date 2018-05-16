@@ -17,7 +17,7 @@
 													<option disabled selected>연도</option>
 <?
     $s_year = 2018;
-    while( $s_year > 2000 )
+    while( $s_year > 2010 )
     {
 ?>        
     										        <option value="<?=$s_year?>"><?=$s_year?></option>

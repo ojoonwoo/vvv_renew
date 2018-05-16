@@ -56,7 +56,7 @@
 												<option value="" disabled selected>연 도</option>
 <?
     $s_year = 2018;
-    while( $s_year > 2000 )
+    while( $s_year > 2010 )
     {
 ?>        
 										        <option value="<?=$s_year?>" <?if($search_year == $s_year){?>selected<?}?>><?=$s_year?></option>
