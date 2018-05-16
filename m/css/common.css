@@ -338,11 +338,11 @@ header #gnb .burger-wrap .line.mid {
 .global-search-layer {
 	position: fixed;
 	top: 0;
-	left: 0;
-	width: 100vw;
+	right: 0;
 	height: 100vh;
 	z-index: 0;
 	opacity: 0;
+	overflow: hidden;
 	/*	z-index: 2;*/
 }
 .global-search-layer .layer-close {
@@ -357,12 +357,17 @@ header #gnb .burger-wrap .line.mid {
 }
 .global-search-layer .bg-dark {
 	background: rgba(8, 8, 8, 0.5);
+	width: 100vw;
 	height: 100%;
 }
 .global-search-layer .inner {
 /*	background: rgba(242, 242, 242, 0.9);*/
 	background: #f2f2f2;
+	margin: 0 0 0 auto;
+	width: 60vw;
 	padding: 57px 0;
+	height: 100%;
+	overflow-y: auto;
 }
 .global-search-layer .search-wrapper {
 }
@@ -398,24 +403,23 @@ header #gnb .burger-wrap .line.mid {
 }
 */
 .global-search-layer .search-wrapper .sortings {
-	padding: 0 23px;
+	padding: 0 30px;
 }
 .global-search-layer .search-wrapper .sortings .sort-list .sort {
 	/*	border: 1px solid #080808;*/
 	font-size: 13px;
 	font-weight: 400;
-	padding: 15px 0 0;
+	padding: 15px 8px 0;
 	border-bottom: 1px solid #b3b3b3;
-	text-align: center;
+	text-align: left;
 }
 .global-search-layer .search-wrapper .sortings .sort-list .sort select {
 	border: 0 none;
 	text-align: center;
 	display: inline-block;
 	outline: 0 none;
-	margin-left: 24px;
 	font-size: 11px;
-	padding: 9px 0 15px;
+	padding: 9px 0 15px 2px;
 	border-radius: 0;
 	-webkit-box-align: left;
 	-ms-flex-align: left;
