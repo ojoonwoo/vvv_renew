@@ -155,7 +155,7 @@
 								<h2 class="list-title">RECENT</h2>
 								<a href="video_list.php?sort=new" class="view-all">전체보기</a>
 							</div>
-							<div class="video-list">
+							<div class="video-list" id="recent_video">
 <?
 	$view_pg            = 8;
 	$s_page				= 0;
@@ -357,6 +357,7 @@
 			});
 			// 검색 APPLY 클릭
 			$doc.on('click', '#search-layer-submit', function() {
+				console.log("search");
 				var search_keyword      = nullToBlank($("#search_keyword").val());
 				var search_year         = nullToBlank($("#order-date").val());
 				var search_nation       = nullToBlank($("#order-nation").val());

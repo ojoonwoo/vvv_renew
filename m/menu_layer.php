@@ -3,10 +3,13 @@
 						<a href="#" class="btn-close button-menu">
 							<img src="./images/close_x_black.png" alt="">
 						</a>
+						<div class="user-status">
+							<a href="#">LOGIN</a>
+						</div>
 						<div class="list-wrap">
 							<ul class="list">
 								<li>
-									<a href="#" class="is-active">HOME</a>
+									<a href="index.php" class="is-active">HOME</a>
 								</li>
 								<li>
 									<a href="#">ALL VVV</a>
