@@ -186,18 +186,6 @@
     $list_result 	= mysqli_query($my_db, $list_query);
     while ($list_data = mysqli_fetch_array($list_result))
     {    
-		// 영화제 검색
-		// if ($search_prize != "")
-		// {
-		// 	$prize_query	= "SELECT * FROM awards_list_info WHERE 1 AND video_idx='".$list_data["video_idx"]."'";
-		// 	$prize_result	= mysqli_query($my_db, $prize_query);
-		// 	$prize_num		= mysqli_num_rows($prize_result);
-
-		// 	if ($prize_num == 0)
-		// 	{
-		// 		continue;
-		// 	}
-		// }
         // 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $list_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);

@@ -19,7 +19,7 @@
 						</ul>
 						<ul class="list">
 							<li>
-								<a href="#">AWARDS</a>
+								<a href="award_list.php">AWARDS</a>
 							</li>
 						</ul>
 					</div>
