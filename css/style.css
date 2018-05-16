@@ -372,6 +372,7 @@
 	margin-right: 3.2%;
 	width: 48.4%;
 	display: inline-block;
+	vertical-align: top;
 }
 .awards .list-container .video-list .column:last-child {
 	margin-right: 0;

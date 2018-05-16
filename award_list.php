@@ -41,7 +41,7 @@
 						<div class="inner">
 							<div class="awards-banner">
 								<div class="banner _01 is-active">
-									<a href="javascript:void(0)" onclick="bannerResizing(1, this)">
+									<a href="javascript:void(0)" onmouseover="bannerResizing(1, this)">
 										<figure>
 <!--
 											<div class="img box-bg">
@@ -55,7 +55,7 @@
 									</a>
 								</div>
 								<div class="banner _02">
-									<a href="javascript:void(0)" onclick="bannerResizing(2, this)">
+									<a href="javascript:void(0)" onmouseover="bannerResizing(2, this)">
 										<figure>
 <!--
 											<div class="img box-bg">
@@ -69,7 +69,7 @@
 									</a>
 								</div>
 								<div class="banner _03">
-									<a href="javascript:void(0)" onclick="bannerResizing(3, this)">
+									<a href="javascript:void(0)" onmouseover="bannerResizing(3, this)">
 										<figure>
 <!--
 											<div class="img box-bg">
@@ -87,20 +87,54 @@
 								<div class="main-cate">
 									<ul>
 										<li>
-											<a href="javascript:sel_award(2)" class="is-active">NEWYORK</a>
+											<a href="javascript:sel_award(2)" class="award_name _2 is-active">NEWYORK</a>
 										</li>
 										<li>
-											<a href="javascript:sel_award(3)">CANNES</a>
+											<a href="javascript:sel_award(3)" class="award_name _3">CANNES</a>
 										</li>
 										<li>
-											<a href="javascript:sel_award(1)">CLIO</a>
+											<a href="javascript:sel_award(1)" class="award_name _1">CLIO</a>
 										</li>
 									</ul>
 								</div>
 								<div class="sub-cate">
-									<ul>
+									<ul class="award _3" style="display:none;">
 										<li>
-											<a href="" class="is-active">ALL</a>
+											<a href="javascript:sel_award(2)" class="is-active">ALL</a>
+										</li>
+										<li>
+											<a href="">Grand</a>
+										</li>
+										<li>
+											<a href="">Gold</a>
+										</li>
+										<li>
+											<a href="">Silver</a>
+										</li>
+									</ul>
+									<ul class="award _2">
+										<li>
+											<a href="javascript:sel_award(2)" class="is-active">ALL</a>
+										</li>
+										<li>
+											<a href="">Best</a>
+										</li>
+										<li>
+											<a href="">Grand</a>
+										</li>
+										<li>
+											<a href="">First</a>
+										</li>
+										<li>
+											<a href="">Second</a>
+										</li>
+										<li>
+											<a href="">Third</a>
+										</li>
+									</ul>
+									<ul class="award _1" style="display:none;">
+										<li>
+											<a href="javascript:sel_award(2)" class="is-active">ALL</a>
 										</li>
 										<li>
 											<a href="">Grand</a>
@@ -123,49 +157,129 @@
 									</ul>
 								</div>
 							</div>
+							<div>
+								<ul>
+									<li><a href="">2017</a></li>
+									<li><a href="">2016</a></li>
+									<li><a href="">2015</a></li>
+								</ul>
+							</div>
 							<div class="list-container">
 								<div class="video-list">
-									<div class="column">
 <?
-    $award_query	= "SELECT * FROM awards_list_info WHERE 1 AND showYN='Y' AND best_pick='Y' ORDER BY best_num ASC LIMIT 0, 6";
-    $award_result 	= mysqli_query($my_db, $award_query);
+    $award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_name='1' AND awards_winner_year='2017' GROUP BY video_idx";
+	$award_result 	= mysqli_query($my_db, $award_query);
+	
+	$i = 0;
     while ($award_data = mysqli_fetch_array($award_result))
     {    
-        // 유튜브 영상 코드 자르기
-        $yt_code_arr1   = explode("v=", $best_data["video_link"]);
+		if ($i % 2 == 0)
+		{
+			// 짝수 배열
+			$award_even_list_array[$i] = $award_data;
+		}else{
+			// 홀수 배열
+			$award_odd_list_array[$i] = $award_data;
+		}
+		$i++;
+	}
+?>										
+									<div class="column">
+<?
+	foreach($award_even_list_array as $key => $val)
+	{
+		$video_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val["video_idx"]."'";
+		$video_result 	= mysqli_query($my_db, $video_query);
+		$video_data		= mysqli_fetch_array($video_result);
+
+		// 유튜브 영상 코드 자르기
+        $yt_code_arr1   = explode("v=", $video_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-        $title_count    = mb_strlen($best_data["video_title"],'utf-8');
+        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
         if ($title_count > 45)
-            $video_title    = substr($best_data["video_title"],0,45)."...";
+            $video_title    = substr($video_data["video_title"],0,45)."...";
         else
-            $video_title    = $best_data["video_title"];
+			$video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
 											<a href="#">
 												<figure>
 													<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 													<figcaption>
-														<span class="brand">[UNICEF]</span>
-														<span class="title">Furniture That Hides From Hurting copy 4</span>
+														<span class="brand">[<?=$video_data["video_brand"]?>]</span>
+														<span class="title"><?=$video_data["video_title"]?></span>
 														<span class="icon-wrap">
 															<span class="play">
 																<i class="icon"></i>
-																<span class="cnt">4</span>
+																<span class="cnt"><?=$video_data["play_count"]?></span>
 															</span>
 															<span class="comment">
 																<i class="icon"></i>
-																<span class="cnt">0</span>
+																<span class="cnt"><?=$video_data["comment_count"]?></span>
 															</span>
 															<span class="like">
 																<i class="icon"></i>
-																<span class="cnt">2</span>
+																<span class="cnt"><?=$video_data["like_count"]?></span>
 															</span>
 															<span class="collect">
 																<i class="icon"></i>
-																<span class="cnt">2</span>
+																<span class="cnt"><?=$video_data["collect_count"]?></span>
+															</span>
+														</span>
+													</figcaption>
+												</figure>
+											</a>
+										</div>
+<?
+	}
+?>										
+									</div>
+									<div class="column right">
+<?
+	foreach($award_odd_list_array as $key => $val)
+	{
+		$video_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val["video_idx"]."'";
+		$video_result 	= mysqli_query($my_db, $video_query);
+		$video_data		= mysqli_fetch_array($video_result);
+
+		// 유튜브 영상 코드 자르기
+        $yt_code_arr1   = explode("v=", $video_data["video_link"]);
+        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+
+        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
+
+        if ($title_count > 45)
+            $video_title    = substr($video_data["video_title"],0,45)."...";
+        else
+			$video_title    = $video_data["video_title"];
+?>										
+										<div class="video">
+											<a href="#">
+												<figure>
+													<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+													<figcaption>
+														<span class="brand">[<?=$video_data["video_brand"]?>]</span>
+														<span class="title"><?=$video_data["video_title"]?></span>
+														<span class="icon-wrap">
+															<span class="play">
+																<i class="icon"></i>
+																<span class="cnt"><?=$video_data["play_count"]?></span>
+															</span>
+															<span class="comment">
+																<i class="icon"></i>
+																<span class="cnt"><?=$video_data["comment_count"]?></span>
+															</span>
+															<span class="like">
+																<i class="icon"></i>
+																<span class="cnt"><?=$video_data["like_count"]?></span>
+															</span>
+															<span class="collect">
+																<i class="icon"></i>
+																<span class="cnt"><?=$video_data["collect_count"]?></span>
 															</span>
 														</span>
 													</figcaption>
@@ -177,11 +291,9 @@
 ?>										
 									</div>
 								</div>
-<!--
-								<button type="button" class="read-more">
+								<!-- <button type="button" class="read-more">
 									<img src="./images/plus_icon.png" alt="">
-								</button>
--->
+								</button> -->
 							</div>
 						</div>
 					</div>
@@ -288,6 +400,23 @@
 				}
 			}
 			
+			function sel_award(award)
+			{
+				$(".award").hide();
+				$(".award._"+award).show();
+				$(".award_name").removeClass("is-active");
+				$(".award_name._"+award).addClass("is-active");
+				// switch (award)
+				// {
+				// 	case 1:
+
+				// 	break;
+				// 	case 2:
+				// 	break;
+				// 	case 3:
+				// 	break;
+				// }
+			}
 		</script>
 	</body>
 
