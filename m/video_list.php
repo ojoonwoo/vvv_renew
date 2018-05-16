@@ -35,7 +35,7 @@
 					<div class="content vid-list">
 						<div class="inner">
 							<!--검색 영역-->
-							<div class="search-wrapper">
+							<!-- <div class="search-wrapper">
 								<div class="wrap">
 									<div class="search-bar">
 										<input type="text">
@@ -109,7 +109,7 @@
 										APPLY
 									</button>
 								</div>
-							</div>
+							</div> -->
 							<!--검색 영역-->
 							<div class="list-container">
 								<div class="video-list" id="list_video">
@@ -339,13 +339,13 @@
 
 			// RECENT 더보기 버튼 클릭
 			$doc.on('click', '.read-more', function() {
-				var search_keyword      = nullToBlank($("#lc-order-keyword").val());
-				var search_year         = nullToBlank($("#lc-order-date").val());
-				var search_nation       = nullToBlank($("#lc-order-nation").val());
-				var search_category1    = nullToBlank($("#lc-order-industry").val());
-				var search_genre        = nullToBlank($("#lc-order-genre").val());
-				var search_prize        = nullToBlank($("#lc-order-awards").val());
-				var search_sort         = nullToBlank($("#lc-order-sortby").val());
+				var search_keyword      = nullToBlank($("#search_keyword").val());
+				var search_year         = nullToBlank($("#order-date").val());
+				var search_nation       = nullToBlank($("#order-nation").val());
+				var search_category1    = nullToBlank($("#order-industry").val());
+				var search_genre        = nullToBlank($("#order-genre").val());
+				var search_prize        = nullToBlank($("#order-awards").val());
+				var search_sort         = nullToBlank($("#order-sortby").val());
 
 				video_pg = video_pg + Number(view_page);
 				$.ajax({

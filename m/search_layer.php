@@ -4,7 +4,7 @@
 							<button type="button" class="layer-close"></button>
 							<div class="search-wrapper">
 								<div class="search-bar">
-									<input type="text" placeholder="검색" id="search_keyword">
+									<input type="text" placeholder="검색" id="search_keyword" value="<?=$search_keyword?>">
 								</div>
 								<div class="wrap sortings">
 									<div class="sort-list">
@@ -17,7 +17,7 @@
     while( $s_year > 2010 )
     {
 ?>        
-                                                <option value="<?=$s_year?>"><?=$s_year?></option>
+                                                <option value="<?=$s_year?>" <?if($search_year == $s_year){?>selected<?}?>><?=$s_year?></option>
 <?
         $s_year--;
     }
@@ -28,8 +28,8 @@
 											<label for="order-nation">국가</label>
 											<select name="order-nation" id="order-nation">
 												<option disabled selected>전체</option>
-                                                <option value="domestic">국내</option>
-                                                <option value="foreign">해외</option>
+                                                <option value="domestic" <?if($search_nation == "domestic"){?>selected<?}?>>국내</option>
+                                                <option value="foreign" <?if($search_nation == "foreign"){?>selected<?}?>>해외</option>
 											</select>
 										</div>
 										<div class="sort">
@@ -42,7 +42,7 @@
     while ($category1_data = mysqli_fetch_array($category1_result))
     {
 ?>
-                                                <option value="<?=$category1_data["idx"]?>"><?=$category1_data["category_name"]?></option>
+                                                <option value="<?=$category1_data["idx"]?>" <?if($search_category == $category1_data["idx"]){?>selected<?}?>><?=$category1_data["category_name"]?></option>
 <?
     }    
 ?>
@@ -58,7 +58,7 @@
     while ($genre_data = mysqli_fetch_array($genre_result))
     {
 ?>
-                                                <option value="<?=$genre_data["idx"]?>"><?=$genre_data["genre_name"]?></option>
+                                                <option value="<?=$genre_data["idx"]?>" <?if($search_genre == $genre_data["idx"]){?>selected<?}?>><?=$genre_data["genre_name"]?></option>
 <?
     }    
 ?>
@@ -68,17 +68,17 @@
 											<label for="order-awards">광고제</label>
 											<select name="order-awards" id="order-awards">
 												<option disabled selected>전체</option>
-                                                <option value="1">CLIO</option>
-                                                <option value="3">CANNE</option>
-                                                <option value="2">NYF</option>
+                                                <option value="1" <?if($search_prize == "1"){?>selected<?}?>>CLIO</option>
+                                                <option value="3" <?if($search_prize == "3"){?>selected<?}?>>CANNE</option>
+                                                <option value="2" <?if($search_prize == "2"){?>selected<?}?>>NYF</option>
 											</select>
 										</div>
 										<div class="sort">
 											<label for="order-sortby">분류</label>
 											<select name="order-sortby" id="order-sortby">
 												<option disabled selected>전체</option>
-                                                <option value="new">최신순</option>
-                                                <option value="best">인기순</option>
+                                                <option value="new" <?if($search_sort == "new"){?>selected<?}?>>최신순</option>
+                                                <option value="best" <?if($search_sort == "best"){?>selected<?}?>>인기순</option>
 											</select>
 										</div>
 									</div>
