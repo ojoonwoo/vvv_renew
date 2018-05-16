@@ -112,7 +112,7 @@
 							</div>
 							<!--검색 영역-->
 							<div class="list-container">
-								<div class="video-list">
+								<div class="video-list" id="list_video">
 <?
 	$view_pg            = 12;
 	$s_page				= 0;
@@ -168,22 +168,10 @@
 	$total_video_num	= mysqli_num_rows($total_result);
 	$total_page			= ceil($total_video_num / $view_pg);
 	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$s_page.", ".$view_pg."";
-	// print_r($list_query);
     $list_result 	= mysqli_query($my_db, $list_query);
-    while ($list_data = mysqli_fetch_array($list_result))
-    {    
-		// 영화제 검색
-		// if ($search_prize != "")
-		// {
-		// 	$prize_query	= "SELECT * FROM awards_list_info WHERE 1 AND video_idx='".$list_data["video_idx"]."'";
-		// 	$prize_result	= mysqli_query($my_db, $prize_query);
-		// 	$prize_num		= mysqli_num_rows($prize_result);
 
-		// 	if ($prize_num == 0)
-		// 	{
-		// 		continue;
-		// 	}
-		// }
+	while ($list_data = mysqli_fetch_array($list_result))
+    {    
         // 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $list_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
@@ -202,7 +190,6 @@
             $video_brand    = iconv_substr($list_data["video_brand"],0,30)."..";
         else
             $video_brand    = $list_data["video_brand"];
-			
 ?>                            								
 									<div class="video">
 										<a href="video_detail.php?idx=<?=$list_data["video_idx"]?>">
@@ -379,6 +366,7 @@
 						"sort_val"				: search_sort
 					},
 					success: function(response){
+						console.log(response);
 						res_arr	= response.split("||");
 						// console.log(res_arr[4]);
 						current_page = current_page + 1;
