@@ -126,8 +126,8 @@
 							{
 								location.href	= "<?=$ref_url?>";
 							}else{
-								// alert("다시 시도해 주세요!");
-								// location.reload();
+								alert("다시 시도해 주세요!");
+								location.reload();
 							}
 
 						}
