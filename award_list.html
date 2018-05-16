@@ -201,8 +201,8 @@
 					<div class="content awards">
 						<div class="inner">
 							<div class="awards-banner">
-								<div class="banner _01" style="background: url(./images/cannes_off.png) center no-repeat; background-size: cover;">
-									<a href="#">
+								<div class="banner _01 is-active">
+									<a href="javascript:void(0)" onclick="bannerResizing(1, this)">
 										<figure>
 <!--
 											<div class="img box-bg">
@@ -215,8 +215,8 @@
 										</figure>
 									</a>
 								</div>
-								<div class="banner _02" style="background: url(./images/newyork_off.png) left center no-repeat; background-size: cover;">
-									<a href="#">
+								<div class="banner _02">
+									<a href="javascript:void(0)" onclick="bannerResizing(2, this)">
 										<figure>
 <!--
 											<div class="img box-bg">
@@ -229,8 +229,8 @@
 										</figure>
 									</a>
 								</div>
-								<div class="banner _03" style="background: url(./images/clio_off.png) left center no-repeat; background-size: cover;">
-									<a href="#">
+								<div class="banner _03">
+									<a href="javascript:void(0)" onclick="bannerResizing(3, this)">
 										<figure>
 <!--
 											<div class="img box-bg">
@@ -512,6 +512,70 @@
 					});
 				}
 			});
+			$win.on('load', function() {
+				bannerResizing(1, $('.banner._01').find('a'));
+			});
+			function bannerResizing(idx, el) {
+				var $me = $(el).parent();
+				$me.addClass('is-active');
+				$('.awards-banner .banner').not($me).removeClass('is-active');
+//				var $notMe = $('.banner').each(function() {
+//					
+//				});
+				
+				switch (idx) {
+					case 1:
+						$me.css({
+							left: 0,
+							width: 75.4+'%',
+							background: "url(./images/cannes_on.png) left center / cover no-repeat",
+						});
+						$('.banner._02').css({
+							width: 40+'%',
+							left: 45.5+'%',
+							background: "url(./images/newyork_off.png) left center / cover no-repeat",
+						});
+						$('.banner._03').css({
+							width: 40+'%',
+							left: 65.2+'%',
+							background: "url(./images/clio_off.png) left center / cover no-repeat",
+						});
+						break;
+					case 2:
+						$me.css({
+							width: 75.4+'%',
+							left: 12+'%',
+							background: "url(./images/newyork_on.png) left center / cover no-repeat",
+						});
+						$('.banner._01').css({
+							width: 40+'%',
+							background: "url(./images/cannes_off.png) left center / cover no-repeat",
+						});
+						$('.banner._03').css({
+							width: 40+'%',
+							left: 72+'%',
+							background: "url(./images/clio_off.png) left center / cover no-repeat",
+						});
+						break;
+					case 3:
+						$me.css({
+							width: 75.4+'%',
+							left: 30+'%',
+							background: "url(./images/clio_on.png) left center / cover no-repeat",
+						});
+						$('.banner._01').css({
+							width: 40+'%',
+							background: "url(./images/cannes_off.png) left center / cover no-repeat",
+						});
+						$('.banner._02').css({
+							width: 40+'%',
+							left: 10+'%',
+							background: "url(./images/newyork_off.png) left center / cover no-repeat",
+						});
+						break;
+				}
+			}
+			
 		</script>
 	</body>
 
