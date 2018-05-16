@@ -4,7 +4,18 @@
 							<img src="./images/close_x_black.png" alt="">
 						</a>
 						<div class="user-status">
-							<a href="login.php">LOGIN</a>
+<?
+	if (!$_SESSION['ss_vvv_email'])
+	{
+?>                                
+                            <a href="login.php">LOGIN</a>
+<?
+    }else{
+?>        
+                            <a href="logout.php">LOGOUT</a>
+<?
+    }
+?>                        
 						</div>
 						<div class="list-wrap">
 							<ul class="list">
