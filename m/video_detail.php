@@ -270,7 +270,7 @@
 						$.ajax({
 							type   : "POST",
 							async  : false,
-							url    : "./main_exec.php",
+							url    : "../main_exec.php",
 							data:{
 								"exec"				    : "view_video",
 								"v_idx"		            : "<?=$video_idx?>"
