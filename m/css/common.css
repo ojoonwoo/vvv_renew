@@ -56,9 +56,13 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 html.menu-opened,
+html.menu-opened body,
 html.popup-opened,
-html.layer-opened {
-	overflow: hidden;
+html.popup-opened body,
+html.layer-opened,
+html.layer-opened body {
+	height: 100%;
+	overflow-y: hidden !important;
 }
 body {
 	line-height: 1;
@@ -66,6 +70,7 @@ body {
 	font-family: "Noto Sans KR", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;
 	color: #333333;
 	background: #f2f2f2;
+	overflow-y: scroll !important;
 }
 html, body {
 	height: 100%;
@@ -338,11 +343,17 @@ header #gnb .burger-wrap .line.mid {
 .global-search-layer {
 	position: fixed;
 	top: 0;
-	right: 0;
+/*	right: 0;*/
+	left: 100vw;
+/*	left: 0;*/
+	bottom: 0;
+	width: 100%;
 	height: 100vh;
 	z-index: 0;
 	opacity: 0;
+	visibility: hidden;
 	overflow: hidden;
+	transition: opacity 0.1s ease, visibility 0.1s ease;
 	/*	z-index: 2;*/
 }
 .global-search-layer .layer-close {
@@ -356,18 +367,27 @@ header #gnb .burger-wrap .line.mid {
 	background-size: 10px 10px;
 }
 .global-search-layer .bg-dark {
+	position: absolute;
+	top: 0;
+	left: 0;
 	background: rgba(8, 8, 8, 0.5);
+	opacity: 0;
 	width: 100vw;
 	height: 100%;
+	z-index: 1;
+	transition: opacity 0.12s ease;
 }
 .global-search-layer .inner {
-/*	background: rgba(242, 242, 242, 0.9);*/
-	background: #f2f2f2;
-	margin: 0 0 0 auto;
-	width: 60vw;
-	padding: 57px 0;
+	position: relative;
+	z-index: 2;
+	left: 100vw;
+	width: 70vw;
+	padding: 57px 0 154px;
 	height: 100%;
-	overflow-y: auto;
+	overflow-y: scroll !important;
+	-webkit-overflow-scrolling: touch;
+	background: #f2f2f2;
+	transition: left .3s ease;
 }
 .global-search-layer .search-wrapper {
 }
@@ -383,6 +403,7 @@ header #gnb .burger-wrap .line.mid {
 	background-size: 15px 15px;
 	padding: 0 40px;
 	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid rgba(179, 179, 179, 0.4);
 	vertical-align: top;
 }
 .global-search-layer .search-wrapper .search-bar input[type="text"] {
@@ -411,6 +432,7 @@ header #gnb .burger-wrap .line.mid {
 	font-weight: 400;
 	padding: 15px 8px 0;
 	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid rgba(179, 179, 179, 0.4);
 	text-align: left;
 }
 .global-search-layer .search-wrapper .sortings .sort-list .sort select {
@@ -468,8 +490,16 @@ header #gnb .burger-wrap .line.mid {
 }
 
 html.layer-opened .global-search-layer {
+	z-index: 2000;
+	left: 0;
 	opacity: 1;
-	z-index: 101;
+	visibility: visible;
+}
+html.layer-opened .global-search-layer .bg-dark {
+	opacity: 1;
+}
+html.layer-opened .global-search-layer .inner {
+	left: 30vw;
 }
 .app-container {
 	/*	min-width: 1400px;*/
