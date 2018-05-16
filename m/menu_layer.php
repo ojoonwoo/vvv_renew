@@ -12,16 +12,16 @@
 									<a href="index.php" class="is-active">HOME</a>
 								</li>
 								<li>
-									<a href="#">ALL VVV</a>
+									<a href="video_list.php?sort=new">ALL VVV</a>
 								</li>
 								<li>
-									<a href="#">BEST</a>
+									<a href="video_list.php?sort=best">BEST</a>
 								</li>
 								<li>
-									<a href="#">NEW</a>
+									<a href="video_list.php?sort=new">NEW</a>
 								</li>
 								<li>
-									<a href="#">AWARDS</a>
+									<a href="award_list.php">AWARDS</a>
 								</li>
 							</ul>
 						</div>
