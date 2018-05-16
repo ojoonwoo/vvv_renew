@@ -4,7 +4,7 @@
 							<img src="./images/close_x_black.png" alt="">
 						</a>
 						<div class="user-status">
-							<a href="#">LOGIN</a>
+							<a href="login.php">LOGIN</a>
 						</div>
 						<div class="list-wrap">
 							<ul class="list">
