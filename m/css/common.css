@@ -106,6 +106,19 @@ figure, figcaption {
 input, button, select {
 /*	font-family: "Noto Sans KR", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;	*/
 }
+select {
+	border: 0 none;
+	display: inline-block;
+	outline: 0 none;
+	border-radius: 0;
+	-webkit-box-align: left;
+	-ms-flex-align: left;
+	align-items: left;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color: #666666;
+}
 input:focus,
 button:focus,
 div:focus {
@@ -237,12 +250,29 @@ header #gnb .burger-wrap .line.mid {
 .global-menu .user-status {
 	position: absolute;
 	top: 27px;
-	right: 40px;
+	right: 9vw;
+	font-size: 0;
 }
 .global-menu .user-status a {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 600;
 	letter-spacing: 0;
+	display: inline-block;
+	margin-right: 15px;
+}
+.global-menu .user-status a:after {
+	content: "|";
+	display: inline-block;
+	font-size: 11px;
+	color: #dcdcdc;
+	margin-left: 15px;
+	vertical-align: top;
+}
+.global-menu .user-status a:last-child {
+	margin-right: 0;
+}
+.global-menu .user-status a:last-child::after {
+	content: none;
 }
 .global-menu .list-wrap .list {
 	text-align: center;

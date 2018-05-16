@@ -579,13 +579,27 @@
 	padding: 0;
 }
 .content.user-page .user-info {
+	position: relative;
 	background: #333333;
+/*	box-shadow: inset 0px -322px 212px -99px rgba(0,0,0,0.5);*/
 	padding: 172px 0 109px;
+}
+.content.user-page .user-info:after {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 .content.user-page .user-info > .wrapper {
 	max-width: 930px;
 	margin: 0 auto;
 	display: flex;
+	position: relative;
+	z-index: 1;
 }
 .content.user-page .user-info .profile-img {
 	width: 224px;
