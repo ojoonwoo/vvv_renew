@@ -220,7 +220,7 @@
 	width: 211px;
 	height: 40px;
 	/*	border: 1px solid #080808;*/
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
 	margin-left: -1px;
 }
@@ -247,6 +247,7 @@
 /* awards */
 .awards .awards-banner {
 	position: relative;
+	overflow-x: hidden;
 	background: #838383;
 }
 .awards .awards-banner .banner {
@@ -258,39 +259,13 @@
 /*	transition: all 0.25s linear;*/
 	background-size: cover !important;
 }
-.awards .awards-banner .banner .img img {
-/*	height: 69.4vh;*/
-/*	opacity: 0.9;*/
-}
-.awards .awards-banner a .box-bg img {
-/*
-	position: relative;
-	transition: all 0.3s ease-in-out;
-	z-index: 1;
-*/
-}
 .awards .awards-banner a {
 	display: block;
 	height: 100%;
 }
-.awards .awards-banner a:hover .box-bg img {
-/*	opacity: 0.9;*/
-}
-.awards .awards-banner .box-bg {
-	position: relative;
-}
-.awards .awards-banner .box-bg:before {
-/*
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #000000;
-	z-index: 0;
-*/
+.awards .awards-banner a figure {
+	font-size: 0;
+	text-align: center;
 }
 .awards .awards-banner .banner._01 {
 	position: relative;
@@ -300,6 +275,7 @@
 /*	background-size: cover;*/
 /*	z-index: 1;*/
 }
+
 .awards .awards-banner .banner._02 {
 	left: 23.33%;
 	width: 63.85%;
@@ -323,6 +299,51 @@
 .awards .awards-banner .banner._03.is-active {
 	background: url(../images/clio_on.png) left center / cover no-repeat;
 }
+.awards-banner .banner figcaption {
+	display: inline-block;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	font-size: 0;
+	text-align: left;
+}
+.awards-banner .banner figcaption .award-name {
+	display: inline-block;
+	position: relative;
+	font-size: 55px;
+	color: #f7dd30;
+	font-weight: 600;
+}
+.awards-banner .banner figcaption .award-name::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #f7dd30;
+	margin-bottom: 13px;
+}
+.awards-banner .banner figcaption .award-summ {
+	font-size: 27px;
+	color: #ffffff;
+	font-weight: 600;
+	margin: 17px auto 5px;
+}
+.awards-banner .banner figcaption .award-title {
+	font-size: 27px;
+	color: #ffffff;
+	font-weight: 200;
+}
+.awards-banner .banner.is-active figcaption {
+	transition: opacity 0.5s ease 0.2s;
+	opacity: 1;
+}
+/*
+.awards .awards-banner .banner._01 figcaption {top:50%;left: 50%;transform: translate(-50%, -50%);}
+.awards .awards-banner .banner._02 figcaption {top:50%;left: 50%;transform: translate(-50%, -50%);}
+.awards .awards-banner .banner._03 figcaption {top:50%;left: 50%;transform: translate(-50%, -50%);}
+*/
 .awards .cate-wrap {
 	max-width: 1400px;
 	margin: 87px auto 120px;
@@ -415,7 +436,7 @@
 }
 .content.detail .info-wrap .icon-wrap {
 	position: absolute;
-	top: 65px;
+	bottom: 0;
 	right: 22px;
 	font-size: 0;
 }
@@ -559,9 +580,10 @@
 	padding: 0 13px;
 }
 .content.detail .block-comment .comment-list .row .u-comment {
+	padding: 0 106px 0 13px;
 	font-size: 20px;
 	font-weight: 400;
-	padding: 0 106px 0 13px;
+	line-height: 21px;
 }
 .content.detail .block-comment .comment-list .row .date {
 	position: absolute;
@@ -618,11 +640,37 @@
 }
 .content.user-page .user-info .info-wrap .wrap-user {
 	border-bottom: 1px solid #7c7c7c;
-	padding: 41px 15px 22px;
+	padding: 41px 15px 13px;
 	width: 100%;
+	font-size: 0;
+	position: relative;
 }
 .content.user-page .user-info .info-wrap .wrap-user .user-id {
+	display: inline-block;
+	vertical-align: middle;
 	font-size: 40px;
+}
+.content.user-page .user-info .info-wrap .wrap-user .setting {
+	display: inline-block;
+	width: 46px;
+	height: 48px;
+	vertical-align: middle;
+	text-align: center;
+}
+.content.user-page .user-info .info-wrap .wrap-user .follow-state {
+	position: absolute;
+	top: 51px;
+	right: 15px;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 300;
+}
+.content.user-page .user-info .info-wrap .wrap-user .follow-state .already {
+	color: #f7dd30;
+}
+.content.user-page .user-info .info-wrap .wrap-user .setting img {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .content.user-page .user-feed {
