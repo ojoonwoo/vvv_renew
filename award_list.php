@@ -47,7 +47,7 @@
 												<p class="award-name">CANNES</p>
 												<p class="award-summ">2017 Grand Prix</p>
 												<p class="award-title">‘we’re the superhumans’</p>
-												<a href="#" class="view">VIEW</a>
+												<a href="video_detail.php?idx=448" class="view">VIEW</a>
 											</figcaption>
 										</figure>
 									</div>
@@ -59,7 +59,7 @@
 												<p class="award-name">NEWYORK</p>
 												<p class="award-summ">2017 BEST OF SHOW</p>
 												<p class="award-title">‘MEET GRAHAM’</p>
-												<a href="#" class="view">VIEW</a>
+												<a href="video_detail.php?idx=438" class="view">VIEW</a>
 											</figcaption>
 										</figure>
 									</div>
