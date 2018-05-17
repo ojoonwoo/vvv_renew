@@ -297,8 +297,7 @@
 			{
 				var award_date 	= val;
 				var prize_idx 	= $("#lc-order-ptype").val();
-console.log(award_date);
-console.log(prize_idx);
+
 				$.ajax({
 					type   : "POST",
 					async  : false,
