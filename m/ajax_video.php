@@ -1,5 +1,5 @@
 <?
-    include_once "./include/autoload.php";
+    include_once "../include/autoload.php";
 
     $mnv_f          = new mnv_function();
     $my_db          = $mnv_f->Connect_MySQL();
@@ -66,6 +66,7 @@
     $i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
+
         // 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
@@ -87,35 +88,35 @@
         else
             $video_brand    = $data["video_brand"];
 ?>
-							<div class="video col-lg-4 col-md-3 col-sm-2">
-								<a href="video_detail.php?idx=<?=$data['video_idx']?>">
-									<figure>
-                                        <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-										<figcaption>
-											<span class="brand">[<?=$video_brand?>]</span>
-											<span class="title"><?=$video_title?></span>
-											<span class="icon-wrap">
-												<span class="play">
-													<i class="icon"></i>
-													<span class="cnt"><?=$data["play_count"]?></span>
+								<div class="video">
+									<a href="video_detail.php?idx=<?=$data['video_idx']?>">
+										<figure>
+											<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+											<figcaption>
+												<span class="brand">[<?=$video_brand?>]</span>
+												<span class="title"><?=$video_title?></span>
+												<span class="icon-wrap">
+													<span class="play">
+														<i class="icon"></i>
+														<span class="cnt"><?=$data["play_count"]?></span>
+													</span>
+													<span class="comment">
+														<i class="icon"></i>
+														<span class="cnt"><?=$data["comment_count"]?></span>
+													</span>
+													<span class="like">
+														<i class="icon"></i>
+														<span class="cnt"><?=$data["like_count"]?></span>
+													</span>
+													<span class="collect">
+														<i class="icon"></i>
+														<span class="cnt"><?=$data["collect_count"]?></span>
+													</span>
 												</span>
-												<span class="comment">
-													<i class="icon"></i>
-													<span class="cnt"><?=$data["comment_count"]?></span>
-												</span>
-												<span class="like">
-													<i class="icon"></i>
-													<span class="cnt"><?=$data["like_count"]?></span>
-												</span>
-												<span class="collect">
-													<i class="icon"></i>
-													<span class="cnt"><?=$data["collect_count"]?></span>
-												</span>
-											</span>
-										</figcaption>
-									</figure>
-								</a>
-                            </div>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
 <?
     }
 ?>

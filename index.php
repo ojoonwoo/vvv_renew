@@ -13,192 +13,29 @@
     }else{
         $saveMedia     = $mnv_f->SaveMedia();
         $rs_tracking   = $mnv_f->InsertTrackingInfo($mobileYN);
-    }
+	}
 
     include_once "./head.php";
 ?>
 <body>
 	<div id="app">
 		<div class="app-container">
-			<div class="side-nav">
-				<div class="search-wrap magnet-wrap">
-					<button type="button" class="magnet-parent">
-						<span class="magnet-child"></span>
-					</button>
-				</div>
-				<nav id="gnb">
-					<a href="">
-						<div class="burger-wrap">
-								<span class="line top"></span>
-								<span class="line mid"></span>
-								<span class="line bot"></span>
-						</div>
-					</a>
-				</nav>
-				<div class="direct-my-v">
-					<a href="#">
-						<span>MY VVV</span>
-					</a>
-				</div>
-			</div>
+<?
+    include_once "./side_nav_layer.php";
+?>			
 			<!--햄버거 클릭 메뉴-->
-			<div class="global-menu">
-				<div class="inner">
-					<div class="list-wrap">
-						<ul class="list">
-							<li>
-								<a href="#" class="is-active">HOME</a>
-							</li>
-						</ul>
-						<ul class="list">
-							<li>
-								<a href="#">ALL VVV</a>
-							</li>
-							<li>
-								<a href="#">BEST</a>
-							</li>
-							<li>
-								<a href="#">NEW</a>
-							</li>
-						</ul>
-						<ul class="list">
-							<li>
-								<a href="#">AWARDS</a>
-							</li>
-						</ul>
-					</div>
-					<div class="about-us">
-						<div class="logo">
-							<img src="./images/vvv_logo.png" alt="">
-						</div>
-						<div class="line"></div>
-						<div class="contacts">
-							<p><span>CONTACT US</span></p>
-							<p class="tel">
-								<i></i>
-								<span>+82 (02)532-2475</span>
-							</p>
-							<p class="sns">
-								<i class="mail"></i>
-								<i class="facebook"></i>
-								<i class="instagram"></i>
-							</p>
-						</div>
-					</div>
-					<div class="copyright">
-						COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
-					</div>
-				</div>
-			</div>
+<?
+    include_once "./menu_layer.php";
+?>			
 			<!--햄버거 클릭 메뉴-->
 			<!--검색 메뉴-->
-			<div class="global-search-layer">
-				<div class="bg-dark">
-					<div class="inner">
-						<div class="search-wrapper">
-							<div class="wrap">
-								<button type="button" class="button-refresh">새로고침</button>
-								<div class="search-bar">
-									<input type="text">
-								</div>
-							</div>
-							<div class="wrap sortings">
-								<div class="sort-list">
-									<div class="row">
-										<div class="sort">
-											<select name="order-date" id="order-date">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-nation" id="order-nation">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-industry" id="order-industry">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-									</div>
-									<div class="row">
-										<div class="sort">
-											<select name="order-genre" id="order-genre">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-awards" id="order-awards">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="order-sortby" id="order-sortby">
-												<option disabled selected>Please pick one</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<button type="button" class="button-apply">
-									APPLY
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<?
+    include_once "./search_layer.php";
+?>			
 			<!--검색 메뉴-->
-			<div class="header-container">
-				<header>
-					<div class="inner">
-						<h1>
-							<a href="#" class="logo">
-								<img src="./images/vvv_logo.png" alt="" class="retina">
-							</a>
-						</h1>
-						<div class="actions">
-							<div class="user-status">
-								<a href="#">LOGIN</a>
-							</div>
-							<div class="search-wrap magnet-wrap">
-								<button type="button" class="magnet-parent">
-									<span class="magnet-child"></span>
-								</button>
-							</div>
-						</div>
-					</div>
-				</header>
-			</div>
+<?
+    include_once "./header_layer.php";
+?>
 			<div class="main-container">
 				<div class="content main">
 					<div class="main-banner swiper-container">
@@ -251,13 +88,13 @@
 					<div class="list-container best-area">
 						<div class="title-area">
 							<h2 class="list-title">BEST</h2>
-							<a href="#" class="view-all">전체보기</a>
+							<a href="best_list.php" class="view-all">전체보기</a>
 						</div>
 						<div class="video-list">
 							<div class="swiper-container best-slider">
 								<div class="swiper-wrapper">
 <?
-    $best_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY like_count DESC, collect_count DESC, play_count DESC LIMIT 0, 6";
+    $best_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' AND best_pick='Y' ORDER BY best_num ASC LIMIT 0, 6";
     $best_result 	= mysqli_query($my_db, $best_query);
     while ($best_data = mysqli_fetch_array($best_result))
     {    
@@ -272,11 +109,10 @@
             $video_title    = substr($best_data["video_title"],0,45)."...";
         else
             $video_title    = $best_data["video_title"];
-?>                            
-                                    
+?>                                    
 									<div class="swiper-slide">
 										<div class="video">
-											<a href="detail.php?idx=<?=$best_data['video_idx']?>">
+											<a href="video_detail.php?idx=<?=$best_data['video_idx']?>">
 												<figure>
 													<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 														<!-- <img src="<?=$yt_thumb?>" alt=""> -->
@@ -320,7 +156,7 @@
 					<div class="list-container">
 						<div class="title-area">
 							<h2 class="list-title">RECENT</h2>
-							<a href="#" class="view-all">전체보기</a>
+							<a href="video_list.php?sort=new" class="view-all">전체보기</a>
 						</div>
 						<div class="video-list" id="recent_video">
 <?
@@ -347,14 +183,23 @@
         if ($title_count > 30)
             $video_title    = substr($recent_data["video_title"],0,30)."...";
         else
-            $video_title    = $recent_data["video_title"];
+			$video_title    = $recent_data["video_title"];
+			
+        // 브랜드 줄바꿈 방지 글자 자르기
+        $brand_count    = mb_strlen($recent_data["video_brand"],'utf-8');
+
+        if ($title_count > 30)
+            $video_brand    = substr($recent_data["video_brand"],0,30)."..";
+        else
+            $video_brand    = $recent_data["video_brand"];
+			
 ?>                            
 							<div class="video col-lg-4 col-md-3 col-sm-2">
-								<a href="detail.php?idx=<?=$recent_data['video_idx']?>">
+								<a href="video_detail.php?idx=<?=$recent_data['video_idx']?>">
 									<figure>
                                         <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 										<figcaption>
-											<span class="brand">[<?=$recent_data["video_brand"]?>]</span>
+											<span class="brand">[<?=$video_brand?>]</span>
 											<span class="title"><?=$video_title?></span>
 											<span class="icon-wrap">
 												<span class="play">
@@ -383,6 +228,7 @@
 ?>       
 							<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
 							<input type="hidden" id="total_page" value="<?=$total_page?>">                     
+							<input type="hidden" id="view_page" value="<?=$view_pg?>">                     
 						</div>
 						<button type="button" class="read-more">
 							<img src="./images/plus_icon.png" alt="">
@@ -397,6 +243,7 @@
 	var video_pg 	        = 0;
 	var total_video_num 	= $("#total_video_num").val();
 	var total_page 			= $("#total_page").val();
+	var view_page 			= $("#view_page").val();
 	var current_page        = 1;
 
 	$(document).ready(function () {
@@ -458,33 +305,91 @@
 		$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 		$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 	});
+	
+//	기본 기능 테스트 코드
+	$doc = $(document),
+	$win = $(window),
+	$html = $('html');
+	$doc.on('click', '.button-search', function() {
+		console.log("search")
+		$html.addClass('layer-opened');
+	});
+	$doc.on('click', '.layer-close', function() {
+		$html.removeClass('layer-opened');
+	});
+	$doc.on('click', '.button-menu', function() {
+		$html.toggleClass('menu-opened');
+	});
+	$win.on('scroll', function() {
+		if(150 < $(this).scrollTop()) {
+			$('.side-nav .search-wrap').css({
+				opacity: 1
+			});
+		} else {
+			$('.side-nav .search-wrap').css({
+				opacity: 0
+			});
+		}
+	});
 
-	$(".read-more").on("click", function(){
-		video_pg = video_pg + 30;
-
+	// RECENT 더보기 버튼 클릭
+	$doc.on('click', '.read-more', function() {
+		video_pg = video_pg + Number(view_page);
 		$.ajax({
 			type   : "POST",
 			async  : false,
 			url    : "./ajax_video.php",
 			data:{
 				"video_pg"				: video_pg,
+				"view_page"				: view_page,
 				"total_video_num"		: total_video_num,
 				"total_page"			: total_page,
 				"sort_val"				: "new"
 			},
 			success: function(response){
-				console.log(response);
+				// console.log(response);
 				// res_arr	= response.split("||");
-				// current_page = current_page + 1;
-				// if (current_page >= total_page)
-				// 	$("#main_more").hide();
-				// else
-				// 	$("#main_more").show();
+				current_page = current_page + 1;
+				if (current_page >= total_page)
+					$(".read-more").hide();
+				else
+					$(".read-more").show();
 				$("#recent_video").append(response);
 			}
 		});
 
 	});
+	// 검색 APPLY 클릭
+	$doc.on('click', '#search-layer-submit', function() {
+        var search_keyword      = nullToBlank($("#search_keyword").val());
+        var search_year         = nullToBlank($("#order-date").val());
+        var search_nation       = nullToBlank($("#order-nation").val());
+        var search_category1    = nullToBlank($("#order-industry").val());
+        var search_genre        = nullToBlank($("#order-genre").val());
+        var search_prize        = nullToBlank($("#order-awards").val());
+        var search_sort         = nullToBlank($("#order-sortby").val());
+
+        location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
+	});
+
+	function nullToBlank(str)
+	{
+		if (str == null)
+			str = "";
+			
+		return str;
+	}
+
+	$doc.on('click', '#search-layer-refresh', function() {
+        $("#search_keyword").val("");
+        $("#order-date").val("");
+        $("#order-nation").val("");
+        $("#order-industry").val("");
+        $("#order-genre").val("");
+        $("#order-awards").val("");
+        $("#order-sortby").val("new");        
+	});
+
 </script>
 </body>
 
