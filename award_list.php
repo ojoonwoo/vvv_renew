@@ -40,47 +40,41 @@
 					<div class="content awards">
 						<div class="inner">
 							<div class="awards-banner">
-								<div class="banner _01 is-active">
-									<a href="javascript:void(0)" onmouseover="bannerResizing(1, this)">
+							<div class="banner _01 is-active">
+									<div class="clickEl" onmouseover="bannerResizing(1, this)">
 										<figure>
-<!--
-											<div class="img box-bg">
-												<img src="./images/award_01_off.png" alt="">
-											</div>
--->
 											<figcaption>
-
+												<p class="award-name">CANNES</p>
+												<p class="award-summ">2017 Grand Prix</p>
+												<p class="award-title">‘we’re the superhumans’</p>
+												<a href="#" class="view">VIEW</a>
 											</figcaption>
 										</figure>
-									</a>
+									</div>
 								</div>
 								<div class="banner _02">
-									<a href="javascript:void(0)" onmouseover="bannerResizing(2, this)">
+									<div class="clickEl" onmouseover="bannerResizing(2, this)">
 										<figure>
-<!--
-											<div class="img box-bg">
-												<img src="./images/award_02_off.png" alt="">
-											</div>
--->
 											<figcaption>
-
+												<p class="award-name">NEWYORK</p>
+												<p class="award-summ">2017 BEST OF SHOW</p>
+												<p class="award-title">‘MEET GRAHAM’</p>
+												<a href="#" class="view">VIEW</a>
 											</figcaption>
 										</figure>
-									</a>
+									</div>
 								</div>
 								<div class="banner _03">
-									<a href="javascript:void(0)" onmouseover="bannerResizing(3, this)">
+									<div class="clickEl" onmouseover="bannerResizing(3, this)">
 										<figure>
-<!--
-											<div class="img box-bg">
-												<img src="./images/award_03_off.png" alt="">
-											</div>
--->
 											<figcaption>
-
+												<p class="award-name">CLIO</p>
+												<p class="award-summ">2017 Grand</p>
+												<p class="award-title">‘fearless girl’</p>
+												<a href="#" class="view">VIEW</a>
 											</figcaption>
 										</figure>
-									</a>
+									</div>
 								</div>
 							</div>
 							<div class="cate-wrap">
@@ -340,7 +334,7 @@
 				}
 			});
 			$win.on('load', function() {
-				bannerResizing(1, $('.banner._01').find('a'));
+				bannerResizing(1, $('.banner._01').find('.clickEl'));
 			});
 			function bannerResizing(idx, el) {
 				var $me = $(el).parent();
