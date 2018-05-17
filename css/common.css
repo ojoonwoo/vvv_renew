@@ -237,7 +237,7 @@ header .actions .search-wrap > button > span {
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	background: #f2f2f2f2;
+	background: #f2f2f2;
 	opacity: 0;
 	z-index: 0;
 /*	z-index: 2;*/
@@ -270,11 +270,12 @@ header .actions .search-wrap > button > span {
 .global-menu .list-wrap .list li a {
 	font-size: 23px;
 	font-weight: 400;
-	transition: text-shadow 0.17s ease;
+	color: #666666;
+	transition: color 0.17s ease;
 }
 .global-menu .list-wrap .list li a.is-active,
 .global-menu .list-wrap .list li a:hover {
-	text-shadow: 0px 0px 1px #333333;
+	color: #333333;
 }
 .global-menu .about-us {
 	flex-basis: 36.4%;
@@ -531,12 +532,12 @@ html.layer-opened .global-search-layer {
 }
 .content .list-container .video figure figcaption .brand {
 	color: #666666;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 700;
 }
 .content .list-container .video figure figcaption .title {
 	margin: 6px 0 10px;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 500;
 }
 .content .list-container .video figure figcaption .icon-wrap {
@@ -549,7 +550,7 @@ html.layer-opened .global-search-layer {
 }
 .content .list-container .video figure figcaption .icon-wrap > span > span {
 	display: inline-block;
-	font-size: 21px;
+	font-size: 16px;
 	color: #333333;
 }
 .content .list-container .video figure figcaption .icon-wrap span .icon {
@@ -559,10 +560,10 @@ html.layer-opened .global-search-layer {
 .content .list-container .video figure figcaption .icon-wrap > span:last-child {
 	margin-right: 0;
 }
-.icon-wrap .play .icon {width: 16px;height: 17px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
-.icon-wrap .comment .icon {width: 17px;height: 15px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
-.icon-wrap .like .icon {width: 21px;height: 18px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
-.icon-wrap .collect .icon {width: 15px;height: 18px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
+.icon-wrap .play .icon {width: 14px;height: 12px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
+.icon-wrap .comment .icon {width: 14px;height: 12px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
+.icon-wrap .like .icon {width: 14px;height: 12px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
+.icon-wrap .collect .icon {width: 14px;height: 12px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
 
 .content .list-container .read-more {
 	display: block;

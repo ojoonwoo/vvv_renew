@@ -509,8 +509,8 @@
 }
 /* login */
 /* awards */
-content.awards > .inner {
-	padding: 0 0 40px;
+.content.awards > .inner {
+	padding: 0 0 60px;
 }
 .awards-banner .box-content {
 	position: relative;

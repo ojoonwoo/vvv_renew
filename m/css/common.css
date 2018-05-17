@@ -244,14 +244,22 @@ header #gnb .burger-wrap .line.mid {
 	/*	z-index: 2;*/
 }
 .global-menu .inner {
-	padding-top: 15vh;
+	height: 100%;
+	min-height: 100%;
+	padding: 15vh 0;
+	overflow-y: scroll !important;
+	-webkit-overflow-scrolling: touch !important;
+	position: relative;
+	z-index: 2;
+	text-align: right;
+	font-size: 0;
 }
-
 .global-menu .user-status {
 	position: absolute;
 	top: 27px;
-	right: 9vw;
+	right: 8.2vw;
 	font-size: 0;
+	z-index: 3;
 }
 .global-menu .user-status a {
 	font-size: 13px;
@@ -287,16 +295,20 @@ header #gnb .burger-wrap .line.mid {
 .global-menu .list-wrap .list li a {
 	font-size: 13px;
 	font-weight: 400;
-	transition: text-shadow 0.17s ease;
+	color: #666666;
+	transition: color 0.17s ease;
 }
 .global-menu .list-wrap .list li a.is-active,
 .global-menu .list-wrap .list li a:hover {
-	text-shadow: 0px 0px 1px #333333;
+	color: #333333;
 }
 .global-menu .about-us {
 /*	flex-basis: 36.4%;*/
-	width: 72.9vw;
+/*	width: 72.9vw;*/
+	display: inline-block;
+	width: 297px;
 	margin: 12vh 0 0 auto;
+	text-align: right;
 }
 .global-menu .about-us .line {
 	width: 100%;
@@ -305,7 +317,9 @@ header #gnb .burger-wrap .line.mid {
 }
 .global-menu .about-us .contacts {
 	/*	padding: 37px 0 0 139px;*/
-	padding: 29px 0 0 39.8vw;
+	padding: 29px 8.2vw 0 0;
+	display: inline-block;
+	text-align: left;
 }
 .global-menu .about-us .contacts p {
 	color: #666666;
@@ -349,9 +363,11 @@ header #gnb .burger-wrap .line.mid {
 	background-size: cover;
 }
 .global-menu .copyright {
-	position: absolute;
-	right: 8.4vw;
-	bottom: 3.8vh;
+/*	position: absolute;*/
+/*	right: 8.4vw;*/
+/*	bottom: 3.8vh;*/
+	padding-right: 8.2vw;
+	margin-top: 41px;
 	font-size: 10px;
 	font-weight: 400;
 	color: #666666;
@@ -359,14 +375,15 @@ header #gnb .burger-wrap .line.mid {
 }
 .global-menu .btn-close {
 	display: block;
+	width: 22px;
 	position: absolute;
 	left: 20px;
 	top: 20px;
-	width: 22px;
+	z-index: 3;
 }
 
 .menu-opened .global-menu {
-	z-index: 101;
+	z-index: 2000;
 	opacity: 1;
 }
 
@@ -593,10 +610,10 @@ html.layer-opened .global-search-layer .inner {
 .content .list-container .video figure figcaption .icon-wrap > span:last-child {
 	margin-right: 0;
 }
-.icon-wrap .play .icon {width: 8px;height: 8px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
-.icon-wrap .comment .icon {width: 9px;height: 8px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
-.icon-wrap .like .icon {width: 10px;height: 9px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
-.icon-wrap .collect .icon {width: 7px;height: 9px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
+.icon-wrap .play .icon {width: 11px;height: 10px;background: url(../images/icon_play.png) center no-repeat;background-size: cover;}
+.icon-wrap .comment .icon {width: 11px;height: 10px;background: url(../images/icon_comment.png) center no-repeat;background-size: cover;}
+.icon-wrap .like .icon {width: 11px;height: 10px;background: url(../images/icon_like.png) center no-repeat;background-size: cover;}
+.icon-wrap .collect .icon {width: 11px;height: 10px;background: url(../images/icon_collect.png) center no-repeat;background-size: cover;}
 
 .content .list-container .read-more {
 	display: block;
