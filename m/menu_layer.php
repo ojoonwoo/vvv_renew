@@ -8,10 +8,12 @@
 	if (!$_SESSION['ss_vvv_email'])
 	{
 ?>                                
+                            <a href="login.php?refurl=my_vvv.php">MY VVV</a>
                             <a href="login.php">LOGIN</a>
 <?
     }else{
 ?>        
+                            <a href="my_vvv.php">MY VVV</a>
                             <a href="logout.php">LOGOUT</a>
 <?
     }
