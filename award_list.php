@@ -445,6 +445,23 @@
 				location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
 			});
 
+			function nullToBlank(str)
+			{
+				if (str == null)
+					str = "";
+					
+				return str;
+			}
+
+			$doc.on('click', '#search-layer-refresh', function() {
+				$("#search_keyword").val("");
+				$("#order-date").val("");
+				$("#order-nation").val("");
+				$("#order-industry").val("");
+				$("#order-genre").val("");
+				$("#order-awards").val("");
+				$("#order-sortby").val("new");        
+			});
 		</script>
 	</body>
 
