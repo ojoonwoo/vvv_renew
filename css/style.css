@@ -259,13 +259,24 @@
 /*	transition: all 0.25s linear;*/
 	background-size: cover !important;
 }
-.awards .awards-banner a {
+.awards .awards-banner .clickEl {
 	display: block;
 	height: 100%;
 }
-.awards .awards-banner a figure {
+.awards .awards-banner .clickEl figure {
 	font-size: 0;
 	text-align: center;
+}
+.awards .awards-banner .clickEl figure .view {
+	display: block;
+	height: auto;
+	margin-top: 30px;
+	padding-bottom: 16px;
+	background: url(../images/awards_arrow_white.png) left bottom no-repeat;
+	background-size: 50px 8px;
+	color: #ffffff;
+	font-size: 19px;
+	font-weight: 300;
 }
 .awards .awards-banner .banner._01 {
 	position: relative;
