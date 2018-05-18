@@ -381,7 +381,7 @@
 							left: 65.2+'%',
 							background: "url(./images/clio_off.png) left center / cover no-repeat",
 						});
-						break;
+					break;
 					case 2:
 						$me.css({
 							width: 75.4+'%',
@@ -397,7 +397,7 @@
 							left: 72+'%',
 							background: "url(./images/clio_off.png) left center / cover no-repeat",
 						});
-						break;
+					break;
 					case 3:
 						$me.css({
 							width: 75.4+'%',
@@ -413,7 +413,7 @@
 							left: 10+'%',
 							background: "url(./images/newyork_off.png) left center / cover no-repeat",
 						});
-						break;
+					break;
 				}
 			}
 			
