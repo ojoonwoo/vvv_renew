@@ -54,7 +54,7 @@
 										<div class="sort">
 											<select name="lc-order-date" id="lc-order-date">
 												<option value="" selected>연 도</option>
-\<?
+<?
     $s_year = 2018;
     while( $s_year > 2010 )
     {
@@ -76,7 +76,6 @@
 										<div class="sort">
 											<select name="lc-order-industry" id="lc-order-industry">
 												<option value="" selected>산업군</option>
-												<option value="">전 체</option>
 <?
     $category1_query	= "SELECT * FROM category_info WHERE category_level='1' AND category_useYN='Y'";
     $category1_result 	= mysqli_query($my_db, $category1_query);
