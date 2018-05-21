@@ -614,6 +614,48 @@
 				</div>
 			</div>
 			<div id="cursor" class="defualt"></div>
+			<!--popup-wrap 동적생성-->
+			<div class="popup-wrap">
+				<div class="popup my-coll-add">
+					<button type="button" class="popup-close"></button>
+					<div class="inner">
+						<div class="title">
+							<h5>컬렉션 만들기</h5>
+						</div>
+						<div class="content">
+							<div class="input-area">
+								<div class="input-group">
+									<div class="guide">
+										<span>이름</span>
+									</div>
+									<div class="input">
+										<input type="text" placeholder="오준우님의 5월 컬렉션">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="guide">
+										<span>설명</span>
+									</div>
+									<div class="input">
+										<input type="text">
+									</div>
+								</div>
+							</div>
+							<div class="setting">
+								<span class="secret-guide">비밀 설정</span>
+								<div class="toggle secret">
+									<input type="checkbox" type="checkbox" class="secret-toggle" id="secret" name="secret">
+									<div class="toggle-circle"></div>
+								</div>
+							</div>	
+							<div class="button-wrap">
+								<button type="button" class="btn-light-grey">취소</button>
+								<button type="button">만들기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script>
 			$(function() {
@@ -650,6 +692,29 @@
 					});
 				}
 			});
+			
+//			var $wrap = $layer.parent(),
+//				$html = $('html');
+//
+//			if (!$wrap.hasClass('layer-wrap')){
+//				$layer.wrap('<div class="layer-wrap"></div>');
+//				$wrap = $layer.parent();
+//				$wrap.prepend('<span class="layer-wrap__vertical"></span>');
+//			}
+//
+//			if (!$wrap.hasClass('is-opened')){
+//				$wrap
+//					.stop().fadeIn(300, function(){
+//					$layer.trigger('afterLayerOpened', $wrap);
+//				})
+//					.addClass('is-opened');
+//			}
+//
+//			if (!$html.hasClass('layer-opened')){
+//				$html.addClass('layer-opened');
+//			}
+//
+//			$layer.trigger('layerOpened', $wrap);
 		</script>
 	</body>
 
