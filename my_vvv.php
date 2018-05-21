@@ -228,55 +228,6 @@
 																</figcaption>
 															</figure>
 														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																	<div class="secret-mode"></div>
-																</figcaption>
-															</figure>
-														</div>
 													</div>
 												</div>
 											</div>
