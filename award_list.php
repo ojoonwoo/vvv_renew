@@ -190,7 +190,8 @@
 		// 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $video_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
         $title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
@@ -243,7 +244,8 @@
 		// 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $video_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
         $title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
