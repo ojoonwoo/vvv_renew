@@ -5,19 +5,26 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
 
+	if (!$_SESSION['ss_vvv_idx'] && $_REQUEST["email"] == "")
+		echo "<script>location.href='login.php';</script>";
+
 	// 회원 정보 가져오기
 	if ($_REQUEST["idx"])
 	{
 		$my_idx			= $_REQUEST["idx"];
 		$follow_idx		= $_REQUEST["idx"]; 
 	}else{
-		$my_idx	= $_SESSION['ss_vvv_idx'];
+		$my_idx			= $_SESSION['ss_vvv_idx'];
 		$follow_idx		= $_REQUEST["idx"]; 
 	}
 
-	if (!$_SESSION['ss_vvv_idx'] && $_REQUEST["email"] == "")
-		echo "<script>location.href='login.php';</script>";
-
+	// if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	// {
+	// 	$member_query		= "SELECT * FROM member_info WHERE idx='".$my_idx."'";
+	// 	$member_result		= mysqli_query($my_db, $member_query);
+	// 	$member_data		= mysqli_fetch_array($member_result);
+	// }
+	
 	// 회원 정보 가져오기
 	$mb_query		= "SELECT * FROM member_info WHERE idx='".$my_idx."'";
 	$mb_result		= mysqli_query($my_db, $mb_query);
@@ -68,10 +75,9 @@
 												<span class="u-id"><?=$_SESSION['ss_vvv_name']?></span>
 <?
 	}else{
-		$member_query		= "SELECT * FROM member_info WHERE idx='".$my_idx."'";
-		$member_result		= mysqli_query($my_db, $member_query);
-		$member_data		= mysqli_fetch_array($member_result);
-
+		// $member_query		= "SELECT * FROM member_info WHERE idx='".$my_idx."'";
+		// $member_result		= mysqli_query($my_db, $member_query);
+		// $member_data		= mysqli_fetch_array($member_result);
 ?>
 												<span class="u-id"><?=$member_data['mb_name']?></span>
 <?
@@ -107,11 +113,11 @@
 										<div class="wrap-actions">
 											<div class="f-wer">
 												<span>팔로워</span>
-												<span class="count"><?=$member_data['mb_follower_count']?></span>
+												<span class="count"><?=$mb_data['mb_follower_count']?></span>
 											</div>
 											<div class="f-ing">
 												<span>팔로잉</span>
-												<span class="count"><?=$member_data['mb_following_count']?></span>
+												<span class="count"><?=$mb_data['mb_following_count']?></span>
 											</div>
 											<div class="f-add">
 <?
