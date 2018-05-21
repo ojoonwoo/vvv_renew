@@ -141,11 +141,18 @@
 									<div class="inner">
 										<div class="aj-content collection is-active">
 											<div class="wrapper made">
+<?
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
+?>												
 												<div class="text-block">
 													<h5>내가 만든 컬렉션</h5>
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
 													<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												</div>
+<?
+	}
+?>												
 												<div class="list-container">
 													<div class="album-list">
 														<div class="album">
