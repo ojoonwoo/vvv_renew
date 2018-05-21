@@ -351,14 +351,14 @@
 						console.log(response);
 						if (response.match("Y") == "Y")
 						{
-							alert("Like 되었습니다!");
+							// alert("Like 되었습니다!");
 							$(".action.like").addClass("is-active");
 							$("#like_count").html(Number($("#like_count").html()) + 1);
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
 							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
 						}else{
-							alert("Like 에서 제외 되었습니다!");
+							// alert("Like 에서 제외 되었습니다!");
 							$(".action.like").removeClass("is-active");
 							$("#like_count").html($("#like_count").html() - 1);
 						}
