@@ -299,7 +299,7 @@ include_once "./include/autoload.php";
             {
                 $dupli_query    = "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
                 $dupli_result 	= mysqli_query($my_db, $dupli_query);
-                $dupli_count    = mysqli_num_rows($dupli_count);
+                $dupli_count    = mysqli_num_rows($dupli_result);
 
                 if ($dupli_count > 0)
                 {
