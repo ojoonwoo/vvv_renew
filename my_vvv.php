@@ -344,9 +344,9 @@
 <?
 	}
 ?>													
-													<button type="button" class="read-more">
+													<!-- <button type="button" class="read-more">
 														<img src="./images/plus_icon.png" alt="">
-													</button>
+													</button> -->
 												</div>
 											</div>
 										</div>
