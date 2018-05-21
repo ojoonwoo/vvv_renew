@@ -92,7 +92,7 @@
 		if ($follow_count > 0)
 		{
 ?>
-													<a href="javascript:void(0)" class="already">팔로우중</a>
+													<a href="javascript:follow_member()" class="already">팔로우중</a>
 <?
 		}else{
 ?>													

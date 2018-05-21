@@ -297,8 +297,18 @@ include_once "./include/autoload.php";
 
             if ($_SESSION['ss_vvv_idx'])
             {
-                $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
-                $result 	= mysqli_query($my_db, $query);
+                $dupli_query    = "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+                $dupli_result 	= mysqli_query($my_db, $dupli_query);
+                $dupli_count    = mysqli_num_rows($dupli_count);
+
+                if ($dupli_count > 0)
+                {
+                    $query 		= "UPDATE follow_info SET follow_YN='N' WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+                    $result 	= mysqli_query($my_db, $query);    
+                }else{
+                    $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                    $result 	= mysqli_query($my_db, $query);    
+                }
 
                 if($result) {
                     $flag = "Y";
