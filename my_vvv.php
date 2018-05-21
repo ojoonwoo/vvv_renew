@@ -51,7 +51,7 @@
 							<div class="user-info">
 								<div class="wrapper">
 									<div class="profile-img">
-										<img src="./images/detail_video_sample.jpg" alt="">
+										<img src="./images/profile_img_sample.jpg" alt="">
 									</div>
 									<div class="info-wrap">
 									<!--me, not me-->
@@ -73,96 +73,396 @@
 <?
 	}
 ?>
+												<a href="javascript:void(0)" class="setting">
+													<img src="./images/icon_profile_setting.png" alt="">
+												</a>
+												<div class="follow-state">
+													<a href="javascript:void(0)">팔로우하기</a>
+<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
+												</div>
 											</div>
 										</div>
-										<div class="wrap-act">
-											
+										<div class="wrap-actions">
+											<div class="f-wer">
+												<span>팔로워</span>
+												<span class="count">10</span>
+											</div>
+											<div class="f-ing">
+												<span>팔로잉</span>
+												<span class="count">10</span>
+											</div>
+											<div class="f-add">
+												<button type="button">친구추가</button>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<!-- container -->
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-<!--
-										<div class="tab">
+										<div class="tab is-active">
 											<a href="#">Collection</a>
 										</div>
--->
-										<div class="tab is-active">
+										<div class="tab">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
+										<div class="aj-content collection is-active">
+											<div class="wrapper made">
+												<div class="text-block">
+													<h5>내가 만든 컬렉션</h5>
+													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+													<button type="button" class="btn-create">만들기</button>
+												</div>
+												<div class="list-container">
+													<div class="album-list">
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																	<div class="secret-mode"></div>
+																</figcaption>
+															</figure>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="wrapper liked">
+												<div class="text-block">
+													<h5>내가 좋아한 컬렉션</h5>
+													<p>당신이 좋아한 컬렉션입니다!</p>
+												</div>
+												<div class="list-container">
+													<div class="album-list">
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																	<div class="secret-mode"></div>
+																</figcaption>
+															</figure>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
 										<div class="aj-content like">
 											<div class="text-block">
 												<span>당신이</span> 좋아한 영상입니다!
 											</div>
 											<div class="list-container">
 												<div class="video-list">
-<?
-	while ($data = mysqli_fetch_array($my_result))
-	{
-		$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
-		$video_result		= mysqli_query($my_db, $video_query);
-		$video_data			= mysqli_fetch_array($video_result);
-
-		// 유튜브 영상 코드 자르기
-        $yt_code_arr1   = explode("v=", $video_data["video_link"]);
-        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-		$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
-		
-		$title_count    = mb_strlen($video_data["video_title"],'utf-8');
-        if ($title_count > 20)
-            $video_title    = iconv_substr($video_data["video_title"],0,20)."..";
-        else
-			$video_title    = $video_data["video_title"];
-			
-        // 브랜드 줄바꿈 방지 글자 자르기
-        $brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
-        if ($brand_count > 30)
-            $video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
-        else
-            $video_brand    = $video_data["video_brand"];
-
-?>
-													
 													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
+														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 																<figcaption>
-																	<span class="brand">[<?=$video_brand?>]</span>
-																	<span class="title"><?=$video_title?></span>
+																	<span class="brand">[UNICEF]</span>
+																	<span class="title">Furniture Hurting</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
-																			<span class="cnt"><?=number_format($video_data["play_count"])?></span>
+																			<span class="cnt">4</span>
 																		</span>
 																		<span class="comment">
 																			<i class="icon"></i>
-																			<span class="cnt"><?=number_format($video_data["comment_count"])?></span>
+																			<span class="cnt">0</span>
 																		</span>
 																		<span class="like">
 																			<i class="icon"></i>
-																			<span class="cnt"><?=number_format($video_data["like_count"])?></span>
+																			<span class="cnt">2</span>
 																		</span>
 																		<span class="collect">
 																			<i class="icon"></i>
-																			<span class="cnt"><?=number_format($video_data["collect_count"])?></span>
+																			<span class="cnt">2</span>
 																		</span>
 																	</span>
 																</figcaption>
 															</figure>
 														</a>
 													</div>
-<?
-	}
-?>
-													
-													<!-- <button type="button" class="read-more">
+													<div class="video col-lg-3 col-md-3 col-sm-2">
+														<a href="#">
+															<figure>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<figcaption>
+																	<span class="brand">[UNICEF]</span>
+																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="icon-wrap">
+																		<span class="play">
+																			<i class="icon"></i>
+																			<span class="cnt">4</span>
+																		</span>
+																		<span class="comment">
+																			<i class="icon"></i>
+																			<span class="cnt">0</span>
+																		</span>
+																		<span class="like">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																		<span class="collect">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																	</span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<div class="video col-lg-3 col-md-3 col-sm-2">
+														<a href="#">
+															<figure>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<figcaption>
+																	<span class="brand">[UNICEF]</span>
+																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="icon-wrap">
+																		<span class="play">
+																			<i class="icon"></i>
+																			<span class="cnt">4</span>
+																		</span>
+																		<span class="comment">
+																			<i class="icon"></i>
+																			<span class="cnt">0</span>
+																		</span>
+																		<span class="like">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																		<span class="collect">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																	</span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<div class="video col-lg-3 col-md-3 col-sm-2">
+														<a href="#">
+															<figure>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<figcaption>
+																	<span class="brand">[UNICEF]</span>
+																	<span class="title">Furniture That</span>
+																	<span class="icon-wrap">
+																		<span class="play">
+																			<i class="icon"></i>
+																			<span class="cnt">4</span>
+																		</span>
+																		<span class="comment">
+																			<i class="icon"></i>
+																			<span class="cnt">0</span>
+																		</span>
+																		<span class="like">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																		<span class="collect">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																	</span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<div class="video col-lg-3 col-md-3 col-sm-2">
+														<a href="#">
+															<figure>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<figcaption>
+																	<span class="brand">[UNICEF]</span>
+																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="icon-wrap">
+																		<span class="play">
+																			<i class="icon"></i>
+																			<span class="cnt">4</span>
+																		</span>
+																		<span class="comment">
+																			<i class="icon"></i>
+																			<span class="cnt">0</span>
+																		</span>
+																		<span class="like">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																		<span class="collect">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																	</span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<div class="video col-lg-3 col-md-3 col-sm-2">
+														<a href="#">
+															<figure>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<figcaption>
+																	<span class="brand">[UNICEF]</span>
+																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="icon-wrap">
+																		<span class="play">
+																			<i class="icon"></i>
+																			<span class="cnt">4</span>
+																		</span>
+																		<span class="comment">
+																			<i class="icon"></i>
+																			<span class="cnt">0</span>
+																		</span>
+																		<span class="like">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																		<span class="collect">
+																			<i class="icon"></i>
+																			<span class="cnt">2</span>
+																		</span>
+																	</span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<button type="button" class="read-more">
 														<img src="./images/plus_icon.png" alt="">
-													</button> -->
+													</button>
 												</div>
 											</div>
 										</div>
