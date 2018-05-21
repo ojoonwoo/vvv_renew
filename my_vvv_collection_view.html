@@ -207,7 +207,6 @@
 										<img src="./images/profile_img_sample.jpg" alt="">
 									</div>
 									<div class="info-wrap">
-									<!--me, not me-->
 										<div class="wrap-user">
 											<div class="user-id">
 												<span class="u-id">MINIVER</span>
@@ -216,7 +215,7 @@
 												</a>
 												<div class="follow-state">
 													<a href="javascript:void(0)">팔로우하기</a>
-<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
+													<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
 												</div>
 											</div>
 										</div>
@@ -237,202 +236,47 @@
 								</div>
 							</div>
 							<!-- container -->
-							<div class="user-feed">
-								<div class="wrapper">
-									<div class="tab-wrap">
-										<div class="tab is-active">
-											<a href="#">Collection</a>
-										</div>
-										<div class="tab">
-											<a href="#">Like</a>
+							<div class="collection-detail">
+								<div class="collection-info">
+									<div class="texts">
+										<span class="title">해외 광고</span>
+										<span class="summary">서브 텍스트입니다</span>
+									</div>
+									<div class="counts">
+										<span class="wrap">
+											<i class="icon video"></i>
+											<span class="count">100</span>
+										</span>
+										<span class="wrap">
+											<i class="icon follow"></i>
+											<span class="count">1</span>
+										</span>
+									</div>
+									<div class="action-wrap">
+										<div class="inner">
+											<button type="button" data-popup="#collection-edit">수정</button>
+											<button type="button" onclick="location.href='my_vvv_collection_addvideo.html'">추가</button>
+											<button type="button" data-mode-change="delete">삭제</button>
 										</div>
 									</div>
-									<div class="inner">
-										<div class="aj-content collection is-active">
-											<div class="wrapper made">
-												<div class="text-block">
-													<h5>내가 만든 컬렉션</h5>
-													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
-													<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
-												</div>
-												<div class="list-container">
-													<div class="album-list">
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																	<div class="secret-mode"></div>
-																</figcaption>
-															</figure>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="wrapper liked">
-												<div class="text-block">
-													<h5>내가 좋아한 컬렉션</h5>
-													<p>당신이 좋아한 컬렉션입니다!</p>
-												</div>
-												<div class="list-container">
-													<div class="album-list">
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																	<div class="secret-mode"></div>
-																</figcaption>
-															</figure>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-										
-<!--
-										<div class="aj-content like">
-											<div class="text-block">
-												<span>당신이</span> 좋아한 영상입니다!
-											</div>
+								</div>
+								<div class="semi-container">
+									<div class="wrapper">
+										<div class="inner">
 											<div class="list-container">
 												<div class="video-list">
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="check-layer">
+																	<input type="checkbox">
+																	<div class="checkbox"></div>
+																</div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture Hurting</span>
+																	<span class="title">Furniture That Hides From Hurting copy 4</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
@@ -458,10 +302,15 @@
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="check-layer">
+																	<input type="checkbox">
+																	<div class="checkbox"></div>
+																</div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="title">Furniture That Hides From Hurting copy 4</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
@@ -487,10 +336,15 @@
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="check-layer">
+																	<input type="checkbox">
+																	<div class="checkbox"></div>
+																</div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="title">Furniture That Hides From Hurting copy 4</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
@@ -516,10 +370,15 @@
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="check-layer">
+																	<input type="checkbox">
+																	<div class="checkbox"></div>
+																</div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That</span>
+																	<span class="title">Furniture That Hides From Hurting copy 4</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
@@ -545,10 +404,15 @@
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="check-layer">
+																	<input type="checkbox">
+																	<div class="checkbox"></div>
+																</div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="title">Furniture That Hides From Hurting copy 4</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
@@ -574,10 +438,15 @@
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="check-layer">
+																	<input type="checkbox">
+																	<div class="checkbox"></div>
+																</div>
+																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
+																	<span class="title">Furniture That Hides From Hurting copy 4</span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
@@ -600,13 +469,12 @@
 															</figure>
 														</a>
 													</div>
-													<button type="button" class="read-more">
-														<img src="./images/plus_icon.png" alt="">
-													</button>
 												</div>
+												<button type="button" class="read-more">
+													<img src="./images/plus_icon.png" alt="">
+												</button>
 											</div>
 										</div>
--->
 									</div>
 								</div>
 							</div>
@@ -615,7 +483,7 @@
 				</div>
 			</div>
 			<div id="cursor" class="defualt"></div>
-			<div class="popup my-coll-add" id="collection-add">
+			<div class="popup my-coll-add mycollection" id="collection-add">
 				<button type="button" class="popup-close" data-popup="@close"></button>
 				<div class="inner">
 					<div class="title">
@@ -654,7 +522,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="popup my-coll-edit" id="collection-edit">
+			<div class="popup my-coll-edit mycollection" id="collection-edit">
 				<button type="button" class="popup-close" data-popup="@close"></button>
 				<div class="inner">
 					<div class="title">
@@ -729,29 +597,22 @@
 					});
 				}
 			});
+
 			
-//			var $wrap = $layer.parent(),
-//				$html = $('html');
-//
-//			if (!$wrap.hasClass('layer-wrap')){
-//				$layer.wrap('<div class="layer-wrap"></div>');
-//				$wrap = $layer.parent();
-//				$wrap.prepend('<span class="layer-wrap__vertical"></span>');
-//			}
-//
-//			if (!$wrap.hasClass('is-opened')){
-//				$wrap
-//					.stop().fadeIn(300, function(){
-//					$layer.trigger('afterLayerOpened', $wrap);
-//				})
-//					.addClass('is-opened');
-//			}
-//
-//			if (!$html.hasClass('layer-opened')){
-//				$html.addClass('layer-opened');
-//			}
-//
-//			$layer.trigger('layerOpened', $wrap);
+			//프론트 임시 샘플코드
+			$doc.on('click', '[data-mode-change]', function() {
+				var mode = $(this).data('mode-change');
+				if(!$('.list-container').hasClass('delete-mode')) {
+					//삭제 모드로 변경
+					$(this).text('완료');
+				} else {
+					//삭제 코드
+					//삭제 --
+					//삭제 완료
+					$(this).text('삭제');
+				}
+				$('.list-container').toggleClass('delete-mode');
+			});
 		</script>
 	</body>
 
