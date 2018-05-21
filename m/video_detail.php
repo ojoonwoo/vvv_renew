@@ -84,7 +84,7 @@
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>"></a>
 									<a href="javascript:alert('준비중입니다.')" class="action collect"></a>
-									<a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a>
+									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
 									<a href="" class="action share"></a>
 									<ul class="share-spread">
 										<li class="fb"><a href="#"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
