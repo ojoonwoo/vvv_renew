@@ -69,19 +69,16 @@
 										<div class="wrap-user">
 											<div class="user-id">
 <?
-	if ($_SESSION['ss_vvv_idx'] == $my_idx)
-	{
+	// if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	// {
 ?>
-												<span class="u-id"><?=$_SESSION['ss_vvv_name']?></span>
+												<!-- <span class="u-id"><?=$_SESSION['ss_vvv_name']?></span> -->
 <?
-	}else{
-		// $member_query		= "SELECT * FROM member_info WHERE idx='".$my_idx."'";
-		// $member_result		= mysqli_query($my_db, $member_query);
-		// $member_data		= mysqli_fetch_array($member_result);
+	// }else{
 ?>
 												<span class="u-id"><?=$mb_data['mb_name']?></span>
 <?
-	}
+	// }
 ?>
 												<a href="javascript:void(0)" class="setting">
 													<img src="./images/icon_profile_setting.png" alt="">
@@ -157,6 +154,14 @@
 													<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												</div>
 <?
+	}else{
+?>												
+												<div class="text-block">
+													<h5><?=$mb_data['mb_name']?>님이 만든 컬렉션</h5>
+													<!-- <p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p> -->
+													<!-- <button type="button" class="btn-create" data-popup="#collection-add">만들기</button> -->
+												</div>
+<?
 	}
 ?>												
 												<div class="list-container">
@@ -201,10 +206,24 @@
 												</div>
 											</div>
 											<div class="wrapper liked">
+<?
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
+?>																								
 												<div class="text-block">
 													<h5>내가 좋아한 컬렉션</h5>
 													<p>당신이 좋아한 컬렉션입니다!</p>
 												</div>
+<?
+	}else{
+?>		
+												<div class="text-block">
+													<h5><?=$mb_data['mb_name']?>님이 좋아한 컬렉션</h5>
+													<p><?=$mb_data['mb_name']?>님이 좋아한 컬렉션입니다!</p>
+												</div>
+<?
+	}
+?>										
 												<div class="list-container">
 													<div class="album-list">
 														<div class="album">
