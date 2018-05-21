@@ -150,7 +150,7 @@
 .app-container.sub .header-container {
 	background: #ffffff;
 }
-.app-container.sub .content .inner {
+.app-container.sub .content > .inner {
 	background: #f2f2f2;
 	max-width: 1400px;
 	margin: 0 auto;
@@ -899,145 +899,152 @@
 	height: 20px;
 }
 
-.popup.my-coll-add {
-	width: 739px;
+/* 컬렉션 상세 */
+.content.user-page .collection-detail {
+	margin: 109px auto 191px;
+	max-width: 1270px;
 }
-.popup.my-coll-add .inner {
-	padding: 95px 34px 82px;
-	text-align: center;
-}
-.popup.my-coll-add .title {
-	text-align: left;
-	border-bottom: 1px solid #c8c8c8;
-	padding-bottom: 29px;
-}
-.popup.my-coll-add .title h5 {
-	padding-left: 38px;
-	font-size: 23px;
-	font-weight: 700;
-}
-.popup.my-coll-add .input-area {
-	margin: 72px 0 39px;
-	display: inline-block;
-}
-.popup.my-coll-add .input-area .input-group {
-	text-align: left;
-	font-size: 0;
-	margin-bottom: 25px;
-}
-.popup.my-coll-add .input-area .input-group:last-child {
-	margin-bottom: 0;
-}
-.popup.my-coll-add .input-area .input-group .guide {
-	display: inline-block;
-	width: 60px;
-	vertical-align: middle;
-	font-size: 20px;
-}
-.popup.my-coll-add .input-area .input-group .input {
-	display: inline-block;
-	width: 486px;
-	vertical-align: middle;
-}
-.popup.my-coll-add .input-area .input-group input[type="text"] {
-	width: 100%;
-	border-bottom: 1px solid #666666;
-	padding: 8px 13px;
-	font-size: 20px;
-}
-.popup.my-coll-add .input-area .input-group input[type="text"]::placeholder {
-	color: #b7b7b7;
-}
-.popup.my-coll-add .setting {
-	padding-right: 52px;
-	margin-bottom: 51px;
-	text-align: right;
-	font-size: 0;
-}
-.popup.my-coll-add .setting .secret-guide {
-	display: inline-block;
-	margin-right: 12px;
-	font-size: 20px;
-	line-height: 20px;
-	vertical-align: middle;
-	padding-left: 28px;
-	background: url(../images/myvvv_secret_icon.png) 0 0 / 16px 20px no-repeat;
-}
-.popup.my-coll-add .setting .toggle {
+.content.user-page .collection-detail .collection-info {
 	position: relative;
+	margin-bottom: 16px;
+	padding: 0 130px;
+}
+.content.user-page .collection-detail .collection-info .texts {
+	margin-bottom: 19px;
+}
+.content.user-page .collection-detail .collection-info .texts .title {
 	display: inline-block;
-	width: 106px;
-	height: 36px;
-	border: 3px solid #e2e2e2;
-	border-radius: 17px;
-	vertical-align: middle;
-	background: #ffffff;
-	transition: background-color .25s cubic-bezier(.25,.375,.1,.975);
+	font-size: 28px;
+	font-weight: 700;
+	margin-right: 28px;
 }
-.popup.my-coll-add .setting .toggle:after {
-	content: "아니요";
-	position: absolute;
-	left: 41px;
-	top: 50%;
-	transform: translateY(-50%);
-	color: #b7b7b7;
-	font-size: 18px;
+.content.user-page .collection-detail .collection-info .texts .summary {
+	display: inline-block;
+	font-size: 23px;
 	font-weight: 500;
-	transition: color 0.2s ease;
 }
-.popup.my-coll-add .setting .toggle.is-active {
-	background: #333333;
+.content.user-page .collection-detail .semi-container {
+	position: relative;
+	padding: 52px 117px;
+	border: 1px solid #969696;
 }
-.popup.my-coll-add .setting .toggle.is-active:after {
-	content: "네";
-	left: 23px;
-	color: #ffffff;
+.content.user-page .collection-detail .collection-info .counts span.wrap {
+	display: inline-block;
+	margin-right: 19px;
 }
-.popup.my-coll-add .setting .toggle input[type="checkbox"] {
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	cursor: pointer;
-	opacity: 0;
+.content.user-page .collection-detail .collection-info .counts span.wrap span,
+.content.user-page .collection-detail .collection-info .counts span.wrap i {
+	display: inline-block;
+	font-size: 21px;
+	font-weight: 500;
+}
+.content.user-page .collection-detail .collection-info .counts span.wrap i {
+	margin-right: 9px;
+}
+.content.user-page .collection-detail .collection-info .counts .icon.video {
+	background: url(../images/myvvv_icon_vid.png) center / cover no-repeat;
+	width: 33px;
+	height: 22px;
+}
+.content.user-page .collection-detail .collection-info .counts .icon.follow {
+	background: url(../images/myvvv_icon_follow.png) center / cover no-repeat;
+	width: 24px;
+	height: 20px;
+}
+.content.user-page .collection-detail .collection-info .action-wrap {
+	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
-	bottom: 0;
+	width: 100%;
+	text-align: right;
+	padding: 20px 0;
 }
-input[type="checkbox"] {
-	border: 0;
-	position: absolute;
+.content.user-page .collection-detail .collection-info .action-wrap .inner {
+	font-size: 0;
+	max-width: 1035px;
+	margin: 0 auto;
 }
-.popup.my-coll-add .setting .toggle .toggle-circle {
+.content.user-page .collection-detail .collection-info .action-wrap button {
+	width: 85px;
+	height: 49px;
+	margin-right: 11px;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 700;
+	background: #666666;
+}
+.content.user-page .collection-detail .collection-info .action-wrap button:last-child {
+	margin-right: 0;
+}
+.content.user-page .collection-detail .list-container .read-more {
+	margin: 0 auto 40px;
+}
+
+.content.user-page .collection-detail .list-container .video .check-layer {
 	position: absolute;
-	left: 0;
 	top: 0;
-	border-radius: 50%;
-	border: 3px solid #e2e2e2;
-	width: 36px;
-	height: 36px;
-	margin: -3px;
-	background: #ffffff;
-	transition: left 0.25s ease;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	z-index: -1;
 }
-.popup.my-coll-add .setting .toggle.is-active .toggle-circle {
-	left: 70px;
+.content.user-page .collection-detail .list-container .video .check-layer input[type="checkbox"] {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
 }
-.popup.my-coll-add .button-wrap button {
-	width: 151px;
+.content.user-page .collection-detail .list-container .video .check-layer .checkbox {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	background: transparent;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #333333;
+}
+.content.user-page .collection-detail .list-container .video .check-layer input[type="checkbox"]:checked + .checkbox {
+	background: #333333;
+}
+.content.user-page .collection-detail .list-container.delete-mode .video .check-layer {
+	opacity: 1;
+	z-index: 1;
+}
+.content.user-page .collection-detail .list-container .video figure {
+	position: relative;
+}
+/* 컬렉션 상세 */
+/* 컬렉션 영상 추가 */
+.content .collection-detail.add-video {
+	
+}
+.content .collection-detail.add-video > .title {
+	margin-bottom: 64px;
+	font-size: 28px;
+	font-weight: 700;
+	text-align: center;
+}
+.content .collection-detail.add-video .semi-container {
+	border: 0;
+	padding: 0 117px;
+}
+.content .collection-detail.add-video .list-container .video .check-layer {
+	opacity: 1;
+	z-index: 1;
+}
+.content .collection-detail.add-video .list-container .btn-apply {
+	display: block;
+	width: 162px;
 	height: 57px;
+	margin: 0 auto;
+	background: #333333;
 	color: #ffffff;
 	font-size: 24px;
 	font-weight: 500;
-	background: #333333;
-	margin-right: 23px;
 }
-.popup.my-coll-add .button-wrap button:last-child {
-	margin-right: 0;
-}
-.popup.my-coll-add .button-wrap button.btn-light-grey {
-	background: #666666;
-}
+/* 컬렉션 영상 추가 */
+
 
 /* my vvv */
 /* login */
@@ -1092,3 +1099,147 @@ input[type="checkbox"] {
 	background-size: 35px auto;
 }
 /* login */
+
+
+
+/* 팝업 개별코드 */
+.popup.mycollection {
+	width: 739px;
+}
+.popup.mycollection .inner {
+	padding: 95px 34px 82px;
+	text-align: center;
+}
+.popup.mycollection .title {
+	text-align: left;
+	border-bottom: 1px solid #c8c8c8;
+	padding-bottom: 29px;
+}
+.popup.mycollection .title h5 {
+	padding-left: 38px;
+	font-size: 23px;
+	font-weight: 700;
+}
+.popup.mycollection .input-area {
+	margin: 72px 0 39px;
+	display: inline-block;
+}
+.popup.mycollection .input-area .input-group {
+	text-align: left;
+	font-size: 0;
+	margin-bottom: 25px;
+}
+.popup.mycollection .input-area .input-group:last-child {
+	margin-bottom: 0;
+}
+.popup.mycollection .input-area .input-group .guide {
+	display: inline-block;
+	width: 60px;
+	vertical-align: middle;
+	font-size: 20px;
+}
+.popup.mycollection .input-area .input-group .input {
+	display: inline-block;
+	width: 486px;
+	vertical-align: middle;
+}
+.popup.mycollection .input-area .input-group input[type="text"] {
+	width: 100%;
+	border-bottom: 1px solid #666666;
+	padding: 8px 13px;
+	font-size: 20px;
+}
+.popup.mycollection .input-area .input-group input[type="text"]::placeholder {
+	color: #b7b7b7;
+}
+.popup.mycollection .setting {
+	padding-right: 52px;
+	margin-bottom: 51px;
+	text-align: right;
+	font-size: 0;
+}
+.popup.mycollection .setting .secret-guide {
+	display: inline-block;
+	margin-right: 12px;
+	font-size: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+	padding-left: 28px;
+	background: url(../images/myvvv_secret_icon.png) 0 0 / 16px 20px no-repeat;
+}
+.popup.mycollection .setting .toggle {
+	position: relative;
+	display: inline-block;
+	width: 106px;
+	height: 36px;
+	border: 3px solid #e2e2e2;
+	border-radius: 17px;
+	vertical-align: middle;
+	background: #ffffff;
+	transition: background-color .25s cubic-bezier(.25,.375,.1,.975);
+}
+.popup.mycollection .setting .toggle:after {
+	content: "아니요";
+	position: absolute;
+	left: 41px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #b7b7b7;
+	font-size: 18px;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+.popup.mycollection .setting .toggle.is-active {
+	background: #333333;
+}
+.popup.mycollection .setting .toggle.is-active:after {
+	content: "네";
+	left: 23px;
+	color: #ffffff;
+}
+.popup.mycollection .setting .toggle input[type="checkbox"] {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+	opacity: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+input[type="checkbox"] {
+	border: 0;
+	position: absolute;
+}
+.popup.mycollection .setting .toggle .toggle-circle {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	border: 3px solid #e2e2e2;
+	width: 36px;
+	height: 36px;
+	margin: -3px;
+	background: #ffffff;
+	transition: left 0.25s ease;
+}
+.popup.mycollection .setting .toggle.is-active .toggle-circle {
+	left: 70px;
+}
+.popup.mycollection .button-wrap button {
+	width: 151px;
+	height: 57px;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 500;
+	background: #333333;
+	margin-right: 23px;
+}
+.popup.mycollection .button-wrap button:last-child {
+	margin-right: 0;
+}
+.popup.mycollection .button-wrap button.btn-light-grey {
+	background: #666666;
+}
+/* 팝업 개별코드 */

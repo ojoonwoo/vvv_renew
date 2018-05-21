@@ -77,6 +77,10 @@ button {
 	cursor: pointer;
 	outline: none;
 }
+input[type="checkbox"],
+input[type="radio"] {
+	cursor: pointer;
+}
 a {
 	cursor: pointer;
 	text-decoration: none;
