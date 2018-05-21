@@ -139,7 +139,7 @@ include_once "./include/autoload.php";
 
 			$query		= "INSERT INTO view_info(v_idx, mb_idx, mb_email, view_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_idx']."','".$_SESSION['ss_vvv_email']."','".date("Y-m-d H:i:s")."')";
 			$result		= mysqli_query($my_db, $query);
-
+print_r($query);
 			$query2		= "UPDATE video_info2 SET play_count=play_count+1 WHERE video_idx='".$v_idx."'";
 			$result2	= mysqli_query($my_db, $query2);
 
