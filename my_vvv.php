@@ -110,7 +110,7 @@
 										</div>
 									</div>
 									<div class="inner">
-										<div class="aj-content collection">
+										<div class="aj-content collection is-active">
 											<div class="wrapper made">
 												<div class="text-block">
 													<h5>내가 만든 컬렉션</h5>
@@ -280,7 +280,7 @@
 											</div>
 										</div>
 										
-										<div class="aj-content like is-active">
+										<div class="aj-content like">
 											<div class="text-block">
 												<span>당신이</span> 좋아한 영상입니다!
 											</div>
