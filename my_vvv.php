@@ -158,7 +158,7 @@
 ?>												
 												<div class="text-block">
 													<h5><?=$mb_data['mb_name']?>님이 만든 컬렉션</h5>
-													<!-- <p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p> -->
+													<p><?=$mb_data['mb_name']?>님이 만든 컬렉션을 감상해 보세요!</p>
 													<!-- <button type="button" class="btn-create" data-popup="#collection-add">만들기</button> -->
 												</div>
 <?
