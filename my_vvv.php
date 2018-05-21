@@ -84,10 +84,21 @@
 <?
 	if ($_SESSION['ss_vvv_idx'] != $my_idx)
 	{
+		// 팔로우 여부 확인
+		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+		$follow_result		= mysqli_query($my_db, $follow_query);
+		$follow_count		= mysqli_num_rows($follow_result);
+		
+		if ($follow_count > 0)
+		{
 ?>
-													<a href="javascript:follow_member()">팔로우하기</a>
-<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
+													<a href="javascript:void(0)" class="already">팔로우중</a>
 <?
+		}else{
+?>													
+													<a href="javascript:follow_member()">팔로우하기</a>
+<?
+		}
 	}
 ?>
 												</div>
