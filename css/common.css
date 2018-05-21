@@ -591,14 +591,20 @@ html.layer-opened .global-search-layer {
 	overflow-x: auto;
 	font-size: 0;
 	line-height: 0;
+	opacity: 0;
 	text-align: center;
 	white-space: normal;
 	word-break: normal;
 	word-wrap: normal;
 	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 0.15s ease 0.1s;
 }
 .popup-wrap, .popup {
 	display: none;
+}
+.popup-wrap.is-opened {
+	display: block;
+	opacity: 1;
 }
 .popup-wrap:before {
 	content: "";
@@ -619,6 +625,11 @@ html.layer-opened .global-search-layer {
 	word-wrap: break-word;
 	background: #ffffff;
 	text-align: left;
+	transform: scale(0);
+	transition: all 0.15s ease 0.35s;
+}
+.popup-wrap.is-opened .popup {
+	transform: scale(1);
 }
 .popup button.popup-close {
 	display: block;

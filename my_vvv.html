@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="./css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="./js/main.js"></script>
 	</head>
 
 	<body>
@@ -252,7 +253,7 @@
 												<div class="text-block">
 													<h5>내가 만든 컬렉션</h5>
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
-													<button type="button" class="btn-create">만들기</button>
+													<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												</div>
 												<div class="list-container">
 													<div class="album-list">
@@ -615,8 +616,8 @@
 			</div>
 			<div id="cursor" class="defualt"></div>
 			<!--popup-wrap 동적생성-->
-			<div class="popup-wrap">
-				<div class="popup my-coll-add">
+<!--			<div class="popup-wrap">-->
+				<div class="popup my-coll-add" id="collection-add">
 					<button type="button" class="popup-close"></button>
 					<div class="inner">
 						<div class="title">
@@ -655,7 +656,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+<!--			</div>-->
 		</div>
 		<script>
 			$(function() {
