@@ -53,7 +53,7 @@
 									<div class="sort-list">
 										<div class="sort">
 											<select name="lc-order-date" id="lc-order-date">
-												<option value="" disabled selected>연 도</option>
+												<option value="" selected>연 도</option>
 <?
     $s_year = 2018;
     while( $s_year > 2010 )
@@ -68,14 +68,14 @@
 										</div>
 										<div class="sort">
 											<select name="lc-order-nation" id="lc-order-nation">
-												<option value="" disabled selected>국 가</option>
+												<option value="" selected>국 가</option>
 												<option value="domestic" <?if($search_nation == "domestic"){?>selected<?}?>>국 내</option>
 												<option value="foreign" <?if($search_nation == "foreign"){?>selected<?}?>>해 외</option>
 											</select>
 										</div>
 										<div class="sort">
 											<select name="lc-order-industry" id="lc-order-industry">
-												<option value="" disabled selected>산업군</option>
+												<option value="" selected>산업군</option>
 <?
     $category1_query	= "SELECT * FROM category_info WHERE category_level='1' AND category_useYN='Y'";
     $category1_result 	= mysqli_query($my_db, $category1_query);
@@ -90,7 +90,7 @@
 										</div>
 										<div class="sort">
 											<select name="lc-order-genre" id="lc-order-genre">
-												<option value="" disabled selected>장 르</option>
+												<option value="" selected>장 르</option>
 <?
     $genre_query	= "SELECT * FROM genre_info WHERE genre_showYN='Y'";
     $genre_result 	= mysqli_query($my_db, $genre_query);
@@ -105,7 +105,7 @@
 										</div>
 										<div class="sort">
 											<select name="lc-order-awards" id="lc-order-awards">
-												<option value="" disabled selected>광고제</option>
+												<option value="" selected>광고제</option>
 												<option value="1" <?if($search_prize == "1"){?>selected<?}?>>CLIO</option>
 												<option value="3" <?if($search_prize == "3"){?>selected<?}?>>CANNE</option>
 												<option value="2" <?if($search_prize == "2"){?>selected<?}?>>NYF</option>

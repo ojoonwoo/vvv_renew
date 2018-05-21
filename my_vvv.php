@@ -7,9 +7,13 @@
 
 	// 회원 정보 가져오기
 	if ($_REQUEST["idx"])
-		$my_idx	= $_REQUEST["idx"];
-	else
+	{
+		$my_idx			= $_REQUEST["idx"];
+		$follow_idx		= $_REQUEST["idx"]; 
+	}else{
 		$my_idx	= $_SESSION['ss_vvv_idx'];
+		$follow_idx		= $_REQUEST["idx"]; 
+	}
 
 	if (!$_SESSION['ss_vvv_idx'] && $_REQUEST["email"] == "")
 		echo "<script>location.href='login.php';</script>";
@@ -20,7 +24,7 @@
 	$mb_data		= mysqli_fetch_array($mb_result);
 
 
-	$my_query		= "SELECT * FROM like_info WHERE mb_email='".$mb_data["mb_email"]."' AND like_flag='Y'";
+	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
 
@@ -51,7 +55,7 @@
 							<div class="user-info">
 								<div class="wrapper">
 									<div class="profile-img">
-										<img src="./images/detail_video_sample.jpg" alt="">
+										<img src="./images/profile_img_sample.jpg" alt="">
 									</div>
 									<div class="info-wrap">
 									<!--me, not me-->
@@ -73,27 +77,238 @@
 <?
 	}
 ?>
+												<a href="javascript:void(0)" class="setting">
+													<img src="./images/icon_profile_setting.png" alt="">
+												</a>
+												<div class="follow-state">
+<?
+	if ($_SESSION['ss_vvv_idx'] != $my_idx)
+	{
+		// 팔로우 여부 확인
+		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+		$follow_result		= mysqli_query($my_db, $follow_query);
+		$follow_count		= mysqli_num_rows($follow_result);
+		
+		if ($follow_count > 0)
+		{
+?>
+													<a href="javascript:void(0)" class="already">팔로우중</a>
+<?
+		}else{
+?>													
+													<a href="javascript:follow_member()">팔로우하기</a>
+<?
+		}
+	}
+?>
+												</div>
 											</div>
 										</div>
-										<div class="wrap-act">
-											
+										<div class="wrap-actions">
+											<div class="f-wer">
+												<span>팔로워</span>
+												<span class="count"><?=$member_data['mb_follower_count']?></span>
+											</div>
+											<div class="f-ing">
+												<span>팔로잉</span>
+												<span class="count"><?=$member_data['mb_following_count']?></span>
+											</div>
+											<div class="f-add">
+<?
+	if ($_SESSION['ss_vvv_idx'] != $my_idx)
+	{
+?>
+												<button type="button">친구추가</button>
+<?
+	}
+?>												
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<!-- container -->
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-<!--
-										<div class="tab">
+										<div class="tab is-active">
 											<a href="#">Collection</a>
 										</div>
--->
-										<div class="tab is-active">
+										<div class="tab">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
+										<div class="aj-content collection is-active">
+											<div class="wrapper made">
+												<div class="text-block">
+													<h5>내가 만든 컬렉션</h5>
+													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+													<button type="button" class="btn-create">만들기</button>
+												</div>
+												<div class="list-container">
+													<div class="album-list">
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																	<div class="secret-mode"></div>
+																</figcaption>
+															</figure>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="wrapper liked">
+												<div class="text-block">
+													<h5>내가 좋아한 컬렉션</h5>
+													<p>당신이 좋아한 컬렉션입니다!</p>
+												</div>
+												<div class="list-container">
+													<div class="album-list">
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																</figcaption>
+															</figure>
+														</div>
+														<div class="album">
+															<figure>
+																<a href="">
+																	<div class="frame">
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																	</div>
+																	<div class="over-layer">
+																		<button type="button" class="btn-delete"></button>
+																	</div>
+																</a>
+																<figcaption>
+																	<span class="title">해외 광고</span>
+																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="icon-wrap">
+																		<div class="like">
+																			<i></i>
+																			<span class="count">2</span>
+																		</div>
+																	</span>
+																	<div class="secret-mode"></div>
+																</figcaption>
+															</figure>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
 										<div class="aj-content like">
 											<div class="text-block">
 												<span>당신이</span> 좋아한 영상입니다!
@@ -125,8 +340,7 @@
         else
             $video_brand    = $video_data["video_brand"];
 
-?>
-													
+?>													
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
 															<figure>
@@ -158,8 +372,7 @@
 													</div>
 <?
 	}
-?>
-													
+?>													
 													<!-- <button type="button" class="read-more">
 														<img src="./images/plus_icon.png" alt="">
 													</button> -->
@@ -210,6 +423,65 @@
 					});
 				}
 			});
+
+			// 검색 APPLY 클릭
+			$doc.on('click', '#search-layer-submit', function() {
+				var search_keyword      = nullToBlank($("#search_keyword").val());
+				var search_year         = nullToBlank($("#order-date").val());
+				var search_nation       = nullToBlank($("#order-nation").val());
+				var search_category1    = nullToBlank($("#order-industry").val());
+				var search_genre        = nullToBlank($("#order-genre").val());
+				var search_prize        = nullToBlank($("#order-awards").val());
+				var search_sort         = nullToBlank($("#order-sortby").val());
+
+				location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
+			});
+
+			function nullToBlank(str)
+			{
+				if (str == null)
+					str = "";
+					
+				return str;
+			}
+
+			$doc.on('click', '#search-layer-refresh', function() {
+				$("#search_keyword").val("");
+				$("#order-date").val("");
+				$("#order-nation").val("");
+				$("#order-industry").val("");
+				$("#order-genre").val("");
+				$("#order-awards").val("");
+				$("#order-sortby").val("new");        
+			});
+
+			function follow_member()
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "follow_member",
+						"follow_idx"          	: "<?=$follow_idx?>"
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							// alert("덧글이 입력되었습니다.");
+							$(".follow-state a").addClass("already");
+							$(".follow-state a").html("팔로우중");
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 이용해 주세요!");
+							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+			}
 		</script>
 	</body>
 

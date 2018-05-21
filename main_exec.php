@@ -100,26 +100,26 @@ include_once "./include/autoload.php";
 
             $v_idx			= $_REQUEST["v_idx"];
 
-            if ($_SESSION['ss_vvv_email'])
+            if ($_SESSION['ss_vvv_idx'])
             {
-                $like_query		= "SELECT * FROM like_info WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
+                $like_query		= "SELECT * FROM like_info WHERE mb_idx='".$_SESSION['ss_vvv_idx']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
                 $like_result	= mysqli_query($my_db, $like_query);
                 $like_count		= mysqli_num_rows($like_result);
                 $like_data		= mysqli_fetch_array($like_result);
     
                 if ($like_count == 0)
                 {
-                    $query		= "INSERT INTO like_info(v_idx, mb_email, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','Y','".date("Y-m-d H:i:s")."')";
+                    $query		= "INSERT INTO like_info(v_idx, mb_email, mb_idx, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_idx']."','Y','".date("Y-m-d H:i:s")."')";
                     $result		= mysqli_query($my_db, $query);
     
-                    $query2		= "UPDATE video_info2 SET like_count=like_count+1 WHERE idx='".$v_idx."'";
+                    $query2		= "UPDATE video_info2 SET like_count=like_count+1 WHERE video_idx='".$v_idx."'";
                     $result2	= mysqli_query($my_db, $query2);
                     $flag	= "Y";
                 }else{
-                    $query		= "UPDATE like_info SET like_flag='N' WHERE v_idx='".$v_idx."' AND mb_email='".$_SESSION['ss_vvv_email']."'";
+                    $query		= "UPDATE like_info SET like_flag='N' WHERE v_idx='".$v_idx."' AND mb_idx='".$_SESSION['ss_vvv_idx']."'";
                     $result		= mysqli_query($my_db, $query);
     
-                    $query2		= "UPDATE video_info2 SET like_count=like_count-1 WHERE idx='".$v_idx."'";
+                    $query2		= "UPDATE video_info2 SET like_count=like_count-1 WHERE video_idx='".$v_idx."'";
                     $result2	= mysqli_query($my_db, $query2);
                     $flag	= "N";
                 }
@@ -137,13 +137,13 @@ include_once "./include/autoload.php";
 
             $v_idx			= $_REQUEST["v_idx"];
 
-			$query		= "INSERT INTO view_info(v_idx, mb_email, view_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".date("Y-m-d H:i:s")."')";
+			$query		= "INSERT INTO view_info(v_idx, mb_idx, mb_email, view_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_idx']."','".$_SESSION['ss_vvv_email']."','".date("Y-m-d H:i:s")."')";
 			$result		= mysqli_query($my_db, $query);
 
-			$query2		= "UPDATE video_info2 SET play_count=play_count+1 WHERE video_idx='".$v_idx."'";
+            $query2		= "UPDATE video_info2 SET play_count=play_count+1 WHERE video_idx='".$v_idx."'";
 			$result2	= mysqli_query($my_db, $query2);
 
-			if ($result)
+            if ($result2)
 				$flag	= "Y";
 			else
 				$flag	= "N";
@@ -159,12 +159,12 @@ include_once "./include/autoload.php";
             $v_idx			= $_REQUEST["idx"];
             $comment_text	= $_REQUEST["comment_text"];
 
-            if ($_SESSION['ss_vvv_email'])
+            if ($_SESSION['ss_vvv_idx'])
             {
                 $query		= "INSERT INTO comment_info(v_idx, mb_email, mb_idx, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_idx']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
                 $result		= mysqli_query($my_db, $query);
     
-                $query2		= "UPDATE video_info2 SET comment_count=comment_count+1 WHERE idx='".$v_idx."'";
+                $query2		= "UPDATE video_info2 SET comment_count=comment_count+1 WHERE video_idx='".$v_idx."'";
                 $result2	= mysqli_query($my_db, $query2);
     
                 if ($result)
@@ -243,7 +243,7 @@ include_once "./include/autoload.php";
 
             $v_idx		= $_REQUEST["v_idx"];
 
-            if ($_SESSION['ss_vvv_email'])
+            if ($_SESSION['ss_vvv_idx'])
             {
                 $query 		= "INSERT INTO translate_info(v_idx, requester_email, requester_ipaddr, request_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
                 $result 	= mysqli_query($my_db, $query);
@@ -284,6 +284,30 @@ include_once "./include/autoload.php";
 			}else{
 				$flag = "N";
 			}
+
+			echo $flag;
+		break;
+
+        case "follow_member" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $follow_idx		= $_REQUEST["follow_idx"];
+
+            if ($_SESSION['ss_vvv_idx'])
+            {
+                $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                $result 	= mysqli_query($my_db, $query);
+
+                if($result) {
+                    $flag = "Y";
+                }else{
+                    $flag = "N";
+                }
+            }else{
+                $flag = "L";
+            }
 
 			echo $flag;
 		break;

@@ -40,7 +40,7 @@
 					<div class="content awards">
 						<div class="inner">
 							<div class="awards-banner">
-							<div class="banner _01 is-active">
+								<div class="banner _01 is-active">
 									<div class="clickEl" onmouseover="bannerResizing(1, this)">
 										<figure>
 											<figcaption>
@@ -80,7 +80,7 @@
 							<div class="cate-wrap">
 								<div class="main-cate">
 									<div class="sort">
-										<select name="lc-order-date" id="lc-order-date">
+										<select name="lc-order-date" id="lc-order-date" onchange="sel_year(this.value)">
 											<option disabled>연도</option>
 											<option value="2017" selected>2017</option>
 											<option value="2016">2016</option>
@@ -162,7 +162,7 @@
 							<div class="list-container">
 								<div class="video-list" id="award_list">
 <?
-    $award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_name='1' AND awards_winner_year='2017' GROUP BY video_idx";
+    $award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_name='2' AND awards_winner_year='2017' GROUP BY video_idx";
 	$award_result 	= mysqli_query($my_db, $award_query);
 	
 	$i = 0;
@@ -190,7 +190,8 @@
 		// 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $video_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
         $title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
@@ -243,7 +244,8 @@
 		// 유튜브 영상 코드 자르기
         $yt_code_arr1   = explode("v=", $video_data["video_link"]);
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+        $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
         $title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
@@ -297,6 +299,8 @@
 			<div id="cursor" class="defualt"></div>
 		</div>
 		<script>
+			var select_award = "2";
+
 			$(function() {
 				//				global search
 				$('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
@@ -306,7 +310,25 @@
 				$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 				$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 				//				local search - award
-				$('#lc-order-date').selectmenu().selectmenu('menuWidget').addClass("overflow");
+				$('#lc-order-date').selectmenu({
+					change: function(event, ui) {
+						// console.log(event);
+						// console.log(ui.item.value);
+						$.ajax({
+							type   : "POST",
+							async  : false,
+							url    : "./ajax_award.php",
+							data:{
+								"award"					: select_award,
+								"award_date"			: ui.item.value
+							},
+							success: function(response){
+								console.log(response);
+								$("#award_list").html(response);
+							}
+						});
+					}
+				}).selectmenu('menuWidget').addClass("overflow");
 			});
 
 			//	기본 기능 테스트 코드
@@ -361,7 +383,7 @@
 							left: 65.2+'%',
 							background: "url(./images/clio_off.png) left center / cover no-repeat",
 						});
-						break;
+					break;
 					case 2:
 						$me.css({
 							width: 75.4+'%',
@@ -377,7 +399,7 @@
 							left: 72+'%',
 							background: "url(./images/clio_off.png) left center / cover no-repeat",
 						});
-						break;
+					break;
 					case 3:
 						$me.css({
 							width: 75.4+'%',
@@ -393,13 +415,14 @@
 							left: 10+'%',
 							background: "url(./images/newyork_off.png) left center / cover no-repeat",
 						});
-						break;
+					break;
 				}
 			}
 			
 			function sel_award(award)
 			{
-				var award_date = $("#lc-order-date").val();
+				select_award	= award;
+				var award_date 	= $("#lc-order-date").val();
 				if (award < 4)
 				{
 					$(".award").hide();
@@ -416,7 +439,7 @@
 					async  : false,
 					url    : "./ajax_award.php",
 					data:{
-						"award"					: award,
+						"award"					: select_award,
 						"award_date"			: award_date
 					},
 					success: function(response){
@@ -427,6 +450,35 @@
 						// 	$(".read-more").hide();
 						// else
 						// 	$(".read-more").show();
+						$("#award_list").html(response);
+					}
+				});
+			}
+
+			function sel_year(a_date)
+			{
+				// select_award	= award;
+				// var award_date 	= $("#lc-order-date").val();
+				// if (award < 4)
+				// {
+				// 	$(".award").hide();
+				// 	$(".award._"+award).show();
+				// 	$(".award_name").removeClass("is-active");
+				// 	$(".award_name._"+award).addClass("is-active");
+				// }
+				// $(".award_prize").removeClass("is-active");
+				// $(".award_prize._"+award).addClass("is-active");
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./ajax_award.php",
+					data:{
+						"award"					: select_award,
+						"award_date"			: a_date
+					},
+					success: function(response){
+						console.log(response);
 						$("#award_list").html(response);
 					}
 				});

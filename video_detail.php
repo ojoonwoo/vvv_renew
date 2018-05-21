@@ -306,6 +306,37 @@
 				}
 			}
 
+			// 검색 APPLY 클릭
+			$doc.on('click', '#search-layer-submit', function() {
+				var search_keyword      = nullToBlank($("#search_keyword").val());
+				var search_year         = nullToBlank($("#order-date").val());
+				var search_nation       = nullToBlank($("#order-nation").val());
+				var search_category1    = nullToBlank($("#order-industry").val());
+				var search_genre        = nullToBlank($("#order-genre").val());
+				var search_prize        = nullToBlank($("#order-awards").val());
+				var search_sort         = nullToBlank($("#order-sortby").val());
+
+				location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
+			});
+
+			function nullToBlank(str)
+			{
+				if (str == null)
+					str = "";
+					
+				return str;
+			}
+
+			$doc.on('click', '#search-layer-refresh', function() {
+				$("#search_keyword").val("");
+				$("#order-date").val("");
+				$("#order-nation").val("");
+				$("#order-industry").val("");
+				$("#order-genre").val("");
+				$("#order-awards").val("");
+				$("#order-sortby").val("new");        
+			});
+
 			function like_video(v_idx)
 			{
 				$.ajax({
@@ -383,7 +414,7 @@
 						console.log(response);
 						if (response.match("Y") == "Y")
 						{
-							alert("덧글이 입력되었습니다.");
+							// alert("덧글이 입력되었습니다.");
 							location.reload();
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
