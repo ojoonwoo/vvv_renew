@@ -305,16 +305,23 @@ include_once "./include/autoload.php";
                 {
                     $query 		= "UPDATE follow_info SET follow_YN='N' WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
                     $result 	= mysqli_query($my_db, $query);    
+
+                    if($result) {
+                        $flag = "D";
+                    }else{
+                        $flag = "N";
+                    }
                 }else{
                     $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
                     $result 	= mysqli_query($my_db, $query);    
+
+                    if($result) {
+                        $flag = "Y";
+                    }else{
+                        $flag = "N";
+                    }
                 }
 
-                if($result) {
-                    $flag = "Y";
-                }else{
-                    $flag = "N";
-                }
             }else{
                 $flag = "L";
             }
