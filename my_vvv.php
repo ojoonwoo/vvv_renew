@@ -161,6 +161,12 @@
 ?>												
 												<div class="list-container">
 													<div class="album-list">
+<?
+	$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."'";
+	$collection_result		= mysqli_query($my_db, $collection_query);
+	while ($collection_data = mysqli_fetch_array($collection_result))
+	{
+?>														
 														<div class="album">
 															<figure>
 																<a href="">
@@ -174,66 +180,20 @@
 																	</div>
 																</a>
 																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="title"><?=$collection_data["collection_name"]?></span>
+																	<span class="desc"><?=$collection_data["collection_desc"]?></span>
 																	<span class="icon-wrap">
 																		<div class="like">
 																			<i></i>
-																			<span class="count">2</span>
+																			<span class="count"><?=$collection_data["collection_like_count"]?></span>
 																		</div>
 																	</span>
 																</figcaption>
 															</figure>
 														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																	<div class="secret-mode"></div>
-																</figcaption>
-															</figure>
-														</div>
+<?
+	}
+?>														
 													</div>
 												</div>
 											</div>
