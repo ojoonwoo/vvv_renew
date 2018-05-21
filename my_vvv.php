@@ -335,7 +335,7 @@
 			<div id="cursor" class="defualt"></div>
 			<!--popup-wrap 동적생성-->
 <!--			<div class="popup-wrap">-->
-				<div class="popup my-coll-add" id="collection-add">
+				<div class="popup my-coll-add mycollection" id="collection-add">
 					<button type="button" class="popup-close" data-popup="@close"></button>
 					<div class="inner">
 						<div class="title">
