@@ -171,9 +171,12 @@
 															<figure>
 																<a href="">
 																	<div class="frame">
+																		<!-- <div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div> -->
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
 																	</div>
 																	<div class="over-layer">
 																		<button type="button" class="btn-delete"></button>
