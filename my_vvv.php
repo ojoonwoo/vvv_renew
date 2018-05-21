@@ -144,7 +144,7 @@
 												<div class="text-block">
 													<h5>내가 만든 컬렉션</h5>
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
-													<button type="button" class="btn-create">만들기</button>
+													<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												</div>
 												<div class="list-container">
 													<div class="album-list">
@@ -387,6 +387,48 @@
 				</div>
 			</div>
 			<div id="cursor" class="defualt"></div>
+			<!--popup-wrap 동적생성-->
+<!--			<div class="popup-wrap">-->
+				<div class="popup my-coll-add" id="collection-add">
+					<button type="button" class="popup-close" data-popup="@close"></button>
+					<div class="inner">
+						<div class="title">
+							<h5>컬렉션 만들기</h5>
+						</div>
+						<div class="content">
+							<div class="input-area">
+								<div class="input-group">
+									<div class="guide">
+										<span>이름</span>
+									</div>
+									<div class="input">
+										<input type="text" placeholder="오준우님의 5월 컬렉션">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="guide">
+										<span>설명</span>
+									</div>
+									<div class="input">
+										<input type="text">
+									</div>
+								</div>
+							</div>
+							<div class="setting">
+								<span class="secret-guide">비밀 설정</span>
+								<div class="toggle secret">
+									<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+									<div class="toggle-circle"></div>
+								</div>
+							</div>	
+							<div class="button-wrap">
+								<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
+								<button type="button">만들기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--			</div>-->
 		</div>
 		<script>
 			$(function() {
