@@ -386,6 +386,7 @@
 	position: absolute;
 	right: 93px;
 	top: 50px;
+	text-align: right;
 }
 .awards .cate-wrap .sub-cate li {
 	margin-bottom: 15px;
@@ -684,6 +685,41 @@
 	display: inline-block;
 	vertical-align: middle;
 }
+.content.user-page .user-info .info-wrap .wrap-actions {
+	position: relative;
+	padding: 64px 15px 0;
+}
+.content.user-page .user-info .info-wrap .wrap-actions > div {
+	display: inline-block;
+	color: #ffffff;
+	font-size: 22px;
+	vertical-align: middle;
+}
+.content.user-page .user-info .info-wrap .wrap-actions > div .count {
+	display: inline-block;
+	font-size: 27px;
+	font-weight: 600;
+	margin-left: 5px;
+}
+.content.user-page .user-info .info-wrap .wrap-actions .f-wer {
+	margin-right: 82px;
+}
+.content.user-page .user-info .info-wrap .wrap-actions .f-add {
+	position: absolute;
+	top: 47px;
+	right: 15px;
+}
+.content.user-page .user-info .info-wrap .wrap-actions .f-add button {
+	width: 149px;
+	height: 57px;
+	font-size: 23px;
+	font-weight: 600;
+	padding-right: 13px;
+	color: #333333;
+	background: url(../images/plus_icon_black.png) 116px 20px no-repeat #ffffff;
+	background-size: 13px 14px;
+}
+
 
 .content.user-page .user-feed {
 	margin: 191px auto;
@@ -696,6 +732,7 @@
 	left: 100px;
 	top: -70px;
 	width: 430px;
+	font-size: 0;
 }
 .content.user-page .user-feed .tab-wrap .tab {
 	text-align: center;
@@ -704,12 +741,14 @@
 	position: relative;
 	width: 50%;
 	padding: 17px 0;
+	display: inline-block;
 }
-.content.user-page .user-feed .tab-wrap:after {
+.content.user-page .user-feed .tab.is-active:after {
 	content: "";
 	height: 4px;
-	width: 50%;
+	width: 100%;
 	position: absolute;
+	left: 0;
 	bottom: -1px;
 	background: #333333;
 }
@@ -723,6 +762,141 @@
 .content.user-page .user-feed .like .text-block {
 	margin-bottom: 64px;
 	font-size: 25px;
+}
+.content.user-page .user-feed .aj-content {
+	display: none;
+}
+.content.user-page .user-feed .aj-content.is-active {
+	display: block;
+}
+.content.user-page .user-feed .collection .text-block {
+	position: relative;
+	margin-bottom: 39px;
+	padding: 0 28px;
+}
+.content.user-page .user-feed .collection .wrapper.made {
+	margin-bottom: 133px;
+}
+.content.user-page .user-feed .collection .wrapper.liked {
+	margin-bottom: 28px;
+}
+.content.user-page .user-feed .collection .text-block h5 {
+	font-size: 28px;
+	margin-bottom: 15px;
+	font-weight: 700;
+}
+.content.user-page .user-feed .collection .text-block p {
+	font-size: 24px;
+	font-weight: 500;
+}
+.content.user-page .user-feed .collection .text-block .btn-create {
+	position: absolute;
+	top: 9px;
+	right: 28px;
+	width: 126px;
+	height: 57px;
+	padding-right: 20px;
+	color: #ffffff;
+	background: url(../images/plus_icon_white.png) 90px 50% no-repeat #333333;
+	background-size: 13px 14px;
+	font-size: 22px;
+	font-weight: 500;
+}
+.content.user-page .user-feed .collection .album-list {
+	overflow: hidden;
+}
+.content.user-page .user-feed .collection .album {
+	width: 316px;
+	float: left;
+	margin-right: 43px;
+	margin-bottom: 20px;
+}
+.content.user-page .user-feed .collection .album:nth-of-type(3n) {
+	margin-right: 0;
+}
+.content.user-page .user-feed .collection .album figure > a {
+	display: block;
+	position: relative;
+	border-radius: 14px;
+	overflow: hidden;
+}
+.content.user-page .user-feed .collection .album figure > a .over-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.15s ease-out;
+}
+.content.user-page .user-feed .collection .album figure > a:hover .over-layer {
+	opacity: 1;
+	visibility: visible;
+}
+.content.user-page .user-feed .collection .album figure > a .over-layer .btn-delete {
+	display: block;
+	position: absolute;
+	top: 17px;
+	right: 14px;
+	width: 24px;
+	height: 24px;
+	background: url(../images/myvvv_album_delete.png) center / cover no-repeat;
+}
+.content.user-page .user-feed .collection .album .frame {
+	height: 510px;
+}
+.content.user-page .user-feed .collection .album .frame .thumbnail {
+	height: 33.3%;
+}
+.content.user-page .user-feed .collection .album .frame .thumbnail:nth-of-type(2) {
+	outline: 1px solid rgba(255, 255, 255, 0.9);
+}
+.content.user-page .user-feed .collection .album figcaption {
+	position: relative;
+	padding: 25px 22px;
+}
+.content.user-page .user-feed .collection .album figcaption span {
+	display: block;
+}
+.content.user-page .user-feed .collection .album figcaption .title {
+	font-size: 26px;
+	font-weight: 600;
+}
+.content.user-page .user-feed .collection .album figcaption .desc {
+	margin: 16px 0 23px;
+	font-size: 22px;
+	font-weight: 500;
+	color: #666666;
+}
+.content.user-page .user-feed .collection .album figcaption .icon-wrap {
+	font-size: 0;
+}
+.content.user-page .user-feed .collection .album figcaption .icon-wrap > div {
+	display: inline-block;
+	font-size: 0;
+}
+.content.user-page .user-feed .collection .album figcaption .icon-wrap > div span,
+.content.user-page .user-feed .collection .album figcaption .icon-wrap > div i {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 700;
+}
+.content.user-page .user-feed .collection .album figcaption .icon-wrap .like i {
+	display: inline-block;
+	background: url(../images/icon_like.png) center / 16px 15px no-repeat;
+	width: 16px;
+	height: 15px;
+	margin-right: 4px;
+}
+.content.user-page .user-feed .collection .album figcaption .secret-mode {
+	position: absolute;
+	top: 25px;
+	right: 10px;
+	background: url(../images/myvvv_secret_icon.png) center / cover no-repeat;
+	width: 16px;
+	height: 20px;
 }
 /* my vvv */
 /* login */
