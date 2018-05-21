@@ -184,7 +184,7 @@
 																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
 																	</div>
 																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
+																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
 																	</div>
 																</a>
 																<figcaption>
@@ -511,6 +511,27 @@
 					}
 				});			
 
+			}
+
+			function del_collection(idx)
+			{
+				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
+				{
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				    : "delete_collection",
+							"collection_idx"       	: idx
+						},
+						success: function(response){
+							console.log(response);
+							// vvv.popup.close();
+							// location.reload();
+						}
+					});					
+				}
 			}
 		</script>
 	</body>
