@@ -402,7 +402,7 @@
 										<span>이름</span>
 									</div>
 									<div class="input">
-										<input type="text" placeholder="오준우님의 5월 컬렉션">
+										<input type="text" placeholder="오준우님의 5월 컬렉션" id="collection_name">
 									</div>
 								</div>
 								<div class="input-group">
@@ -410,7 +410,7 @@
 										<span>설명</span>
 									</div>
 									<div class="input">
-										<input type="text">
+										<input type="text" id="collection_desc">
 									</div>
 								</div>
 							</div>
@@ -423,7 +423,7 @@
 							</div>	
 							<div class="button-wrap">
 								<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
-								<button type="button">만들기</button>
+								<button type="button" onclick="create_collection()">만들기</button>
 							</div>
 						</div>
 					</div>
@@ -528,6 +528,41 @@
 						}
 					}
 				});			
+			}
+
+			function create_collection()
+			{
+				var collection_name		= $("#collection_name").val();
+				var collection_desc		= $("#collection_desc").val();
+				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+
+				if (collection_name == "")
+				{
+					alert("컬렉션 이름을 입력해 주세요.");
+					return false;
+				}
+
+				if (collection_desc == "")
+				{
+					alert("컬렉션 설명을 입력해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "create_collection",
+						"collection_name"       : collection_name,
+						"collection_desc"		: collection_desc,
+						"collection_secret"		: collection_secret
+					},
+					success: function(response){
+						console.log(response);
+					}
+				});			
+
 			}
 		</script>
 	</body>
