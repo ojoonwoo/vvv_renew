@@ -303,8 +303,17 @@ include_once "./include/autoload.php";
 
                 if ($dupli_count > 0)
                 {
+                    // 팔로워 테이블 정보 UPDATE
                     $query 		= "UPDATE follow_info SET follow_YN='N' WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
                     $result 	= mysqli_query($my_db, $query);    
+
+                    // 회원 테이블(follow) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count - 1 WHERE idx='".$follow_idx."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
+                    
+                    // 회원 테이블(follower) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count - 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
 
                     if($result) {
                         $flag = "D";
@@ -314,6 +323,14 @@ include_once "./include/autoload.php";
                 }else{
                     $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
                     $result 	= mysqli_query($my_db, $query);    
+
+                    // 회원 테이블(follow) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count + 1 WHERE idx='".$follow_idx."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
+                    
+                    // 회원 테이블(follower) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count + 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
 
                     if($result) {
                         $flag = "Y";
