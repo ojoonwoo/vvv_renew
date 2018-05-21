@@ -370,7 +370,7 @@ include_once "./include/autoload.php";
             }else{
                 $query 		= "INSERT INTO collection_info(collection_name, collection_desc, collection_mb_idx, collection_secret, collection_regdate) values('".$collection_name."','".$collection_desc."','".$_SESSION['ss_vvv_idx']."','".$collection_secret."','".date("Y-m-d H:i:s")."')";
                 $result 	= mysqli_query($my_db, $query);    
-print_r($query);
+
                 if($result) {
                     $flag = "Y";
                 }else{

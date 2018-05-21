@@ -560,6 +560,8 @@
 					},
 					success: function(response){
 						console.log(response);
+						// vvv.popup.close();
+						location.reload();
 					}
 				});			
 
