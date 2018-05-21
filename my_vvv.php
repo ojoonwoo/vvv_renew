@@ -92,14 +92,21 @@
 										<div class="wrap-actions">
 											<div class="f-wer">
 												<span>팔로워</span>
-												<span class="count">10</span>
+												<span class="count"><?=$member_data['mb_follower_count']?></span>
 											</div>
 											<div class="f-ing">
 												<span>팔로잉</span>
-												<span class="count">10</span>
+												<span class="count"><?=$member_data['mb_following_count']?></span>
 											</div>
 											<div class="f-add">
+<?
+	if ($_SESSION['ss_vvv_idx'] != $my_idx)
+	{
+?>
 												<button type="button">친구추가</button>
+<?
+	}
+?>												
 											</div>
 										</div>
 									</div>
