@@ -225,7 +225,7 @@
 	}
 ?>										
 												<div class="list-container">
-													<div class="album-list">
+													<!-- <div class="album-list">
 														<div class="album">
 															<figure>
 																<a href="">
@@ -250,7 +250,7 @@
 																</figcaption>
 															</figure>
 														</div>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
