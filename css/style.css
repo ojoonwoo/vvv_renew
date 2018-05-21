@@ -901,7 +901,7 @@
 
 /* 컬렉션 상세 */
 .content.user-page .collection-detail {
-	margin: 109px auto 191px;
+	margin: 111px auto 191px;
 	max-width: 1270px;
 }
 .content.user-page .collection-detail .collection-info {
@@ -927,6 +927,20 @@
 	position: relative;
 	padding: 52px 117px;
 	border: 1px solid #969696;
+}
+.content.user-page .collection-detail .semi-container .content-empty {
+	margin: 100px 0 120px;
+}
+.content.user-page .collection-detail .semi-container .content-empty span {
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	color: #666666;
+}
+.content.user-page .collection-detail .semi-container .content-empty span:first-child {
+	margin-bottom: 20px;
+	font-size: 50px;
+	font-weight: 100;
 }
 .content.user-page .collection-detail .collection-info .counts span.wrap {
 	display: inline-block;
@@ -1020,10 +1034,17 @@
 	
 }
 .content .collection-detail.add-video > .title {
-	margin-bottom: 64px;
-	font-size: 28px;
-	font-weight: 700;
+	margin-bottom: 82px;
 	text-align: center;
+}
+.content .collection-detail.add-video > .title h3 {
+	font-size: 25px;
+	font-weight: 700;
+	margin-bottom: 17px;
+}
+.content .collection-detail.add-video > .title p {
+	font-size: 18px;
+	font-weight: 500;
 }
 .content .collection-detail.add-video .semi-container {
 	border: 0;
