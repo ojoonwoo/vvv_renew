@@ -472,9 +472,11 @@
 							// alert("덧글이 입력되었습니다.");
 							$(".follow-state a").addClass("already");
 							$(".follow-state a").html("팔로우중");
+							$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
 						}else if (response.match("D") == "D"){
 							$(".follow-state a").removeClass("already");
 							$(".follow-state a").html("팔로우하기");
+							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
 							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
