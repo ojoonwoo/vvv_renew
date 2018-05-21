@@ -7,9 +7,13 @@
 
 	// 회원 정보 가져오기
 	if ($_REQUEST["idx"])
-		$my_idx	= $_REQUEST["idx"];
-	else
+	{
+		$my_idx			= $_REQUEST["idx"];
+		$follow_idx		= $_REQUEST["idx"]; 
+	}else{
 		$my_idx	= $_SESSION['ss_vvv_idx'];
+		$follow_idx		= $_REQUEST["idx"]; 
+	}
 
 	if (!$_SESSION['ss_vvv_idx'] && $_REQUEST["email"] == "")
 		echo "<script>location.href='login.php';</script>";
@@ -20,7 +24,7 @@
 	$mb_data		= mysqli_fetch_array($mb_result);
 
 
-	$my_query		= "SELECT * FROM like_info WHERE mb_email='".$mb_data["mb_email"]."' AND like_flag='Y'";
+	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
 
@@ -442,7 +446,30 @@
 
 			function follow_member()
 			{
-				alert("1111");
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "follow_member",
+						"follow_idx"          	: "<?=$follow_idx?>"
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							// alert("덧글이 입력되었습니다.");
+							$(".follow-state a").addClass("already");
+							$(".follow-state a").html("팔로우중");
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 이용해 주세요!");
+							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
 			}
 		</script>
 	</body>

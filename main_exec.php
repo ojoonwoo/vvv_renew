@@ -243,7 +243,7 @@ include_once "./include/autoload.php";
 
             $v_idx		= $_REQUEST["v_idx"];
 
-            if ($_SESSION['ss_vvv_email'])
+            if ($_SESSION['ss_vvv_idx'])
             {
                 $query 		= "INSERT INTO translate_info(v_idx, requester_email, requester_ipaddr, request_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
                 $result 	= mysqli_query($my_db, $query);
@@ -284,6 +284,30 @@ include_once "./include/autoload.php";
 			}else{
 				$flag = "N";
 			}
+
+			echo $flag;
+		break;
+
+        case "follow_member" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $follow_idx		= $_REQUEST["follow_idx"];
+
+            if ($_SESSION['ss_vvv_idx'])
+            {
+                $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                $result 	= mysqli_query($my_db, $query);
+
+                if($result) {
+                    $flag = "Y";
+                }else{
+                    $flag = "N";
+                }
+            }else{
+                $flag = "L";
+            }
 
 			echo $flag;
 		break;
