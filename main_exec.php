@@ -100,26 +100,26 @@ include_once "./include/autoload.php";
 
             $v_idx			= $_REQUEST["v_idx"];
 
-            if ($_SESSION['ss_vvv_email'])
+            if ($_SESSION['ss_vvv_idx'])
             {
-                $like_query		= "SELECT * FROM like_info WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
+                $like_query		= "SELECT * FROM like_info WHERE mb_idx='".$_SESSION['ss_vvv_idx']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
                 $like_result	= mysqli_query($my_db, $like_query);
                 $like_count		= mysqli_num_rows($like_result);
                 $like_data		= mysqli_fetch_array($like_result);
     
                 if ($like_count == 0)
                 {
-                    $query		= "INSERT INTO like_info(v_idx, mb_email, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','Y','".date("Y-m-d H:i:s")."')";
+                    $query		= "INSERT INTO like_info(v_idx, mb_email, mb_idx, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_idx']."','Y','".date("Y-m-d H:i:s")."')";
                     $result		= mysqli_query($my_db, $query);
     
-                    $query2		= "UPDATE video_info2 SET like_count=like_count+1 WHERE idx='".$v_idx."'";
+                    $query2		= "UPDATE video_info2 SET like_count=like_count+1 WHERE video_idx='".$v_idx."'";
                     $result2	= mysqli_query($my_db, $query2);
                     $flag	= "Y";
                 }else{
-                    $query		= "UPDATE like_info SET like_flag='N' WHERE v_idx='".$v_idx."' AND mb_email='".$_SESSION['ss_vvv_email']."'";
+                    $query		= "UPDATE like_info SET like_flag='N' WHERE v_idx='".$v_idx."' AND mb_idx='".$_SESSION['ss_vvv_idx']."'";
                     $result		= mysqli_query($my_db, $query);
     
-                    $query2		= "UPDATE video_info2 SET like_count=like_count-1 WHERE idx='".$v_idx."'";
+                    $query2		= "UPDATE video_info2 SET like_count=like_count-1 WHERE video_idx='".$v_idx."'";
                     $result2	= mysqli_query($my_db, $query2);
                     $flag	= "N";
                 }
@@ -164,7 +164,7 @@ include_once "./include/autoload.php";
                 $query		= "INSERT INTO comment_info(v_idx, mb_email, mb_idx, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_idx']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
                 $result		= mysqli_query($my_db, $query);
     
-                $query2		= "UPDATE video_info2 SET comment_count=comment_count+1 WHERE idx='".$v_idx."'";
+                $query2		= "UPDATE video_info2 SET comment_count=comment_count+1 WHERE video_idx='".$v_idx."'";
                 $result2	= mysqli_query($my_db, $query2);
     
                 if ($result)
