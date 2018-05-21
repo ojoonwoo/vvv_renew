@@ -183,9 +183,16 @@
 																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
 																	</div>
+<?
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
+?>																													
 																	<div class="over-layer">
 																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
 																	</div>
+<?
+	}
+?>																	
 																</a>
 																<figcaption>
 																	<span class="title"><?=$collection_data["collection_name"]?></span>
