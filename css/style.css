@@ -971,16 +971,19 @@
 	border: 3px solid #e2e2e2;
 	border-radius: 17px;
 	vertical-align: middle;
+	background: #ffffff;
+	transition: background-color .25s cubic-bezier(.25,.375,.1,.975);
 }
 .popup.my-coll-add .setting .toggle:after {
 	content: "아니요";
 	position: absolute;
-	left: 43px;
+	left: 41px;
 	top: 50%;
 	transform: translateY(-50%);
 	color: #b7b7b7;
 	font-size: 18px;
 	font-weight: 500;
+	transition: color 0.2s ease;
 }
 .popup.my-coll-add .setting .toggle.is-active {
 	background: #333333;
@@ -1015,6 +1018,7 @@ input[type="checkbox"] {
 	height: 36px;
 	margin: -3px;
 	background: #ffffff;
+	transition: left 0.25s ease;
 }
 .popup.my-coll-add .setting .toggle.is-active .toggle-circle {
 	left: 70px;

@@ -38,7 +38,6 @@
 			});
 		},
 		show : function($popup){
-			console.log($popup.length);
 			if ($popup.length){
 				var $wrap = $popup.parent(),
 					$html = $('html');
@@ -51,7 +50,7 @@
 
 				if (!$wrap.hasClass('is-opened')){
 					$wrap
-						.stop().show(function(){
+						.stop().fadeIn(10, function(){
 						$popup.trigger('afterPopupOpened', $wrap);
 					})
 						.addClass('is-opened');
@@ -69,7 +68,7 @@
 				var $wrap = $popup.parent(),
 					$html = $('html');
 
-				$wrap.stop().fadeOut(300, function(){
+				$wrap.stop().fadeOut(10, function(){
 					$wrap.removeClass('is-opened');
 
 					if (!$('.popup-wrap.is-opened').length){
@@ -84,6 +83,17 @@
 		}
 	};
 	vvv.popup.bind();
+	
+	vvv.toggle = {
+		bind: function() {
+			$doc
+				.on('click', '.toggle-trigger', function() {
+				$(this).closest('.toggle').toggleClass('is-active');
+			})
+			
+		}
+	}
+	vvv.toggle.bind();
 
 	// checkbox
 //	ui.checkbox = {

@@ -597,7 +597,7 @@ html.layer-opened .global-search-layer {
 	word-break: normal;
 	word-wrap: normal;
 	background: rgba(0, 0, 0, 0.7);
-	transition: opacity 0.15s ease 0.1s;
+	transition: opacity 0.1s ease;
 }
 .popup-wrap, .popup {
 	display: none;
@@ -626,7 +626,7 @@ html.layer-opened .global-search-layer {
 	background: #ffffff;
 	text-align: left;
 	transform: scale(0);
-	transition: all 0.15s ease 0.35s;
+	transition: all 0.15s ease;
 }
 .popup-wrap.is-opened .popup {
 	transform: scale(1);

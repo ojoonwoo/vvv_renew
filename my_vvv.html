@@ -618,7 +618,7 @@
 			<!--popup-wrap 동적생성-->
 <!--			<div class="popup-wrap">-->
 				<div class="popup my-coll-add" id="collection-add">
-					<button type="button" class="popup-close"></button>
+					<button type="button" class="popup-close" data-popup="@close"></button>
 					<div class="inner">
 						<div class="title">
 							<h5>컬렉션 만들기</h5>
@@ -645,12 +645,12 @@
 							<div class="setting">
 								<span class="secret-guide">비밀 설정</span>
 								<div class="toggle secret">
-									<input type="checkbox" type="checkbox" class="secret-toggle" id="secret" name="secret">
+									<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
 									<div class="toggle-circle"></div>
 								</div>
 							</div>	
 							<div class="button-wrap">
-								<button type="button" class="btn-light-grey">취소</button>
+								<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
 								<button type="button">만들기</button>
 							</div>
 						</div>
