@@ -79,7 +79,7 @@
 		// $member_result		= mysqli_query($my_db, $member_query);
 		// $member_data		= mysqli_fetch_array($member_result);
 ?>
-												<span class="u-id"><?=$member_data['mb_name']?></span>
+												<span class="u-id"><?=$mb_data['mb_name']?></span>
 <?
 	}
 ?>
