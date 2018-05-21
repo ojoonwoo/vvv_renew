@@ -159,7 +159,7 @@ include_once "./include/autoload.php";
             $v_idx			= $_REQUEST["idx"];
             $comment_text	= $_REQUEST["comment_text"];
 
-            if ($_SESSION['ss_vvv_email'])
+            if ($_SESSION['ss_vvv_idx'])
             {
                 $query		= "INSERT INTO comment_info(v_idx, mb_email, mb_idx, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_idx']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
                 $result		= mysqli_query($my_db, $query);

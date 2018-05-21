@@ -414,7 +414,7 @@
 						console.log(response);
 						if (response.match("Y") == "Y")
 						{
-							alert("덧글이 입력되었습니다.");
+							// alert("덧글이 입력되었습니다.");
 							location.reload();
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
