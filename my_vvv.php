@@ -174,7 +174,7 @@
 ?>														
 														<div class="album">
 															<figure>
-																<a href="">
+																<a href="collection_view.php?idx=<?=$collection_data["idx"]?>">
 																	<div class="frame">
 																		<!-- <div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
@@ -184,14 +184,14 @@
 																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
 																	</div>
 <?
-	if ($_SESSION['ss_vvv_idx'] == $my_idx)
-	{
+		if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		{
 ?>																													
 																	<div class="over-layer">
 																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
 																	</div>
 <?
-	}
+		}
 ?>																	
 																</a>
 																<figcaption>
