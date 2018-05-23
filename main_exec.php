@@ -423,22 +423,26 @@ include_once "./include/autoload.php";
                 foreach ($add_video_arr as $key => $val)
                 {
                     // if ($i != 0)
-                    //     $add_video_txt .= ",";
+                        $add_video_txt .= ",";
 
                     $dupli_flag = 0;
                     foreach ($collection_item_arr as $c_key => $c_val)
                     {
                         if ($val == $c_val)
+                        {
                             $dupli_flag = 1;
+                            // $add_video_txt .= $val;
+                        }
                     }
 
-                    print_r($dupli_flag);
+                    // print_r($dupli_flag);
                     if ($dupli_flag == 0)
-                        $add_video_txt .= ",".$val;
+                        $add_video_txt .= $val;
 
-                    // $i++;
+                    $i++;
                 }
 
+                $add_video_txt .= $collection_item_data["video_items"].$add_video_txt;
                 $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
                 $result    = mysqli_query($my_db, $query);
             }else{
