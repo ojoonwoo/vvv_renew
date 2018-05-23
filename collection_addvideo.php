@@ -309,12 +309,37 @@
 
 			function addVideo()
 			{
-				var items = [];
+				var videoItems = [];
+				var videoCount	= 0;
+
 				$('input:checkbox[type=checkbox]:checked').each(function () {
-					items.push($(this).val());
+					videoItems.push($(this).val());
 				});
 
-				console.log(items.length);
+				// console.log(videoItems.length);
+				videoCount	= videoItems.length;
+
+				if (videoCount == 0)
+				{
+					alert("영상을 선택하시고 적용 버튼을 클릭해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				: "add_video",
+						"c_idx"          	: "<?=$collection_idx?>",
+						"m_idx"          	: "<?=$mb_idx?>",
+						"video_items"       : "<?=$videoItems?>"
+					},
+					success: function(response){
+						console.log(response);
+					}
+				});			
+
 			}
 		</script>
 	</body>

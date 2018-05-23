@@ -398,4 +398,25 @@ include_once "./include/autoload.php";
 
             echo $flag;
 		break;
+
+        case "add_video" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $c_idx 		        = $_REQUEST["c_idx"];
+            $m_idx 		        = $_REQUEST["m_idx"];
+            $video_items 		= $_REQUEST["video_items"];
+
+            $insert_query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$video_items."','".date("Y-m-d H:i:s")."')";
+            $insert_result    = mysqli_query($my_db, $insert_query);
+
+            if($insert_result) {
+                $flag = "Y";
+            }else{
+                $flag = "N";
+            }
+
+            echo $flag;
+		break;
 	}
