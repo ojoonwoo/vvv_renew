@@ -442,7 +442,7 @@ include_once "./include/autoload.php";
                     $i++;
                 }
 
-                $add_video_txt .= $collection_item_data["video_items"].$add_video_txt;
+                $add_video_txt = $collection_item_data["video_items"].$add_video_txt;
                 $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
                 $result    = mysqli_query($my_db, $query);
             }else{
