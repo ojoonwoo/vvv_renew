@@ -414,33 +414,39 @@ include_once "./include/autoload.php";
             $collection_item_result		= mysqli_query($my_db, $collection_item_query);
             $collection_item_data		= mysqli_fetch_array($collection_item_result);
 
-            $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
-            $add_video_txt              = "";
-            
-            $i = 0;
-            foreach ($add_video_arr as $key => $val)
+            if ($collection_item_data)
             {
-                foreach ($collection_item_arr as $c_key => $c_val)
+                $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
+                $add_video_txt              = "";
+
+                $i = 0;
+                foreach ($add_video_arr as $key => $val)
                 {
-                    if ($val == $c_val)
-                        continue;
+                    foreach ($collection_item_arr as $c_key => $c_val)
+                    {
+                        if ($val == $c_val)
+                            continue;
 
-                    if ($i != 0)
-                        $add_video_txt .= ",";
+                        if ($i != 0)
+                            $add_video_txt .= ",";
 
-                    $add_video_txt .= $val;
-                    $i++;
+                        $add_video_txt .= $val;
+                        $i++;
+                    }
                 }
+                
+                $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
+                $result    = mysqli_query($my_db, $query);
+            }else{
+                $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$add_video_txt."','".date("Y-m-d H:i:s")."')";
+                $result    = mysqli_query($my_db, $query);
             }
 
-            $insert_query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$add_video_txt."','".date("Y-m-d H:i:s")."')";
-            $insert_result    = mysqli_query($my_db, $insert_query);
-
-            if($insert_result) {
+            if($result) {
                 $flag = "Y";
             }else{
                 $flag = "N";
-            }
+            }    
 
             echo $flag;
 		break;
