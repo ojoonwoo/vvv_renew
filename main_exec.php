@@ -459,7 +459,7 @@ include_once "./include/autoload.php";
             $c_idx 		        = $_REQUEST["c_idx"];
             $m_idx 		        = $_REQUEST["m_idx"];
             $video_items 		= $_REQUEST["video_items"];
-            $add_video_arr      = explode(",",$video_items);
+            $del_video_arr      = explode(",",$video_items);
 
             // 컬렉션 아이템 정보 가져오기
             $collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
@@ -467,16 +467,16 @@ include_once "./include/autoload.php";
             $collection_item_data		= mysqli_fetch_array($collection_item_result);
          
             $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
-            $add_video_txt              = "";
+            $del_video_txt              = "";
 
             $i = 0;
             foreach ($collection_item_arr as $c_key => $c_val)
             {
                 if ($i != 0)
-                    $add_video_txt = ",";
+                    $del_video_txt .= ",";
 
                 $dupli_flag = 0;
-                foreach ($add_video_arr as $key => $val)
+                foreach ($del_video_arr as $key => $val)
                 {
                     if ($val == $c_val)
                     {
@@ -485,7 +485,7 @@ include_once "./include/autoload.php";
                 }
 
                 if ($dupli_flag == 0)
-                    $add_video_txt .= $val;
+                    $del_video_txt .= $val;
 
                 $i++;
             }
