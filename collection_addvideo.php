@@ -148,27 +148,27 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
+																	<span class="brand">[<?=$video_brand?>]</span>
+																	<span class="title"><?=$video_title?></span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
-																			<span class="cnt">4</span>
+																			<span class="cnt"><?=number_format($video_data["play_count"])?></span>
 																		</span>
 																		<span class="comment">
 																			<i class="icon"></i>
-																			<span class="cnt">0</span>
+																			<span class="cnt"><?=number_format($video_data["comment_count"])?></span>
 																		</span>
 																		<span class="like">
 																			<i class="icon"></i>
-																			<span class="cnt">2</span>
+																			<span class="cnt"><?=number_format($video_data["like_count"])?></span>
 																		</span>
 																		<span class="collect">
 																			<i class="icon"></i>
-																			<span class="cnt">2</span>
+																			<span class="cnt"><?=number_format($video_data["collect_count"])?></span>
 																		</span>
 																	</span>
 																</figcaption>
