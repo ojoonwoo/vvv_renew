@@ -148,8 +148,15 @@
 											<div class="list-container">
 												<div class="video-list">
 <?
+	$i = 0;
 	foreach($collection_item_arr as $key => $val)
 	{
+		if ($i == 0)
+		{
+			$i++;
+			continue;
+		}
+
 		$video_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
 		$video_result 	= mysqli_query($my_db, $video_query);	
 		$video_data		= mysqli_fetch_array($video_result);
@@ -209,6 +216,7 @@
 														</a>
 													</div>
 <?
+		$i++;
 	}
 ?>													
 												</div>
