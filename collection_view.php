@@ -362,6 +362,12 @@
 						i++;
 					});
 
+					if (videoItems == "")
+					{
+						alert("영상을 선택하시고 완료 버튼을 클릭해 주세요.");
+						return false;
+					}
+
 					$.ajax({
 						type   : "POST",
 						async  : false,
