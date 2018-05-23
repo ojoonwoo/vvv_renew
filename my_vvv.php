@@ -174,7 +174,7 @@
 ?>														
 														<div class="album">
 															<figure>
-																<a href="collection_view.php?idx=<?=$collection_data["idx"]?>">
+																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>">
 																	<div class="frame">
 																		<!-- <div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
