@@ -395,14 +395,14 @@ include_once "./include/autoload.php";
             else
                 $collection_secret = "N";        
 
-            $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
-            $name_result    = mysqli_query($my_db, $name_query);
-            $name_count     = mysqli_num_rows($name_result);
+            // $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
+            // $name_result    = mysqli_query($my_db, $name_query);
+            // $name_count     = mysqli_num_rows($name_result);
 
-            if ($name_count > 0)
-            {
-                $flag   = "D";
-            }else{
+            // if ($name_count > 0)
+            // {
+            //     $flag   = "D";
+            // }else{
                 $query 		= "UPDATE collection_info SET collection_name='".$collection_name."', collection_desc='".$collection_desc."', collection_secret='".$collection_secret."' WHERE idx='".$c_idx."'";
                 $result 	= mysqli_query($my_db, $query);    
 
@@ -411,7 +411,7 @@ include_once "./include/autoload.php";
                 }else{
                     $flag = "N";
                 }
-            }
+            // }
 			echo $flag;
         break;
         
