@@ -424,14 +424,16 @@ include_once "./include/autoload.php";
                 {
                     if ($i != 0)
                         $add_video_txt .= ",";
+
+                    $dupli_flag = 0;
                     foreach ($collection_item_arr as $c_key => $c_val)
                     {
                         if ($val == $c_val)
-                            continue;
-
-
-                        $add_video_txt .= $val;
+                            $dupli_flag = 1;
                     }
+                    if ($dupli_flag == 0)
+                        $add_video_txt .= $val;
+                        
                     $i++;
                 }
 
