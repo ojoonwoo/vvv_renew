@@ -44,27 +44,52 @@
 									<div class="info-wrap">
 										<div class="wrap-user">
 											<div class="user-id">
-												<span class="u-id">MINIVER</span>
+												<span class="u-id"><?=$mb_data['mb_name']?></span>
 												<a href="javascript:void(0)" class="setting">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
 												<div class="follow-state">
-													<a href="javascript:void(0)">팔로우하기</a>
-													<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
+<?
+	if ($_SESSION['ss_vvv_idx'] != $mb_idx)
+	{
+		// 팔로우 여부 확인
+		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+		$follow_result		= mysqli_query($my_db, $follow_query);
+		$follow_count		= mysqli_num_rows($follow_result);
+		
+		if ($follow_count > 0)
+		{
+?>
+													<a href="javascript:follow_member()" class="already">팔로우중</a>
+<?
+		}else{
+?>													
+													<a href="javascript:follow_member()">팔로우하기</a>
+<?
+		}
+	}
+?>
 												</div>
 											</div>
 										</div>
 										<div class="wrap-actions">
 											<div class="f-wer">
 												<span>팔로워</span>
-												<span class="count">10</span>
+												<span class="count"><?=$mb_data['mb_follower_count']?></span>
 											</div>
 											<div class="f-ing">
 												<span>팔로잉</span>
-												<span class="count">10</span>
+												<span class="count"><?=$mb_data['mb_following_count']?></span>
 											</div>
 											<div class="f-add">
+<?
+	if ($_SESSION['ss_vvv_idx'] != $my_idx)
+	{
+?>
 												<button type="button">친구추가</button>
+<?
+	}
+?>												
 											</div>
 										</div>
 									</div>
@@ -81,6 +106,35 @@
 										<div class="inner">
 											<div class="list-container">
 												<div class="video-list">
+<?
+	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
+	$my_result		= mysqli_query($my_db, $my_query);
+
+	while ($data = mysqli_fetch_array($my_result))
+	{
+		$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
+		$video_result		= mysqli_query($my_db, $video_query);
+		$video_data			= mysqli_fetch_array($video_result);
+
+		// 유튜브 영상 코드 자르기
+        $yt_code_arr1   = explode("v=", $video_data["video_link"]);
+        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+		$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+		
+		$title_count    = mb_strlen($video_data["video_title"],'utf-8');
+        if ($title_count > 20)
+            $video_title    = iconv_substr($video_data["video_title"],0,20)."..";
+        else
+			$video_title    = $video_data["video_title"];
+			
+        // 브랜드 줄바꿈 방지 글자 자르기
+        $brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
+        if ($brand_count > 30)
+            $video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
+        else
+            $video_brand    = $video_data["video_brand"];
+
+?>																										
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="#">
 															<figure>
@@ -115,482 +169,9 @@
 															</figure>
 														</a>
 													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="check-layer">
-																	<input type="checkbox">
-																	<div class="checkbox"></div>
-																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
-																</div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting copy 4</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
+<?
+	}
+?>													
 												</div>
 												<button type="button" class="btn-apply">
 													적용하기

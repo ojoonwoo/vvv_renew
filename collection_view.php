@@ -56,7 +56,7 @@
 												</a>
 												<div class="follow-state">
 <?
-	if ($_SESSION['ss_vvv_idx'] != $my_idx)
+	if ($_SESSION['ss_vvv_idx'] != $mb_idx)
 	{
 		// 팔로우 여부 확인
 		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
