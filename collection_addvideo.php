@@ -5,7 +5,7 @@
     $my_db         	= $mnv_f->Connect_MySQL();
     $mobileYN      	= $mnv_f->MobileCheck();
 	
-	$collection_idx		= $_REQUEST["idx"];
+	$collection_idx		= $_REQUEST["cidx"];
 	$mb_idx				= $_REQUEST["midx"];
 
 	// 컬렉션 정보 가져오기
@@ -333,7 +333,7 @@
 						"exec"				: "add_video",
 						"c_idx"          	: "<?=$collection_idx?>",
 						"m_idx"          	: "<?=$mb_idx?>",
-						"video_items"       : "<?=$videoItems?>"
+						"video_items"       : videoItems
 					},
 					success: function(response){
 						console.log(response);
