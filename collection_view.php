@@ -132,9 +132,11 @@
 									</div>
 									<div class="action-wrap">
 										<div class="inner">
-											<button type="button" data-popup="#collection-edit">수정</button>
-											<button type="button" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'">추가</button>
-											<button type="button" data-mode-change="delete">삭제</button>
+											<div class="myaction">
+												<button type="button" class="default" data-popup="#collection-edit">수정</button>
+												<button type="button" class="default" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'">추가</button>
+												<button type="button" class="default" data-mode-change="delete">삭제</button>
+											</div>
 										</div>
 									</div>
 								</div>
