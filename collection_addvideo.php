@@ -317,7 +317,7 @@
 					if (i == 0)
 					{
 						i++;
-						continue;
+						return true;
 					}
 					videoItems += $(this).val();
 					i++;
