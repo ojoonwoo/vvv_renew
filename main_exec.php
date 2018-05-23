@@ -410,7 +410,7 @@ include_once "./include/autoload.php";
 
             $insert_query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$video_items."','".date("Y-m-d H:i:s")."')";
             $insert_result    = mysqli_query($my_db, $insert_query);
-
+print_r($insert_query);
             if($insert_result) {
                 $flag = "Y";
             }else{
