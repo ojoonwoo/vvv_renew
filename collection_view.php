@@ -19,7 +19,7 @@
 	$collection_item_data		= mysqli_fetch_array($collection_item_result);
 
 	$secret_flag	= "";
-	if ($collection_data["collection_secret"] == "N")
+	if ($collection_data["collection_secret"] == "Y")
 		$secret_flag	= "is-active";
 	// 컬렉션 아이템 전체 갯수 및 아이템 배열로 재 분류하기
 	$collection_item_arr	= explode(",", $collection_item_data["video_items"]);
