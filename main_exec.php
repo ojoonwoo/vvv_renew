@@ -470,7 +470,7 @@ include_once "./include/autoload.php";
             $del_video_txt              = "";
 
             //삭제실행
-            $result = array_diff($collection_item_data["video_items"], $del_video_arr);
+            $result = array_diff($collection_item_arr, $del_video_arr);
             //index 채우기
             $result_arr = array_values($result);
 
