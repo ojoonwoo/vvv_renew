@@ -416,27 +416,27 @@ include_once "./include/autoload.php";
 
             if ($collection_item_data)
             {
-                // $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
+                $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
                 $add_video_txt              = "";
 
                 $i = 0;
                 foreach ($add_video_arr as $key => $val)
                 {
-                    if ($i == 0)
-                        continue;
+                    foreach ($collection_item_arr as $c_key => $c_val)
+                    {
+                        if ($val == $c_val)
+                            continue;
 
-                    $search_txt = ",".$val.",";
-                    if(strpos($collection_item_data["video_items"], $search_txt) !== true)
-                    { 
-                        $add_video_txt .= ",".$val;                        
-                    }    
-                    $i++;
+
+                        $add_video_txt .= $val;
+                        $i++;
+                    }
                 }
 
                 $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
                 $result    = mysqli_query($my_db, $query);
             }else{
-                $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$add_video_txt."','".date("Y-m-d H:i:s")."')";
+                $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$video_items."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
             }
 

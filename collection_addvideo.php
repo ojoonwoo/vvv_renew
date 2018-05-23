@@ -312,14 +312,15 @@
 				var videoItems = "";
 				var videoCount	= 0;
 
-				// var i = 0;
+				var i = 0;
 				$('input:checkbox[type=checkbox]:checked').each(function () {
-					// if (i != 0)
-					// {
-					// 	videoItems += ",";
-					// }
+					if (i != 0)
+					{
+						videoItems += ",";
+					}
+					
 					videoItems += ","+$(this).val();
-					// i++;
+					i++;
 				});
 
 				if (videoItems == "")
