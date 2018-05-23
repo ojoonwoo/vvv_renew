@@ -314,10 +314,9 @@
 
 				var i = 0;
 				$('input:checkbox[type=checkbox]:checked').each(function () {
-					if (i == 0)
+					if (i != 0)
 					{
-						i++;
-						return true;
+						videoItems += ",";
 					}
 					videoItems += $(this).val();
 					i++;
