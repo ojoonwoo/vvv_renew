@@ -422,6 +422,7 @@ include_once "./include/autoload.php";
                 // $i = 0;
                 foreach ($add_video_arr as $key => $val)
                 {
+                    print_r($val);
                     // if ($i != 0)
                     //     $add_video_txt .= ",";
 
@@ -431,7 +432,7 @@ include_once "./include/autoload.php";
                         if ($val == $c_val)
                             $dupli_flag = 1;
                     }
-                    
+
                     if ($dupli_flag == 0)
                         $add_video_txt .= ",".$val;
 
