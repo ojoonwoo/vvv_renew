@@ -419,18 +419,18 @@ include_once "./include/autoload.php";
                 // $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
                 $add_video_txt              = "";
 
-                // $i = 0;
+                $i = 0;
                 foreach ($add_video_arr as $key => $val)
                 {
-                    // if ($i != 0)
-                    //     $add_video_txt .= ",";
+                    if ($i == 0)
+                        continue;
 
                     $search_txt = ",".$val.",";
                     if(strpos($collection_item_data["video_items"], $search_txt) !== true)
                     { 
                         $add_video_txt .= ",".$val;                        
                     }    
-                    // $i++;
+                    $i++;
                 }
 
                 $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
