@@ -483,26 +483,6 @@ include_once "./include/autoload.php";
                 $del_video_txt .= $val;
                 $i++;
             }
-            // $i = 0;
-            // foreach ($collection_item_arr as $c_key => $c_val)
-            // {
-            //     if ($i != 0)
-            //         $del_video_txt .= ",";
-
-            //     $dupli_flag = 0;
-            //     foreach ($del_video_arr as $key => $val)
-            //     {
-            //         if ($val == $c_val)
-            //         {
-            //             $dupli_flag = 1;
-            //         }
-            //     }
-
-            //     if ($dupli_flag == 0)
-            //         $del_video_txt .= $val;
-
-            //     $i++;
-            // }
 
             $query     = "UPDATE collection_item_info SET video_items='".$del_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
             $result    = mysqli_query($my_db, $query);

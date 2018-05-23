@@ -278,7 +278,7 @@
 									<span>이름</span>
 								</div>
 								<div class="input">
-									<input type="text" value="오준우님의 5월 컬렉션">
+									<input type="text" id="c_name" value="<?=$collection_data["collection_name"]?>">
 								</div>
 							</div>
 							<div class="input-group">
@@ -286,7 +286,7 @@
 									<span>설명</span>
 								</div>
 								<div class="input">
-									<input type="text" value="">
+									<input type="text" id="c_desc" value="<?=$collection_data["collection_desc"]?>">
 								</div>
 							</div>
 						</div>
