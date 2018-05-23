@@ -314,7 +314,7 @@
 					items.push($(this).val());
 				});
 
-				console.log(items);
+				console.log(items.length);
 			}
 		</script>
 	</body>
