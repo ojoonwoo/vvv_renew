@@ -319,7 +319,7 @@
 						videoItems += ",";
 					}
 					
-					videoItems += ","+$(this).val();
+					videoItems += $(this).val();
 					i++;
 				});
 
