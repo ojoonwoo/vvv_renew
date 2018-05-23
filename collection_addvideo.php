@@ -309,17 +309,21 @@
 
 			function addVideo()
 			{
-				var videoItems = [];
+				var videoItems = "";
 				var videoCount	= 0;
 
+				var i = 0;
 				$('input:checkbox[type=checkbox]:checked').each(function () {
-					videoItems.push($(this).val());
+					if (i == 0)
+					{
+						i++;
+						continue;
+					}
+					videoItems += $(this).val();
+					i++;
 				});
 
-				// console.log(videoItems.length);
-				videoCount	= videoItems.length;
-
-				if (videoCount == 0)
+				if (videoItems == "")
 				{
 					alert("영상을 선택하시고 적용 버튼을 클릭해 주세요.");
 					return false;
