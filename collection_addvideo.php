@@ -6,13 +6,19 @@
     $mobileYN      	= $mnv_f->MobileCheck();
 	
 	$collection_idx		= $_REQUEST["idx"];
+	$mb_idx				= $_REQUEST["midx"];
 
 	// 컬렉션 정보 가져오기
 	$collection_query		= "SELECT * FROM collection_info WHERE idx='".$collection_idx."'";
 	$collection_result		= mysqli_query($my_db, $collection_query);
 	$collection_data		= mysqli_fetch_array($collection_result);
 
-    include_once "./head.php";
+	// 회원 정보 가져오기
+	$mb_query		= "SELECT * FROM member_info WHERE idx='".$mb_idx."'";
+	$mb_result		= mysqli_query($my_db, $mb_query);
+	$mb_data		= mysqli_fetch_array($mb_result);
+
+	include_once "./head.php";
 ?>
 	<body>
 		<div id="app">
