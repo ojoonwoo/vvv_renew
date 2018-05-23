@@ -310,7 +310,6 @@
 			function addVideo()
 			{
 				var videoItems = "";
-				var videoCount	= 0;
 
 				var i = 0;
 				$('input:checkbox[type=checkbox]:checked').each(function () {

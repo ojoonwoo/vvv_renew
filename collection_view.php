@@ -178,7 +178,7 @@
 														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
 															<figure>
 																<div class="check-layer">
-																	<input type="checkbox">
+																	<input type="checkbox" name="collectionChk" value="<?=$video_data['video_idx']?>">
 																	<div class="checkbox"></div>
 																</div>
 																<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
@@ -350,7 +350,34 @@
 					$(this).text('완료');
 				} else {
 					//삭제 코드
-					//삭제 --
+					var videoItems = "";
+					$('input:checkbox[type=checkbox]:checked').each(function () {
+						if (i != 0)
+						{
+							videoItems += ",";
+						}
+						
+						videoItems += $(this).val();
+						i++;
+					});
+
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				: "delete_video",
+							"c_idx"          	: "<?=$collection_idx?>",
+							"m_idx"          	: "<?=$mb_idx?>",
+							"video_items"       : videoItems
+						},
+						success: function(response){
+							console.log(response);
+							alert("컬렉션에서 선택하신 영상이 삭제되었습니다.");
+							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+						}
+					});			
+
 					//삭제 완료
 					$(this).text('삭제');
 				}
