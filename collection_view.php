@@ -351,6 +351,7 @@
 				} else {
 					//삭제 코드
 					var videoItems = "";
+					var i = 0;
 					$('input:checkbox[type=checkbox]:checked').each(function () {
 						if (i != 0)
 						{
