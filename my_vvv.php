@@ -513,8 +513,16 @@
 					},
 					success: function(response){
 						console.log(response);
-						// vvv.popup.close();
-						location.reload();
+						if (response.match("Y") == "Y")
+						{
+							location.reload();
+						}else if (response.match("D") == "D"){
+							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+							location.reload();
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
 					}
 				});			
 

@@ -299,7 +299,7 @@
 						</div>	
 						<div class="button-wrap">
 							<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
-							<button type="button">수정</button>
+							<button type="button" onclick="edit_collection();">수정</button>
 						</div>
 					</div>
 				</div>
@@ -384,6 +384,51 @@
 				}
 				$('.list-container').toggleClass('delete-mode');
 			});
+
+			function edit_collection()
+			{
+				var collection_name		= $("#c_name").val();
+				var collection_desc		= $("#c_desc").val();
+				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+
+				if (collection_name == "")
+				{
+					alert("컬렉션 이름을 입력해 주세요.");
+					return false;
+				}
+
+				if (collection_desc == "")
+				{
+					alert("컬렉션 설명을 입력해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "edit_collection",
+						"c_idx"          		: "<?=$collection_idx?>",
+						"collection_name"       : collection_name,
+						"collection_desc"		: collection_desc,
+						"collection_secret"		: collection_secret
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							location.reload();
+						}else if (response.match("D") == "D"){
+							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+							location.reload();
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});		
+			}
 		</script>
 	</body>
 

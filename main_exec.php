@@ -380,6 +380,41 @@ include_once "./include/autoload.php";
 			echo $flag;
         break;
         
+        case "edit_collection" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $collection_name		= $_REQUEST["collection_name"];
+            $collection_desc		= $_REQUEST["collection_desc"];
+            $collection_secret		= $_REQUEST["collection_secret"];
+            $c_idx          		= $_REQUEST["c_idx"];
+
+            if ($collection_secret == "true")
+                $collection_secret = "Y";
+            else
+                $collection_secret = "N";        
+
+            $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
+            $name_result    = mysqli_query($my_db, $name_query);
+            $name_count     = mysqli_num_rows($name_result);
+
+            if ($name_count > 0)
+            {
+                $flag   = "D";
+            }else{
+                $query 		= "UPDATE collection_info SET collection_name='".$collection_name."', collection_desc='".$collection_desc."', collection_secret='".$collection_secret."' WHERE idx='".$c_idx."'";
+                $result 	= mysqli_query($my_db, $query);    
+
+                if($result) {
+                    $flag = "Y";
+                }else{
+                    $flag = "N";
+                }
+            }
+			echo $flag;
+        break;
+        
         case "delete_collection" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();
