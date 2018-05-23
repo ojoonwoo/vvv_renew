@@ -132,11 +132,33 @@
 									</div>
 									<div class="action-wrap">
 										<div class="inner">
+<?
+	if ($_SESSION['ss_vvv_idx'] == $mb_idx)
+	{
+?>											
 											<div class="myaction">
 												<button type="button" class="default" data-popup="#collection-edit">수정</button>
 												<button type="button" class="default" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'">추가</button>
 												<button type="button" class="default" data-mode-change="delete">삭제</button>
 											</div>
+<?
+	}else{
+?>		
+											<div class="anyaction">
+												<button type="button" class="btn-follow">팔로우</button>
+												<div class="tooltip secret">
+													<div class="setting">
+														<span class="secret-guide">비밀 설정</span>
+														<div class="toggle secret is-active">
+															<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="" name="">
+															<div class="toggle-circle"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+<?
+	}
+?>									
 										</div>
 									</div>
 								</div>
