@@ -17,7 +17,7 @@
 	$collection_item_query		= "SELECT * FROM collection_item_info WHERE cidx='".$collection_idx."' AND m_idx='".$mb_idx."'";
 	$collection_item_result		= mysqli_query($my_db, $collection_item_query);
 	$collection_item_data		= mysqli_fetch_array($collection_item_result);
-
+print_r($collection_item_data);
 	// 컬렉션 아이템 전체 갯수 및 아이템 배열로 재 분류하기
 	$collection_item_arr	= explode(",", $collection_item_data["video_items"]);
 	$total_collection_item	= count($collection_item_arr);
