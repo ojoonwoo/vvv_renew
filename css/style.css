@@ -616,7 +616,6 @@
 .content.user-page .user-info {
 	position: relative;
 	background: #333333;
-/*	box-shadow: inset 0px -322px 212px -99px rgba(0,0,0,0.5);*/
 	padding: 172px 0 109px;
 }
 .content.user-page .user-info:after {
@@ -662,6 +661,9 @@
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 40px;
+}
+.content.user-page .user-info .info-wrap .wrap-user .user-id .u-id {
+	vertical-align: middle;
 }
 .content.user-page .user-info .info-wrap .wrap-user .setting {
 	display: inline-block;
@@ -971,15 +973,15 @@
 	right: 0;
 	top: 0;
 	width: 100%;
-	text-align: right;
 	padding: 20px 0;
+	text-align: right;
 }
 .content.user-page .collection-detail .collection-info .action-wrap .inner {
 	font-size: 0;
 	max-width: 1035px;
 	margin: 0 auto;
 }
-.content.user-page .collection-detail .collection-info .action-wrap button {
+.content.user-page .collection-detail .collection-info .action-wrap .default {
 	width: 85px;
 	height: 49px;
 	margin-right: 11px;
@@ -990,6 +992,64 @@
 }
 .content.user-page .collection-detail .collection-info .action-wrap button:last-child {
 	margin-right: 0;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction {
+	display: inline-block;
+	position: relative;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .btn-follow {
+	width: 149px;
+	height: 57px;
+	background: url(../images/myvvv_follow_icon_white.png) 19px 50% / 31px 37px no-repeat #333333;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: left;
+	padding-left: 60px;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .tooltip {
+	position: absolute;
+	top: -13px;
+	right: -190px;
+	width: 180px;
+	height: 105px;
+	background: url(../images/myvvv_tooltip_secret.png) 0 0 / cover no-repeat, url(../images/myvvv_secret_icon.png) 125px 10px / 16px 20px no-repeat;
+	z-index: 10;
+}
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting {
+	text-align: center;
+	margin: 10px 0 0 18px;
+}
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .secret-guide {
+	font-size: 20px;
+	line-height: 20px;
+	padding-right: 24px;
+	text-align: left;
+	margin-bottom: 8px;
+}
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle {
+	width: 113px;
+	height: 40px;
+	border: 2px solid #e2e2e2;
+	border-radius: 20px;
+}
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle:after {
+	left: 46px;
+	font-size: 18px;
+	font-weight: 500;
+}
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle.is-active:after {
+	left: 18px;
+}
+
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle .toggle-circle {
+	border: 2px solid #e2e2e2;
+	width: 39px;
+	height: 39px;
+	margin: -2px;
+}
+.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle.is-active .toggle-circle {
+	left: 75px;
 }
 .content.user-page .collection-detail .list-container .read-more {
 	margin: 0 auto 40px;
@@ -1008,6 +1068,11 @@
 	width: 100%;
 	height: 100%;
 	opacity: 0;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
 }
 .content.user-page .collection-detail .list-container .video .check-layer .checkbox {
 	position: absolute;
@@ -1017,6 +1082,7 @@
 	width: 18px;
 	height: 18px;
 	border: 1px solid #333333;
+	z-index: 1;
 }
 .content.user-page .collection-detail .list-container .video .check-layer input[type="checkbox"]:checked + .checkbox {
 	background: #333333;
@@ -1120,6 +1186,153 @@
 	background-size: 35px auto;
 }
 /* login */
+/* join */
+.content.join > .inner > .title {
+	font-size: 34px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 46px;
+}
+.content.join .block-wrap {
+	margin-bottom: 100px;
+}
+.content.join .block-terms {
+	width: 1030px;
+	margin: 0 auto;
+	text-align: center;
+}
+.content.join .block-terms:first-child {
+	margin-bottom: 99px;
+}
+.content.join .block-terms .title {
+	position: relative;
+	font-size: 21px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 34px;
+}
+.content.join .block-terms .title:before {
+	content: "";
+	position: absolute;
+	top: -11px;
+	left: 50%;
+	width: 18px;
+	height: 2px;
+	margin-left: -9px;
+	background: #333333;
+}
+.content.join .block-terms .scroll-box {
+	background: #ffffff;
+	height: 393px;
+	overflow: hidden;
+	padding: 51px 66px 51px 31px;
+}
+.content.join .block-terms .scroll-box .inner {
+	height: 100%;
+	overflow-y: scroll;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: 700;
+	text-align: left;
+	word-break: break-word;
+	white-space: normal;
+}
+.content.join .agree {
+	display: inline-block;
+	margin-top: 24px;
+	cursor: pointer;
+	position: relative;
+	font-size: 0;
+}
+.content.join .agree label,
+.content.join .agree .checkbox {
+	display: inline-block;
+}
+.content.join .agree label {
+	cursor: pointer;
+	margin-right: 17px;
+	vertical-align: middle;
+	font-size: 20px;
+	font-weight: 700;
+}
+.content.join .agree input[type="checkbox"] {
+	position: absolute;
+	background: none;
+	opacity: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 31px;
+	height: 31px;
+	vertical-align: middle;
+	z-index: 1;
+}
+.content.join .agree .checkbox {
+	width: 31px;
+	height: 31px;
+	border-radius: 50%;
+	border: 2px solid #333333;
+	vertical-align: middle;
+	z-index: 0;
+	background: center 90% transparent;
+	transition: background 0.2s ease;
+}
+.content.join .agree input[type="checkbox"]:checked + .checkbox {
+	background: url(../images/join_checked.png) center / 19px 11px no-repeat transparent;
+}
+.content.join .block-input {
+	width: 600px;
+	margin: 0 auto 60px;
+}
+.content.join .block-input .input-group {
+	padding: 10px 0;
+	border-bottom: 1px solid #666666;
+	font-size: 0;
+}
+.content.join .block-input .input-group .guide,
+.content.join .block-input .input-group .input {
+	display: inline-block;
+	font-size: 27px;
+	height: 27px;
+}
+.content.join .block-input .input-group .guide {
+	width: 186px;
+}
+.content.join .block-input .input-group .guide span {
+	font-size: 20px;
+	color: #666666;
+}
+.content.join .block-input .input-group .input {
+	width: 414px;
+}
+.content.join .block-input .input-group .input input[type="text"] {
+	height: 100%;
+	font-size: 27px;
+}
+.content.join .block-input .agree {
+	margin: 20px 0 0 249px;
+}
+.content.join .block-input.nickname {
+	margin-bottom: 120px;
+}
+.content.join .block-input.nickname span.guide {
+	display: inline-block;
+	margin-top: 23px;
+	font-size: 20px;
+	color: #666666;
+	font-weight: 500;
+}
+.content.join .btn-join {
+	display: block;
+	width: 176px;
+	height: 57px;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 500;
+	background: #333333;
+	margin: 0 auto;
+}
+/* join */
 
 
 
@@ -1229,21 +1442,11 @@
 	top: 0;
 	bottom: 0;
 }
-input[type="checkbox"] {
-	border: 0;
-	position: absolute;
-}
 .popup.mycollection .setting .toggle .toggle-circle {
-	position: absolute;
-	left: 0;
-	top: 0;
-	border-radius: 50%;
 	border: 3px solid #e2e2e2;
 	width: 36px;
 	height: 36px;
 	margin: -3px;
-	background: #ffffff;
-	transition: left 0.25s ease;
 }
 .popup.mycollection .setting .toggle.is-active .toggle-circle {
 	left: 70px;
