@@ -142,10 +142,10 @@
 
 ?>																										
 													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
+														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
 															<figure>
 																<div class="check-layer">
-																	<input type="checkbox">
+																	<input type="checkbox" name="likeChk" value="<?=$video_data['video_idx']?>">
 																	<div class="checkbox"></div>
 																</div>
 																<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
@@ -179,7 +179,7 @@
 	}
 ?>													
 												</div>
-												<button type="button" class="btn-apply">
+												<button type="button" class="btn-apply" onclick="addVideo()">
 													적용하기
 												</button>
 											</div>
@@ -306,6 +306,16 @@
 					});
 				}
 			});
+
+			function addVideo()
+			{
+				var items = [];
+				$('input:checkbox[type=checkbox]:checked').each(function () {
+					items.push($(this).val());
+				});
+
+				console.log(item);
+			}
 		</script>
 	</body>
 
