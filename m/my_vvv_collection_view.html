@@ -3,6 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Document</title>
 		<link rel="stylesheet" href="./css/reset.css">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -15,180 +16,165 @@
 
 	<body>
 		<div id="app">
+			<!--햄버거 클릭 메뉴-->
+			<div class="global-menu">
+				<a href="#" class="btn-close button-menu">
+					<img src="./images/close_x_black.png" alt="">
+				</a>
+				<div class="user-status">
+					<a href="#">MY VVV</a>
+					<a href="#">LOGIN</a>
+				</div>
+				<div class="inner">
+					<div class="list-wrap">
+						<ul class="list">
+							<li>
+								<a href="#" class="is-active">HOME</a>
+							</li>
+							<li>
+								<a href="#">ALL VVV</a>
+							</li>
+							<li>
+								<a href="#">BEST</a>
+							</li>
+							<li>
+								<a href="#">NEW</a>
+							</li>
+							<li>
+								<a href="#">AWARDS</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about-us">
+						<div class="line"></div>
+						<div class="contacts">
+							<p><span>CONTACT US</span></p>
+							<p class="tel">
+								<i></i>
+								<span>+82 (02)532-2475</span>
+							</p>
+							<p class="sns">
+								<i class="mail"></i>
+								<i class="facebook"></i>
+								<i class="instagram"></i>
+							</p>
+						</div>
+					</div>
+					<div class="copyright">
+						COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
+					</div>
+				</div>
+			</div>
+			<!--햄버거 클릭 메뉴-->
+			<!--검색 메뉴-->
+			<div class="global-search-layer">
+				<div class="bg-dark">
+				</div>
+				<div class="inner">
+					<button type="button" class="layer-close"></button>
+					<div class="search-wrapper">
+						<div class="search-bar">
+							<input type="text" placeholder="검색">
+						</div>
+						<div class="wrap sortings">
+							<div class="sort-list">
+								<div class="sort">
+									<label for="order-date">연도</label>
+									<select name="order-date" id="order-date">
+										<option disabled selected>전체</option>
+										<option>Slower</option>
+										<option>Slow</option>
+										<option>Medium</option>
+										<option>Fast</option>
+										<option>Faster</option>
+									</select>
+								</div>
+								<div class="sort">
+									<label for="order-nation">국가</label>
+									<select name="order-nation" id="order-nation">
+										<option disabled selected>전체</option>
+										<option>Slower</option>
+										<option>Slow</option>
+										<option>Medium</option>
+										<option>Fast</option>
+										<option>Faster</option>
+									</select>
+								</div>
+								<div class="sort">
+									<label for="order-industry">산업군</label>
+									<select name="order-industry" id="order-industry">
+										<option disabled selected>전체</option>
+										<option>Slower</option>
+										<option>Slow</option>
+										<option>Medium</option>
+										<option>Fast</option>
+										<option>Faster</option>
+									</select>
+								</div>
+								<div class="sort">
+									<label for="order-genre">장르</label>
+									<select name="order-genre" id="order-genre">
+										<option disabled selected>전체</option>
+										<option>Slower</option>
+										<option>Slow</option>
+										<option>Medium</option>
+										<option>Fast</option>
+										<option>Faster</option>
+									</select>
+								</div>
+								<div class="sort">
+									<label for="order-awards">광고제</label>
+									<select name="order-awards" id="order-awards">
+										<option disabled selected>전체</option>
+										<option>Slower</option>
+										<option>Slow</option>
+										<option>Medium</option>
+										<option>Fast</option>
+										<option>Faster</option>
+									</select>
+								</div>
+								<div class="sort">
+									<label for="order-sortby">분류</label>
+									<select name="order-sortby" id="order-sortby">
+										<option disabled selected>전체</option>
+										<option>Slower</option>
+										<option>Slow</option>
+										<option>Medium</option>
+										<option>Fast</option>
+										<option>Faster</option>
+									</select>
+								</div>
+							</div>
+							<div class="actions">
+								<button type="button" class="button-apply">
+									APPLY
+								</button>
+								<button type="button" class="button-refresh">새로고침</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--검색 메뉴-->
 			<div class="app-container sub">
-				<div class="side-nav">
-					<div class="search-wrap magnet-wrap">
-						<button type="button" class="magnet-parent button-search">
-							<span class="magnet-child"></span>
-						</button>
-					</div>
-					<nav id="gnb">
-						<a href="javascript:void(0)" class="button-menu">
-							<div class="burger-wrap">
-								<span class="line top"></span>
-								<span class="line mid"></span>
-								<span class="line bot"></span>
-							</div>
-						</a>
-					</nav>
-					<div class="direct-my-v">
-						<a href="#">
-							<span>MY VVV</span>
-						</a>
-					</div>
-				</div>
-				<!--햄버거 클릭 메뉴-->
-				<div class="global-menu">
-					<div class="inner">
-						<div class="list-wrap">
-							<ul class="list">
-								<li>
-									<a href="#" class="is-active">HOME</a>
-								</li>
-							</ul>
-							<ul class="list">
-								<li>
-									<a href="#">ALL VVV</a>
-								</li>
-								<li>
-									<a href="#">BEST</a>
-								</li>
-								<li>
-									<a href="#">NEW</a>
-								</li>
-							</ul>
-							<ul class="list">
-								<li>
-									<a href="#">AWARDS</a>
-								</li>
-							</ul>
-						</div>
-						<div class="about-us">
-							<div class="logo">
-								<img src="./images/vvv_logo.png" alt="">
-							</div>
-							<div class="line"></div>
-							<div class="contacts">
-								<p><span>CONTACT US</span></p>
-								<p class="tel">
-									<i></i>
-									<span>+82 (02)532-2475</span>
-								</p>
-								<p class="sns">
-									<i class="mail"></i>
-									<i class="facebook"></i>
-									<i class="instagram"></i>
-								</p>
-							</div>
-						</div>
-						<div class="copyright">
-							COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
-						</div>
-					</div>
-				</div>
-				<!--햄버거 클릭 메뉴-->
-				<!--검색 메뉴-->
-				<div class="global-search-layer">
-					<div class="bg-dark">
-						<div class="inner">
-							<button type="button" class="layer-close">
-								<img src="./images/close_x.png" alt="">
-							</button>
-							<div class="search-wrapper">
-								<div class="wrap">
-									<button type="button" class="button-refresh">새로고침</button>
-									<div class="search-bar">
-										<input type="text">
-									</div>
-								</div>
-								<div class="wrap sortings">
-									<div class="sort-list">
-										<div class="row">
-											<div class="sort">
-												<select name="order-date" id="order-date">
-													<option disabled selected>Please pick one</option>
-													<option>Slower</option>
-													<option>Slow</option>
-													<option>Medium</option>
-													<option>Fast</option>
-													<option>Faster</option>
-												</select>
-											</div>
-											<div class="sort">
-												<select name="order-nation" id="order-nation">
-													<option disabled selected>Please pick one</option>
-													<option>Slower</option>
-													<option>Slow</option>
-													<option>Medium</option>
-													<option>Fast</option>
-													<option>Faster</option>
-												</select>
-											</div>
-											<div class="sort">
-												<select name="order-industry" id="order-industry">
-													<option disabled selected>Please pick one</option>
-													<option>Slower</option>
-													<option>Slow</option>
-													<option>Medium</option>
-													<option>Fast</option>
-													<option>Faster</option>
-												</select>
-											</div>
-										</div>
-										<div class="row">
-											<div class="sort">
-												<select name="order-genre" id="order-genre">
-													<option disabled selected>Please pick one</option>
-													<option>Slower</option>
-													<option>Slow</option>
-													<option>Medium</option>
-													<option>Fast</option>
-													<option>Faster</option>
-												</select>
-											</div>
-											<div class="sort">
-												<select name="order-awards" id="order-awards">
-													<option disabled selected>Please pick one</option>
-													<option>Slower</option>
-													<option>Slow</option>
-													<option>Medium</option>
-													<option>Fast</option>
-													<option>Faster</option>
-												</select>
-											</div>
-											<div class="sort">
-												<select name="order-sortby" id="order-sortby">
-													<option disabled selected>Please pick one</option>
-													<option>Slower</option>
-													<option>Slow</option>
-													<option>Medium</option>
-													<option>Fast</option>
-													<option>Faster</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<button type="button" class="button-apply">
-										APPLY
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--검색 메뉴-->
 				<div class="header-container">
 					<header>
 						<div class="inner">
+							<nav id="gnb">
+								<a href="javascript:void(0)" class="button-menu">
+									<div class="burger-wrap">
+										<span class="line top"></span>
+										<span class="line mid"></span>
+										<span class="line bot"></span>
+									</div>
+								</a>
+							</nav>
 							<h1>
 								<a href="#" class="logo">
 									<img src="./images/vvv_logo.png" alt="" class="retina">
 								</a>
 							</h1>
 							<div class="actions">
-								<div class="user-status">
-									<a href="#">LOGIN</a>
-								</div>
 								<div class="search-wrap magnet-wrap">
 									<button type="button" class="magnet-parent button-search">
 										<span class="magnet-child"></span>
@@ -255,15 +241,16 @@
 									<div class="action-wrap">
 										<div class="inner">
 											<!--내 컬렉션일경우-->
-<!--
+											
 											<div class="myaction">
 												<button type="button" class="default" data-popup="#collection-edit">수정</button>
 												<button type="button" class="default" onclick="location.href='my_vvv_collection_addvideo.html'">추가</button>
 												<button type="button" class="default" data-mode-change="delete">삭제</button>
 											</div>
--->
+
 											<!--내 컬렉션일경우-->
 											<!--내 컬렉션이 아닐경우-->
+<!--
 											<div class="anyaction">
 												<button type="button" class="btn-follow">팔로우</button>
 												<div class="tooltip secret">
@@ -276,6 +263,7 @@
 													</div>
 												</div>
 											</div>
+-->
 											<!--내 컬렉션이 아닐경우-->
 										</div>
 									</div>
@@ -283,13 +271,13 @@
 								<div class="semi-container">
 									<div class="wrapper">
 										<div class="inner">
-<!--
-											<div class="content-empty">
-												<a href="#">
-													<span>+</span>
-													<span>당신이 좋아한 영상으로 컬렉션을 만들어보세요</span>
-												</a>
-											</div>
+											<!--
+<div class="content-empty">
+<a href="#">
+<span>+</span>
+<span>당신이 좋아한 영상으로 컬렉션을 만들어보세요</span>
+</a>
+</div>
 -->
 											<div class="list-container">
 												<div class="video-list">
@@ -300,7 +288,7 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
@@ -334,7 +322,7 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
@@ -368,7 +356,7 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
@@ -402,7 +390,7 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
@@ -436,7 +424,7 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
@@ -470,7 +458,7 @@
 																	<input type="checkbox">
 																	<div class="checkbox"></div>
 																</div>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
+																<div class="thumbnail box-bg" style="background: url(./images/best_slider_sample.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;">
 																</div>
 																<figcaption>
 																	<span class="brand">[UNICEF]</span>
@@ -626,7 +614,7 @@
 				}
 			});
 
-			
+
 			//프론트 임시 샘플코드
 			$doc.on('click', '[data-mode-change]', function() {
 				var mode = $(this).data('mode-change');
