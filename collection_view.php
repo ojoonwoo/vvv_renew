@@ -82,15 +82,32 @@
 	if ($_SESSION['ss_vvv_idx'] == $mb_idx)
 	{
 ?>											
-											<div class="myaction">
+											<!-- <div class="myaction">
 												<button type="button" class="default" data-popup="#collection-edit">수정</button>
 												<button type="button" class="default" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'">추가</button>
 												<button type="button" class="default" data-mode-change="delete">삭제</button>
+											</div> -->
+
+											<!--내 컬렉션일경우-->
+											<div class="myaction">
+												<button type="button" class="edit" data-popup="#collection-edit"></button>
+												<button type="button" class="add" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'"></button>
+												<button type="button" class="delete" data-mode-change="delete"></button>
 											</div>
+											<!--내 컬렉션일경우-->											
 <?
 	}else{
 ?>		
+											<!--내 컬렉션이 아닐경우-->
+												<!--시크릿 전에 favor 선행 필수-->
 											<div class="anyaction">
+												<!-- is-already 클래스 토글 on/off -->
+												<button class="favor is-already"></button>
+												<button class="secret is-already"></button>
+												<a href="javascript:void(0)" class="link-own"><span>miniverminiverminiver</span></a>
+											</div>
+											<!--내 컬렉션이 아닐경우-->
+											<!-- <div class="anyaction">
 												<button type="button" class="btn-follow">팔로우</button>
 												<div class="tooltip secret">
 													<div class="setting">
@@ -101,7 +118,7 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> -->
 <?
 	}
 ?>									
