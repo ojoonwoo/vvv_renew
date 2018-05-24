@@ -171,6 +171,31 @@
 	$collection_result		= mysqli_query($my_db, $collection_query);
 	while ($collection_data = mysqli_fetch_array($collection_result))
 	{
+		// 컬렉션에 담긴 영상 썸네일 추출 
+		$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
+		$collection_item_result		= mysqli_query($my_db, $collection_item_query);
+		$collection_item_data		= mysqli_fetch_array($collection_item_result);
+	
+		$collection_thumb[0]	= "";
+		$collection_thumb[1]	= "";
+		$collection_thumb[2]	= "";
+		if ($collection_data["video_items"] != "")
+		{
+			$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
+			$i = 0;
+			foreach($c_thumb_arr as $key => $val)
+			{
+				$thumb_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
+				$thumb_result 	= mysqli_query($my_db, $thumb_query);
+				$thumb_data		= mysqli_fetch_array($thumb_result);
+			
+				// 유튜브 영상 코드 자르기
+				$yt_code_arr1   = explode("v=", $thumb_data["video_link"]);
+				$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+				$collection_thumb[$i]       = "url('https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg') 50% 50% / cover";
+				$i++;
+			}
+		}
 ?>														
 														<div class="album">
 															<figure>
@@ -179,9 +204,9 @@
 																		<!-- <div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div> -->
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[2]?> #dcdcdc no-repeat"></div>
 																	</div>
 <?
 		if ($_SESSION['ss_vvv_idx'] == $my_idx)
