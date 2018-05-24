@@ -472,13 +472,13 @@
 						if (response.match("Y") == "Y")
 						{
 							alert("즐겨찾기 되었습니다.");
-							location.reload();
+							$(".favor").addClass("is-already");
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 즐겨찾기를 해 주세요!");
 							location.href = "login.php?refurl=collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
 						}else{
-							alert("다시 입력해 주세요.");
-							location.reload();
+							alert("즐겨찾기가 취소 되었습니다.");
+							$(".favor").removeClass("is-already");
 						}
 					}
 				});		

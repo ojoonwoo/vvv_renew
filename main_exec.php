@@ -482,18 +482,15 @@ include_once "./include/autoload.php";
             {
                 if ($showYN == "Y")
                 {
-                    $query     = "UPDATE collection_like_info SET showYN='N' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
-                    $result    = mysqli_query($my_db, $query);    
+                    $query      = "UPDATE collection_like_info SET showYN='N' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+                    $result     = mysqli_query($my_db, $query);    
+                    $flag       = "Y";
                 }else{
-                    $query     = "INSERT INTO collection_like_info(c_idx, m_idx, regdate) values('".$collection_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
-                    $result    = mysqli_query($my_db, $query);    
+                    $query      = "INSERT INTO collection_like_info(c_idx, m_idx, regdate) values('".$collection_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                    $result     = mysqli_query($my_db, $query);    
+                    $flag       = "N";
                 }
     
-                if($result) {
-                    $flag = "Y";
-                }else{
-                    $flag = "N";
-                }
             }else{
                 $flag = "L";
             }
