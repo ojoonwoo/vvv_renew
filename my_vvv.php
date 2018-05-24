@@ -146,21 +146,23 @@
 									<div class="inner">
 										<div class="aj-content collection">
 											<div class="wrapper made">
-												<div class="text-block">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
 	{
 ?>												
+												<div class="text-block">
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+												</div>
+												<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 <?
 	}else{
 ?>												
+												<div class="text-block">
 													<p><?=$mb_data['mb_name']?>님이 만든 컬렉션을 감상해 보세요!</p>
+												</div>
 <?
 	}
 ?>												
-												</div>
-												<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												<div class="list-container">
 													<div class="album-list">
 <?
@@ -196,7 +198,7 @@
 ?>														
 														<div class="album">
 															<figure>
-																<a href="">
+																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>">
 																	<div class="frame">
 																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
@@ -214,12 +216,12 @@
 ?>																	
 																</a>
 																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="title"><?=$collection_data["collection_name"]?></span>
+																	<span class="desc"><?=$collection_data["collection_desc"]?></span>
 																	<span class="icon-wrap">
 																		<div class="like">
 																			<i></i>
-																			<span class="count">2</span>
+																			<span class="count"><?=$collection_data["collection_like_count"]?></span>
 																		</div>
 																	</span>
 																</figcaption>
