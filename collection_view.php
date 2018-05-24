@@ -40,7 +40,7 @@
 	$total_collection_item	= count($collection_item_arr);
 
 	// 회원 정보 가져오기
-	if ($_SESSION["ss_mb_idx"])
+	if ($_SESSION["ss_vvv_idx"])
 		$mb_query		= "SELECT * FROM member_info WHERE idx='".$_SESSION["ss_mb_idx"]."'";
 	else
 		$mb_query		= "SELECT * FROM member_info WHERE idx='".$mb_idx."'";
