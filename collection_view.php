@@ -21,12 +21,16 @@
 	$collection_item_count		= mysqli_num_rows($collection_item_result);
 
 	// 컬렉션 즐겨찾기 여부 체크
-	$collection_like_query		= "SELECT * FROM collection_like_info WHERE c_idx='".$collection_idx."' AND m_idx='".$mb_idx."' AND showYN='Y'";
-	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
-	$collection_like_count		= mysqli_num_rows($collection_like_result);
 	$collection_likeYN			= "";
-	if ($collection_like_count > 0)
-		$collection_likeYN			= "is-already";
+	if ($_SESSION['ss_vvv_idx'])
+	{
+		$collection_like_query		= "SELECT * FROM collection_like_info WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."' AND showYN='Y'";
+		$collection_like_result		= mysqli_query($my_db, $collection_like_query);
+		$collection_like_count		= mysqli_num_rows($collection_like_result);
+
+		if ($collection_like_count > 0)
+			$collection_likeYN		= "is-already";
+	}
 
 	$secret_flag	= "";
 	if ($collection_data["collection_secret"] == "Y")
