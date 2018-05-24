@@ -418,6 +418,39 @@
 				$('.list-container').toggleClass('delete-mode');
 			});
 
+			function follow_member()
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "follow_member",
+						"follow_idx"          	: "<?=$follow_idx?>"
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							// alert("덧글이 입력되었습니다.");
+							$(".follow-state a").addClass("already");
+							$(".follow-state a").html("팔로우중");
+							$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
+						}else if (response.match("D") == "D"){
+							$(".follow-state a").removeClass("already");
+							$(".follow-state a").html("팔로우하기");
+							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 이용해 주세요!");
+							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+			}
+
 			function edit_collection()
 			{
 				var collection_name		= $("#c_name").val();
