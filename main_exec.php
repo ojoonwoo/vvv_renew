@@ -484,11 +484,11 @@ include_once "./include/autoload.php";
                 {
                     $query      = "UPDATE collection_like_info SET showYN='N' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
                     $result     = mysqli_query($my_db, $query);    
-                    $flag       = "Y";
+                    $flag       = "N";
                 }else{
                     $query      = "INSERT INTO collection_like_info(c_idx, m_idx, regdate) values('".$collection_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
                     $result     = mysqli_query($my_db, $query);    
-                    $flag       = "N";
+                    $flag       = "Y";
                 }
     
             }else{
