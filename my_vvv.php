@@ -212,7 +212,7 @@
 ?>														
 														<div class="album">
 															<figure>
-																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>">
+																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$collection_item_data["m_idx"]?>">
 																	<div class="frame">
 																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
