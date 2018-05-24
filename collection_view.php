@@ -20,6 +20,14 @@
 	$collection_item_data		= mysqli_fetch_array($collection_item_result);
 	$collection_item_count		= mysqli_num_rows($collection_item_result);
 
+	// 컬렉션 즐겨찾기 여부 체크
+	$collection_like_query		= "SELECT * FROM collection_like_info WHERE c_idx='".$collection_idx."' AND m_idx='".$mb_idx."'";
+	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
+	$collection_like_count		= mysqli_num_rows($collection_like_result);
+	$collection_likeYN			= "";
+	if ($collection_like_count > 0)
+		$collection_likeYN			= "is-already";
+
 	$secret_flag	= "";
 	if ($collection_data["collection_secret"] == "Y")
 		$secret_flag	= "is-active";
@@ -102,7 +110,7 @@
 												<!--시크릿 전에 favor 선행 필수-->
 											<div class="anyaction">
 												<!-- is-already 클래스 토글 on/off -->
-												<button class="favor"></button>
+												<button class="favor <?=$collection_likeYN?>"></button>
 												<!-- <button class="secret"></button> -->
 												<a href="javascript:void(0)" class="link-own"><span>miniverminiverminiver</span></a>
 											</div>
