@@ -147,22 +147,71 @@
 										<div class="aj-content collection">
 											<div class="wrapper made">
 												<div class="text-block">
+<?
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
+?>												
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+<?
+	}else{
+?>												
+													<p><?=$mb_data['mb_name']?>님이 만든 컬렉션을 감상해 보세요!</p>
+<?
+	}
+?>												
 												</div>
 												<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												<div class="list-container">
 													<div class="album-list">
+<?
+	$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_showYN='Y'";
+	$collection_result		= mysqli_query($my_db, $collection_query);
+	while ($collection_data = mysqli_fetch_array($collection_result))
+	{
+		// 컬렉션에 담긴 영상 썸네일 추출 
+		$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
+		$collection_item_result		= mysqli_query($my_db, $collection_item_query);
+		$collection_item_data		= mysqli_fetch_array($collection_item_result);
+	
+		$collection_thumb[0]	= "";
+		$collection_thumb[1]	= "";
+		$collection_thumb[2]	= "";
+		if ($collection_item_data["video_items"] != "")
+		{
+			$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
+			$i = 0;
+			foreach($c_thumb_arr as $key => $val)
+			{
+				$thumb_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
+				$thumb_result 	= mysqli_query($my_db, $thumb_query);
+				$thumb_data		= mysqli_fetch_array($thumb_result);
+			
+				// 유튜브 영상 코드 자르기
+				$yt_code_arr1   = explode("v=", $thumb_data["video_link"]);
+				$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+				$collection_thumb[$i]       = "url('https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg') 50% 50% / cover";
+				$i++;
+			}
+		}
+?>														
 														<div class="album">
 															<figure>
 																<a href="">
 																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[2]?> #dcdcdc no-repeat"></div>
 																	</div>
+<?
+		if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		{
+?>																													
 																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
+																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
 																	</div>
+<?
+		}
+?>																	
 																</a>
 																<figcaption>
 																	<span class="title">해외 광고</span>
@@ -176,6 +225,9 @@
 																</figcaption>
 															</figure>
 														</div>
+<?
+	}
+?>														
 													</div>
 												</div>
 											</div>
@@ -223,35 +275,64 @@
 											</div>
 											<div class="list-container">
 												<div class="video-list">
+<?
+	while ($data = mysqli_fetch_array($my_result))
+	{
+		$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
+		$video_result		= mysqli_query($my_db, $video_query);
+		$video_data			= mysqli_fetch_array($video_result);
+
+		// 유튜브 영상 코드 자르기
+        $yt_code_arr1   = explode("v=", $video_data["video_link"]);
+        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+		$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+		
+		$title_count    = mb_strlen($video_data["video_title"],'utf-8');
+        if ($title_count > 20)
+            $video_title    = iconv_substr($video_data["video_title"],0,20)."..";
+        else
+			$video_title    = $video_data["video_title"];
+			
+        // 브랜드 줄바꿈 방지 글자 자르기
+        $brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
+        if ($brand_count > 30)
+            $video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
+        else
+            $video_brand    = $video_data["video_brand"];
+
+?>													
 													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
+														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
 															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+																<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture Hurting</span>
+																	<span class="brand">[<?=$video_brand?>]</span>
+																	<span class="title"><?=$video_title?></span>
 																	<span class="icon-wrap">
 																		<span class="play">
 																			<i class="icon"></i>
-																			<span class="cnt">4</span>
+																			<span class="cnt"><?=number_format($video_data["play_count"])?></span>
 																		</span>
 																		<span class="comment">
 																			<i class="icon"></i>
-																			<span class="cnt">0</span>
+																			<span class="cnt"><?=number_format($video_data["comment_count"])?></span>
 																		</span>
 																		<span class="like">
 																			<i class="icon"></i>
-																			<span class="cnt">2</span>
+																			<span class="cnt"><?=number_format($video_data["like_count"])?></span>
 																		</span>
 																		<span class="collect">
 																			<i class="icon"></i>
-																			<span class="cnt">2</span>
+																			<span class="cnt"><?=number_format($video_data["collect_count"])?></span>
 																		</span>
 																	</span>
 																</figcaption>
 															</figure>
 														</a>
 													</div>
+<?
+	}
+?>													
 													<!-- <button type="button" class="read-more">
 														<img src="./images/plus_icon.png" alt="">
 													</button> -->
@@ -374,6 +455,11 @@
 				$("#order-genre").val("");
 				$("#order-awards").val("");
 				$("#order-sortby").val("new");        
+			});
+
+			$doc.on('click', '.tab', function() {
+				$(".tab").removeClass("is-active");
+				$(this).addClass("is-active");
 			});
 
 			function follow_member()
