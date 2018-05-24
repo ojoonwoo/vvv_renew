@@ -82,7 +82,7 @@
 											이메일 <span>(필수 사항)</span>
 										</div>
 										<div class="input">
-											<input type="text">
+											<input type="text" id="mb_email">
 										</div>
 									</div>
 									<div class="agree">
@@ -97,7 +97,7 @@
 											닉네임 <span>(선택 사항)</span>
 										</div>
 										<div class="input">
-											<input type="text">
+											<input type="text" id="mb_nickname">
 										</div>
 									</div>
 									<span class="guide">사용할 닉네임을 입력해주세요! 프로필,친구찾기 등에 사용됩니다</span>
@@ -145,6 +145,20 @@
 					$('.side-nav .search-wrap').css({
 						opacity: 0
 					});
+				}
+			});
+
+			$doc.on('click', '.btn-join', function() {
+				if ($("#agree-use1").is(":checked") === false)
+				{
+					alert("이용약관에 동의하셔야만 회원가입을 하실 수 있습니다");
+					return false;
+				}
+				
+				if ($("#agree-use2").is(":checked") === false)
+				{
+					alert("개인정보 제공에 동의하셔야만 회원가입을 하실 수 있습니다");
+					return false;
 				}
 			});
 		</script>
