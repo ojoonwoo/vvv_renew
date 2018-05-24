@@ -453,9 +453,9 @@
 			}
 
 			$doc.on('click', '.favor', function() {
-				var cLikeChk	= "N";
+				var cLikeChk	= "Y";
 				if(!$(this).hasClass('is-already')) 
-					cLikeChk	= "Y";
+					cLikeChk	= "N";
 
 
 				$.ajax({
@@ -469,7 +469,7 @@
 					},
 					success: function(response){
 						console.log(response);
-						if (response.match("Y") == "Y")
+						if (response.match("N") == "N")
 						{
 							alert("즐겨찾기 되었습니다.");
 							$(".favor").addClass("is-already");
