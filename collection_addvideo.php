@@ -47,7 +47,7 @@
     include_once "./my_vvv_head_layer.php";
 ?>
 							<!-- container -->
-							<div class="collection-detail add-video">
+							<div class="collection-detail check-mode add-video">
 								<div class="title">
 									<h3>좋아요 리스트</h3>
 									<p>당신이 좋아한 영상으로 컬렉션을 만들어보세요</p>
