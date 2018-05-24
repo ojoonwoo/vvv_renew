@@ -22,13 +22,14 @@ include_once "./include/autoload.php";
 			else
 				$mb_kakao_email_verified = "N";
 
-			$login_query		= "SELECT * FROM member_info WHERE mb_email='".$mb_email."' AND mb_kakao_way_id='".$mb_kakao_way_id."'";
+			// $login_query		= "SELECT * FROM member_info WHERE mb_email='".$mb_email."' AND mb_kakao_way_id='".$mb_kakao_way_id."'";
+			$login_query		= "SELECT * FROM member_info WHERE 1 AND mb_kakao_way_id='".$mb_kakao_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
 			$login_data			= mysqli_fetch_array($login_result);
 
-            if ($login_data['mb_email'])
+            if ($login_data['idx'])
 			{
-				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
+				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE idx='".$login_data['idx']."'";
                 $result		= mysqli_query($my_db, $query);
                 $uid        = $login_data["idx"];
 			}else{
@@ -64,13 +65,13 @@ include_once "./include/autoload.php";
 			$mb_facebook_birthday		= $_REQUEST["birthday"];
 			$mb_facebook_way_id			= $_REQUEST["id"];
 
-			$login_query		= "SELECT * FROM member_info WHERE mb_email='".$mb_email."' AND mb_facebook_way_id='".$mb_facebook_way_id."'";
+			$login_query		= "SELECT * FROM member_info WHERE 1 AND mb_facebook_way_id='".$mb_facebook_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
 			$login_data			= mysqli_fetch_array($login_result);
 
-			if ($login_data['mb_email'])
+			if ($login_data['idx'])
 			{
-				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE mb_email='".$login_data['mb_email']."'";
+				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE idx='".$login_data['idx']."'";
 				$result		= mysqli_query($my_db, $query);
                 $uid        = $login_data["idx"];
 			}else{
