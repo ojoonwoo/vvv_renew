@@ -213,10 +213,6 @@
 												<a href="javascript:void(0)" class="setting">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
-												<div class="follow-state">
-													<a href="javascript:void(0)">팔로우하기</a>
-													<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
-												</div>
 											</div>
 										</div>
 										<div class="wrap-actions">
@@ -228,9 +224,19 @@
 												<span>팔로잉</span>
 												<span class="count">10</span>
 											</div>
+											<!--my vvv일경우-->
+<!--
 											<div class="f-add">
 												<button type="button">친구추가</button>
 											</div>
+-->
+											<!--my vvv일경우-->
+											<!--남의 vvv일경우-->
+											<div class="follow-state">
+												<a href="javascript:void(0)">팔로우하기</a>
+												<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
+											</div>
+											<!--남의 vvv일경우-->
 										</div>
 									</div>
 								</div>
@@ -248,7 +254,7 @@
 											<span class="count">100</span>
 										</span>
 										<span class="wrap">
-											<i class="icon follow"></i>
+											<i class="icon favor"></i>
 											<span class="count">1</span>
 										</span>
 									</div>
@@ -257,24 +263,19 @@
 											<!--내 컬렉션일경우-->
 <!--
 											<div class="myaction">
-												<button type="button" class="default" data-popup="#collection-edit">수정</button>
-												<button type="button" class="default" onclick="location.href='my_vvv_collection_addvideo.html'">추가</button>
-												<button type="button" class="default" data-mode-change="delete">삭제</button>
+												<button type="button" class="edit" data-popup="#collection-edit"></button>
+												<button type="button" class="add" onclick="location.href='my_vvv_collection_addvideo.html'"></button>
+												<button type="button" class="delete" data-mode-change="delete"></button>
 											</div>
 -->
 											<!--내 컬렉션일경우-->
 											<!--내 컬렉션이 아닐경우-->
+												<!--시크릿 전에 favor 선행 필수-->
 											<div class="anyaction">
-												<button type="button" class="btn-follow">팔로우</button>
-												<div class="tooltip secret">
-													<div class="setting">
-														<span class="secret-guide">비밀 설정</span>
-														<div class="toggle secret is-active">
-															<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="" name="">
-															<div class="toggle-circle"></div>
-														</div>
-													</div>
-												</div>
+												<!-- is-already 클래스 토글 on/off -->
+												<button class="favor is-already"></button>
+												<button class="secret is-already"></button>
+												<a href="javascript:void(0)" class="link-own"><span>miniverminiverminiver</span></a>
 											</div>
 											<!--내 컬렉션이 아닐경우-->
 										</div>
@@ -498,9 +499,11 @@
 														</a>
 													</div>
 												</div>
+<!--
 												<button type="button" class="read-more">
 													<img src="./images/plus_icon.png" alt="">
 												</button>
+-->
 											</div>
 										</div>
 									</div>
@@ -630,16 +633,15 @@
 			//프론트 임시 샘플코드
 			$doc.on('click', '[data-mode-change]', function() {
 				var mode = $(this).data('mode-change');
-				if(!$('.list-container').hasClass('delete-mode')) {
+				if(!$('.list-container').hasClass('check-mode')) {
 					//삭제 모드로 변경
-					$(this).text('완료');
+					
 				} else {
 					//삭제 코드
 					//삭제 --
 					//삭제 완료
-					$(this).text('삭제');
 				}
-				$('.list-container').toggleClass('delete-mode');
+				$('.collection-detail').toggleClass('check-mode');
 			});
 		</script>
 	</body>
