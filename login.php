@@ -218,7 +218,7 @@
 								},
 								success: function(response){
 									// console.log(res);
-									// console.log(response);
+									console.log(response);
 									if (response.match("Y") == "Y")
 									{
 										if (refurl == "")
