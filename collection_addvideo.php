@@ -86,7 +86,7 @@
             $video_brand    = $video_data["video_brand"];
 ?>														
 													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
+														<a href="#">
 															<figure>
 																<div class="check-layer">
 																	<input type="checkbox" name="likeChk" value="<?=$video_data['video_idx']?>">
