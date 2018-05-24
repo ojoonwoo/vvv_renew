@@ -598,7 +598,7 @@ html.layer-opened .global-search-layer {
 	overflow-y: scroll;
 	overflow-x: auto;
 	font-size: 0;
-	line-height: 0;
+/*	line-height: 0;*/
 	opacity: 0;
 	text-align: center;
 	white-space: normal;
@@ -652,16 +652,23 @@ html.layer-opened .global-search-layer {
 
 
 /* 공통 컴포넌트 */
-/* 토글 스위치 공통 css */
+/* 토글 스위치 기본 css */
 .setting .secret-guide {
 	display: inline-block;
+	margin-right: 12px;
+	font-size: 20px;
+	line-height: 20px;
 	vertical-align: middle;
-	background: url(../images/myvvv_secret_icon.png) 100% 0 / 16px 20px no-repeat;
+	padding-left: 28px;
+	background: url(../images/myvvv_secret_icon.png) 0 0 / 16px 20px no-repeat;
 }
 .setting .toggle {
 	position: relative;
 	display: inline-block;
-	border-radius: 20px;
+	width: 106px;
+	height: 36px;
+	border: 3px solid #e2e2e2;
+	border-radius: 17px;
 	vertical-align: middle;
 	background: #ffffff;
 	transition: background-color .25s cubic-bezier(.25,.375,.1,.975);
@@ -669,6 +676,7 @@ html.layer-opened .global-search-layer {
 .setting .toggle:after {
 	content: "아니요";
 	position: absolute;
+	left: 41px;
 	top: 50%;
 	transform: translateY(-50%);
 	color: #b7b7b7;
@@ -681,6 +689,7 @@ html.layer-opened .global-search-layer {
 }
 .setting .toggle.is-active:after {
 	content: "네";
+	left: 23px;
 	color: #ffffff;
 }
 .setting .toggle input[type="checkbox"] {
@@ -701,8 +710,15 @@ html.layer-opened .global-search-layer {
 	border-radius: 50%;	
 	background: #ffffff;
 	transition: left 0.25s ease;
+	border: 3px solid #e2e2e2;
+	width: 36px;
+	height: 36px;
+	margin: -3px;
 }
-/* 토글 스위치 공통 css */
+.setting .toggle.is-active .toggle-circle {
+	left: 70px;
+}
+/* 토글 스위치 기본 css */
 /*공통 컴포넌트 */
 /* jquery ui customize */
 .ui-widget {

@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/**
+ * Fade-zoom animation for first dialog
+ */
+
+*{
+    padding:0;
+    margin:0;
+    /*font-family:'나눔고딕',nanumgothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;*/
+}
+
+html {
+    font-size: 10px;
+    line-height: 15px;
+    /*height: 1000px;*/
+    width: 100%;
+
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.267em;
+    height: 100%;
+    overflow-x:hidden;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    -webkit-tap-highlight-color:transparent;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+}
+
+.fixed {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+}
+
+.resetPadd {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#wrap {
+    background:#fff;
+    position: relative;
+    color: #000;
+    height: 100%;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+#header {
+    width: 100%;
+    max-width: 640px;
+    background-color: #fff;
+}
+
+#header .top_area {
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+}
+
+#header .top_area .logo {
+    float: left;
+    margin-left: 15px;
+}
+
+#header .top_area .menu_btn {
+    float: right;
+    margin-right: 15px;
+}
+
+.menu {
+    background-color: #fff;
+    width: 100%;
+    padding: 25px 0;
+    z-index: 1;
+}
+
+.menu li {
+    text-align: center;
+    padding: 8px 0;
+    width: 100%;
+}
+
+#content {
+    position: relative;
+    padding-top: 40px;
+    width: 100%;
+}
+
+#content .wrap_img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+#content .cnt_img .block_img {
+    width: 100%;
+}
+
+#content .cnt_img img {
+    width: 100%;
+}
+
+#content .req_btn {
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#content .req_btn a {
+    display: block;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#content .req_btn a img {
+    width: 100%;
+}
+
+.share_block.bottom {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#footer {
+    width: 100%;
+}
+
+#footer .contact {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    width: 100%;
+}
+
+#footer .contact img {
+    display: block;
+    width: 100%;
+}
+
+/*div {
+  outline: 1px dashed red;
+}*/
+
+/*clearfix*/
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
+
+
+/* 팝업 jQuery ( Magnific-Popup ) 관련 CSS */
+/* Styles for dialog window */
+#input_1 {
+    background: white;
+    position: relative;
+}
+
+.mask{display:none; position:absolute;top:0;left:0;width:100%;height:100%;background:url(../images/mask_bg.png) repeat;z-index:8}
+
+
+/* start state */
+.my-mfp-zoom-in .zoom-anim-dialog {
+    opacity: 0;
+
+    -webkit-transition: all 0.2s ease-in-out; 
+    -moz-transition: all 0.2s ease-in-out; 
+    -o-transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out; 
+
+
+
+    -webkit-transform: scale(0.8); 
+    -moz-transform: scale(0.8); 
+    -ms-transform: scale(0.8); 
+    -o-transform: scale(0.8); 
+    transform: scale(0.8); 
+}
+
+/* animate in */
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+
+    -webkit-transform: scale(1); 
+    -moz-transform: scale(1); 
+    -ms-transform: scale(1); 
+    -o-transform: scale(1); 
+    transform: scale(1); 
+}
+
+/* animate out */
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+    -webkit-transform: scale(0.8); 
+    -moz-transform: scale(0.8); 
+    -ms-transform: scale(0.8); 
+    -o-transform: scale(0.8); 
+    transform: scale(0.8); 
+
+    opacity: 0;
+}
+
+/* Dark overlay, start state */
+.my-mfp-zoom-in.mfp-bg {
+    opacity: 0.001; /* Chrome opacity transition bug */
+    -webkit-transition: opacity 0.3s ease-out; 
+    -moz-transition: opacity 0.3s ease-out; 
+    -o-transition: opacity 0.3s ease-out; 
+    transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+/* animate out */
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+
+
+/**
+ * Fade-move animation for second dialog
+ */
+
+/* at start */
+.my-mfp-slide-bottom .zoom-anim-dialog {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+
+    -webkit-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -moz-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+
+}
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+    -webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+    -moz-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+    -ms-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+    -o-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+    transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+}
+
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+    opacity: 0;
+
+    -webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+    -moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+    -ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+    -o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+    transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+}
+
+/* Dark overlay, start state */
+.my-mfp-slide-bottom.mfp-bg {
+    opacity: 0.01;
+
+    -webkit-transition: opacity 0.3s ease-out; 
+    -moz-transition: opacity 0.3s ease-out; 
+    -o-transition: opacity 0.3s ease-out; 
+    transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
+    opacity: 0;
+}

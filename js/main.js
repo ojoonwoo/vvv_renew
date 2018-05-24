@@ -14,6 +14,7 @@
 			$doc
 				.on('click', '[data-popup]', function(e){
 				var $this = $(this),
+					$html = $('html'),
 					val = $this.attr('data-popup');
 
 				if (val.match('@close')){
