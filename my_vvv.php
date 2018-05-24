@@ -69,16 +69,16 @@
 										<div class="wrap-user">
 											<div class="user-id">
 <?
-	// if ($_SESSION['ss_vvv_idx'] == $my_idx)
-	// {
-?>
-												<!-- <span class="u-id"><?=$_SESSION['ss_vvv_name']?></span> -->
-<?
-	// }else{
+	if ($mb_data['mb_nickname'] == "")
+	{
 ?>
 												<span class="u-id"><?=$mb_data['mb_name']?></span>
 <?
-	// }
+	}else{
+?>
+												<span class="u-id"><?=$mb_data['mb_nickname']?></span>
+<?
+	}
 ?>
 												<a href="javascript:void(0)" class="setting">
 													<img src="./images/icon_profile_setting.png" alt="">
