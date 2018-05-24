@@ -136,16 +136,15 @@
 										<div class="tab">
 											<a href="#">Collection</a>
 										</div>
-										<div class="tab is-active">
+										<div class="tab">
 											<a href="#">Favorite</a>
 										</div>
-										<div class="tab">
+										<div class="tab is-active">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
-<!--
-										<div class="aj-content collection is-active">
+										<div class="aj-content collection">
 											<div class="wrapper made">
 												<div class="text-block">
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
@@ -177,61 +176,11 @@
 																</figcaption>
 															</figure>
 														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
-																	<div class="secret-mode"></div>
-																</figcaption>
-															</figure>
-														</div>
 													</div>
 												</div>
 											</div>
 										</div>
--->
-										<div class="aj-content favor is-active">
+										<div class="aj-content favor">
 											<div class="wrapper liked">
 												<div class="text-block">
 													<p>당신이 좋아한 컬렉션입니다!</p>
@@ -264,64 +213,10 @@
 																</figcaption>
 															</figure>
 														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">컬렉션 소유자 아이디</span>
-<!--
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
--->
-																</figcaption>
-															</figure>
-														</div>
-														<div class="album">
-															<figure>
-																<a href="">
-																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: #dcdcdc no-repeat"></div>
-																	</div>
-																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
-																	</div>
-																</a>
-																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">컬렉션 소유자 아이디</span>
-<!--
-																	<span class="icon-wrap">
-																		<div class="like">
-																			<i></i>
-																			<span class="count">2</span>
-																		</div>
-																	</span>
--->
-																	<div class="secret-mode"></div>
-																</figcaption>
-															</figure>
-														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-<!--
 										<div class="aj-content like is-active">
 											<div class="text-block">
 												<span>당신이</span> 좋아한 영상입니다!
@@ -357,158 +252,12 @@
 															</figure>
 														</a>
 													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<div class="video col-lg-3 col-md-3 col-sm-2">
-														<a href="#">
-															<figure>
-																<div class="thumbnail box-bg" style="background: url(./images/main_video_thumb.jpg) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
-																<figcaption>
-																	<span class="brand">[UNICEF]</span>
-																	<span class="title">Furniture That Hides From Hurting</span>
-																	<span class="icon-wrap">
-																		<span class="play">
-																			<i class="icon"></i>
-																			<span class="cnt">4</span>
-																		</span>
-																		<span class="comment">
-																			<i class="icon"></i>
-																			<span class="cnt">0</span>
-																		</span>
-																		<span class="like">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																		<span class="collect">
-																			<i class="icon"></i>
-																			<span class="cnt">2</span>
-																		</span>
-																	</span>
-																</figcaption>
-															</figure>
-														</a>
-													</div>
-													<button type="button" class="read-more">
+													<!-- <button type="button" class="read-more">
 														<img src="./images/plus_icon.png" alt="">
-													</button>
+													</button> -->
 												</div>
 											</div>
 										</div>
--->
 									</div>
 								</div>
 							</div>
