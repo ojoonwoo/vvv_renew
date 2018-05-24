@@ -5,9 +5,6 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
 
-	if ($_SESSION['ss_vvv_email'])
-		echo "<script>location.href='index.php';</script>";
-
     include_once "./head.php";
 ?>
 	<body>
