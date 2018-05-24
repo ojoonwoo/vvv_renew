@@ -105,6 +105,10 @@ include_once "./include/autoload.php";
         break;
         
         case "update_member" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
             $mb_email       = $_REQUEST["mb_email"];
             $mb_nickname    = $_REQUEST["mb_nickname"];
             $mb_emailYN     = $_REQUEST["mb_emailYN"];
