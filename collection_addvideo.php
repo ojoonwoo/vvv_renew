@@ -7,6 +7,7 @@
 	
 	$collection_idx		= $_REQUEST["cidx"];
 	$mb_idx				= $_REQUEST["midx"];
+	$follow_idx			= $_REQUEST["midx"]; 
 
 	// 컬렉션 정보 가져오기
 	$collection_query		= "SELECT * FROM collection_info WHERE idx='".$collection_idx."'";
