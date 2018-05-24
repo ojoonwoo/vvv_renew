@@ -94,7 +94,6 @@
 												<span>팔로잉</span>
 												<span class="count"><?=$mb_data['mb_following_count']?></span>
 											</div>
-											<div class="f-add">
 <?
 	if ($_SESSION['ss_vvv_idx'] != $my_idx)
 	{
@@ -106,15 +105,15 @@
 		if ($follow_count > 0)
 		{
 ?>
-											<div class="follow-state">
-												<a href="javascript:follow_member()" class="already">팔로우중</a>
-											</div>
+												<div class="follow-state">
+													<a href="javascript:follow_member()" class="already">팔로우중</a>
+												</div>
 <?
 		}else{
 ?>													
-											<div class="follow-state">
-												<a href="javascript:follow_member()">팔로우하기</a>
-											</div>
+												<div class="follow-state">
+													<a href="javascript:follow_member()">팔로우하기</a>
+												</div>
 <?
 		}
 	}else{
@@ -125,11 +124,11 @@
 <?		
 	}
 ?>												
-											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							
 							<!-- container -->
 							<div class="user-feed">
 								<div class="wrapper">
