@@ -427,7 +427,7 @@
 							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
-							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
+							location.href = "login.php?refurl=my_vvv.php?idx=<?=$follow_idx?>";
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();

@@ -469,16 +469,17 @@
 					},
 					success: function(response){
 						console.log(response);
-						// if (response.match("Y") == "Y")
-						// {
-						// 	location.reload();
-						// }else if (response.match("D") == "D"){
-						// 	alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
-						// 	// location.reload();
-						// }else{
-						// 	alert("다시 입력해 주세요.");
-						// 	location.reload();
-						// }
+						if (response.match("Y") == "Y")
+						{
+							alert("즐겨찾기 되었습니다.");
+							location.reload();
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 즐겨찾기를 해 주세요!");
+							location.href = "login.php?refurl=collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
 					}
 				});		
 			});
