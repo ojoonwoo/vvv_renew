@@ -183,13 +183,13 @@
 					},
 					success: function(response){
 						console.log(response);
-						if (response.match("Y") == "Y")
-						{
-							location.href = "./index.php";
-						}else{
-							alert("다시 입력해 주세요.");
-							// location.reload();
-						}
+						// if (response.match("Y") == "Y")
+						// {
+						// 	location.href = "./index.php";
+						// }else{
+						// 	alert("다시 입력해 주세요.");
+						// 	// location.reload();
+						// }
 					}
 				});			
 
