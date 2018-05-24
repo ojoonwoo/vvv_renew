@@ -217,19 +217,19 @@
 									"mb_thumbnail_img"	: res.properties.thumbnail_image
 								},
 								success: function(response){
-									console.log(response);
-									// if (response.match("Y") == "Y")
-									// {
-									// 	if (refurl == "")
-									// 		location.href	= "index.php";
-									// 	else
-									// 		location.href	= refurl;
-									// }else if (response.match("J") == "J"){
-									// 	location.href 	= "join.php";
-									// }else{
-									// 	alert("다시 시도해 주세요!");
-									// 	location.reload();
-									// }
+									// console.log(response);
+									if (response.match("Y") == "Y")
+									{
+										if (refurl == "")
+											location.href	= "index.php";
+										else
+											location.href	= refurl;
+									}else if (response.match("J") == "J"){
+										location.href 	= "join.php";
+									}else{
+										alert("다시 시도해 주세요!");
+										location.reload();
+									}
 								}
 							});
 						},
