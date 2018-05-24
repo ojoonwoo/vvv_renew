@@ -460,6 +460,8 @@
 			$doc.on('click', '.tab', function() {
 				$(".tab").removeClass("is-active");
 				$(this).addClass("is-active");
+
+				return false;
 			});
 
 			function follow_member()
