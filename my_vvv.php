@@ -83,28 +83,6 @@
 												<a href="javascript:void(0)" class="setting">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
-												<div class="follow-state">
-<?
-	if ($_SESSION['ss_vvv_idx'] != $my_idx)
-	{
-		// 팔로우 여부 확인
-		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
-		$follow_result		= mysqli_query($my_db, $follow_query);
-		$follow_count		= mysqli_num_rows($follow_result);
-		
-		if ($follow_count > 0)
-		{
-?>
-													<a href="javascript:follow_member()" class="already">팔로우중</a>
-<?
-		}else{
-?>													
-													<a href="javascript:follow_member()">팔로우하기</a>
-<?
-		}
-	}
-?>
-												</div>
 											</div>
 										</div>
 										<div class="wrap-actions">
@@ -120,9 +98,31 @@
 <?
 	if ($_SESSION['ss_vvv_idx'] != $my_idx)
 	{
+		// 팔로우 여부 확인
+		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+		$follow_result		= mysqli_query($my_db, $follow_query);
+		$follow_count		= mysqli_num_rows($follow_result);
+		
+		if ($follow_count > 0)
+		{
 ?>
-												<button type="button">친구추가</button>
+											<div class="follow-state">
+												<a href="javascript:follow_member()" class="already">팔로우중</a>
+											</div>
 <?
+		}else{
+?>													
+											<div class="follow-state">
+												<a href="javascript:follow_member()">팔로우하기</a>
+											</div>
+<?
+		}
+	}else{
+?>
+												<div class="f-add">
+													<button type="button">친구추가</button>
+												</div>
+<?		
 	}
 ?>												
 											</div>
