@@ -21,7 +21,7 @@
 	$collection_item_count		= mysqli_num_rows($collection_item_result);
 
 	// 컬렉션 즐겨찾기 여부 체크
-	$collection_like_query		= "SELECT * FROM collection_like_info WHERE c_idx='".$collection_idx."' AND m_idx='".$mb_idx."'";
+	$collection_like_query		= "SELECT * FROM collection_like_info WHERE c_idx='".$collection_idx."' AND m_idx='".$mb_idx."' AND showYN='N'";
 	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
 	$collection_like_count		= mysqli_num_rows($collection_like_result);
 	$collection_likeYN			= "";
@@ -453,9 +453,9 @@
 			}
 
 			$doc.on('click', '.favor', function() {
-				var cLikeChk	= "Y";
+				var cLikeChk	= "N";
 				if(!$(this).hasClass('is-already')) 
-					cLikeChk	= "N";
+					cLikeChk	= "Y";
 
 
 				$.ajax({
