@@ -5,7 +5,6 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
 
-	print_r($_SESSION);
     include_once "./head.php";
 ?>
 	<body>
@@ -183,17 +182,16 @@
 						"mb_emailYN"			: mb_emailYN
 					},
 					success: function(response){
-						console.log(response);
-						// if (response.match("Y") == "Y")
-						// {
-						// 	location.href = "./index.php";
-						// }else{
-						// 	alert("다시 입력해 주세요.");
-						// 	// location.reload();
-						// }
+						// console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							location.href = "./index.php";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
 					}
-				});			
-
+				});
 			});
 		</script>
 	</body>
