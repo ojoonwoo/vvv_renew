@@ -214,10 +214,6 @@
 												<a href="javascript:void(0)" class="setting">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
-												<div class="follow-state">
-													<a href="javascript:void(0)">팔로우하기</a>
-<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
-												</div>
 											</div>
 										</div>
 										<div class="wrap-actions">
@@ -229,9 +225,19 @@
 												<span>팔로잉</span>
 												<span class="count">10</span>
 											</div>
+											<!--my vvv일경우-->
+											<!--
 											<div class="f-add">
-												<button type="button">친구추가</button>
+											<button type="button">친구추가</button>
 											</div>
+											-->
+											<!--my vvv일경우-->
+											<!--남의 vvv일경우-->
+											<div class="follow-state">
+												<a href="javascript:void(0)">팔로우하기</a>
+												<!--													<a href="javascript:void(0)" class="already">팔로우중</a>-->
+											</div>
+											<!--남의 vvv일경우-->
 										</div>
 									</div>
 								</div>
@@ -240,21 +246,24 @@
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-										<div class="tab is-active">
+										<div class="tab">
 											<a href="#">Collection</a>
+										</div>
+										<div class="tab is-active">
+											<a href="#">Favorite</a>
 										</div>
 										<div class="tab">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
+<!--
 										<div class="aj-content collection is-active">
 											<div class="wrapper made">
 												<div class="text-block">
-													<h5>내가 만든 컬렉션</h5>
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
-													<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												</div>
+												<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 												<div class="list-container">
 													<div class="album-list">
 														<div class="album">
@@ -333,9 +342,11 @@
 													</div>
 												</div>
 											</div>
+										</div>
+-->
+										<div class="aj-content favor is-active">
 											<div class="wrapper liked">
 												<div class="text-block">
-													<h5>내가 좋아한 컬렉션</h5>
 													<p>당신이 좋아한 컬렉션입니다!</p>
 												</div>
 												<div class="list-container">
@@ -354,13 +365,15 @@
 																</a>
 																<figcaption>
 																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="desc">컬렉션 소유자 아이디</span>
+<!--
 																	<span class="icon-wrap">
 																		<div class="like">
 																			<i></i>
 																			<span class="count">2</span>
 																		</div>
 																	</span>
+-->
 																</figcaption>
 															</figure>
 														</div>
@@ -378,13 +391,15 @@
 																</a>
 																<figcaption>
 																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="desc">컬렉션 소유자 아이디</span>
+<!--
 																	<span class="icon-wrap">
 																		<div class="like">
 																			<i></i>
 																			<span class="count">2</span>
 																		</div>
 																	</span>
+-->
 																</figcaption>
 															</figure>
 														</div>
@@ -402,13 +417,15 @@
 																</a>
 																<figcaption>
 																	<span class="title">해외 광고</span>
-																	<span class="desc">서브 설명 텍스트</span>
+																	<span class="desc">컬렉션 소유자 아이디</span>
+<!--
 																	<span class="icon-wrap">
 																		<div class="like">
 																			<i></i>
 																			<span class="count">2</span>
 																		</div>
 																	</span>
+-->
 																	<div class="secret-mode"></div>
 																</figcaption>
 															</figure>
@@ -417,10 +434,8 @@
 												</div>
 											</div>
 										</div>
-										
-										
 <!--
-										<div class="aj-content like">
+										<div class="aj-content like is-active">
 											<div class="text-block">
 												<span>당신이</span> 좋아한 영상입니다!
 											</div>

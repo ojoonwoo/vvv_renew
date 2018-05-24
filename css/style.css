@@ -616,7 +616,7 @@
 .content.user-page .user-info {
 	position: relative;
 	background: #333333;
-	padding: 172px 0 109px;
+	padding: 69px 0;
 }
 .content.user-page .user-info:after {
 	content: "";
@@ -652,7 +652,7 @@
 }
 .content.user-page .user-info .info-wrap .wrap-user {
 	border-bottom: 1px solid #7c7c7c;
-	padding: 41px 15px 13px;
+	padding: 58px 15px 13px;
 	width: 100%;
 	font-size: 0;
 	position: relative;
@@ -660,7 +660,7 @@
 .content.user-page .user-info .info-wrap .wrap-user .user-id {
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 40px;
+	font-size: 25px;
 }
 .content.user-page .user-info .info-wrap .wrap-user .user-id .u-id {
 	vertical-align: middle;
@@ -668,38 +668,37 @@
 .content.user-page .user-info .info-wrap .wrap-user .setting {
 	display: inline-block;
 	width: 46px;
-	height: 48px;
+	height: 32px;
 	vertical-align: middle;
 	text-align: center;
 }
-.content.user-page .user-info .info-wrap .wrap-user .follow-state {
+.content.user-page .user-info .info-wrap .wrap-actions .follow-state {
 	position: absolute;
-	top: 51px;
+	top: 38px;
 	right: 15px;
 	color: #ffffff;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 300;
 }
-.content.user-page .user-info .info-wrap .wrap-user .follow-state .already {
+.content.user-page .user-info .info-wrap .wrap-actions .follow-state .already {
 	color: #f7dd30;
 }
-.content.user-page .user-info .info-wrap .wrap-user .setting img {
+.content.user-page .user-info .info-wrap .wrap-actions .setting img {
 	display: inline-block;
 	vertical-align: middle;
 }
 .content.user-page .user-info .info-wrap .wrap-actions {
 	position: relative;
-	padding: 64px 15px 0;
+	padding: 38px 15px 0;
 }
 .content.user-page .user-info .info-wrap .wrap-actions > div {
 	display: inline-block;
 	color: #ffffff;
-	font-size: 22px;
+	font-size: 20px;
 	vertical-align: middle;
 }
 .content.user-page .user-info .info-wrap .wrap-actions > div .count {
 	display: inline-block;
-	font-size: 27px;
 	font-weight: 600;
 	margin-left: 5px;
 }
@@ -708,7 +707,7 @@
 }
 .content.user-page .user-info .info-wrap .wrap-actions .f-add {
 	position: absolute;
-	top: 47px;
+	top: 21px;
 	right: 15px;
 }
 .content.user-page .user-info .info-wrap .wrap-actions .f-add button {
@@ -732,18 +731,21 @@
 .content.user-page .user-feed .tab-wrap {
 	position: absolute;
 	left: 100px;
-	top: -70px;
-	width: 430px;
+	top: -77px;
 	font-size: 0;
 }
 .content.user-page .user-feed .tab-wrap .tab {
 	text-align: center;
-	font-size: 35px;
+	font-size: 28px;
 	color: #7f7f7f;
 	position: relative;
-	width: 50%;
-	padding: 17px 0;
+	width: 215px;
+	margin-right: 39px;
+	padding: 24px 0;
 	display: inline-block;
+}
+.content.user-page .user-feed .tab-wrap .tab:last-child {
+	margin-right: 0;
 }
 .content.user-page .user-feed .tab.is-active:after {
 	content: "";
@@ -759,11 +761,7 @@
 	color: #333333;
 }
 .content.user-page .user-feed .inner {
-	padding: 84px 117px 105px;
-}
-.content.user-page .user-feed .like .text-block {
-	margin-bottom: 64px;
-	font-size: 25px;
+	padding: 55px 107px 200px;
 }
 .content.user-page .user-feed .aj-content {
 	display: none;
@@ -771,58 +769,47 @@
 .content.user-page .user-feed .aj-content.is-active {
 	display: block;
 }
-.content.user-page .user-feed .collection .text-block {
+.content.user-page .user-feed .aj-content .text-block {
 	position: relative;
-	margin-bottom: 39px;
+	margin-bottom: 47px;
 	padding: 0 28px;
 }
-.content.user-page .user-feed .collection .wrapper.made {
-	margin-bottom: 133px;
-}
-.content.user-page .user-feed .collection .wrapper.liked {
-	margin-bottom: 28px;
-}
-.content.user-page .user-feed .collection .text-block h5 {
-	font-size: 28px;
-	margin-bottom: 15px;
-	font-weight: 700;
-}
-.content.user-page .user-feed .collection .text-block p {
-	font-size: 24px;
+.content.user-page .user-feed .aj-content .text-block p {
+	font-size: 18px;
 	font-weight: 500;
 }
-.content.user-page .user-feed .collection .text-block .btn-create {
+.content.user-page .user-feed .collection .btn-create {
 	position: absolute;
-	top: 9px;
-	right: 28px;
-	width: 126px;
-	height: 57px;
-	padding-right: 20px;
+	top: 40px;
+	right: 111px;
+	width: 106px;
+	height: 48px;
+	padding-right: 22px;
 	color: #ffffff;
-	background: url(../images/plus_icon_white.png) 90px 50% no-repeat #333333;
+	background: url(../images/plus_icon_white.png) 76px 50% no-repeat #333333;
 	background-size: 13px 14px;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
 }
-.content.user-page .user-feed .collection .album-list {
+.content.user-page .user-feed .aj-content .album-list {
 	overflow: hidden;
 }
-.content.user-page .user-feed .collection .album {
+.content.user-page .user-feed .aj-content .album {
 	width: 316px;
 	float: left;
-	margin-right: 43px;
+	margin-right: 53px;
 	margin-bottom: 20px;
 }
-.content.user-page .user-feed .collection .album:nth-of-type(3n) {
+.content.user-page .user-feed .aj-content .album:nth-of-type(3n) {
 	margin-right: 0;
 }
-.content.user-page .user-feed .collection .album figure > a {
+.content.user-page .user-feed .aj-content .album figure > a {
 	display: block;
 	position: relative;
 	border-radius: 14px;
 	overflow: hidden;
 }
-.content.user-page .user-feed .collection .album figure > a .over-layer {
+.content.user-page .user-feed .aj-content .album figure > a .over-layer {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -833,11 +820,11 @@
 	visibility: hidden;
 	transition: all 0.15s ease-out;
 }
-.content.user-page .user-feed .collection .album figure > a:hover .over-layer {
+.content.user-page .user-feed .aj-content .album figure > a:hover .over-layer {
 	opacity: 1;
 	visibility: visible;
 }
-.content.user-page .user-feed .collection .album figure > a .over-layer .btn-delete {
+.content.user-page .user-feed .aj-content .album figure > a .over-layer .btn-delete {
 	display: block;
 	position: absolute;
 	top: 17px;
@@ -846,53 +833,53 @@
 	height: 24px;
 	background: url(../images/myvvv_album_delete.png) center / cover no-repeat;
 }
-.content.user-page .user-feed .collection .album .frame {
+.content.user-page .user-feed .aj-content .album .frame {
 	height: 510px;
 }
-.content.user-page .user-feed .collection .album .frame .thumbnail {
+.content.user-page .user-feed .aj-content .album .frame .thumbnail {
 	height: 33.3%;
 }
-.content.user-page .user-feed .collection .album .frame .thumbnail:nth-of-type(2) {
+.content.user-page .user-feed .aj-content .album .frame .thumbnail:nth-of-type(2) {
 	outline: 1px solid rgba(255, 255, 255, 0.9);
 }
-.content.user-page .user-feed .collection .album figcaption {
+.content.user-page .user-feed .aj-content .album figcaption {
 	position: relative;
 	padding: 25px 22px;
 }
-.content.user-page .user-feed .collection .album figcaption span {
+.content.user-page .user-feed .aj-content .album figcaption span {
 	display: block;
 }
-.content.user-page .user-feed .collection .album figcaption .title {
-	font-size: 26px;
+.content.user-page .user-feed .aj-content .album figcaption .title {
+	font-size: 20px;
 	font-weight: 600;
 }
-.content.user-page .user-feed .collection .album figcaption .desc {
-	margin: 16px 0 23px;
-	font-size: 22px;
+.content.user-page .user-feed .aj-content .album figcaption .desc {
+	margin: 9px 0 14px;
+	font-size: 16px;
 	font-weight: 500;
 	color: #666666;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap {
 	font-size: 0;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap > div {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div {
 	display: inline-block;
 	font-size: 0;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap > div span,
-.content.user-page .user-feed .collection .album figcaption .icon-wrap > div i {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div span,
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div i {
 	display: inline-block;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 700;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap .like i {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap .like i {
 	display: inline-block;
-	background: url(../images/icon_like.png) center / 16px 15px no-repeat;
-	width: 16px;
-	height: 15px;
+	background: url(../images/icon_like.png) center / 14px 14px no-repeat;
+	width: 14px;
+	height: 14px;
 	margin-right: 4px;
 }
-.content.user-page .user-feed .collection .album figcaption .secret-mode {
+.content.user-page .user-feed .aj-content .album figcaption .secret-mode {
 	position: absolute;
 	top: 25px;
 	right: 10px;
@@ -912,7 +899,7 @@
 	padding: 0 130px;
 }
 .content.user-page .collection-detail .collection-info .texts {
-	margin-bottom: 19px;
+	margin-bottom: 17px;
 }
 .content.user-page .collection-detail .collection-info .texts .title {
 	display: inline-block;
@@ -947,25 +934,31 @@
 .content.user-page .collection-detail .collection-info .counts span.wrap {
 	display: inline-block;
 	margin-right: 19px;
+	vertical-align: top;
 }
 .content.user-page .collection-detail .collection-info .counts span.wrap span,
 .content.user-page .collection-detail .collection-info .counts span.wrap i {
 	display: inline-block;
-	font-size: 21px;
+	font-size: 15px;
 	font-weight: 500;
+	color: #5e5f5f;
+}
+.content.user-page .collection-detail .collection-info .counts .count {
+	vertical-align: bottom;
 }
 .content.user-page .collection-detail .collection-info .counts span.wrap i {
 	margin-right: 9px;
+	vertical-align: middle;
 }
 .content.user-page .collection-detail .collection-info .counts .icon.video {
 	background: url(../images/myvvv_icon_vid.png) center / cover no-repeat;
-	width: 33px;
-	height: 22px;
+	width: 27px;
+	height: 18px;
 }
-.content.user-page .collection-detail .collection-info .counts .icon.follow {
-	background: url(../images/myvvv_icon_follow.png) center / cover no-repeat;
-	width: 24px;
-	height: 20px;
+.content.user-page .collection-detail .collection-info .counts .icon.favor {
+	background: url(../images/myvvv_icon_favorite.png) center / cover no-repeat;
+	width: 17px;
+	height: 16px;
 }
 .content.user-page .collection-detail .collection-info .action-wrap {
 	position: absolute;
@@ -973,7 +966,6 @@
 	right: 0;
 	top: 0;
 	width: 100%;
-	padding: 20px 0;
 	text-align: right;
 }
 .content.user-page .collection-detail .collection-info .action-wrap .inner {
@@ -981,14 +973,42 @@
 	max-width: 1035px;
 	margin: 0 auto;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .default {
-	width: 85px;
-	height: 49px;
-	margin-right: 11px;
-	color: #ffffff;
-	font-size: 20px;
+.content.user-page .collection-detail .collection-info .action-wrap .myaction {
+	padding-top: 25px;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .myaction button {
+	width: 30px;
+	height: 30px;
+	margin-right: 24px;
+	color: #666666;
+	font-size: 16px;
 	font-weight: 700;
-	background: #666666;
+	border-radius: 50%;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .myaction .edit {
+	background: url(../images/myvvv_action_icon_edit.png) center / cover no-repeat;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .myaction .add {
+	background: url(../images/myvvv_action_icon_add.png) center / cover no-repeat;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .myaction .delete {
+	position: relative;
+	background: url(../images/myvvv_action_icon_delete.png) center / cover no-repeat;
+/*	transition: color 0.6s ease;*/
+}
+.content.user-page .collection-detail.check-mode .collection-info .action-wrap .myaction button {
+	display: none;
+}
+.content.user-page .collection-detail.check-mode .collection-info .action-wrap .myaction .delete {
+	display: inline-block;
+	width: 100px;
+	height: 37px;
+	background: none #666666 no-repeat;
+	color: #ffffff;
+	border-radius: 0;
+}
+.content.user-page .collection-detail.check-mode .collection-info .action-wrap .delete:after {
+	content: "완료";
 }
 .content.user-page .collection-detail .collection-info .action-wrap button:last-child {
 	margin-right: 0;
@@ -997,59 +1017,46 @@
 	display: inline-block;
 	position: relative;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .anyaction .btn-follow {
-	width: 149px;
-	height: 57px;
-	background: url(../images/myvvv_follow_icon_white.png) 19px 50% / 31px 37px no-repeat #333333;
-	color: #ffffff;
-	font-size: 24px;
-	font-weight: 700;
-	text-align: left;
-	padding-left: 60px;
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction > * {
+	vertical-align: middle;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .anyaction .tooltip {
-	position: absolute;
-	top: -13px;
-	right: -190px;
-	width: 180px;
-	height: 105px;
-	background: url(../images/myvvv_tooltip_secret.png) 0 0 / cover no-repeat, url(../images/myvvv_secret_icon.png) 125px 10px / 16px 20px no-repeat;
-	z-index: 10;
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .favor {
+	width: 34px;
+	height: 34px;
+	background: url(../images/myvvv_icon_favorite.png) 50% / 23px 22px no-repeat;
+	margin-right: 8px;
 }
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting {
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .favor.is-already {
+	background: url(../images/myvvv_icon_favorite_on.png) 50% / 23px 22px no-repeat;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .secret {
+	width: 34px;
+	height: 34px;
+	background: url(../images/myvvv_icon_secret.png) 50% / 16px 23px no-repeat;
+	margin-right: 20px;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .secret.is-already {
+	background: url(../images/myvvv_icon_secret_on.png) 50% / 16px 23px no-repeat;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .link-own {
+	display: inline-block;
+	position: relative;
+	width: 66px;
+	height: 66px;
+	background: #f7dd30;
+	border-radius: 50%;
 	text-align: center;
-	margin: 10px 0 0 18px;
+	margin-right: 0;
 }
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .secret-guide {
-	font-size: 20px;
-	line-height: 20px;
-	padding-right: 24px;
-	text-align: left;
-	margin-bottom: 8px;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle {
-	width: 113px;
-	height: 40px;
-	border: 2px solid #e2e2e2;
-	border-radius: 20px;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle:after {
-	left: 46px;
-	font-size: 18px;
-	font-weight: 500;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle.is-active:after {
-	left: 18px;
-}
-
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle .toggle-circle {
-	border: 2px solid #e2e2e2;
-	width: 39px;
-	height: 39px;
-	margin: -2px;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle.is-active .toggle-circle {
-	left: 75px;
+.content.user-page .collection-detail .collection-info .action-wrap .anyaction .link-own span {
+	display: block;
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #666666;
+	font-size: 10px;
 }
 .content.user-page .collection-detail .list-container .read-more {
 	margin: 0 auto 40px;
@@ -1081,13 +1088,15 @@
 	background: transparent;
 	width: 18px;
 	height: 18px;
-	border: 1px solid #333333;
+	border: 1px solid #ffffff;
 	z-index: 1;
+	transition: all 0.12s ease;
 }
 .content.user-page .collection-detail .list-container .video .check-layer input[type="checkbox"]:checked + .checkbox {
-	background: #333333;
+	background: #f7dd30;
+	border: 1px solid #f7dd30;
 }
-.content.user-page .collection-detail .list-container.delete-mode .video .check-layer {
+.content.user-page .collection-detail.check-mode .list-container .video .check-layer {
 	opacity: 1;
 	z-index: 1;
 }
@@ -1096,9 +1105,6 @@
 }
 /* 컬렉션 상세 */
 /* 컬렉션 영상 추가 */
-.content .collection-detail.add-video {
-	
-}
 .content .collection-detail.add-video > .title {
 	margin-bottom: 82px;
 	text-align: center;
@@ -1116,9 +1122,29 @@
 	border: 0;
 	padding: 0 117px;
 }
+.content .collection-detail .list-container .video .thumbnail {
+	position: relative;
+}
 .content .collection-detail.add-video .list-container .video .check-layer {
+	opacity: 0;
+	z-index: -1;
+}
+.content .collection-detail.check-mode .list-container .video .check-layer {
 	opacity: 1;
 	z-index: 1;
+}
+.content .collection-detail .list-container .video .thumbnail:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: transparent;
+	transition: background 0.24s linear;
+}
+.content .collection-detail.check-mode .list-container .video .thumbnail:after {
+	background: rgba(0, 0, 0, 0.15);
 }
 .content .collection-detail.add-video .list-container .btn-apply {
 	display: block;
