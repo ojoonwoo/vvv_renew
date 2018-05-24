@@ -165,6 +165,12 @@
 					return false;
 				}
 
+				if (mb_email == "")
+				{
+					alert("이메일은 필수 입력 사항입니다.");
+					return false;
+				}
+
 				$.ajax({
 					type   : "POST",
 					async  : false,
