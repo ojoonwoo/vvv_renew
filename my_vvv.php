@@ -179,7 +179,7 @@
 		$collection_thumb[0]	= "";
 		$collection_thumb[1]	= "";
 		$collection_thumb[2]	= "";
-		if ($collection_data["video_items"] != "")
+		if ($collection_item_data["video_items"] != "")
 		{
 			$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
 			$i = 0;
