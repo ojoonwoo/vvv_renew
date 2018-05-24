@@ -463,8 +463,8 @@
 
 				var target = $(this).data('tab-content');
 				$(".aj-content").removeClass("is-active");
-				$(".aj-content ."+target).addClass("is-active");
-				
+				$(".aj-content."+target).addClass("is-active");
+
 				return false;
 			});
 
