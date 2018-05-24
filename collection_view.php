@@ -176,31 +176,33 @@
 											<div class="list-container">
 												<div class="video-list">
 <?
-	foreach($collection_item_arr as $key => $val)
+	if (count($collection_item_arr) > 0)
 	{
-		$video_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
-		$video_result 	= mysqli_query($my_db, $video_query);	
-		$video_data		= mysqli_fetch_array($video_result);
+		foreach($collection_item_arr as $key => $val)
+		{
+			$video_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
+			$video_result 	= mysqli_query($my_db, $video_query);	
+			$video_data		= mysqli_fetch_array($video_result);
 
-		// 유튜브 영상 코드 자르기
-		$yt_code_arr1   = explode("v=", $video_data["video_link"]);
-		$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-		$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+			// 유튜브 영상 코드 자르기
+			$yt_code_arr1   = explode("v=", $video_data["video_link"]);
+			$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+			$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-		$title_count    = mb_strlen($video_data["video_title"],'utf-8');
+			$title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
-		if ($title_count > 30)
-			$video_title    = substr($video_data["video_title"],0,30)."...";
-		else
-			$video_title    = $video_data["video_title"];
-			
-		// 브랜드 줄바꿈 방지 글자 자르기
-		$brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
+			if ($title_count > 30)
+				$video_title    = substr($video_data["video_title"],0,30)."...";
+			else
+				$video_title    = $video_data["video_title"];
+				
+			// 브랜드 줄바꿈 방지 글자 자르기
+			$brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
 
-		if ($title_count > 30)
-			$video_brand    = substr($video_data["video_brand"],0,30)."..";
-		else
-			$video_brand    = $video_data["video_brand"];		
+			if ($title_count > 30)
+				$video_brand    = substr($video_data["video_brand"],0,30)."..";
+			else
+				$video_brand    = $video_data["video_brand"];		
 ?>												
 													<div class="video col-lg-3 col-md-3 col-sm-2">
 														<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
@@ -237,6 +239,7 @@
 														</a>
 													</div>
 <?
+		}
 	}
 ?>													
 												</div>
