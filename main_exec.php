@@ -116,7 +116,7 @@ include_once "./include/autoload.php";
             
             $query		= "UPDATE member_info SET mb_email='".$mb_email."', mb_nickname='".$mb_nickname."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
             $result		= mysqli_query($my_db, $query);
-
+print_r($query);
             if ($result)
                 $flag	= "Y";
             else

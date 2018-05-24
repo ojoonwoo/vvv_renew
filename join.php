@@ -188,7 +188,7 @@
 							location.href = "./index.php";
 						}else{
 							alert("다시 입력해 주세요.");
-							location.reload();
+							// location.reload();
 						}
 					}
 				});			
