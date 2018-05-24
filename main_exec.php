@@ -102,7 +102,28 @@ include_once "./include/autoload.php";
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
 
 			echo $flag;
-		break;
+        break;
+        
+        case "update_member" :
+            $mb_email       = $_REQUEST["mb_email"];
+            $mb_nickname    = $_REQUEST["mb_nickname"];
+            $mb_emailYN     = $_REQUEST["mb_emailYN"];
+
+            if ($mb_emailYN == "true")
+                $mb_emailYN = "Y";
+            else
+                $mb_emailYN = "N";
+            
+            $query		= "UPDATE member_info SET mb_email='".$mb_email."', mb_nickname='".$mb_nickname."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+            $result		= mysqli_query($my_db, $query);
+
+            if ($result)
+                $flag	= "Y";
+            else
+                $flag	= "N";
+
+            echo $flag;
+        break;
 
 		case "like_video" :
             $mnv_f          = new mnv_function();

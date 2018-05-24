@@ -149,6 +149,10 @@
 			});
 
 			$doc.on('click', '.btn-join', function() {
+				var mb_email 		= $("#mb_email").val();
+				var mb_nickname 	= $("#mb_nickname").val();
+				var mb_emailYN 		= $("#agree-use3").is(":checked");
+
 				if ($("#agree-use1").is(":checked") === false)
 				{
 					alert("이용약관에 동의하셔야만 회원가입을 하실 수 있습니다");
@@ -160,6 +164,29 @@
 					alert("개인정보 제공에 동의하셔야만 회원가입을 하실 수 있습니다");
 					return false;
 				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "update_member",
+						"mb_email"       		: mb_email,
+						"mb_nickname"			: mb_nickname,
+						"mb_emailYN"			: mb_emailYN
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							location.href = "./index.php";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+
 			});
 		</script>
 	</body>
