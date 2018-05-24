@@ -133,13 +133,13 @@
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-										<div class="tab">
+										<div class="tab" data-tab-content="collection">
 											<a href="#">Collection</a>
 										</div>
-										<div class="tab">
+										<div class="tab" data-tab-content="favor">
 											<a href="#">Favorite</a>
 										</div>
-										<div class="tab is-active">
+										<div class="tab is-active" data-tab-content="like">
 											<a href="#">Like</a>
 										</div>
 									</div>
@@ -461,6 +461,10 @@
 				$(".tab").removeClass("is-active");
 				$(this).addClass("is-active");
 
+				var target = $(this).data('tab-content');
+				$(".aj-content").removeClass("is-active");
+				$(".aj-content ."+target).addClass("is-active");
+				
 				return false;
 			});
 
