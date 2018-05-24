@@ -174,32 +174,75 @@
 												</div>
 												<div class="list-container">
 													<div class="album-list">
+<?
+	$collection_like_query		= "SELECT * FROM collection_like_info WHERE m_idx='".$my_idx."' AND showYN='Y'";
+	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
+
+	while ($collection_like_data = mysqli_fetch_array($collection_like_result))
+	{
+		$collection_query		= "SELECT * FROM collection_info WHERE idx='".$collection_like_data["c_idx"]."'";
+		$collection_result		= mysqli_query($my_db, $collection_query);
+		$collection_data		= mysqli_fetch_array($collection_item_result);
+		// 컬렉션에 담긴 영상 썸네일 추출 
+		$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
+		$collection_item_result		= mysqli_query($my_db, $collection_item_query);
+		$collection_item_data		= mysqli_fetch_array($collection_item_result);
+	
+		$collection_thumb[0]	= "";
+		$collection_thumb[1]	= "";
+		$collection_thumb[2]	= "";
+		if ($collection_item_data["video_items"] != "")
+		{
+			$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
+			$i = 0;
+			foreach($c_thumb_arr as $key => $val)
+			{
+				$thumb_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
+				$thumb_result 	= mysqli_query($my_db, $thumb_query);
+				$thumb_data		= mysqli_fetch_array($thumb_result);
+			
+				// 유튜브 영상 코드 자르기
+				$yt_code_arr1   = explode("v=", $thumb_data["video_link"]);
+				$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+				$collection_thumb[$i]       = "url('https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg') 50% 50% / cover";
+				$i++;
+			}
+		}
+?>														
 														<div class="album">
 															<figure>
-																<a href="">
+																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>">
 																	<div class="frame">
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																		<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
+																		<div class="thumbnail" style="background: <?=$collection_thumb[2]?> #dcdcdc no-repeat"></div>
 																	</div>
+<?
+		if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		{
+?>																													
 																	<div class="over-layer">
-																		<button type="button" class="btn-delete"></button>
+																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
 																	</div>
+<?
+		}
+?>																	
 																</a>
 																<figcaption>
-																	<span class="title">해외 광고</span>
-																	<span class="desc">컬렉션 소유자 아이디</span>
-<!--
+																	<span class="title"><?=$collection_data["collection_name"]?></span>
+																	<span class="desc"><?=$collection_data["collection_desc"]?></span>
 																	<span class="icon-wrap">
 																		<div class="like">
 																			<i></i>
-																			<span class="count">2</span>
+																			<span class="count"><?=$collection_data["collection_like_count"]?></span>
 																		</div>
 																	</span>
--->
 																</figcaption>
 															</figure>
 														</div>
+<?
+	}
+?>														
 													</div>
 												</div>
 											</div>
