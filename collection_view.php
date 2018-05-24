@@ -338,9 +338,9 @@
 			//프론트 임시 샘플코드
 			$doc.on('click', '[data-mode-change]', function() {
 				var mode = $(this).data('mode-change');
-				if(!$('.list-container').hasClass('delete-mode')) {
+				if(!$('.list-container').hasClass('check-mode')) {
 					//삭제 모드로 변경
-					$(this).text('완료');
+					
 				} else {
 					//삭제 코드
 					var videoItems = "";
@@ -377,12 +377,59 @@
 							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
 						}
 					});			
-
 					//삭제 완료
-					$(this).text('삭제');
 				}
-				$('.list-container').toggleClass('delete-mode');
+				$('.collection-detail').toggleClass('check-mode');
 			});
+
+			// //프론트 임시 샘플코드
+			// $doc.on('click', '[data-mode-change]', function() {
+			// 	var mode = $(this).data('mode-change');
+			// 	if(!$('.list-container').hasClass('delete-mode')) {
+			// 		//삭제 모드로 변경
+			// 		$(this).text('완료');
+			// 	} else {
+			// 		//삭제 코드
+			// 		var videoItems = "";
+			// 		var i = 0;
+			// 		$('input:checkbox[type=checkbox]:checked').each(function () {
+			// 			if (i != 0)
+			// 			{
+			// 				videoItems += ",";
+			// 			}
+						
+			// 			videoItems += $(this).val();
+			// 			i++;
+			// 		});
+
+			// 		if (videoItems == "")
+			// 		{
+			// 			alert("영상을 선택하시고 완료 버튼을 클릭해 주세요.");
+			// 			return false;
+			// 		}
+
+			// 		$.ajax({
+			// 			type   : "POST",
+			// 			async  : false,
+			// 			url    : "./main_exec.php",
+			// 			data:{
+			// 				"exec"				: "delete_video",
+			// 				"c_idx"          	: "<?=$collection_idx?>",
+			// 				"m_idx"          	: "<?=$mb_idx?>",
+			// 				"video_items"       : videoItems
+			// 			},
+			// 			success: function(response){
+			// 				console.log(response);
+			// 				alert("컬렉션에서 선택하신 영상이 삭제되었습니다.");
+			// 				location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+			// 			}
+			// 		});			
+
+			// 		//삭제 완료
+			// 		$(this).text('삭제');
+			// 	}
+			// 	$('.list-container').toggleClass('delete-mode');
+			// });
 
 			function follow_member()
 			{
