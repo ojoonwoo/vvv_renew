@@ -5,6 +5,7 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
 
+	print_r($_SESSION);
     include_once "./head.php";
 ?>
 	<body>
