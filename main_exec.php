@@ -486,8 +486,18 @@ include_once "./include/autoload.php";
                     $result     = mysqli_query($my_db, $query);    
                     $flag       = "N";
                 }else{
-                    $query      = "INSERT INTO collection_like_info(c_idx, m_idx, regdate) values('".$collection_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
-                    $result     = mysqli_query($my_db, $query);    
+                    $query          = "SELECT * FROM collection_like_info WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+                    $result         = mysqli_query($my_db, $query);    
+                    $data_count     = mysqli_num_rows($result);
+
+                    if ($data_count > 0)
+                    {
+                        $query      = "UPDATE collection_like_info SET showYN='Y' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+                        $result     = mysqli_query($my_db, $query);    
+                    }else{
+                        $query      = "INSERT INTO collection_like_info(c_idx, m_idx, regdate) values('".$collection_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                        $result     = mysqli_query($my_db, $query);    
+                    }
                     $flag       = "Y";
                 }
     
