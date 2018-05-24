@@ -469,7 +469,7 @@
 					},
 					success: function(response){
 						console.log(response);
-						if (response.match("N") == "N")
+						if (response.match("Y") == "Y")
 						{
 							alert("즐겨찾기 되었습니다.");
 							$(".favor").addClass("is-already");
