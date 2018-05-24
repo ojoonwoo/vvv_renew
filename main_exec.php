@@ -470,6 +470,32 @@ include_once "./include/autoload.php";
             echo $flag;
 		break;
 
+        case "like_collection" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $collection_idx 	= $_REQUEST["collection_idx"];
+            $showYN             = $_REQUEST["showYN"];
+
+            if ($showYN == "Y")
+            {
+                $query     = "UPDATE collection_like_info SET showYN='N' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+                $result    = mysqli_query($my_db, $query);    
+            }else{
+                $query     = "INSERT INTO collection_like_info(c_idx, m_idx, regdate) values('".$collection_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                $result    = mysqli_query($my_db, $query);    
+            }
+
+            if($result) {
+                $flag = "Y";
+            }else{
+                $flag = "N";
+            }
+
+            echo $flag;
+		break;
+
         case "add_video" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();
