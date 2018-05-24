@@ -32,10 +32,20 @@ include_once "./include/autoload.php";
 				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE idx='".$login_data['idx']."'";
                 $result		= mysqli_query($my_db, $query);
                 $uid        = $login_data["idx"];
+
+                if ($result)
+                    $flag	= "Y";
+                else
+                    $flag	= "N";
 			}else{
 				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_kakao_email_verified, mb_kakao_way_id, mb_kakao_profile_img, mb_kakao_thumbnail_img, mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_kakao_name."','".$mb_email."','".$mb_kakao_email_verified."','".$mb_kakao_way_id."','".$mb_kakao_profile_img."','".$mb_kakao_thumbnail_img."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
 				$result   = mysqli_query($my_db, $query);
                 $uid      = mysql_insert_id($result);
+
+                if ($result)
+                    $flag	= "J";
+                else
+                    $flag	= "N";
 			}
 
 			// 회원 이메일, 이름, 로그인 경로 세션 생성
@@ -43,11 +53,6 @@ include_once "./include/autoload.php";
 			$_SESSION['ss_vvv_idx']		    = $uid;
 			$_SESSION['ss_vvv_name']		= $mb_kakao_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
-
-			if ($result)
-				$flag	= "Y";
-			else
-				$flag	= "N";
 
 			echo $flag;
 		break;
@@ -74,10 +79,20 @@ include_once "./include/autoload.php";
 				$query		= "UPDATE member_info SET mb_login_date='".date("Y-m-d H:i:s")."' WHERE idx='".$login_data['idx']."'";
 				$result		= mysqli_query($my_db, $query);
                 $uid        = $login_data["idx"];
-			}else{
+
+                if ($result)
+                    $flag	= "Y";
+                else
+                    $flag	= "N";
+            }else{
 				$query    = "INSERT INTO member_info(mb_login_way, mb_name, mb_email, mb_facebook_gender, mb_facebook_birthday, mb_facebook_way_id   , mb_join_date, mb_login_date, mb_join_ipaddr) values('".$mb_login_way."','".$mb_facebook_name."','".$mb_email."','".$mb_facebook_gender."','".$mb_facebook_birthday."','".$mb_facebook_way_id."','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$_SERVER['REMOTE_ADDR']."')";
 				$result   = mysqli_query($my_db, $query);
                 $uid      = mysql_insert_id($result);
+
+                if ($result)
+                    $flag	= "J";
+                else
+                    $flag	= "N";
 			}
 
 			// 회원 이메일, 이름 세션 생성
@@ -85,11 +100,6 @@ include_once "./include/autoload.php";
 			$_SESSION['ss_vvv_idx']		    = $uid;
 			$_SESSION['ss_vvv_name']		= $mb_facebook_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
-
-			if ($result)
-				$flag	= "Y";
-			else
-				$flag	= "N";
 
 			echo $flag;
 		break;
