@@ -18,6 +18,7 @@
 	$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_idx."' AND m_idx='".$mb_idx."'";
 	$collection_item_result		= mysqli_query($my_db, $collection_item_query);
 	$collection_item_data		= mysqli_fetch_array($collection_item_result);
+	$collection_item_count		= mysqli_num_rows($collection_item_result);
 
 	$secret_flag	= "";
 	if ($collection_data["collection_secret"] == "Y")
@@ -176,7 +177,7 @@
 											<div class="list-container">
 												<div class="video-list">
 <?
-	if (count($collection_item_arr) > 0)
+	if ($collection_item_count > 0)
 	{
 		foreach($collection_item_arr as $key => $val)
 		{
