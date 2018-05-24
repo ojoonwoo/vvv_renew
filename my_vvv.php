@@ -182,7 +182,7 @@
 	{
 		$collection_query		= "SELECT * FROM collection_info WHERE idx='".$collection_like_data["c_idx"]."'";
 		$collection_result		= mysqli_query($my_db, $collection_query);
-		$collection_data		= mysqli_fetch_array($collection_item_result);
+		$collection_data		= mysqli_fetch_array($collection_result);
 		print_r($collection_query);
 		// 컬렉션에 담긴 영상 썸네일 추출 
 		$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
