@@ -102,8 +102,8 @@
 												<!--시크릿 전에 favor 선행 필수-->
 											<div class="anyaction">
 												<!-- is-already 클래스 토글 on/off -->
-												<button class="favor is-already"></button>
-												<button class="secret is-already"></button>
+												<button class="favor"></button>
+												<!-- <button class="secret"></button> -->
 												<a href="javascript:void(0)" class="link-own"><span>miniverminiverminiver</span></a>
 											</div>
 											<!--내 컬렉션이 아닐경우-->
