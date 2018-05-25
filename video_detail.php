@@ -220,7 +220,7 @@
 					<div class="content">
 						<div class="block video-info">
 							<figure>
-								<div class="thumbnail" style="background: url(./images/collection_pick_sample.jpg) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
+								<div class="thumbnail" style="background: url(<?=$yt_thumb?>) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
 								<figcaption>
 									<div class="vid-brand"><?=$detail_data["video_brand"]?></div>
 									<div class="vid-title"><?=$detail_data["video_title"]?></div>
