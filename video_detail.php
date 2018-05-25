@@ -485,9 +485,6 @@
 
 			function collect_video(v_idx, c_idx)
 			{
-				console.log("collect");
-				return false;
-
 				$.ajax({
 					type   : "POST",
 					async  : false,
