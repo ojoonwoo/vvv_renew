@@ -562,25 +562,28 @@
 
 			function del_like_collection(idx)
 			{
-				$.ajax({
-					type   : "POST",
-					async  : false,
-					url    : "./main_exec.php",
-					data:{
-						"exec"					: "like_collection",
-						"collection_idx"        : "<?=$collection_idx?>",
-						"showYN"				: "N"
-					},
-					success: function(response){
-						console.log(response);
-						if (response.match("N") == "N")
-						{
-							alert("즐겨찾기가 취소 되었습니다.");
-							$("#album_like_"+idx).hide();
+				e.preventDefault();
+				if (confirm("선택하신 컬렉션을 Favorite에서 삭제 할까요?"))
+				{
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"					: "like_collection",
+							"collection_idx"        : "<?=$collection_idx?>",
+							"showYN"				: "N"
+						},
+						success: function(response){
+							console.log(response);
+							if (response.match("N") == "N")
+							{
+								alert("즐겨찾기가 취소 되었습니다.");
+								$("#album_like_"+idx).hide();
+							}
 						}
-					}
-				});		
-
+					});		
+				}
 			}
 		</script>
 	</body>
