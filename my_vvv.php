@@ -129,7 +129,7 @@
 			}
 		}
 ?>														
-														<div class="album">
+														<div class="album" id="album_<?=$collection_data["idx"]?>">
 															<figure>
 																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>">
 																	<div class="frame">
@@ -539,8 +539,7 @@
 						},
 						success: function(response){
 							console.log(response);
-							// vvv.popup.close();
-							// location.reload();
+							$("#album_"+idx).hide();
 						}
 					});					
 				}
