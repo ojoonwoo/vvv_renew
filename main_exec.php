@@ -200,10 +200,11 @@ include_once "./include/autoload.php";
                 }
 
             }else{
+                $video_item_txt = $v_idx;
                 $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$_SESSION['ss_vvv_idx']."','".$video_item_txt."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
             }
-        print_r($query);
+
             if ($flag == "")
             {
                 if ($result)
