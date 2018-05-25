@@ -527,7 +527,7 @@
 
 			function del_collection(e,idx)
 			{
-console.log(e);
+				e.stopPropagation();
 				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
 				{
 					$.ajax({
