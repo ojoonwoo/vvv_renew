@@ -158,7 +158,7 @@
 									</div>
 								</div>
 <?
-	$related_query		= "SELECT * FROM video_info2 WHERE video_company='".$data["video_company"]."' AND idx NOT IN ('".$data["idx"]."') ORDER BY like_count DESC LIMIT 4";
+	$related_query		= "SELECT * FROM video_info2 WHERE video_brand='".$detail_data["video_brand"]."' AND idx NOT IN ('".$data["idx"]."') ORDER BY like_count DESC LIMIT 4";
 	$related_result		= mysqli_query($my_db, $related_query);
 	$related_count 		= mysqli_num_rows($related_result);
 	if ($related_count > 0)
