@@ -19,7 +19,7 @@
     if ($sort_val == "best")
         $order_by = " ORDER BY like_count DESC, play_count DESC, comment_count DESC";
     else
-        $order_by = " ORDER BY video_idx DESC";
+        $order_by = " ORDER BY video_date DESC";
 	$view_pg            = $view_page;
 	$s_page				= $video_pg;
 

@@ -168,7 +168,7 @@
 		switch ($search_sort)
 		{
 			case "new" :
-				$ORDER	= " ORDER BY video_idx DESC";
+				$ORDER	= " ORDER BY video_date DESC";
 			break;
 			case "best" :
 				$ORDER	= " ORDER BY like_count DESC, collect_count DESC, play_count DESC";

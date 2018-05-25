@@ -169,7 +169,7 @@
 	$total_video_num	= mysqli_num_rows($total_result);
 	$total_page			= ceil($total_video_num / $view_pg);
 	
-    $recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY idx DESC LIMIT 0, 8";
+    $recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY video_date DESC LIMIT 0, 8";
     $recent_result 	= mysqli_query($my_db, $recent_query);
     while ($recent_data = mysqli_fetch_array($recent_result))
     {    
