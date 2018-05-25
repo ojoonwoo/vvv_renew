@@ -211,7 +211,7 @@ include_once "./include/autoload.php";
                 else
                     $flag = "N";
             }
-
+print_r($item_count);
             echo $flag;
 		break;
 
