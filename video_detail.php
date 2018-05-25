@@ -252,7 +252,7 @@
 	while($collection_data = mysqli_fetch_array($collection_result))
 	{
 		$secret_flag	= "";
-		if ($collection_data["collection_secret"] == "Y")
+		if ($collection_data["collection_secret"] == "N")
 			$secret_flag	= "is-secret";
 ?>										
 										<li class="c-info <?=$secret_flag?>">
