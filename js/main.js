@@ -19,7 +19,7 @@
 
 				if (val.match('@close')){
 					vvv.popup.close($this.closest('.popup'));
-				} else {
+			  	} else {
 					vvv.popup.show($(val));
 				}
 
@@ -84,7 +84,75 @@
 		}
 	};
 	vvv.popup.bind();
-	
+	vvv.layer = {
+		bind : function(){
+			$doc
+				.on('click', '[data-layer]', function(e){
+				var $this = $(this),
+					$html = $('html'),
+					val = $this.attr('data-layer');
+
+				if (val.match('@close')){
+					vvv.layer.close($this.closest('.layer'));
+				} else {
+					vvv.layer.show($(val));
+				}
+
+				if ($this.is('a')){
+					e.preventDefault();
+				}
+			})
+				.on('click', '[data-layer-close]', function(e){
+				var $this = $(this),
+					val = $this.attr('data-layer-close');
+
+				vvv.layer.close($(val));
+
+				if ($this.is('a')){
+					e.preventDefault();
+				}
+			});
+		},
+		show : function($layer){
+			if ($layer.length){
+				var $html = $('html'),
+					$this = $layer;
+
+				if (!$this.hasClass('is-opened')){
+					$this
+						.stop().fadeIn(10, function(){
+						$layer.trigger('afterlayerOpened', $this);
+					})
+						.addClass('is-opened');
+				}
+
+				if (!$html.hasClass('layer-opened')){
+					$html.addClass('layer-opened');
+				}
+
+				$layer.trigger('layerOpened', $this);
+			}
+		},
+		close : function($layer) {
+			if ($layer.length){
+				var	$html = $('html'),
+					$this = $layer;
+
+				$this.stop().fadeOut(10, function(){
+					$this.removeClass('is-opened');
+
+					if (!$('.layer.is-opened').length){
+						$html.removeClass('layer-opened');
+					}
+
+					//					$layer.trigger('afterpopupClosed', $this);
+				});
+
+				$layer.trigger('layerClosed', $this);
+			}
+		}
+	};
+	vvv.layer.bind();
 	vvv.toggle = {
 		bind: function() {
 			$doc

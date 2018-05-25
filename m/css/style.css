@@ -682,7 +682,8 @@
 .content.user-page .user-info {
 	position: relative;
 	background: #333333;
-	padding: 46px 0 32px;
+/*	padding: 46px 0 32px;*/
+	padding: 30px 25px;
 }
 .content.user-page .user-info:after {
 	content: "";
@@ -695,17 +696,22 @@
 	background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 .content.user-page .user-info > .wrapper {
-	max-width: 288px;
-	margin: 0 auto;
 	position: relative;
 	z-index: 1;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
 }
 .content.user-page .user-info .profile-img {
+/*
 	width: 112px;
 	height: 112px;
+*/
+	flex-basis: 40%;
 	margin: 0 auto;
 	border-radius: 50%;
 	overflow: hidden;
+	margin-right: 17px;
 }
 .content.user-page .user-info .profile-img img {
 	width: 100%;
@@ -717,21 +723,21 @@
 }
 .content.user-page .user-info .info-wrap .wrap-user {
 	border-bottom: 1px solid #7c7c7c;
-	padding: 24px 0 14px;
+/*	padding: 24px 0 14px;*/
+	padding-bottom: 10px;
 	width: 100%;
 	font-size: 0;
 	position: relative;
-	text-align: center;
 }
 .content.user-page .user-info .info-wrap .wrap-user .user-id {
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 0;
-	margin-left: 15px;
+	margin-left: 10px;
 }
 .content.user-page .user-info .info-wrap .wrap-user .user-id .u-id {
 	vertical-align: middle;
-	font-size: 20px;
+	font-size: 17px;
 }
 .content.user-page .user-info .info-wrap .wrap-user .setting {
 	display: inline-block;
@@ -749,6 +755,8 @@
 	color: #ffffff;
 	font-size: 12px;
 	font-weight: 300;
+	display: flex;
+	justify-content: space-between;
 }
 .content.user-page .user-info .info-wrap .wrap-user .follow-state .already {
 	color: #f7dd30;
@@ -760,7 +768,8 @@
 }
 .content.user-page .user-info .info-wrap .wrap-actions {
 	position: relative;
-	padding: 15px 11px 0;
+/*	padding: 14px 10px 0 10px;*/
+	padding: 10px 10px 0 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -769,13 +778,15 @@
 	display: inline-block;
 	color: #ffffff;
 	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
 	vertical-align: middle;
 }
 .content.user-page .user-info .info-wrap .wrap-actions > div .count {
 	display: inline-block;
-	font-size: 15px;
+	font-size: 12px;
 	font-weight: 600;
-	margin-left: 5px;
+	margin-left: 2px;
 }
 .content.user-page .user-info .info-wrap .wrap-actions .f-add button {
 	width: 75px;
@@ -786,6 +797,7 @@
 	color: #333333;
 	background: url(../images/plus_icon_black.png) 56px 10px no-repeat #ffffff;
 	background-size: 7px 7px;
+/*	margin-top: -8px;*/
 }
 
 
@@ -793,9 +805,10 @@
 	margin: 36px auto;
 	position: relative;
 }
+.content.user-page .user-feed > .wrapper {
+	padding: 0 25px;
+}
 .content.user-page .user-feed .tab-wrap {
-	width: 222px;
-	margin: 0 auto;
 	font-size: 0;
 /*	border-bottom: 1px solid #333333;*/
 }
@@ -804,7 +817,7 @@
 	font-size: 17px;
 	color: #7f7f7f;
 	position: relative;
-	width: 50%;
+	width: 33%;
 	padding: 12px 0;
 	display: inline-block;
 }
@@ -822,12 +835,12 @@
 	color: #333333;
 }
 .content.user-page .user-feed .inner {
-	padding: 42px 25px;
+	padding: 32px 0;
 }
-.content.user-page .user-feed .like .text-block {
-	margin-bottom: 14px;
-	padding: 0 0 0 7px;
-	font-size: 14px;
+.content.user-page .user-feed .text-block {
+	margin-bottom: 29px;
+	font-size: 13px;
+	text-align: center;
 }
 .content.user-page .user-feed .aj-content {
 	display: none;
@@ -836,29 +849,10 @@
 	display: block;
 }
 .content.user-page .user-feed .collection .text-block {
-	position: relative;
-	margin-bottom: 16px;
-	padding: 0 0 0 7px;
+	margin-bottom: 18px;
 }
-.content.user-page .user-feed .collection .wrapper.made {
-	margin-bottom: 38px;
-}
-.content.user-page .user-feed .collection .wrapper.liked {
-	margin-bottom: 28px;
-}
-.content.user-page .user-feed .collection .text-block h5 {
-	font-size: 14px;
-	margin-bottom: 8px;
-	font-weight: 700;
-}
-.content.user-page .user-feed .collection .text-block p {
-	font-size: 12px;
-	font-weight: 500;
-}
-.content.user-page .user-feed .collection .text-block .btn-create {
-	position: absolute;
-	top: 5px;
-	right: 0;
+.content.user-page .user-feed .collection .text-block + .btn-create {
+	display: block;
 	width: 63px;
 	height: 28px;
 	padding-right: 12px;
@@ -867,26 +861,27 @@
 	background-size: 7px 7px;
 	font-size: 12px;
 	font-weight: 500;
+	margin: 0 auto 29px;
 }
-.content.user-page .user-feed .collection .album-list {
+.content.user-page .user-feed .aj-content .album-list {
 	overflow: hidden;
 }
-.content.user-page .user-feed .collection .album {
+.content.user-page .user-feed .aj-content .album {
 	width: 48%;
 	float: left;
 	margin-right: 4%;
 	margin-bottom: 10px;
 }
-.content.user-page .user-feed .collection .album:nth-of-type(2n) {
+.content.user-page .user-feed .aj-content .album:nth-of-type(2n) {
 	margin-right: 0;
 }
-.content.user-page .user-feed .collection .album figure > a {
+.content.user-page .user-feed .aj-content .album figure > a {
 	display: block;
 	position: relative;
 	border-radius: 8px;
 	overflow: hidden;
 }
-.content.user-page .user-feed .collection .album figure > a .over-layer {
+.content.user-page .user-feed .aj-content .album figure > a .over-layer {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -897,69 +892,69 @@
 	visibility: hidden;
 	transition: all 0.15s ease-out;
 }
-.content.user-page .user-feed .collection .album figure > a:hover .over-layer {
+.content.user-page .user-feed .aj-content .album figure > a:hover .over-layer {
 	opacity: 1;
 	visibility: visible;
 }
-.content.user-page .user-feed .collection .album figure > a .over-layer .btn-delete {
+.content.user-page .user-feed .aj-content .album figure > a .over-layer .btn-delete {
 	display: block;
 	position: absolute;
-	top: 17px;
-	right: 14px;
-	width: 24px;
-	height: 24px;
+	top: 8px;
+	right: 8px;
+	width: 20px;
+	height: 20px;
 	background: url(../images/myvvv_album_delete.png) center / cover no-repeat;
 }
-.content.user-page .user-feed .collection .album .frame {
+.content.user-page .user-feed .aj-content .album .frame {
 	height: 255px;
 }
-.content.user-page .user-feed .collection .album .frame .thumbnail {
+.content.user-page .user-feed .aj-content .album .frame .thumbnail {
 	height: 33.3%;
 }
-.content.user-page .user-feed .collection .album .frame .thumbnail:nth-of-type(2) {
+.content.user-page .user-feed .aj-content .album .frame .thumbnail:nth-of-type(2) {
 	outline: 1px solid rgba(255, 255, 255, 0.9);
 }
-.content.user-page .user-feed .collection .album figcaption {
+.content.user-page .user-feed .aj-content .album figcaption {
 	position: relative;
 	padding: 16px 10px;
 }
-.content.user-page .user-feed .collection .album figcaption span {
+.content.user-page .user-feed .aj-content .album figcaption span {
 	display: block;
 }
-.content.user-page .user-feed .collection .album figcaption .title {
+.content.user-page .user-feed .aj-content .album figcaption .title {
 	font-size: 14px;
 	font-weight: 600;
 	margin-bottom: 7px
 }
-.content.user-page .user-feed .collection .album figcaption .desc {
+.content.user-page .user-feed .aj-content .album figcaption .desc {
 	font-size: 12px;
 	font-weight: 500;
 	color: #666666;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap {
 	font-size: 0;
 	position: absolute;
 	top: 16px;
 	right: 10px;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap > div {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div {
 	display: inline-block;
 	font-size: 0;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap > div span,
-.content.user-page .user-feed .collection .album figcaption .icon-wrap > div i {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div span,
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div i {
 	display: inline-block;
 	font-size: 11px;
 	font-weight: 700;
 }
-.content.user-page .user-feed .collection .album figcaption .icon-wrap .like i {
+.content.user-page .user-feed .aj-content .album figcaption .icon-wrap .like i {
 	display: inline-block;
 	background: url(../images/icon_like.png) center / 9px 9px no-repeat;
 	width: 9px;
 	height: 9px;
 	margin-right: 2px;
 }
-.content.user-page .user-feed .collection .album figcaption .secret-mode {
+.content.user-page .user-feed .aj-content .album figcaption .secret-mode {
 	position: absolute;
 	top: 25px;
 	right: 10px;
@@ -967,21 +962,21 @@
 	width: 16px;
 	height: 20px;
 }
-.content.user-page .user-feed .like .video-list {
+.content.user-page .video-list {
 	font-size: 0;
 }
-.content.user-page .user-feed .like .video-list > .video {
+.content.user-page .video-list > .video {
 	display: inline-block;
 	width: 48.5%;
 	margin-right: 3%;
 }
-.content.user-page .user-feed .like .video-list > .video:nth-of-type(2n) {
+.content.user-page .video-list > .video:nth-of-type(2n) {
 	margin-right: 0;
 }
-.content.user-page .user-feed .like .video-list > .video figure figcaption .brand {
+.content.user-page .video-list > .video figure figcaption .brand {
 	font-size: 10px;
 }
-.content.user-page .user-feed .like .video-list > .video figure figcaption .title {
+.content.user-page .video-list > .video figure figcaption .title {
 	margin: 4px 0 3px;
 	font-size: 12px;
 	line-height: 16px;
@@ -989,24 +984,25 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.content.user-page .user-feed .like .video-list > .video figure figcaption .icon-wrap > span {
+.content.user-page .video-list > .video figure figcaption .icon-wrap > span {
 	margin-right: 5px;
 }
-.content.user-page .user-feed .like .video-list > .video figure figcaption .icon-wrap .icon {
+.content.user-page .video-list > .video figure figcaption .icon-wrap .icon {
 	margin-right: 3px;
 }
 
 /* 컬렉션 상세 */
 .content.user-page .collection-detail {
-	margin: 40px auto;
+	margin: 37px auto;
 	padding: 0 25px;
 }
 .content.user-page .collection-detail .collection-info {
 	position: relative;
-	margin-bottom: 16px;
+	padding: 0 5px;
+	margin-bottom: 15px;
 }
 .content.user-page .collection-detail .collection-info .texts {
-	margin-bottom: 9px;
+	margin-bottom: 8px;
 }
 .content.user-page .collection-detail .collection-info .texts .title {
 	display: inline-block;
@@ -1039,6 +1035,7 @@
 .content.user-page .collection-detail .collection-info .counts span.wrap {
 	display: inline-block;
 	margin-right: 9px;
+	font-size: 0;
 }
 .content.user-page .collection-detail .collection-info .counts span.wrap span,
 .content.user-page .collection-detail .collection-info .counts span.wrap i {
@@ -1059,6 +1056,7 @@
 	width: 12px;
 	height: 10px;
 }
+/*
 .content.user-page .collection-detail .collection-info .action-wrap {
 	position: absolute;
 	left: 0;
@@ -1068,28 +1066,39 @@
 	padding: 20px 0;
 	text-align: right;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .inner {
-	font-size: 0;
-/*	max-width: 1035px;*/
-	margin: 0 auto;
+*/
+.content.user-page .collection-detail .collection-info .myaction {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	padding: 13px 25px;
+	height: 51px;
+	background: rgba(255, 255, 255, 0.7);
+	text-align: right;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .default {
-	width: 85px;
-	height: 49px;
-	margin-right: 11px;
+.content.user-page .collection-detail .collection-info .myaction button {
+	width: 50px;
+	height: 26px;
+	margin-right: 6px;
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 11px;
 	font-weight: 700;
 	background: #666666;
+	text-align: center;
 }
-.content.user-page .collection-detail .collection-info .action-wrap button:last-child {
+.content.user-page .collection-detail .collection-info button:last-child {
 	margin-right: 0;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .anyaction {
+.content.user-page .collection-detail .collection-info .anyaction {
 	display: inline-block;
-	position: relative;
+	position: absolute;
+	top: 3px;
+	right: 0;
+	font-size: 0;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .anyaction .btn-follow {
+.content.user-page .collection-detail .collection-info .anyaction .btn-favor {
 	width: 149px;
 	height: 57px;
 	background: url(../images/myvvv_follow_icon_white.png) 19px 50% / 31px 37px no-repeat #333333;
@@ -1099,50 +1108,49 @@
 	text-align: left;
 	padding-left: 60px;
 }
-.content.user-page .collection-detail .collection-info .action-wrap .anyaction .tooltip {
-	position: absolute;
-	top: -13px;
-	right: -190px;
-	width: 180px;
-	height: 105px;
-	background: url(../images/myvvv_tooltip_secret.png) 0 0 / cover no-repeat, url(../images/myvvv_secret_icon.png) 125px 10px / 16px 20px no-repeat;
-	z-index: 10;
+.content.user-page .collection-detail .collection-info .anyaction > * {
+	vertical-align: middle;
 }
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting {
+.content.user-page .collection-detail .collection-info .anyaction .favor {
+	width: 12px;
+	height: 11px;
+	background: url(../images/myvvv_icon_favorite.png) 50% / cover no-repeat;
+	margin-right: 21px;
+}
+.content.user-page .collection-detail .collection-info .anyaction .favor.is-already {
+	background: url(../images/myvvv_icon_favorite_on.png) 50% / cover no-repeat;
+}
+.content.user-page .collection-detail .collection-info .anyaction .secret {
+	width: 8px;
+	height: 11px;
+	background: url(../images/myvvv_icon_secret.png) 50% / cover no-repeat;
+	margin-right: 20px;
+}
+.content.user-page .collection-detail .collection-info .anyaction .secret.is-already {
+	background: url(../images/myvvv_icon_secret_on.png) 50% / cover no-repeat;
+}
+.content.user-page .collection-detail .collection-info .anyaction .link-own {
+	display: inline-block;
+	position: relative;
+	width: 33px;
+	height: 33px;
+	background: #f7dd30;
+	border-radius: 50%;
 	text-align: center;
-	margin: 10px 0 0 18px;
+	margin-right: 0;
 }
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .secret-guide {
-	font-size: 20px;
-	line-height: 20px;
-	padding-right: 24px;
-	text-align: left;
-	margin-bottom: 8px;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle {
-	width: 113px;
-	height: 40px;
-	border: 2px solid #e2e2e2;
-	border-radius: 20px;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle:after {
-	left: 46px;
-	font-size: 18px;
-	font-weight: 500;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle.is-active:after {
-	left: 18px;
+.content.user-page .collection-detail .collection-info .anyaction .link-own span {
+	text-transform: uppercase;
+	display: block;
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #666666;
+	font-size: 10px;
 }
 
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle .toggle-circle {
-	border: 2px solid #e2e2e2;
-	width: 39px;
-	height: 39px;
-	margin: -2px;
-}
-.collection-detail .collection-info .action-wrap .anyaction .tooltip .setting .toggle.is-active .toggle-circle {
-	left: 75px;
-}
 .content.user-page .collection-detail .list-container .read-more {
 	margin: 0 auto 40px;
 }
@@ -1170,43 +1178,49 @@
 	position: absolute;
 	top: 6px;
 	left: 6px;
-	background: transparent;
-	width: 18px;
-	height: 18px;
-	border: 1px solid #333333;
+	background: #ffffff;;
+	width: 13px;
+	height: 13px;
+	border: 1px solid #ffffff;
 	z-index: 1;
+	transition: all 0.12s ease;
+	
 }
 .content.user-page .collection-detail .list-container .video .check-layer input[type="checkbox"]:checked + .checkbox {
-	background: #333333;
+	background: #f7dd30;
+	border: 1px solid #f7dd30;
 }
-.content.user-page .collection-detail .list-container.delete-mode .video .check-layer {
+.content.user-page .collection-detail.check-mode .list-container .video .check-layer {
 	opacity: 1;
 	z-index: 1;
 }
 .content.user-page .collection-detail .list-container .video figure {
 	position: relative;
 }
+.content .collection-detail .list-container .video .thumbnail {
+	position: relative;
+}
+.content .collection-detail .list-container .video .thumbnail:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: transparent;
+	transition: background 0.24s linear;
+}
+.content .collection-detail.check-mode .list-container .video .thumbnail:after {
+	background: rgba(0, 0, 0, 0.15);
+}
 /* 컬렉션 상세 */
 /* 컬렉션 영상 추가 */
-.content .collection-detail.add-video {
-
-}
 .content .collection-detail.add-video > .title {
-	margin-bottom: 82px;
+	padding-top: 23px;
+	margin-bottom: 30px;
 	text-align: center;
-}
-.content .collection-detail.add-video > .title h3 {
-	font-size: 25px;
-	font-weight: 700;
-	margin-bottom: 17px;
-}
-.content .collection-detail.add-video > .title p {
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: 500;
-}
-.content .collection-detail.add-video .semi-container {
-	border: 0;
-	padding: 0 117px;
 }
 .content .collection-detail.add-video .list-container .video .check-layer {
 	opacity: 1;
@@ -1214,17 +1228,346 @@
 }
 .content .collection-detail.add-video .list-container .btn-apply {
 	display: block;
-	width: 162px;
-	height: 57px;
+	width: 95px;
+	height: 33px;
 	margin: 0 auto;
 	background: #333333;
 	color: #ffffff;
-	font-size: 24px;
+	font-size: 14px;
 	font-weight: 500;
 }
 /* 컬렉션 영상 추가 */
 /* my vvv */
 
+
+/* 팝업 개별 코드*/
+.popup.mycollection {
+	width: 315px;
+}
+.popup.mycollection .inner {
+	padding: 47px 22px 41px;
+	text-align: center;
+}
+.popup.mycollection .title {
+	text-align: left;
+	border-bottom: 1px solid #c8c8c8;
+	padding: 0 0 14px 11px;
+}
+.popup.mycollection .title h5 {
+	font-size: 12px;
+	font-weight: 700;
+}
+.popup.mycollection .content {
+	padding: 0 11px;
+}
+.popup.mycollection .input-area {
+	margin: 35px 0 23px;
+	display: inline-block;
+}
+.popup.mycollection .input-area .input-group {
+	text-align: left;
+	font-size: 0;
+	margin-bottom: 17px;
+}
+.popup.mycollection .input-area .input-group:last-child {
+	margin-bottom: 0;
+}
+.popup.mycollection .input-area .input-group .guide {
+	display: inline-block;
+	width: 30px;
+	vertical-align: middle;
+	font-size: 11px;
+}
+.popup.mycollection .input-area .input-group .input {
+	display: inline-block;
+	width: 217px;
+	vertical-align: middle;
+}
+.popup.mycollection .input-area .input-group input[type="text"] {
+	width: 100%;
+	border-bottom: 1px solid #666666;
+	padding: 4px 6px;
+	font-size: 11px;
+	color: #b7b7b7;
+}
+.popup.mycollection .setting {
+	margin-bottom: 30px;
+	text-align: right;
+	font-size: 0;
+}
+.popup.mycollection .setting .secret-guide {
+	display: inline-block;
+	margin-right: 6px;
+	font-size: 10px;
+	line-height: 13px;
+	vertical-align: middle;
+	padding-left: 14px;
+	background: url(../images/secret_icon_lightgrey.png) 0 50% / 8px 11px no-repeat;
+}
+.popup.mycollection .setting .toggle {
+	position: relative;
+	display: inline-block;
+	width: 52px;
+	height: 18px;
+	border: 2px solid #e2e2e2;
+	border-radius: 17px;
+	vertical-align: middle;
+	background: #ffffff;
+/*	transition: background-color .25s cubic-bezier(.25,.375,.1,.975);*/
+}
+.popup.mycollection .setting .toggle:after {
+	content: "아니요";
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #b7b7b7;
+	font-size: 10px;
+	font-weight: 500;
+/*	transition: color 0.2s ease;*/
+}
+.popup.mycollection .setting .toggle.is-active {
+	background: #333333;
+}
+.popup.mycollection .setting .toggle.is-active:after {
+	content: "네";
+	left: 9px;
+	color: #ffffff;
+}
+.popup.mycollection .setting .toggle input[type="checkbox"] {
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	cursor: pointer;
+	opacity: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.popup.mycollection .setting .toggle .toggle-circle {
+	border: 2px solid #e2e2e2;
+	border-radius: 17px;
+	width: 18px;
+	height: 18px;
+	margin: -2px;
+	left: 0;
+}
+.popup.mycollection .setting .toggle.is-active .toggle-circle {
+	left: calc(100% - 14px);
+}
+.popup.mycollection .button-wrap {
+	text-align: right;
+}
+.popup.mycollection .button-wrap button {
+	width: 75px;
+	height: 28px;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 500;
+	background: #333333;
+	margin-right: 11px;
+	text-align: center;
+}
+.popup.mycollection .button-wrap button:last-child {
+	margin-right: 0;
+}
+.popup.mycollection .button-wrap button.btn-light-grey {
+	background: #666666;
+}
+
+.layer.collection-pick {
+	height: calc(100vh - 76px);
+}
+.layer.collection-pick .inner {
+	padding: 54px 25px 63px;
+}
+.layer.collection-pick .title {
+	padding: 14px 0;
+	border-bottom: 1px solid #c8c8c8;
+}
+.layer.collection-pick .title h5 {
+	font-size: 21px;
+	font-weight: 500;
+}
+.layer.collection-pick .content {
+/*	height: 532px;*/
+}
+.layer.collection-pick .content .video-info {
+/*	width: 160px;*/
+/*	margin: 13px 10px 0 0;*/
+	margin-top: 13px;
+}
+.layer.collection-pick .content .video-info figure {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.layer.collection-pick .content .video-info .thumb-wrap {
+	flex-basis: 48.63%;
+	margin-right: 10px;
+}
+.layer.collection-pick .content .video-info .thumbnail {
+	width: 100%;
+}
+.layer.collection-pick .content .video-info figcaption {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.layer.collection-pick .content .video-info figcaption .vid-brand {
+	font-size: 10px;
+	font-weight: 500;
+	color: #666666;
+}
+.layer.collection-pick .content .video-info figcaption .vid-title {
+	margin: 9px 0 5px;
+	font-size: 12px;
+	font-weight: 800;
+	word-break: break-all;
+}
+.layer.collection-pick .content .video-info figcaption .vid-date {
+	font-size: 10px;
+	font-weight: 500;
+	color: #666666;
+}
+.layer.collection-pick .content .collection-info > h6 {
+	padding: 23px 0 15px;
+	font-size: 15px;
+	font-weight: 700;
+}
+.layer.collection-pick .content .collection-info .collection-list {
+	/*	height: 375px;*/
+	height: 160px;
+	overflow: hidden;
+}
+.layer.collection-pick .content .collection-info .collection-list .scroll-box {
+	height: 100%;
+	overflow-y: scroll;
+}
+.layer.collection-pick .content .collection-info .collection-list .scroll-box ul li {
+	display: block;
+	padding: 7px 37px 7px 16px;
+	cursor: pointer;
+	background: none 93% 50% #ffffff;
+	transition: background 0.2s ease;
+}
+.layer.collection-pick .content .collection-info .collection-list .scroll-box ul li span {
+	font-size: 12px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+.layer.collection-pick .content .collection-info .collection-list .scroll-box ul li:hover {
+	background: url(../images/join_checked.png) 93% 50% / 9px 5px no-repeat rgba(226, 226, 226, 0.2);
+}
+.layer.collection-pick .content .collection-info .collection-list .scroll-box ul li .secret {
+	display: none;
+	background: url(../images/secret_icon_lightgrey.png) 0 0 / cover no-repeat;
+	width: 11px;
+	height: 16px;
+	margin-left: 14px;
+	vertical-align: middle;
+}
+.layer.collection-pick .content .collection-info .collection-list .scroll-box ul li.is-secret .secret {
+	display: inline-block;
+}
+.layer.collection-pick .content .collection-info .btn-add {
+	position: fixed;
+	bottom: -64px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	width: 100%;
+	padding: 20px 0;
+	background: rgba(255, 255, 255, 0.95);
+	transition: bottom 0.4s ease 0.5s;
+}
+.layer.is-opened .content .collection-info .btn-add {
+	bottom: 0;
+}
+.layer.collection-pick .content .collection-info .btn-add span {
+	font-size: 12px;
+	font-weight: 700;
+	display: inline-block;
+	vertical-align: middle;
+}
+.layer.collection-pick .content .collection-info .btn-add .icon {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: url(../images/plus_icon_2325.png) center / 11px 12px no-repeat #333333;
+	margin-right: 8px;
+}
+.layer.collection-pick .content .collection-setting {
+	display: flex;
+	flex-wrap: nowrap;
+	margin-top: 23px;
+}
+.layer.collection-pick .content .collection-setting .input-wrap {
+	flex-basis: 50%;
+}
+.layer.collection-pick .content .collection-setting .input-wrap > span {
+	display: block;
+	font-size: 15px;
+	font-weight: 700;
+	margin-bottom: 7px;
+}
+.layer.collection-pick .content .collection-setting .input-group {
+	font-size: 0;
+}
+.layer.collection-pick .content .collection-setting .input-group:first-child {
+	margin-bottom: 6px;
+}
+.layer.collection-pick .content .collection-setting .input-group .guide {
+	display: inline-block;
+	width: 24px;
+	padding: 7px 0;
+	font-size: 12px;
+}
+.layer.collection-pick .content .collection-setting .input-group .input {
+	display: inline-block;
+	width: 135px;
+}
+.layer.collection-pick .content .collection-setting .input-group .input input[type="text"] {
+	width: 100%;
+	padding: 7px 0;
+	font-size: 12px;
+	color: #b7b7b7;
+	border-bottom: 1px solid #666666;
+}
+.layer.collection-pick .content .collection-setting .setting {
+	flex-basis: 50%;
+}
+.layer.collection-pick .content .collection-setting .setting .secret-guide {
+	padding-right: 15px;
+	padding-left: 0;
+	background: url(../images/secret_icon_lightgrey.png) 100% 50% / 10px 13px no-repeat;
+	margin-right: 0;
+	margin-bottom: 8px;
+	line-height: 1;
+	font-size: 15px;
+	font-weight: 700;
+}
+.layer.collection-pick .content .collection-setting .setting .toggle {
+	display: block;
+}
+.layer.collection-pick .content .button-wrap {
+	margin-top: 43px;
+	text-align: center;
+}
+.layer.collection-pick .content .button-wrap button {
+	width: 86px;
+	height: 30px;
+	background: #666666;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 500;
+}
+.layer.collection-pick .content .button-wrap button:last-child {
+	background: #333333;
+	margin-left: 18px;
+}
+/* 팝업 개별코드 */
 
 @media all and (max-width: 350px) {
 	.content.detail .actions .share-spread {
