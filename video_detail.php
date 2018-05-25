@@ -499,7 +499,7 @@
 						if (response.match("Y") == "Y")
 						{
 							alert("선택하신 컬렉션에 영상이 담겼습니다");
-							vvv.popup.close();
+							vvv.popup.close($("#collection-save"));
 						}else if (response.match("D") == "D"){
 							alert("선택하신 컬렉션에 이미 해당 영상이 담겨 있습니다");
 						}else{
