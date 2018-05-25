@@ -525,8 +525,9 @@
 
 			}
 
-			function del_collection(idx)
+			function del_collection(idx, e)
 			{
+console.log(e);
 				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
 				{
 					$.ajax({
