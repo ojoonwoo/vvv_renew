@@ -90,7 +90,7 @@
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
 <?
-	if ($_SESSION['ss_vvv_idx'])
+	if ($_SESSION['ss_vvv_idx'] != "")
 	{
 ?>									
 									<a href="javascript:void(0)" class="action collect" data-popup="#collection-save"></a>
