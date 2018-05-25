@@ -97,7 +97,7 @@
 <?
 	}else{
 ?>		
-									<a href="javascript:alert('로그인 후 이용해 주세요.');location.href='./login.php?refurl=video_detail.php?idx=<?=$video_idx?>'" class="action collect" data-popup="#collection-save"></a>
+									<a href="javascript:alert('로그인 후 이용해 주세요.');location.href='./login.php?refurl=video_detail.php?idx=<?=$video_idx?>'" class="action collect"></a>
 <?
 	}
 ?>							
