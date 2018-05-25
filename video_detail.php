@@ -244,12 +244,23 @@
 							<div class="collection-list">
 								<div class="scroll-box">
 									<ul>
+<?
+	// 컬렉션 리스트 정보
+	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
+	$collection_result 	= mysqli_query($my_db, $collection_query);
+
+	while($collection_data = mysqli_fetch_array($collection_result))
+	{
+?>										
 										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
+											<span><?=$collection_data["collection_name"]?></span><i class="secret"></i>
 										</li>
-										<li class="c-info is-secret">
+<?
+	}
+?>										
+										<!-- <li class="c-info is-secret">
 											<span>asd</span><i class="secret"></i>
-										</li>
+										</li> -->
 									</ul>
 								</div>
 							</div>
