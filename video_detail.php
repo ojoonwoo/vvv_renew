@@ -89,7 +89,18 @@
 								</div>
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
-									<a href="javascript:collect_video('<?=$video_idx?>')" class="action collect" data-popup="#collection-save"></a>
+<?
+	if ($_SESSION['ss_vvv_idx'])
+	{
+?>									
+									<a href="javascript:void(0)" class="action collect" data-popup="#collection-save"></a>
+<?
+	}else{
+?>		
+									<a href="javascript:alert('로그인 후 이용해 주세요.');location.href='./login.php?refurl=video_detail.php?idx=<?=$video_idx?>'" class="action collect" data-popup="#collection-save"></a>
+<?
+	}
+?>							
 									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
 									<a href="" class="action share"></a>
 									<ul class="share-spread">
@@ -220,7 +231,7 @@
 					<div class="content">
 						<div class="block video-info">
 							<figure>
-								<div class="thumbnail" style="background: url(<?=$yt_thumb?>) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
+								<div class="thumbnail" style="background: url(<?=$yt_thumb?>) center / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
 								<figcaption>
 									<div class="vid-brand"><?=$detail_data["video_brand"]?></div>
 									<div class="vid-title"><?=$detail_data["video_title"]?></div>
