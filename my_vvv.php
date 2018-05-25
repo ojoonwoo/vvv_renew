@@ -235,7 +235,7 @@
 		{
 ?>																													
 																	<div class="over-layer">
-																		<button type="button" class="btn-delete" onclick="del_like_collection(<?=$collection_data["idx"]?>)"></button>
+																		<button type="button" class="btn-delete" onclick="del_like_collection(event, <?=$collection_data["idx"]?>)"></button>
 																	</div>
 <?
 		}
@@ -560,7 +560,7 @@
 				}
 			}
 
-			function del_like_collection(idx)
+			function del_like_collection(e,idx)
 			{
 				e.preventDefault();
 				if (confirm("선택하신 컬렉션을 Favorite에서 삭제 할까요?"))
