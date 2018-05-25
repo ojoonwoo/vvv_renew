@@ -142,7 +142,7 @@
 		{
 ?>																													
 																	<div class="over-layer">
-																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
+																		<button type="button" class="btn-delete" onclick="del_collection(event, <?=$collection_data["idx"]?>)"></button>
 																	</div>
 <?
 		}
@@ -525,7 +525,7 @@
 
 			}
 
-			function del_collection(idx, e)
+			function del_collection(e,idx)
 			{
 console.log(e);
 				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
