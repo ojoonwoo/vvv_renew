@@ -256,7 +256,7 @@
 			$secret_flag	= "is-secret";
 ?>										
 										<li class="c-info <?=$secret_flag?>">
-											<span><?=$collection_data["collection_name"]?></span><i class="secret"></i>
+											<span onclick="collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');"><?=$collection_data["collection_name"]?></span><i class="secret"></i>
 										</li>
 <?
 	}
@@ -284,11 +284,11 @@
 					<div class="content">
 						<div class="block video-info">
 							<figure>
-								<div class="thumbnail" style="background: url(./images/collection_pick_sample.jpg) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
+								<div class="thumbnail" style="background: url(<?=$yt_thumb?>) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
 								<figcaption>
-									<div class="vid-brand">ADEPOL SC</div>
-									<div class="vid-title">We Understand Your Surffering</div>
-									<div class="vid-date">2017년 5월</div>
+									<div class="vid-brand"><?=$detail_data["video_brand"]?></div>
+									<div class="vid-title"><?=$detail_data["video_title"]?></div>
+									<div class="vid-date"><?=$detail_data["video_date"]?></div>
 								</figcaption>
 							</figure>
 
@@ -483,8 +483,11 @@
 				});
 			}
 
-			function collect_video(v_idx)
+			function collect_video(v_idx, c_idx)
 			{
+				console.log("collect");
+				return false;
+				
 				$.ajax({
 					type   : "POST",
 					async  : false,
