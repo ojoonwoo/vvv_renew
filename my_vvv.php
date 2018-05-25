@@ -529,7 +529,8 @@
 			{
 				// e.stopPropagation();
 				// e.stopImmediatePropagation();
-				$("#album_link_"+idx).attr("href","");
+				e.preventDefault();
+				// $("#album_link_"+idx).attr("href","");
 				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
 				{
 					$.ajax({
@@ -545,8 +546,8 @@
 							$("#album_"+idx).hide();
 						}
 					});					
-				}else{
-					$("#album_link_"+idx).attr("href","collection_view.php?cidx=" + idx + "&midx=<?=$my_idx?>");
+				// }else{
+				// 	$("#album_link_"+idx).attr("href","collection_view.php?cidx=" + idx + "&midx=<?=$my_idx?>");
 				}
 			}
 		</script>
