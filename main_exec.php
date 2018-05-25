@@ -166,6 +166,55 @@ include_once "./include/autoload.php";
 			echo $flag;
 		break;
 
+        case "collect_video" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $v_idx			= $_REQUEST["v_idx"];
+            $c_idx			= $_REQUEST["c_idx"];
+
+            $item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$c_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+            $item_result	= mysqli_query($my_db, $item_query);
+            $item_count     = mysqli_num_rows($item_result);
+
+            if ($item_count > 0)
+            {
+                $item_data     = mysqli_fetch_array($item_result);
+                $item_arr      = explode(",", $item_data["video_items"]);
+                $flag = "";
+                foreach($item_arr as $key => $val)
+                {
+                    if ($val == $v_idx)
+                    {
+                        $flag = "D"; // 이미 해당 영상이 선택한 컬렉션에 담겨 있음.
+                        break;
+                    }
+                }
+
+                if ($flag == "")
+                {
+                    $video_item_txt      = $item_data["video_items"].",".$v_idx;                
+                }
+
+                $query		= "UPDATE collection_item_info SET video_item='".$video_item_txt."' WHERE c_idx='".$c_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+                $result	    = mysqli_query($my_db, $query);
+            }else{
+                $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$_SESSION['ss_vvv_idx']."','".$video_item_txt."','".date("Y-m-d H:i:s")."')";
+                $result    = mysqli_query($my_db, $query);
+            }
+        
+            if ($flag == "")
+            {
+                if ($result)
+                    $flag = "Y";
+                else
+                    $flag = "N";
+            }
+
+            echo $flag;
+		break;
+
 		case "view_video" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();

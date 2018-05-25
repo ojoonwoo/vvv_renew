@@ -487,30 +487,28 @@
 			{
 				console.log("collect");
 				return false;
-				
+
 				$.ajax({
 					type   : "POST",
 					async  : false,
 					url    : "./main_exec.php",
 					data:{
 						"exec"				    : "collect_video",
-						"v_idx"		            : v_idx
+						"v_idx"		            : v_idx,
+						"c_idx"		            : c_idx
 					},
 					success: function(response){
 						console.log(response);
-						// if (response.match("Y") == "Y")
-						// {
-						// 	// alert("Like 되었습니다!");
-						// 	$(".action.like").addClass("is-active");
-						// 	$("#like_count").html(Number($("#like_count").html()) + 1);
-						// }else if (response.match("L") == "L"){
-						// 	alert("로그인 후 이용해 주세요!");
-						// 	location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
-						// }else{
-						// 	// alert("Like 에서 제외 되었습니다!");
-						// 	$(".action.like").removeClass("is-active");
-						// 	$("#like_count").html($("#like_count").html() - 1);
-						// }
+						if (response.match("Y") == "Y")
+						{
+							alert("선택하신 컬렉션에 영상이 담겼습니다");
+							vvv.popup.close();
+						}else if (response.match("D") == "D"){
+							alert("선택하신 컬렉션에 이미 해당 영상이 담겨 있습니다");
+						}else{
+							alert("다시 시도해 주세요");
+							location.reload();
+						}
 					}
 				});
 			}
