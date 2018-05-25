@@ -178,7 +178,8 @@
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-        $title_count    = mb_strlen($recent_data["video_title"],'utf-8');
+		// $title_count    = mb_strlen($recent_data["video_title"],'utf-8');
+		$title_count    = mb_strlen(iconv('UTF-8','CP949',$recent_data["video_title"]));
 
 		if ($title_count > 30)
             $video_title    = substr($recent_data["video_title"],0,30)."...";
