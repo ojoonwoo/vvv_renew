@@ -131,7 +131,7 @@
 ?>														
 														<div class="album" id="album_<?=$collection_data["idx"]?>">
 															<figure>
-																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>">
+																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
 																	<div class="frame">
 																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
@@ -528,7 +528,8 @@
 			function del_collection(e,idx)
 			{
 				// e.stopPropagation();
-				e.stopImmediatePropagation();
+				// e.stopImmediatePropagation();
+				$("#album_link_"+idx).attr("href","");
 				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
 				{
 					$.ajax({
@@ -544,6 +545,8 @@
 							$("#album_"+idx).hide();
 						}
 					});					
+				}else{
+					$("#album_link_"+idx).attr("href","collection_view.php?cidx=" + idx + "&midx=<?=$my_idx?>");
 				}
 			}
 		</script>
