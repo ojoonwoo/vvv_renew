@@ -199,6 +199,7 @@ include_once "./include/autoload.php";
 
                 $query		= "UPDATE collection_item_info SET video_item='".$video_item_txt."' WHERE c_idx='".$c_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
                 $result	    = mysqli_query($my_db, $query);
+                print_r($query);
             }else{
                 $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$_SESSION['ss_vvv_idx']."','".$video_item_txt."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
@@ -211,7 +212,7 @@ include_once "./include/autoload.php";
                 else
                     $flag = "N";
             }
-print_r($item_count);
+
             echo $flag;
 		break;
 
