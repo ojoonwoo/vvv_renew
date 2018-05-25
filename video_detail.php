@@ -515,6 +515,13 @@
 				var collection_name		= $("#collection_name").val();
 				var collection_desc		= $("#collection_desc").val();
 				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+				var secretFlag			= "";
+				var appendTxt			= "";
+
+				if (collection_secret === true)
+				{
+					secretFlag = "is-secret";
+				}
 
 				if (collection_name == "")
 				{
@@ -540,19 +547,19 @@
 					},
 					success: function(response){
 						console.log(response);
-						// if (response.match("Y") == "Y")
-						// {
-						// 	// <li class="c-info <?=$secret_flag?>">
-						// 	// 	<span onclick="collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');"><?=$collection_data["collection_name"]?></span><i class="secret"></i>
-						// 	// </li>
+						if (response.match("Y") == "Y")
+						{
+							appendTxt += "<li class='c-info "+ secretFlag +"'>";
+							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');><?=$collection_data["collection_name"]?></span><i class='secret'ß></i>";
+							appendTxt += "</li>";
 
-						// 	// $("#my_collection_list").append()
-						// }else if (response.match("D") == "D"){
-						// 	alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
-						// }else{
-						// 	alert("다시 입력해 주세요.");
-						// 	// location.reload();
-						// }
+							$("#my_collection_list").append(appendTxt);
+						}else if (response.match("D") == "D"){
+							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+						}else{
+							alert("다시 입력해 주세요.");
+							// location.reload();
+						}
 					}
 				});			
 
