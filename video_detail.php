@@ -179,7 +179,7 @@
 ?>
 											
 											<div class="video col-lg-3 col-md-3 col-sm-2">
-												<a href="#">
+												<a href="video_detail.php?idx=<?=$related_data["video_idx"]?>">
 													<figure>
 														<div class="thumbnail box-bg" style="background: url(<?=$rel_yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 														<figcaption>
