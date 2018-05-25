@@ -465,6 +465,41 @@ include_once "./include/autoload.php";
 			echo $flag;
         break;
         
+        case "create_detail_collection" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $collection_name		= $_REQUEST["collection_name"];
+            $collection_desc		= $_REQUEST["collection_desc"];
+            $collection_secret		= $_REQUEST["collection_secret"];
+
+            if ($collection_secret == "true")
+                $collection_secret = "Y";
+            else
+                $collection_secret = "N";        
+
+            $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
+            $name_result    = mysqli_query($my_db, $name_query);
+            $name_count     = mysqli_num_rows($name_result);
+
+            if ($name_count > 0)
+            {
+                $flag   = "D||0";
+            }else{
+                $query 		= "INSERT INTO collection_info(collection_name, collection_desc, collection_mb_idx, collection_secret, collection_regdate) values('".$collection_name."','".$collection_desc."','".$_SESSION['ss_vvv_idx']."','".$collection_secret."','".date("Y-m-d H:i:s")."')";
+                $result 	= mysqli_query($my_db, $query);    
+                $uid        = mysqli_insert_id($my_db);
+
+                if($result) {
+                    $flag = "Y||".$uid;
+                }else{
+                    $flag = "N||0";
+                }
+            }
+			echo $flag;
+        break;
+        
         case "edit_collection" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();

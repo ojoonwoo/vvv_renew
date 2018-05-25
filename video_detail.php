@@ -540,21 +540,22 @@
 					async  : false,
 					url    : "./main_exec.php",
 					data:{
-						"exec"				    : "create_collection",
+						"exec"				    : "create_detail_collection",
 						"collection_name"       : collection_name,
 						"collection_desc"		: collection_desc,
 						"collection_secret"		: collection_secret
 					},
 					success: function(response){
 						console.log(response);
-						if (response.match("Y") == "Y")
+						res_arr 	= response.split("||");
+						if (res_arr[0].match("Y") == "Y")
 						{
 							appendTxt += "<li class='c-info "+ secretFlag +"'>";
-							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');><?=$collection_data["collection_name"]?></span><i class='secret'ß></i>";
+							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'ß></i>";
 							appendTxt += "</li>";
 
 							$("#my_collection_list").append(appendTxt);
-						}else if (response.match("D") == "D"){
+						}else if (res_arr[0].match("D") == "D"){
 							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
 						}else{
 							alert("다시 입력해 주세요.");
