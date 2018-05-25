@@ -222,7 +222,7 @@
 			}
 		}
 ?>														
-														<div class="album">
+														<div class="album" id="album_like_<?=$collection_data["idx"]?>">
 															<figure>
 																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$collection_item_data["m_idx"]?>">
 																	<div class="frame">
@@ -235,7 +235,7 @@
 		{
 ?>																													
 																	<div class="over-layer">
-																		<button type="button" class="btn-delete" onclick="del_collection(<?=$collection_data["idx"]?>)"></button>
+																		<button type="button" class="btn-delete" onclick="del_like_collection(<?=$collection_data["idx"]?>)"></button>
 																	</div>
 <?
 		}
@@ -558,6 +558,29 @@
 						}
 					});					
 				}
+			}
+
+			function del_like_collection(idx)
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"					: "like_collection",
+						"collection_idx"        : "<?=$collection_idx?>",
+						"showYN"				: "N"
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("N") == "N")
+						{
+							alert("즐겨찾기가 취소 되었습니다.");
+							$("#album_like_"+idx).hide();
+						}
+					}
+				});		
+
 			}
 		</script>
 	</body>
