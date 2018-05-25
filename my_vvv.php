@@ -157,6 +157,14 @@
 																			<span class="count"><?=$collection_data["collection_like_count"]?></span>
 																		</div>
 																	</span>
+<?
+		if ($collection_data["collection_secret"] == "N")
+		{
+?>																	
+																	<div class="secret-mode"></div>
+<?
+		}
+?>																	
 																</figcaption>
 															</figure>
 														</div>
@@ -530,7 +538,6 @@
 				// e.stopPropagation();
 				// e.stopImmediatePropagation();
 				e.preventDefault();
-				// $("#album_link_"+idx).attr("href","");
 				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
 				{
 					$.ajax({
@@ -546,8 +553,6 @@
 							$("#album_"+idx).hide();
 						}
 					});					
-				// }else{
-				// 	$("#album_link_"+idx).attr("href","collection_view.php?cidx=" + idx + "&midx=<?=$my_idx?>");
 				}
 			}
 		</script>
