@@ -341,7 +341,7 @@
 										<span>이름</span>
 									</div>
 									<div class="input">
-										<input type="text" placeholder="오준우님의 5월 컬렉션" id="collection_name">
+										<input type="text" placeholder="<?=$mb_data['mb_name']?>님의 5월 컬렉션" id="collection_name">
 									</div>
 								</div>
 								<div class="input-group">

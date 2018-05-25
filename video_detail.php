@@ -243,7 +243,7 @@
 							<h6>컬렉션 선택</h6>
 							<div class="collection-list">
 								<div class="scroll-box">
-									<ul>
+									<ul id="my_collection_list">
 <?
 	// 컬렉션 리스트 정보
 	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
@@ -299,13 +299,13 @@
 								<div class="input-group">
 									<div class="guide">이름</div>
 									<div class="input">
-										<input type="text" value="오준우님의 5월 컬렉션">
+										<input type="text" id="collection_name">
 									</div>
 								</div>
 								<div class="input-group">
 									<div class="guide">설명</div>
 									<div class="input">
-										<input type="text" value="아주 재밌는 영상 모음 ㅇㅇㅇ">
+										<input type="text" id="collection_desc">
 									</div>
 								</div>
 								<div class="setting">
@@ -316,7 +316,7 @@
 									</div>
 								</div>
 								<div class="button-wrap">
-									<button type="button">
+									<button type="button" data-popup="@close">
 										취소
 									</button>
 									<button type="button">
@@ -508,6 +508,54 @@
 						}
 					}
 				});
+			}
+
+			function create_collection()
+			{
+				var collection_name		= $("#collection_name").val();
+				var collection_desc		= $("#collection_desc").val();
+				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+
+				if (collection_name == "")
+				{
+					alert("컬렉션 이름을 입력해 주세요.");
+					return false;
+				}
+
+				if (collection_desc == "")
+				{
+					alert("컬렉션 설명을 입력해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "create_collection",
+						"collection_name"       : collection_name,
+						"collection_desc"		: collection_desc,
+						"collection_secret"		: collection_secret
+					},
+					success: function(response){
+						console.log(response);
+						// if (response.match("Y") == "Y")
+						// {
+						// 	// <li class="c-info <?=$secret_flag?>">
+						// 	// 	<span onclick="collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');"><?=$collection_data["collection_name"]?></span><i class="secret"></i>
+						// 	// </li>
+
+						// 	// $("#my_collection_list").append()
+						// }else if (response.match("D") == "D"){
+						// 	alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+						// }else{
+						// 	alert("다시 입력해 주세요.");
+						// 	// location.reload();
+						// }
+					}
+				});			
+
 			}
 
 			function request_translate(v_idx)
