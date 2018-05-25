@@ -179,7 +179,7 @@
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
         $title_count    = mb_strlen($recent_data["video_title"],'utf-8');
-
+print_r($title_count);
         if ($title_count > 30)
             $video_title    = substr($recent_data["video_title"],0,30)."...";
         else
