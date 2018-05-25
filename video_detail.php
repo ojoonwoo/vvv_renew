@@ -89,7 +89,7 @@
 								</div>
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
-									<a href="javascript:collect_video('<?=$video_idx?>')" class="action collect"></a>
+									<a href="javascript:collect_video('<?=$video_idx?>')" class="action collect" data-popup="#collection-save"></a>
 									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
 									<a href="" class="action share"></a>
 									<ul class="share-spread">
