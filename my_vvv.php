@@ -99,7 +99,11 @@
 												<div class="list-container">
 													<div class="album-list">
 <?
-	$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_showYN='Y'";
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_showYN='Y'";
+	else
+		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_secret='Y' AND collection_showYN='Y'";
+
 	$collection_result		= mysqli_query($my_db, $collection_query);
 	while ($collection_data = mysqli_fetch_array($collection_result))
 	{
