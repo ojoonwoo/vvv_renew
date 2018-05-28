@@ -336,7 +336,8 @@
 			//프론트 임시 샘플코드
 			$doc.on('click', '[data-mode-change]', function() {
 				var mode = $(this).data('mode-change');
-				if(!$('.list-container').hasClass('delete-mode')) {
+				// if(!$('.list-container').hasClass('delete-mode')) {
+				if(!$('.collection-detail').hasClass('check-mode')) {
 					//삭제 모드로 변경
 					$(this).text('완료');
 				} else {
