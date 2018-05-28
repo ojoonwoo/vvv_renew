@@ -126,9 +126,9 @@
 ?>												
 										
 										<!--my vvv일경우-->
-										<div class="f-add">
+										<!-- <div class="f-add">
 											<button type="button">친구추가</button>
-										</div>
+										</div> -->
 										<!--my vvv일경우-->
 										<!--남의 vvv일경우-->
 <!--
