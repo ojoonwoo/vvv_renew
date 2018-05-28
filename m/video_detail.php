@@ -114,17 +114,17 @@
 ?>
 										<div class="row">
 											<div class="u-id">
-												ojoonwoo
+												<a href="my_vvv.php?idx=<?=$comment_data["mb_idx"]?>"><?=$comment_data["mb_name"]?></a>
 											</div>
 											<div class="u-comment">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+												<?=$comment_data["comment_text"]?>
 											</div>
 											<div class="date">
-												2018-01-01
+												<?=substr($comment_data["comment_regdate"],0,10)?>
 											</div>
-											<div class="actions">
+											<!-- <div class="actions">
 												<button type="button" class="remove-comment"></button>
-											</div>
+											</div> -->
 										</div>
 <?
 	}
