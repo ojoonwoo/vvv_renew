@@ -88,8 +88,8 @@
 											<span class="count"><?=$total_collection_item?></span>
 										</span>
 										<span class="wrap">
-											<i class="icon follow"></i>
-											<span class="count"><?=$collection_data["collection_like_count"]?></span>
+											<i class="icon favor"></i>
+											<span class="count">><?=$collection_data["collection_like_count"]?></span>
 										</span>
 									</div>
 									<div class="action-wrap">
