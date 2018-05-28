@@ -358,7 +358,7 @@
 					$.ajax({
 						type   : "POST",
 						async  : false,
-						url    : "./main_exec.php",
+						url    : "../main_exec.php",
 						data:{
 							"exec"				: "delete_video",
 							"c_idx"          	: "<?=$collection_idx?>",
@@ -382,7 +382,7 @@
 				$.ajax({
 					type   : "POST",
 					async  : false,
-					url    : "./main_exec.php",
+					url    : "../main_exec.php",
 					data:{
 						"exec"				    : "follow_member",
 						"follow_idx"          	: "<?=$follow_idx?>"
@@ -431,7 +431,7 @@
 				$.ajax({
 					type   : "POST",
 					async  : false,
-					url    : "./main_exec.php",
+					url    : "../main_exec.php",
 					data:{
 						"exec"				    : "edit_collection",
 						"c_idx"          		: "<?=$collection_idx?>",
@@ -464,7 +464,7 @@
 				$.ajax({
 					type   : "POST",
 					async  : false,
-					url    : "./main_exec.php",
+					url    : "../main_exec.php",
 					data:{
 						"exec"					: "like_collection",
 						"collection_idx"        : "<?=$collection_idx?>",

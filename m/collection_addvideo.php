@@ -252,7 +252,7 @@
 				$.ajax({
 					type   : "POST",
 					async  : false,
-					url    : "./main_exec.php",
+					url    : "../main_exec.php",
 					data:{
 						"exec"				    : "follow_member",
 						"follow_idx"          	: "<?=$follow_idx?>"
@@ -304,7 +304,7 @@
 				$.ajax({
 					type   : "POST",
 					async  : false,
-					url    : "./main_exec.php",
+					url    : "../main_exec.php",
 					data:{
 						"exec"				: "add_video",
 						"c_idx"          	: "<?=$collection_idx?>",
