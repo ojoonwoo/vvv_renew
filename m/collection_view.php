@@ -1,5 +1,5 @@
 <?
-    include_once "./include/autoload.php";
+    include_once "../include/autoload.php";
 
     $mnv_f			= new mnv_function();
     $my_db         	= $mnv_f->Connect_MySQL();
@@ -52,23 +52,20 @@
 ?>
 	<body>
 		<div id="app">
-			<div class="app-container sub">
-<?
-    include_once "./side_nav_layer.php";
-?>			
-			<!--햄버거 클릭 메뉴-->
+		<!--햄버거 클릭 메뉴-->
 <?
     include_once "./menu_layer.php";
-?>			
-			<!--햄버거 클릭 메뉴-->
-			<!--검색 메뉴-->
+?>							
+		<!--햄버거 클릭 메뉴-->
+		<!--검색 메뉴-->
 <?
     include_once "./search_layer.php";
 ?>			
-			<!--검색 메뉴-->
+		<!--검색 메뉴-->
+		<div class="app-container sub">
 <?
     include_once "./header_layer.php";
-?>
+?>			
 				<div class="main-container">
 					<div class="content user-page">
 						<div class="inner">
@@ -88,51 +85,48 @@
 											<span class="count"><?=$total_collection_item?></span>
 										</span>
 										<span class="wrap">
-											<i class="icon favor"></i>
+											<i class="icon follow"></i>
 											<span class="count"><?=$collection_data["collection_like_count"]?></span>
 										</span>
 									</div>
-									<div class="action-wrap">
-										<div class="inner">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $mb_idx)
 	{
-?>											
-											<!--내 컬렉션일경우-->
-											<div class="myaction">
-												<button type="button" class="edit" data-popup="#collection-edit"></button>
-												<button type="button" class="add" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'"></button>
-												<button type="button" class="delete" data-mode-change="delete"></button>
-											</div>
-											<!--내 컬렉션일경우-->											
+?>									
+									<!--내 컬렉션일경우-->
+									<div class="myaction">
+										<button type="button" class="edit" data-popup="#collection-edit">설정</button>
+										<button type="button" class="add" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'">추가</button>
+										<button type="button" class="delete" data-mode-change="delete">삭제</button>
+									</div>
+									<!--내 컬렉션일경우-->
 <?
 	}else{
 ?>		
-											<!--내 컬렉션이 아닐경우-->
-												<!--시크릿 전에 favor 선행 필수-->
-											<div class="anyaction">
-												<!-- is-already 클래스 토글 on/off -->
-												<button class="favor <?=$collection_likeYN?>"></button>
-												<!-- <button class="secret"></button> -->
-												<a href="javascript:void(0)" class="link-own"><span>miniverminiverminiver</span></a>
-											</div>
-											<!--내 컬렉션이 아닐경우-->
+									<!--내 컬렉션이 아닐경우-->
+									<!--시크릿 전에 favor 선행 필수-->
+									<div class="anyaction">
+										<button class="favor <?=$collection_likeYN?>"></button>
+										<button class="secret"></button>
+										<!-- 디폴트: 닉네임 맨 앞 한글자만 노출 -->
+										<a href="javascript:void(0)" class="link-own"><span>m</span></a>
+									</div>
+									<!--내 컬렉션이 아닐경우-->
 <?
 	}
 ?>									
-										</div>
-									</div>
 								</div>
 								<div class="semi-container">
 									<div class="wrapper">
 										<div class="inner">
-											<!-- <div class="content-empty">
-												<a href="#">
-													<span>+</span>
-													<span>당신이 좋아한 영상으로 컬렉션을 만들어보세요</span>
-												</a>
-											</div> -->
-
+											<!--
+<div class="content-empty">
+<a href="#">
+<span>+</span>
+<span>당신이 좋아한 영상으로 컬렉션을 만들어보세요</span>
+</a>
+</div>
+-->
 											<div class="list-container">
 												<div class="video-list">
 <?
@@ -203,11 +197,12 @@
 	}
 ?>													
 												</div>
-												<!-- <button type="button" class="read-more">
+<!--
+												<button type="button" class="read-more">
 													<img src="./images/plus_icon.png" alt="">
-												</button> -->
+												</button>
+-->
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -230,7 +225,7 @@
 									<span>이름</span>
 								</div>
 								<div class="input">
-									<input type="text" placeholder="컬렉션 이름">
+									<input type="text" placeholder="오준우님의 5월 컬렉션">
 								</div>
 							</div>
 							<div class="input-group">
@@ -269,7 +264,7 @@
 									<span>이름</span>
 								</div>
 								<div class="input">
-									<input type="text" id="c_name" value="<?=$collection_data["collection_name"]?>">
+									<input type="text" value="오준우님의 5월 컬렉션">
 								</div>
 							</div>
 							<div class="input-group">
@@ -277,20 +272,20 @@
 									<span>설명</span>
 								</div>
 								<div class="input">
-									<input type="text" id="c_desc" value="<?=$collection_data["collection_desc"]?>">
+									<input type="text" value="">
 								</div>
 							</div>
 						</div>
 						<div class="setting">
 							<span class="secret-guide">비밀 설정</span>
-							<div class="toggle secret <?=$secret_flag?>">
+							<div class="toggle secret is-active">
 								<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
 								<div class="toggle-circle"></div>
 							</div>
 						</div>	
 						<div class="button-wrap">
-							<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
-							<button type="button" onclick="edit_collection();">수정</button>
+							<button type="button" class="btn-light-grey">컬렉션 삭제</button>
+							<button type="button">수정</button>
 						</div>
 					</div>
 				</div>
@@ -332,163 +327,21 @@
 				}
 			});
 
+
 			//프론트 임시 샘플코드
 			$doc.on('click', '[data-mode-change]', function() {
 				var mode = $(this).data('mode-change');
 				if(!$('.collection-detail').hasClass('check-mode')) {
 					//삭제 모드로 변경
-					
+					$(this).text('완료');
 				} else {
 					//삭제 코드
-					var videoItems = "";
-					var i = 0;
-					$('input:checkbox[type=checkbox]:checked').each(function () {
-						if (i != 0)
-						{
-							videoItems += ",";
-						}
-						
-						videoItems += $(this).val();
-						i++;
-					});
-
-					if (videoItems == "")
-					{
-						alert("영상을 선택하시고 완료 버튼을 클릭해 주세요.");
-						return false;
-					}
-
-					$.ajax({
-						type   : "POST",
-						async  : false,
-						url    : "./main_exec.php",
-						data:{
-							"exec"				: "delete_video",
-							"c_idx"          	: "<?=$collection_idx?>",
-							"m_idx"          	: "<?=$mb_idx?>",
-							"video_items"       : videoItems
-						},
-						success: function(response){
-							console.log(response);
-							alert("컬렉션에서 선택하신 영상이 삭제되었습니다.");
-							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
-						}
-					});			
+					//삭제 --
 					//삭제 완료
+					$(this).text('삭제');
 				}
 				$('.collection-detail').toggleClass('check-mode');
 			});
-
-			function follow_member()
-			{
-				$.ajax({
-					type   : "POST",
-					async  : false,
-					url    : "./main_exec.php",
-					data:{
-						"exec"				    : "follow_member",
-						"follow_idx"          	: "<?=$follow_idx?>"
-					},
-					success: function(response){
-						console.log(response);
-						if (response.match("Y") == "Y")
-						{
-							// alert("덧글이 입력되었습니다.");
-							$(".follow-state a").addClass("already");
-							$(".follow-state a").html("팔로우중");
-							$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
-						}else if (response.match("D") == "D"){
-							$(".follow-state a").removeClass("already");
-							$(".follow-state a").html("팔로우하기");
-							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
-						}else if (response.match("L") == "L"){
-							alert("로그인 후 이용해 주세요!");
-							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
-						}else{
-							alert("다시 입력해 주세요.");
-							location.reload();
-						}
-					}
-				});			
-			}
-
-			function edit_collection()
-			{
-				var collection_name		= $("#c_name").val();
-				var collection_desc		= $("#c_desc").val();
-				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
-
-				if (collection_name == "")
-				{
-					alert("컬렉션 이름을 입력해 주세요.");
-					return false;
-				}
-
-				if (collection_desc == "")
-				{
-					alert("컬렉션 설명을 입력해 주세요.");
-					return false;
-				}
-
-				$.ajax({
-					type   : "POST",
-					async  : false,
-					url    : "./main_exec.php",
-					data:{
-						"exec"				    : "edit_collection",
-						"c_idx"          		: "<?=$collection_idx?>",
-						"collection_name"       : collection_name,
-						"collection_desc"		: collection_desc,
-						"collection_secret"		: collection_secret
-					},
-					success: function(response){
-						console.log(response);
-						if (response.match("Y") == "Y")
-						{
-							location.reload();
-						}else if (response.match("D") == "D"){
-							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
-							// location.reload();
-						}else{
-							alert("다시 입력해 주세요.");
-							location.reload();
-						}
-					}
-				});		
-			}
-
-			$doc.on('click', '.favor', function() {
-				var cLikeChk	= "Y";
-				if(!$(this).hasClass('is-already')) 
-					cLikeChk	= "N";
-
-
-				$.ajax({
-					type   : "POST",
-					async  : false,
-					url    : "./main_exec.php",
-					data:{
-						"exec"					: "like_collection",
-						"collection_idx"        : "<?=$collection_idx?>",
-						"showYN"				: cLikeChk
-					},
-					success: function(response){
-						console.log(response);
-						if (response.match("Y") == "Y")
-						{
-							alert("즐겨찾기 되었습니다.");
-							$(".favor").addClass("is-already");
-						}else if (response.match("L") == "L"){
-							alert("로그인 후 즐겨찾기를 해 주세요!");
-							location.href = "login.php?refurl=collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
-						}else{
-							alert("즐겨찾기가 취소 되었습니다.");
-							$(".favor").removeClass("is-already");
-						}
-					}
-				});		
-			});
-
 		</script>
 	</body>
 
