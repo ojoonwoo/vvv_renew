@@ -427,7 +427,7 @@
 						},
 						success: function(response){
 							console.log(response);
-							$("#album_"+idx).hide();
+							$("#album_<?=$collection_idx?>").hide();
 						}
 					});					
 				}
