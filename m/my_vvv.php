@@ -142,36 +142,94 @@
 								<div class="inner">
 									<div class="aj-content collection">
 										<div class="wrapper made">
+<?
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
+?>												
 											<div class="text-block">
 												<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
 											</div>
 											<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
+<?
+	}else{
+?>												
+											<div class="text-block">
+												<p><?=$mb_data['mb_name']?>님이 만든 컬렉션을 감상해 보세요!</p>
+											</div>
+<?
+	}
+?>												
 											<div class="list-container">
 												<div class="album-list">
-													<div class="album">
+<?
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_showYN='Y'";
+	else
+		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_secret='Y' AND collection_showYN='Y'";
+
+	$collection_result		= mysqli_query($my_db, $collection_query);
+	while ($collection_data = mysqli_fetch_array($collection_result))
+	{
+		// 컬렉션에 담긴 영상 썸네일 추출 
+		$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
+		$collection_item_result		= mysqli_query($my_db, $collection_item_query);
+		$collection_item_data		= mysqli_fetch_array($collection_item_result);
+	
+		$collection_thumb[0]	= "";
+		$collection_thumb[1]	= "";
+		$collection_thumb[2]	= "";
+		if ($collection_item_data["video_items"] != "")
+		{
+			$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
+			$i = 0;
+			foreach($c_thumb_arr as $key => $val)
+			{
+				$thumb_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
+				$thumb_result 	= mysqli_query($my_db, $thumb_query);
+				$thumb_data		= mysqli_fetch_array($thumb_result);
+			
+				// 유튜브 영상 코드 자르기
+				$yt_code_arr1   = explode("v=", $thumb_data["video_link"]);
+				$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+				$collection_thumb[$i]       = "url('https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg') 50% 50% / cover";
+				$i++;
+			}
+		}
+?>														
+													<div class="album" id="album_<?=$collection_data["idx"]?>">
 														<figure>
-															<a href="">
+															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
 																<div class="frame">
-																	<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																	<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
-																	<div class="thumbnail" style="background: url(./images/myvvv_album_sample.jpg) 50% 50% / cover #dcdcdc no-repeat"></div>
+																	<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
+																	<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
+																	<div class="thumbnail" style="background: <?=$collection_thumb[2]?> #dcdcdc no-repeat"></div>
 																</div>
+<?
+		if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		{
+?>																													
 																<div class="over-layer">
-																	<button type="button" class="btn-delete"></button>
+																	<button type="button" class="btn-delete" onclick="del_collection(event, <?=$collection_data["idx"]?>)"></button>
 																</div>
+<?
+		}
+?>																	
 															</a>
 															<figcaption>
-																<span class="title">해외 광고</span>
-																<span class="desc">서브 설명 텍스트</span>
+																<span class="title"><?=$collection_data["collection_name"]?></span>
+																<span class="desc"><?=$collection_data["collection_desc"]?></span>
 																<span class="icon-wrap">
 																	<div class="like">
 																		<i></i>
-																		<span class="count">2</span>
+																		<span class="count"><?=$collection_data["collection_like_count"]?></span>
 																	</div>
 																</span>
 															</figcaption>
 														</figure>
 													</div>
+<?
+	}
+?>													
 												</div>
 											</div>
 										</div>
@@ -275,9 +333,9 @@
 <?
 	}
 ?>											
-												<button type="button" class="read-more">
+												<!-- <button type="button" class="read-more">
 													<img src="./images/plus_icon.png" alt="">
-												</button>
+												</button> -->
 											</div>
 										</div>
 									</div>
