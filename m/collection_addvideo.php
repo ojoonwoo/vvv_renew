@@ -119,7 +119,7 @@
 	}
 ?>													
 												</div>
-												<button type="button" class="btn-apply">
+												<button type="button" class="btn-apply" onclick="addVideo()">
 													적용하기
 												</button>
 											</div>
