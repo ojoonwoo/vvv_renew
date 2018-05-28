@@ -332,14 +332,12 @@
 				}
 			});
 
-			
 			//프론트 임시 샘플코드
 			$doc.on('click', '[data-mode-change]', function() {
 				var mode = $(this).data('mode-change');
-				// if(!$('.list-container').hasClass('delete-mode')) {
 				if(!$('.collection-detail').hasClass('check-mode')) {
 					//삭제 모드로 변경
-					$(this).text('완료');
+					
 				} else {
 					//삭제 코드
 					var videoItems = "";
@@ -376,11 +374,9 @@
 							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
 						}
 					});			
-
 					//삭제 완료
-					$(this).text('삭제');
 				}
-				$('.list-container').toggleClass('delete-mode');
+				$('.collection-detail').toggleClass('check-mode');
 			});
 
 			function follow_member()
