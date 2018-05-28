@@ -89,7 +89,7 @@
 										</span>
 										<span class="wrap">
 											<i class="icon favor"></i>
-											<span class="count">><?=$collection_data["collection_like_count"]?></span>
+											<span class="count"><?=$collection_data["collection_like_count"]?></span>
 										</span>
 									</div>
 									<div class="action-wrap">
