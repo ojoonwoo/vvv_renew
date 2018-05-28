@@ -83,7 +83,18 @@
 								</div>
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>"></a>
-									<a href="javascript:alert('준비중입니다.')" class="action collect"></a>
+<?
+	if ($_SESSION['ss_vvv_idx'] != "")
+	{
+?>									
+									<a href="javascript:void(0)" class="action collect" data-popup="#collection-save"></a>
+<?
+	}else{
+?>		
+									<a href="javascript:alert('로그인 후 이용해 주세요.');location.href='./login.php?refurl=video_detail.php?idx=<?=$video_idx?>'" class="action collect"></a>
+<?
+	}
+?>							
 									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
 									<a href="" class="action share"></a>
 									<ul class="share-spread">
@@ -183,6 +194,138 @@
 				</div>
 			</div>
 			<div id="cursor" class="defualt"></div>
+			<div class="layer collection-pick" id="collection-save">
+				<button type="button" class="layer-close" data-layer="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>Collection</h5>
+					</div>
+					<div class="content">
+						<div class="block video-info">
+							<figure>
+								<div class="thumb-wrap">
+									<div class="thumbnail" style="background: url(./images/collection_pick_sample.jpg) 0 0 / 100% auto no-repeat; padding-bottom: 62.2%;"></div>
+								</div>
+								<figcaption>
+									<div class="vid-brand">ADEPOL SC</div>
+									<div class="vid-title">We Understand Your Surffering</div>
+									<div class="vid-date">2017년 5월</div>
+								</figcaption>
+							</figure>
+
+						</div>
+						<div class="block collection-info">
+							<h6>컬렉션 선택</h6>
+							<div class="collection-list">
+								<div class="scroll-box">
+									<ul>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info is-secret">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+										<li class="c-info">
+											<span>asd</span><i class="secret"></i>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button type="button" class="btn-add" data-layer="#collection-add">
+								<span class="icon"></span>
+								<span>컬렉션 추가하기</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layer collection-pick" id="collection-add">
+				<button type="button" class="layer-close" data-layer="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>Collection</h5>
+					</div>
+					<div class="content">
+						<div class="block video-info">
+							<figure>
+								<div class="thumb-wrap">
+									<div class="thumbnail" style="background: url(./images/collection_pick_sample.jpg) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
+								</div>
+								<figcaption>
+									<div class="vid-brand">ADEPOL SC</div>
+									<div class="vid-title">We Understand Your Surffering</div>
+									<div class="vid-date">2017년 5월</div>
+								</figcaption>
+							</figure>
+
+						</div>
+						<div class="block collection-info">
+							<div class="collection-setting">
+								<div class="input-wrap">
+									<span>컬렉션 추가하기</span>
+									<div class="input-group">
+										<div class="guide">이름</div>
+										<div class="input">
+											<input type="text" value="오준우님의 5월 컬렉션">
+										</div>
+									</div>
+									<div class="input-group">
+										<div class="guide">설명</div>
+										<div class="input">
+											<input type="text" value="아주 재밌는 영상 모음 ㅇㅇㅇ">
+										</div>
+									</div>
+								</div>
+								<div class="setting">
+									<span class="secret-guide">비밀 설정</span>
+									<div class="toggle secret is-active">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+										<div class="toggle-circle"></div>
+									</div>
+								</div>
+							</div>	
+							<div class="button-wrap">
+								<button type="button">
+									취소
+								</button>
+								<button type="button">
+									만들기
+								</button>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script>
 			$(function() {
