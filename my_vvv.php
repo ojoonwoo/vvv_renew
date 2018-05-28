@@ -570,13 +570,12 @@
 						async  : false,
 						url    : "./main_exec.php",
 						data:{
-							"exec"					: "like_collection",
-							"collection_idx"        : "<?=$collection_idx?>",
-							"showYN"				: "N"
+							"exec"					: "delete_like_collection",
+							"collection_idx"        : idx
 						},
 						success: function(response){
 							console.log(response);
-							if (response.match("N") == "N")
+							if (response.match("Y") == "N")
 							{
 								alert("즐겨찾기가 취소 되었습니다.");
 								$("#album_like_"+idx).hide();

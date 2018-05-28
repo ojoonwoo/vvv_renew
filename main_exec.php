@@ -601,6 +601,28 @@ include_once "./include/autoload.php";
             echo $flag;
 		break;
 
+        case "delete_like_collection" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $collection_idx 	= $_REQUEST["collection_idx"];
+
+            $query      = "UPDATE collection_like_info SET showYN='Y' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+            $result     = mysqli_query($my_db, $query);    
+
+            $query2      = "UPDATE collection_info SET collection_like_count = collection_like_count - 1 WHERE idx='".$collection_idx."'";
+            $result2     = mysqli_query($my_db, $query2);    
+
+            if($result) {
+                $flag = "Y";
+            }else{
+                $flag = "N";
+            }
+
+            echo $flag;
+		break;
+
         case "add_video" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();
