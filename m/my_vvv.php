@@ -341,7 +341,7 @@
 								<span>이름</span>
 							</div>
 							<div class="input">
-								<input type="text" value="오준우님의 5월 컬렉션">
+								<input type="text" placeholder="<?=$mb_data['mb_name']?>님의 5월 컬렉션" id="collection_name">
 							</div>
 						</div>
 						<div class="input-group">
@@ -349,7 +349,7 @@
 								<span>설명</span>
 							</div>
 							<div class="input">
-								<input type="text">
+								<input type="text" id="collection_desc">
 							</div>
 						</div>
 					</div>
@@ -362,7 +362,7 @@
 					</div>	
 					<div class="button-wrap">
 						<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
-						<button type="button">만들기</button>
+						<button type="button" onclick="create_collection()">만들기</button>
 					</div>
 				</div>
 			</div>
@@ -475,6 +475,132 @@
 
 			return false;
 		});
+
+		function follow_member()
+		{
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "../main_exec.php",
+				data:{
+					"exec"				    : "follow_member",
+					"follow_idx"          	: "<?=$follow_idx?>"
+				},
+				success: function(response){
+					console.log(response);
+					if (response.match("Y") == "Y")
+					{
+						// alert("덧글이 입력되었습니다.");
+						$(".follow-state a").addClass("already");
+						$(".follow-state a").html("팔로우중");
+						$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
+					}else if (response.match("D") == "D"){
+						$(".follow-state a").removeClass("already");
+						$(".follow-state a").html("팔로우하기");
+						$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
+					}else if (response.match("L") == "L"){
+						alert("로그인 후 이용해 주세요!");
+						location.href = "login.php?refurl=my_vvv.php?idx=<?=$follow_idx?>";
+					}else{
+						alert("다시 입력해 주세요.");
+						location.reload();
+					}
+				}
+			});			
+		}
+
+		function create_collection()
+		{
+			var collection_name		= $("#collection_name").val();
+			var collection_desc		= $("#collection_desc").val();
+			var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+
+			if (collection_name == "")
+			{
+				alert("컬렉션 이름을 입력해 주세요.");
+				return false;
+			}
+
+			if (collection_desc == "")
+			{
+				alert("컬렉션 설명을 입력해 주세요.");
+				return false;
+			}
+
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "../main_exec.php",
+				data:{
+					"exec"				    : "create_collection",
+					"collection_name"       : collection_name,
+					"collection_desc"		: collection_desc,
+					"collection_secret"		: collection_secret
+				},
+				success: function(response){
+					console.log(response);
+					if (response.match("Y") == "Y")
+					{
+						location.reload();
+					}else if (response.match("D") == "D"){
+						alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+						location.reload();
+					}else{
+						alert("다시 입력해 주세요.");
+						location.reload();
+					}
+				}
+			});			
+
+		}
+
+		function del_collection(e,idx)
+		{
+			// e.stopPropagation();
+			// e.stopImmediatePropagation();
+			e.preventDefault();
+			if (confirm("선택하신 컬렉션을 삭제 할까요?"))
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"				    : "delete_collection",
+						"collection_idx"       	: idx
+					},
+					success: function(response){
+						console.log(response);
+						$("#album_"+idx).hide();
+					}
+				});					
+			}
+		}
+
+		function del_like_collection(e,idx)
+		{
+			e.preventDefault();
+			if (confirm("선택하신 컬렉션을 Favorite에서 삭제 할까요?"))
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"					: "delete_like_collection",
+						"collection_idx"        : idx
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							alert("즐겨찾기가 취소 되었습니다.");
+							$("#album_like_"+idx).hide();
+						}
+					}
+				});		
+			}
+		}
 	</script>
 </body>
 
