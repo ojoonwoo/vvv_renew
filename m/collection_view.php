@@ -265,7 +265,7 @@
 									<span>이름</span>
 								</div>
 								<div class="input">
-									<input type="text" value="오준우님의 5월 컬렉션">
+									<input type="text" id="c_name" value="<?=$collection_data["collection_name"]?>">
 								</div>
 							</div>
 							<div class="input-group">
@@ -273,7 +273,7 @@
 									<span>설명</span>
 								</div>
 								<div class="input">
-									<input type="text" value="">
+									<input type="text" id="c_desc" value="<?=$collection_data["collection_desc"]?>">
 								</div>
 							</div>
 						</div>
@@ -285,8 +285,8 @@
 							</div>
 						</div>	
 						<div class="button-wrap">
-							<button type="button" class="btn-light-grey">컬렉션 삭제</button>
-							<button type="button">수정</button>
+							<button type="button" onclick="del_collection();" class="btn-light-grey">컬렉션 삭제</button>
+							<button type="button" onclick="edit_collection();">수정</button>
 						</div>
 					</div>
 				</div>
@@ -408,6 +408,29 @@
 						}
 					}
 				});			
+			}
+
+			function del_collection()
+			{
+				// e.stopPropagation();
+				// e.stopImmediatePropagation();
+				// e.preventDefault();
+				if (confirm("선택하신 컬렉션을 삭제 할까요?"))
+				{
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				    : "delete_collection",
+							"collection_idx"       	: "<?=$collection_idx?>"
+						},
+						success: function(response){
+							console.log(response);
+							$("#album_"+idx).hide();
+						}
+					});					
+				}
 			}
 
 			function edit_collection()
