@@ -176,7 +176,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="aj-content favo">
+									<div class="aj-content favor">
 										<div class="wrapper liked">
 											<div class="text-block">
 												<p>당신이 좋아한 컬렉션입니다!</p>
