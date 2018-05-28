@@ -153,8 +153,16 @@
 									<h5>관련 영상</h5>
 									<div class="list-container">
 										<div class="video-list">
+<?
+		while ($related_data = mysqli_fetch_array($related_result))
+		{
+			// 유튜브 영상 코드 자르기
+			$rel_yt_code_arr1   = explode("v=", $related_data["video_link"]);
+			$rel_yt_code_arr2   = explode("&",$rel_yt_code_arr1[1]);
+			$rel_yt_thumb       = "https://img.youtube.com/vi/".$rel_yt_code_arr2[0]."/hqdefault.jpg";
+?>											
 											<div class="video">
-												<a href="#">
+												<a href="video_detail.php?idx=<?=$related_data["video_idx"]?>">
 													<figure>
 														<div class="thumbnail box-bg" style="background: url(<?=$rel_yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 														<figcaption>
@@ -182,6 +190,9 @@
 													</figure>
 												</a>
 											</div>
+<?
+		}
+?>											
 										</div>
 									</div>
 								</div>

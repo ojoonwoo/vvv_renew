@@ -176,8 +176,7 @@
 			$rel_yt_code_arr1   = explode("v=", $related_data["video_link"]);
 			$rel_yt_code_arr2   = explode("&",$rel_yt_code_arr1[1]);
 			$rel_yt_thumb       = "https://img.youtube.com/vi/".$rel_yt_code_arr2[0]."/hqdefault.jpg";
-?>
-											
+?>											
 											<div class="video col-lg-3 col-md-3 col-sm-2">
 												<a href="video_detail.php?idx=<?=$related_data["video_idx"]?>">
 													<figure>
