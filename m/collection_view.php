@@ -337,12 +337,156 @@
 					$(this).text('완료');
 				} else {
 					//삭제 코드
-					//삭제 --
+					var videoItems = "";
+					var i = 0;
+					$('input:checkbox[type=checkbox]:checked').each(function () {
+						if (i != 0)
+						{
+							videoItems += ",";
+						}
+						
+						videoItems += $(this).val();
+						i++;
+					});
+
+					if (videoItems == "")
+					{
+						alert("영상을 선택하시고 완료 버튼을 클릭해 주세요.");
+						return false;
+					}
+
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				: "delete_video",
+							"c_idx"          	: "<?=$collection_idx?>",
+							"m_idx"          	: "<?=$mb_idx?>",
+							"video_items"       : videoItems
+						},
+						success: function(response){
+							console.log(response);
+							alert("컬렉션에서 선택하신 영상이 삭제되었습니다.");
+							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+						}
+					});			
 					//삭제 완료
 					$(this).text('삭제');
 				}
 				$('.collection-detail').toggleClass('check-mode');
 			});
+
+			function follow_member()
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "follow_member",
+						"follow_idx"          	: "<?=$follow_idx?>"
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							// alert("덧글이 입력되었습니다.");
+							$(".follow-state a").addClass("already");
+							$(".follow-state a").html("팔로우중");
+							$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
+						}else if (response.match("D") == "D"){
+							$(".follow-state a").removeClass("already");
+							$(".follow-state a").html("팔로우하기");
+							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 이용해 주세요!");
+							location.href = "login.php?refurl=video_detail.php?idx=<?=$video_idx?>";
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+			}
+
+			function edit_collection()
+			{
+				var collection_name		= $("#c_name").val();
+				var collection_desc		= $("#c_desc").val();
+				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+
+				if (collection_name == "")
+				{
+					alert("컬렉션 이름을 입력해 주세요.");
+					return false;
+				}
+
+				if (collection_desc == "")
+				{
+					alert("컬렉션 설명을 입력해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "edit_collection",
+						"c_idx"          		: "<?=$collection_idx?>",
+						"collection_name"       : collection_name,
+						"collection_desc"		: collection_desc,
+						"collection_secret"		: collection_secret
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							location.reload();
+						}else if (response.match("D") == "D"){
+							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+							// location.reload();
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});		
+			}
+
+			$doc.on('click', '.favor', function() {
+				var cLikeChk	= "Y";
+				if(!$(this).hasClass('is-already')) 
+					cLikeChk	= "N";
+
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"					: "like_collection",
+						"collection_idx"        : "<?=$collection_idx?>",
+						"showYN"				: cLikeChk
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							alert("즐겨찾기 되었습니다.");
+							$(".favor").addClass("is-already");
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 즐겨찾기를 해 주세요!");
+							location.href = "login.php?refurl=collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+						}else{
+							alert("즐겨찾기가 취소 되었습니다.");
+							$(".favor").removeClass("is-already");
+						}
+					}
+				});		
+			});
+
 		</script>
 	</body>
 
