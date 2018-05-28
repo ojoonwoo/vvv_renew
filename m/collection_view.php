@@ -427,7 +427,7 @@
 						},
 						success: function(response){
 							console.log(response);
-							$("#album_<?=$collection_idx?>").hide();
+							location.href = "./my_vvv.php";
 						}
 					});					
 				}
