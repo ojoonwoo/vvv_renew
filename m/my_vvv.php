@@ -129,13 +129,13 @@
 						<div class="user-feed">
 							<div class="wrapper">
 								<div class="tab-wrap">
-									<div class="tab">
+									<div class="tab" data-tab-content="collection">
 										<a href="#">Collection</a>
 									</div>
-									<div class="tab">
+									<div class="tab" data-tab-content="favor">
 										<a href="#">Favorite</a>
 									</div>
-									<div class="tab is-active">
+									<div class="tab is-active" data-tab-content="like">
 										<a href="#">Like</a>
 									</div>
 								</div>
@@ -366,28 +366,16 @@
 			}
 		});
 
-		//			var $wrap = $layer.parent(),
-		//				$html = $('html');
-		//
-		//			if (!$wrap.hasClass('layer-wrap')){
-		//				$layer.wrap('<div class="layer-wrap"></div>');
-		//				$wrap = $layer.parent();
-		//				$wrap.prepend('<span class="layer-wrap__vertical"></span>');
-		//			}
-		//
-		//			if (!$wrap.hasClass('is-opened')){
-		//				$wrap
-		//					.stop().fadeIn(300, function(){
-		//					$layer.trigger('afterLayerOpened', $wrap);
-		//				})
-		//					.addClass('is-opened');
-		//			}
-		//
-		//			if (!$html.hasClass('layer-opened')){
-		//				$html.addClass('layer-opened');
-		//			}
-		//
-		//			$layer.trigger('layerOpened', $wrap);
+		$doc.on('click', '.tab', function() {
+			$(".tab").removeClass("is-active");
+			$(this).addClass("is-active");
+
+			var target = $(this).data('tab-content');
+			$(".aj-content").removeClass("is-active");
+			$(".aj-content."+target).addClass("is-active");
+
+			return false;
+		});
 	</script>
 </body>
 
