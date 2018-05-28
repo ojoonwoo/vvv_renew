@@ -115,12 +115,29 @@
 		}
 	}else{
 ?>
-												<div class="f-add">
+												<!-- <div class="f-add">
 													<button type="button">친구추가</button>
-												</div>
+												</div> -->
+										<div class="f-add">
+											<button type="button">친구추가</button>
+										</div>
 <?		
 	}
 ?>												
+										
+										<!--my vvv일경우-->
+										<div class="f-add">
+											<button type="button">친구추가</button>
+										</div>
+										<!--my vvv일경우-->
+										<!--남의 vvv일경우-->
+<!--
+										<div class="follow-state">
+											<a href="javascript:void(0)">팔로우하기</a>
+																								<a href="javascript:void(0)" class="already">팔로우중</a>
+										</div>
+-->
+										<!--남의 vvv일경우-->
 									</div>
 								</div>
 							</div>
