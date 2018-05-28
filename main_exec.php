@@ -608,7 +608,7 @@ include_once "./include/autoload.php";
 
             $collection_idx 	= $_REQUEST["collection_idx"];
 
-            $query      = "UPDATE collection_like_info SET showYN='Y' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
+            $query      = "UPDATE collection_like_info SET showYN='N' WHERE c_idx='".$collection_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
             $result     = mysqli_query($my_db, $query);    
 
             $query2      = "UPDATE collection_info SET collection_like_count = collection_like_count - 1 WHERE idx='".$collection_idx."'";

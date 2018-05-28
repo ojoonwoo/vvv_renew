@@ -575,7 +575,7 @@
 						},
 						success: function(response){
 							console.log(response);
-							if (response.match("Y") == "N")
+							if (response.match("Y") == "Y")
 							{
 								alert("즐겨찾기가 취소 되었습니다.");
 								$("#album_like_"+idx).hide();
