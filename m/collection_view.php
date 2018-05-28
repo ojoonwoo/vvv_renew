@@ -420,7 +420,7 @@
 					$.ajax({
 						type   : "POST",
 						async  : false,
-						url    : "./main_exec.php",
+						url    : "../main_exec.php",
 						data:{
 							"exec"				    : "delete_collection",
 							"collection_idx"       	: "<?=$collection_idx?>"
