@@ -139,14 +139,14 @@
 																	<div class="thumbnail" style="background: <?=$collection_thumb[2]?> #dcdcdc no-repeat"></div>
 																</div>
 <?
-		if ($_SESSION['ss_vvv_idx'] == $my_idx)
-		{
+		// if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		// {
 ?>																													
-																<div class="over-layer">
+																<!-- <div class="over-layer">
 																	<button type="button" class="btn-delete" onclick="del_collection(event, <?=$collection_data["idx"]?>)"></button>
-																</div>
+																</div> -->
 <?
-		}
+		// }
 ?>																	
 															</a>
 															<figcaption>
@@ -220,14 +220,14 @@
 																	<div class="thumbnail" style="background: <?=$collection_thumb[2]?> #dcdcdc no-repeat"></div>
 																</div>
 <?
-		if ($_SESSION['ss_vvv_idx'] == $my_idx)
-		{
+		// if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		// {
 ?>																													
-																<div class="over-layer">
+																<!-- <div class="over-layer">
 																	<button type="button" class="btn-delete" onclick="del_like_collection(event, <?=$collection_data["idx"]?>)"></button>
-																</div>
+																</div> -->
 <?
-		}
+		// }
 ?>																	
 															</a>
 															<figcaption>
