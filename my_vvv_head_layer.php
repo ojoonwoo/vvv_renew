@@ -99,8 +99,18 @@
 									계정정보
 								</div>
 								<div class="input">
-									<!--								<i class="fb"></i>-->
+<?
+    if ($mb_data["mb_login_way"] == "kakao")
+    {
+?>   
 									<i class="kt"></i>
+<?
+    }else{
+?>        
+									<i class="fb"></i>
+<?
+    }
+?>                         
 									<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 								</div>
 							</div>
