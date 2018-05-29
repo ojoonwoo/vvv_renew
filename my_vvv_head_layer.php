@@ -91,7 +91,7 @@
 									닉네임
 								</div>
 								<div class="input">
-									<input type="text" value="쭌우">
+									<input type="text" value="<?=$mb_data['mb_nickname']?>">
 								</div>
 							</div>
 							<div class="input-group">
@@ -101,7 +101,7 @@
 								<div class="input">
 									<!--								<i class="fb"></i>-->
 									<i class="kt"></i>
-									<input type="text" value="minivertising@minivertising.kr" readonly disabled>
+									<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 								</div>
 							</div>
 							<div class="input-group secret">
