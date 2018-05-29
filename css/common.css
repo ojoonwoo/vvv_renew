@@ -77,6 +77,12 @@ button {
 	cursor: pointer;
 	outline: none;
 }
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="file"] {
+	color: #333333;
+}
 input[type="checkbox"],
 input[type="radio"] {
 	cursor: pointer;
@@ -719,6 +725,9 @@ html.layer-opened .global-search-layer {
 	left: 70px;
 }
 /* 토글 스위치 기본 css */
+button.btn-light-grey {
+	background: #666666 !important;
+}
 /*공통 컴포넌트 */
 /* jquery ui customize */
 .ui-widget {

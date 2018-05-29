@@ -103,6 +103,12 @@ figure, figcaption {
 input, button, select {
 /*	font-family: "Noto Sans KR", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;	*/
 }
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="file"] {
+	color: #333333;
+}
 select {
 	border: 0 none;
 	display: inline-block;
@@ -637,7 +643,7 @@ html.search-layer-opened .global-search-layer .inner {
 	overflow-y: scroll;
 	overflow-x: auto;
 	font-size: 0;
-	line-height: 0;
+/*	line-height: 0;*/
 	opacity: 0;
 	text-align: center;
 	white-space: normal;
@@ -793,6 +799,9 @@ html.search-layer-opened .global-search-layer .inner {
 	left: calc(100% - 14px);
 }
 /* 토글 스위치 공통 css */
+.btn-light-grey {
+	background: #666666 !important;
+}
 /*공통 컴포넌트 */
 
 
