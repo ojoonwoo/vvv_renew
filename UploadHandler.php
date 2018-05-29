@@ -523,10 +523,10 @@ class UploadHandler
 		if (strtolower($namearr[$arr_num]) == "jpeg")
             $namearr[$arr_num]	= "jpg";
             
-        if ($_REQUEST['re'] == "Y")
+        // if ($_REQUEST['re'] == "Y")
             $name	= $_REQUEST['mid']."_".date("YmdHis").".".strtolower($namearr[$arr_num]);
-        else
-            $name	= $_REQUEST['mid'].".".strtolower($namearr[$arr_num]);
+        // else
+        //     $name	= $_REQUEST['mid'].".".strtolower($namearr[$arr_num]);
         
 
         // $name = trim($this->basename(stripslashes($name)), ".\x00..\x20");

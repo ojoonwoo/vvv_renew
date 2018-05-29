@@ -129,6 +129,35 @@ include_once "./include/autoload.php";
             echo $flag;
         break;
 
+        case "edit_member" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $edit_nickname      = $_REQUEST["edit_nickname"];
+            $edit_secret        = $_REQUEST["edit_secret"];
+            $profile_url        = $_REQUEST["profile_url"];
+
+            if ($edit_secret == "true")
+                $edit_secret = "N";
+            else
+                $edit_secret = "Y";        
+            
+            if ($profile_url == "")
+                $query		= "UPDATE member_info SET mb_nickname='".$edit_nickname."', mb_showYN='".$edit_secret."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+            else
+                $query		= "UPDATE member_info SET mb_profile_url='".$profile_url."', mb_nickname='".$edit_nickname."', mb_showYN='".$edit_secret."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+            
+            $result		= mysqli_query($my_db, $query);
+
+            if ($result)
+                $flag	= "Y";
+            else
+                $flag	= "N";
+
+            echo $flag;
+        break;
+
 		case "like_video" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();

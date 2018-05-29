@@ -91,7 +91,7 @@
 									닉네임
 								</div>
 								<div class="input">
-									<input type="text" value="<?=$mb_data['mb_nickname']?>">
+									<input type="text" id="edit_nickname" value="<?=$mb_data['mb_nickname']?>">
 								</div>
 							</div>
 							<div class="input-group">
@@ -128,7 +128,7 @@
 						</div>
 						<div class="button-wrap">
 							<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
-							<button type="button">완료</button>
+							<button type="button" onclick="edit_profile()">완료</button>
 						</div>
 					</div>
 				</div>
@@ -140,11 +140,10 @@
             <script src="./lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
             <script src="./lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
             <script>
+            var profile_url = "";
             $(function () {
                 'use strict';
                 var url = './Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
-                // var preview_width 	= $(".img-area").width();
-                // var preview_height 	= $(".preview-zone").height();
                 $('#profile-change').fileupload({
                     url: url,
                     dataType: 'json',
@@ -153,16 +152,10 @@
                     maxFileSize: 10000000,
                     disableImageResize: /Android(?!.*Chrome)|Opera/
                         .test(window.navigator.userAgent),
-                    // previewMaxWidth: preview_width,
-                    // previewMaxHeight: preview_height,
                     previewThumbnail: false,
-                    previewCrop: false,
-                    // disableImagePreview: true
-                    // imageCrop: true
+                    previewCrop: false
                 }).on('fileuploadadd', function (e, data) {
-                    // $('.img-area').html("");
                     data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
-                    // TweenMax.to($('.re-upload'), 0.3, {css:{autoAlpha: 1}});
                     $.each(data.files, function (index, file) {
                         var node = $('<p style="margin:0" />');
                         node.appendTo(data.context);
@@ -171,14 +164,6 @@
                     var index = data.index,
                         file = data.files[index],
                         node = $(data.context.children()[index]);
-                        // console.log(file);
-                        // var div_left 	= file.preview.width / 2;
-                        // var div_top 	= file.preview.height / 2;
-
-                        // $('#prev_thum').attr("style","position:absolute;top:50%;left:50%;margin-top:-"+div_top+"px;margin-left:-"+div_left+"px");
-                        // $(".preview-zone").css("background","none");
-                        // $(".preview-zone > label").hide();
-
                     if (file.preview) {
                         node
                             .prepend('<br>')
@@ -198,11 +183,8 @@
                 }).on('fileuploaddone', function (e, data) {
                     $.each(data.result.files, function (index, file) {
                         console.log(file);
-                        // $('#fileUp').remove();
-                        // $('#fileArea').remove();
                         if (file.url) {
-                            // $("#file_url").val(file.url);
-                            // $("#prev_thum p").hide();
+                            profile_url = file.url;
                             $(".picture > img").attr("src",file.url);
                         } else if (file.error) {
                             var error = $('<span class="text-danger"/>').text(file.error);
@@ -220,5 +202,34 @@
                     });
                 }).prop('disabled', !$.support.fileInput)
                     .parent().addClass($.support.fileInput ? undefined : 'disabled');
-            });            
+            });     
+            
+            function edit_profile()
+            {
+                var edit_nickname   = $("#edit_nickname").val();
+                var edit_secret	    = $("input:checkbox[id='profile-secret']").is(":checked");
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				: "edit_member",
+						"edit_nickname"     : edit_nickname,
+						"edit_secret"		: edit_secret,
+						"profile_url"		: profile_url
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+                            alert("회원 정보가 수정 되었습니다.");
+							location.reload();
+						}else{
+							alert("다시 수정해 주세요.");
+							location.reload();
+						}
+					}
+				});
+            }
             </script>
