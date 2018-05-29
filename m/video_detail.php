@@ -87,7 +87,8 @@
 	if ($_SESSION['ss_vvv_idx'] != "")
 	{
 ?>									
-									<a href="javascript:void(0)" class="action collect" data-popup="#collection-save"></a>
+									<a href="javascript:void(0)" class="action collect" data-layer="#collection-save"></a>
+
 <?
 	}else{
 ?>		
