@@ -229,6 +229,8 @@
 						<div class="block collection-info">
 							<h6>컬렉션 선택</h6>
 							<div class="collection-list">
+								<div class="scroll-box">
+									<ul>
 <?
 	// 컬렉션 리스트 정보
 	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
@@ -240,11 +242,12 @@
 		if ($collection_data["collection_secret"] == "N")
 			$secret_flag	= "is-secret";
 ?>										
-								<div class="scroll-box">
-									<ul>
 										<li class="c-info <?=$secret_flag?>">
 											<span onclick="collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');"><?=$collection_data["collection_name"]?></span><i class="secret"></i>
 										</li>
+<?
+	}
+?>										
 									</ul>
 								</div>
 							</div>
