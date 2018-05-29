@@ -132,4 +132,93 @@
 						</div>
 					</div>
 				</div>
-			</div>
+            </div>
+            <script src="./lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+            <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+            <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+            <script src="./lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+            <script src="./lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+            <script src="./lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
+            <script>
+            $(function () {
+                'use strict';
+                var url = './Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
+                // var preview_width 	= $(".img-area").width();
+                // var preview_height 	= $(".preview-zone").height();
+                $('#fileUp').fileupload({
+                    url: url,
+                    dataType: 'json',
+                    autoUpload: true,
+                    acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                    maxFileSize: 10000000,
+                    disableImageResize: /Android(?!.*Chrome)|Opera/
+                        .test(window.navigator.userAgent),
+                    previewMaxWidth: preview_width,
+                    // previewMaxHeight: preview_height,
+                    previewThumbnail: false,
+                    previewCrop: false,
+                    // disableImagePreview: true
+                    // imageCrop: true
+                }).on('fileuploadadd', function (e, data) {
+                    $('.img-area').html("");
+                    data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
+                    TweenMax.to($('.re-upload'), 0.3, {css:{autoAlpha: 1}});
+                    $.each(data.files, function (index, file) {
+                        var node = $('<p style="margin:0" />');
+                        node.appendTo(data.context);
+                    });
+                }).on('fileuploadprocessalways', function (e, data) {
+                    var index = data.index,
+                        file = data.files[index],
+                        node = $(data.context.children()[index]);
+                        // console.log(file);
+                        // var div_left 	= file.preview.width / 2;
+                        // var div_top 	= file.preview.height / 2;
+
+                        // $('#prev_thum').attr("style","position:absolute;top:50%;left:50%;margin-top:-"+div_top+"px;margin-left:-"+div_left+"px");
+                        // $(".preview-zone").css("background","none");
+                        // $(".preview-zone > label").hide();
+
+                    if (file.preview) {
+                        node
+                            .prepend('<br>')
+                            .prepend(file.preview);
+                    }
+                    if (file.error) {
+                        node
+                            .append('<br>')
+                            .append($('<span class="text-danger"/>').text(file.error));
+                    }
+                }).on('fileuploadprogressall', function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress .progress-bar').css(
+                        'width',
+                        progress + '%'
+                    );
+                }).on('fileuploaddone', function (e, data) {
+                    $.each(data.result.files, function (index, file) {
+                        console.log(file);
+                        // $('#fileUp').remove();
+                        // $('#fileArea').remove();
+                        if (file.url) {
+                            // $("#file_url").val(file.url);
+                            // $("#prev_thum p").hide();
+                            $(".picture > img").attr("src",file.url);
+                        } else if (file.error) {
+                            var error = $('<span class="text-danger"/>').text(file.error);
+                            $(data.context.children()[index])
+                                .append('<br>')
+                                .append(error);
+                        }
+                    });
+                }).on('fileuploadfail', function (e, data) {
+                    $.each(data.files, function (index) {
+                        var error = $('<span class="text-danger"/>').text('File upload failed.');
+                        $(data.context.children()[index])
+                            .append('<br>')
+                            .append(error);
+                    });
+                }).prop('disabled', !$.support.fileInput)
+                    .parent().addClass($.support.fileInput ? undefined : 'disabled');
+            });            
+            </script>
