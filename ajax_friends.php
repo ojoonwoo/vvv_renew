@@ -4,11 +4,11 @@
     $mnv_f          = new mnv_function();
     $my_db          = $mnv_f->Connect_MySQL();
 
-    $search_friends         = $_REQUEST["search_friends"];
+    $search_nickname         = $_REQUEST["search_nickname"];
 
-	$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_friends."%'";
+	$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%'";
 	$result			= mysqli_query($my_db, $query);
-print_r($query);
+
 	while ($data = mysqli_fetch_array($result))
 	{
 		$collect_query			= "SELECT * FROM collection_info WHERE collection_mb_idx='".$data["idx"]."'";
