@@ -46,8 +46,8 @@ class UploadHandler
             'script_url' => $this->get_full_url().'/'.$this->basename($this->get_server_var('SCRIPT_NAME')),
             // 'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/files/',
             // 'upload_url' => $this->get_full_url().'/files/',
-            'upload_dir' => './uploads/'.$_REQUEST['fid'].'/',
-            'upload_url' => './uploads/'.$_REQUEST['fid'].'/',
+            'upload_dir' => './uploads/'.$_REQUEST['mid'].'/',
+            'upload_url' => './uploads/'.$_REQUEST['mid'].'/',
             'input_stream' => 'php://input',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
@@ -524,9 +524,9 @@ class UploadHandler
             $namearr[$arr_num]	= "jpg";
             
         if ($_REQUEST['re'] == "Y")
-            $name	= $_REQUEST['fid']."_".date("YmdHis").".".strtolower($namearr[$arr_num]);
+            $name	= $_REQUEST['mid']."_".date("YmdHis").".".strtolower($namearr[$arr_num]);
         else
-            $name	= $_REQUEST['fid'].".".strtolower($namearr[$arr_num]);
+            $name	= $_REQUEST['mid'].".".strtolower($namearr[$arr_num]);
         
 
         // $name = trim($this->basename(stripslashes($name)), ".\x00..\x20");
