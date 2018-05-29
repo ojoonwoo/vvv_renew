@@ -226,7 +226,7 @@
 							</figure>
 
 						</div>
-						<div class="block collection-info">
+						<div class="block collection-info" id="choice_collection">
 							<h6>컬렉션 선택</h6>
 							<div class="collection-list">
 								<div class="scroll-box">
@@ -251,10 +251,45 @@
 									</ul>
 								</div>
 							</div>
-							<button type="button" class="btn-add" data-layer="#collection-add">
+							<!-- <button type="button" class="btn-add" data-layer="#collection-add"> -->
+							<button type="button" class="btn-add" onclick="open_add_collection()">
 								<span class="icon"></span>
 								<span>컬렉션 추가하기</span>
 							</button>
+						</div>
+						<div class="block collection-info" id="add_collection" style="display:none;">
+							<div class="collection-setting">
+								<div class="input-wrap">
+									<span>컬렉션 추가하기</span>
+									<div class="input-group">
+										<div class="guide">이름</div>
+										<div class="input">
+											<input type="text" id="collection_name">
+										</div>
+									</div>
+									<div class="input-group">
+										<div class="guide">설명</div>
+										<div class="input">
+											<input type="text" id="collection_desc">
+										</div>
+									</div>
+								</div>
+								<div class="setting">
+									<span class="secret-guide">비밀 설정</span>
+									<div class="toggle secret is-active">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+										<div class="toggle-circle"></div>
+									</div>
+								</div>
+							</div>	
+							<div class="button-wrap">
+								<button type="button">
+									취소
+								</button>
+								<button type="button" onclick="create_collection()">
+									만들기
+								</button>
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -555,7 +590,8 @@
 							appendTxt += "</li>";
 
 							$("#my_collection_list").append(appendTxt);
-							vvv.popup.close($("#collection-add"));
+							$("#choice_collection").show();
+							$("#add_collection").hide();
 						}else if (res_arr[0].match("D") == "D"){
 							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
 						}else{
@@ -565,6 +601,12 @@
 					}
 				});			
 
+			}
+
+			function open_add_collection()
+			{
+				$("#choice_collection").hide();
+				$("#add_collection").show();
 			}
 
 			function request_translate(v_idx)

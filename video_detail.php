@@ -610,6 +610,7 @@
 				$("#choice_collection").hide();
 				$("#add_collection").show();
 			}
+
 			function request_translate(v_idx)
 			{
 				$.ajax({
