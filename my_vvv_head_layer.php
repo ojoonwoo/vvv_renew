@@ -300,7 +300,7 @@
             function search_friends()
             {
                 var search_nickname = $("#search_nickname").val();
-
+console.log(search_nickname);
 				$.ajax({
 					type   : "POST",
 					async  : false,
