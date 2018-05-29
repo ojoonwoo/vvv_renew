@@ -25,7 +25,7 @@
 <?
 	}else{
 ?>											
-											<img src="<?=$data["mb_profule_url"]?>" alt="">
+											<img src="<?=$data["mb_profile_url"]?>" alt="">
 <?
 	}
 ?>											
@@ -44,7 +44,7 @@
 											</div>
 										</div>
 										<div class="action">
-											<button type="button" class="add"></button>
+											<button type="button" class="add" onclick="search_follow_member(<?=$data["idx"]?>)"></button>
 										</div>
 									</div>
 <?
