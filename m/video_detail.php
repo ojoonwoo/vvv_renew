@@ -230,7 +230,7 @@
 							<h6>컬렉션 선택</h6>
 							<div class="collection-list">
 								<div class="scroll-box">
-									<ul>
+									<ul id="my_collection_list">
 <?
 	// 컬렉션 리스트 정보
 	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
