@@ -43,20 +43,9 @@
 												</div>
 											</div>
 										</div>
-<?
-		$dupli_query    = "SELECT * FROM follow_info WHERE follow_idx='".$data["idx"]."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
-		$dupli_result 	= mysqli_query($my_db, $dupli_query);
-		$dupli_count    = mysqli_num_rows($dupli_result);
-
-		if ($dupli_count > 0)
-		{
-?>										
 										<div class="action">
 											<button type="button" class="add" onclick="search_follow_member(<?=$data["idx"]?>)"></button>
 										</div>
-<?
-		}
-?>										
 									</div>
 <?
     }
