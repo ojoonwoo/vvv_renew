@@ -88,7 +88,18 @@
 						<div class="area-picture">
 							<div class="pic-wrap">
 								<div class="picture">
-									<img src="./images/newyork_m.png" alt="">
+<?
+	if ($mb_data['mb_nickname'] == "")
+	{
+?>
+                                    <img src="./images/profile_img_sample.jpg" alt="">
+<?
+    }else{
+?>        
+                                    <img src="<?=$mb_data["mb_profile_url"]?>" alt="">
+<?
+    }
+?>                                
 								</div>
 								<div class="btn-edit">
 									<label for="profile-change">프로필 사진 바꾸기</label>
