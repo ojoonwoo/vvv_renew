@@ -508,6 +508,158 @@
 	background-size: 17px auto;
 }
 /* login */
+/* join */
+.content.join > .inner {
+	padding: 68px 25px;
+}
+.content.join > .inner > .title {
+	font-size: 17px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 26px;
+}
+.content.join .block-wrap {
+	margin-bottom: 50px;
+}
+.content.join .block-terms {
+	text-align: center;
+}
+.content.join .block-terms:first-child {
+	margin-bottom: 41px;
+}
+.content.join .block-terms .title {
+	position: relative;
+	font-size: 11px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 17px;
+}
+.content.join .block-terms .title:before {
+	content: "";
+	position: absolute;
+	top: -8px;
+	left: 50%;
+	width: 8px;
+	height: 1px;
+	margin-left: -4px;
+	background: #333333;
+}
+.content.join .block-terms .scroll-box {
+	background: #ffffff;
+	height: 325px;
+	overflow: hidden;
+	padding: 14px 20px 14px 13px;
+}
+.content.join .block-terms .scroll-box .inner {
+	height: 100%;
+	overflow-y: scroll;
+	font-size: 10px;
+	line-height: 14px;
+	font-weight: 700;
+	text-align: left;
+	word-break: break-word;
+	white-space: normal;
+}
+.content.join .agree {
+	display: inline-block;
+	margin-top: 11px;
+	cursor: pointer;
+	position: relative;
+	font-size: 0;
+}
+.content.join .agree label,
+.content.join .agree .checkbox {
+	display: inline-block;
+}
+.content.join .agree label {
+	cursor: pointer;
+	margin-right: 7px;
+	vertical-align: middle;
+	font-size: 11px;
+	font-weight: 700;
+}
+.content.join .agree input[type="checkbox"] {
+	position: absolute;
+	background: none;
+	opacity: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 23px;
+	height: 23px;
+	vertical-align: middle;
+	z-index: 1;
+}
+.content.join .agree .checkbox {
+	width: 23px;
+	height: 23px;
+	border-radius: 50%;
+	border: 2px solid #333333;
+	vertical-align: middle;
+	z-index: 0;
+	background: url(../images/join_checked.png) center / 0px 0px no-repeat transparent;
+	transition: background 0.1s ease;
+}
+.content.join .agree input[type="checkbox"]:checked + .checkbox {
+	background: url(../images/join_checked.png) center / 11px 5px no-repeat transparent;
+}
+.content.join .block-input {
+	margin: 0 auto 60px;
+	text-align: center;
+}
+.content.join .block-input .input-group {
+	padding: 8px 0;
+	border-bottom: 1px solid #666666;
+	font-size: 0;
+	text-align: left;
+}
+.content.join .block-input .input-group .guide,
+.content.join .block-input .input-group .input {
+	display: inline-block;
+	font-size: 17px;
+	height: 23px;
+}
+.content.join .block-input .input-group .guide {
+	width: 40%;
+}
+.content.join .block-input .input-group .guide span {
+	font-size: 11px;
+	color: #666666;
+}
+.content.join .block-input .input-group .input {
+	width: 60%;
+}
+.content.join .block-input .input-group .input input[type="text"] {
+	height: 100%;
+	font-size: 17px;
+}
+.content.join .block-input .agree {
+	display: inline-block;
+	margin: 20px 0 0;
+}
+.content.join .block-input.nickname {
+	margin-bottom: 55px;
+}
+.content.join .block-input.nickname span.guide {
+	display: block;
+	margin-top: 14px;
+	text-align: left;
+	word-break: break-all;
+	font-size: 11px;
+	color: #666666;
+	font-weight: 500;
+}
+.content.join .btn-join {
+	display: block;
+	width: 86px;
+	height: 30px;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 500;
+	background: #333333;
+	margin: 0 auto;
+}
+/* join */
 /* awards */
 .content.awards > .inner {
 	padding: 0 0 60px;

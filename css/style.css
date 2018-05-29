@@ -1300,8 +1300,9 @@
 	border: 2px solid #333333;
 	vertical-align: middle;
 	z-index: 0;
-	background: center 90% transparent;
-	transition: background 0.2s ease;
+/*	background: center 90% transparent;*/
+	background: url(../images/join_checked.png) center / 0px 0px no-repeat transparent;
+	transition: background 0.1s ease;
 }
 .content.join .agree input[type="checkbox"]:checked + .checkbox {
 	background: url(../images/join_checked.png) center / 19px 11px no-repeat transparent;
