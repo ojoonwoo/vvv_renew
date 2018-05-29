@@ -483,6 +483,90 @@
 				});
 			}
 
+			function collect_video(v_idx, c_idx)
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"				    : "collect_video",
+						"v_idx"		            : v_idx,
+						"c_idx"		            : c_idx
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							alert("선택하신 컬렉션에 영상이 담겼습니다");
+							vvv.popup.close($("#collection-save"));
+						}else if (response.match("D") == "D"){
+							alert("선택하신 컬렉션에 이미 해당 영상이 담겨 있습니다");
+						}else{
+							alert("다시 시도해 주세요");
+							location.reload();
+						}
+					}
+				});
+			}
+
+			function create_collection()
+			{
+				var collection_name		= $("#collection_name").val();
+				var collection_desc		= $("#collection_desc").val();
+				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+				var secretFlag			= "";
+				var appendTxt			= "";
+
+				if (collection_secret === true)
+				{
+					secretFlag = "is-secret";
+				}
+
+				if (collection_name == "")
+				{
+					alert("컬렉션 이름을 입력해 주세요.");
+					return false;
+				}
+
+				if (collection_desc == "")
+				{
+					alert("컬렉션 설명을 입력해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"				    : "create_detail_collection",
+						"collection_name"       : collection_name,
+						"collection_desc"		: collection_desc,
+						"collection_secret"		: collection_secret
+					},
+					success: function(response){
+						console.log(response);
+						res_arr 	= response.split("||");
+						if (res_arr[0].match("Y") == "Y")
+						{
+							appendTxt += "<li class='c-info "+ secretFlag +"'>";
+							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'ß></i>";
+							appendTxt += "</li>";
+
+							$("#my_collection_list").append(appendTxt);
+							vvv.popup.close($("#collection-add"));
+						}else if (res_arr[0].match("D") == "D"){
+							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+						}else{
+							alert("다시 입력해 주세요.");
+							// location.reload();
+						}
+					}
+				});			
+
+			}
+
 			function request_translate(v_idx)
 			{
 				$.ajax({
