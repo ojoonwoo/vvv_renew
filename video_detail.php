@@ -22,6 +22,10 @@
 	if (mysqli_num_rows($like_result) > 0)
 		$like_flag = "is-active";
 
+	$like_flag = "";
+	if (mysqli_num_rows($like_result) > 0)
+		$like_flag = "is-active";
+
 	// 유튜브 영상 코드 자르기
 	$yt_code_arr1   = explode("v=", $detail_data["video_link"]);
 	$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
@@ -238,7 +242,7 @@
 								</figcaption>
 							</figure>
 						</div>
-						<div class="block collection-info">
+						<div class="block collection-info" id="choice_collection">
 							<h6>컬렉션 선택</h6>
 							<div class="collection-list">
 								<div class="scroll-box">
@@ -266,10 +270,43 @@
 									</ul>
 								</div>
 							</div>
-							<button type="button" class="btn-add" data-popup="#collection-add">
+							<!-- <button type="button" class="btn-add" data-popup="#collection-add"> -->
+							<button type="button" class="btn-add" onclick="open_add_collection()">
 								<span class="icon"></span>
 								<span>컬렉션 추가하기</span>
 							</button>
+						</div>
+						<div class="block collection-info" id="add_collection" style="display:none;">
+							<h6>컬렉션 추가하기</h6>
+							<div class="collection-setting">
+								<div class="input-group">
+									<div class="guide">이름</div>
+									<div class="input">
+										<input type="text" id="collection_name">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="guide">설명</div>
+									<div class="input">
+										<input type="text" id="collection_desc">
+									</div>
+								</div>
+								<div class="setting">
+									<span class="secret-guide">비밀 설정</span>
+									<div class="toggle secret is-active">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+										<div class="toggle-circle"></div>
+									</div>
+								</div>
+								<div class="button-wrap">
+									<button type="button" data-popup="@close">
+										취소
+									</button>
+									<button type="button" onclick="create_collection()">
+										만들기
+									</button>
+								</div>	
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -565,7 +602,12 @@
 				});			
 
 			}
-
+			
+			function open_add_collection()
+			{
+				$("#choice_collection").hide();
+				$("#add_collection").show();
+			}
 			function request_translate(v_idx)
 			{
 				$.ajax({
