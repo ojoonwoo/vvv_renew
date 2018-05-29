@@ -54,8 +54,10 @@
 										<div class="action">
 											<button type="button" class="add" onclick="search_follow_member(<?=$data["idx"]?>)"></button>
 										</div>
-									</div>
 <?
 		}
+?>										
+									</div>
+<?
     }
 ?>
