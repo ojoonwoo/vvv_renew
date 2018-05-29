@@ -19,7 +19,7 @@
 <?
 	}
 ?>
-												<a href="javascript:void(0)" class="setting">
+												<a href="javascript:void(0)" class="setting" data-popup="#profile-edit">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
 											</div>
@@ -67,3 +67,59 @@
 									</div>
 								</div>
 							</div>
+			<div class="popup profile-edit" id="profile-edit">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>프로필 수정</h5>
+					</div>
+					<div class="content">
+						<div class="area-picture">
+							<div class="pic-wrap">
+								<div class="picture">
+									<img src="./images/newyork_m.png" alt="">
+								</div>
+								<div class="btn-edit">
+									<label for="profile-change">프로필 사진 바꾸기</label>
+									<input type="file" id="profile-change">
+								</div>
+							</div>
+						</div>
+						<div class="area-info">
+							<div class="input-group">
+								<div class="guide">
+									닉네임
+								</div>
+								<div class="input">
+									<input type="text" value="쭌우">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="guide">
+									계정정보
+								</div>
+								<div class="input">
+									<!--								<i class="fb"></i>-->
+									<i class="kt"></i>
+									<input type="text" value="minivertising@minivertising.kr" readonly disabled>
+								</div>
+							</div>
+							<div class="input-group secret">
+								<div class="guide">
+									비공개 계정
+								</div>
+								<div class="input setting">
+									<div class="toggle secret is-active">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret">
+										<div class="toggle-circle"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="button-wrap">
+							<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
+							<button type="button">완료</button>
+						</div>
+					</div>
+				</div>
+			</div>
