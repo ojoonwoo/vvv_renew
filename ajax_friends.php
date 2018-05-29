@@ -8,7 +8,7 @@
 
 	$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_friends."%'";
 	$result			= mysqli_query($my_db, $query);
-
+print_r($query);
 	while ($data = mysqli_fetch_array($result))
 	{
 		$collect_query			= "SELECT * FROM collection_info WHERE collection_mb_idx='".$data["idx"]."'";
