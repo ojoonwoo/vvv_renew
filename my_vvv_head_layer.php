@@ -145,7 +145,7 @@
                 var url = './Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
                 // var preview_width 	= $(".img-area").width();
                 // var preview_height 	= $(".preview-zone").height();
-                $('#fileUp').fileupload({
+                $('#profile-change').fileupload({
                     url: url,
                     dataType: 'json',
                     autoUpload: true,
@@ -153,20 +153,20 @@
                     maxFileSize: 10000000,
                     disableImageResize: /Android(?!.*Chrome)|Opera/
                         .test(window.navigator.userAgent),
-                    previewMaxWidth: preview_width,
+                    // previewMaxWidth: preview_width,
                     // previewMaxHeight: preview_height,
                     previewThumbnail: false,
                     previewCrop: false,
                     // disableImagePreview: true
                     // imageCrop: true
                 }).on('fileuploadadd', function (e, data) {
-                    $('.img-area').html("");
-                    data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
-                    TweenMax.to($('.re-upload'), 0.3, {css:{autoAlpha: 1}});
-                    $.each(data.files, function (index, file) {
-                        var node = $('<p style="margin:0" />');
-                        node.appendTo(data.context);
-                    });
+                    // $('.img-area').html("");
+                    // data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
+                    // TweenMax.to($('.re-upload'), 0.3, {css:{autoAlpha: 1}});
+                    // $.each(data.files, function (index, file) {
+                        // var node = $('<p style="margin:0" />');
+                        // node.appendTo(data.context);
+                    // });
                 }).on('fileuploadprocessalways', function (e, data) {
                     var index = data.index,
                         file = data.files[index],
