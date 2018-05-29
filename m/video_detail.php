@@ -283,7 +283,7 @@
 								</div>
 							</div>	
 							<div class="button-wrap">
-								<button type="button">
+								<button type="button" data-layer="@close">
 									취소
 								</button>
 								<button type="button" onclick="create_collection()">

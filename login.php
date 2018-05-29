@@ -5,7 +5,10 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
 
-	$ref_url = $_REQUEST["refurl"];
+	if ($_REQUEST["refurl"] == "")
+		$ref_url = "index.php";
+	else
+		$ref_url = $_REQUEST["refurl"];
 	
 	if ($_SESSION['ss_vvv_email'])
 		echo "<script>location.href='index.php';</script>";

@@ -5,7 +5,10 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
 
-	$ref_url = $_REQUEST["refurl"];
+	if ($_REQUEST["refurl"] == "")
+		$ref_url = "index.php";
+	else
+		$ref_url = $_REQUEST["refurl"];
 	
 	if ($_SESSION['ss_vvv_email'])
 		echo "<script>location.href='index.php';</script>";
@@ -107,11 +110,12 @@
 							if (response.match("Y") == "Y")
 							{
 								location.href	= "<?=$ref_url?>";
+							}else if (response.match("J") == "J"){
+								location.href 	= "join.php";
 							}else{
 								alert("다시 시도해 주세요!");
 								location.reload();
 							}
-
 						}
 					});
 
@@ -197,19 +201,16 @@
 									"mb_thumbnail_img"	: res.properties.thumbnail_image
 								},
 								success: function(response){
-									// console.log(res);
 									// console.log(response);
 									if (response.match("Y") == "Y")
 									{
-										if (refurl == "")
-											location.href	= "index.php";
-										else
-											location.href	= refurl;
+										location.href	= "<?=$ref_url?>";
+									}else if (response.match("J") == "J"){
+										location.href 	= "join.php";
 									}else{
 										alert("다시 시도해 주세요!");
 										location.reload();
 									}
-
 								}
 							});
 						},
