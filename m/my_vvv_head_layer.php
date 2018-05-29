@@ -1,4 +1,4 @@
-<div class="user-info">
+						<div class="user-info">
 							<div class="wrapper">
 								<div class="profile-img">
 									<img src="./images/profile_img_sample.jpg" alt="">
