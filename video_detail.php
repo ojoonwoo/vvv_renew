@@ -591,7 +591,9 @@
 							appendTxt += "</li>";
 
 							$("#my_collection_list").append(appendTxt);
-							vvv.popup.close($("#collection-add"));
+							// vvv.popup.close($("#collection-add"));
+							$("#choice_collection").show();
+							$("#add_collection").hide();
 						}else if (res_arr[0].match("D") == "D"){
 							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
 						}else{
