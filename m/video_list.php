@@ -248,27 +248,6 @@
 			var view_page 			= <?=$view_pg?>;
 			var current_page        = 1;
 
-			$(function() {
-				//		$('.global-search-layer .sort').each(function() {
-				//			$(this).selectmenu();
-				//		});
-				//				global search
-				// $('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-
-				//				local search
-				// $('#lc-order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#lc-order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#lc-order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#lc-order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#lc-order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#lc-order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-			});
-
 			//	기본 기능 테스트 코드
 			$doc = $(document),
 				$win = $(window),
