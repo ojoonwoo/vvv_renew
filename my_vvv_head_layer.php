@@ -69,7 +69,7 @@
 	}else{
 ?>
 												<div class="f-add">
-													<button type="button">친구추가</button>
+													<button type="button" data-popup="#search-friends">친구추가</button>
 												</div>
 <?		
 	}
@@ -155,6 +155,132 @@
 					</div>
 				</div>
             </div>
+            <div class="popup search-friends" id="search-friends">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>친구 검색</h5>
+					</div>
+					<div class="content">
+						<div class="search-wrap">
+							<div class="search-bar">
+								<input type="text" placeholder="친구 닉네임 검색">
+								<div class="placeholder-icon"></div>
+							</div>
+							<div class="search-result">
+								<div class="scroll-box">
+									<div class="row">
+										<div class="img">
+											<img src="./images/profile_sample.jpg" alt="">
+										</div>
+										<div class="info">
+											<div class="name">오준우</div>
+											<div class="counts">
+												<div class="wrap like">
+													<i></i>
+													<span>21</span>
+												</div>
+												<div class="wrap collection">
+													<i></i>
+													<span>11</span>
+												</div>
+											</div>
+										</div>
+										<div class="action">
+											<button type="button" class="add"></button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="img">
+											<img src="./images/profile_sample.jpg" alt="">
+										</div>
+										<div class="info">
+											<div class="name">오준우</div>
+											<div class="counts">
+												<div class="wrap like">
+													<i></i>
+													<span>21</span>
+												</div>
+												<div class="wrap collection">
+													<i></i>
+													<span>11</span>
+												</div>
+											</div>
+										</div>
+										<div class="action">
+											<button type="button" class="add"></button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="img">
+											<img src="./images/profile_sample.jpg" alt="">
+										</div>
+										<div class="info">
+											<div class="name">오준우</div>
+											<div class="counts">
+												<div class="wrap like">
+													<i></i>
+													<span>21</span>
+												</div>
+												<div class="wrap collection">
+													<i></i>
+													<span>11</span>
+												</div>
+											</div>
+										</div>
+										<div class="action">
+											<button type="button" class="add"></button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="img">
+											<img src="./images/profile_sample.jpg" alt="">
+										</div>
+										<div class="info">
+											<div class="name">오준우</div>
+											<div class="counts">
+												<div class="wrap like">
+													<i></i>
+													<span>21</span>
+												</div>
+												<div class="wrap collection">
+													<i></i>
+													<span>11</span>
+												</div>
+											</div>
+										</div>
+										<div class="action">
+											<button type="button" class="add"></button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="img">
+											<img src="./images/profile_sample.jpg" alt="">
+										</div>
+										<div class="info">
+											<div class="name">오준우</div>
+											<div class="counts">
+												<div class="wrap like">
+													<i></i>
+													<span>21</span>
+												</div>
+												<div class="wrap collection">
+													<i></i>
+													<span>11</span>
+												</div>
+											</div>
+										</div>
+										<div class="action">
+											<button type="button" class="add"></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
             <script src="./lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
             <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
             <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
