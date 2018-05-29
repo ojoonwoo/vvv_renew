@@ -216,12 +216,12 @@
 						<div class="block video-info">
 							<figure>
 								<div class="thumb-wrap">
-									<div class="thumbnail" style="background: url(./images/collection_pick_sample.jpg) 0 0 / 100% auto no-repeat; padding-bottom: 62.2%;"></div>
+									<div class="thumbnail" style="background: url(<?=$yt_thumb?>) 0 0 / 100% auto no-repeat; padding-bottom: 62.2%;"></div>
 								</div>
 								<figcaption>
-									<div class="vid-brand">ADEPOL SC</div>
-									<div class="vid-title">We Understand Your Surffering</div>
-									<div class="vid-date">2017년 5월</div>
+									<div class="vid-brand"><?=$detail_data["video_brand"]?></div>
+									<div class="vid-title"><?=$detail_data["video_title"]?></div>
+									<div class="vid-date"><?=$detail_data["video_date"]?></div>
 								</figcaption>
 							</figure>
 
@@ -229,46 +229,21 @@
 						<div class="block collection-info">
 							<h6>컬렉션 선택</h6>
 							<div class="collection-list">
+<?
+	// 컬렉션 리스트 정보
+	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
+	$collection_result 	= mysqli_query($my_db, $collection_query);
+
+	while($collection_data = mysqli_fetch_array($collection_result))
+	{
+		$secret_flag	= "";
+		if ($collection_data["collection_secret"] == "N")
+			$secret_flag	= "is-secret";
+?>										
 								<div class="scroll-box">
 									<ul>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info is-secret">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
-										</li>
-										<li class="c-info">
-											<span>asd</span><i class="secret"></i>
+										<li class="c-info <?=$secret_flag?>">
+											<span onclick="collect_video('<?=$video_idx?>','<?=$collection_data["idx"]?>');"><?=$collection_data["collection_name"]?></span><i class="secret"></i>
 										</li>
 									</ul>
 								</div>
