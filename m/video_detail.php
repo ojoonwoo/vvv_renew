@@ -269,12 +269,12 @@
 						<div class="block video-info">
 							<figure>
 								<div class="thumb-wrap">
-									<div class="thumbnail" style="background: url(./images/collection_pick_sample.jpg) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
+									<div class="thumbnail" style="background: url(<?=$yt_thumb?>) 0 0 / 100% auto no-repeat; padding-bottom: 62.59%;"></div>
 								</div>
 								<figcaption>
-									<div class="vid-brand">ADEPOL SC</div>
-									<div class="vid-title">We Understand Your Surffering</div>
-									<div class="vid-date">2017년 5월</div>
+									<div class="vid-brand"><?=$detail_data["video_brand"]?></div>
+									<div class="vid-title"><?=$detail_data["video_title"]?></div>
+									<div class="vid-date"><?=$detail_data["video_date"]?></div>
 								</figcaption>
 							</figure>
 
@@ -286,13 +286,13 @@
 									<div class="input-group">
 										<div class="guide">이름</div>
 										<div class="input">
-											<input type="text" value="오준우님의 5월 컬렉션">
+											<input type="text" id="collection_name">
 										</div>
 									</div>
 									<div class="input-group">
 										<div class="guide">설명</div>
 										<div class="input">
-											<input type="text" value="아주 재밌는 영상 모음 ㅇㅇㅇ">
+											<input type="text" id="collection_desc">
 										</div>
 									</div>
 								</div>
@@ -308,7 +308,7 @@
 								<button type="button">
 									취소
 								</button>
-								<button type="button">
+								<button type="button" onclick="create_collection()">
 									만들기
 								</button>
 							</div>	
