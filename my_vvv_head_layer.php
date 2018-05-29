@@ -309,7 +309,8 @@
 						"search_nickname"   : search_nickname
 					},
 					success: function(response){
-						console.log(response);
+                        console.log(response);
+                        $(".scroll-box").html(response);
 					}
 				});
                 
