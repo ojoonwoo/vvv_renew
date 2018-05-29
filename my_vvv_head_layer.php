@@ -161,12 +161,12 @@
                     // imageCrop: true
                 }).on('fileuploadadd', function (e, data) {
                     // $('.img-area').html("");
-                    // data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
+                    data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
                     // TweenMax.to($('.re-upload'), 0.3, {css:{autoAlpha: 1}});
-                    // $.each(data.files, function (index, file) {
-                        // var node = $('<p style="margin:0" />');
-                        // node.appendTo(data.context);
-                    // });
+                    $.each(data.files, function (index, file) {
+                        var node = $('<p style="margin:0" />');
+                        node.appendTo(data.context);
+                    });
                 }).on('fileuploadprocessalways', function (e, data) {
                     var index = data.index,
                         file = data.files[index],
