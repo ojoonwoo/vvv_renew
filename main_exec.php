@@ -461,6 +461,38 @@ include_once "./include/autoload.php";
 			echo $flag;
         break;
         
+        case "search_follow_member" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $follow_idx		= $_REQUEST["follow_idx"];
+
+            if ($_SESSION['ss_vvv_idx'])
+            {
+                $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                $result 	= mysqli_query($my_db, $query);    
+
+                // 회원 테이블(follow) 정보 UPDATE
+                $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count + 1 WHERE idx='".$follow_idx."'";
+                $member_result 	= mysqli_query($my_db, $member_query);    
+                
+                // 회원 테이블(follower) 정보 UPDATE
+                $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count + 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                $member_result 	= mysqli_query($my_db, $member_query);    
+
+                if($result) {
+                    $flag = "Y";
+                }else{
+                    $flag = "N";
+                }
+            }else{
+                $flag = "L";
+            }
+
+			echo $flag;
+        break;
+        
         case "create_collection" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();

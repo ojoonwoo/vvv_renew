@@ -318,35 +318,30 @@ console.log(search_nickname);
 
             function search_follow_member(idx)
 			{
-				$.ajax({
+                if (confirm("팔로우 하시겠어요?"))
+                {
+                    $.ajax({
 					type   : "POST",
 					async  : false,
 					url    : "./main_exec.php",
 					data:{
-						"exec"				    : "follow_member",
+						"exec"				    : "search_follow_member",
 						"follow_idx"          	: idx
 					},
 					success: function(response){
 						console.log(response);
 						if (response.match("Y") == "Y")
 						{
-							// alert("덧글이 입력되었습니다.");
-							$(".follow-state a").addClass("already");
-							$(".follow-state a").html("팔로우중");
-							$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
-						}else if (response.match("D") == "D"){
-							$(".follow-state a").removeClass("already");
-							$(".follow-state a").html("팔로우하기");
-							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
-						}else if (response.match("L") == "L"){
-							alert("로그인 후 이용해 주세요!");
-							location.href = "login.php?refurl=my_vvv.php?idx=<?=$follow_idx?>";
+                            alert("팔로우 되었습니다.");
+                            location.reload();
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();
 						}
 					}
 				});			
+
+                }
 			}
 
             </script>
