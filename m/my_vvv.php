@@ -419,7 +419,7 @@
 	if ($mb_data['mb_nickname'] == "")
 	{
 ?>
-								<img src="./images/newyork_m.png" alt="">
+								<img src="./images/profile_img_sample.jpg" alt="">
 <?
     }else{
 ?>        
