@@ -108,6 +108,11 @@
 											<!--내 컬렉션일경우-->											
 <?
 	}else{
+		$mb_query2		= "SELECT * FROM member_info WHERE idx='".$mb_idx."'";	
+		$mb_result2		= mysqli_query($my_db, $mb_query2);
+		$mb_data2		= mysqli_fetch_array($mb_result2);
+		$nick_first		= mb_substr($mb_data2["mb_nickname"], 0, 1, 'utf-8');
+	
 ?>		
 											<!--내 컬렉션이 아닐경우-->
 												<!--시크릿 전에 favor 선행 필수-->
@@ -115,7 +120,7 @@
 												<!-- is-already 클래스 토글 on/off -->
 												<button class="favor <?=$collection_likeYN?>"></button>
 												<!-- <button class="secret"></button> -->
-												<a href="javascript:void(0)" class="link-own"><span>miniverminiverminiver</span></a>
+												<a href="javascript:void(0)" class="link-own"><span><?=$nick_first?></span></a>
 											</div>
 											<!--내 컬렉션이 아닐경우-->
 <?
