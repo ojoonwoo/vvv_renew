@@ -698,7 +698,7 @@
 					Kakao.Link.sendTalkLink({
 						label: "<?='['.$detail_data['video_company'].'] '.$detail_data['video_title']?>",
 						image: {
-							src: <?=$yt_thumb?>,
+							src: "<?=$yt_thumb?>",
 							width: '1200',
 							height: '630'
 						},
