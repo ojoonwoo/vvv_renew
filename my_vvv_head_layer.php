@@ -2,7 +2,7 @@
 								<div class="wrapper">
 									<div class="profile-img">
 <?
-	if ($mb_data['mb_nickname'] == "")
+	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
                                         <img src="./images/profile_img_sample.jpg" alt="">
