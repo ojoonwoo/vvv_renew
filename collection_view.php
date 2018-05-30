@@ -113,9 +113,9 @@
 		$mb_data2		= mysqli_fetch_array($mb_result2);
 
 		if ($mb_data2["mb_nickname"] == "")
-			$nick_first		= mb_substr($mb_data2["mb_name"], 0, 1, 'utf-8');
+			$nick_first		= $mb_data2["mb_name"];
 		else
-			$nick_first		= mb_substr($mb_data2["mb_nickname"], 0, 1, 'utf-8');
+			$nick_first		= $mb_data2["mb_nickname"];
 		
 ?>		
 											<!--내 컬렉션이 아닐경우-->
