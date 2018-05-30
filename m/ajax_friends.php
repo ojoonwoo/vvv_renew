@@ -58,7 +58,7 @@
 										</div>
 									</div>
 									<div class="action">
-										<button type="button" class="<?=$add_friends?>" onclick="search_follow_member(<?=$data["idx"]?>)"></button>
+										<button type="button" class="<?=$add_friends?>" id="f_btn_<?=$data["idx"]?>" onclick="search_follow_member('<?=$data["idx"]?>','<?=$add_friends?>')"></button>
 									</div>
 								</div>
 
