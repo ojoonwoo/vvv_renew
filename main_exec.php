@@ -94,8 +94,8 @@ include_once "./include/autoload.php";
                 else
                     $flag	= "N";
 			}
-print_r($query);
-			// 회원 이메일, 이름 세션 생성
+
+            // 회원 이메일, 이름 세션 생성
 			$_SESSION['ss_vvv_email']		= $mb_email;
 			$_SESSION['ss_vvv_idx']		    = $uid;
 			$_SESSION['ss_vvv_name']		= $mb_facebook_name;
