@@ -5,9 +5,9 @@
     $my_db         = $mnv_f->Connect_MySQL();
     $mobileYN      = $mnv_f->MobileCheck();
     $IEYN          = $mnv_f->IECheck();
-    $SafariYN          = $mnv_f->SafariCheck();
-    // print_r($_SERVER["HTTP_USER_AGENT"]);
-    if ($mobileYN == "MOBILE")
+    $SafariYN      = $mnv_f->SafariCheck();
+
+	if ($mobileYN == "MOBILE")
     {
         echo "<script>location.href='m/index.php';</script>";
     }else{
@@ -253,6 +253,7 @@
 			direction: 'horizontal',
 			effect: 'fade',
 			speed: 650,
+			slidesPerGroup: 3,
 			loop: true,
 			autoplay: {
 				delay: 4000	
