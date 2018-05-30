@@ -343,10 +343,12 @@
 						if (response.match("Y") == "Y")
 						{
                             alert("팔로우 되었습니다.");
-                            location.reload();
+                            // location.reload();
+                            $(this).attr("class","already");
 						}else if (response.match("D") == "D"){
                             alert("팔로우가 취소 되었습니다.");
-                            location.reload();
+                            // location.reload();
+                            $(this).attr("class","add");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();
