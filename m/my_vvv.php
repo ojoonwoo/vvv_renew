@@ -496,12 +496,12 @@
 				<div class="content">
 					<div class="search-wrap">
 						<div class="search-bar">
-							<input type="text" placeholder="친구 닉네임 검색">
+							<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 검색">
 							<div class="placeholder-icon"></div>
 						</div>
 						<div class="search-result">
 							<div class="scroll-box">
-								<div class="row">
+								<!-- <div class="row">
 									<div class="img">
 										<img src="./images/profile_sample.jpg" alt="">
 									</div>
@@ -521,91 +521,7 @@
 									<div class="action">
 										<button type="button" class="add"></button>
 									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
