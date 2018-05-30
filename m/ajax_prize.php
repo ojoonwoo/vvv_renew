@@ -29,7 +29,7 @@
         else
 			$video_title    = $video_data["video_title"];
 ?>		
-									<div class="video">
+									<div class="video loaded">
 										<a href="video_detail.php?idx=<?=$video_data["video_idx"]?>">
 											<figure>
 												<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>

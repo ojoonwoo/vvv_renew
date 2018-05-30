@@ -45,11 +45,18 @@
 													<img src="./images/cannes_m.png" alt="">
 												</div>
 												<figcaption>
-													<p class="award-name">CANNES</p>
-													<p class="award-summ">2017 Grand Prix</p>
-													<p class="award-title">‘we’re the superhumans’</p>
+													<p class="award-name">CANNES 2017 Grand Prix</p>
+<!--													<p class="award-summ">2017 Grand Prix</p>-->
+													<p class="award-title">we're the superhumans</p>
+													<div class="link">
+														<svg class="progress-current">
+															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+															<polygon points="11,10 21,15 11,20"
+																	 style="fill:#f7dd30;"/>
+														</svg>
+														<span class="view">VIEW</span>
+													</div>
 												</figcaption>
-												<span class="arrow">VIEW</span>
 											</figure>
 										</a>
 									</div>
@@ -60,11 +67,18 @@
 													<img src="./images/newyork_m.png" alt="">
 												</div>
 												<figcaption>
-													<p class="award-name">NEWYORK</p>
-													<p class="award-summ">2017 BEST OF SHOW</p>
-													<p class="award-title">‘MEET GRAHAM’</p>
+													<p class="award-name">NEWYORK 2017 BEST OF SHOW</p>
+<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
+													<p class="award-title">MEET GRAHAM</p>
+													<div class="link">
+														<svg class="progress-current">
+															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+															<polygon points="11,10 21,15 11,20"
+																	 style="fill:#f7dd30;"/>
+														</svg>
+														<span class="view">VIEW</span>
+													</div>
 												</figcaption>
-												<span class="arrow">VIEW</span>
 											</figure>
 										</a>
 									</div>
@@ -75,14 +89,25 @@
 													<img src="./images/clio_m.png" alt="">
 												</div>
 												<figcaption>
-													<p class="award-name">CLIO</p>
-													<p class="award-summ">2017 Grand</p>
-													<p class="award-title">‘fearless girl’</p>
+													<p class="award-name">CLIO 2017 Grand</p>
+<!--													<p class="award-summ">2017 Grand</p>-->
+													<p class="award-title">fearless girl</p>
+													<div class="link">
+														<svg class="progress-current">
+															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+															<polygon points="11,10 21,15 11,20"
+																	 style="fill:#f7dd30;"/>
+														</svg>
+														<span class="view">VIEW</span>
+													</div>
 												</figcaption>
-												<span class="arrow">VIEW</span>
 											</figure>
 										</a>
 									</div>
+								</div>
+								<div class="number-pagination">
+									<span class="current">1</span>
+									<span class="total">3</span>
 								</div>
 								<div id="awards-banner-pagination" class="awards-banner-pagination"></div>
 							</div>
@@ -232,12 +257,24 @@
 					},
 					pagination: {
 						el: '.awards-banner-pagination',
-						clickable: true,
-						renderBullet: function (index, className) {
-							return '<span class="' + className + '">' + (index + 1) + '</span>';
-						},
+						type: 'progressbar'
 					},
-				})
+//					disableOnInteraction: false,
+					on: {
+						init: function() {
+							$('.awards-banner').addClass('loaded');
+						},
+						slideChange: function() {
+							$('.number-pagination .current').text(this.realIndex+1);
+						},
+						slideChangeTransitionStart: function() {
+							$('.awards-banner').removeClass('loaded');
+						},
+						slideChangeTransitionEnd: function() {
+							$('.awards-banner').addClass('loaded');
+						}
+					}
+				});
 			});
 
 			// 검색 APPLY 클릭
@@ -286,7 +323,6 @@
 						"award_date"			: award_date
 					},
 					success: function(response){
-						console.log(response);
 						res_arr	= response.split("||");
 						// current_page = current_page + 1;
 						// if (current_page >= total_page)
@@ -295,6 +331,14 @@
 						// 	$(".read-more").show();
 						$(".video-list").html(res_arr[0]);
 						$(".lc-order-ptype").html(res_arr[1]);
+						$(".video-list > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 500 * i);
+							})(this, index);
+
+						});
 					}
 				});
 			}
@@ -313,7 +357,6 @@
 						"award_date"			: award_date
 					},
 					success: function(response){
-						console.log(response);
 						// res_arr	= response.split("||");
 						// current_page = current_page + 1;
 						// if (current_page >= total_page)
@@ -321,6 +364,14 @@
 						// else
 						// 	$(".read-more").show();
 						$(".video-list").html(response);
+						$(".video-list > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 500 * i);
+							})(this, index);
+
+						});
 					}
 				});
 			}
@@ -339,8 +390,15 @@
 						"award_date"			: award_date
 					},
 					success: function(response){
-						console.log(response);
 						$(".video-list").html(response);
+						$(".video-list > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 500 * i);
+							})(this, index);
+
+						});
 					}
 				});
 			}

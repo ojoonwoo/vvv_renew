@@ -1,9 +1,9 @@
 		<div class="global-menu">
-			<div class="inner anim-blur">
-				<a href="#" class="btn-close button-menu">
+			<div class="inner">
+				<a href="#" class="btn-close button-menu anim-blur">
 					<img src="./images/close_x_black.png" alt="">
 				</a>
-				<div class="user-status">
+				<div class="user-status anim-blur">
 	<?
 		if (!$_SESSION['ss_vvv_email'])
 		{
@@ -20,7 +20,7 @@
 	?>                        
 				</div>
 				<div class="list-wrap">
-					<ul class="list">
+					<ul class="list anim-blur">
 						<li>
 							<a href="index.php" class="is-active">HOME</a>
 						</li>
@@ -38,7 +38,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="about-us">
+				<div class="about-us anim-blur">
 					<div class="line"></div>
 					<div class="contacts">
 						<p><span>CONTACT US</span></p>
@@ -53,7 +53,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="copyright">
+				<div class="copyright anim-blur">
 					COPYRIGHTS©2018 Valuable Viral Video ALL RIGHT RESERVED.
 				</div>
 			</div>
