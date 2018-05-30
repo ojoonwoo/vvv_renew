@@ -882,7 +882,7 @@
 			$.ajax({
 				type   : "POST",
 				async  : false,
-				url    : "./main_exec.php",
+				url    : "../main_exec.php",
 				data:{
 					"exec"				: "edit_member",
 					"edit_nickname"     : edit_nickname,
@@ -929,7 +929,7 @@
 				$.ajax({
 				type   : "POST",
 				async  : false,
-				url    : "./main_exec.php",
+				url    : "../main_exec.php",
 				data:{
 					"exec"				    : "search_follow_member",
 					"follow_idx"          	: idx
