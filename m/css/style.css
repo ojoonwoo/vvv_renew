@@ -557,7 +557,7 @@
 	background: #ffffff;
 	height: 325px;
 	overflow: hidden;
-	padding: 14px 20px 14px 13px;
+	padding: 0 5px;
 }
 .content.join .block-terms .scroll-box .inner {
 	height: 100%;
@@ -566,6 +566,7 @@
 	line-height: 14px;
 	font-weight: 700;
 	text-align: left;
+	padding: 14px 20px 14px 13px;
 	word-break: break-word;
 	white-space: normal;
 }
@@ -1980,5 +1981,8 @@
 		right: 7px;
 		top: 50%;
 		margin-top: 25px;
-	}	
+	}
+	.content.user-page .user-info .info-wrap .wrap-actions > div .count {
+		display: block;
+	}
 }

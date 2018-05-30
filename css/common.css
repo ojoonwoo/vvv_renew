@@ -281,7 +281,7 @@ header .actions .search-wrap > button > span {
 	margin-bottom: 7.2vh;
 }
 .global-menu .list-wrap .list li a {
-	font-size: 23px;
+	font-size: 18px;
 	font-weight: 400;
 	color: #666666;
 	transition: color 0.17s ease;
@@ -315,15 +315,15 @@ header .actions .search-wrap > button > span {
 .global-menu .about-us .contacts p span,
 .global-menu .about-us .contacts p i {
 	display: inline-block;
-	font-size: 18px;
+	font-size: 13px;
 	vertical-align: middle;
 }
 .global-menu .about-us .contacts .tel {
 	margin: 42px 0 25px;
 }
 .global-menu .about-us .contacts .tel i {
-	width: 23px;
-	height: 20px;
+	width: 17px;
+	height: 15px;
 	background: url(../images/contact_tel.png) center no-repeat;
 	background-size: cover;
 	margin-right: 12px;
@@ -353,7 +353,7 @@ header .actions .search-wrap > button > span {
 	position: absolute;
 	right: 4.7vw;
 	bottom: 8.7vh;
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: 400;
 	color: #666666;
 	letter-spacing: -0.5px;
@@ -650,9 +650,9 @@ html.layer-opened .global-search-layer {
 	position: absolute;
 	top: 35px;
 	right: 35px;
-	width: 46px;
-	height: 46px;
-	background: url(../images/close_x.png) center / 20px 20px no-repeat #333333;
+	width: 40px;
+	height: 40px;
+	background: url(../images/close_x.png) center / 18px 18px no-repeat #333333;
 	border-radius: 50%;
 }
 

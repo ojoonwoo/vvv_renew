@@ -119,7 +119,7 @@
 }
 .content.main .list-container .list-title {
 	position: relative;
-	font-size: 35px;
+	font-size: 25px;
 	font-weight: 700;
 	margin-bottom: 46px;
 }
@@ -134,7 +134,7 @@
 	margin-left: -9px;
 }
 .content.main .list-container .list-title + a.view-all {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 }
 .content.main .list-container .video-list {
@@ -174,12 +174,12 @@
 .vid-list .search-wrapper .wrap .button-refresh {
 	position: absolute;
 	right: 0;
-	top: 22px;
-	height: 29px;
-	padding-left: 52px;
+	top: 23px;
+	height: 21px;
+	padding-left: 34px;
 	background: url(../images/search_refresh.png) left center no-repeat;
-	background-size: 36px 29px;
-	font-size: 18px;
+	background-size: 26px 21px;
+	font-size: 15px;
 }
 .vid-list .search-wrapper .wrap .search-bar {
 	width: 584px;
@@ -232,12 +232,12 @@
 	height: 40px;
 	background: #333333;
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: -1px;
 }
 .vid-list > .inner > .title {
-	font-size: 35px;
+	font-size: 26px;
 	font-weight: 700;
 	color: #333333;
 	text-align: center;
@@ -438,12 +438,12 @@
 	color: #666666;
 }
 .content.detail .info-wrap .title {
-	font-size: 50px;
+	font-size: 35px;
 	margin: 27px 0 14px;
 	font-weight: 700;
 }
 .content.detail .info-wrap .date {
-	font-size: 20px;
+	font-size: 16px;
 	color: #666666;
 	font-weight: 600;
 }
@@ -460,8 +460,9 @@
 }
 .content.detail .info-wrap .icon-wrap > span > span {
 	display: inline-block;
-	font-size: 21px;
 	color: #333333;
+	font-size: 16px;
+	font-weight: 700;
 }
 .content.detail .info-wrap .icon-wrap span .icon {
 	display: inline-block;
@@ -585,7 +586,7 @@
 	height: 100%;
 	background: #333333;
 	color: #ffffff;
-	font-size: 22px;
+	font-size: 18px;
 }
 .content.detail .block-comment .comment-list {
 	padding: 0 13px 0 23px;
@@ -596,14 +597,14 @@
 	border-bottom: 1px solid #dcdcdc;
 }
 .content.detail .block-comment .comment-list .row .u-id {
-	font-size: 20px;
-	font-weight: 600;
+	font-size: 16px;
+	font-weight: 700;
 	margin-bottom: 27px;
 	padding: 0 13px;
 }
 .content.detail .block-comment .comment-list .row .u-comment {
 	padding: 0 106px 0 13px;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 21px;
 }
@@ -611,7 +612,7 @@
 	position: absolute;
 	top: 29px;
 	right: 13px;
-	font-size: 20px;
+	font-size: 14px;
 }
 .content.detail .block-related {
 	padding: 0 46px;
@@ -916,13 +917,13 @@
 }
 .content.user-page .collection-detail .collection-info .texts .title {
 	display: inline-block;
-	font-size: 28px;
+	font-size: 25px;
 	font-weight: 700;
 	margin-right: 28px;
 }
 .content.user-page .collection-detail .collection-info .texts .summary {
 	display: inline-block;
-	font-size: 23px;
+	font-size: 18px;
 	font-weight: 500;
 }
 .content.user-page .collection-detail .semi-container {
@@ -1820,27 +1821,27 @@
 }
 
 .popup.search-friends {
-	width: 910px;
+	width: 672px;
 }
 .popup.search-friends > .inner {
-	padding: 152px 38px 116px;
+	padding: 79px 35px 95px;
 }
 .popup.search-friends > .inner > .title {
 	text-align: left;
 	border-bottom: 1px solid #c8c8c8;
-	padding: 0 0 27px 42px;	
+	padding: 0 0 28px 23px;	
 }
 .popup.search-friends > .inner > .title h5 {
-	font-size: 43px;
+	font-size: 23px;
 	font-weight: 700;
 }
 .popup.search-friends .search-wrap {
-	margin-top: 43px;
+	margin-top: 70px;
 	text-align: center;
 }
 .popup.search-friends .search-wrap .search-bar {
 	position: relative;
-	width: 443px;
+	width: 428px;
 	margin: 0 auto;
 	padding: 7px 0;
 	border-bottom: 1px solid #c8c8c8;
@@ -1849,7 +1850,7 @@
 	display: block;
 	width: 100%;
 	text-align: center;
-	font-size: 30px;
+	font-size: 19px;
 	font-weight: 500;
 }
 .popup.search-friends .search-wrap .search-bar input[type="text"]::placeholder {
@@ -1870,15 +1871,15 @@
 	opacity: 0;
 }
 .popup.search-friends .search-result {
-	width: 558px;
-	height: 473px;
+	width: 428px;
+	height: 430px;
 /*	padding: 0 38px 0 0;*/
-	margin: 45px auto 0;
+	margin: 33px auto 0;
 	overflow-y: hidden;
 }
 .popup.search-friends .search-result .scroll-box {
 	height: 100%;
-	padding-right: 38px;
+	padding-right: 20px;
 	overflow-y: scroll;
 }
 .popup.search-friends .search-result .row {
@@ -1889,40 +1890,40 @@
 	align-items: center;
 }
 .popup.search-friends .search-result .row .img {
-	width: 100px;
-	margin-right: 31px;
+	width: 75px;
+	margin-right: 23px;
 }
 .popup.search-friends .search-result .row .info {
 	text-align: left;
-	font-size: 26px;
+	font-size: 20px;
 	font-weight: 700;
 }
 .popup.search-friends .search-result .row .info .name {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 .popup.search-friends .search-result .row .info .counts {
 	font-size: 0;
 }
 .popup.search-friends .search-result .row .info .counts .wrap {
 	display: inline-block;
-	margin-right: 18px;
+	margin-right: 14px;
 }
 .popup.search-friends .search-result .row .info .counts .wrap i {
-	width: 17px;
-	height: 17px;
-	margin-right: 4px;
+	width: 13px;
+	height: 13px;
+	margin-right: 3px;
 }
 .popup.search-friends .search-result .row .info .counts .wrap i,
 .popup.search-friends .search-result .row .info .counts .wrap span {
 	display: inline-block;
-	font-size: 20px;
+	font-size: 16px;
 	font-style: normal;
 }
 .popup.search-friends .search-result .row .info .counts .like i {
-	background: url(../images/icon_like.png) 0 0 / 17px 17px no-repeat;
+	background: url(../images/icon_like.png) 0 0 / 13px 13px no-repeat;
 }
 .popup.search-friends .search-result .row .info .counts .collection i {
-	background: url(../images/icon_collect.png) 0 0 / 17px 17px no-repeat;
+	background: url(../images/icon_collect.png) 0 0 / 13px 13px no-repeat;
 }
 .popup.search-friends .search-result .row .action {
 	position: absolute;
@@ -1931,8 +1932,8 @@
 	transform: translateY(-50%);
 }
 .popup.search-friends .search-result .row .action .add {
-	width: 51px;
-	height: 50px;
+	width: 40px;
+	height: 38px;
 	background: url(../images/search_friend_add.png) 0 0 / cover no-repeat;
 }
 /* 팝업 개별코드 */
