@@ -97,7 +97,7 @@
 	}
 ?>							
 									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
-									<a href="" class="action share"></a>
+									<a href="javascript:void(0)" class="action share"></a>
 									<ul class="share-spread">
 										<li class="fb"><a href="#"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
 										<li class="kt"><a href="#"><img src="./images/detail_share_kt.png" alt="카카오톡 공유"></a></li>

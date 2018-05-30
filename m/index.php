@@ -176,18 +176,20 @@
 
         $title_count    = mb_strlen($recent_data["video_title"],'utf-8');
 
-        if ($title_count > 30)
-            $video_title    = substr($recent_data["video_title"],0,30)."...";
-        else
-			$video_title    = $recent_data["video_title"];
-			
-        // 브랜드 줄바꿈 방지 글자 자르기
-        $brand_count    = mb_strlen($recent_data["video_brand"],'utf-8');
-
-        if ($title_count > 30)
-            $video_brand    = substr($recent_data["video_brand"],0,30)."..";
-        else
-            $video_brand    = $recent_data["video_brand"];
+//        if ($title_count > 30)
+//            $video_title    = substr($recent_data["video_title"],0,30)."...";
+//        else
+//			$video_title    = $recent_data["video_title"];
+//			
+//        // 브랜드 줄바꿈 방지 글자 자르기
+//        $brand_count    = mb_strlen($recent_data["video_brand"],'utf-8');
+//
+//        if ($title_count > 30)
+//            $video_brand    = substr($recent_data["video_brand"],0,30)."..";
+//        else
+//            $video_brand    = $recent_data["video_brand"];
+		$video_title    = $recent_data["video_title"];
+		$video_brand    = $recent_data["video_brand"];
 			
 ?>                            								
 								<div class="video">
@@ -264,7 +266,9 @@
 				var bestSwiper = new Swiper ('.best-slider', {
 					// Optional parameters
 					direction: 'horizontal',
+					speed: 600,
 					loop: true,
+//					effect: 'coverflow',
 //					slidesPerView: 3,
 //					spaceBetween: 30,
 					navigation: {
@@ -307,10 +311,10 @@
 				$win = $(window),
 				$html = $('html');
 			$doc.on('click', '.button-search', function() {
-				$html.addClass('layer-opened');
+				$html.addClass('search-layer-opened');
 			});
-			$doc.on('click', '.layer-close', function() {
-				$html.removeClass('layer-opened');
+			$doc.on('click', '.search-layer-close', function() {
+				$html.removeClass('search-layer-opened');
 			});
 			$doc.on('click', '.button-menu', function() {
 				$html.toggleClass('menu-opened');
@@ -349,7 +353,17 @@
 							$(".read-more").hide();
 						else
 							$(".read-more").show();
+						
 						$("#recent_video").append(response);
+						$("#recent_video > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 500 * i);
+							})(this, index);
+							
+						});
+						
 					}
 				});
 

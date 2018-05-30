@@ -289,8 +289,13 @@
 }
 .content.detail .player {
 	margin: 12px 0 17px;
+	background-color: #d0d1d1;
+	transition: all 0.2s ease;
 }
 .content.detail .actions {
+	display: inline-block;
+	left: 50%;
+	transform: translateX(-50%);
 	font-size: 0;
 	text-align: center;
 	position: relative;
@@ -343,7 +348,7 @@
 }
 .content.detail .actions .share-spread {
 	position: absolute;
-	right: 0;
+	right: -67px;
 	top: 50%;
 	margin-top: -6px;
 	font-size: 0;
@@ -869,7 +874,7 @@
 	width: 112px;
 	height: 112px;
 */
-	flex-basis: 40%;
+	flex-basis: 120px;
 	margin: 0 auto;
 	border-radius: 50%;
 	overflow: hidden;
@@ -878,9 +883,13 @@
 .content.user-page .user-info .profile-img img {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	max-width: none;
 }
 .content.user-page .user-info .info-wrap {
-	width: 100%;
+	flex-basis: 100%;
+/*	width: 100%;*/
 	color: #ffffff;
 }
 .content.user-page .user-info .info-wrap .wrap-user {
@@ -1086,18 +1095,15 @@
 .content.user-page .user-feed .aj-content .album figcaption .title {
 	font-size: 14px;
 	font-weight: 600;
-	margin-bottom: 7px
 }
 .content.user-page .user-feed .aj-content .album figcaption .desc {
 	font-size: 12px;
 	font-weight: 500;
 	color: #666666;
+	margin: 7px 0 9px;
 }
 .content.user-page .user-feed .aj-content .album figcaption .icon-wrap {
 	font-size: 0;
-	position: absolute;
-	top: 16px;
-	right: 10px;
 }
 .content.user-page .user-feed .aj-content .album figcaption .icon-wrap > div {
 	display: inline-block;
@@ -1118,11 +1124,11 @@
 }
 .content.user-page .user-feed .aj-content .album figcaption .secret-mode {
 	position: absolute;
-	top: 25px;
-	right: 10px;
+	width: 8px;
+	height: 10px;
 	background: url(../images/myvvv_secret_icon.png) center / cover no-repeat;
-	width: 16px;
-	height: 20px;
+	top: 16px;
+	right: 10px;
 }
 .content.user-page .video-list {
 	font-size: 0;
@@ -1176,6 +1182,14 @@
 	display: inline-block;
 	font-size: 11px;
 	font-weight: 500;
+}
+.content.user-page .collection-detail .collection-info .texts .secret-mode {
+	display: inline-block;
+	margin-left: 8px;
+	background: url(../images/myvvv_secret_icon.png) center / cover no-repeat;
+	width: 8px;
+	height: 10px;
+	vertical-align: bottom;
 }
 .content.user-page .collection-detail .semi-container {
 	position: relative;
@@ -1782,6 +1796,11 @@
 	height: 18px;
 	background: url(../images/search_friend_add.png) 0 0 / cover no-repeat;
 }
+.popup.search-friends .search-result .row .action .already {
+	width: 18px;
+	height: 18px;
+	background: url(../images/search_friend_already.png) 0 0 / cover no-repeat;
+}
 
 .layer.collection-pick {
 	height: calc(100vh - 76px);
@@ -1977,11 +1996,6 @@
 /* 팝업 개별코드 */
 
 @media all and (max-width: 350px) {
-	.content.detail .actions .share-spread {
-		right: 7px;
-		top: 50%;
-		margin-top: 25px;
-	}
 	.content.user-page .user-info .info-wrap .wrap-actions > div .count {
 		display: block;
 	}

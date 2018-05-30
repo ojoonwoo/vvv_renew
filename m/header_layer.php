@@ -17,9 +17,7 @@
 							</h1>
 							<div class="actions">
 								<div class="search-wrap magnet-wrap">
-									<button type="button" class="magnet-parent button-search">
-										<span class="magnet-child"></span>
-									</button>
+									<button type="button" class="magnet-parent button-search"></button>
 								</div>
 							</div>
 						</div>

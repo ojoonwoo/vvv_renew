@@ -1,24 +1,24 @@
 		<div class="global-menu">
-			<a href="#" class="btn-close button-menu">
-				<img src="./images/close_x_black.png" alt="">
-			</a>
-			<div class="user-status">
-<?
-	if (!$_SESSION['ss_vvv_email'])
-	{
-?>                                
-                <a href="login.php?refurl=my_vvv.php">MY VVV</a>
-                <a href="login.php">LOGIN</a>
-<?
-    }else{
-?>        
-                <a href="my_vvv.php">MY VVV</a>
-                <a href="logout.php">LOGOUT</a>
-<?
-    }
-?>                        
-			</div>
-			<div class="inner">
+			<div class="inner anim-blur">
+				<a href="#" class="btn-close button-menu">
+					<img src="./images/close_x_black.png" alt="">
+				</a>
+				<div class="user-status">
+	<?
+		if (!$_SESSION['ss_vvv_email'])
+		{
+	?>                                
+					<a href="login.php?refurl=my_vvv.php">MY VVV</a>
+					<a href="login.php">LOGIN</a>
+	<?
+		}else{
+	?>        
+					<a href="my_vvv.php">MY VVV</a>
+					<a href="logout.php">LOGOUT</a>
+	<?
+		}
+	?>                        
+				</div>
 				<div class="list-wrap">
 					<ul class="list">
 						<li>
