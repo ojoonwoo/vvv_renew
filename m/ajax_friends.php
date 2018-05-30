@@ -27,11 +27,11 @@
 		if ($data["mb_profile_url"] == "")
 		{
 ?>											
-											<img src="./images/profile_sample.jpg" alt="">
+											<a href="my_vvv.php?idx=<?=$data["idx"]?>"><img src="./images/profile_sample.jpg" alt=""></a>
 <?
 		}else{
 ?>											
-											<img src=".<?=$data["mb_profile_url"]?>" alt="">
+											<a href="my_vvv.php?idx=<?=$data["idx"]?>"><img src=".<?=$data["mb_profile_url"]?>" alt=""></a>
 <?
 		}
 ?>											
