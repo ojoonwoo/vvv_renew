@@ -135,7 +135,7 @@
 ?>														
 														<div class="album" id="album_<?=$collection_data["idx"]?>">
 															<figure>
-																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
+																<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>&my=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
 																	<div class="frame">
 																		<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																		<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
