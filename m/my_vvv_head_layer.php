@@ -1,7 +1,18 @@
 						<div class="user-info">
 							<div class="wrapper">
 								<div class="profile-img">
-									<img src="./images/profile_img_sample.jpg" alt="">
+<?
+	if ($mb_data['mb_profile_url'] == "")
+	{
+?>
+                                        <img src="./images/profile_img_sample.jpg" alt="">
+<?
+    }else{
+?>        
+                                        <img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
+<?
+    }
+?>                                
 								</div>
 								<div class="info-wrap">
 									<!--me, not me-->

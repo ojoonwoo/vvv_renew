@@ -2,7 +2,7 @@
 								<div class="wrapper">
 									<div class="profile-img">
 <?
-	if ($mb_data['mb_nickname'] == "")
+	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
                                         <img src="./images/profile_img_sample.jpg" alt="">
@@ -300,8 +300,8 @@
             function search_friends()
             {
                 var search_nickname = $("#search_nickname").val();
-console.log(search_nickname);
-				$.ajax({
+
+                $.ajax({
 					type   : "POST",
 					async  : false,
 					url    : "./ajax_friends.php",
@@ -316,9 +316,18 @@ console.log(search_nickname);
                 
             }
 
-            function search_follow_member(idx)
+            function search_follow_member(idx, followClass)
 			{
-                if (confirm("팔로우 하시겠어요?"))
+                if (followClass == "already")
+                {
+                    var confirm_message = "이 친구를 팔로우 취소 할까요?";
+                    var followYN        = "Y";
+                }else{
+                    var confirm_message = "이 친구를 팔로우 할까요?";
+                    var followYN        = "N";
+                }
+
+                if (confirm(confirm_message))
                 {
                     $.ajax({
 					type   : "POST",
@@ -326,14 +335,22 @@ console.log(search_nickname);
 					url    : "./main_exec.php",
 					data:{
 						"exec"				    : "search_follow_member",
-						"follow_idx"          	: idx
+						"follow_idx"          	: idx,
+						"followYN"          	: followYN
 					},
 					success: function(response){
 						console.log(response);
 						if (response.match("Y") == "Y")
 						{
                             alert("팔로우 되었습니다.");
-                            location.reload();
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","already");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','already')");
+						}else if (response.match("D") == "D"){
+                            alert("팔로우가 취소 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","add");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();

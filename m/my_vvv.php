@@ -132,7 +132,7 @@
 ?>														
 													<div class="album" id="album_<?=$collection_data["idx"]?>">
 														<figure>
-															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
+															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>&my=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
 																<div class="frame">
 																	<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																	<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
@@ -419,11 +419,11 @@
 	if ($mb_data['mb_nickname'] == "")
 	{
 ?>
-								<img src="./images/newyork_m.png" alt="">
+								<img src="./images/profile_img_sample.jpg" alt="">
 <?
     }else{
 ?>        
-                                <img src="<?=$mb_data["mb_profile_url"]?>" alt="">
+                                <img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
     }
 ?>                                
@@ -458,7 +458,12 @@
 ?>        
 								<i class="fb"></i>
 <?
-    }
+	}
+	
+	$is_secret = "";
+
+	if ($mb_data["mb_showYN"] == "N")
+		$is_secret = "is-active";
 ?>                         
 								<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 							</div>
@@ -468,7 +473,7 @@
 								비공개 계정
 							</div>
 							<div class="input setting">
-								<div class="toggle secret is-active">
+								<div class="toggle secret <?=$is_secret?>">
 									<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret">
 									<div class="toggle-circle"></div>
 								</div>
@@ -491,12 +496,12 @@
 				<div class="content">
 					<div class="search-wrap">
 						<div class="search-bar">
-							<input type="text" placeholder="친구 닉네임 검색">
+							<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 검색">
 							<div class="placeholder-icon"></div>
 						</div>
 						<div class="search-result">
 							<div class="scroll-box">
-								<div class="row">
+								<!-- <div class="row">
 									<div class="img">
 										<img src="./images/profile_sample.jpg" alt="">
 									</div>
@@ -516,91 +521,7 @@
 									<div class="action">
 										<button type="button" class="add"></button>
 									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -608,12 +529,12 @@
 			</div>
 		</div>
 	</div>
-	<script src="./lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
-	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
-	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
 	<script>
             var profile_url = "";
 
@@ -813,7 +734,7 @@
 
 		$(function () {
 			'use strict';
-			var url = './Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
+			var url = '../Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
 			$('#profile-change').fileupload({
 				url: url,
 				dataType: 'json',
@@ -855,7 +776,7 @@
 					console.log(file);
 					if (file.url) {
 						profile_url = file.url;
-						$(".picture > img").attr("src",file.url);
+						$(".picture > img").attr("src","."+file.url);
 					} else if (file.error) {
 						var error = $('<span class="text-danger"/>').text(file.error);
 						$(data.context.children()[index])
@@ -882,7 +803,7 @@
 			$.ajax({
 				type   : "POST",
 				async  : false,
-				url    : "./main_exec.php",
+				url    : "../main_exec.php",
 				data:{
 					"exec"				: "edit_member",
 					"edit_nickname"     : edit_nickname,
@@ -922,33 +843,50 @@
 			
 		}
 
-		function search_follow_member(idx)
-		{
-			if (confirm("팔로우 하시겠어요?"))
+            function search_follow_member(idx, followClass)
 			{
-				$.ajax({
-				type   : "POST",
-				async  : false,
-				url    : "./main_exec.php",
-				data:{
-					"exec"				    : "search_follow_member",
-					"follow_idx"          	: idx
-				},
-				success: function(response){
-					console.log(response);
-					if (response.match("Y") == "Y")
-					{
-						alert("팔로우 되었습니다.");
-						location.reload();
-					}else{
-						alert("다시 입력해 주세요.");
-						location.reload();
-					}
-				}
-			});			
+                if (followClass == "already")
+                {
+                    var confirm_message = "이 친구를 팔로우 취소 할까요?";
+                    var followYN        = "Y";
+                }else{
+                    var confirm_message = "이 친구를 팔로우 할까요?";
+                    var followYN        = "N";
+                }
 
+                if (confirm(confirm_message))
+                {
+                    $.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"				    : "search_follow_member",
+						"follow_idx"          	: idx,
+						"followYN"          	: followYN
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+                            alert("팔로우 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","already");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','already')");
+						}else if (response.match("D") == "D"){
+                            alert("팔로우가 취소 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","add");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+
+                }
 			}
-		}
 
 	</script>
 </body>

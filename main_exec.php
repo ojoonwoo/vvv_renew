@@ -95,7 +95,7 @@ include_once "./include/autoload.php";
                     $flag	= "N";
 			}
 
-			// 회원 이메일, 이름 세션 생성
+            // 회원 이메일, 이름 세션 생성
 			$_SESSION['ss_vvv_email']		= $mb_email;
 			$_SESSION['ss_vvv_idx']		    = $uid;
 			$_SESSION['ss_vvv_name']		= $mb_facebook_name;
@@ -467,25 +467,64 @@ include_once "./include/autoload.php";
             $gubun          = $mnv_f->MobileCheck();
 
             $follow_idx		= $_REQUEST["follow_idx"];
+            $followYN		= $_REQUEST["followYN"];
 
             if ($_SESSION['ss_vvv_idx'])
             {
-                $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
-                $result 	= mysqli_query($my_db, $query);    
+                if ($followYN == "Y")
+                {
+                    // 팔로워 테이블 정보 UPDATE
+                    $query 		= "UPDATE follow_info SET follow_YN='N' WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
+                    $result 	= mysqli_query($my_db, $query);    
 
-                // 회원 테이블(follow) 정보 UPDATE
-                $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count + 1 WHERE idx='".$follow_idx."'";
-                $member_result 	= mysqli_query($my_db, $member_query);    
-                
-                // 회원 테이블(follower) 정보 UPDATE
-                $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count + 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
-                $member_result 	= mysqli_query($my_db, $member_query);    
+                    // 회원 테이블(follow) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count - 1 WHERE idx='".$follow_idx."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
+                    
+                    // 회원 테이블(follower) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count - 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
 
-                if($result) {
-                    $flag = "Y";
+                    if($result) {
+                        $flag = "D";
+                    }else{
+                        $flag = "N";
+                    }
                 }else{
-                    $flag = "N";
+                    $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                    $result 	= mysqli_query($my_db, $query);    
+
+                    // 회원 테이블(follow) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count + 1 WHERE idx='".$follow_idx."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
+                    
+                    // 회원 테이블(follower) 정보 UPDATE
+                    $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count + 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                    $member_result 	= mysqli_query($my_db, $member_query);    
+
+                    if($result) {
+                        $flag = "Y";
+                    }else{
+                        $flag = "N";
+                    }
                 }
+                
+                // $query 		= "INSERT INTO follow_info(follow_idx, follower_idx, follow_regdate) values('".$follow_idx."','".$_SESSION['ss_vvv_idx']."','".date("Y-m-d H:i:s")."')";
+                // $result 	= mysqli_query($my_db, $query);    
+
+                // // 회원 테이블(follow) 정보 UPDATE
+                // $member_query 	= "UPDATE member_info SET mb_follower_count = mb_follower_count + 1 WHERE idx='".$follow_idx."'";
+                // $member_result 	= mysqli_query($my_db, $member_query);    
+                
+                // // 회원 테이블(follower) 정보 UPDATE
+                // $member_query 	= "UPDATE member_info SET mb_following_count = mb_following_count + 1 WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                // $member_result 	= mysqli_query($my_db, $member_query);    
+
+                // if($result) {
+                //     $flag = "Y";
+                // }else{
+                //     $flag = "N";
+                // }
             }else{
                 $flag = "L";
             }
@@ -573,9 +612,9 @@ include_once "./include/autoload.php";
             $c_idx          		= $_REQUEST["c_idx"];
 
             if ($collection_secret == "true")
-                $collection_secret = "Y";
+                $collection_secret = "N";
             else
-                $collection_secret = "N";        
+                $collection_secret = "Y";        
 
             // $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
             // $name_result    = mysqli_query($my_db, $name_query);
