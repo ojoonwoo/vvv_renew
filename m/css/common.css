@@ -476,6 +476,7 @@ header #gnb .burger-wrap .line.mid {
 	border: 0 none;
 	text-align: center;
 	display: inline-block;
+	width: 100%;
 	outline: 0 none;
 	font-size: 11px;
 	padding: 9px 0 15px 2px;
