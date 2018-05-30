@@ -93,7 +93,6 @@
 								</div>
 								<div class="actions">
 									<a href="javascript:like_video('<?=$video_idx?>')" class="action like <?=$like_flag?>" id="like_img"></a>
-<<<<<<< HEAD
 <?
 	if ($_SESSION['ss_vvv_idx'] != "")
 	{
@@ -108,11 +107,6 @@
 ?>							
 									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
 									<a href="" class="action share"></a>
-=======
-									<a href="javascript:alert('준비중입니다.')" class="action collect"></a>
-									<a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a>
-									<a href="javascript:void(0)" class="action share"></a>
->>>>>>> 1012c43e67336bdf3b52b0aa9770c55096db8e7f
 									<ul class="share-spread">
 										<li><a href="#"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
 										<li><a href="#"><img src="./images/detail_share_kt.png" alt="카카오톡 공유"></a></li>
