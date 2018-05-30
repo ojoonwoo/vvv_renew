@@ -462,7 +462,7 @@
 	
 	$is_secret = "";
 
-	if ($mb_data["mb_showYN"] == "Y")
+	if ($mb_data["mb_showYN"] == "N")
 		$is_secret = "is-active";
 ?>                         
 								<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
