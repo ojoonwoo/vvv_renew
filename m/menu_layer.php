@@ -1,5 +1,4 @@
                 <div class="global-menu">
-					<div class="inner">
 						<a href="#" class="btn-close button-menu">
 							<img src="./images/close_x_black.png" alt="">
 						</a>
@@ -19,6 +18,7 @@
     }
 ?>                        
 						</div>
+						<div class="inner">
 						<div class="list-wrap">
 							<ul class="list">
 								<li>
