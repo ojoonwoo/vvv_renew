@@ -608,12 +608,12 @@
 			</div>
 		</div>
 	</div>
-	<script src="./lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src=".../lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
-	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
-	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
 	<script>
             var profile_url = "";
 
