@@ -41,12 +41,20 @@
 									<a href="">
 										<figure class="box-content">
 											<div class="img box-bg">
-												<img src="./images/main_banner_01.jpg" alt="">
+												<img src="./images/cannes_m.png" alt="">
 											</div>
 											<figcaption>
-												<p class="brand">ADEPOL SC</p>
-												<p class="title">We Understand Your Surffering</p>
-												<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+												<p class="brand">CANNES 2017 Grand Prix</p>
+												<!--													<p class="award-summ">2017 Grand Prix</p>-->
+												<p class="title">we're the superhumans</p>
+												<div class="link">
+													<svg class="progress-current">
+														<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+														<polygon points="11,10 21,15 11,20"
+																 style="fill:#f7dd30;"/>
+													</svg>
+													<span class="view">VIEW</span>
+												</div>
 											</figcaption>
 										</figure>
 									</a>
@@ -55,12 +63,20 @@
 									<a href="">
 										<figure class="box-content">
 											<div class="img box-bg">
-												<img src="./images/main_banner_01.jpg" alt="">
+												<img src="./images/newyork_m.png" alt="">
 											</div>
 											<figcaption>
-												<p class="brand">MINIVERTISING</p>
-												<p class="title">2번 슬라이드</p>
-												<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+												<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
+												<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
+												<p class="title">MEET GRAHAM</p>
+												<div class="link">
+													<svg class="progress-current">
+														<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+														<polygon points="11,10 21,15 11,20"
+																 style="fill:#f7dd30;"/>
+													</svg>
+													<span class="view">VIEW</span>
+												</div>
 											</figcaption>
 										</figure>
 									</a>
@@ -69,16 +85,28 @@
 									<a href="">
 										<figure class="box-content">
 											<div class="img box-bg">
-												<img src="./images/main_banner_01.jpg" alt="">
+												<img src="./images/clio_m.png" alt="">
 											</div>
 											<figcaption>
-												<p class="brand">MINIVERTISING</p>
-												<p class="title">3번 슬라이드</p>
-												<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+												<p class="brand">CLIO 2017 Grand</p>
+												<!--													<p class="award-summ">2017 Grand</p>-->
+												<p class="title">fearless girl</p>
+												<div class="link">
+													<svg class="progress-current">
+														<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+														<polygon points="11,10 21,15 11,20"
+																 style="fill:#f7dd30;"/>
+													</svg>
+													<span class="view">VIEW</span>
+												</div>
 											</figcaption>
 										</figure>
 									</a>
 								</div>
+							</div>
+							<div class="number-pagination">
+								<span class="current">1</span>
+								<span class="total">3</span>
 							</div>
 							<div id="main-banner-pagination" class="main-banner-pagination"></div>
 						</div>
@@ -256,11 +284,28 @@
 					},
 					pagination: {
 						el: '.main-banner-pagination',
-						clickable: true,
-						renderBullet: function (index, className) {
-							return '<span class="' + className + '">' + (index + 1) + '</span>';
-						},
+						type: 'progressbar',
+//						clickable: true,
+//						renderBullet: function (index, className) {
+//							return '<span class="' + className + '">' + (index + 1) + '</span>';
+//						},
 					},
+					//					disableOnInteraction: false,
+					on: {
+						init: function() {
+							$('.main-banner').addClass('loaded');
+						},
+						slideChange: function() {
+							$('.number-pagination .current').text(this.realIndex+1);
+						},
+						slideChangeTransitionStart: function() {
+							$('.main-banner').removeClass('loaded');
+						},
+						slideChangeTransitionEnd: function() {
+							$('.main-banner').addClass('loaded');
+						}
+					}
+
 				})
 				//initialize swiper when document ready
 				var bestSwiper = new Swiper ('.best-slider', {
