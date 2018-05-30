@@ -68,6 +68,9 @@
 									<h5 class="title">개인정보 수집 및 이용에 대한 동의</h5>
 									<div class="scroll-box">
 										<div class="inner">
+<?
+	include_once "./agree2_txt.html";
+?>											
 
 										</div>
 									</div>
