@@ -927,6 +927,14 @@
 	font-size: 18px;
 	font-weight: 500;
 }
+.content.user-page .collection-detail .collection-info .texts .secret-mode {
+	display: inline-block;
+	margin-left: 8px;
+	background: url(../images/myvvv_secret_icon.png) center / cover no-repeat;
+	width: 16px;
+	height: 20px;
+	vertical-align: bottom;
+}
 .content.user-page .collection-detail .semi-container {
 	position: relative;
 	padding: 52px 117px;
