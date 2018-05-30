@@ -813,7 +813,7 @@
 
 		$(function () {
 			'use strict';
-			var url = './Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
+			var url = '../Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
 			$('#profile-change').fileupload({
 				url: url,
 				dataType: 'json',
