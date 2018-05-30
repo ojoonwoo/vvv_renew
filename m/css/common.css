@@ -57,7 +57,8 @@ html {
 }
 html.menu-opened body,
 html.popup-opened body,
-html.layer-opened body {
+html.layer-opened body,
+html.search-layer-opened body{
 	height: 100%;
 	overflow-y: hidden !important;
 }
@@ -399,20 +400,19 @@ header #gnb .burger-wrap .line.mid {
 .global-search-layer {
 	position: fixed;
 	top: 0;
-/*	right: 0;*/
-	left: 100vw;
-/*	left: 0;*/
+/*	left: 100vw;*/
+	left: 0;
 	bottom: 0;
 	width: 100%;
 	height: 100vh;
-	z-index: 0;
 	opacity: 0;
+	z-index: 1000;
 	visibility: hidden;
 	overflow: hidden;
-	transition: opacity 0.1s ease, visibility 0.1s ease;
+	transition: opacity 0.25s ease, visibility 0.25s ease;
 	/*	z-index: 2;*/
 }
-.global-search-layer .layer-close {
+.global-search-layer button.search-layer-close {
 	width: 20px;
 	height: 20px;
 	position: absolute;
@@ -431,7 +431,7 @@ header #gnb .burger-wrap .line.mid {
 	width: 100vw;
 	height: 100%;
 	z-index: 1;
-	transition: opacity 0.12s ease;
+	transition: all 0.6s ease;
 }
 .global-search-layer .inner {
 	position: relative;
@@ -443,16 +443,8 @@ header #gnb .burger-wrap .line.mid {
 	overflow-y: scroll !important;
 	-webkit-overflow-scrolling: touch;
 	background: #f2f2f2;
-	transition: left .3s ease;
+	transition: left .25s ease;
 }
-.global-search-layer .search-wrapper {
-}
-/*
-.global-search-layer .search-wrapper .wrap:first-child {
-	margin-bottom: 17px;
-	font-size: 0;
-}
-*/
 .global-search-layer .search-wrapper .search-bar {
 	position: relative;
 	background: url(../images/search_obj_black.png) 40px 9px no-repeat;
@@ -467,18 +459,7 @@ header #gnb .burger-wrap .line.mid {
 	padding: 9px 0 9px 26px;
 	font-size: 13px;
 }
-/*
-.global-search-layer .search-wrapper .search-bar:after {
-	content: '';
-	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background: #333333;
-}
-*/
+
 .global-search-layer .search-wrapper .sortings {
 	padding: 0 30px;
 }
@@ -556,9 +537,6 @@ html.search-layer-opened .global-search-layer .bg-dark {
 }
 html.search-layer-opened .global-search-layer .inner {
 	left: 30vw;
-}
-.app-container {
-	/*	min-width: 1400px;*/
 }
 .app-container .main-container {
 	position: relative;

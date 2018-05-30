@@ -1942,7 +1942,12 @@
 }
 .popup.search-friends .search-result .row .action .add {
 	width: 40px;
-	height: 38px;
+	height: 39px;
 	background: url(../images/search_friend_add.png) 0 0 / cover no-repeat;
+}
+.popup.search-friends .search-result .row .action .already {
+	width: 40px;
+	height: 38px;
+	background: url(../images/search_friend_already.png) 0 0 / cover no-repeat;
 }
 /* 팝업 개별코드 */

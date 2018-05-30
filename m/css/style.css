@@ -1796,6 +1796,11 @@
 	height: 18px;
 	background: url(../images/search_friend_add.png) 0 0 / cover no-repeat;
 }
+.popup.search-friends .search-result .row .action .already {
+	width: 18px;
+	height: 18px;
+	background: url(../images/search_friend_already.png) 0 0 / cover no-repeat;
+}
 
 .layer.collection-pick {
 	height: calc(100vh - 76px);
