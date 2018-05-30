@@ -253,10 +253,10 @@
 				$win = $(window),
 				$html = $('html');
 			$doc.on('click', '.button-search', function() {
-				$html.addClass('layer-opened');
+				$html.addClass('search-layer-opened');
 			});
-			$doc.on('click', '.layer-close', function() {
-				$html.removeClass('layer-opened');
+			$doc.on('click', '.search-layer-close', function() {
+				$html.removeClass('search-layer-opened');
 			});
 			$doc.on('click', '.button-menu', function() {
 				$html.toggleClass('menu-opened');
