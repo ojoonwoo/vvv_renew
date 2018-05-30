@@ -415,7 +415,18 @@
 					<div class="area-picture">
 						<div class="pic-wrap">
 							<div class="picture">
+<?
+	if ($mb_data['mb_nickname'] == "")
+	{
+?>
 								<img src="./images/newyork_m.png" alt="">
+<?
+    }else{
+?>        
+                                <img src="<?=$mb_data["mb_profile_url"]?>" alt="">
+<?
+    }
+?>                                
 							</div>
 							<div class="btn-edit">
 								<label for="profile-change">프로필 사진 바꾸기</label>
@@ -429,7 +440,7 @@
 								닉네임
 							</div>
 							<div class="input">
-								<input type="text" value="쭌우">
+								<input type="text" id="edit_nickname" value="<?=$mb_data['mb_nickname']?>">
 							</div>
 						</div>
 						<div class="input-group">
@@ -437,9 +448,19 @@
 								계정정보
 							</div>
 							<div class="input">
-<!--								<i class="fb"></i>-->
+<?
+    if ($mb_data["mb_login_way"] == "kakao")
+    {
+?>   
 								<i class="kt"></i>
-								<input type="text" value="minivertising@minivertising.kr" readonly disabled>
+<?
+    }else{
+?>        
+								<i class="fb"></i>
+<?
+    }
+?>                         
+								<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 							</div>
 						</div>
 						<div class="input-group secret">
@@ -456,7 +477,7 @@
 					</div>
 					<div class="button-wrap">
 						<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
-						<button type="button">완료</button>
+						<button type="button" onclick="edit_profile()">완료</button>
 					</div>
 				</div>
 			</div>
@@ -587,7 +608,15 @@
 			</div>
 		</div>
 	</div>
+	<script src="./lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+	<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+	<script src="./lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
 	<script>
+            var profile_url = "";
+
 		//	기본 기능 테스트 코드
 		$doc = $(document),
 			$win = $(window),
@@ -781,6 +810,146 @@
 				});		
 			}
 		}
+
+		$(function () {
+			'use strict';
+			var url = './Upload.php?mid=<?=$_SESSION['ss_vvv_idx']?>';
+			$('#profile-change').fileupload({
+				url: url,
+				dataType: 'json',
+				autoUpload: true,
+				acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+				maxFileSize: 10000000,
+				disableImageResize: /Android(?!.*Chrome)|Opera/
+					.test(window.navigator.userAgent),
+				previewThumbnail: false,
+				previewCrop: false
+			}).on('fileuploadadd', function (e, data) {
+				data.context = $('<div id="prev_thum"/>').appendTo('.img-area');
+				$.each(data.files, function (index, file) {
+					var node = $('<p style="margin:0" />');
+					node.appendTo(data.context);
+				});
+			}).on('fileuploadprocessalways', function (e, data) {
+				var index = data.index,
+					file = data.files[index],
+					node = $(data.context.children()[index]);
+				if (file.preview) {
+					node
+						.prepend('<br>')
+						.prepend(file.preview);
+				}
+				if (file.error) {
+					node
+						.append('<br>')
+						.append($('<span class="text-danger"/>').text(file.error));
+				}
+			}).on('fileuploadprogressall', function (e, data) {
+				var progress = parseInt(data.loaded / data.total * 100, 10);
+				$('#progress .progress-bar').css(
+					'width',
+					progress + '%'
+				);
+			}).on('fileuploaddone', function (e, data) {
+				$.each(data.result.files, function (index, file) {
+					console.log(file);
+					if (file.url) {
+						profile_url = file.url;
+						$(".picture > img").attr("src",file.url);
+					} else if (file.error) {
+						var error = $('<span class="text-danger"/>').text(file.error);
+						$(data.context.children()[index])
+							.append('<br>')
+							.append(error);
+					}
+				});
+			}).on('fileuploadfail', function (e, data) {
+				$.each(data.files, function (index) {
+					var error = $('<span class="text-danger"/>').text('File upload failed.');
+					$(data.context.children()[index])
+						.append('<br>')
+						.append(error);
+				});
+			}).prop('disabled', !$.support.fileInput)
+				.parent().addClass($.support.fileInput ? undefined : 'disabled');
+		});     
+		
+		function edit_profile()
+		{
+			var edit_nickname   = $("#edit_nickname").val();
+			var edit_secret	    = $("input:checkbox[id='profile-secret']").is(":checked");
+
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./main_exec.php",
+				data:{
+					"exec"				: "edit_member",
+					"edit_nickname"     : edit_nickname,
+					"edit_secret"		: edit_secret,
+					"profile_url"		: profile_url
+				},
+				success: function(response){
+					console.log(response);
+					if (response.match("Y") == "Y")
+					{
+						alert("회원 정보가 수정 되었습니다.");
+						location.reload();
+					}else{
+						alert("다시 수정해 주세요.");
+						location.reload();
+					}
+				}
+			});
+		}
+
+		function search_friends()
+		{
+			var search_nickname = $("#search_nickname").val();
+
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./ajax_friends.php",
+				data:{
+					"search_nickname"   : search_nickname
+				},
+				success: function(response){
+					console.log(response);
+					$(".scroll-box").html(response);
+				}
+			});
+			
+		}
+
+		function search_follow_member(idx)
+		{
+			if (confirm("팔로우 하시겠어요?"))
+			{
+				$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./main_exec.php",
+				data:{
+					"exec"				    : "search_follow_member",
+					"follow_idx"          	: idx
+				},
+				success: function(response){
+					console.log(response);
+					if (response.match("Y") == "Y")
+					{
+						alert("팔로우 되었습니다.");
+						location.reload();
+					}else{
+						alert("다시 입력해 주세요.");
+						location.reload();
+					}
+				}
+			});			
+
+			}
+		}
+
 	</script>
 </body>
 
