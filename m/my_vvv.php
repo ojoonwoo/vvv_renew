@@ -855,7 +855,7 @@
 					console.log(file);
 					if (file.url) {
 						profile_url = file.url;
-						$(".picture > img").attr("src",file.url);
+						$(".picture > img").attr("src","."+file.url);
 					} else if (file.error) {
 						var error = $('<span class="text-danger"/>').text(file.error);
 						$(data.context.children()[index])
