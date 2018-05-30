@@ -405,6 +405,187 @@
 				</div>
 			</div>
 		</div>
+		<div class="popup profile-edit" id="profile-edit">
+			<button type="button" class="popup-close" data-popup="@close"></button>
+			<div class="inner">
+				<div class="title">
+					<h5>프로필 수정</h5>
+				</div>
+				<div class="content">
+					<div class="area-picture">
+						<div class="pic-wrap">
+							<div class="picture">
+								<img src="./images/newyork_m.png" alt="">
+							</div>
+							<div class="btn-edit">
+								<label for="profile-change">프로필 사진 바꾸기</label>
+								<input type="file" id="profile-change">
+							</div>
+						</div>
+					</div>
+					<div class="area-info">
+						<div class="input-group">
+							<div class="guide">
+								닉네임
+							</div>
+							<div class="input">
+								<input type="text" value="쭌우">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="guide">
+								계정정보
+							</div>
+							<div class="input">
+<!--								<i class="fb"></i>-->
+								<i class="kt"></i>
+								<input type="text" value="minivertising@minivertising.kr" readonly disabled>
+							</div>
+						</div>
+						<div class="input-group secret">
+							<div class="guide">
+								비공개 계정
+							</div>
+							<div class="input setting">
+								<div class="toggle secret is-active">
+									<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret">
+									<div class="toggle-circle"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="button-wrap">
+						<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
+						<button type="button">완료</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup search-friends" id="search-friends">
+			<button type="button" class="popup-close" data-popup="@close"></button>
+			<div class="inner">
+				<div class="title">
+					<h5>친구 검색</h5>
+				</div>
+				<div class="content">
+					<div class="search-wrap">
+						<div class="search-bar">
+							<input type="text" placeholder="친구 닉네임 검색">
+							<div class="placeholder-icon"></div>
+						</div>
+						<div class="search-result">
+							<div class="scroll-box">
+								<div class="row">
+									<div class="img">
+										<img src="./images/profile_sample.jpg" alt="">
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="add"></button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="img">
+										<img src="./images/profile_sample.jpg" alt="">
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="add"></button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="img">
+										<img src="./images/profile_sample.jpg" alt="">
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="add"></button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="img">
+										<img src="./images/profile_sample.jpg" alt="">
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="add"></button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="img">
+										<img src="./images/profile_sample.jpg" alt="">
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="add"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script>
 		//	기본 기능 테스트 코드
