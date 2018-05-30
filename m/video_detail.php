@@ -360,7 +360,7 @@
 			$doc.on('click', '.button-search', function() {
 				$html.addClass('search-layer-opened');
 			});
-			$doc.on('click', '.layer-close', function() {
+			$doc.on('click', '.search-layer-close', function() {
 				$html.removeClass('search-layer-opened');
 			});
 			$doc.on('click', '.button-menu', function() {
