@@ -324,7 +324,7 @@
                     var followYN        = "Y";
                 }else{
                     var confirm_message = "이 친구를 팔로우 할까요?";
-                    var followYN        = "Y";
+                    var followYN        = "N";
                 }
 
                 if (confirm(confirm_message))
