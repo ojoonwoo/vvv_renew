@@ -404,6 +404,7 @@
 //			공유 버튼 토글
 			$doc.on('click', '.actions .share', function() {
 				$(this).toggleClass('is-active');
+				return false;
 			});
 
 			// 유튜브 api 재생 클릭시 이벤트 설정
