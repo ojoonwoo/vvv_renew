@@ -6,8 +6,14 @@
 
     $search_nickname         = $_REQUEST["search_nickname"];
 
-	$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%'";
-	$result			= mysqli_query($my_db, $query);
+	if ($search_nickname == "")
+	{
+		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%abcdefghijklmnopqrstuvwxyz%'";
+		$result			= mysqli_query($my_db, $query);
+	}else{
+		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%'";
+		$result			= mysqli_query($my_db, $query);
+	}
 
 	while ($data = mysqli_fetch_array($result))
 	{
