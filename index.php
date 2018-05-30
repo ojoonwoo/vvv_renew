@@ -253,7 +253,6 @@
 			direction: 'horizontal',
 			effect: 'fade',
 			speed: 650,
-			slidesPerGroup: 3,
 			loop: true,
 			autoplay: {
 				delay: 4000	
@@ -272,6 +271,8 @@
 			direction: 'horizontal',
 			loop: true,
 			slidesPerView: 3,
+			slidesPerGroup: 3,
+			loopFillGroupWithBlank: true,
 			spaceBetween: 30,
 			navigation: {
 				nextEl: '.button-next',
