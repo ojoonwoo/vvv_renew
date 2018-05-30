@@ -316,9 +316,9 @@
                 
             }
 
-            function search_follow_member(idx, followYN)
+            function search_follow_member(idx, followClass)
 			{
-                if (followYN == "already")
+                if (followClass == "already")
                 {
                     var confirm_message = "이 친구를 팔로우 취소 할까요?";
                     var followYN        = "Y";
@@ -345,10 +345,12 @@
                             alert("팔로우 되었습니다.");
                             // location.reload();
                             $("#f_btn_"+idx).attr("class","already");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','already')");
 						}else if (response.match("D") == "D"){
                             alert("팔로우가 취소 되었습니다.");
                             // location.reload();
                             $("#f_btn_"+idx).attr("class","add");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();
