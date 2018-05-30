@@ -21,7 +21,7 @@
 		$collect_result			= mysqli_query($my_db, $collect_query);
 		$collect_count			= mysqli_num_rows($collect_result);
 
-		$follow_query			= "SELECT * FROM follow_info WHERE follow_idx='".$data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."'";
+		$follow_query			= "SELECT * FROM follow_info WHERE follow_idx='".$data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."' AND follow_YN='Y'";
 		$follow_result			= mysqli_query($my_db, $follow_query);
 		$follow_count			= mysqli_num_rows($follow_result);
 		if ($follow_count > 0)
