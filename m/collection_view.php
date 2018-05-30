@@ -98,7 +98,7 @@
 									<!--내 컬렉션일경우-->
 									<div class="myaction">
 										<button type="button" class="edit" data-popup="#collection-edit">설정</button>
-										<button type="button" class="add" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>'">추가</button>
+										<button type="button" class="add" onclick="location.href='collection_addvideo.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$mb_idx?>&my=<?=$my_idx?>'">추가</button>
 										<button type="button" class="delete" data-mode-change="delete">삭제</button>
 									</div>
 									<!--내 컬렉션일경우-->
