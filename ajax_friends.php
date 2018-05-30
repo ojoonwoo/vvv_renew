@@ -18,8 +18,16 @@
 	while ($data = mysqli_fetch_array($result))
 	{
 		$collect_query			= "SELECT * FROM collection_info WHERE collection_mb_idx='".$data["idx"]."'";
-		$collect_result			= mysqli_query($my_db, $query);
+		$collect_result			= mysqli_query($my_db, $collect_query);
 		$collect_count			= mysqli_num_rows($collect_result);
+
+		$follow_query			= "SELECT * FROM follow_info WHERE follow_idx='".$data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."'";
+		$follow_result			= mysqli_query($my_db, $follow_query);
+		$follow_count			= mysqli_num_rows($follow_result);
+		if ($follow_count > 0)
+			$add_friends	= "already";
+		else
+			$add_friends	= "add";		
 ?>
 									<div class="row">
 										<div class="img">
@@ -50,7 +58,7 @@
 											</div>
 										</div>
 										<div class="action">
-											<button type="button" class="add" onclick="search_follow_member(<?=$data["idx"]?>)"></button>
+											<button type="button" class="<?=$add_friends?>" onclick="search_follow_member(<?=$data["idx"]?>)"></button>
 										</div>
 									</div>
 <?
