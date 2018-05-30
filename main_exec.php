@@ -471,7 +471,7 @@ include_once "./include/autoload.php";
 
             if ($_SESSION['ss_vvv_idx'])
             {
-                if ($$followYN == "Y")
+                if ($followYN == "Y")
                 {
                     // 팔로워 테이블 정보 UPDATE
                     $query 		= "UPDATE follow_info SET follow_YN='N' WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
