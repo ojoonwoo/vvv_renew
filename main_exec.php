@@ -118,25 +118,33 @@ include_once "./include/autoload.php";
             else
                 $mb_emailYN = "N";
             
-            // if ($mb_nickname == "")
-            // {
+            if ($mb_nickname == "")
+            {
                 $query		= "UPDATE member_info SET mb_email='".$mb_email."', mb_nickname='".$mb_nickname."', mb_emailYN='".$mb_emailYN."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
                 $result		= mysqli_query($my_db, $query);    
-            // }else{
-            //     $dupli_query		= "SELECT * FROM member_info WHERE 1 AND mb_nickname='".$mb_nickname."'";
-            //     $dupli_result		= mysqli_query($my_db, $dupli_query);
-            //     $dupli_count		= mysqli_num_rows($dupli_result);
 
-            //     if ($dupli_count > 0)
-            //     {
+                if ($result)
+                    $flag	= "Y";
+                else
+                    $flag	= "N";
+            }else{
+                $dupli_query		= "SELECT * FROM member_info WHERE 1 AND mb_nickname='".$mb_nickname."'";
+                $dupli_result		= mysqli_query($my_db, $dupli_query);
+                $dupli_count		= mysqli_num_rows($dupli_result);
 
-            //     }
-            // }
+                if ($dupli_count > 0)
+                {
+                    $flag = "D";
+                }else{
+                    $query		= "UPDATE member_info SET mb_email='".$mb_email."', mb_nickname='".$mb_nickname."', mb_emailYN='".$mb_emailYN."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                    $result		= mysqli_query($my_db, $query);    
 
-            if ($result)
-                $flag	= "Y";
-            else
-                $flag	= "N";
+                    if ($result)
+                        $flag	= "Y";
+                    else
+                        $flag	= "N";
+                }
+            }
 
             echo $flag;
         break;
