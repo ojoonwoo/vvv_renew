@@ -36,6 +36,9 @@
 <?
     include_once "./header_layer.php";
 ?>
+			<a href="javascript:void(0)" id="go-top">
+				<img src="./images/go_top.png" alt="go top">
+			</a>
 			<div class="main-container">
 				<div class="content main">
 					<div class="main-banner swiper-container">
@@ -44,12 +47,42 @@
 								<a href="">
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_01.jpg" alt="">
+											<img src="./images/main_banner_01.png" alt="">
 										</div>
 										<figcaption>
-											<p class="brand">ADEPOL SC</p>
-											<p class="title">We Understand Your Surffering</p>
-											<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+											<p class="brand">CANNES 2017 Grand Prix</p>
+											<!--													<p class="award-summ">2017 Grand Prix</p>-->
+											<p class="title">we're the superhumans</p>
+											<div class="link">
+												<svg class="progress-current">
+													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+													<polygon points="23,19 41,29 23,39"
+															 style="fill:#f7dd30;"/>
+												</svg>
+												<span class="view">VIEW</span>
+											</div>
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="swiper-slide _02">
+								<a href="">
+									<figure class="box-content">
+										<div class="img box-bg">
+											<img src="./images/main_banner_02.png" alt="">
+										</div>
+										<figcaption>
+											<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
+											<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
+											<p class="title">MEET GRAHAM</p>
+											<div class="link">
+												<svg class="progress-current">
+													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+													<polygon points="23,19 41,29 23,39"
+															 style="fill:#f7dd30;"/>
+												</svg>
+												<span class="view">VIEW</span>
+											</div>
 										</figcaption>
 									</figure>
 								</a>
@@ -58,30 +91,28 @@
 								<a href="">
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_01.jpg" alt="">
+											<img src="./images/main_banner_03.png" alt="">
 										</div>
 										<figcaption>
-											<p class="brand">MINIVERTISING</p>
-											<p class="title">2번 슬라이드</p>
-											<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
+											<p class="brand">CLIO 2017 Grand</p>
+											<!--													<p class="award-summ">2017 Grand</p>-->
+											<p class="title">fearless girl</p>
+											<div class="link">
+												<svg class="progress-current">
+													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+													<polygon points="23,19 41,29 23,39"
+															 style="fill:#f7dd30;"/>
+												</svg>
+												<span class="view">VIEW</span>
+											</div>
 										</figcaption>
 									</figure>
 								</a>
 							</div>
-							<div class="swiper-slide">
-								<a href="">
-									<figure class="box-content">
-										<div class="img box-bg">
-											<img src="./images/main_banner_01.jpg" alt="">
-										</div>
-										<figcaption>
-											<p class="brand">MINIVERTISING</p>
-											<p class="title">3번 슬라이드</p>
-											<p class="summary">우리는 당신의 고통을 진심으로 이해합니다</p>
-										</figcaption>
-									</figure>
-								</a>
-							</div>
+						</div>
+						<div class="number-pagination">
+							<span class="current">1</span>
+							<span class="total">3</span>
 						</div>
 						<div id="main-banner-pagination" class="main-banner-pagination"></div>
 					</div>
@@ -179,20 +210,23 @@
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
 		// $title_count    = mb_strlen($recent_data["video_title"],'utf-8');
-		$title_count    = mb_strlen(iconv('UTF-8','CP949',$recent_data["video_title"]));
-
-		if ($title_count > 30)
-            $video_title    = substr($recent_data["video_title"],0,30)."...";
-        else
-			$video_title    = $recent_data["video_title"];
-			
-        // 브랜드 줄바꿈 방지 글자 자르기
-        $brand_count    = mb_strlen($recent_data["video_brand"],'utf-8');
-
-        if ($title_count > 30)
-            $video_brand    = substr($recent_data["video_brand"],0,30)."..";
-        else
-            $video_brand    = $recent_data["video_brand"];
+//		$title_count    = mb_strlen(iconv('UTF-8','CP949',$recent_data["video_title"]));
+//
+//		if ($title_count > 30)
+//            $video_title    = substr($recent_data["video_title"],0,30)."...";
+//        else
+//			$video_title    = $recent_data["video_title"];
+//			
+//        // 브랜드 줄바꿈 방지 글자 자르기
+//        $brand_count    = mb_strlen($recent_data["video_brand"],'utf-8');
+//
+//        if ($title_count > 30)
+//            $video_brand    = substr($recent_data["video_brand"],0,30)."..";
+//        else
+//            $video_brand    = $recent_data["video_brand"];
+		
+		$video_title    = $recent_data["video_title"];
+		$video_brand    = $recent_data["video_brand"];
 			
 ?>                            
 							<div class="video col-lg-4 col-md-3 col-sm-2">
@@ -259,11 +293,26 @@
 			},
 			pagination: {
 				el: '.main-banner-pagination',
-				clickable: true,
-				renderBullet: function (index, className) {
-					return '<span class="' + className + '">' + (index + 1) + '</span>';
-				},
+				type: 'progressbar',
+//				clickable: true,
+//				renderBullet: function (index, className) {
+//					return '<span class="' + className + '">' + (index + 1) + '</span>';
+//				},
 			},
+			on: {
+				init: function() {
+					$('.main-banner').addClass('loaded');
+				},
+				slideChange: function() {
+					$('.number-pagination .current').text(this.realIndex+1);
+				},
+				slideChangeTransitionStart: function() {
+					$('.main-banner').removeClass('loaded');
+				},
+				slideChangeTransitionEnd: function() {
+					$('.main-banner').addClass('loaded');
+				}
+			}
 		})
 		//initialize swiper when document ready
 		var bestSwiper = new Swiper ('.best-slider', {

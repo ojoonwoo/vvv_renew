@@ -116,6 +116,12 @@ input:focus,
 button:focus {
 	outline: 0;
 }
+#go-top {
+	position: fixed;
+	right: 60px;
+	bottom: 60px;
+	z-index: 3;
+}
 .header-container {
 	background: #f2f2f2;
 	height: 150px;
@@ -580,9 +586,13 @@ html.search-layer-opened .global-search-layer .inner {
 	font-weight: 700;
 }
 .content .list-container .video figure figcaption .title {
-	margin: 6px 0 10px;
+	margin: 6px 0 7px;
 	font-size: 16px;
 	font-weight: 500;
+	overflow: hidden;
+	line-height: 21px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .content .list-container .video figure figcaption .icon-wrap {
 	font-size: 0;
@@ -829,6 +839,45 @@ button.btn-light-grey {
 }
 
 /* jquery ui customize */
+
+/* swiper customize */
+.swiper-container-horizontal>.swiper-pagination-progressbar, .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+	top: inherit;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+	background: #f7dd30;
+}
+.swiper-container-horizontal>.swiper-pagination-progressbar, .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+	height: 4px;
+}
+.swiper-pagination-progressbar {
+		background: rgba(255, 255, 255, 0.32);
+}
+.number-pagination {
+	position: absolute;
+	bottom: 99px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0;
+	z-index: 1;
+}
+.number-pagination span {
+	font-size: 13px;
+	color: #ffffff;
+	font-weight: 900;
+	display: inline-block;
+	vertical-align: middle;
+}
+.number-pagination span.current {
+	color: #f7dd30;
+}
+.number-pagination span.total::before {
+	content: "/";
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: top;
+}
+/* swiper customize */
 
 /* animation */
 .anim-blur {
