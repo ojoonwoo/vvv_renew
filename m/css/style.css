@@ -991,11 +991,11 @@
 	width: 112px;
 	height: 112px;
 */
-	flex-basis: 120px;
-	margin: 0 auto;
+	width: 90px;
+	height: 90px;
+	margin: 0 17px 0 0;
 	border-radius: 50%;
 	overflow: hidden;
-	margin-right: 17px;
 }
 .content.user-page .user-info .profile-img img {
 	width: 100%;
@@ -1005,8 +1005,7 @@
 	max-width: none;
 }
 .content.user-page .user-info .info-wrap {
-	flex-basis: 100%;
-/*	width: 100%;*/
+	width: calc(100% - 107px);
 	color: #ffffff;
 }
 .content.user-page .user-info .info-wrap .wrap-user {
@@ -2135,5 +2134,13 @@
 @media all and (max-width: 350px) {
 	.content.user-page .user-info .info-wrap .wrap-actions > div .count {
 		display: block;
+	}
+	.content.user-page .user-info .profile-img {
+		width: 80px;
+		height: 80px;
+	}
+	.content.user-page .user-info .info-wrap {
+		width: calc(100% - 97px);
+		color: #ffffff;
 	}
 }
