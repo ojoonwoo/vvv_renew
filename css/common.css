@@ -345,20 +345,20 @@ header .actions .search-wrap > button > span {
 	margin-right: 36px;
 }
 .global-menu .about-us .contacts .sns .mail {
-	width: 28px;
-	height: 21px;
+	width: 20px;
+	height: 15px;
 	background: url(../images/contact_mail.png) center no-repeat;
 	background-size: cover;
 }
 .global-menu .about-us .contacts .sns .facebook {
-	width: 14px;
-	height: 25px;
+	width: 9px;
+	height: 17px;
 	background: url(../images/contact_fb.png) center no-repeat;
 	background-size: cover;
 }
 .global-menu .about-us .contacts .sns .instagram {
-	width: 24px;
-	height: 24px;
+	width: 20px;
+	height: 20px;
 	background: url(../images/contact_insta.png) center no-repeat;
 	background-size: cover;
 }
