@@ -1259,6 +1259,10 @@
 }
 .content.user-page .video-list > .video figure figcaption .brand {
 	font-size: 10px;
+	line-height: 14px;
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .content.user-page .video-list > .video figure figcaption .title {
 	margin: 4px 0 3px;
