@@ -101,7 +101,7 @@
 									<ul class="share-spread">
 										<li class="fb"><a href="javascript:sns_share('fb')"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
 										<li class="kt"><a href="javascript:sns_share('kt')"><img src="./images/detail_share_kt.png" alt="카카오톡 공유"></a></li>
-										<li class="url"><a href="javascript:sns_share('lk')" data-clipboard-text="http://minivertising-test.com/video_detail.php?idx=<?=$video_idx?>" data-toggle="tooltip"><img src="./images/detail_share_url.png" alt="링크 공유"></a></li>
+										<li class="url"><a href="javascript:sns_share('lk')" class="clipboardBtn" data-clipboard-text="http://minivertising-test.com/video_detail.php?idx=<?=$video_idx?>" data-toggle="tooltip"><img src="./images/detail_share_url.png" alt="링크 공유"></a></li>
 									</ul>
 								</div>
 								<div class="block-comment">
