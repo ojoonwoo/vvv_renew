@@ -29,10 +29,16 @@
 												<span class="u-id"><?=$mb_data['mb_nickname']?></span>
 <?
 	}
+
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
 ?>
 												<a href="javascript:void(0)" class="setting" data-popup="#profile-edit">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
+<?
+	}
+?>												
 											</div>
 										</div>
 										<div class="wrap-actions">
