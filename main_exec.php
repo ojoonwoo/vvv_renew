@@ -118,8 +118,17 @@ include_once "./include/autoload.php";
             else
                 $mb_emailYN = "N";
             
-            $query		= "UPDATE member_info SET mb_email='".$mb_email."', mb_nickname='".$mb_nickname."', mb_emailYN='".$mb_emailYN."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
-            $result		= mysqli_query($my_db, $query);
+            // if ($mb_nickname == "")
+            // {
+                $query		= "UPDATE member_info SET mb_email='".$mb_email."', mb_nickname='".$mb_nickname."', mb_emailYN='".$mb_emailYN."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
+                $result		= mysqli_query($my_db, $query);    
+            // }else{
+            //     $dupli_query		= "SELECT * FROM member_info WHERE 1 AND mb_nickname='".$mb_nickname."'";
+            //     $dupli_result		= mysqli_query($my_db, $dupli_query);
+            //     $dupli_count		= mysqli_num_rows($dupli_result);
+
+            //     if ()
+            // }
 
             if ($result)
                 $flag	= "Y";
