@@ -284,7 +284,7 @@
             {
                 var edit_nickname   = $("#edit_nickname").val();
                 var edit_secret	    = $("input:checkbox[id='profile-secret']").is(":checked");
-
+console.log(edit_secret);
 				$.ajax({
 					type   : "POST",
 					async  : false,
