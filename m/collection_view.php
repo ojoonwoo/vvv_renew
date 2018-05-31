@@ -79,7 +79,14 @@
 									<div class="texts">
 										<span class="title"><?=$collection_data["collection_name"]?></span>
 										<span class="summary"><?=$collection_data["collection_desc"]?></span>
+<?
+	if ($collection_data["collection_secret"] == "N")
+	{
+?>										
 										<div class="secret-mode"></div>
+<?
+	}
+?>										
 									</div>
 									<div class="counts">
 										<span class="wrap">
