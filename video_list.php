@@ -393,7 +393,14 @@
 						else
 							$(".read-more").show();
 						$("#list_video").append(res_arr[0]);
-						// $("#list_video").html(response);
+						$("#list_video > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 100 * i);
+							})(this, index);
+
+						});
 					}
 				});
 			});

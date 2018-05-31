@@ -210,6 +210,22 @@
 	}
 	vvv.toggle.bind();
 
+	$(window).on('scroll', function() {
+		var currentScroll = $(this).scrollTop();
+
+		if(currentScroll > 1500) {
+			TweenMax.to($('#go-top'), 0.3, {css:{autoAlpha: 1}});
+		} else {
+			TweenMax.to($('#go-top'), 0.3, {css:{autoAlpha: 0}});
+		}
+	});
+
+	// 위로 가기
+	$doc.on('click', '#go-top', function() {
+		$('html, body').animate({scrollTop :  0}, 1000);
+	});
+	
+
 	// checkbox
 //	ui.checkbox = {
 //		bind : function(){

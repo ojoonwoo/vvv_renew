@@ -121,6 +121,7 @@ button:focus {
 	right: 60px;
 	bottom: 60px;
 	z-index: 3;
+	opacity: 0;
 }
 .header-container {
 	background: #f2f2f2;

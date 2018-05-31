@@ -352,6 +352,7 @@
 			}
 		})
 	});
+
 	$(function() {
 //		$('.global-search-layer .sort').each(function() {
 //			$(this).selectmenu();
@@ -400,8 +401,8 @@
 				});
 			}
 		});
-
 	});
+
 	// 검색 APPLY 클릭
 	$doc.on('click', '#search-layer-submit', function() {
         var search_keyword      = nullToBlank($("#search_keyword").val());
