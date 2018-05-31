@@ -47,14 +47,16 @@
 												<p class="brand">CANNES 2017 Grand Prix</p>
 												<!--													<p class="award-summ">2017 Grand Prix</p>-->
 												<p class="title">we're the superhumans</p>
-												<div class="link">
-													<svg class="progress-current">
-														<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
-														<polygon points="11,10 21,15 11,20"
-																 style="fill:#f7dd30;"/>
-													</svg>
-													<span class="view">VIEW</span>
-												</div>
+												<a href="video_detail.php?idx=448">
+													<div class="link">
+														<svg class="progress-current">
+															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+															<polygon points="11,10 21,15 11,20"
+																	style="fill:#f7dd30;"/>
+														</svg>
+														<span class="view">VIEW</span>
+													</div>
+												</a>
 											</figcaption>
 										</figure>
 									</a>
@@ -69,14 +71,16 @@
 												<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
 												<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
 												<p class="title">MEET GRAHAM</p>
-												<div class="link">
-													<svg class="progress-current">
-														<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
-														<polygon points="11,10 21,15 11,20"
-																 style="fill:#f7dd30;"/>
-													</svg>
-													<span class="view">VIEW</span>
-												</div>
+												<a href="video_detail.php?idx=438">
+													<div class="link">
+														<svg class="progress-current">
+															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+															<polygon points="11,10 21,15 11,20"
+																	style="fill:#f7dd30;"/>
+														</svg>
+														<span class="view">VIEW</span>
+													</div>
+												</a>
 											</figcaption>
 										</figure>
 									</a>
@@ -91,14 +95,16 @@
 												<p class="brand">CLIO 2017 Grand</p>
 												<!--													<p class="award-summ">2017 Grand</p>-->
 												<p class="title">fearless girl</p>
-												<div class="link">
-													<svg class="progress-current">
-														<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
-														<polygon points="11,10 21,15 11,20"
-																 style="fill:#f7dd30;"/>
-													</svg>
-													<span class="view">VIEW</span>
-												</div>
+												<a href="video_detail.php?idx=823">
+													<div class="link">
+														<svg class="progress-current">
+															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
+															<polygon points="11,10 21,15 11,20"
+																	style="fill:#f7dd30;"/>
+														</svg>
+														<span class="view">VIEW</span>
+													</div>
+												</a>
 											</figcaption>
 										</figure>
 									</a>
