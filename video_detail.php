@@ -378,29 +378,7 @@
 			});
 
 			//	기본 기능 테스트 코드
-			$doc = $(document),
-				$win = $(window),
-				$html = $('html');
-			$doc.on('click', '.button-search', function() {
-				$html.addClass('layer-opened');
-			});
-			$doc.on('click', '.layer-close', function() {
-				$html.removeClass('layer-opened');
-			});
-			$doc.on('click', '.button-menu', function() {
-				$html.toggleClass('menu-opened');
-			});
-			$win.on('scroll', function() {
-				if(150 < $(this).scrollTop()) {
-					$('.side-nav .search-wrap').css({
-						opacity: 1
-					});
-				} else {
-					$('.side-nav .search-wrap').css({
-						opacity: 0
-					});
-				}
-			});
+			$doc = $(document);
 			
 //			공유 버튼 토글
 			$doc.on('click', '.actions .share', function() {
