@@ -38,6 +38,9 @@
 <?
     include_once "./header_layer.php";
 ?>
+				<a href="javascript:void(0)" id="go-top">
+					<img src="./images/go_top.png" alt="go top">
+				</a>
 				<div class="main-container">
 					<div class="content vid-list">
 						<div class="inner">
