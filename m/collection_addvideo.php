@@ -293,7 +293,7 @@
 					success: function(response){
 						console.log(response);
 						alert("컬렉션에 영상이 적용되었습니다.");
-						location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+						location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>&my=<?=$_REQUEST["my"]?>";
 					}
 				});			
 

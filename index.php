@@ -53,14 +53,16 @@
 											<p class="brand">CANNES 2017 Grand Prix</p>
 											<!--													<p class="award-summ">2017 Grand Prix</p>-->
 											<p class="title">we're the superhumans</p>
-											<div class="link">
-												<svg class="progress-current">
-													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
-													<polygon points="23,19 41,29 23,39"
-															 style="fill:#f7dd30;"/>
-												</svg>
-												<span class="view">VIEW</span>
-											</div>
+											<a href="video_detail.php?idx=448">
+												<div class="link">
+													<svg class="progress-current">
+														<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+														<polygon points="23,19 41,29 23,39"
+																style="fill:#f7dd30;"/>
+													</svg>
+													<span class="view">VIEW</span>
+												</div>
+											</a>
 										</figcaption>
 									</figure>
 								</a>
@@ -75,14 +77,16 @@
 											<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
 											<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
 											<p class="title">MEET GRAHAM</p>
-											<div class="link">
-												<svg class="progress-current">
-													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
-													<polygon points="23,19 41,29 23,39"
-															 style="fill:#f7dd30;"/>
-												</svg>
-												<span class="view">VIEW</span>
-											</div>
+											<a href="video_detail.php?idx=438">
+												<div class="link">
+													<svg class="progress-current">
+														<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+														<polygon points="23,19 41,29 23,39"
+																style="fill:#f7dd30;"/>
+													</svg>
+													<span class="view">VIEW</span>
+												</div>
+											</a>
 										</figcaption>
 									</figure>
 								</a>
@@ -97,14 +101,16 @@
 											<p class="brand">CLIO 2017 Grand</p>
 											<!--													<p class="award-summ">2017 Grand</p>-->
 											<p class="title">fearless girl</p>
-											<div class="link">
-												<svg class="progress-current">
-													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
-													<polygon points="23,19 41,29 23,39"
-															 style="fill:#f7dd30;"/>
-												</svg>
-												<span class="view">VIEW</span>
-											</div>
+											<a href="video_detail.php?idx=823">
+												<div class="link">
+													<svg class="progress-current">
+														<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+														<polygon points="23,19 41,29 23,39"
+																style="fill:#f7dd30;"/>
+													</svg>
+													<span class="view">VIEW</span>
+												</div>
+											</a>
 										</figcaption>
 									</figure>
 								</a>
@@ -346,6 +352,7 @@
 			}
 		})
 	});
+
 	$(function() {
 //		$('.global-search-layer .sort').each(function() {
 //			$(this).selectmenu();
@@ -394,8 +401,8 @@
 				});
 			}
 		});
-
 	});
+
 	// 검색 APPLY 클릭
 	$doc.on('click', '#search-layer-submit', function() {
         var search_keyword      = nullToBlank($("#search_keyword").val());

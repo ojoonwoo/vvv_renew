@@ -108,9 +108,9 @@
 									<!-- <a href="javascript:request_translate('<?=$video_idx?>')" class="action translate"><span>번역</span></a> -->
 									<a href="" class="action share"></a>
 									<ul class="share-spread">
-										<li><a href="#"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
-										<li><a href="#"><img src="./images/detail_share_kt.png" alt="카카오톡 공유"></a></li>
-										<li><a href="#"><img src="./images/detail_share_url.png" alt="링크 공유"></a></li>
+										<li><a href="javascript:void(0)" onclick="sns_share('fb')"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
+										<!-- <li><a href="javascript:void(0)" onclick="sns_share('kt')"><img src="./images/detail_share_kt.png" alt="카카오톡 공유"></a></li> -->
+										<li><a href="javascript:void(0)" class="clipboardBtn" onclick="sns_share('lk')" data-clipboard-text="http://minivertising-test.com/video_detail.php?idx=<?=$video_idx?>" data-toggle="tooltip"><img src="./images/detail_share_url.png" alt="링크 공유"></a></li>
 									</ul>
 								</div>
 								<div class="block-comment">
@@ -365,6 +365,7 @@
 				</div>
 			</div>
 		</div>
+		<script src="./lib/clipboard/dist/clipboard.min.js"></script>
 		<script>
 			$(function() {
 				//				global search
@@ -404,6 +405,7 @@
 //			공유 버튼 토글
 			$doc.on('click', '.actions .share', function() {
 				$(this).toggleClass('is-active');
+				return false;
 			});
 
 			// 유튜브 api 재생 클릭시 이벤트 설정
@@ -675,6 +677,77 @@
 						}
 					}
 				});			
+			}
+
+			function sns_share(media)
+			{
+				if (media == "fb")
+				{
+
+					var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.minivertising-test.com/video_detail.php?idx=<?=$video_idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"      : "insert_share_info",
+							"sns_media" : media
+						}
+					});
+				} else if(media == "kt") {
+					Kakao.Link.sendTalkLink({
+						label: "<?='['.$detail_data['video_company'].'] '.$detail_data['video_title']?>",
+						image: {
+							src: "<?=$yt_thumb?>",
+							width: '1200',
+							height: '630'
+						},
+						webButton: {
+							text: "영상 보러 가기",
+							url: 'http://www.minivertising-test.com/video_detail.php?idx=<?=$video_idx?>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+						}
+					});
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"      : "insert_share_info",
+							"sns_media" : media
+						},
+						success: function(res) {
+							console.log(res);
+						}
+					});
+				} else {
+					var clipboard = new Clipboard('.clipboardBtn');
+					clipboard.on('success', function(e) {
+						console.info('Action:', e.action);
+						console.info('Text:', e.text);
+						console.info('Trigger:', e.trigger);
+						$('.spread .lk').tooltip('show');
+						e.clearSelection();
+
+						alert("링크가 클립보드에 복사되었습니다.");
+
+						$.ajax({
+							type   : "POST",
+							async  : false,
+							url    : "./main_exec.php",
+							data:{
+								"exec"      : "insert_share_info",
+								"sns_media" : media
+							},
+							success: function(res) {
+								console.log(res);
+							}
+						});
+					});
+					clipboard.on('error', function(e) {
+					console.error('Action:', e.action);
+					console.error('Trigger:', e.trigger);
+					});
+				}
 			}
 
 		</script>

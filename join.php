@@ -39,7 +39,10 @@
 									<h5 class="title">이용약관</h5>
 									<div class="scroll-box">
 										<div class="inner">
-											제 1 장 총 칙<br><br>
+<?
+	include_once "./agree1_txt.html";
+?>											
+											<!-- 제 1 장 총 칙<br><br>
 
 											제1조 목적<br>
 											본 약관은 서비스 이용자가 루리웹닷컴(이하 “회사”라 합니다)이 제공하는 온라인상의 인터넷 서비스<br>
@@ -52,7 +55,7 @@
 											② 회사는 온라인 디지털콘텐츠산업 발전법, 전자상거래 등에서의 소비자보호에 관한 법률,<br>
 											약관의 규제에 관한 법률, 소비자기본법 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.<br><br>
 											
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda laborum maxime sint labore, ullam sunt, earum esse architecto recusandae soluta quisquam expedita debitis. Dolorem quae dolore itaque eos sed voluptatibus non, quos, quam qui ad voluptas tempore, animi deleniti dignissimos nesciunt architecto officiis assumenda quis asperiores temporibus vitae vel. Eveniet ipsum sit nostrum nisi natus in quas reprehenderit consequatur perspiciatis asperiores, alias corporis, quidem ad ut nihil voluptas. Hic quisquam soluta explicabo cum minus sequi, in culpa earum iste ut tenetur deleniti, perferendis nam repudiandae inventore! Laudantium nisi commodi, consectetur expedita officia itaque architecto, eaque! Quo, similique vitae rem!
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda laborum maxime sint labore, ullam sunt, earum esse architecto recusandae soluta quisquam expedita debitis. Dolorem quae dolore itaque eos sed voluptatibus non, quos, quam qui ad voluptas tempore, animi deleniti dignissimos nesciunt architecto officiis assumenda quis asperiores temporibus vitae vel. Eveniet ipsum sit nostrum nisi natus in quas reprehenderit consequatur perspiciatis asperiores, alias corporis, quidem ad ut nihil voluptas. Hic quisquam soluta explicabo cum minus sequi, in culpa earum iste ut tenetur deleniti, perferendis nam repudiandae inventore! Laudantium nisi commodi, consectetur expedita officia itaque architecto, eaque! Quo, similique vitae rem! -->
 										</div>
 									</div>
 									<div class="agree">
@@ -65,6 +68,9 @@
 									<h5 class="title">개인정보 수집 및 이용에 대한 동의</h5>
 									<div class="scroll-box">
 										<div class="inner">
+<?
+	include_once "./agree2_txt.html";
+?>											
 
 										</div>
 									</div>
@@ -185,6 +191,7 @@
 						// console.log(response);
 						if (response.match("Y") == "Y")
 						{
+							alert("회원 가입이 완료 되었습니다!");
 							location.href = "./index.php";
 						}else{
 							alert("다시 입력해 주세요.");

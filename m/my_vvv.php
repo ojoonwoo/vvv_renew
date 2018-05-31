@@ -536,7 +536,7 @@
 	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
 	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
 	<script>
-            var profile_url = "";
+		var profile_url = "";
 
 		//	기본 기능 테스트 코드
 		$doc = $(document);
