@@ -142,12 +142,18 @@
 									<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 								</div>
 							</div>
+
 							<div class="input-group secret">
 								<div class="guide">
 									비공개 계정
 								</div>
 								<div class="input setting">
-									<div class="toggle secret is-active">
+<?
+	$is_secret = "";
+	if ($mb_data["mb_showYN"] == "N")
+		$is_secret = "is-active";
+?>
+									<div class="toggle secret <?=$is_secret?>">
 										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret">
 										<div class="toggle-circle"></div>
 									</div>
