@@ -191,6 +191,7 @@
 						// console.log(response);
 						if (response.match("Y") == "Y")
 						{
+							alert("회원 가입이 완료 되었습니다!");
 							location.href = "./index.php";
 						}else{
 							alert("다시 입력해 주세요.");
