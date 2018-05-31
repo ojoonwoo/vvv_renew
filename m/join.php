@@ -153,6 +153,8 @@
 						{
 							alert("회원 가입이 완료 되었습니다!");
 							location.href = "./index.php";
+						}else if (response.match("D") == "D"){
+							alert("중복된 닉네임입니다. 다른 닉네임을 입력해주세요");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();

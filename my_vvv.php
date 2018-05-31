@@ -30,6 +30,11 @@
 	$mb_result		= mysqli_query($my_db, $mb_query);
 	$mb_data		= mysqli_fetch_array($mb_result);
 
+	if ($mb_data["mb_showYN"] == "N" && $mb_data["idx"] != $_SESSION["ss_vvv_idx"])
+	{
+		echo "<script>alert('비공개된 계정입니다.');</script>";
+		echo "<script>location.href='index.php';</script>";
+	}
 
 	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
@@ -66,18 +71,18 @@
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-										<div class="tab" data-tab-content="collection">
+										<div class="tab is-active" data-tab-content="collection">
 											<a href="#">Collection</a>
 										</div>
 										<div class="tab" data-tab-content="favor">
 											<a href="#">Favorite</a>
 										</div>
-										<div class="tab is-active" data-tab-content="like">
+										<div class="tab" data-tab-content="like">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
-										<div class="aj-content collection">
+										<div class="aj-content collection is-active">
 											<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
@@ -260,7 +265,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="aj-content like is-active">
+										<div class="aj-content like">
 											<div class="text-block">
 												<p>당신이 좋아한 영상입니다!</p>
 											</div>

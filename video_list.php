@@ -291,29 +291,7 @@
 			});
 
 			//	기본 기능 테스트 코드
-			$doc = $(document),
-				$win = $(window),
-				$html = $('html');
-			$doc.on('click', '.button-search', function() {
-				$html.addClass('layer-opened');
-			});
-			$doc.on('click', '.layer-close', function() {
-				$html.removeClass('layer-opened');
-			});
-			$doc.on('click', '.button-menu', function() {
-				$html.toggleClass('menu-opened');
-			});
-			$win.on('scroll', function() {
-				if(150 < $(this).scrollTop()) {
-					$('.side-nav .search-wrap').css({
-						opacity: 1
-					});
-				} else {
-					$('.side-nav .search-wrap').css({
-						opacity: 0
-					});
-				}
-			});
+			$doc = $(document);
 
 			// 검색 APPLY 클릭
 			$doc.on('click', '.button-apply', function() {
@@ -354,6 +332,15 @@
 							$(".read-more").show();
 						// $("#list_video").append(response);
 						$("#list_video").html(res_arr[0]);
+						$("#list_video > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 100 * i);
+							})(this, index);
+
+						});
+						
 					}
 				});
 			});

@@ -76,7 +76,7 @@
 							<!-- container -->
 							<div class="collection-detail">
 								<div class="collection-info">
-									<a href="javascript:void(0)" class="list-back">
+									<a href="javascript:history.back()" class="list-back">
 										<i><</i>리스트로 돌아가기
 									</a>
 									<div class="texts">

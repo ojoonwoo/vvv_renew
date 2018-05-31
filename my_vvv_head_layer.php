@@ -29,10 +29,16 @@
 												<span class="u-id"><?=$mb_data['mb_nickname']?></span>
 <?
 	}
+
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+	{
 ?>
 												<a href="javascript:void(0)" class="setting" data-popup="#profile-edit">
 													<img src="./images/icon_profile_setting.png" alt="">
 												</a>
+<?
+	}
+?>												
 											</div>
 										</div>
 										<div class="wrap-actions">
@@ -136,13 +142,24 @@
 									<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 								</div>
 							</div>
+
 							<div class="input-group secret">
 								<div class="guide">
 									비공개 계정
 								</div>
 								<div class="input setting">
-									<div class="toggle secret is-active">
-										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret">
+<?
+	$is_secret = "";
+	$is_checked = "";
+	if ($mb_data["mb_showYN"] == "N")
+	{
+		$is_secret = "is-active";
+		$is_checked = "checked";
+
+	}
+?>
+									<div class="toggle secret <?=$is_secret?>">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret" <?=$is_checked?>>
 										<div class="toggle-circle"></div>
 									</div>
 								</div>
@@ -272,7 +289,7 @@
             {
                 var edit_nickname   = $("#edit_nickname").val();
                 var edit_secret	    = $("input:checkbox[id='profile-secret']").is(":checked");
-
+console.log(edit_secret);
 				$.ajax({
 					type   : "POST",
 					async  : false,
