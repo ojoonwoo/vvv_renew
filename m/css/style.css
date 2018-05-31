@@ -4,12 +4,12 @@
 .main-banner .box-content figcaption {
 	display: block;
 	position: absolute;
-	/*	top: 50%;*/
-	top: 31%;
+	top: 50%;
+	/*	top: 31%;*/
 	left: 50%;
 	width: 100%;
 	z-index: 3;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, -50%);
 	text-align: center;
 }
 .main-banner .box-content figcaption .brand {
@@ -513,7 +513,9 @@
 .content.detail .block-comment .comment-list .row .actions {
 	position: absolute;
 	top: 36px;
-	right: 8px;
+	right: 8px !important;
+	transform: none;
+	left: inherit;
 }
 .content.detail .block-comment .comment-list .row .actions .remove-comment {
 	background: url(../images/close_x_black.png) center no-repeat;
@@ -1942,7 +1944,6 @@
 .layer.collection-pick .content .video-info figure {
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: space-between;
 }
 .layer.collection-pick .content .video-info .thumb-wrap {
 	flex-basis: 48.63%;
@@ -2063,15 +2064,17 @@
 	display: inline-block;
 	width: 24px;
 	padding: 7px 0;
+	vertical-align: middle;
 	font-size: 12px;
 }
 .layer.collection-pick .content .collection-setting .input-group .input {
 	display: inline-block;
 	width: 135px;
+	vertical-align: middle;
 }
 .layer.collection-pick .content .collection-setting .input-group .input input[type="text"] {
 	width: 100%;
-	padding: 7px 0;
+	padding: 4px 0;
 	font-size: 12px;
 	color: #b7b7b7;
 	border-bottom: 1px solid #666666;

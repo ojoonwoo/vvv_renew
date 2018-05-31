@@ -224,6 +224,7 @@
 			// });
 
 			//	기본 기능 테스트 코드
+<<<<<<< HEAD
 			$doc = $(document),
 				$win = $(window),
 				$html = $('html');
@@ -247,6 +248,9 @@
 					});
 				}
 			});
+=======
+			$doc = $(document);
+>>>>>>> c2b9f6be2c0c25172364e16dfd4e4dbcd1751d9c
 
 			function follow_member()
 			{

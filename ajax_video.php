@@ -87,7 +87,7 @@
         else
             $video_brand    = $data["video_brand"];
 ?>
-							<div class="video col-lg-4 col-md-3 col-sm-2">
+							<div class="video col-lg-4 col-md-3 col-sm-2 loaded">
 								<a href="video_detail.php?idx=<?=$data['video_idx']?>">
 									<figure>
                                         <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>

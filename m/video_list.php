@@ -242,37 +242,15 @@
 			<div id="cursor" class="defualt"></div>
 		</div>
 		<script>
+			
 			var video_pg 	        = 0;
 			var total_video_num 	= <?=$total_video_num?>;
 			var total_page 			= <?=$total_page?>;
 			var view_page 			= <?=$view_pg?>;
 			var current_page        = 1;
 
-			//	기본 기능 테스트 코드
-			$doc = $(document),
-				$win = $(window),
-				$html = $('html');
-			$doc.on('click', '.button-search', function() {
-				$html.addClass('search-layer-opened');
-			});
-			$doc.on('click', '.search-layer-close', function() {
-				$html.removeClass('search-layer-opened');
-			});
-			$doc.on('click', '.button-menu', function() {
-				$html.toggleClass('menu-opened');
-			});
-			$win.on('scroll', function() {
-				if(150 < $(this).scrollTop()) {
-					$('.side-nav .search-wrap').css({
-						opacity: 1
-					});
-				} else {
-					$('.side-nav .search-wrap').css({
-						opacity: 0
-					});
-				}
-			});
-
+			$doc = $(document);
+			
 			// 검색 APPLY 클릭
 			$doc.on('click', '.button-apply', function() {
 				var search_keyword      = nullToBlank($("#lc-order-keyword").val());

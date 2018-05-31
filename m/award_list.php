@@ -220,6 +220,7 @@
 			<div id="cursor" class="defualt"></div>
 		</div>
 		<script>
+<<<<<<< HEAD
 			//	기본 기능 테스트 코드
 			$doc = $(document),
 				$win = $(window),
@@ -244,6 +245,9 @@
 					});
 				}
 			});
+=======
+			$doc = $(document);
+>>>>>>> c2b9f6be2c0c25172364e16dfd4e4dbcd1751d9c
 			
 			$doc.ready(function() {
 				var awardsBannerSwiper = new Swiper ('.awards-banner', {

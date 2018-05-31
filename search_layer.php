@@ -1,7 +1,6 @@
 <div class="global-search-layer">
-				<div class="bg-dark">
 					<div class="inner">
-						<button type="button" class="layer-close">
+						<button type="button" class="search-layer-close">
 							<img src="./images/close_x.png" alt="">
 						</button>
 						<div class="search-wrapper">
@@ -91,5 +90,5 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				<div class="bg-dark search-layer-close"></div>
 			</div>
