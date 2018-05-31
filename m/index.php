@@ -271,8 +271,10 @@
 			var total_page 			= $("#total_page").val();
 			var view_page 			= $("#view_page").val();
 			var current_page        = 1;
+			
+			$doc = $(document);
 
-			$(document).ready(function () {
+			$doc.ready(function () {
 				var bannerSwiper = new Swiper ('.main-banner', {
 					// Optional parameters
 					direction: 'horizontal',
@@ -338,42 +340,6 @@
 						}
 					}
 				})
-				});
-			$(function() {
-				//		$('.global-search-layer .sort').each(function() {
-				//			$(this).selectmenu();
-				//		});
-				// $('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-nation').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-industry').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-				// $('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
-			});
-
-			//	기본 기능 테스트 코드
-			$doc = $(document),
-				$win = $(window),
-				$html = $('html');
-			$doc.on('click', '.button-search', function() {
-				$html.addClass('search-layer-opened');
-			});
-			$doc.on('click', '.search-layer-close', function() {
-				$html.removeClass('search-layer-opened');
-			});
-			$doc.on('click', '.button-menu', function() {
-				$html.toggleClass('menu-opened');
-			});
-			$win.on('scroll', function() {
-				if(150 < $(this).scrollTop()) {
-					$('.side-nav .search-wrap').css({
-						opacity: 1
-					});
-				} else {
-					$('.side-nav .search-wrap').css({
-						opacity: 0
-					});
-				}
 			});
 
 			// RECENT 더보기 버튼 클릭

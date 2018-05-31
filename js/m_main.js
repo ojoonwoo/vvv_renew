@@ -9,7 +9,7 @@
 
 	vvv.ieMode = document.documentMode;
 
-	
+
 	$doc.on('click', '.button-search', function() {
 		$html.addClass('search-layer-opened');
 	});
@@ -17,7 +17,8 @@
 		$html.removeClass('search-layer-opened');
 	});
 	$doc.on('click', '.button-menu', function() {
-		burgerMotion();
+		console.log("a");
+		$html.toggleClass('menu-opened');
 	});
 	$win.on('scroll', function() {
 		if(150 < $(this).scrollTop()) {
@@ -30,30 +31,7 @@
 			});
 		}
 	});
-	
-	function burgerMotion() {
-		if($html.hasClass('menu-opened')) {
-//			메뉴 오픈 상태
-			var cMotion = new TimelineMax();
-			TweenMax.to('#gnb .line.top', 0.47, {rotation: 0, ease: Back.easeOut.config(1.7)}, 'action1');
-			TweenMax.to('#gnb .line.bot', 0.47, {rotation: 0, ease: Back.easeOut.config(1.7)}, 'action1');
-			TweenMax.to($('#gnb .line.top'), 0.3, {y: 0, delay: 0.3}, 'action2');
-			TweenMax.to($('#gnb .line.bot'), 0.3, {y: 0, delay: 0.3}, 'action2');
-			TweenMax.to($('#gnb .line.mid'), 0.2, {autoAlpha: 1, delay: 0.3}, 'action2');
 
-		} else {
-//			메뉴 클로즈 상태
-			var oMotion = new TimelineMax();
-			TweenMax.to($('#gnb .line.mid'), 0.2, {autoAlpha: 0, delay: 0.2}, 'action1');
-			TweenMax.to($('#gnb .line.top'), 0.3, {y: 6}, 'action1');
-			TweenMax.to('#gnb .line.top', 0.47, {rotation: 45, delay: 0.3, ease: Back.easeOut.config(1.7)}, 'action2');
-			TweenMax.to($('#gnb .line.bot'), 0.3, {y: -6}, 'action1');
-			TweenMax.to('#gnb .line.bot', 0.47, {rotation: -45, delay: 0.3, ease: Back.easeOut.config(1.7)}, 'action2');
-
-		}
-		$html.toggleClass('menu-opened');
-	}
-	
 	//popup
 	vvv.popup = {
 		bind : function(){
@@ -65,7 +43,7 @@
 
 				if (val.match('@close')){
 					vvv.popup.close($this.closest('.popup'));
-			  	} else {
+				} else {
 					vvv.popup.show($(val));
 				}
 
@@ -88,7 +66,7 @@
 			if ($popup.length){
 				var $wrap = $popup.parent(),
 					$html = $('html');
-				
+
 
 				if (!$wrap.hasClass('popup-wrap')){
 					$popup.wrap('<div class="popup-wrap"></div>');
@@ -122,7 +100,7 @@
 						$html.removeClass('popup-opened');
 					}
 
-//					$popup.trigger('afterpopupClosed', $wrap);
+					//					$popup.trigger('afterpopupClosed', $wrap);
 				});
 
 				$popup.trigger('popupClosed', $wrap);
@@ -205,44 +183,44 @@
 				.on('click', '.toggle-trigger', function() {
 				$(this).closest('.toggle').toggleClass('is-active');
 			})
-			
+
 		}
 	}
 	vvv.toggle.bind();
 
 	// checkbox
-//	ui.checkbox = {
-//		bind : function(){
-//			$doc.on('change.uiCheckbox', '.ui-checkbox', function(e){
-//				var $this = $(this);
-//				ui.checkbox.toggleClass($this);
-//			});
-//		},
-//		toggleClass : function($target){
-//			var id = $target.attr('id'),
-//				$label = $('label[for="'+id+'"]');
-//
-//			if ($target.is(':checked')){
-//				$target.addClass('is-checked');
-//				$label.addClass('is-checked');
-//			} else {
-//				$target.removeClass('is-checked');
-//				$label.removeClass('is-checked');
-//			}
-//		},
-//		load : function(){
-//			$('.ui-checkbox').each(function(i){
-//				var $this = $(this);
-//				ui.checkbox.toggleClass($this);
-//			});
-//		}
-//	}
-//	ui.checkbox.bind();
+	//	ui.checkbox = {
+	//		bind : function(){
+	//			$doc.on('change.uiCheckbox', '.ui-checkbox', function(e){
+	//				var $this = $(this);
+	//				ui.checkbox.toggleClass($this);
+	//			});
+	//		},
+	//		toggleClass : function($target){
+	//			var id = $target.attr('id'),
+	//				$label = $('label[for="'+id+'"]');
+	//
+	//			if ($target.is(':checked')){
+	//				$target.addClass('is-checked');
+	//				$label.addClass('is-checked');
+	//			} else {
+	//				$target.removeClass('is-checked');
+	//				$label.removeClass('is-checked');
+	//			}
+	//		},
+	//		load : function(){
+	//			$('.ui-checkbox').each(function(i){
+	//				var $this = $(this);
+	//				ui.checkbox.toggleClass($this);
+	//			});
+	//		}
+	//	}
+	//	ui.checkbox.bind();
 
 	// agree
-	
+
 	// ready
-//	$(function(){
-//		
-//	});
+	//	$(function(){
+	//		
+	//	});
 })(jQuery);

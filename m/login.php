@@ -55,31 +55,9 @@
 			Kakao.init('ff013671b5f7b01d59770657a8787952');
 
 			//	기본 기능 테스트 코드
-			$doc = $(document),
-				$win = $(window),
-				$html = $('html');
-			$doc.on('click', '.button-search', function() {
-				$html.addClass('layer-opened');
-			});
-			$doc.on('click', '.layer-close', function() {
-				$html.removeClass('layer-opened');
-			});
-			$doc.on('click', '.button-menu', function() {
-				$html.toggleClass('menu-opened');
-			});
-			$win.on('scroll', function() {
-				if(150 < $(this).scrollTop()) {
-					$('.side-nav .search-wrap').css({
-						opacity: 1
-					});
-				} else {
-					$('.side-nav .search-wrap').css({
-						opacity: 0
-					});
-				}
-			});
-
-						function getUserData() {
+			$doc = $(document);
+			
+			function getUserData() {
 				/* FB.api('/me', function(response) {
 					document.getElementById('response').innerHTML = 'Hello ' + response.name;
 					console.log(response);
