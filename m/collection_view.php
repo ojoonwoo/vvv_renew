@@ -76,6 +76,9 @@
 							<!-- container -->
 							<div class="collection-detail">
 								<div class="collection-info">
+									<a href="javascript:void(0)" class="list-back">
+										<i><</i>리스트로 돌아가기
+									</a>
 									<div class="texts">
 										<span class="title"><?=$collection_data["collection_name"]?></span>
 										<span class="summary"><?=$collection_data["collection_desc"]?></span>
