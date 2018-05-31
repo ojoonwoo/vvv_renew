@@ -5,30 +5,42 @@
 .main-banner .box-content figcaption {
 	display: block;
 	position: absolute;
-/*	top: 50%;*/
-	top: 31%;
+	top: 50%;
+/*	top: 31%;*/
 	left: 50%;
 	width: 100%;
 	z-index: 3;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, -50%);
 	text-align: center;
 }
 .main-banner .box-content figcaption .brand {
-	font-size: 25px;
+	font-size: 20px;
 	color: #f7dd30;
 	letter-spacing: -0.5px;
+	font-weight: 800;
 }
 .main-banner .box-content figcaption .title {
-	font-size: 55px;
+	font-size: 50px;
 	color: #ffffff;
-	font-weight: 700;
-	margin: 47px auto 23px;
+	font-weight: 800;
+	margin: 15px auto 53px;
 }
+.main-banner .swiper-slide._02 figcaption {
+	margin-left: 13%;
+	display: inline-block;
+	width: auto;
+	text-align: left;
+}
+.main-banner .swiper-slide._02 .box-content .link span.view {
+	margin-left: 11px;
+}
+/*
 .main-banner .box-content figcaption .summary {
 	font-size: 28px;
 	color: #ffffff;
 	font-weight: 300;
 }
+*/
 .main-banner a .box-bg img {
 	position: relative;
 	transition: all 0.3s ease-in-out;
@@ -51,17 +63,52 @@
 	background: #000000;
 	z-index: 0;
 }
+#.main-banner .box-content .link {
+	display: block;
+	/*
+	position: absolute;
+	left: 50%;
+	bottom: 22.3%;
+	transform: translate(-50%, 0);
+	*/
+	margin: 0 auto ;
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: 300;
+	z-index: 1;
+	text-align: center;
+}
+.main-banner .box-content .link .progress-current {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+}
+.progress-current .prg-circle {
+	stroke-dasharray: 175;
+	stroke-dashoffset: 175;
+	stroke-width: 2px;
+	stroke: #ffffff;
+}
+.loaded .progress-current .prg-circle {
+	transition: stroke-dashoffset 4s linear;
+	stroke-dashoffset: 0;
+}
+.main-banner .box-content .link span.view {
+	display: block;
+	margin-top: 14px;
+	color: #ffffff;
+}
 #main-banner-pagination {
 	position: absolute;
-	top: 50%;
-	right: 0;
-	left: inherit;
-	width: 95px;
-	bottom: inherit;
-	transform: translate(0, -50%);
-	text-align: right;
+	bottom: 72px;
+	left: 50%;
+	width: 120px;
+	/*	text-align: right;*/
 	z-index: 4;
+	font-size: 0;
+	transform: translateX(-50%);
 }
+/*
 #main-banner-pagination .swiper-pagination-bullet {
 	display: inline-block;
 	width: 70px;
@@ -79,6 +126,7 @@
 	width: 100%;
 	background: #f7dd30;
 }
+*/
 .content.main .list-container {
 	max-width: 1400px;
 	margin: 0 auto;
