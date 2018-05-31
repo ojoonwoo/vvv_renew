@@ -71,18 +71,18 @@
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-										<div class="tab" data-tab-content="collection">
+										<div class="tab is-active" data-tab-content="collection">
 											<a href="#">Collection</a>
 										</div>
 										<div class="tab" data-tab-content="favor">
 											<a href="#">Favorite</a>
 										</div>
-										<div class="tab is-active" data-tab-content="like">
+										<div class="tab" data-tab-content="like">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
-										<div class="aj-content collection">
+										<div class="aj-content collection is-active">
 											<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
@@ -265,7 +265,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="aj-content like is-active">
+										<div class="aj-content like">
 											<div class="text-block">
 												<p>당신이 좋아한 영상입니다!</p>
 											</div>
