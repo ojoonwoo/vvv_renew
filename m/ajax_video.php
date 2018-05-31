@@ -63,7 +63,7 @@
 	$result			= mysqli_query($my_db, $query);
 	$video_count	= mysqli_num_rows($result);
 
-    $i = 0;
+	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
 
