@@ -103,6 +103,9 @@
 									</div>
 									<div class="action-wrap">
 										<div class="inner">
+											<a href="javascript:void(0)" class="list-back">
+												<i><</i>리스트로 돌아가기
+											</a>
 <?
 	if ($_SESSION['ss_vvv_idx'] == $mb_idx)
 	{

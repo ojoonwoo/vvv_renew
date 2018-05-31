@@ -1040,9 +1040,23 @@
 	text-align: right;
 }
 .content.user-page .collection-detail .collection-info .action-wrap .inner {
-	font-size: 0;
+	position: relative;
 	max-width: 1035px;
 	margin: 0 auto;
+	font-size: 0;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .list-back {
+	position: absolute;
+	top: -14px;
+	right: 0;
+	font-size: 16px;
+	color: #666666;
+	font-weight: 700;
+}
+.content.user-page .collection-detail .collection-info .action-wrap .list-back i {
+	display: inline-block;
+	margin-right: 10px;
+	font-style: normal;
 }
 .content.user-page .collection-detail .collection-info .action-wrap .myaction {
 	padding-top: 25px;
@@ -1177,8 +1191,18 @@
 /* 컬렉션 상세 */
 /* 컬렉션 영상 추가 */
 .content .collection-detail.add-video > .title {
+	position: relative;
 	margin-bottom: 82px;
 	text-align: center;
+	font-size: 0;
+}
+.content .collection-detail.add-video > .title:before {
+	content: "";
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin-bottom: 20px;
+	background: url(../images/myvvv_action_icon_add.png) center / 30px 30px no-repeat;
 }
 .content .collection-detail.add-video > .title h3 {
 	font-size: 25px;
