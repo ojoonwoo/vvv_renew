@@ -354,6 +354,15 @@
 							$(".read-more").show();
 						// $("#list_video").append(response);
 						$("#list_video").html(res_arr[0]);
+						$("#list_video > .video.loaded").each(function(index) {
+							(function(that, i) { 
+								var t = setTimeout(function() { 
+									$(that).removeClass('loaded');
+								}, 100 * i);
+							})(this, index);
+
+						});
+						
 					}
 				});
 			});
