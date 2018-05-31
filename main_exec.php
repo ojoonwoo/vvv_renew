@@ -127,7 +127,10 @@ include_once "./include/autoload.php";
             //     $dupli_result		= mysqli_query($my_db, $dupli_query);
             //     $dupli_count		= mysqli_num_rows($dupli_result);
 
-            //     if ()
+            //     if ($dupli_count > 0)
+            //     {
+
+            //     }
             // }
 
             if ($result)
