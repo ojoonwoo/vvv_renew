@@ -224,33 +224,7 @@
 			// });
 
 			//	기본 기능 테스트 코드
-<<<<<<< HEAD
-			$doc = $(document),
-				$win = $(window),
-				$html = $('html');
-			$doc.on('click', '.button-search', function() {
-				$html.addClass('search-layer-opened');
-			});
-			$doc.on('click', '.search-layer-close', function() {
-				$html.removeClass('search-layer-opened');
-			});
-			$doc.on('click', '.button-menu', function() {
-				$html.toggleClass('menu-opened');
-			});
-			$win.on('scroll', function() {
-				if(150 < $(this).scrollTop()) {
-					$('.side-nav .search-wrap').css({
-						opacity: 1
-					});
-				} else {
-					$('.side-nav .search-wrap').css({
-						opacity: 0
-					});
-				}
-			});
-=======
 			$doc = $(document);
->>>>>>> c2b9f6be2c0c25172364e16dfd4e4dbcd1751d9c
 
 			function follow_member()
 			{
