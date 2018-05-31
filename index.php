@@ -425,6 +425,7 @@
 	}
 
 	$doc.on('click', '#search-layer-refresh', function() {
+		console.log("search_refresh");
         $("#search_keyword").val("");
         $("#order-date").val("");
         $("#order-nation").val("");
