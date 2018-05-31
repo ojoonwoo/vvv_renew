@@ -262,7 +262,7 @@
 										</div>
 										<div class="aj-content like is-active">
 											<div class="text-block">
-												<p>당신이</p> 좋아한 영상입니다!
+												<p>당신이 좋아한 영상입니다!</p>
 											</div>
 											<div class="list-container">
 												<div class="video-list">
