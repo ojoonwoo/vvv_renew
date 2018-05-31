@@ -159,9 +159,9 @@ include_once "./include/autoload.php";
             $profile_url        = $_REQUEST["profile_url"];
 
             if ($edit_secret == "true")
-                $edit_secret = "Y";
+                $edit_secret = "N";
             else
-                $edit_secret = "N";        
+                $edit_secret = "Y";        
             
             if ($profile_url == "")
                 $query		= "UPDATE member_info SET mb_nickname='".$edit_nickname."', mb_showYN='".$edit_secret."' WHERE idx='".$_SESSION['ss_vvv_idx']."'";
