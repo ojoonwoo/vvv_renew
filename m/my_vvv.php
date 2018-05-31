@@ -466,9 +466,13 @@
 	}
 	
 	$is_secret = "";
+	$is_checked = "";
 
 	if ($mb_data["mb_showYN"] == "N")
+	{
 		$is_secret = "is-active";
+		$is_checked = "checked";
+	}
 ?>                         
 								<input type="text" value="<?=$mb_data['mb_email']?>" readonly disabled>
 							</div>
@@ -479,7 +483,7 @@
 							</div>
 							<div class="input setting">
 								<div class="toggle secret <?=$is_secret?>">
-									<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret">
+									<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="profile-secret" name="profile-secret" <?=$is_checked?>>
 									<div class="toggle-circle"></div>
 								</div>
 							</div>
