@@ -649,7 +649,7 @@
 					});
 				} else if(media == "kt") {
 					Kakao.Link.sendTalkLink({
-						label: "<?='['.$detail_data['video_company'].'] '.$detail_data['video_title']?>",
+						label: "<?='['.$detail_data['video_brabd'].'] '.$detail_data['video_title']?>",
 						image: {
 							src: "<?=$yt_thumb?>",
 							width: '1200',

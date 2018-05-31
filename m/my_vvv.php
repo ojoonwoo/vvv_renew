@@ -33,7 +33,7 @@
 	if ($mb_data["mb_showYN"] == "N" && $mb_data["idx"] != $_SESSION["ss_vvv_idx"])
 	{
 		echo "<script>alert('비공개된 계정입니다.');</script>";
-		echo "<script>location.href='index.php';</script>";
+		echo "<script>history.back();</script>";
 	}
 
 	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
