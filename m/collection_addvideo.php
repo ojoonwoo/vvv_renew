@@ -276,7 +276,7 @@
 
 				if (videoItems == "")
 				{
-					alert("영상을 선택하시고 적용 버튼을 클릭해 주세요.");
+					location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>&my=<?=$_REQUEST["my"]?>";
 					return false;
 				}
 
