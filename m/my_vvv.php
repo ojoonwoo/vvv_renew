@@ -68,13 +68,13 @@
 						<div class="user-feed">
 							<div class="wrapper">
 								<div class="tab-wrap">
-									<div class="tab" data-tab-content="collection">
+									<div class="tab collection" data-tab-content="collection">
 										<a href="#">Collection</a>
 									</div>
-									<div class="tab" data-tab-content="favor">
+									<div class="tab favor" data-tab-content="favor">
 										<a href="#">Favorite</a>
 									</div>
-									<div class="tab is-active" data-tab-content="like">
+									<div class="tab like is-active" data-tab-content="like">
 										<a href="#">Like</a>
 									</div>
 								</div>
