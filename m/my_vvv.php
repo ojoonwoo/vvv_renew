@@ -68,13 +68,13 @@
 						<div class="user-feed">
 							<div class="wrapper">
 								<div class="tab-wrap">
-									<div class="tab" data-tab-content="collection">
+									<div class="tab collection" data-tab-content="collection">
 										<a href="#">Collection</a>
 									</div>
-									<div class="tab" data-tab-content="favor">
+									<div class="tab favor" data-tab-content="favor">
 										<a href="#">Favorite</a>
 									</div>
-									<div class="tab is-active" data-tab-content="like">
+									<div class="tab like is-active" data-tab-content="like">
 										<a href="#">Like</a>
 									</div>
 								</div>
@@ -137,7 +137,7 @@
 ?>														
 													<div class="album" id="album_<?=$collection_data["idx"]?>">
 														<figure>
-															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>&my=<?=$my_idx?>" id="album_link_<?=$collection_data["idx"]?>">
+															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$my_idx?>&my=<?=$my_idx?>&tab=collection" id="album_link_<?=$collection_data["idx"]?>">
 																<div class="frame">
 																	<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																	<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
@@ -218,7 +218,7 @@
 ?>														
 													<div class="album" id="album_like_<?=$collection_data["idx"]?>">
 														<figure>
-															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$collection_item_data["m_idx"]?>&my=<?=$my_idx?>">
+															<a href="collection_view.php?cidx=<?=$collection_data["idx"]?>&midx=<?=$collection_item_data["m_idx"]?>&my=<?=$my_idx?>&tab=favor">
 																<div class="frame">
 																	<div class="thumbnail" style="background: <?=$collection_thumb[0]?> #dcdcdc no-repeat"></div>
 																	<div class="thumbnail" style="background: <?=$collection_thumb[1]?> #dcdcdc no-repeat"></div>
@@ -546,6 +546,23 @@
 	<script src="../lib/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
 	<script>
 		var profile_url = "";
+
+			$(function() {
+<?
+	// collection_view 에서 리스트로 돌아가기 했을때 해당 탭으로 이동
+	$tab	= $_REQUEST["tab"];
+	if ($tab)
+	{
+?>
+				$(".tab").removeClass("is-active");
+				$(".tab.<?=$tab?>").addClass("is-active");
+
+				$(".aj-content").removeClass("is-active");
+				$(".aj-content.<?=$tab?>").addClass("is-active");
+<?
+	}
+?>				
+			});
 
 		//	기본 기능 테스트 코드
 		$doc = $(document);

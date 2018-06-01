@@ -299,8 +299,9 @@
 								</div>
 								<div class="setting">
 									<span class="secret-guide">비밀 설정</span>
-									<div class="toggle secret is-active">
-										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+									<!-- <div class="toggle secret is-active"> -->
+									<div class="toggle secret">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret" checked>
 										<div class="toggle-circle"></div>
 									</div>
 								</div>
@@ -546,7 +547,7 @@
 				var secretFlag			= "";
 				var appendTxt			= "";
 
-				if (collection_secret === true)
+				if (collection_secret === false)
 				{
 					secretFlag = "is-secret";
 				}

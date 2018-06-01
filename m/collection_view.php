@@ -77,7 +77,8 @@
 							<!-- container -->
 							<div class="collection-detail">
 								<div class="collection-info">
-									<a href="javascript:history.back()" class="list-back">
+									<!-- <a href="javascript:history.back()" class="list-back"> -->
+									<a href="my_vvv.php?idx=<?=$_REQUEST["midx"]?>&tab=<?=$_REQUEST["tab"]?>" class="list-back">
 										<i><</i>리스트로 돌아가기
 									</a>
 									<div class="texts">
@@ -350,7 +351,8 @@
 
 					if (videoItems == "")
 					{
-						alert("영상을 선택하시고 완료 버튼을 클릭해 주세요.");
+						// alert("영상을 선택하시고 완료 버튼을 클릭해 주세요.");
+						location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>&my=<?=$_REQUEST["my"]?>";
 						return false;
 					}
 
