@@ -825,10 +825,6 @@
 	margin-right: 25px;
 	padding: 22px 0;
 	display: inline-block;
-	transition: all 0.4s ease-in-out;
-}
-.content.user-page .user-feed .tab-wrap .tab:last-child {
-	margin-right: 0;
 }
 .content.user-page .user-feed .tab:after {
 	content: "";
@@ -837,18 +833,7 @@
 	left: 0;
 	bottom: -1px;
 	background: #333333;
-	transition: all 0.4s ease-in-out;
 	height: 4px;
-	transform: scaleY(0);
-	opacity: 0;
-}
-.content.user-page .user-feed .tab.is-active:after {
-	transform: scaleY(1);
-	opacity: 1;
-}
-.content.user-page .user-feed .tab-wrap .tab.is-active,
-.content.user-page .user-feed .tab-wrap .tab:hover {
-	color: #333333;
 }
 .content.user-page .user-feed .inner {
 	padding: 55px 107px 200px;
@@ -1994,6 +1979,8 @@
 .popup.search-friends .search-result .row .img {
 	width: 75px;
 	margin-right: 23px;
+	border-radius: 50%;
+	overflow: hidden;
 }
 .popup.search-friends .search-result .row .info {
 	text-align: left;
@@ -2039,6 +2026,117 @@
 	background: url(../images/search_friend_add.png) 0 0 / cover no-repeat;
 }
 .popup.search-friends .search-result .row .action .already {
+	width: 40px;
+	height: 38px;
+	background: url(../images/search_friend_already.png) 0 0 / cover no-repeat;
+}
+
+.popup.follow-state {
+	width: 672px;
+}
+.popup.follow-state > .inner {
+	padding: 74px 35px;
+}
+.popup.follow-state .area-tab {
+	border-bottom: 1px solid #c8c8c8;
+}
+.popup.follow-state .area-tab .tab-wrap {
+	font-size: 0;
+	text-align: center;
+}
+.popup.follow-state .area-tab .tab-wrap .tab {
+	display: inline-block;
+	position: relative;
+	width: 108px;
+	padding: 17px 0;
+	color: #c8c8c8;
+	font-size: 23px;
+	font-weight: 700;
+	margin-right: 20px;
+}
+.popup.follow-state .area-tab .tab-wrap .tab::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background: #333333;
+	transform: scaleY(0);
+}
+.popup.follow-state .area-list {
+	padding: 0 87px;
+	margin: 56px auto 0;
+	overflow-y: hidden;
+	height: 382px;
+}
+.popup.follow-state .area-list .scroll-box.is-active {
+	display: block;
+}
+.popup.follow-state .area-list .scroll-box {
+	display: none;
+	height: 100%;
+	padding-right: 20px;
+	overflow-y: scroll;
+}
+.popup.follow-state .area-list .row {
+	position: relative;
+	padding: 11px 0;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.popup.follow-state .area-list .row .img {
+	width: 75px;
+	margin-right: 23px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.popup.follow-state .area-list .row .info {
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+}
+.popup.follow-state .area-list .row .info .name {
+	margin-bottom: 15px;
+}
+.popup.follow-state .area-list .row .info .counts {
+	font-size: 0;
+}
+.popup.follow-state .area-list .row .info .counts .wrap {
+	display: inline-block;
+	margin-right: 14px;
+}
+.popup.follow-state .area-list .row .info .counts .wrap i {
+	width: 13px;
+	height: 13px;
+	margin-right: 3px;
+}
+.popup.follow-state .area-list .row .info .counts .wrap i,
+.popup.follow-state .area-list .row .info .counts .wrap span {
+	display: inline-block;
+	font-size: 16px;
+	font-style: normal;
+}
+.popup.follow-state .area-list .row .info .counts .like i {
+	background: url(../images/icon_like.png) 0 0 / 13px 13px no-repeat;
+}
+.popup.follow-state .area-list .row .info .counts .collection i {
+	background: url(../images/icon_collect.png) 0 0 / 13px 13px no-repeat;
+}
+.popup.follow-state .area-list .row .action {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+.popup.follow-state .area-list .row .action .add {
+	width: 40px;
+	height: 39px;
+	background: url(../images/search_friend_add.png) 0 0 / cover no-repeat;
+}
+.popup.follow-state .area-list .row .action .already {
 	width: 40px;
 	height: 38px;
 	background: url(../images/search_friend_already.png) 0 0 / cover no-repeat;
