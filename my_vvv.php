@@ -468,7 +468,8 @@
 			});
 
 			$doc.on('click', '.tab', function() {
-				$(".tab").removeClass("is-active");
+				$(this).closest(".tab").removeClass("is-active");
+				// $(".tab").removeClass("is-active");
 				$(this).addClass("is-active");
 
 				var target = $(this).data('tab-content');
