@@ -201,7 +201,7 @@
 ?>
 											<div class="wrapper liked">
 												<div class="text-block">
-												<p>당신이 좋아한 컬렉션입니다!</p>
+													<p>당신이 좋아한 컬렉션입니다!</p>
 												</div>
 												<div class="list-container">
 													<div class="album-list">
@@ -274,11 +274,10 @@
 													</div>
 												</div>
 											</div>
-										</div>
 <?										
 	}
 ?>
-
+										</div>
 										<div class="aj-content like">
 											<div class="text-block">
 												<p>당신이 좋아한 영상입니다!</p>
@@ -288,7 +287,6 @@
 <?
 	while ($data = mysqli_fetch_array($my_result))
 	{
-		print_r($data);
 		$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
 		$video_result		= mysqli_query($my_db, $video_query);
 		$video_data			= mysqli_fetch_array($video_result);
