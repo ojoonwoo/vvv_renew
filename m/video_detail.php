@@ -283,7 +283,8 @@
 								</div>
 							</div>	
 							<div class="button-wrap">
-								<button type="button" data-layer="@close">
+								<!-- <button type="button" data-layer="@close"> -->
+								<button type="button" onclick="cancel_create_collection()">
 									취소
 								</button>
 								<button type="button" onclick="create_collection()">
@@ -565,6 +566,12 @@
 
 			}
 
+			function cancel_create_collection()
+			{
+				$("#choice_collection").show();
+				$("#add_collection").hide();				
+			}
+			
 			function open_add_collection()
 			{
 				$("#choice_collection").hide();
