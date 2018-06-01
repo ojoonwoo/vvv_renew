@@ -1004,6 +1004,22 @@
 	object-position: center;
 	max-width: none;
 }
+.content.user-page .user-info .profile-img .default {
+	background: #f7dd30;
+	position: relative;
+	height: 100%;
+	text-align: center;
+}
+.content.user-page .user-info .profile-img .default span {
+	display: block;
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 13px;
+	font-weight: 500;
+}
 .content.user-page .user-info .info-wrap {
 	width: calc(100% - 107px);
 	color: #ffffff;
@@ -1259,6 +1275,10 @@
 }
 .content.user-page .video-list > .video figure figcaption .brand {
 	font-size: 10px;
+	line-height: 14px;
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .content.user-page .video-list > .video figure figcaption .title {
 	margin: 4px 0 3px;

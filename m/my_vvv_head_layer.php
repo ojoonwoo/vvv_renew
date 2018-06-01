@@ -5,11 +5,14 @@
 	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
-                                        <img src="./images/profile_img_sample.jpg" alt="">
+<!--                                        <img src="./images/profile_img_sample.jpg" alt="">-->
+									<div class="default">
+										<span><?=$mb_data['mb_nickname']?></span>
+									</div>
 <?
     }else{
 ?>        
-                                        <img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
+									<img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
     }
 ?>                                
