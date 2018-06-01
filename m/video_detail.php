@@ -123,6 +123,12 @@
 
 	while ($comment_data = mysqli_fetch_array($comment_result))
 	{
+		$comment_mb_query		= "SELECT * FROM member_info WHERE idx='".$comment_data["mb_idx"]."'";
+		$comment_mb_result		= mysqli_query($my_db, $comment_mb_query);
+		$comment_mb_data		= mysqli_fetch_array($comment_mb_result);
+
+		if ($comment_mb_data["mb_nickname"] != "")
+			$comment_data["mb_name"] = $comment_mb_data["mb_nickname"];
 ?>
 										<div class="row">
 											<div class="u-id">
