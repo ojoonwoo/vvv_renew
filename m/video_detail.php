@@ -284,7 +284,7 @@
 									<span class="secret-guide">비밀 설정</span>
 									<!-- <div class="toggle secret is-active"> -->
 									<div class="toggle secret">
-										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+										<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret" checked>
 										<div class="toggle-circle"></div>
 									</div>
 								</div>
