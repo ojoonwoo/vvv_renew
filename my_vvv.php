@@ -288,6 +288,7 @@
 <?
 	while ($data = mysqli_fetch_array($my_result))
 	{
+		print_r($data);
 		$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
 		$video_result		= mysqli_query($my_db, $video_query);
 		$video_data			= mysqli_fetch_array($video_result);
