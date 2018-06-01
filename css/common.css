@@ -532,6 +532,27 @@ html.search-layer-opened .global-search-layer .inner {
 	font-size: 18px;
 	font-weight: 500;
 }
+
+.tab-wrap .tab {
+	transition: all 0.3s ease-in-out;
+}
+.tab-wrap .tab:last-child {
+	margin-right: 0 !important;
+}
+.tab-wrap .tab:after {
+	transition: all 0.4s ease-in-out;
+	transform: scaleY(0);
+	opacity: 0;
+}
+.tab-wrap .tab.is-active:after {
+	transform: scaleY(1) !important;
+	opacity: 1 !important;
+}
+.tab-wrap .tab.is-active,
+.tab-wrap .tab:hover {
+	color: #333333 !important;
+}
+
 .content .list-container .video.loaded {
 	opacity: 0;
 /*	transform: scale(0);*/

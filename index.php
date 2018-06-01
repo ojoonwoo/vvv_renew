@@ -192,7 +192,7 @@
 					</div>
 					<div class="list-container">
 						<div class="title-area">
-							<h2 class="list-title">RECENT</h2>
+							<h2 class="list-title">NEW</h2>
 							<a href="video_list.php?sort=new" class="view-all">전체보기</a>
 						</div>
 						<div class="video-list" id="recent_video">
