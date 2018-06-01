@@ -75,7 +75,7 @@
 										</div>
 									</div>
 									<div class="inner">
-										<div class="aj-content collection is-active" data-tap-content="collection">
+										<div class="aj-content collection is-active" data-tab-content="collection">
 											<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
@@ -182,7 +182,7 @@
 	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
 	$collection_like_count		= mysqli_num_rows($collection_like_result);
 ?>
-										<div class="aj-content favor" data-tap-content="favor">
+										<div class="aj-content favor" data-tab-content="favor">
 <? 
 	if($collection_like_count < 1) {
 ?>
@@ -271,7 +271,7 @@
 	}
 ?>
 										</div>
-										<div class="aj-content like" data-tap-content="like">
+										<div class="aj-content like" data-tab-content="like">
 <?
 	if($my_count < 1) {
 ?>
