@@ -468,7 +468,7 @@
 			});
 
 			$doc.on('click', '.tab', function() {
-				$(this).closest(".tab").removeClass("is-active");
+				$(this).closest("div").removeClass("is-active");
 				// $(".tab").removeClass("is-active");
 				$(this).addClass("is-active");
 
