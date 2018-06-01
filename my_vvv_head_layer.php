@@ -268,7 +268,7 @@
 										</a>
 									</div>
 									<div class="info">
-										<div class="name">오준우</div>
+										<div class="name">오준우111</div>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
