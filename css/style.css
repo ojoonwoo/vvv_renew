@@ -1114,14 +1114,7 @@
 }
 .content.user-page .collection-detail.check-mode .collection-info .action-wrap .myaction .delete {
 	display: inline-block;
-	width: 100px;
-	height: 37px;
-	background: none #666666 no-repeat;
-	color: #ffffff;
-	border-radius: 0;
-}
-.content.user-page .collection-detail.check-mode .collection-info .action-wrap .delete:after {
-	content: "완료";
+	background: url(../images/myvvv_action_icon_delete_complete.png) center / cover no-repeat;
 }
 .content.user-page .collection-detail .collection-info .action-wrap button:last-child {
 	margin-right: 0;

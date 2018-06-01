@@ -520,7 +520,9 @@ html.search-layer-opened .global-search-layer .inner {
 	transition: all 0.4s ease;
 	
 }
-
+.hide {
+	display: none !important;
+}
 .result-empty {
 	position: relative;
 	text-align: center;
