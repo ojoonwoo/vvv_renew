@@ -547,7 +547,7 @@
 				var secretFlag			= "";
 				var appendTxt			= "";
 
-				if (collection_secret === true)
+				if (collection_secret === false)
 				{
 					secretFlag = "is-secret";
 				}

@@ -523,7 +523,7 @@
 				var secretFlag			= "";
 				var appendTxt			= "";
 
-				if (collection_secret === true)
+				if (collection_secret === false)
 				{
 					secretFlag = "is-secret";
 				}
@@ -556,7 +556,7 @@
 						if (res_arr[0].match("Y") == "Y")
 						{
 							appendTxt += "<li class='c-info "+ secretFlag +"'>";
-							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'ß></i>";
+							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'></i>";
 							appendTxt += "</li>";
 
 							$("#my_collection_list").append(appendTxt);
