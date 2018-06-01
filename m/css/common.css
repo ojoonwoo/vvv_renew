@@ -798,6 +798,26 @@ html.search-layer-opened .global-search-layer .inner {
 .btn-light-grey {
 	background: #666666 !important;
 }
+
+.tab-wrap .tab {
+	transition: all 0.3s ease-in-out;
+}
+.tab-wrap .tab:last-child {
+	margin-right: 0 !important;
+}
+.tab-wrap .tab::after {
+	transition: all 0.4s ease-in-out;
+	transform: scaleY(0);
+	opacity: 0;
+}
+.tab-wrap .tab.is-active::after {
+	transform: scaleY(1) !important;
+	opacity: 1 !important;
+}
+.tab-wrap .tab.is-active,
+.tab-wrap .tab:hover {
+	color: #333333 !important;
+}
 /*공통 컴포넌트 */
 
 
