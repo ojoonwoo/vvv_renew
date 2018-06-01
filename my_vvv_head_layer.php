@@ -46,12 +46,16 @@
 										</div>
 										<div class="wrap-actions">
 											<div class="f-wer">
-												<span>팔로워</span>
-												<span class="count"><?=$mb_data['mb_follower_count']?></span>
+												<a href="javascript:void(0)" data-popup="#follow-state">
+													<span>팔로워</span>
+													<span class="count"><?=$mb_data['mb_follower_count']?></span>
+												</a>
 											</div>
 											<div class="f-ing">
-												<span>팔로잉</span>
-												<span class="count"><?=$mb_data['mb_following_count']?></span>
+												<a href="javascript:void(0)" data-popup="#follow-state">
+													<span>팔로잉</span>
+													<span class="count"><?=$mb_data['mb_following_count']?></span>
+												</a>
 											</div>
 <?
 	if ($_SESSION['ss_vvv_idx'] != $my_idx)
@@ -210,6 +214,75 @@
 											<button type="button" class="add"></button>
 										</div>
 									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup follow-state" id="follow-state">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="content">
+						<div class="area-tab">
+							<div class="tab-wrap">
+								<div class="tab is-active">
+									<a href="#">팔로우</a>
+								</div>
+								<div class="tab">
+									<a href="#">팔로잉</a>
+								</div>
+							</div>
+						</div>
+						<div class="area-list">
+							<div class="scroll-box follow is-active">
+								<div class="row">
+									<div class="img">
+										<a href="#">
+											<img src="./images/profile_sample.jpg" alt="">
+										</a>
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+												<div class="wrap collection">
+													<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="already"></button>
+									</div>
+								</div>
+							</div>
+							<div class="scroll-box following">
+								<div class="row">
+									<div class="img">
+										<a href="#">
+											<img src="./images/profile_sample.jpg" alt="">
+										</a>
+									</div>
+									<div class="info">
+										<div class="name">오준우</div>
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span>21</span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+										<button type="button" class="already"></button>
+									</div>
 								</div>
 							</div>
 						</div>
