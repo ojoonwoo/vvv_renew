@@ -131,7 +131,7 @@
 										<button class="favor <?=$collection_likeYN?>"></button>
 										<button class="secret"></button>
 										<!-- 디폴트: 닉네임 맨 앞 한글자만 노출 -->
-										<a href="javascript:void(0)" class="link-own"><span><?=$nick_first?></span></a>
+										<a href="my_vvv.php?idx=<?=$mb_data2["idx"]?>" class="link-own"><span><?=$nick_first?></span></a>
 									</div>
 									<!--내 컬렉션이 아닐경우-->
 <?

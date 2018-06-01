@@ -125,9 +125,9 @@
 		$mb_data2		= mysqli_fetch_array($mb_result2);
 
 		if ($mb_data2["mb_nickname"] == "")
-			$nick_first		= $mb_data2["mb_name"];
+			$nick_first		= mb_substr($mb_data2["mb_name"], 0, 1, 'utf-8');
 		else
-			$nick_first		= $mb_data2["mb_nickname"];
+			$nick_first		= mb_substr($mb_data2["mb_nickname"], 0, 1, 'utf-8');
 		
 ?>		
 											<!--내 컬렉션이 아닐경우-->
@@ -136,7 +136,7 @@
 												<!-- is-already 클래스 토글 on/off -->
 												<button class="favor <?=$collection_likeYN?>"></button>
 												<!-- <button class="secret"></button> -->
-												<a href="javascript:void(0)" class="link-own"><span><?=$nick_first?></span></a>
+												<a href="my_vvv.php?idx=<?=$mb_data2["idx"]?>" class="link-own"><span><?=$nick_first?></span></a>
 											</div>
 											<!--내 컬렉션이 아닐경우-->
 <?
