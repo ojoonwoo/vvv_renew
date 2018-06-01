@@ -823,6 +823,7 @@
 	margin-right: 39px;
 	padding: 24px 0;
 	display: inline-block;
+	transition: all 0.6s ease-in-out;
 }
 .content.user-page .user-feed .tab-wrap .tab:last-child {
 	margin-right: 0;
@@ -835,6 +836,7 @@
 	left: 0;
 	bottom: -1px;
 	background: #333333;
+	transition: all 0.6s ease-in-out;
 }
 .content.user-page .user-feed .tab-wrap .tab.is-active,
 .content.user-page .user-feed .tab-wrap .tab:hover {
@@ -842,6 +844,7 @@
 }
 .content.user-page .user-feed .inner {
 	padding: 55px 107px 200px;
+	transition: all 0.6s ease-in-out;
 }
 .content.user-page .user-feed .aj-content {
 	display: none;
