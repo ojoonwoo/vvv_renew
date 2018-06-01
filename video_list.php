@@ -194,19 +194,22 @@
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-		$title_count    = mb_strlen($list_data["video_title"],'utf-8');
-        if ($title_count > 20)
-            $video_title    = iconv_substr($list_data["video_title"],0,20)."..";
-        else
-			$video_title    = $list_data["video_title"];
-			
-        // 브랜드 줄바꿈 방지 글자 자르기
-        $brand_count    = mb_strlen($list_data["video_brand"],'utf-8');
-
-        if ($brand_count > 30)
-            $video_brand    = iconv_substr($list_data["video_brand"],0,30)."..";
-        else
-            $video_brand    = $list_data["video_brand"];
+//		$title_count    = mb_strlen($list_data["video_title"],'utf-8');
+//        if ($title_count > 20)
+//            $video_title    = iconv_substr($list_data["video_title"],0,20)."..";
+//        else
+//			$video_title    = $list_data["video_title"];
+//			
+//        // 브랜드 줄바꿈 방지 글자 자르기
+//        $brand_count    = mb_strlen($list_data["video_brand"],'utf-8');
+//
+//        if ($brand_count > 30)
+//            $video_brand    = iconv_substr($list_data["video_brand"],0,30)."..";
+//        else
+//            $video_brand    = $list_data["video_brand"];
+		
+		$video_title    = $list_data["video_title"];
+		$video_brand    = $list_data["video_brand"];
 			
 ?>                            
 									<div class="video col-lg-4 col-md-3 col-sm-2">
@@ -245,16 +248,12 @@
 									<input type="hidden" id="total_page" value="<?=$total_page?>">                     
 									<input type="hidden" id="view_page" value="<?=$view_pg?>">                      -->
 								</div>
-<?
-	if ($total_video_num > 12)
-	{
-?>								
-								<button type="button" class="read-more">
+								<button type="button" class="read-more <?= ($total_video_num < 12) ? 'hide' : '' ?>">
 									<img src="./images/plus_icon.png" alt="">
 								</button>
-<?
-	}
-?>								
+								<div class="result-empty <?= ($total_video_num > 0) ? 'hide' : '' ?>">
+									<p>검색결과가 없습니다.</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -323,13 +322,17 @@
 					},
 					success: function(response){
 						res_arr	= response.split("||");
-						console.log(res_arr[4]);
 						current_page = current_page + 1;
 						// console.log(current_page+"||"+res_arr[2]);
-						if (current_page > res_arr[2])
-							$(".read-more").hide();
+						if(res_arr[1] < 1)
+							$(".result-empty").removeClass('hide');
 						else
-							$(".read-more").show();
+							$(".result-empty").addClass('hide');
+
+						if (current_page > res_arr[2])
+							$(".read-more").addClass('hide');
+						else
+							$(".read-more").removeClass('hide');
 						// $("#list_video").append(response);
 						$("#list_video").html(res_arr[0]);
 						$("#list_video > .video.loaded").each(function(index) {
@@ -379,9 +382,9 @@
 						current_page = current_page + 1;
 						// console.log(current_page+"||"+res_arr[2]);
 						if (current_page >= res_arr[2])
-							$(".read-more").hide();
+							$(".read-more").addClass('hide');
 						else
-							$(".read-more").show();
+							$(".read-more").removeClass('hide');
 						$("#list_video").append(res_arr[0]);
 						$("#list_video > .video.loaded").each(function(index) {
 							(function(that, i) { 
