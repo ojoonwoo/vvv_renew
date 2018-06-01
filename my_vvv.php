@@ -191,7 +191,7 @@
 ?>
 										<div class="aj-content favor">
 <? 
-	if($collection_like_result < 1) {
+	if($collection_like_count < 1) {
 ?>
 											<div class="result-empty">
 												<p>좋아하는 컬렉션이 없습니다.</p>
