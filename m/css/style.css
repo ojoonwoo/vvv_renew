@@ -1249,9 +1249,9 @@
 }
 .content.user-page .user-feed .aj-content .album figcaption .icon-wrap .like i {
 	display: inline-block;
-	background: url(../images/icon_like.png) center / 9px 9px no-repeat;
-	width: 9px;
-	height: 9px;
+	background: url(../images/icon_favorite.png) center / 10px 10px no-repeat;
+	width: 10px;
+	height: 10px;
 	margin-right: 2px;
 }
 .content.user-page .user-feed .aj-content .album figcaption .secret-mode {
@@ -1993,7 +1993,7 @@
 	background: #333333;
 }
 .popup.follow-state .area-list {
-	padding: 0 35px;
+	padding: 0 24px;
 	margin: 28px auto 0;
 	overflow-y: hidden;
 	height: 192px;

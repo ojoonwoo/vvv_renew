@@ -950,10 +950,11 @@
 }
 .content.user-page .user-feed .aj-content .album figcaption .icon-wrap .like i {
 	display: inline-block;
-	background: url(../images/icon_like.png) center / 14px 14px no-repeat;
-	width: 14px;
-	height: 14px;
+	background: url(../images/icon_favorite.png) center / 17px 16px no-repeat;
+	width: 17px;
+	height: 16px;
 	margin-right: 4px;
+	vertical-align: -1px;
 }
 .content.user-page .user-feed .aj-content .album figcaption .secret-mode {
 	position: absolute;
