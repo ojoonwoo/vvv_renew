@@ -64,18 +64,18 @@
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-										<div class="tab collection is-active" data-tab-content="collection">
+										<div class="tab collection is-active" data-tab-target="collection">
 											<a href="#">Collection</a>
 										</div>
-										<div class="tab favor" data-tab-content="favor">
+										<div class="tab favor" data-tab-target="favor">
 											<a href="#">Favorite</a>
 										</div>
-										<div class="tab like" data-tab-content="like">
+										<div class="tab like" data-tab-target="like">
 											<a href="#">Like</a>
 										</div>
 									</div>
 									<div class="inner">
-										<div class="aj-content collection is-active">
+										<div class="aj-content collection is-active" data-tap-content="collection">
 											<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
@@ -182,7 +182,7 @@
 	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
 	$collection_like_count		= mysqli_num_rows($collection_like_result);
 ?>
-										<div class="aj-content favor">
+										<div class="aj-content favor" data-tap-content="favor">
 <? 
 	if($collection_like_count < 1) {
 ?>
@@ -271,7 +271,7 @@
 	}
 ?>
 										</div>
-										<div class="aj-content like">
+										<div class="aj-content like" data-tap-content="like">
 <?
 	if($my_count < 1) {
 ?>
@@ -473,9 +473,10 @@
 //				$(".tab").removeClass("is-active");
 				$(this).addClass("is-active");
 
-				var target = $(this).data('tab-content');
-				$(".aj-content").removeClass("is-active");
-				$(".aj-content."+target).addClass("is-active");
+				var target = $(this).data('tab-target');
+				$('[data-tab-content='+target+']').siblings().removeClass('is-active');
+				$('[data-tab-content='+target+']').addClass("is-active");
+//				$(".aj-content."+target).addClass("is-active");
 
 				return false;
 			});

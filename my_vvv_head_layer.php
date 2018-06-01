@@ -226,16 +226,16 @@
 					<div class="content">
 						<div class="area-tab">
 							<div class="tab-wrap">
-								<div class="tab is-active" data-tab-content="follow">
+								<div class="tab is-active" data-tab-target="follow">
 									<a href="#">팔로우</a>
 								</div>
-								<div class="tab" data-tab-content="following">
+								<div class="tab" data-tab-target="following">
 									<a href="#">팔로잉</a>
 								</div>
 							</div>
 						</div>
 						<div class="area-list">
-							<div class="scroll-box follow is-active aj-content">
+							<div class="scroll-box follow is-active aj-content" data-tab-content="follow">
 								<div class="row">
 									<div class="img">
 										<a href="#">
@@ -260,7 +260,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="scroll-box following aj-content">
+							<div class="scroll-box following aj-content" data-tab-content="following">
 								<div class="row">
 									<div class="img">
 										<a href="#">
