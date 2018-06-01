@@ -28,7 +28,7 @@
 							<a href="video_list.php?sort=new">ALL VVV</a>
 						</li>
 						<li>
-							<a href="video_list.php?sort=best">BEST</a>
+							<a href="best_list.php">BEST</a>
 						</li>
 						<li>
 							<a href="video_list.php?sort=new">NEW</a>

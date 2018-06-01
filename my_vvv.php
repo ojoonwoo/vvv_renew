@@ -468,9 +468,15 @@
 			});
 
 			$doc.on('click', '.tab', function() {
+<<<<<<< HEAD
 				console.log($(this));
 				$(this).siblings().removeClass("is-active");
 				// $(".tab").removeClass("is-active");
+=======
+				$wrap = $(this).closest('.tab-wrap');
+				$wrap.find('.tab').removeClass('is-active');
+//				$(".tab").removeClass("is-active");
+>>>>>>> 38a5a06613dc42f6d8fe0215322718aa2c9e72e9
 				$(this).addClass("is-active");
 
 				var target = $(this).data('tab-content');
