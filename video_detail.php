@@ -299,7 +299,8 @@
 									</div>
 								</div>
 								<div class="button-wrap">
-									<button type="button" data-popup="@close">
+									<!-- <button type="button" data-popup="@close"> -->
+									<button type="button" onclick="cancel_create_collection()">
 										취소
 									</button>
 									<button type="button" onclick="create_collection()">
@@ -352,8 +353,7 @@
 									</div>
 								</div>
 								<div class="button-wrap">
-									<!-- <button type="button" data-popup="@close"> -->
-									<button type="button" onclick="cancel_create_collection()">
+									<button type="button" data-popup="@close">
 										취소
 									</button>
 									<button type="button" onclick="create_collection()">
