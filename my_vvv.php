@@ -278,7 +278,6 @@
 <?										
 	}
 ?>
-
 										<div class="aj-content like">
 											<div class="text-block">
 												<p>당신이 좋아한 영상입니다!</p>
