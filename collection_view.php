@@ -381,6 +381,20 @@
 				$('.collection-detail').toggleClass('check-mode');
 			});
 
+			$doc.on('click', '.tab', function() {
+				$wrap = $(this).closest('.tab-wrap');
+				$wrap.find('.tab').removeClass('is-active');
+//				$(".tab").removeClass("is-active");
+				$(this).addClass("is-active");
+
+				var target = $(this).data('tab-target');
+				$('[data-tab-content='+target+']').siblings().removeClass('is-active');
+				$('[data-tab-content='+target+']').addClass("is-active");
+//				$(".aj-content."+target).addClass("is-active");
+
+				return false;
+			});
+
 			function follow_member()
 			{
 				$.ajax({
