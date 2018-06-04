@@ -697,7 +697,7 @@
 							console.log(response);
 							if (response.match("Y") == "Y")
 							{
-								alert("덧글이 삭제되었습니다.");
+								alert("댓글이 삭제되었습니다.");
 								location.reload();
 							}else{
 								alert("다시 시도해 주세요.");
