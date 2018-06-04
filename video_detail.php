@@ -149,11 +149,16 @@
 											<div class="date">
 												<?=substr($comment_data["comment_regdate"],0,10)?>
 											</div>
-<!--
+<?
+		if ($_SESSION["ss_vvv_idx"] == $comment_data["mb_idx"])
+		{
+?>											
 											<div class="actions">
 												<button type="button" class="remove-comment"></button>
-											</div> 
--->
+											</div>
+<?
+		}
+?>											
 										</div>
 <?
 	}
