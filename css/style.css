@@ -818,8 +818,11 @@
 .content.user-page .user-feed {
 	margin: 191px auto;
 	max-width: 1270px;
-	border: 1px solid #969696;
+/*	border: 1px solid #969696;*/
 	position: relative;
+}
+.content.user-page .user-feed .result-empty {
+	padding: 125px 0 0;
 }
 .content.user-page .user-feed .tab-wrap {
 	position: absolute;
@@ -1013,7 +1016,7 @@
 .content.user-page .collection-detail .semi-container {
 	position: relative;
 	padding: 52px 117px;
-	border: 1px solid #969696;
+/*	border: 1px solid #969696;*/
 }
 .content.user-page .collection-detail .semi-container .content-empty {
 	margin: 100px 0 120px;

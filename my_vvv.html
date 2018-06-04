@@ -255,10 +255,10 @@
 							<div class="user-feed">
 								<div class="wrapper">
 									<div class="tab-wrap">
-										<div class="tab" data-tab-target="collection">
+										<div class="tab is-active" data-tab-target="collection">
 											<a href="#">Collection</a>
 										</div>
-										<div class="tab is-active" data-tab-target="favor">
+										<div class="tab" data-tab-target="favor">
 											<a href="#">Favorite</a>
 										</div>
 										<div class="tab" data-tab-target="like">
@@ -268,6 +268,13 @@
 									<div class="inner">
 										<div class="aj-content collection is-active" data-tab-content="collection">
 											<div class="wrapper made">
+												<div class="result-empty">
+													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+													<a class="link-black" href="javascript:void(0)">
+														<span>만들기 +</span>
+													</a>
+												</div>
+<!--
 												<div class="text-block">
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
 												</div>
@@ -349,8 +356,10 @@
 														</div>
 													</div>
 												</div>
+-->
 											</div>
 										</div>
+<!--
 										<div class="aj-content favor" data-tab-content="favor">
 											<div class="result-empty">
 												<p>좋아하는 컬렉션이 없습니다.</p>
@@ -438,10 +447,20 @@
 												</div>
 											</div>
 										</div>
+-->
 										<div class="aj-content like" data-tab-content="like">
+											<div class="result-empty">
+												<p>하트를 눌러 좋아하는 영상을 추가해보세요!</p>
+												<a class="link-black" href="./video_list.php?sort=new">
+													<span>영상 보러가기</span>
+												</a>
+											</div>
+<!--
 											<div class="text-block">
 												<span>당신이</span> 좋아한 영상입니다!
 											</div>
+-->
+<!--
 											<div class="list-container">
 												<div class="video-list">
 													<div class="video col-lg-3 col-md-3 col-sm-2">
@@ -623,6 +642,7 @@
 													</button>
 												</div>
 											</div>
+-->
 										</div>
 									</div>
 								</div>

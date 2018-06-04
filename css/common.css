@@ -531,6 +531,27 @@ html.search-layer-opened .global-search-layer .inner {
 .result-empty p {
 	font-size: 18px;
 	font-weight: 500;
+	color: #666666;
+}
+.result-empty .link-black {
+	display: block;
+	position: relative;
+	margin: 30px auto 0;
+	width: 124px;
+	height: 45px;
+	color: #ffffff;
+	background: #333333;
+	text-align: center;
+}
+.result-empty .link-black span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 16px;
+	font-weight: 500;
 }
 
 .tab-wrap .tab {

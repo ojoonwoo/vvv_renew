@@ -187,7 +187,7 @@
 	if($collection_like_count < 1) {
 ?>
 											<div class="result-empty">
-												<p>좋아하는 컬렉션이 없습니다.</p>
+												<p>다른 친구의 컬렉션을 추가해 생각을 공유해보세요!</p>
 											</div>
 <?		
 	} else {
@@ -276,7 +276,10 @@
 	if($my_count < 1) {
 ?>
 											<div class="result-empty">
-												<p>좋아하는 영상이 없습니다.</p>
+												<p>하트를 눌러 좋아하는 영상을 추가해보세요!</p>
+												<a class="link-black" href="./video_list.php?sort=new">
+													<span>영상 보러가기</span>
+												</a>
 											</div>
 <?
 	} else {
