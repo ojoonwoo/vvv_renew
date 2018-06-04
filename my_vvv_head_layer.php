@@ -293,11 +293,11 @@
 			if ($add_count > 0)
 			{
 ?>		
-										<button type="button" class="already" id="f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','already')"></button>
+										<button type="button" class="already" id="f_list_btn_follow_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','already','follow')"></button>
 <?
 			}else{
 ?>										
-										<button type="button" class="add" id="f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add')"></button>
+										<button type="button" class="add" id="f_list_btn_follow_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add','follow')"></button>
 <?
 			}
 		}
@@ -367,11 +367,11 @@
 			if ($add_count > 0)
 			{
 ?>		
-										<button type="button" class="already" id="f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already')"></button>
+										<button type="button" class="already" id="f_list_btn_following_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already','following')"></button>
 <?
 			}else{
 ?>										
-										<button type="button" class="add" id="f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','add')"></button>
+										<button type="button" class="add" id="f_list_btn_following_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','add','following')"></button>
 <?
 			}
 		}
@@ -552,7 +552,7 @@ console.log(edit_secret);
                 }
 			}
 
-            function list_follow_member(idx, followClass)
+            function list_follow_member(idx, followClass, listFlag)
 			{
                 if (followClass == "already")
                 {
@@ -580,13 +580,13 @@ console.log(edit_secret);
 						{
                             alert("팔로우 되었습니다.");
                             // location.reload();
-                            $("#f_list_btn_"+idx).attr("class","already");
-                            $("#f_list_btn_"+idx).attr("onclick","list_follow_member('" + idx + "','already')");
+                            $("#f_list_btn_"+listFlag+"_"+idx).attr("class","already");
+                            $("#f_list_btn_"+listFlag+"_"+idx).attr("onclick","list_follow_member('" + idx + "','already','" + listFlag + "')");
 						}else if (response.match("D") == "D"){
                             alert("팔로우가 취소 되었습니다.");
                             // location.reload();
-                            $("#f_list_btn_"+idx).attr("class","add");
-                            $("#f_list_btn_"+idx).attr("onclick","list_follow_member('" + idx + "','add')");
+                            $("#f_list_btn_"+listFlag+"_"+idx).attr("class","add");
+                            $("#f_list_btn_"+listFlag+"_"+idx).attr("onclick","list_follow_member('" + idx + "','add','" + listFlag + "')");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();
