@@ -252,7 +252,8 @@
 									<img src="./images/plus_icon.png" alt="">
 								</button>
 								<div class="result-empty <?= ($total_video_num > 0) ? 'hide' : '' ?>">
-									<p>검색결과가 없습니다.</p>
+									<p>검색결과가 없습니다</p>
+									<p>다른 키워드로 검색을 시도해보세요!</p>
 								</div>
 							</div>
 						</div>

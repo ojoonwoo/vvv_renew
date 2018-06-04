@@ -821,8 +821,15 @@
 /*	border: 1px solid #969696;*/
 	position: relative;
 }
-.content.user-page .user-feed .result-empty {
+.content.user-page .result-empty {
 	padding: 125px 0 0;
+}
+.content.user-page .result-empty .plus {
+	display: block;
+	margin: 0 auto 10px;
+	width: 23px;
+	height: 25px;
+	background: url(../images/plus_icon_2325_black.png) center / 23px 25px no-repeat;
 }
 .content.user-page .user-feed .tab-wrap {
 	position: absolute;
@@ -1017,20 +1024,6 @@
 	position: relative;
 	padding: 52px 117px;
 /*	border: 1px solid #969696;*/
-}
-.content.user-page .collection-detail .semi-container .content-empty {
-	margin: 100px 0 120px;
-}
-.content.user-page .collection-detail .semi-container .content-empty span {
-	display: block;
-	text-align: center;
-	font-size: 20px;
-	color: #666666;
-}
-.content.user-page .collection-detail .semi-container .content-empty span:first-child {
-	margin-bottom: 20px;
-	font-size: 50px;
-	font-weight: 100;
 }
 .content.user-page .collection-detail .collection-info .counts span.wrap {
 	display: inline-block;

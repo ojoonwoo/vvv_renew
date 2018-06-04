@@ -1145,6 +1145,9 @@
 	font-size: 13px;
 	text-align: center;
 }
+.content.user-page .user-feed .result-empty {
+	padding: 0;
+}
 .content.user-page .user-feed .aj-content {
 	display: none;
 }
@@ -1341,19 +1344,12 @@
 .content.user-page .collection-detail .semi-container {
 	position: relative;
 }
-.content.user-page .collection-detail .semi-container .content-empty {
-	margin: 50px 0 60px;
-}
-.content.user-page .collection-detail .semi-container .content-empty span {
+.content.user-page .result-empty .plus {
 	display: block;
-	text-align: center;
-	font-size: 14px;
-	color: #666666;
-}
-.content.user-page .collection-detail .semi-container .content-empty span:first-child {
-	margin-bottom: 10px;
-	font-size: 25px;
-	font-weight: 100;
+	margin: 0 auto 11px;
+	width: 11px;
+	height: 12px;
+	background: url(../images/plus_icon_2325_black.png) center / 11px 12px no-repeat;
 }
 .content.user-page .collection-detail .collection-info .counts span.wrap {
 	display: inline-block;
