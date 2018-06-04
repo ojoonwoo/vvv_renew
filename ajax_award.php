@@ -13,7 +13,8 @@
 		$award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_idx='".$award."' AND awards_winner_year='".$award_date."' GROUP BY video_idx";
 
 	$award_result 	= mysqli_query($my_db, $award_query);
-	print_r($award_query);
+	$award_count 	= mysqli_num_rows($award_result);
+//	print_r($award_query);
 	$i = 0;
     while ($award_data = mysqli_fetch_array($award_result))
     {    
@@ -42,12 +43,14 @@
         // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
-        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
-
-        if ($title_count > 45)
-            $video_title    = substr($video_data["video_title"],0,45)."...";
-        else
-			$video_title    = $video_data["video_title"];
+//        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
+//
+//        if ($title_count > 45)
+//            $video_title    = substr($video_data["video_title"],0,45)."...";
+//        else
+//			$video_title    = $video_data["video_title"];
+		
+		$video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
 											<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
@@ -96,12 +99,14 @@
         // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
-        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
-
-        if ($title_count > 45)
-            $video_title    = substr($video_data["video_title"],0,45)."...";
-        else
-			$video_title    = $video_data["video_title"];
+//        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
+//
+//        if ($title_count > 45)
+//            $video_title    = substr($video_data["video_title"],0,45)."...";
+//        else
+//			$video_title    = $video_data["video_title"];
+		
+		$video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
 											<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
@@ -135,3 +140,6 @@
 <?
 	}
 ?>										
+									</div>
+									
+<!-- ||<?=$award_count;?>|| -->
