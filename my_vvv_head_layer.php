@@ -298,11 +298,11 @@
 		if ($add_count > 0)
 		{
 ?>		
-										<button type="button" class="already" onclick="follow_member()"></button>
+										<button type="button" class="already" id="f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','already')"></button>
 <?
 		}else{
 ?>										
-										<button type="button" class="add" onclick="follow_member()"></button>
+										<button type="button" class="add" id="f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add')"></button>
 <?
 		}
 	}
@@ -559,13 +559,13 @@ console.log(edit_secret);
 						{
                             alert("팔로우 되었습니다.");
                             // location.reload();
-                            $("#f_btn_"+idx).attr("class","already");
-                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','already')");
+                            $("#f_list_btn_"+idx).attr("class","already");
+                            $("#f_list_btn_"+idx).attr("onclick","list_follow_member('" + idx + "','already')");
 						}else if (response.match("D") == "D"){
                             alert("팔로우가 취소 되었습니다.");
                             // location.reload();
-                            $("#f_btn_"+idx).attr("class","add");
-                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
+                            $("#f_list_btn_"+idx).attr("class","add");
+                            $("#f_list_btn_"+idx).attr("onclick","list_follow_member('" + idx + "','add')");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();
