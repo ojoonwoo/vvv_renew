@@ -236,43 +236,22 @@
 						</div>
 						<div class="area-list">
 							<div class="scroll-box follow is-active aj-content" data-tab-content="follow">
-<?
-	// $my_idx
-	$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$my_idx."'";
-	$follow_result		= mysqli_query($my_db, $follow_query);
-
-	while ($follow_data = mysqli_fetch_array($follow_result))
-	{
-		$mb_f_query		= "SELECT * FROM member_info WHERE idx='".$follow_data["follower_idx"]."'";
-		$mb_f_result	= mysqli_query($my_db, $mb_f_query);
-		$mb_f_data		= mysqli_fetch_array($mb_f_result);
-
-		// 라이크 갯수
-		$like_f_query	= "SELECT * FROM like_info WHERE mb_idx='".$mb_f_data["idx"]."' AND like_flag='Y'";
-		$like_f_result	= mysqli_query($my_db, $like_f_query);
-		$like_f_count	= mysqli_num_rows($like_f_result);
-		
-		// 컬렉션 갯수
-		$collection_f_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$mb_f_data["idx"]."' AND collection_showYN='Y'";
-		$collection_f_result	= mysqli_query($my_db, $collection_f_query);
-		$collection_f_count		= mysqli_num_rows($collection_f_result);
-?>								
-								<div class="row">
+							<div class="row">
 									<div class="img">
 										<a href="#">
-											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
+											<img src="./images/profile_sample.jpg" alt="">
 										</a>
 									</div>
 									<div class="info">
-										<div class="name"><?=$mb_f_data["mb_name"]?></div>
+										<div class="name">오준우111</div>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
-												<span><?=$like_f_count?></span>
+												<span>21</span>
 											</div>
-												<div class="wrap collection">
-													<i></i>
-												<span><?=$collection_f_count?></span>
+											<div class="wrap collection">
+												<i></i>
+												<span>11</span>
 											</div>
 										</div>
 									</div>
@@ -280,9 +259,6 @@
 										<button type="button" class="already"></button>
 									</div>
 								</div>
-<?
-	}
-?>								
 							</div>
 							<div class="scroll-box following aj-content" data-tab-content="following">
 								<div class="row">
