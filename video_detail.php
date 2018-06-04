@@ -149,6 +149,11 @@
 											<div class="date">
 												<?=substr($comment_data["comment_regdate"],0,10)?>
 											</div>
+<!--
+											<div class="actions">
+												<button type="button" class="remove-comment"></button>
+											</div> 
+-->
 										</div>
 <?
 	}

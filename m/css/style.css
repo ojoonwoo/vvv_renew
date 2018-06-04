@@ -1906,9 +1906,19 @@
 }
 .popup.search-friends .search-result .row .img {
 	width: 36px;
+	height: 36px;
+	flex-grow: 0;
+	flex-shrink: 0;
 	margin-right: 15px;
 	border-radius: 50%;
 	overflow: hidden;
+}
+.popup.search-friends .search-result .row .img img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	object-position: center;
 }
 .popup.search-friends .search-result .row .info {
 	text-align: left;
@@ -2016,9 +2026,19 @@
 }
 .popup.follow-state .area-list .row .img {
 	width: 36px;
+	height: 36px;
+	flex-grow: 0;
+	flex-shrink: 0;
 	margin-right: 15px;
 	border-radius: 50%;
 	overflow: hidden;
+}
+.popup.follow-state .area-list .row .img img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	object-position: center;
 }
 .popup.follow-state .area-list .row .info {
 	text-align: left;

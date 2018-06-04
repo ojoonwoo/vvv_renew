@@ -663,6 +663,19 @@
 	right: 13px;
 	font-size: 14px;
 }
+.content.detail .block-comment .comment-list .row .actions {
+	position: absolute;
+	top: 73px;
+	right: 13px !important;
+	transform: none;
+	left: inherit;
+}
+.content.detail .block-comment .comment-list .row .actions .remove-comment {
+	background: url(../images/close_x_black.png) center no-repeat;
+	background-size: 18px 19px;
+	width: 18px;
+	height: 19px;
+}
 .content.detail .block-related {
 	padding: 0 46px;
 }
@@ -1979,9 +1992,19 @@
 }
 .popup.search-friends .search-result .row .img {
 	width: 75px;
+	height: 75px;
 	margin-right: 23px;
 	border-radius: 50%;
 	overflow: hidden;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.popup.search-friends .search-result .row .img img {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+	max-width: none;
 }
 .popup.search-friends .search-result .row .info {
 	text-align: left;
@@ -2090,9 +2113,19 @@
 }
 .popup.follow-state .area-list .row .img {
 	width: 75px;
+	height: 75px;
 	margin-right: 23px;
 	border-radius: 50%;
 	overflow: hidden;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.popup.follow-state .area-list .row .img img {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+	max-width: none;
 }
 .popup.follow-state .area-list .row .info {
 	text-align: left;
