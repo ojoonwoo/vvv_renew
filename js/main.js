@@ -268,7 +268,7 @@
 			$spread = $('#cursor .spread');
 		var xPos = e.pageX,
 			yPos = e.pageY;
-		TweenMax.to($cursor, 0.13, {x: xPos-6, y: yPos-6, scale: 1});
+		TweenMax.to($cursor, 0, {x: xPos-6, y: yPos-6, scale: 1});
 	});
 	var mouseType = "";
 	$doc.on('mouseover', '[data-mouse-type]', function() {
@@ -278,6 +278,10 @@
 		$('#cursor').removeClass(mouseType);
 	});
 	$doc.on('mouseleave', function() {
+		var $cursor = $('#cursor');
+		TweenMax.to($cursor, 0.13, {scale: 0});
+	});
+	$win.on('scroll', function() {
 		var $cursor = $('#cursor');
 		TweenMax.to($cursor, 0.13, {scale: 0});
 	});

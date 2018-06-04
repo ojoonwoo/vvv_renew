@@ -391,7 +391,7 @@ header #gnb .burger-wrap .line.mid {
 	opacity: 1;
 }
 .menu-opened .global-menu .anim-blur {
-	filter: blur(0);
+	filter: blur(0) !important;
 }
 .menu-opened .global-menu .about-us .line {
 	transform: scaleX(1);

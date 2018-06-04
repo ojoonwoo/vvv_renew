@@ -381,7 +381,7 @@ header .actions .search-wrap > button > span {
 	background: #f7dd30;
 }
 .menu-opened .global-menu .anim-blur {
-	filter: blur(0);
+	filter: blur(0) !important;
 }
 
 .global-search-layer {
