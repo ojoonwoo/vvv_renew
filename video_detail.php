@@ -3,11 +3,17 @@
 
     $mnv_f = new mnv_function();
     $my_db         = $mnv_f->Connect_MySQL();
+    $mobileYN      = $mnv_f->MobileCheck();
     // if ($mobileYN == "MOBILE")
     // {
     //     echo "<script>location.href='m/index.php';</script>";
 	// }
 	$video_idx	= $_REQUEST["idx"];
+
+	if ($mobileYN == "MOBILE")
+    {
+        echo "<script>location.href='./m/video_detail.php?idx=".$video_idx."';</script>";
+    }
 
 	// 영상 정보
 	$detail_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$video_idx."'";
