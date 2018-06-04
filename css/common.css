@@ -832,6 +832,43 @@ html.search-layer-opened .global-search-layer .inner {
 button.btn-light-grey {
 	background: #666666 !important;
 }
+
+#cursor {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	cursor: none;
+	pointer-events: none;
+}
+#cursor.default .dot {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	background: #417de1;
+	width: 12px;
+	height: 12px;
+}
+#cursor.default .spread {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	transition: transform 0.21s ease-in-out, background 0.21s ease-in-out;
+}
+#cursor.btn1 .spread {
+	background: rgba(65, 125, 225, 0.5);
+	transform: scale(5.5);
+/*	transform: scale(4);*/
+	top: 50%;
+	left: 50%;
+/*	margin: -27px 0 0 -27px;*/
+}
 /*공통 컴포넌트 */
 /* jquery ui customize */
 .ui-widget {

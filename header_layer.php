@@ -22,7 +22,7 @@
 ?>                        
 							</div>
 							<div class="search-wrap magnet-wrap">
-								<button type="button" class="magnet-parent button-search">
+								<button type="button" class="magnet-parent button-search" data-mouse-type="btn1">
 									<span class="magnet-child"></span>
 								</button>
 							</div>

@@ -262,5 +262,24 @@
 //		
 //	});
 
+	$doc.on('mousemove', function(e) {
+		var $cursor = $('#cursor'),
+			$dot = $('#cursor .dot'),
+			$spread = $('#cursor .spread');
+		var xPos = e.pageX,
+			yPos = e.pageY;
+		TweenMax.to($cursor, 0.13, {x: xPos-6, y: yPos-6, scale: 1});
+	});
+	var mouseType = "";
+	$doc.on('mouseover', '[data-mouse-type]', function() {
+		mouseType = $(this).data('mouse-type');
+		$('#cursor').addClass(mouseType);
+	}).on('mouseout', function() {
+		$('#cursor').removeClass(mouseType);
+	});
+	$doc.on('mouseleave', function() {
+		var $cursor = $('#cursor');
+		TweenMax.to($cursor, 0.13, {scale: 0});
+	});
 
 })(jQuery);

@@ -56,7 +56,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="cursor" class="defualt"></div>
+			<div id="cursor" class="default"></div>
 		</div>
 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>		
 		<script>

@@ -768,6 +768,8 @@
 	text-align: center;
 }
 .content.user-page .user-info .info-wrap .wrap-user .setting img {
+	width: 100%;
+	height: 100%;
 	display: inline-block;
 	vertical-align: middle;
 }

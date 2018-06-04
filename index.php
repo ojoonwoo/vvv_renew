@@ -278,7 +278,10 @@
 				</div>
 			</div>
 		</div>
-		<div id="cursor" class="defualt"></div>
+		<div id="cursor" class="default">
+			<div class="dot"></div>
+			<div class="spread"></div>
+		</div>
 	</div>
 <script>
 	var video_pg 	        = 0;
