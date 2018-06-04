@@ -221,7 +221,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="cursor" class="defualt"></div>
+			<div id="cursor" class="default"></div>
 		</div>
 		<script>
 			$doc = $(document);
