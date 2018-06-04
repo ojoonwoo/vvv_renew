@@ -10,6 +10,7 @@
 	$award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_idx='".$prize."' AND awards_winner_year='".$award_date."' GROUP BY video_idx";
 
 	$award_result 	= mysqli_query($my_db, $award_query);
+	$award_count	= mysqli_num_rows($award_result);
 
     while ($award_data = mysqli_fetch_array($award_result))
     {    
@@ -61,3 +62,4 @@
 <?
 	}
 ?>
+<!-- ||<?=$award_count;?>|| -->

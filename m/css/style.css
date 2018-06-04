@@ -943,6 +943,9 @@
 	max-width: 1400px;
 	margin: 0 auto;
 }
+.awards .result-empty p {
+	font-size: 14px;
+}
 .awards .list-container .video-list {
 	font-size: 0;
 }

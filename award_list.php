@@ -163,6 +163,7 @@
 <?
     $award_query	= "SELECT * FROM awards_list_info WHERE 1 AND awards_name='2' AND awards_winner_year='2017' GROUP BY video_idx";
 	$award_result 	= mysqli_query($my_db, $award_query);
+	$award_count	= mysqli_num_rows($award_result);
 	
 	$i = 0;
     while ($award_data = mysqli_fetch_array($award_result))
@@ -246,12 +247,14 @@
         // $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/maxresdefault.jpg";
 
-        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
-
-        if ($title_count > 45)
-            $video_title    = substr($video_data["video_title"],0,45)."...";
-        else
-			$video_title    = $video_data["video_title"];
+//        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
+//
+//        if ($title_count > 45)
+//            $video_title    = substr($video_data["video_title"],0,45)."...";
+//        else
+//			$video_title    = $video_data["video_title"];
+		
+		$video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
 											<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
@@ -290,6 +293,9 @@
 								<!-- <button type="button" class="read-more">
 									<img src="./images/plus_icon.png" alt="">
 								</button> -->
+								<div class="result-empty <?= ($award_count > 0) ? 'hide' : '' ?>">
+									<p>검색결과가 없습니다</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -322,7 +328,13 @@
 								"award_date"			: ui.item.value
 							},
 							success: function(response){
-								console.log(response);
+//								console.log(response);
+								var res_count = response.split('||')[1];
+//								console.log(res_count);
+								if(res_count < 1)
+									$(".result-empty").removeClass('hide');
+								else
+									$(".result-empty").addClass('hide');
 								$("#award_list").html(response);
 							}
 						});
@@ -420,7 +432,13 @@
 						"award_date"			: award_date
 					},
 					success: function(response){
-						console.log(response);
+//						console.log(response);
+						var res_count = response.split('||')[1];
+//						console.log(res_count);
+						if(res_count < 1)
+							$(".result-empty").removeClass('hide');
+						else
+							$(".result-empty").addClass('hide');
 						// res_arr	= response.split("||");
 						// current_page = current_page + 1;
 						// if (current_page >= total_page)
@@ -455,7 +473,13 @@
 						"award_date"			: a_date
 					},
 					success: function(response){
-						console.log(response);
+//						console.log(response);
+						var res_count = response.split('||')[1];
+						if(res_count < 1)
+							$(".result-empty").removeClass('hide');
+						else
+							$(".result-empty").addClass('hide');
+//						console.log(res_count);
 						$("#award_list").html(response);
 					}
 				});

@@ -125,6 +125,7 @@
 <?
     $award_query	= "SELECT * FROM awards_info WHERE 1 AND awards_name='NYF'";
     $award_result 	= mysqli_query($my_db, $award_query);
+	$award_count	= mysqli_num_rows($award_result);
     while ($award_data = mysqli_fetch_array($award_result))
     {    
 		if ($award_data["awards_prize"] == "")
@@ -212,6 +213,9 @@
 								<!-- <button type="button" class="read-more">
 									<img src="./images/plus_icon.png" alt="">
 								</button> -->
+								<div class="result-empty <?= ($award_count > 0) ? 'hide' : '' ?>">
+									<p>검색결과가 없습니다</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -301,11 +305,17 @@
 					},
 					success: function(response){
 						res_arr	= response.split("||");
+						console.log(res_arr[2]);
 						// current_page = current_page + 1;
 						// if (current_page >= total_page)
 						// 	$(".read-more").hide();
 						// else
-						// 	$(".read-more").show();
+						// 	$(".read-more").show()
+						if(res_arr[2] < 1)
+							$(".result-empty").removeClass('hide');
+						else
+							$(".result-empty").addClass('hide');;
+						
 						$(".video-list").html(res_arr[0]);
 						$(".lc-order-ptype").html(res_arr[1]);
 						$(".video-list > .video.loaded").each(function(index) {
@@ -334,12 +344,17 @@
 						"award_date"			: award_date
 					},
 					success: function(response){
-						// res_arr	= response.split("||");
+						res_arr	= response.split("||");
 						// current_page = current_page + 1;
 						// if (current_page >= total_page)
 						// 	$(".read-more").hide();
 						// else
 						// 	$(".read-more").show();
+						if(res_arr[1] < 1)
+							$(".result-empty").removeClass('hide');
+						else
+							$(".result-empty").addClass('hide');
+						
 						$(".video-list").html(response);
 						$(".video-list > .video.loaded").each(function(index) {
 							(function(that, i) { 
@@ -367,6 +382,12 @@
 						"award_date"			: award_date
 					},
 					success: function(response){
+						res_arr	= response.split("||");
+						if(res_arr[1] < 1)
+							$(".result-empty").removeClass('hide');
+						else
+							$(".result-empty").addClass('hide');
+						
 						$(".video-list").html(response);
 						$(".video-list > .video.loaded").each(function(index) {
 							(function(that, i) { 
