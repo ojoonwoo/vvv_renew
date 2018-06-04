@@ -555,10 +555,10 @@
 				<div class="content">
 					<div class="area-tab">
 						<div class="tab-wrap">
-							<div class="tab is-active">
+							<div class="tab is-active" data-tab-target="follow">
 								<a href="#">팔로우</a>
 							</div>
-							<div class="tab">
+							<div class="tab" data-tab-target="following">
 								<a href="#">팔로잉</a>
 							</div>
 						</div>
