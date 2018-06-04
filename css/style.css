@@ -1992,9 +1992,19 @@
 }
 .popup.search-friends .search-result .row .img {
 	width: 75px;
+	height: 75px;
 	margin-right: 23px;
 	border-radius: 50%;
 	overflow: hidden;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.popup.search-friends .search-result .row .img img {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+	max-width: none;
 }
 .popup.search-friends .search-result .row .info {
 	text-align: left;
@@ -2103,9 +2113,19 @@
 }
 .popup.follow-state .area-list .row .img {
 	width: 75px;
+	height: 75px;
 	margin-right: 23px;
 	border-radius: 50%;
 	overflow: hidden;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.popup.follow-state .area-list .row .img img {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+	max-width: none;
 }
 .popup.follow-state .area-list .row .info {
 	text-align: left;
