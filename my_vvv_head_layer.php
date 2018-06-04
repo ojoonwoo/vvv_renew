@@ -243,7 +243,7 @@
 
 	while ($follow_data = mysqli_fetch_array($follow_result))
 	{
-		if ($_SESSION["ss_vvv_idx"] == $follower_data["follower_idx"])
+		if ($_SESSION["ss_vvv_idx"] == $follow_data["follower_idx"])
 			continue;
 
 			$mb_f_query		= "SELECT * FROM member_info WHERE idx='".$follow_data["follower_idx"]."'";
