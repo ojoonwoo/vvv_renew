@@ -3,11 +3,17 @@
 
     $mnv_f = new mnv_function();
     $my_db         = $mnv_f->Connect_MySQL();
+    $mobileYN      = $mnv_f->MobileCheck();
     // if ($mobileYN == "MOBILE")
     // {
     //     echo "<script>location.href='m/index.php';</script>";
 	// }
 	$video_idx	= $_REQUEST["idx"];
+
+	if ($mobileYN == "MOBILE")
+    {
+        echo "<script>location.href='./m/video_detail.php?idx=".$video_idx."';</script>";
+    }
 
 	// 영상 정보
 	$detail_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$video_idx."'";
@@ -149,11 +155,16 @@
 											<div class="date">
 												<?=substr($comment_data["comment_regdate"],0,10)?>
 											</div>
-<!--
+<?
+		if ($_SESSION["ss_vvv_idx"] == $comment_data["mb_idx"])
+		{
+?>											
 											<div class="actions">
-												<button type="button" class="remove-comment"></button>
-											</div> 
--->
+												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>')"></button>
+											</div>
+<?
+		}
+?>											
 										</div>
 <?
 	}
@@ -380,6 +391,7 @@
 		</div>
 		<script src="./lib/clipboard/dist/clipboard.min.js"></script>
 		<script>
+
 			$(function() {
 				//				global search
 				$('#order-date').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
@@ -674,6 +686,33 @@
 						}
 					}
 				});			
+			}
+
+			function remove_comment(idx)
+			{
+				if (confirm("댓글을 삭제 할까요?"))
+				{
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				    : "remove_comment",
+							"idx"		            : idx
+						},
+						success: function(response){
+							console.log(response);
+							if (response.match("Y") == "Y")
+							{
+								alert("댓글이 삭제되었습니다.");
+								location.reload();
+							}else{
+								alert("다시 시도해 주세요.");
+								location.reload();
+							}
+						}
+					});					
+				}
 			}
 
 			function sns_share(media)

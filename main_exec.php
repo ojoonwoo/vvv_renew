@@ -313,6 +313,24 @@ include_once "./include/autoload.php";
 			echo $flag;
 		break;
 
+		case "remove_comment" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+            $gubun          = $mnv_f->MobileCheck();
+
+            $comment_idx	= $_REQUEST["idx"];
+
+            $query		= "UPDATE comment_info SET showYN='N' WHERE idx='".$comment_idx."'";
+            $result		= mysqli_query($my_db, $query);
+
+            if ($result)
+                $flag	= "Y";
+            else
+                $flag	= "N";
+
+			echo $flag;
+		break;
+
 		case "insert_share_info" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();

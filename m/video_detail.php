@@ -3,8 +3,14 @@
 
     $mnv_f = new mnv_function();
     $my_db         = $mnv_f->Connect_MySQL();
+    $mobileYN      = $mnv_f->MobileCheck();
 
 	$video_idx	= $_REQUEST["idx"];
+
+	if ($mobileYN == "PC")
+    {
+        echo "<script>location.href='../video_detail.php?idx=".$video_idx."';</script>";
+    }
 
 	// 영상 정보
 	$detail_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$video_idx."'";
@@ -140,9 +146,16 @@
 											<div class="date">
 												<?=substr($comment_data["comment_regdate"],0,10)?>
 											</div>
-											<!-- <div class="actions">
-												<button type="button" class="remove-comment"></button>
-											</div> -->
+<?
+		if ($_SESSION["ss_vvv_idx"] == $comment_data["mb_idx"])
+		{
+?>											
+											<div class="actions">
+												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>')"></button>
+											</div>
+<?
+		}
+?>											
 										</div>
 <?
 	}
@@ -361,7 +374,9 @@
 			</div>
 		</div>
 		<script src="../lib/clipboard/dist/clipboard.min.js"></script>
+		<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 		<script>
+			Kakao.init('ff013671b5f7b01d59770657a8787952');
 			$doc = $(document);
 			
 			//			공유 버튼 토글
@@ -646,6 +661,33 @@
 				});			
 			}
 
+			function remove_comment(idx)
+			{
+				if (confirm("댓글을 삭제 할까요?"))
+				{
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "../main_exec.php",
+						data:{
+							"exec"				    : "remove_comment",
+							"idx"		            : idx
+						},
+						success: function(response){
+							console.log(response);
+							if (response.match("Y") == "Y")
+							{
+								alert("댓글이 삭제되었습니다.");
+								location.reload();
+							}else{
+								alert("다시 시도해 주세요.");
+								location.reload();
+							}
+						}
+					});					
+				}
+			}
+
 			function sns_share(media)
 			{
 				if (media == "fb")
@@ -663,11 +705,13 @@
 					});
 				} else if(media == "kt") {
 					Kakao.Link.sendTalkLink({
-						label: "<?='['.$detail_data['video_brabd'].'] '.$detail_data['video_title']?>",
+						label: "<?='['.$detail_data['video_brand'].'] '.$detail_data['video_title']?>",
 						image: {
 							src: "<?=$yt_thumb?>",
-							width: '1200',
-							height: '630'
+							// width: '1200',
+							// height: '630'
+							width: '480',
+							height: '360'
 						},
 						webButton: {
 							text: "영상 보러 가기",

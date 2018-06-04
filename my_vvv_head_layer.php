@@ -236,54 +236,152 @@
 						</div>
 						<div class="area-list">
 							<div class="scroll-box follow is-active aj-content" data-tab-content="follow">
+<?
+	// $my_idx
+	$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$my_idx."'";
+	$follow_result		= mysqli_query($my_db, $follow_query);
+
+	while ($follow_data = mysqli_fetch_array($follow_result))
+	{
+		$mb_f_query		= "SELECT * FROM member_info WHERE idx='".$follow_data["follower_idx"]."'";
+		$mb_f_result	= mysqli_query($my_db, $mb_f_query);
+		$mb_f_data		= mysqli_fetch_array($mb_f_result);
+
+		// 라이크 갯수
+		$like_f_query	= "SELECT * FROM like_info WHERE mb_idx='".$mb_f_data["idx"]."' AND like_flag='Y'";
+		$like_f_result	= mysqli_query($my_db, $like_f_query);
+		$like_f_count	= mysqli_num_rows($like_f_result);
+		
+		// 컬렉션 갯수
+		$collection_f_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$mb_f_data["idx"]."' AND collection_showYN='Y'";
+		$collection_f_result	= mysqli_query($my_db, $collection_f_query);
+		$collection_f_count		= mysqli_num_rows($collection_f_result);
+?>								
 								<div class="row">
 									<div class="img">
-										<a href="#">
-											<img src="./images/profile_sample.jpg" alt="">
+										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
+											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
 										</a>
 									</div>
 									<div class="info">
-										<div class="name">오준우</div>
+										<div class="name"><?=$mb_f_data["mb_name"]?></div>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
-												<span>21</span>
+												<span><?=$like_f_count?></span>
 											</div>
 												<div class="wrap collection">
 													<i></i>
-												<span>11</span>
+												<span><?=$collection_f_count?></span>
 											</div>
 										</div>
 									</div>
 									<div class="action">
-										<button type="button" class="already"></button>
+<?
+	if ($_SESSION["ss_vvv_idx"] != $follow_data["follower_idx"])
+	{
+		if (!$_SESSION['ss_vvv_idx'])
+		{
+?>
+										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+<?
+		}else{
+			$add_query		= "SELECT * FROM follow_info WHERE follow_idx='".$mb_f_data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."' AND follow_YN='Y'";
+			$add_result		= mysqli_query($my_db, $add_query);
+			$add_count		= mysqli_num_rows($add_result);
+			
+			if ($add_count > 0)
+			{
+?>		
+										<button type="button" class="already f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','already')"></button>
+<?
+			}else{
+?>										
+										<button type="button" class="add f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add')"></button>
+<?
+			}
+		}
+	}
+?>								
 									</div>
 								</div>
+<?
+	}
+?>								
 							</div>
 							<div class="scroll-box following aj-content" data-tab-content="following">
+<?
+	// $my_idx
+	$follower_query		= "SELECT * FROM follow_info WHERE follower_idx='".$my_idx."'";
+	$follower_result	= mysqli_query($my_db, $follower_query);
+
+	while ($follower_data = mysqli_fetch_array($follower_result))
+	{
+		$mb_fer_query		= "SELECT * FROM member_info WHERE idx='".$follower_data["follow_idx"]."'";
+		$mb_fer_result		= mysqli_query($my_db, $mb_fer_query);
+		$mb_fer_data		= mysqli_fetch_array($mb_fer_result);
+
+		// 라이크 갯수
+		$like_fer_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_fer_data["idx"]."' AND like_flag='Y'";
+		$like_fer_result	= mysqli_query($my_db, $like_fer_query);
+		$like_fer_count		= mysqli_num_rows($like_fer_result);
+		
+		// 컬렉션 갯수
+		$collection_fer_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$mb_fer_data["idx"]."' AND collection_showYN='Y'";
+		$collection_fer_result		= mysqli_query($my_db, $collection_fer_query);
+		$collection_fer_count		= mysqli_num_rows($collection_fer_result);
+?>								
 								<div class="row">
 									<div class="img">
-										<a href="#">
-											<img src="./images/profile_sample.jpg" alt="">
+										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
+											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
 										</a>
 									</div>
 									<div class="info">
-										<div class="name">오준우</div>
+										<div class="name"><?=$mb_fer_data["mb_name"]?></div>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
-												<span>21</span>
+												<span><?=$like_fer_count?></span>
 											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
+												<div class="wrap collection">
+													<i></i>
+												<span><?=$collection_fer_count?></span>
 											</div>
 										</div>
 									</div>
 									<div class="action">
-										<button type="button" class="already"></button>
+<?
+	if ($_SESSION["ss_vvv_idx"] != $follower_data["follow_idx"])
+	{
+		if (!$_SESSION['ss_vvv_idx'])
+		{
+?>
+										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+<?
+		}else{
+			$add_query		= "SELECT * FROM follow_info WHERE follow_idx='".$mb_fer_data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."' AND follow_YN='Y'";
+			$add_result		= mysqli_query($my_db, $add_query);
+			$add_count		= mysqli_num_rows($add_result);
+			
+			if ($add_count > 0)
+			{
+?>		
+										<button type="button" class="already f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already')"></button>
+<?
+			}else{
+?>										
+										<button type="button" class="add f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','add')"></button>
+<?
+			}
+		}
+	}
+?>								
 									</div>
 								</div>
+<?
+	}
+?>								
 							</div>
 						</div>
 					</div>
@@ -444,6 +542,51 @@ console.log(edit_secret);
                             // location.reload();
                             $("#f_btn_"+idx).attr("class","add");
                             $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+
+                }
+			}
+
+            function list_follow_member(idx, followClass, listFlag)
+			{
+                if (followClass == "already")
+                {
+                    var confirm_message = "이 친구를 팔로우 취소 할까요?";
+                    var followYN        = "Y";
+                }else{
+                    var confirm_message = "이 친구를 팔로우 할까요?";
+                    var followYN        = "N";
+                }
+
+                if (confirm(confirm_message))
+                {
+                    $.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "search_follow_member",
+						"follow_idx"          	: idx,
+						"followYN"          	: followYN
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+                            alert("팔로우 되었습니다.");
+                            // location.reload();
+                            $(".f_list_btn_"+idx).attr("class","already");
+                            $(".f_list_btn_"+idx).attr("onclick","list_follow_member('" + idx + "','already')");
+						}else if (response.match("D") == "D"){
+                            alert("팔로우가 취소 되었습니다.");
+                            // location.reload();
+                            $(".f_list_btn_"+idx).attr("class","add");
+                            $(".f_list_btn_"+idx).attr("onclick","list_follow_member('" + idx + "','add')");
 						}else{
 							alert("다시 입력해 주세요.");
 							location.reload();
