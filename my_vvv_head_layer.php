@@ -285,22 +285,43 @@
 ?>								
 							</div>
 							<div class="scroll-box following aj-content" data-tab-content="following">
+<?
+	// $my_idx
+	$follower_query		= "SELECT * FROM follow_info WHERE follower_idx='".$my_idx."'";
+	$follower_result	= mysqli_query($my_db, $follower_query);
+
+	while ($follower_data = mysqli_fetch_array($follower_result))
+	{
+		$mb_fer_query		= "SELECT * FROM member_info WHERE idx='".$follower_data["follower_idx"]."'";
+		$mb_fer_result		= mysqli_query($my_db, $mb_fer_query);
+		$mb_fer_data		= mysqli_fetch_array($mb_fer_result);
+
+		// 라이크 갯수
+		$like_fer_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_fer_data["idx"]."' AND like_flag='Y'";
+		$like_fer_result	= mysqli_query($my_db, $like_fer_query);
+		$like_fer_count		= mysqli_num_rows($like_fer_result);
+		
+		// 컬렉션 갯수
+		$collection_fer_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$mb_fer_data["idx"]."' AND collection_showYN='Y'";
+		$collection_fer_result		= mysqli_query($my_db, $collection_fer_query);
+		$collection_fer_count		= mysqli_num_rows($collection_fer_result);
+?>								
 								<div class="row">
 									<div class="img">
 										<a href="#">
-											<img src="./images/profile_sample.jpg" alt="">
+											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
 										</a>
 									</div>
 									<div class="info">
-										<div class="name">오준우111</div>
+										<div class="name"><?=$mb_fer_data["mb_name"]?></div>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
-												<span>21</span>
+												<span><?=$like_fer_count?></span>
 											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
+												<div class="wrap collection">
+													<i></i>
+												<span><?=$collection_fer_count?></span>
 											</div>
 										</div>
 									</div>
@@ -308,6 +329,9 @@
 										<button type="button" class="already"></button>
 									</div>
 								</div>
+<?
+	}
+?>								
 							</div>
 						</div>
 					</div>
