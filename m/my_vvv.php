@@ -265,10 +265,10 @@
 ?>													
 												</div>
 											</div>
-										</div>
 <?
 	}
 ?>
+										</div>
 									</div>
 									<div class="aj-content like is-active" data-tab-content="like">
 <?
