@@ -699,11 +699,13 @@
 					});
 				} else if(media == "kt") {
 					Kakao.Link.sendTalkLink({
-						label: "<?='['.$detail_data['video_brabd'].'] '.$detail_data['video_title']?>",
+						label: "<?='['.$detail_data['video_brand'].'] '.$detail_data['video_title']?>",
 						image: {
 							src: "<?=$yt_thumb?>",
-							width: '1200',
-							height: '630'
+							// width: '1200',
+							// height: '630'
+							width: '480',
+							height: '360'
 						},
 						webButton: {
 							text: "영상 보러 가기",
