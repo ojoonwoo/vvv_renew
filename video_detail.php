@@ -384,9 +384,7 @@
 			</div>
 		</div>
 		<script src="./lib/clipboard/dist/clipboard.min.js"></script>
-		<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 		<script>
-			Kakao.init('ff013671b5f7b01d59770657a8787952');
 
 			$(function() {
 				//				global search
