@@ -259,7 +259,7 @@
 ?>								
 								<div class="row">
 									<div class="img">
-										<a href="#">
+										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
 											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
 										</a>
 									</div>
@@ -337,7 +337,7 @@
 ?>								
 								<div class="row">
 									<div class="img">
-										<a href="#">
+										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
 											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
 										</a>
 									</div>
