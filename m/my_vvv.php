@@ -570,6 +570,262 @@
 				</div>
 			</div>
 		</div>
+		<div class="popup follow-state" id="follow-state">
+			<button type="button" class="popup-close" data-popup="@close"></button>
+			<div class="inner">
+				<div class="content">
+					<div class="area-tab">
+						<div class="tab-wrap">
+							<div class="tab">
+								<a href="#">팔로우</a>
+							</div>
+							<div class="tab is-active">
+								<a href="#">팔로잉</a>
+							</div>
+						</div>
+					</div>
+					<div class="area-list">
+						<!--
+<div class="scroll-box follow is-active">
+<div class="row">
+<div class="img">
+<a href="#">
+<img src="./images/profile_sample.jpg" alt="">
+</a>
+</div>
+<div class="info">
+<div class="name">오준우</div>
+<div class="counts">
+<div class="wrap like">
+<i></i>
+<span>21</span>
+</div>
+<div class="wrap collection">
+<i></i>
+<span>11</span>
+</div>
+</div>
+</div>
+<div class="action">
+<button type="button" class="already"></button>
+</div>
+</div>
+<div class="row">
+<div class="img">
+<a href="#">
+<img src="./images/profile_sample.jpg" alt="">
+</a>
+</div>
+<div class="info">
+<div class="name">오준우</div>
+<div class="counts">
+<div class="wrap like">
+<i></i>
+<span>21</span>
+</div>
+<div class="wrap collection">
+<i></i>
+<span>11</span>
+</div>
+</div>
+</div>
+<div class="action">
+<button type="button" class="add"></button>
+</div>
+</div>
+<div class="row">
+<div class="img">
+<a href="#">
+<img src="./images/profile_sample.jpg" alt="">
+</a>
+</div>
+<div class="info">
+<div class="name">오준우</div>
+<div class="counts">
+<div class="wrap like">
+<i></i>
+<span>21</span>
+</div>
+<div class="wrap collection">
+<i></i>
+<span>11</span>
+</div>
+</div>
+</div>
+<div class="action">
+<button type="button" class="add"></button>
+</div>
+</div>
+<div class="row">
+<div class="img">
+<a href="#">
+<img src="./images/profile_sample.jpg" alt="">
+</a>
+</div>
+<div class="info">
+<div class="name">오준우</div>
+<div class="counts">
+<div class="wrap like">
+<i></i>
+<span>21</span>
+</div>
+<div class="wrap collection">
+<i></i>
+<span>11</span>
+</div>
+</div>
+</div>
+<div class="action">
+<button type="button" class="add"></button>
+</div>
+</div>
+<div class="row">
+<div class="img">
+<a href="#">
+<img src="./images/profile_sample.jpg" alt="">
+</a>
+</div>
+<div class="info">
+<div class="name">오준우</div>
+<div class="counts">
+<div class="wrap like">
+<i></i>
+<span>21</span>
+</div>
+<div class="wrap collection">
+<i></i>
+<span>11</span>
+</div>
+</div>
+</div>
+<div class="action">
+<button type="button" class="add"></button>
+</div>
+</div>
+</div>
+-->
+						<div class="scroll-box following is-active">
+							<div class="row">
+								<div class="img">
+									<a href="#">
+										<img src="./images/profile_sample.jpg" alt="">
+									</a>
+								</div>
+								<div class="info">
+									<div class="name">오준우</div>
+									<div class="counts">
+										<div class="wrap like">
+											<i></i>
+											<span>21</span>
+										</div>
+										<div class="wrap collection">
+											<i></i>
+											<span>11</span>
+										</div>
+									</div>
+								</div>
+								<div class="action">
+									<button type="button" class="already"></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="img">
+									<a href="#">
+										<img src="./images/profile_sample.jpg" alt="">
+									</a>
+								</div>
+								<div class="info">
+									<div class="name">오준우</div>
+									<div class="counts">
+										<div class="wrap like">
+											<i></i>
+											<span>21</span>
+										</div>
+										<div class="wrap collection">
+											<i></i>
+											<span>11</span>
+										</div>
+									</div>
+								</div>
+								<div class="action">
+									<button type="button" class="already"></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="img">
+									<a href="#">
+										<img src="./images/profile_sample.jpg" alt="">
+									</a>
+								</div>
+								<div class="info">
+									<div class="name">오준우</div>
+									<div class="counts">
+										<div class="wrap like">
+											<i></i>
+											<span>21</span>
+										</div>
+										<div class="wrap collection">
+											<i></i>
+											<span>11</span>
+										</div>
+									</div>
+								</div>
+								<div class="action">
+									<button type="button" class="already"></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="img">
+									<a href="#">
+										<img src="./images/profile_sample.jpg" alt="">
+									</a>
+								</div>
+								<div class="info">
+									<div class="name">오준우</div>
+									<div class="counts">
+										<div class="wrap like">
+											<i></i>
+											<span>21</span>
+										</div>
+										<div class="wrap collection">
+											<i></i>
+											<span>11</span>
+										</div>
+									</div>
+								</div>
+								<div class="action">
+									<button type="button" class="already"></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="img">
+									<a href="#">
+										<img src="./images/profile_sample.jpg" alt="">
+									</a>
+								</div>
+								<div class="info">
+									<div class="name">오준우</div>
+									<div class="counts">
+										<div class="wrap like">
+											<i></i>
+											<span>21</span>
+										</div>
+										<div class="wrap collection">
+											<i></i>
+											<span>11</span>
+										</div>
+									</div>
+								</div>
+								<div class="action">
+									<button type="button" class="already"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	<script src="../lib/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>

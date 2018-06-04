@@ -40,12 +40,16 @@
 									</div>
 									<div class="wrap-actions">
 										<div class="f-wer">
-											<span>팔로워</span>
-											<span class="count"><?=$mb_data['mb_follower_count']?></span>
+											<a href="javascript:void(0)" data-popup="#follow-state">
+												<span>팔로워</span>
+												<span class="count"><?=$mb_data['mb_follower_count']?></span>
+											</a>
 										</div>
 										<div class="f-ing">
-											<span>팔로잉</span>
-											<span class="count"><?=$mb_data['mb_following_count']?></span>
+											<a href="javascript:void(0)" data-popup="#follow-state">
+												<span>팔로잉</span>
+												<span class="count"><?=$mb_data['mb_following_count']?></span>
+											</a>
 										</div>
 <?
 	if ($_SESSION['ss_vvv_idx'] != $my_idx)
