@@ -565,7 +565,7 @@
 					</div>
 					<div class="area-list">
 						
-						<div class="scroll-box follow">
+						<div class="scroll-box follow is-active" data-tab-content="follow">
 							<div class="row">
 								<div class="img">
 									<a href="#">
@@ -591,7 +591,7 @@
 							</div>
 						</div>
 
-						<div class="scroll-box following is-active">
+						<div class="scroll-box following" data-tab-content="following">
 							<div class="row">
 								<div class="img">
 									<a href="#">
