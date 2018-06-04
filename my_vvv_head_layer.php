@@ -280,13 +280,6 @@
 <?
 	if (!$_SESSION['ss_vvv_idx'])
 	{
-		// 팔로우 여부 확인
-		// $follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$follow_idx."' AND follower_idx='".$_SESSION['ss_vvv_idx']."' AND follow_YN='Y'";
-		// $follow_result		= mysqli_query($my_db, $follow_query);
-		// $follow_count		= mysqli_num_rows($follow_result);
-		
-		// if ($follow_count > 0)
-		// {
 ?>
 										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
 <?
@@ -355,7 +348,29 @@
 										</div>
 									</div>
 									<div class="action">
-										<button type="button" class="already"></button>
+<?
+	if (!$_SESSION['ss_vvv_idx'])
+	{
+?>
+										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+<?
+	}else{
+		$add_query		= "SELECT * FROM follow_info WHERE follow_idx='".$mb_fer_data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."' AND follow_YN='Y'";
+		$add_result		= mysqli_query($my_db, $add_query);
+		$add_count		= mysqli_num_rows($add_result);
+		
+		if ($add_count > 0)
+		{
+?>		
+										<button type="button" class="already" id="f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already')"></button>
+<?
+		}else{
+?>										
+										<button type="button" class="add" id="f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','add')"></button>
+<?
+		}
+	}
+?>								
 									</div>
 								</div>
 <?
