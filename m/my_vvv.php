@@ -555,10 +555,10 @@
 				<div class="content">
 					<div class="area-tab">
 						<div class="tab-wrap">
-							<div class="tab">
+							<div class="tab is-active">
 								<a href="#">팔로우</a>
 							</div>
-							<div class="tab is-active">
+							<div class="tab">
 								<a href="#">팔로잉</a>
 							</div>
 						</div>
@@ -683,13 +683,27 @@
 			$("#order-sortby").val("new");        
 		});
 
+		// $doc.on('click', '.tab', function() {
+		// 	$(".tab").removeClass("is-active");
+		// 	$(this).addClass("is-active");
+
+		// 	var target = $(this).data('tab-content');
+		// 	$(".aj-content").removeClass("is-active");
+		// 	$(".aj-content."+target).addClass("is-active");
+
+		// 	return false;
+		// });
+
 		$doc.on('click', '.tab', function() {
-			$(".tab").removeClass("is-active");
+			$wrap = $(this).closest('.tab-wrap');
+			$wrap.find('.tab').removeClass('is-active');
+//				$(".tab").removeClass("is-active");
 			$(this).addClass("is-active");
 
-			var target = $(this).data('tab-content');
-			$(".aj-content").removeClass("is-active");
-			$(".aj-content."+target).addClass("is-active");
+			var target = $(this).data('tab-target');
+			$('[data-tab-content='+target+']').siblings().removeClass('is-active');
+			$('[data-tab-content='+target+']').addClass("is-active");
+//				$(".aj-content."+target).addClass("is-active");
 
 			return false;
 		});
