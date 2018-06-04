@@ -543,27 +543,6 @@
 						</div>
 						<div class="search-result">
 							<div class="scroll-box">
-								<!-- <div class="row">
-									<div class="img">
-										<img src="./images/profile_sample.jpg" alt="">
-									</div>
-									<div class="info">
-										<div class="name">오준우</div>
-										<div class="counts">
-											<div class="wrap like">
-												<i></i>
-												<span>21</span>
-											</div>
-											<div class="wrap collection">
-												<i></i>
-												<span>11</span>
-											</div>
-										</div>
-									</div>
-									<div class="action">
-										<button type="button" class="add"></button>
-									</div>
-								</div> -->
 							</div>
 						</div>
 					</div>
@@ -585,125 +564,33 @@
 						</div>
 					</div>
 					<div class="area-list">
-						<!--
-<div class="scroll-box follow is-active">
-<div class="row">
-<div class="img">
-<a href="#">
-<img src="./images/profile_sample.jpg" alt="">
-</a>
-</div>
-<div class="info">
-<div class="name">오준우</div>
-<div class="counts">
-<div class="wrap like">
-<i></i>
-<span>21</span>
-</div>
-<div class="wrap collection">
-<i></i>
-<span>11</span>
-</div>
-</div>
-</div>
-<div class="action">
-<button type="button" class="already"></button>
-</div>
-</div>
-<div class="row">
-<div class="img">
-<a href="#">
-<img src="./images/profile_sample.jpg" alt="">
-</a>
-</div>
-<div class="info">
-<div class="name">오준우</div>
-<div class="counts">
-<div class="wrap like">
-<i></i>
-<span>21</span>
-</div>
-<div class="wrap collection">
-<i></i>
-<span>11</span>
-</div>
-</div>
-</div>
-<div class="action">
-<button type="button" class="add"></button>
-</div>
-</div>
-<div class="row">
-<div class="img">
-<a href="#">
-<img src="./images/profile_sample.jpg" alt="">
-</a>
-</div>
-<div class="info">
-<div class="name">오준우</div>
-<div class="counts">
-<div class="wrap like">
-<i></i>
-<span>21</span>
-</div>
-<div class="wrap collection">
-<i></i>
-<span>11</span>
-</div>
-</div>
-</div>
-<div class="action">
-<button type="button" class="add"></button>
-</div>
-</div>
-<div class="row">
-<div class="img">
-<a href="#">
-<img src="./images/profile_sample.jpg" alt="">
-</a>
-</div>
-<div class="info">
-<div class="name">오준우</div>
-<div class="counts">
-<div class="wrap like">
-<i></i>
-<span>21</span>
-</div>
-<div class="wrap collection">
-<i></i>
-<span>11</span>
-</div>
-</div>
-</div>
-<div class="action">
-<button type="button" class="add"></button>
-</div>
-</div>
-<div class="row">
-<div class="img">
-<a href="#">
-<img src="./images/profile_sample.jpg" alt="">
-</a>
-</div>
-<div class="info">
-<div class="name">오준우</div>
-<div class="counts">
-<div class="wrap like">
-<i></i>
-<span>21</span>
-</div>
-<div class="wrap collection">
-<i></i>
-<span>11</span>
-</div>
-</div>
-</div>
-<div class="action">
-<button type="button" class="add"></button>
-</div>
-</div>
-</div>
--->
+						
+						<div class="scroll-box follow">
+							<div class="row">
+								<div class="img">
+									<a href="#">
+										<img src="./images/profile_sample.jpg" alt="">
+									</a>
+								</div>
+								<div class="info">
+									<div class="name">오준우</div>
+									<div class="counts">
+										<div class="wrap like">
+											<i></i>
+											<span>21</span>
+										</div>
+										<div class="wrap collection">
+											<i></i>
+											<span>11</span>
+										</div>
+									</div>
+								</div>
+								<div class="action">
+									<button type="button" class="already"></button>
+								</div>
+							</div>
+						</div>
+
 						<div class="scroll-box following is-active">
 							<div class="row">
 								<div class="img">
@@ -712,99 +599,7 @@
 									</a>
 								</div>
 								<div class="info">
-									<div class="name">오준우</div>
-									<div class="counts">
-										<div class="wrap like">
-											<i></i>
-											<span>21</span>
-										</div>
-										<div class="wrap collection">
-											<i></i>
-											<span>11</span>
-										</div>
-									</div>
-								</div>
-								<div class="action">
-									<button type="button" class="already"></button>
-								</div>
-							</div>
-							<div class="row">
-								<div class="img">
-									<a href="#">
-										<img src="./images/profile_sample.jpg" alt="">
-									</a>
-								</div>
-								<div class="info">
-									<div class="name">오준우</div>
-									<div class="counts">
-										<div class="wrap like">
-											<i></i>
-											<span>21</span>
-										</div>
-										<div class="wrap collection">
-											<i></i>
-											<span>11</span>
-										</div>
-									</div>
-								</div>
-								<div class="action">
-									<button type="button" class="already"></button>
-								</div>
-							</div>
-							<div class="row">
-								<div class="img">
-									<a href="#">
-										<img src="./images/profile_sample.jpg" alt="">
-									</a>
-								</div>
-								<div class="info">
-									<div class="name">오준우</div>
-									<div class="counts">
-										<div class="wrap like">
-											<i></i>
-											<span>21</span>
-										</div>
-										<div class="wrap collection">
-											<i></i>
-											<span>11</span>
-										</div>
-									</div>
-								</div>
-								<div class="action">
-									<button type="button" class="already"></button>
-								</div>
-							</div>
-							<div class="row">
-								<div class="img">
-									<a href="#">
-										<img src="./images/profile_sample.jpg" alt="">
-									</a>
-								</div>
-								<div class="info">
-									<div class="name">오준우</div>
-									<div class="counts">
-										<div class="wrap like">
-											<i></i>
-											<span>21</span>
-										</div>
-										<div class="wrap collection">
-											<i></i>
-											<span>11</span>
-										</div>
-									</div>
-								</div>
-								<div class="action">
-									<button type="button" class="already"></button>
-								</div>
-							</div>
-							<div class="row">
-								<div class="img">
-									<a href="#">
-										<img src="./images/profile_sample.jpg" alt="">
-									</a>
-								</div>
-								<div class="info">
-									<div class="name">오준우</div>
+									<div class="name">오준우11</div>
 									<div class="counts">
 										<div class="wrap like">
 											<i></i>
