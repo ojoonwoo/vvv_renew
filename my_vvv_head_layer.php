@@ -292,7 +292,7 @@
 
 	while ($follower_data = mysqli_fetch_array($follower_result))
 	{
-		$mb_fer_query		= "SELECT * FROM member_info WHERE idx='".$follower_data["follower_idx"]."'";
+		$mb_fer_query		= "SELECT * FROM member_info WHERE idx='".$follower_data["follow_idx"]."'";
 		$mb_fer_result		= mysqli_query($my_db, $mb_fer_query);
 		$mb_fer_data		= mysqli_fetch_array($mb_fer_result);
 
