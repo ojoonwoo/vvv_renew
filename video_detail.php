@@ -154,7 +154,7 @@
 		{
 ?>											
 											<div class="actions">
-												<button type="button" class="remove-comment"></button>
+												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>')"></button>
 											</div>
 <?
 		}
@@ -679,6 +679,33 @@
 						}
 					}
 				});			
+			}
+
+			function remove_comment(idx)
+			{
+				if (confirm("댓글을 삭제 할까요?"))
+				{
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				    : "remove_comment",
+							"idx"		            : idx
+						},
+						success: function(response){
+							console.log(response);
+							if (response.match("Y") == "Y")
+							{
+								alert("덧글이 삭제되었습니다.");
+								location.reload();
+							}else{
+								alert("다시 시도해 주세요.");
+								location.reload();
+							}
+						}
+					});					
+				}
 			}
 
 			function sns_share(media)
