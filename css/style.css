@@ -663,6 +663,19 @@
 	right: 13px;
 	font-size: 14px;
 }
+.content.detail .block-comment .comment-list .row .actions {
+	position: absolute;
+	top: 73px;
+	right: 13px !important;
+	transform: none;
+	left: inherit;
+}
+.content.detail .block-comment .comment-list .row .actions .remove-comment {
+	background: url(../images/close_x_black.png) center no-repeat;
+	background-size: 18px 19px;
+	width: 18px;
+	height: 19px;
+}
 .content.detail .block-related {
 	padding: 0 46px;
 }
