@@ -239,10 +239,10 @@
 						<div class="user-feed">
 							<div class="wrapper">
 								<div class="tab-wrap">
-									<div class="tab is-active">
+									<div class="tab">
 										<a href="#">Collection</a>
 									</div>
-									<div class="tab">
+									<div class="tab is-active">
 										<a href="#">Favorite</a>
 									</div>
 									<div class="tab">
@@ -250,8 +250,15 @@
 									</div>
 								</div>
 								<div class="inner">
-									<div class="aj-content collection is-active">
+									<div class="aj-content collection">
 										<div class="wrapper made">
+											<div class="result-empty">
+												<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+												<a class="link-black" href="javascript:void(0)">
+													<span>만들기 +</span>
+												</a>
+											</div>
+<!--
 											<div class="text-block">
 												<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
 											</div>
@@ -309,10 +316,15 @@
 													</div>
 												</div>
 											</div>
+-->
 										</div>
 									</div>
-									<div class="aj-content favo">
+									<div class="aj-content favor is-active">
 										<div class="wrapper liked">
+											<div class="result-empty">
+												<p>다른 친구의 컬렉션을 추가해 생각을 공유해보세요!</p>
+											</div>
+<!--
 											<div class="text-block">
 												<p>당신이 좋아한 컬렉션입니다!</p>
 											</div>
@@ -368,9 +380,17 @@
 													</div>
 												</div>
 											</div>
+-->
 										</div>
 									</div>
 									<div class="aj-content like">
+										<div class="result-empty">
+											<p>하트를 눌러 좋아하는 영상을 추가해보세요!</p>
+											<a class="link-black" href="./video_list.php?sort=new">
+												<span>영상 보러가기</span>
+											</a>
+										</div>
+<!--
 										<div class="text-block">
 											<span>당신이</span> 좋아한 영상입니다!
 										</div>
@@ -555,6 +575,7 @@
 </button>
 											</div>
 										</div>
+-->
 									</div>
 
 								</div>

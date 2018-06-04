@@ -149,10 +149,10 @@
 								<div class="semi-container">
 									<div class="wrapper">
 										<div class="inner">
-											<!-- <div class="content-empty">
+											<!-- <div class="result-empty">
 												<a href="#">
-													<span>+</span>
-													<span>당신이 좋아한 영상으로 컬렉션을 만들어보세요</span>
+													<span class="plus"></span>
+													<p>당신이 좋아한 영상으로 컬렉션을 만들어보세요</p>
 												</a>
 											</div> -->
 

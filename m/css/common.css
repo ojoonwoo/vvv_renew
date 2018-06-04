@@ -818,6 +818,37 @@ html.search-layer-opened .global-search-layer .inner {
 .tab-wrap .tab:hover {
 	color: #333333 !important;
 }
+.result-empty {
+	position: relative;
+	text-align: center;
+	padding: 19px 0;
+}
+.result-empty p {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	color: #666666;
+}
+.result-empty .link-black {
+	display: block;
+	position: relative;
+	margin: 18px auto 0;
+	width: 83px;
+	height: 28px;
+	color: #ffffff;
+	background: #333333;
+	text-align: center;
+}
+.result-empty .link-black span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 12px;
+	font-weight: 500;
+}
 /*공통 컴포넌트 */
 
 

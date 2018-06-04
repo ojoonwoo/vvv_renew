@@ -526,11 +526,12 @@ html.search-layer-opened .global-search-layer .inner {
 .result-empty {
 	position: relative;
 	text-align: center;
-	padding: 30px 0;
+	padding: 49px 0;
 }
 .result-empty p {
 	font-size: 18px;
 	font-weight: 500;
+	line-height: 22px;
 	color: #666666;
 }
 .result-empty .link-black {

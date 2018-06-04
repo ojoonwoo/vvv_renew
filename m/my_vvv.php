@@ -173,48 +173,61 @@
 											</div>
 										</div>
 									</div>
+<?
+	$collection_like_query		= "SELECT * FROM collection_like_info WHERE m_idx='".$my_idx."' AND showYN='Y'";
+	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
+	$collection_like_count		= mysqli_num_rows($collection_like_result);
+									
+?>
 									<div class="aj-content favor">
 										<div class="wrapper liked">
+<? 
+	if($collection_like_count < 1) {
+?>
+											<div class="result-empty">
+												<p>다른 친구의 컬렉션을 추가해 생각을 공유해보세요!</p>
+											</div>
+<?
+	else {		
+?>
 											<div class="text-block">
 												<p>당신이 좋아한 컬렉션입니다!</p>
 											</div>
 											<div class="list-container">
 												<div class="album-list">
 <?
-	$collection_like_query		= "SELECT * FROM collection_like_info WHERE m_idx='".$my_idx."' AND showYN='Y'";
-	$collection_like_result		= mysqli_query($my_db, $collection_like_query);
 
-	while ($collection_like_data = mysqli_fetch_array($collection_like_result))
-	{
-		$collection_query		= "SELECT * FROM collection_info WHERE idx='".$collection_like_data["c_idx"]."'";
-		$collection_result		= mysqli_query($my_db, $collection_query);
-		$collection_data		= mysqli_fetch_array($collection_result);
-
-		// 컬렉션에 담긴 영상 썸네일 추출 
-		$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
-		$collection_item_result		= mysqli_query($my_db, $collection_item_query);
-		$collection_item_data		= mysqli_fetch_array($collection_item_result);
-	
-		$collection_thumb[0]	= "";
-		$collection_thumb[1]	= "";
-		$collection_thumb[2]	= "";
-		if ($collection_item_data["video_items"] != "")
+		while ($collection_like_data = mysqli_fetch_array($collection_like_result))
 		{
-			$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
-			$i = 0;
-			foreach($c_thumb_arr as $key => $val)
+			$collection_query		= "SELECT * FROM collection_info WHERE idx='".$collection_like_data["c_idx"]."'";
+			$collection_result		= mysqli_query($my_db, $collection_query);
+			$collection_data		= mysqli_fetch_array($collection_result);
+
+			// 컬렉션에 담긴 영상 썸네일 추출 
+			$collection_item_query		= "SELECT * FROM collection_item_info WHERE c_idx='".$collection_data["idx"]."'";
+			$collection_item_result		= mysqli_query($my_db, $collection_item_query);
+			$collection_item_data		= mysqli_fetch_array($collection_item_result);
+
+			$collection_thumb[0]	= "";
+			$collection_thumb[1]	= "";
+			$collection_thumb[2]	= "";
+			if ($collection_item_data["video_items"] != "")
 			{
-				$thumb_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
-				$thumb_result 	= mysqli_query($my_db, $thumb_query);
-				$thumb_data		= mysqli_fetch_array($thumb_result);
-			
-				// 유튜브 영상 코드 자르기
-				$yt_code_arr1   = explode("v=", $thumb_data["video_link"]);
-				$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-				$collection_thumb[$i]       = "url('https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg') 50% 50% / cover";
-				$i++;
+				$c_thumb_arr	= explode(",",$collection_item_data["video_items"]);
+				$i = 0;
+				foreach($c_thumb_arr as $key => $val)
+				{
+					$thumb_query	= "SELECT * FROM video_info2 WHERE 1 AND video_idx='".$val."'";
+					$thumb_result 	= mysqli_query($my_db, $thumb_query);
+					$thumb_data		= mysqli_fetch_array($thumb_result);
+
+					// 유튜브 영상 코드 자르기
+					$yt_code_arr1   = explode("v=", $thumb_data["video_link"]);
+					$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+					$collection_thumb[$i]       = "url('https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg') 50% 50% / cover";
+					$i++;
+				}
 			}
-		}
 ?>														
 													<div class="album" id="album_like_<?=$collection_data["idx"]?>">
 														<figure>
@@ -248,43 +261,60 @@
 														</figure>
 													</div>
 <?
-	}
+		}
 ?>													
 												</div>
 											</div>
 										</div>
+<?
+	}
+?>
 									</div>
 									<div class="aj-content like is-active">
+<?
+	if($my_count < 1) {
+?>
+										<div class="result-empty">
+											<p>하트를 눌러 좋아하는 영상을 추가해보세요!</p>
+											<a class="link-black" href="./video_list.php?sort=new">
+												<span>영상 보러가기</span>
+											</a>
+										</div>
+										<?
+	} else {
+										?>
 										<div class="text-block">
 											<span>당신이</span> 좋아한 영상입니다!
 										</div>
 										<div class="list-container">
 											<div class="video-list">
 <?
-	while ($data = mysqli_fetch_array($my_result))
-	{
-		$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
-		$video_result		= mysqli_query($my_db, $video_query);
-		$video_data			= mysqli_fetch_array($video_result);
+		while ($data = mysqli_fetch_array($my_result))
+		{
+			$video_query		= "SELECT * FROM video_info2 WHERE video_idx='".$data['v_idx']."'";
+			$video_result		= mysqli_query($my_db, $video_query);
+			$video_data			= mysqli_fetch_array($video_result);
 
-		// 유튜브 영상 코드 자르기
-        $yt_code_arr1   = explode("v=", $video_data["video_link"]);
-        $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
-		$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
-		
-		$title_count    = mb_strlen($video_data["video_title"],'utf-8');
-        if ($title_count > 20)
-            $video_title    = iconv_substr($video_data["video_title"],0,20)."..";
-        else
-			$video_title    = $video_data["video_title"];
+			// 유튜브 영상 코드 자르기
+			$yt_code_arr1   = explode("v=", $video_data["video_link"]);
+			$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
+			$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
+
+//			$title_count    = mb_strlen($video_data["video_title"],'utf-8');
+//			if ($title_count > 20)
+//				$video_title    = iconv_substr($video_data["video_title"],0,20)."..";
+//			else
+//				$video_title    = $video_data["video_title"];
+//
+//			// 브랜드 줄바꿈 방지 글자 자르기
+//			$brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
+//			if ($brand_count > 30)
+//				$video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
+//			else
+//				$video_brand    = $video_data["video_brand"];
 			
-        // 브랜드 줄바꿈 방지 글자 자르기
-        $brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
-        if ($brand_count > 30)
-            $video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
-        else
-            $video_brand    = $video_data["video_brand"];
-
+			$video_title    = $video_data["video_title"];
+			$video_brand    = $video_data["video_brand"];
 ?>													
 												<div class="video col-lg-3 col-md-3 col-sm-2">
 													<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
@@ -316,13 +346,16 @@
 													</a>
 												</div>
 <?
-	}
+		}
 ?>											
 												<!-- <button type="button" class="read-more">
 													<img src="./images/plus_icon.png" alt="">
 												</button> -->
 											</div>
 										</div>
+<?
+	}
+?>
 									</div>
 								</div>
 							</div>

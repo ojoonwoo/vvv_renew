@@ -34,83 +34,6 @@
 				<div class="main-container">
 					<div class="content vid-list">
 						<div class="inner">
-							<!--검색 영역-->
-							<!-- <div class="search-wrapper">
-								<div class="wrap">
-									<div class="search-bar">
-										<input type="text">
-									</div>
-									<button type="button" class="button-refresh">새로고침</button>
-								</div>
-								<div class="wrap sortings">
-									<div class="sort-list">
-										<div class="sort">
-											<select name="lc-order-date" id="lc-order-date">
-												<option disabled selected>연도</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="lc-order-nation" id="lc-order-nation">
-												<option disabled selected>국가</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="lc-order-industry" id="lc-order-industry">
-												<option disabled selected>산업군</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="lc-order-genre" id="lc-order-genre">
-												<option disabled selected>장르</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="lc-order-awards" id="lc-order-awards">
-												<option disabled selected>광고제</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-										<div class="sort">
-											<select name="lc-order-sortby" id="lc-order-sortby">
-												<option disabled selected>분류</option>
-												<option>Slower</option>
-												<option>Slow</option>
-												<option>Medium</option>
-												<option>Fast</option>
-												<option>Faster</option>
-											</select>
-										</div>
-									</div>
-									<button type="button" class="button-apply">
-										APPLY
-									</button>
-								</div>
-							</div> -->
-							<!--검색 영역-->
 							<div class="list-container">
 								<div class="video-list" id="list_video">
 <?
@@ -233,7 +156,17 @@
 								</button>
 <?
 	}
-?>								
+?>	
+<?
+	if ($total_video_num < 1) {
+?>
+								<div class="result-empty">
+									<p>검색결과가 없습니다</p>
+									<p>다른 키워드로 검색을 시도해보세요!</p>
+								</div>							
+<?
+	}
+?>
 							</div>
 						</div>
 					</div>
