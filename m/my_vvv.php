@@ -627,7 +627,7 @@
 <?
 			}else{
 ?>										
-									<button type="button" class="addf_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add')"></button>
+									<button type="button" class="add f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add')"></button>
 <?
 			}
 		}
@@ -698,7 +698,7 @@
 			if ($add_count > 0)
 			{
 ?>		
-									<button type="button" class="already f_list_btn_<?=$mb_fer_data["idx"]?>" id="f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already')"></button>
+									<button type="button" class="already f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already')"></button>
 <?
 			}else{
 ?>										
