@@ -298,11 +298,11 @@
 		if ($add_count > 0)
 		{
 ?>		
-										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+										<button type="button" class="already" onclick="follow_member()"></button>
 <?
 		}else{
 ?>										
-										<button type="button" class="add" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+										<button type="button" class="add" onclick="follow_member()"></button>
 <?
 		}
 	}
@@ -487,6 +487,51 @@ console.log(edit_secret);
             }
 
             function search_follow_member(idx, followClass)
+			{
+                if (followClass == "already")
+                {
+                    var confirm_message = "이 친구를 팔로우 취소 할까요?";
+                    var followYN        = "Y";
+                }else{
+                    var confirm_message = "이 친구를 팔로우 할까요?";
+                    var followYN        = "N";
+                }
+
+                if (confirm(confirm_message))
+                {
+                    $.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "search_follow_member",
+						"follow_idx"          	: idx,
+						"followYN"          	: followYN
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+                            alert("팔로우 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","already");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','already')");
+						}else if (response.match("D") == "D"){
+                            alert("팔로우가 취소 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","add");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+
+                }
+			}
+
+            function list_follow_member(idx, followClass)
 			{
                 if (followClass == "already")
                 {
