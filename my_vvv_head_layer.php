@@ -243,7 +243,10 @@
 
 	while ($follow_data = mysqli_fetch_array($follow_result))
 	{
-		$mb_f_query		= "SELECT * FROM member_info WHERE idx='".$follow_data["follower_idx"]."'";
+		if ($_SESSION["ss_vvv_idx"] == $follower_data["follower_idx"])
+			continue;
+
+			$mb_f_query		= "SELECT * FROM member_info WHERE idx='".$follow_data["follower_idx"]."'";
 		$mb_f_result	= mysqli_query($my_db, $mb_f_query);
 		$mb_f_data		= mysqli_fetch_array($mb_f_result);
 
@@ -314,6 +317,9 @@
 
 	while ($follower_data = mysqli_fetch_array($follower_result))
 	{
+		if ($_SESSION["ss_vvv_idx"] == $follower_data["follow_idx"])
+			continue;
+
 		$mb_fer_query		= "SELECT * FROM member_info WHERE idx='".$follower_data["follow_idx"]."'";
 		$mb_fer_result		= mysqli_query($my_db, $mb_fer_query);
 		$mb_fer_data		= mysqli_fetch_array($mb_fer_result);
