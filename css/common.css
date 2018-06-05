@@ -104,7 +104,6 @@ a {
 }
 iframe {
 	display: block;
-	pointer-events: none;
 }
 img {
 	display: block;
@@ -932,6 +931,10 @@ button.btn-light-grey {
 }
 #cursor.text .guideT {
 	opacity: 1;
+}
+#cursor.hidden {
+	transition: opacity 0.3s ease;
+	opacity: 0;
 }
 
 @keyframes cursorRipple {

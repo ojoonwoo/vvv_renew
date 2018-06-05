@@ -109,7 +109,7 @@
 										</span>
 									</div>
 								</div>
-								<div class="player" id="video_area">
+								<div class="player" id="video_area" data-mouse-type="hidden">
 									<img src="./images/loading.jpg" alt="로딩 이미지">
 									<!-- <img src="./images/detail_video_sample.jpg" alt=""> -->
 								</div>
@@ -613,7 +613,7 @@
 						if (res_arr[0].match("Y") == "Y")
 						{
 							appendTxt += "<li class='c-info "+ secretFlag +"'>";
-							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'ß></i>";
+							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'></i>";
 							appendTxt += "</li>";
 
 							$("#my_collection_list").append(appendTxt);
