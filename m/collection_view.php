@@ -248,7 +248,7 @@
 									<span>이름</span>
 								</div>
 								<div class="input">
-									<input type="text" placeholder="오준우님의 5월 컬렉션">
+									<input type="text" value="오준우님의 5월 컬렉션">
 								</div>
 							</div>
 							<div class="input-group">

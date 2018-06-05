@@ -902,9 +902,11 @@
 	overflow: hidden;
 }
 .content.user-page .user-feed .aj-content .album {
-	width: 316px;
+	width: 31%;
+/*	width: 316px;*/
 	float: left;
-	margin-right: 53px;
+/*	margin-right: 53px;*/
+	margin-right: 3.5%;
 	margin-bottom: 20px;
 }
 .content.user-page .user-feed .aj-content .album:nth-of-type(3n) {

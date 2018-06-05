@@ -378,7 +378,7 @@
 								<span>이름</span>
 							</div>
 							<div class="input">
-								<input type="text" placeholder="<?=$mb_data['mb_name']?>님의 5월 컬렉션" id="collection_name">
+								<input type="text" value="<?=$mb_data['mb_name']?>님의 5월 컬렉션" id="collection_name">
 							</div>
 						</div>
 						<div class="input-group">
@@ -417,7 +417,7 @@
 								<span>이름</span>
 							</div>
 							<div class="input">
-								<input type="text" value="오준우님의 5월 컬렉션">
+								<input type="text" value="<?=$mb_data['mb_name']?>님의 5월 컬렉션">
 							</div>
 						</div>
 						<div class="input-group">
@@ -454,17 +454,19 @@
 						<div class="pic-wrap">
 							<div class="picture">
 <?
-	if ($mb_data['mb_nickname'] == "")
+	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
-								<img src="./images/profile_img_sample.jpg" alt="">
+								<div class="default">
+									<span><?=($mb_data["mb_nickname"] != '') ? mb_substr($mb_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_data["mb_name"], 0, 1, 'utf-8')?></span>
+								</div>
 <?
-    }else{
+	}else{
 ?>        
-                                <img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
+								<img src="<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
-    }
-?>                                
+	}
+?>                                 
 							</div>
 							<div class="btn-edit">
 								<label for="profile-change">프로필 사진 바꾸기</label>

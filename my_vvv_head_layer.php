@@ -5,17 +5,16 @@
 	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
-<!--                                        <img src="./images/profile_img_sample.jpg" alt="">-->
-                                        <div class="default">
-                                        	<span><?=$mb_data['mb_nickname']?></span>
-                                        </div>
+										<div class="default">
+											<span><?=($mb_data["mb_nickname"] != '') ? mb_substr($mb_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_data["mb_name"], 0, 1, 'utf-8')?></span>
+										</div>
 <?
-    }else{
+	}else{
 ?>        
-                                        <img src="<?=$mb_data["mb_profile_url"]?>" alt="">
+										<img src="<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
-    }
-?>                                
+	}
+?>                                      
 									</div>
 									<div class="info-wrap">
 									<!--me, not me-->
@@ -106,15 +105,15 @@
 	{
 ?>
 									<div class="default">
-										<span><?=$mb_data['mb_nickname']?></span>
+										<span><?=($mb_data["mb_nickname"] != '') ? mb_substr($mb_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_data["mb_name"], 0, 1, 'utf-8')?></span>
 									</div>
 <?
-    }else{
+	}else{
 ?>        
-                                    <img src="<?=$mb_data["mb_profile_url"]?>" alt="">
+									<img src="<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
-    }
-?>                                
+	}
+?>           
 								</div>
 								<div class="btn-edit">
 									<label for="profile-change">프로필 사진 바꾸기</label>
