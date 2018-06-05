@@ -102,7 +102,7 @@
 							<div class="pic-wrap">
 								<div class="picture">
 <?
-	if ($mb_data['mb_nickname'] == "")
+	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
                                     <img src="./images/profile_img_sample.jpg" alt="">
@@ -265,7 +265,18 @@
 									</div>
 									<div class="info">
 										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
+<?
+		if ($mb_data['mb_nickname'] == "")
+		{
+?>										
 											<div class="name"><?=$mb_f_data["mb_name"]?></div>
+<?
+		}else{
+?>			
+											<div class="name"><?=$mb_f_data["mb_nickname"]?></div>
+<?
+		}
+?>								
 										</a>
 										<div class="counts">
 											<div class="wrap like">
