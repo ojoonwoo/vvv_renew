@@ -246,12 +246,18 @@ include_once "./include/autoload.php";
                     $video_item_txt      = $item_data["video_items"].",".$v_idx;                
                     $query		= "UPDATE collection_item_info SET video_items='".$video_item_txt."' WHERE c_idx='".$c_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
                     $result	    = mysqli_query($my_db, $query);
+
+                    $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$v_idx."'";
+                    $result2	= mysqli_query($my_db, $query2);
                 }
 
             }else{
                 $video_item_txt = $v_idx;
                 $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$_SESSION['ss_vvv_idx']."','".$video_item_txt."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
+
+                $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$v_idx."'";
+                $result2	= mysqli_query($my_db, $query2);
             }
 
             if ($flag == "")
