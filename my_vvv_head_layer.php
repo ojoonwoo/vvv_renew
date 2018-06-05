@@ -266,7 +266,7 @@
 									<div class="info">
 										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
 <?
-		if ($mb_data['mb_nickname'] == "")
+		if ($mb_f_data['mb_nickname'] == "")
 		{
 ?>										
 											<div class="name"><?=$mb_f_data["mb_name"]?></div>
@@ -353,7 +353,7 @@
 									<div class="info">
 										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
 <?
-		if ($mb_data['mb_nickname'] == "")
+		if ($mb_fer_data['mb_nickname'] == "")
 		{
 ?>										
 											<div class="name"><?=$mb_fer_data["mb_name"]?></div>
