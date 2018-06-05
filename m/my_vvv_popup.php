@@ -488,6 +488,39 @@
 				return false;
 			});
 
+			$doc.on('click', '.favor', function() {
+				var cLikeChk	= "Y";
+				if(!$(this).hasClass('is-already')) 
+					cLikeChk	= "N";
+
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"					: "like_collection",
+						"collection_idx"        : "<?=$collection_idx?>",
+						"showYN"				: cLikeChk
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							alert("즐겨찾기 되었습니다.");
+							$(".favor").addClass("is-already");
+						}else if (response.match("L") == "L"){
+							alert("로그인 후 즐겨찾기를 해 주세요!");
+							location.href = "login.php?refurl=collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+						}else{
+							alert("즐겨찾기가 취소 되었습니다.");
+							$(".favor").removeClass("is-already");
+						}
+					}
+				});		
+			});
+
+
 		function follow_member()
 		{
 			$.ajax({
