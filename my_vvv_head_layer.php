@@ -68,13 +68,13 @@
 		{
 ?>
 												<div class="follow-state">
-													<a href="javascript:follow_member()" class="already">팔로우중</a>
+													<a href="javascript:follow_member()" class="already" id="follow_status">팔로우중</a>
 												</div>
 <?
 		}else{
 ?>													
 												<div class="follow-state">
-													<a href="javascript:follow_member()">팔로우하기</a>
+													<a href="javascript:follow_member()" id="follow_status">팔로우하기</a>
 												</div>
 <?
 		}
@@ -189,7 +189,7 @@
 					<div class="content">
 						<div class="search-wrap">
 							<div class="search-bar">
-								<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 검색">
+								<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 또는 이름 검색">
 								<div class="placeholder-icon"></div>
 							</div>
 							<div class="search-result">

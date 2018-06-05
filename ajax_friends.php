@@ -11,7 +11,7 @@
 		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%abcdefghijklmnopqrstuvwxyz%'";
 		$result			= mysqli_query($my_db, $query);
 	}else{
-		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%'";
+		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%' OR mb_name like '%".$search_nickname."%'";
 		$result			= mysqli_query($my_db, $query);
 	}
 
@@ -19,7 +19,7 @@
 	{
 		if ($data["idx"] == $_SESSION["ss_vvv_idx"])
 			continue;
-			
+
 		$collect_query			= "SELECT * FROM collection_info WHERE collection_mb_idx='".$data["idx"]."'";
 		$collect_result			= mysqli_query($my_db, $collect_query);
 		$collect_count			= mysqli_num_rows($collect_result);
@@ -48,7 +48,18 @@
 ?>											
 										</div>
 										<div class="info">
-											<div class="name"><?=$data["mb_nickname"]?></div>
+<?
+		if ($data["mb_nickname"] == "")
+		{
+?>											
+											<div class="name"><a href="my_vvv.php?idx=<?=$data["idx"]?>"><?=$data["mb_name"]?></a></div>
+<?
+		}else{
+?>			
+											<div class="name"><a href="my_vvv.php?idx=<?=$data["idx"]?>"><?=$data["mb_nickname"]?></a></div>
+<?
+		}
+?>								
 											<div class="counts">
 												<div class="wrap like">
 													<i></i>
