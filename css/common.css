@@ -52,6 +52,7 @@ html {
 	font-size: 16px;
 	letter-spacing: -0.5px;
 	-webkit-tap-highlight-color: transparent;
+	cursor: none;
 }
 html.menu-opened,
 html.popup-opened,
@@ -74,8 +75,12 @@ html, body {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+* {
+	cursor: none;
+}
 button {
-	cursor: pointer;
+/*	cursor: pointer;*/
+	cursor: none;
 	outline: none;
 }
 input[type="text"],
@@ -86,19 +91,20 @@ input[type="file"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
-	cursor: pointer;
+/*	cursor: pointer;*/
 }
 input[type="checkbox"] {
 	border: 0;
 	position: absolute;
 }
 a {
-	cursor: pointer;
+/*	cursor: pointer;*/
 	text-decoration: none;
 	color: inherit;
 }
 iframe {
 	display: block;
+	pointer-events: none;
 }
 img {
 	display: block;
@@ -806,7 +812,7 @@ html.search-layer-opened .global-search-layer .inner {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
-	cursor: pointer;
+/*	cursor: pointer;*/
 	opacity: 0;
 	left: 0;
 	right: 0;
@@ -838,36 +844,85 @@ button.btn-light-grey {
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: 18px;
+	height: 18px;
 	z-index: 1000;
 	cursor: none;
 	pointer-events: none;
+	text-align: center;
 }
 #cursor.default .dot {
 	position: absolute;
-	top: 0;
-	left: 0;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -9px 0 0 -9px;
+	z-index: 1;
 	border-radius: 50%;
 	background: #417de1;
-	width: 12px;
-	height: 12px;
+	width: 18px;
+	height: 18px;
+	transition: transform 0.18s ease-out;
 }
-#cursor.default .spread {
+#cursor.default .guideT {
 	position: absolute;
-	top: 0;
-	left: 0;
-	background: rgba(255, 255, 255, 0);
+	display: inline-block;
+	top: 50%;
+	left: 50%;
+	z-index: 3;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 500;
+	transform: translate(-50%, -50%);
+	letter-spacing: 1px;
+	line-height: 14px;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: all 0.12s ease;
+}
+#cursor.default .backDot {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -9px 0 0 -9px;
+	z-index: 0;
+/*	background: rgba(255, 255, 255, 0);*/
+	background: rgba(65, 125, 225, 1);
 	border-radius: 50%;
-	width: 12px;
-	height: 12px;
+	width: 18px;
+	height: 18px;
 	transition: transform 0.21s ease-in-out, background 0.21s ease-in-out;
 }
-#cursor.btn1 .spread {
-	background: rgba(65, 125, 225, 0.5);
-	transform: scale(5.5);
+#cursor.ripple .backDot {
+/*	background: rgba(65, 125, 225, 0.5);*/
+/*	transform: scale(3.4);*/
 /*	transform: scale(4);*/
 	top: 50%;
 	left: 50%;
 /*	margin: -27px 0 0 -27px;*/
+	animation-name: cursorRipple;
+	animation-duration: 0.8s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+#cursor.text .dot {
+	transform: scale(3.4);
+}
+#cursor.text .guideT {
+	opacity: 1;
+}
+
+@keyframes cursorRipple {
+	from {
+		transform: scale(0);
+		opacity: 1;
+	}
+	to {
+/*		transform: scale(3.4);*/
+		transform: scale(4);
+		opacity: 0;
+	}
 }
 /*공통 컴포넌트 */
 /* jquery ui customize */
@@ -879,6 +934,7 @@ button.btn-light-grey {
 	vertical-align: top;
 	outline: none;
 	border: 1px solid #080808;
+	cursor: none;
 }
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
 	border: 0;

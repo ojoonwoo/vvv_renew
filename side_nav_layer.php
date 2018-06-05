@@ -5,7 +5,7 @@
 					</button>
 				</div>
 				<nav id="gnb">
-					<a href="javascript:void(0)" class="button-menu">
+					<a href="javascript:void(0)" class="button-menu" data-mouse-type="text" data-text="menu">
 						<div class="burger-wrap">
 								<span class="line top"></span>
 								<span class="line mid"></span>
@@ -14,7 +14,7 @@
 					</a>
 				</nav>
 				<div class="direct-my-v">
-					<a href="my_vvv.php">
+					<a href="my_vvv.php" data-mouse-type="text" data-text="my vvv">
 						<span>MY VVV</span>
 					</a>
 				</div>

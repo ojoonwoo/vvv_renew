@@ -301,7 +301,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="cursor" class="default"></div>
+			<? 	include_once "cursor.php"; ?>
 		</div>
 		<script>
 			var select_award = "2";

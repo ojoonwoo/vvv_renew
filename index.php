@@ -44,7 +44,7 @@
 					<div class="main-banner swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<a href="">
+								<a href="video_detail.php?idx=448" data-mouse-type="text" data-text="view">
 									<figure class="box-content">
 										<div class="img box-bg">
 											<img src="./images/main_banner_01.png" alt="">
@@ -53,22 +53,20 @@
 											<p class="brand">CANNES 2017 Grand Prix</p>
 											<!--													<p class="award-summ">2017 Grand Prix</p>-->
 											<p class="title">we're the superhumans</p>
-											<a href="video_detail.php?idx=448">
-												<div class="link">
-													<svg class="progress-current">
-														<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
-														<polygon points="23,19 41,29 23,39"
-																style="fill:#f7dd30;"/>
-													</svg>
-													<span class="view">VIEW</span>
-												</div>
-											</a>
+											<div class="link">
+												<svg class="progress-current">
+													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+													<polygon points="23,19 41,29 23,39"
+															style="fill:#f7dd30;"/>
+												</svg>
+												<span class="view">VIEW</span>
+											</div>
 										</figcaption>
 									</figure>
 								</a>
 							</div>
 							<div class="swiper-slide _02">
-								<a href="">
+								<a href="video_detail.php?idx=438" data-mouse-type="text" data-text="view">
 									<figure class="box-content">
 										<div class="img box-bg">
 											<img src="./images/main_banner_02.png" alt="">
@@ -77,22 +75,20 @@
 											<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
 											<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
 											<p class="title">MEET GRAHAM</p>
-											<a href="video_detail.php?idx=438">
-												<div class="link">
-													<svg class="progress-current">
-														<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
-														<polygon points="23,19 41,29 23,39"
-																style="fill:#f7dd30;"/>
-													</svg>
-													<span class="view">VIEW</span>
-												</div>
-											</a>
+											<div class="link">
+												<svg class="progress-current">
+													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+													<polygon points="23,19 41,29 23,39"
+															style="fill:#f7dd30;"/>
+												</svg>
+												<span class="view">VIEW</span>
+											</div>
 										</figcaption>
 									</figure>
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="">
+								<a href="video_detail.php?idx=823" data-mouse-type="text" data-text="view">
 									<figure class="box-content">
 										<div class="img box-bg">
 											<img src="./images/main_banner_03.png" alt="">
@@ -101,16 +97,14 @@
 											<p class="brand">CLIO 2017 Grand</p>
 											<!--													<p class="award-summ">2017 Grand</p>-->
 											<p class="title">fearless girl</p>
-											<a href="video_detail.php?idx=823">
-												<div class="link">
-													<svg class="progress-current">
-														<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
-														<polygon points="23,19 41,29 23,39"
-																style="fill:#f7dd30;"/>
-													</svg>
-													<span class="view">VIEW</span>
-												</div>
-											</a>
+											<div class="link">
+												<svg class="progress-current">
+													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
+													<polygon points="23,19 41,29 23,39"
+															style="fill:#f7dd30;"/>
+												</svg>
+												<span class="view">VIEW</span>
+											</div>
 										</figcaption>
 									</figure>
 								</a>
@@ -278,10 +272,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="cursor" class="default">
-			<div class="dot"></div>
-			<div class="spread"></div>
-		</div>
+<?
+	include_once "cursor.php";
+?>
 	</div>
 <script>
 	var video_pg 	        = 0;
