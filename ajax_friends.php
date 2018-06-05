@@ -38,7 +38,7 @@
 	if ($data["mb_profile_url"] == "")
 	{
 ?>											
-											<a href="my_vvv.php?idx=<?=$data["idx"]?>"><img src="./images/profile_img_sample.jpg" alt=""></a>
+											<a href="my_vvv.php?idx=<?=$data["idx"]?>"><div class="default"><span><?=($data["mb_nickname"] != '') ? mb_substr($data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($data["mb_name"], 0, 1, 'utf-8')?></span></div></a>
 <?
 	}else{
 ?>											
