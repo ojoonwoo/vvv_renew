@@ -264,7 +264,9 @@
 										</a>
 									</div>
 									<div class="info">
-										<div class="name"><?=$mb_f_data["mb_name"]?></div>
+										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
+											<div class="name"><?=$mb_f_data["mb_name"]?></div>
+										</a>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
@@ -338,7 +340,9 @@
 										</a>
 									</div>
 									<div class="info">
-										<div class="name"><?=$mb_fer_data["mb_name"]?></div>
+										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
+											<div class="name"><?=$mb_fer_data["mb_name"]?></div>
+										</a>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
