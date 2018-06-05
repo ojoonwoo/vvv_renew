@@ -285,7 +285,18 @@
 	} else {
 ?>
 											<div class="text-block">
+<?
+		if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		{
+?>												
 												<p>당신이 좋아한 영상입니다!</p>
+<?
+		}else{
+?>			
+												<p><?=$mb_data['mb_name']?>님이 좋아한 영상입니다!</p>
+<?
+		}
+?>									
 											</div>
 											<div class="list-container">
 												<div class="video-list">
