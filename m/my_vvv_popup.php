@@ -96,7 +96,7 @@
 <?
 	}else{
 ?>        
-								<img src="<?=$mb_data["mb_profile_url"]?>" alt="">
+								<img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
 	}
 ?>                                 
@@ -237,7 +237,7 @@
 <?
 			}else{
 ?>        
-											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
+											<img src=".<?=$mb_f_data["mb_profile_url"]?>" alt="">
 <?
 			}
 ?>
@@ -336,7 +336,7 @@
 <?
 			}else{
 ?>        
-											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
+											<img src=".<?=$mb_fer_data["mb_profile_url"]?>" alt="">
 <?
 			}
 ?>                                 
