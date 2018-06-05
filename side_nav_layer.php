@@ -14,7 +14,7 @@
 					</a>
 				</nav>
 				<div class="direct-my-v">
-					<a href="my_vvv.php" data-mouse-type="text" data-text="my vvv">
+					<a href="my_vvv.php" data-mouse-type="ripple">
 						<span>MY VVV</span>
 					</a>
 				</div>

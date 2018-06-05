@@ -126,6 +126,8 @@ button:focus {
 	position: fixed;
 	right: 60px;
 	bottom: 60px;
+	width: 46px;
+	height: 46px;
 	z-index: 3;
 	opacity: 0;
 }
@@ -526,8 +528,25 @@ html.search-layer-opened .global-search-layer .inner {
 /*	flex-basis: 25%;	*/
 	float: left;
 	padding: 0 0 68px;
-	transition: all 0.4s ease;
-	
+	transition: all 0.4s ease;	
+}
+.content .list-container .video .box-bg {
+	position: relative;
+}
+.content .list-container .video .box-bg::after {
+	content: "";
+	display: block;
+	background: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	transition: opacity 0.23s ease;
+}
+.content .list-container .video > a:hover .box-bg::after{
+	opacity: 1;
 }
 .hide {
 	display: none !important;
@@ -844,12 +863,14 @@ button.btn-light-grey {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 18px;
-	height: 18px;
-	z-index: 1000;
+	z-index: 8000;
 	cursor: none;
 	pointer-events: none;
 	text-align: center;
+}
+#cursor.default {
+	width: 18px;
+	height: 18px;
 }
 #cursor.default .dot {
 	position: absolute;

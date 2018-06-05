@@ -44,7 +44,7 @@
 					<div class="main-banner swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<a href="video_detail.php?idx=448" data-mouse-type="text" data-text="view">
+								<a href="video_detail.php?idx=448">
 									<figure class="box-content">
 										<div class="img box-bg">
 											<img src="./images/main_banner_01.png" alt="">
@@ -54,19 +54,19 @@
 											<!--													<p class="award-summ">2017 Grand Prix</p>-->
 											<p class="title">we're the superhumans</p>
 											<div class="link">
-												<svg class="progress-current">
+												<svg class="progress-current" data-mouse-type="text" data-text="view">
 													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
 													<polygon points="23,19 41,29 23,39"
 															style="fill:#f7dd30;"/>
 												</svg>
-												<span class="view">VIEW</span>
+<!--												<span class="view">VIEW</span>-->
 											</div>
 										</figcaption>
 									</figure>
 								</a>
 							</div>
 							<div class="swiper-slide _02">
-								<a href="video_detail.php?idx=438" data-mouse-type="text" data-text="view">
+								<a href="video_detail.php?idx=438">
 									<figure class="box-content">
 										<div class="img box-bg">
 											<img src="./images/main_banner_02.png" alt="">
@@ -76,19 +76,19 @@
 											<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
 											<p class="title">MEET GRAHAM</p>
 											<div class="link">
-												<svg class="progress-current">
+												<svg class="progress-current" data-mouse-type="text" data-text="view">
 													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
 													<polygon points="23,19 41,29 23,39"
 															style="fill:#f7dd30;"/>
 												</svg>
-												<span class="view">VIEW</span>
+<!--												<span class="view">VIEW</span>-->
 											</div>
 										</figcaption>
 									</figure>
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="video_detail.php?idx=823" data-mouse-type="text" data-text="view">
+								<a href="video_detail.php?idx=823">
 									<figure class="box-content">
 										<div class="img box-bg">
 											<img src="./images/main_banner_03.png" alt="">
@@ -98,12 +98,12 @@
 											<!--													<p class="award-summ">2017 Grand</p>-->
 											<p class="title">fearless girl</p>
 											<div class="link">
-												<svg class="progress-current">
+												<svg class="progress-current" data-mouse-type="text" data-text="view">
 													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
 													<polygon points="23,19 41,29 23,39"
 															style="fill:#f7dd30;"/>
 												</svg>
-												<span class="view">VIEW</span>
+<!--												<span class="view">VIEW</span>-->
 											</div>
 										</figcaption>
 									</figure>
@@ -179,8 +179,8 @@
 ?>                                                                
 								</div>
 								<!-- Add Arrows -->
-								<div class="button-next"></div>
-								<div class="button-prev"></div>
+								<div class="button-next" data-mouse-type="ripple"></div>
+								<div class="button-prev" data-mouse-type="ripple"></div>
 							</div>
 						</div>
 					</div>
@@ -325,6 +325,7 @@
 			slidesPerGroup: 3,
 			loopFillGroupWithBlank: true,
 			spaceBetween: 30,
+			touchAngle: 75,
 			navigation: {
 				nextEl: '.button-next',
 				prevEl: '.button-prev',

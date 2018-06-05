@@ -143,7 +143,7 @@
 	height: 17px;
 	background: url(../images/arrow_left.png) center no-repeat;
 	background-size: cover;
-	cursor: pointer;
+/*	cursor: pointer;*/
 }
 .content.main .list-container .best-slider .button-next {
 	position: absolute;
@@ -153,7 +153,7 @@
 	height: 17px;
 	background: url(../images/arrow_right.png) center no-repeat;
 	background-size: cover;
-	cursor: pointer;
+/*	cursor: pointer;*/
 }
 .content.main .list-container.best-area .title-area {
 	padding: 118px 0 0;
@@ -594,9 +594,9 @@
 	transform: scale(0);
 	transition: all 0.25s ease;
 }
-.content.detail .actions .share-spread li:nth-child(1) {transition-delay: 0s;}
-.content.detail .actions .share-spread li:nth-child(2) {transition-delay: 0.1s;}
-.content.detail .actions .share-spread li:nth-child(3) {transition-delay: 0.2s;}
+.content.detail .actions .share-spread li:nth-child(1) {transition-delay: 0s; width: 9px; height: 19px;}
+.content.detail .actions .share-spread li:nth-child(2) {transition-delay: 0.1s; width: 16px; height: 16px;}
+/*.content.detail .actions .share-spread li:nth-child(3) {transition-delay: 0.2s;}*/
 .content.detail .actions .action.share.is-active + .share-spread li {
 	transform: scale(1);
 	opacity: 1;
@@ -762,8 +762,8 @@
 }
 .content.user-page .user-info .info-wrap .wrap-user .setting {
 	display: inline-block;
-	width: 46px;
-	height: 32px;
+	width: 20px;
+	height: 20px;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -771,7 +771,7 @@
 	width: 100%;
 	height: 100%;
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: 1px;
 }
 .content.user-page .user-info .info-wrap .wrap-actions .follow-state {
 	position: absolute;
@@ -1023,7 +1023,7 @@
 .content.user-page .collection-detail .collection-info .texts .secret-mode {
 	display: inline-block;
 	margin-left: 8px;
-	background: url(../images/myvvv_secret_icon.png) center / cover no-repeat;
+	background: url(../images/myvvv_secret_icon.png) center / 16px 20px no-repeat;
 	width: 16px;
 	height: 20px;
 	vertical-align: bottom;
@@ -1053,12 +1053,12 @@
 	vertical-align: middle;
 }
 .content.user-page .collection-detail .collection-info .counts .icon.video {
-	background: url(../images/myvvv_icon_vid.png) center / cover no-repeat;
+	background: url(../images/myvvv_icon_vid.png) center / 27px 18px no-repeat;
 	width: 27px;
 	height: 18px;
 }
 .content.user-page .collection-detail .collection-info .counts .icon.favor {
-	background: url(../images/myvvv_icon_favorite.png) center / cover no-repeat;
+	background: url(../images/myvvv_icon_favorite.png) center / 17px 16px no-repeat;
 	width: 17px;
 	height: 16px;
 }
@@ -1884,7 +1884,7 @@
 .popup.profile-edit .area-info .input-group .input i.fb {
 	width: 14px;
 	height: 25px;
-	background: url(../images/detail_share_fb.png) 0 50% / cover no-repeat;
+	background: url(../images/myvvv_profile_fb.png) 0 50% / cover no-repeat;
 }
 .popup.profile-edit .area-info .input-group .input i.kt {
 	width: 22px;

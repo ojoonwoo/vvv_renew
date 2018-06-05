@@ -268,6 +268,9 @@
 			$backDot = $('#cursor .backDot');
 		var xPos = e.pageX,
 			yPos = e.pageY;
+		if(!$cursor.hasClass('default')) {
+			$cursor.addClass('default');
+		}
 		TweenMax.to($cursor, 0, {x: xPos-6, y: yPos-6, scale: 1});
 	});
 	var mouseType = "";
