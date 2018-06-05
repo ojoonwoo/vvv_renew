@@ -36,7 +36,7 @@
 		echo "<script>history.back();</script>";
 	}
 
-	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
+	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$my_idx."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
 
@@ -265,10 +265,10 @@
 ?>													
 												</div>
 											</div>
-										</div>
 <?
 	}
 ?>
+										</div>
 									</div>
 									<div class="aj-content like is-active">
 <?
@@ -300,19 +300,6 @@
 			$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
 			$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-//			$title_count    = mb_strlen($video_data["video_title"],'utf-8');
-//			if ($title_count > 20)
-//				$video_title    = iconv_substr($video_data["video_title"],0,20)."..";
-//			else
-//				$video_title    = $video_data["video_title"];
-//
-//			// 브랜드 줄바꿈 방지 글자 자르기
-//			$brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
-//			if ($brand_count > 30)
-//				$video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
-//			else
-//				$video_brand    = $video_data["video_brand"];
-			
 			$video_title    = $video_data["video_title"];
 			$video_brand    = $video_data["video_brand"];
 ?>													
