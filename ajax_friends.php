@@ -17,6 +17,9 @@
 
 	while ($data = mysqli_fetch_array($result))
 	{
+		if ($data["idx"] == $_SESSION["ss_vvv_idx"])
+			continue;
+			
 		$collect_query			= "SELECT * FROM collection_info WHERE collection_mb_idx='".$data["idx"]."'";
 		$collect_result			= mysqli_query($my_db, $collect_query);
 		$collect_count			= mysqli_num_rows($collect_result);
