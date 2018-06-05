@@ -258,12 +258,12 @@
 						if (response.match("Y") == "Y")
 						{
 							// alert("덧글이 입력되었습니다.");
-							$(".follow-state a").addClass("already");
-							$(".follow-state a").html("팔로우중");
+							$("#follow_status").addClass("already");
+							$("#follow_status").html("팔로우중");
 							$(".f-wer .count").html(Number($(".f-wer .count").html()) + 1);
 						}else if (response.match("D") == "D"){
-							$(".follow-state a").removeClass("already");
-							$(".follow-state a").html("팔로우하기");
+							$("#follow_status").removeClass("already");
+							$("#follow_status").html("팔로우하기");
 							$(".f-wer .count").html(Number($(".f-wer .count").html()) - 1);
 						}else if (response.match("L") == "L"){
 							alert("로그인 후 이용해 주세요!");
