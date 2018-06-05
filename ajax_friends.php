@@ -48,7 +48,18 @@
 ?>											
 										</div>
 										<div class="info">
+<?
+		if ($data["mb_nickname"] == "")
+		{
+?>											
+											<div class="name"><a href="my_vvv.php?idx=<?=$data["idx"]?>"><?=$data["mb_name"]?></a></div>
+<?
+		}else{
+?>			
 											<div class="name"><a href="my_vvv.php?idx=<?=$data["idx"]?>"><?=$data["mb_nickname"]?></a></div>
+<?
+		}
+?>								
 											<div class="counts">
 												<div class="wrap like">
 													<i></i>
