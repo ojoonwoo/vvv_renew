@@ -446,6 +446,7 @@
 					return false;
 				}
 console.log(collection_secret);
+return false;
 				$.ajax({
 					type   : "POST",
 					async  : false,
