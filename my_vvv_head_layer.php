@@ -238,7 +238,7 @@
 							<div class="scroll-box follow is-active aj-content" data-tab-content="follow">
 <?
 	// $my_idx
-	$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$my_idx."'";
+	$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$my_idx."' AND follow_YN='Y'";
 	$follow_result		= mysqli_query($my_db, $follow_query);
 
 	while ($follow_data = mysqli_fetch_array($follow_result))
@@ -312,7 +312,7 @@
 							<div class="scroll-box following aj-content" data-tab-content="following">
 <?
 	// $my_idx
-	$follower_query		= "SELECT * FROM follow_info WHERE follower_idx='".$my_idx."'";
+	$follower_query		= "SELECT * FROM follow_info WHERE follower_idx='".$my_idx."' AND follow_YN='Y'";
 	$follower_result	= mysqli_query($my_db, $follower_query);
 
 	while ($follower_data = mysqli_fetch_array($follower_result))
