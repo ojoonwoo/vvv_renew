@@ -48,7 +48,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="cursor" class="default"></div>
+			<? 	include_once "cursor.php"; ?>
 		</div>
 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>		
 		<script>

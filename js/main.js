@@ -265,17 +265,26 @@
 	$doc.on('mousemove', function(e) {
 		var $cursor = $('#cursor'),
 			$dot = $('#cursor .dot'),
-			$spread = $('#cursor .spread');
+			$backDot = $('#cursor .backDot');
 		var xPos = e.pageX,
 			yPos = e.pageY;
 		TweenMax.to($cursor, 0, {x: xPos-6, y: yPos-6, scale: 1});
 	});
 	var mouseType = "";
-	$doc.on('mouseover', '[data-mouse-type]', function() {
+	var mouseText = "";
+	$doc.on('mouseenter', '[data-mouse-type]', function(e) {
+		e.stopPropagation();
 		mouseType = $(this).data('mouse-type');
-		$('#cursor').addClass(mouseType);
-	}).on('mouseout', function() {
+		(mouseType=='text') ?  mouseText = $(this).data('text') : mouseText = "";
+		if(!($('#cursor').hasClass(mouseType))) {
+			$('#cursor').addClass(mouseType);
+		}
+		$('#cursor .guideT').text(mouseText);
+		
+	}).on('mouseleave', '[data-mouse-type]', function(e) {
 		$('#cursor').removeClass(mouseType);
+		$('#cursor .guideT').text('');
+
 	});
 	$doc.on('mouseleave', function() {
 		var $cursor = $('#cursor');

@@ -132,7 +132,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="cursor" class="default"></div>
+			<? 	include_once "cursor.php"; ?>
 			<div class="popup my-coll-add mycollection" id="collection-add">
 				<button type="button" class="popup-close" data-popup="@close"></button>
 				<div class="inner">

@@ -172,7 +172,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="cursor" class="default"></div>
+			<? 	include_once "cursor.php"; ?>
 		</div>
 		<script>
 			
