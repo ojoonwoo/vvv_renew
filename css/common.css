@@ -63,7 +63,6 @@ html.search-layer-opened{
 body {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
-/*	font-family: "Noto Sans KR", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;*/
 	font-family: "Noto Sans Korean", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;
 	color: #333333;
 	background: #f2f2f2;
@@ -78,16 +77,22 @@ html, body {
 * {
 	cursor: none;
 }
+#app {
+	position: relative;
+	overflow-x: hidden;
+}
 button {
 /*	cursor: pointer;*/
 	cursor: none;
 	outline: none;
+	font-family: "Noto Sans Korean", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;
 }
 input[type="text"],
 input[type="password"],
 input[type="tel"],
 input[type="file"] {
 	color: #333333;
+	font-family: "Noto Sans Korean", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;
 }
 input[type="checkbox"],
 input[type="radio"] {
