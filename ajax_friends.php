@@ -11,7 +11,7 @@
 		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%abcdefghijklmnopqrstuvwxyz%'";
 		$result			= mysqli_query($my_db, $query);
 	}else{
-		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%'";
+		$query			= "SELECT * FROM member_info WHERE mb_showYN='Y' AND mb_nickname like '%".$search_nickname."%' OR mb_name like '%".$search_nickname."%'";
 		$result			= mysqli_query($my_db, $query);
 	}
 

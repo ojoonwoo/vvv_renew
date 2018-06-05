@@ -538,7 +538,7 @@
 				<div class="content">
 					<div class="search-wrap">
 						<div class="search-bar">
-							<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 검색">
+							<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 또는 이름 검색">
 							<div class="placeholder-icon"></div>
 						</div>
 						<div class="search-result">
