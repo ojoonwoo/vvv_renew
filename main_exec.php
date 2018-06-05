@@ -246,12 +246,18 @@ include_once "./include/autoload.php";
                     $video_item_txt      = $item_data["video_items"].",".$v_idx;                
                     $query		= "UPDATE collection_item_info SET video_items='".$video_item_txt."' WHERE c_idx='".$c_idx."' AND m_idx='".$_SESSION['ss_vvv_idx']."'";
                     $result	    = mysqli_query($my_db, $query);
+
+                    $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$v_idx."'";
+                    $result2	= mysqli_query($my_db, $query2);
                 }
 
             }else{
                 $video_item_txt = $v_idx;
                 $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$_SESSION['ss_vvv_idx']."','".$video_item_txt."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
+
+                $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$v_idx."'";
+                $result2	= mysqli_query($my_db, $query2);
             }
 
             if ($flag == "")
@@ -322,6 +328,9 @@ include_once "./include/autoload.php";
 
             $query		= "UPDATE comment_info SET showYN='N' WHERE idx='".$comment_idx."'";
             $result		= mysqli_query($my_db, $query);
+
+            $query2		= "UPDATE video_info2 SET comment_count=comment_count-1 WHERE video_idx='".$v_idx."'";
+            $result2		= mysqli_query($my_db, $query2);
 
             if ($result)
                 $flag	= "Y";
@@ -794,14 +803,24 @@ include_once "./include/autoload.php";
 
                     if ($dupli_flag == 0)
                         $add_video_txt .= ",".$val;
+
+                    $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$val."'";
+                    $result2	= mysqli_query($my_db, $query2);        
                 }
 
                 $add_video_txt = $collection_item_data["video_items"].$add_video_txt;
                 $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
                 $result    = mysqli_query($my_db, $query);
+
             }else{
                 $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$video_items."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
+
+                foreach ($add_video_arr as $key => $val)
+                {
+                    $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$val."'";
+                    $result2	= mysqli_query($my_db, $query2);        
+                }
             }
 
             if($result) {
@@ -833,6 +852,13 @@ include_once "./include/autoload.php";
 
             //삭제실행
             $result = array_diff($collection_item_arr, $del_video_arr);
+
+            foreach ($del_video_arr as $d_key => $d_val)
+            {
+                $query2		= "UPDATE video_info2 SET collect_count=collect_count-1 WHERE video_idx='".$d_val."'";
+                $result2	= mysqli_query($my_db, $query2);        
+            }
+
             //index 채우기
             $result_arr = array_values($result);
 
@@ -843,6 +869,7 @@ include_once "./include/autoload.php";
                     $del_video_txt .= ",";
 
                 $del_video_txt .= $val;
+
                 $i++;
             }
 

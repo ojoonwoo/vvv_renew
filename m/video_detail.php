@@ -25,6 +25,22 @@
 	if (mysqli_num_rows($like_result) > 0)
 		$like_flag = "is-active";
 
+	// Collectio 여부 체크
+	$collection_flag 	= "";
+	$c_flag_query		= "SELECT * FROM collection_item_info WHERE m_idx='".$_SESSION['ss_vvv_idx']."'";
+	$c_flag_result		= mysqli_query($my_db, $c_flag_query);
+	while ($c_flag_data = mysqli_fetch_array($c_flag_result))
+	{
+		$c_flag_arr	= explode(",", $c_flag_data["video_items"]);
+		foreach ($c_flag_arr as $key => $val)
+		{
+			if ($val == $video_idx)
+			{
+				$collection_flag = "is-active";
+			}
+		}
+	}
+
 	// 유튜브 영상 코드 자르기
 	$yt_code_arr1   = explode("v=", $detail_data["video_link"]);
 	$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
@@ -93,7 +109,7 @@
 	if ($_SESSION['ss_vvv_idx'] != "")
 	{
 ?>									
-									<a href="javascript:void(0)" class="action collect" data-layer="#collection-save"></a>
+									<a href="javascript:void(0)" class="action collect <?=$collection_flag?>" data-layer="#collection-save"></a>
 
 <?
 	}else{
@@ -151,7 +167,7 @@
 		{
 ?>											
 											<div class="actions">
-												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>')"></button>
+												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>','<?=$video_idx?>')"></button>
 											</div>
 <?
 		}
@@ -661,7 +677,7 @@
 				});			
 			}
 
-			function remove_comment(idx)
+			function remove_comment(idx, v_idx)
 			{
 				if (confirm("댓글을 삭제 할까요?"))
 				{
@@ -671,6 +687,7 @@
 						url    : "../main_exec.php",
 						data:{
 							"exec"				    : "remove_comment",
+							"v_idx"		            : v_idx,
 							"idx"		            : idx
 						},
 						success: function(response){
