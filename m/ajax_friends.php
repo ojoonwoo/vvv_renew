@@ -42,7 +42,7 @@
 <?
 		}else{
 ?>											
-										<a href="my_vvv.php?idx=<?=$data["idx"]?>"><img src="<?=$data["mb_profile_url"]?>" alt=""></a>
+										<a href="my_vvv.php?idx=<?=$data["idx"]?>"><img src=".<?=$data["mb_profile_url"]?>" alt=""></a>
 <?
 		}
 ?>											
