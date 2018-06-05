@@ -445,8 +445,7 @@
 					alert("컬렉션 설명을 입력해 주세요.");
 					return false;
 				}
-console.log(collection_secret);
-return false;
+
 				$.ajax({
 					type   : "POST",
 					async  : false,
