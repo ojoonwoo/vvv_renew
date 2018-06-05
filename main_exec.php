@@ -323,6 +323,9 @@ include_once "./include/autoload.php";
             $query		= "UPDATE comment_info SET showYN='N' WHERE idx='".$comment_idx."'";
             $result		= mysqli_query($my_db, $query);
 
+            $query2		= "UPDATE video_info2 SET comment_count=comment_count-1 WHERE video_idx='".$v_idx."'";
+            $result2		= mysqli_query($my_db, $query2);
+
             if ($result)
                 $flag	= "Y";
             else

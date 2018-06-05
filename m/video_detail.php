@@ -151,7 +151,7 @@
 		{
 ?>											
 											<div class="actions">
-												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>')"></button>
+												<button type="button" class="remove-comment" onclick="remove_comment('<?=$comment_data["idx"]?>','<?=$video_idx?>')"></button>
 											</div>
 <?
 		}
@@ -661,7 +661,7 @@
 				});			
 			}
 
-			function remove_comment(idx)
+			function remove_comment(idx, v_idx)
 			{
 				if (confirm("댓글을 삭제 할까요?"))
 				{
@@ -671,6 +671,7 @@
 						url    : "../main_exec.php",
 						data:{
 							"exec"				    : "remove_comment",
+							"v_idx"		            : v_idx,
 							"idx"		            : idx
 						},
 						success: function(response){
