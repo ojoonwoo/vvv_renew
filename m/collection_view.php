@@ -313,6 +313,27 @@
 					</div>
 				</div>
 			</div>
+			<div class="popup search-friends" id="search-friends">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>친구 검색</h5>
+					</div>
+					<div class="content">
+						<div class="search-wrap">
+							<div class="search-bar">
+								<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 또는 이름 검색">
+								<div class="placeholder-icon"></div>
+							</div>
+							<div class="search-result">
+								<div class="scroll-box">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="popup follow-state" id="follow-state">
 				<button type="button" class="popup-close" data-popup="@close"></button>
 				<div class="inner">
@@ -702,6 +723,70 @@
 					}
 				});		
 			});
+
+		function search_friends()
+		{
+			var search_nickname = $("#search_nickname").val();
+
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./ajax_friends.php",
+				data:{
+					"search_nickname"   : search_nickname
+				},
+				success: function(response){
+					console.log(response);
+					$(".scroll-box").html(response);
+				}
+			});
+			
+		}
+
+            function search_follow_member(idx, followClass)
+			{
+                if (followClass == "already")
+                {
+                    var confirm_message = "이 친구를 팔로우 취소 할까요?";
+                    var followYN        = "Y";
+                }else{
+                    var confirm_message = "이 친구를 팔로우 할까요?";
+                    var followYN        = "N";
+                }
+
+                if (confirm(confirm_message))
+                {
+                    $.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"				    : "search_follow_member",
+						"follow_idx"          	: idx,
+						"followYN"          	: followYN
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+                            alert("팔로우 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","already");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','already')");
+						}else if (response.match("D") == "D"){
+                            alert("팔로우가 취소 되었습니다.");
+                            // location.reload();
+                            $("#f_btn_"+idx).attr("class","add");
+                            $("#f_btn_"+idx).attr("onclick","search_follow_member('" + idx + "','add')");
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});			
+
+                }
+			}
 
 			function list_follow_member(idx, followClass)
 			{
