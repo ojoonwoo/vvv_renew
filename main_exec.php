@@ -803,14 +803,24 @@ include_once "./include/autoload.php";
 
                     if ($dupli_flag == 0)
                         $add_video_txt .= ",".$val;
+
+                    $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$val."'";
+                    $result2	= mysqli_query($my_db, $query2);        
                 }
 
                 $add_video_txt = $collection_item_data["video_items"].$add_video_txt;
                 $query     = "UPDATE collection_item_info SET video_items='".$add_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
                 $result    = mysqli_query($my_db, $query);
+
             }else{
                 $query     = "INSERT INTO collection_item_info(c_idx, m_idx, video_items, regdate) values('".$c_idx."','".$m_idx."','".$video_items."','".date("Y-m-d H:i:s")."')";
                 $result    = mysqli_query($my_db, $query);
+
+                foreach ($add_video_arr as $key => $val)
+                {
+                    $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$val."'";
+                    $result2	= mysqli_query($my_db, $query2);        
+                }
             }
 
             if($result) {
