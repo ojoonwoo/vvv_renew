@@ -105,7 +105,9 @@
 	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
-                                    <img src="./images/profile_img_sample.jpg" alt="">
+									<div class="default">
+										<span><?=$mb_data['mb_nickname']?></span>
+									</div>
 <?
     }else{
 ?>        
@@ -260,7 +262,18 @@
 								<div class="row">
 									<div class="img">
 										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
+<?
+		if($mb_f_data["mb_profile_url"] != "") {
+?>
 											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
+		} else {
+?>
+											<div class="default">
+												<span><?=($mb_f_data["mb_nickname"] != '') ? mb_substr($mb_f_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_f_data["mb_name"], 0, 1, 'utf-8')?></span>
+											</div>
+<?
+		}
+?>
 										</a>
 									</div>
 									<div class="info">
@@ -347,6 +360,18 @@
 								<div class="row">
 									<div class="img">
 										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
+<?
+			if($mb_fer_data["mb_profile_url"] != "") {
+?>
+											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
+			} else {
+?>
+											<div class="default">
+												<span><?=($mb_fer_data["mb_nickname"] != '') ? mb_substr($mb_fer_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_fer_data["mb_name"], 0, 1, 'utf-8')?></span>
+											</div>
+<?
+			}
+?>
 											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
 										</a>
 									</div>
