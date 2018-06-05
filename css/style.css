@@ -940,7 +940,8 @@
 	right: 14px;
 	width: 24px;
 	height: 24px;
-	background: url(../images/myvvv_album_delete.png) center / cover no-repeat;
+	border-radius: 50%;
+	background: url(../images/myvvv_album_delete.png) center / 12px 12px no-repeat #ffffff;
 }
 .content.user-page .user-feed .aj-content .album .frame {
 	height: 510px;
