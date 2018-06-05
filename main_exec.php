@@ -852,6 +852,13 @@ include_once "./include/autoload.php";
 
             //삭제실행
             $result = array_diff($collection_item_arr, $del_video_arr);
+
+            foreach ($del_video_arr as $d_key => $d_val)
+            {
+                $query2		= "UPDATE video_info2 SET collect_count=collect_count-1 WHERE video_idx='".$d_val."'";
+                $result2	= mysqli_query($my_db, $query2);        
+            }
+
             //index 채우기
             $result_arr = array_values($result);
 
@@ -862,9 +869,6 @@ include_once "./include/autoload.php";
                     $del_video_txt .= ",";
 
                 $del_video_txt .= $val;
-
-                $query2		= "UPDATE video_info2 SET collect_count=collect_count-1 WHERE video_idx='".$val."'";
-                $result2	= mysqli_query($my_db, $query2);        
 
                 $i++;
             }
