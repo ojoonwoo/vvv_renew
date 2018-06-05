@@ -488,7 +488,7 @@
 				return false;
 			});
 
-			$doc.on('click', '.favor', function() {
+			$doc.on('click', '.favor_scrap', function() {
 				var cLikeChk	= "Y";
 				if(!$(this).hasClass('is-already')) 
 					cLikeChk	= "N";
