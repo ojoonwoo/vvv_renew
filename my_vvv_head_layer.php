@@ -352,7 +352,18 @@
 									</div>
 									<div class="info">
 										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
+<?
+		if ($mb_data['mb_nickname'] == "")
+		{
+?>										
 											<div class="name"><?=$mb_fer_data["mb_name"]?></div>
+<?
+		}else{
+?>			
+											<div class="name"><?=$mb_fer_data["mb_nickname"]?></div>
+<?
+		}
+?>								
 										</a>
 										<div class="counts">
 											<div class="wrap like">

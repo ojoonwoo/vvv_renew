@@ -358,7 +358,18 @@
 										</a>
 									</div>
 									<div class="info">
+<?
+	if ($mb_data['mb_nickname'] == "")
+	{
+?>										
 										<div class="name"><?=$mb_f_data["mb_name"]?></div>
+<?
+	}else{
+?>		
+										<div class="name"><?=$mb_f_data["mb_nickname"]?></div>
+<?
+	}
+?>								
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
@@ -433,7 +444,18 @@
 										</a>
 									</div>
 									<div class="info">
+<?
+	if ($mb_data['mb_nickname'] == "")
+	{
+?>										
 										<div class="name"><?=$mb_fer_data["mb_name"]?></div>
+<?
+	}else{
+?>		
+										<div class="name"><?=$mb_fer_data["mb_nickname"]?></div>
+<?
+	}
+?>								
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
