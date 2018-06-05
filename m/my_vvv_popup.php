@@ -87,17 +87,19 @@
 						<div class="pic-wrap">
 							<div class="picture">
 <?
-	if ($mb_data['mb_nickname'] == "")
+	if ($mb_data['mb_profile_url'] == "")
 	{
 ?>
-								<img src="./images/profile_img_sample.jpg" alt="">
+								<div class="default">
+									<span><?=($mb_data["mb_nickname"] != '') ? mb_substr($mb_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_data["mb_name"], 0, 1, 'utf-8')?></span>
+								</div>
 <?
-    }else{
+	}else{
 ?>        
-                                <img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
+								<img src="<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
-    }
-?>                                
+	}
+?>                                 
 							</div>
 							<div class="btn-edit">
 								<label for="profile-change">프로필 사진 바꾸기</label>
@@ -225,7 +227,20 @@
 								<div class="row">
 									<div class="img">
 										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
-											<img src=".<?=$mb_f_data["mb_profile_url"]?>" alt="">
+<?
+			if ($mb_f_data['mb_profile_url'] == "")
+			{
+?>
+											<div class="default">
+												<span><?=($mb_f_data["mb_nickname"] != '') ? mb_substr($mb_f_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_f_data["mb_name"], 0, 1, 'utf-8')?></span>
+											</div>
+<?
+			}else{
+?>        
+											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
+<?
+			}
+?>
 										</a>
 									</div>
 									<div class="info">
@@ -311,7 +326,20 @@
 								<div class="row">
 									<div class="img">
 										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
-											<img src=".<?=$mb_fer_data["mb_profile_url"]?>" alt="">
+<?
+			if ($mb_fer_data['mb_profile_url'] == "")
+			{
+?>
+											<div class="default">
+												<span><?=($mb_fer_data["mb_nickname"] != '') ? mb_substr($mb_fer_data["mb_nickname"], 0, 1, 'utf-8') : mb_substr($mb_fer_data["mb_name"], 0, 1, 'utf-8')?></span>
+											</div>
+<?
+			}else{
+?>        
+											<img src="<?=$mb_fer_data["mb_profile_url"]?>" alt="">
+<?
+			}
+?>                                 
 										</a>
 									</div>
 									<div class="info">

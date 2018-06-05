@@ -1377,7 +1377,7 @@
 }
 .content.join .block-terms .scroll-box .inner {
 	height: 100%;
-	overflow-y: scroll;
+	overflow-y: auto;
 	font-size: 18px;
 	line-height: 23px;
 	font-weight: 700;
@@ -1681,7 +1681,7 @@
 }
 .popup.collection-pick .content .collection-info .collection-list .scroll-box {
 	height: 100%;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .popup.collection-pick .content .collection-info .collection-list .scroll-box ul li {
 	display: block;
@@ -2004,7 +2004,7 @@
 .popup.search-friends .search-result .scroll-box {
 	height: 100%;
 	padding-right: 20px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .popup.search-friends .search-result .row {
 	position: relative;
@@ -2141,7 +2141,7 @@
 	display: none;
 	height: 100%;
 	padding-right: 20px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .popup.follow-state .area-list .row {
 	position: relative;
