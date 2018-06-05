@@ -235,7 +235,296 @@
 				</div>
 			</div>
 			<? 	include_once "cursor.php"; ?>
-			<? 	include_once "my_vvv_popup.php"; ?>
+			<div class="popup my-coll-add mycollection" id="collection-add">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>컬렉션 만들기</h5>
+					</div>
+					<div class="content">
+						<div class="input-area">
+							<div class="input-group">
+								<div class="guide">
+									<span>이름</span>
+								</div>
+								<div class="input">
+									<input type="text" placeholder="오준우님의 5월 컬렉션">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="guide">
+									<span>설명</span>
+								</div>
+								<div class="input">
+									<input type="text">
+								</div>
+							</div>
+						</div>
+						<div class="setting">
+							<span class="secret-guide">비밀 설정</span>
+							<div class="toggle secret">
+								<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+								<div class="toggle-circle"></div>
+							</div>
+						</div>	
+						<div class="button-wrap">
+							<button type="button" class="btn-light-grey" data-popup="@close">취소</button>
+							<button type="button">만들기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup my-coll-edit mycollection" id="collection-edit">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>컬렉션 수정</h5>
+					</div>
+					<div class="content">
+						<div class="input-area">
+							<div class="input-group">
+								<div class="guide">
+									<span>이름</span>
+								</div>
+								<div class="input">
+									<input type="text" id="c_name" value="<?=$collection_data["collection_name"]?>">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="guide">
+									<span>설명</span>
+								</div>
+								<div class="input">
+									<input type="text" id="c_desc" value="<?=$collection_data["collection_desc"]?>">
+								</div>
+							</div>
+						</div>
+						<div class="setting">
+							<span class="secret-guide">비밀 설정</span>
+							<div class="toggle secret is-active">
+								<input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
+								<div class="toggle-circle"></div>
+							</div>
+						</div>	
+						<div class="button-wrap">
+							<button type="button" onclick="del_collection();" class="btn-light-grey">컬렉션 삭제</button>
+							<button type="button" onclick="edit_collection();">수정</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup search-friends" id="search-friends">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<h5>친구 검색</h5>
+					</div>
+					<div class="content">
+						<div class="search-wrap">
+							<div class="search-bar">
+								<input type="text" id="search_nickname" onkeyup="search_friends()" placeholder="친구 닉네임 또는 이름 검색">
+								<div class="placeholder-icon"></div>
+							</div>
+							<div class="search-result">
+								<div class="scroll-box">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="popup follow-state" id="follow-state">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="content">
+						<div class="area-tab">
+							<div class="tab-wrap">
+								<div class="tab is-active" data-tab-target="follow">
+									<a href="#">팔로우</a>
+								</div>
+								<div class="tab" data-tab-target="following">
+									<a href="#">팔로잉</a>
+								</div>
+							</div>
+						</div>
+						<div class="area-list">
+							
+							<div class="scroll-box follow is-active" data-tab-content="follow">
+	<?
+		// $my_idx
+		$follow_query		= "SELECT * FROM follow_info WHERE follow_idx='".$my_idx."' AND follow_YN='Y'";
+		$follow_result		= mysqli_query($my_db, $follow_query);
+
+		while ($follow_data = mysqli_fetch_array($follow_result))
+		{
+			$mb_f_query		= "SELECT * FROM member_info WHERE idx='".$follow_data["follower_idx"]."'";
+			$mb_f_result	= mysqli_query($my_db, $mb_f_query);
+			$mb_f_data		= mysqli_fetch_array($mb_f_result);
+
+			// 라이크 갯수
+			$like_f_query	= "SELECT * FROM like_info WHERE mb_idx='".$mb_f_data["idx"]."' AND like_flag='Y'";
+			$like_f_result	= mysqli_query($my_db, $like_f_query);
+			$like_f_count	= mysqli_num_rows($like_f_result);
+			
+			// 컬렉션 갯수
+			$collection_f_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$mb_f_data["idx"]."' AND collection_showYN='Y'";
+			$collection_f_result	= mysqli_query($my_db, $collection_f_query);
+			$collection_f_count		= mysqli_num_rows($collection_f_result);
+	?>								
+								<div class="row">
+									<div class="img">
+										<a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>">
+											<img src=".<?=$mb_f_data["mb_profile_url"]?>" alt="">
+										</a>
+									</div>
+									<div class="info">
+<?
+	if ($mb_f_data['mb_nickname'] == "")
+	{
+?>										
+										<div class="name"><?=$mb_f_data["mb_name"]?></div>
+<?
+	}else{
+?>		
+										<div class="name"><?=$mb_f_data["mb_nickname"]?></div>
+<?
+	}
+?>								
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span><?=$like_f_count?></span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span><?=$collection_f_count?></span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+	<?
+		if ($_SESSION["ss_vvv_idx"] != $follow_data["follower_idx"])
+		{
+			if (!$_SESSION['ss_vvv_idx'])
+			{
+	?>
+										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+	<?
+			}else{
+				$add_query		= "SELECT * FROM follow_info WHERE follow_idx='".$mb_f_data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."' AND follow_YN='Y'";
+				$add_result		= mysqli_query($my_db, $add_query);
+				$add_count		= mysqli_num_rows($add_result);
+				
+				if ($add_count > 0)
+				{
+	?>		
+										<button type="button" class="already f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','already')"></button>
+	<?
+				}else{
+	?>										
+										<button type="button" class="add f_list_btn_<?=$mb_f_data["idx"]?>" onclick="list_follow_member('<?=$mb_f_data["idx"]?>','add')"></button>
+	<?
+				}
+			}
+		}
+	?>								
+									</div>
+								</div>
+	<?
+		}
+	?>							
+							</div>
+
+							<div class="scroll-box following" data-tab-content="following">
+	<?
+		// $my_idx
+		$follower_query		= "SELECT * FROM follow_info WHERE follower_idx='".$my_idx."' AND follow_YN='Y'";
+		$follower_result	= mysqli_query($my_db, $follower_query);
+
+		while ($follower_data = mysqli_fetch_array($follower_result))
+		{
+			$mb_fer_query		= "SELECT * FROM member_info WHERE idx='".$follower_data["follow_idx"]."'";
+			$mb_fer_result		= mysqli_query($my_db, $mb_fer_query);
+			$mb_fer_data		= mysqli_fetch_array($mb_fer_result);
+
+			// 라이크 갯수
+			$like_fer_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_fer_data["idx"]."' AND like_flag='Y'";
+			$like_fer_result	= mysqli_query($my_db, $like_fer_query);
+			$like_fer_count		= mysqli_num_rows($like_fer_result);
+			
+			// 컬렉션 갯수
+			$collection_fer_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$mb_fer_data["idx"]."' AND collection_showYN='Y'";
+			$collection_fer_result		= mysqli_query($my_db, $collection_fer_query);
+			$collection_fer_count		= mysqli_num_rows($collection_fer_result);
+	?>								
+								<div class="row">
+									<div class="img">
+										<a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>">
+											<img src=".<?=$mb_fer_data["mb_profile_url"]?>" alt="">
+										</a>
+									</div>
+									<div class="info">
+<?
+	if ($mb_fer_data['mb_nickname'] == "")
+	{
+?>										
+										<div class="name"><?=$mb_fer_data["mb_name"]?></div>
+<?
+	}else{
+?>		
+										<div class="name"><?=$mb_fer_data["mb_nickname"]?></div>
+<?
+	}
+?>								
+										<div class="counts">
+											<div class="wrap like">
+												<i></i>
+												<span><?=$like_fer_count?></span>
+											</div>
+											<div class="wrap collection">
+												<i></i>
+												<span><?=$collection_fer_count?></span>
+											</div>
+										</div>
+									</div>
+									<div class="action">
+	<?
+		if ($_SESSION["ss_vvv_idx"] != $follower_data["follow_idx"])
+		{
+			if (!$_SESSION['ss_vvv_idx'])
+			{
+	?>
+										<button type="button" class="already" onclick="alert('로그인 후 친구추가해 주세요.');location.href='login.php?refurl=<?=$_SERVER['REQUEST_URI']?>'"></button>
+	<?
+			}else{
+				$add_query		= "SELECT * FROM follow_info WHERE follow_idx='".$mb_fer_data["idx"]."' AND follower_idx='".$_SESSION["ss_vvv_idx"]."' AND follow_YN='Y'";
+				$add_result		= mysqli_query($my_db, $add_query);
+				$add_count		= mysqli_num_rows($add_result);
+				
+				if ($add_count > 0)
+				{
+	?>		
+										<button type="button" class="already f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','already')"></button>
+	<?
+				}else{
+	?>										
+										<button type="button" class="add f_list_btn_<?=$mb_fer_data["idx"]?>" onclick="list_follow_member('<?=$mb_fer_data["idx"]?>','add')"></button>
+	<?
+				}
+			}
+		}
+	?>								
+									</div>
+								</div>
+	<?
+		}
+	?>							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			
 		</div>
 		<script>
