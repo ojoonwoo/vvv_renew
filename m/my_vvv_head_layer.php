@@ -11,7 +11,7 @@
 <?
 	}else{
 ?>        
-									<img src=."<?=$mb_data["mb_profile_url"]?>" alt="">
+									<img src=".<?=$mb_data["mb_profile_url"]?>" alt="">
 <?
 	}
 ?>                                 
