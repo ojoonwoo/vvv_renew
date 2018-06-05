@@ -438,6 +438,17 @@
 			//	기본 기능 테스트 코드
 			$doc = $(document);
 
+			$doc.on('click', '.tab', function() {
+				$(".tab").removeClass("is-active");
+				$(this).addClass("is-active");
+
+				var target = $(this).data('tab-content');
+				$(".aj-content").removeClass("is-active");
+				$(".aj-content."+target).addClass("is-active");
+
+				return false;
+			});
+
 			function follow_member()
 			{
 				$.ajax({
