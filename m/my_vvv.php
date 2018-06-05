@@ -36,7 +36,7 @@
 		echo "<script>history.back();</script>";
 	}
 
-	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
+	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$my_idx."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
 
@@ -68,18 +68,18 @@
 						<div class="user-feed">
 							<div class="wrapper">
 								<div class="tab-wrap">
-									<div class="tab collection" data-tab-content="collection">
+									<div class="tab collection"  data-tab-target="collection">
 										<a href="#">Collection</a>
 									</div>
-									<div class="tab favor" data-tab-content="favor">
+									<div class="tab favor" data-tab-target="favor">
 										<a href="#">Favorite</a>
 									</div>
-									<div class="tab like is-active" data-tab-content="like">
+									<div class="tab like is-active" data-tab-target="like">
 										<a href="#">Like</a>
 									</div>
 								</div>
 								<div class="inner">
-									<div class="aj-content collection">
+									<div class="aj-content collection" data-tab-content="collection">
 										<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
@@ -179,7 +179,7 @@
 	$collection_like_count		= mysqli_num_rows($collection_like_result);
 									
 ?>
-									<div class="aj-content favor">
+									<div class="aj-content favor" data-tab-content="favor">
 										<div class="wrapper liked">
 <? 
 	if($collection_like_count < 1) {
@@ -265,12 +265,12 @@
 ?>													
 												</div>
 											</div>
-										</div>
 <?
 	}
 ?>
+										</div>
 									</div>
-									<div class="aj-content like is-active">
+									<div class="aj-content like is-active" data-tab-content="like">
 <?
 	if($my_count < 1) {
 ?>
@@ -300,19 +300,6 @@
 			$yt_code_arr2   = explode("&",$yt_code_arr1[1]);
 			$yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-//			$title_count    = mb_strlen($video_data["video_title"],'utf-8');
-//			if ($title_count > 20)
-//				$video_title    = iconv_substr($video_data["video_title"],0,20)."..";
-//			else
-//				$video_title    = $video_data["video_title"];
-//
-//			// 브랜드 줄바꿈 방지 글자 자르기
-//			$brand_count    = mb_strlen($video_data["video_brand"],'utf-8');
-//			if ($brand_count > 30)
-//				$video_brand    = iconv_substr($video_data["video_brand"],0,30)."..";
-//			else
-//				$video_brand    = $video_data["video_brand"];
-			
 			$video_title    = $video_data["video_title"];
 			$video_brand    = $video_data["video_brand"];
 ?>													
@@ -807,16 +794,29 @@
 			$("#order-sortby").val("new");        
 		});
 
-		$doc.on('click', '.tab', function() {
-			$(".tab").removeClass("is-active");
-			$(this).addClass("is-active");
+		// $doc.on('click', '.tab', function() {
+		// 	$(".tab").removeClass("is-active");
+		// 	$(this).addClass("is-active");
 
-			var target = $(this).data('tab-content');
-			$(".aj-content").removeClass("is-active");
-			$(".aj-content."+target).addClass("is-active");
+		// 	var target = $(this).data('tab-content');
+		// 	$(".aj-content").removeClass("is-active");
+		// 	$(".aj-content."+target).addClass("is-active");
 
-			return false;
-		});
+		// 	return false;
+		// });
+			$doc.on('click', '.tab', function() {
+				$wrap = $(this).closest('.tab-wrap');
+				$wrap.find('.tab').removeClass('is-active');
+//				$(".tab").removeClass("is-active");
+				$(this).addClass("is-active");
+
+				var target = $(this).data('tab-target');
+				$('[data-tab-content='+target+']').siblings().removeClass('is-active');
+				$('[data-tab-content='+target+']').addClass("is-active");
+//				$(".aj-content."+target).addClass("is-active");
+
+				return false;
+			});
 
 		function follow_member()
 		{
