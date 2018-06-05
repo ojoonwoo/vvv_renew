@@ -48,7 +48,7 @@
 ?>											
 									</div>
 									<div class="info">
-										<div class="name"><?=$data["mb_nickname"]?></div>
+										<div class="name"><a href="my_vvv.php?idx=<?=$data["idx"]?>"><?=$data["mb_nickname"]?></a></div>
 										<div class="counts">
 											<div class="wrap like">
 												<i></i>
