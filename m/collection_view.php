@@ -130,7 +130,7 @@
 									<!--시크릿 전에 favor 선행 필수-->
 									<div class="anyaction">
 										<button class="favor <?=$collection_likeYN?>"></button>
-										<button class="secret"></button>
+										<!-- <button class="secret"></button> -->
 										<!-- 디폴트: 닉네임 맨 앞 한글자만 노출 -->
 										<a href="my_vvv.php?idx=<?=$mb_data2["idx"]?>" class="link-own"><span><?=$nick_first?></span></a>
 									</div>
