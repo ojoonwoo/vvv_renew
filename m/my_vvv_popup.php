@@ -915,9 +915,8 @@
 					videoItems += $(this).val();
 					i++;
 				});
-console.log(videoItems);
-return false;
-				if (videoItems == "")
+
+                if (videoItems == "")
 				{
 					location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>&my=<?=$_REQUEST["my"]?>";
 					return false;
