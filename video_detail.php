@@ -612,8 +612,8 @@
 						res_arr 	= response.split("||");
 						if (res_arr[0].match("Y") == "Y")
 						{
-							appendTxt += "<li class='c-info "+ secretFlag +"'>";
-							appendTxt += "<span onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>" + collection_name + "</span><i class='secret'></i>";
+							appendTxt += "<li class='c-info "+ secretFlag +"' onclick=collect_video('<?=$video_idx?>','" + res_arr[1] + "');>";
+							appendTxt += "<span>" + collection_name + "</span><i class='secret'></i>";
 							appendTxt += "</li>";
 
 							$("#my_collection_list").append(appendTxt);
