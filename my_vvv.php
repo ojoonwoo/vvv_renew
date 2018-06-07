@@ -79,12 +79,33 @@
 											<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
+		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_showYN='Y'";
+	else
+		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_secret='Y' AND collection_showYN='Y'";
+
+	$collection_result		= mysqli_query($my_db, $collection_query);
+	$collection_count		= mysqli_num_rows($collection_result);
+												
+	if ($_SESSION['ss_vvv_idx'] == $my_idx)
 	{
-?>												
+		if($collection_count < 1) {
+?>
+												<div class="result-empty">
+													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
+													<a class="link-black" href="./video_list.php?sort=new">
+														<span>만들기 +</span>
+													</a>
+												</div>
+<?
+		} else {
+?>
 												<div class="text-block">
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
 												</div>
 												<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
+<?
+		}
+?>												
 <?
 	}else{
 ?>												
@@ -97,12 +118,6 @@
 												<div class="list-container">
 													<div class="album-list">
 <?
-	if ($_SESSION['ss_vvv_idx'] == $my_idx)
-		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_showYN='Y'";
-	else
-		$collection_query		= "SELECT * FROM collection_info WHERE collection_mb_idx='".$my_idx."' AND collection_secret='Y' AND collection_showYN='Y'";
-
-	$collection_result		= mysqli_query($my_db, $collection_query);
 	while ($collection_data = mysqli_fetch_array($collection_result))
 	{
 		// 컬렉션에 담긴 영상 썸네일 추출 
