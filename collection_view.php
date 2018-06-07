@@ -105,7 +105,7 @@
 									<div class="action-wrap">
 										<div class="inner">
 											<!-- <a href="javascript:history.back()" class="list-back"> -->
-											<a href="my_vvv.php?idx=<?=$_REQUEST["midx"]?>&tab=<?=$_REQUEST["tab"]?>" class="list-back">
+											<a href="my_vvv.php?idx=<?=$_REQUEST["my"]?>&tab=<?=$_REQUEST["tab"]?>" class="list-back">
 												<i><</i>리스트로 돌아가기
 											</a>
 <?
