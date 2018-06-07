@@ -863,6 +863,23 @@ include_once "./include/autoload.php";
             echo $flag;
         break;
 
+        case "insert_contact" :
+            $contact_name		= $_REQUEST["contact_name"];
+            $contact_email		= $_REQUEST["contact_email"];
+            $contact_comment	= $_REQUEST["contact_comment"];
+
+            $query     = "INSERT INTO contact_info(contact_name, contact_email, contact_comment, contact_regdate) values('".$contact_name."','".$contact_email."','".$contact_comment."','".date("Y-m-d H:i:s")."')";
+            $result    = mysqli_query($my_db, $query);
+
+            if($result) {
+                $flag = "Y";
+            }else{
+                $flag = "N";
+            }    
+
+            echo $flag;
+        break;
+
         case "insert_video" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();
