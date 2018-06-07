@@ -599,11 +599,12 @@
 
 		}
 
-		function del_collection(e,idx)
+		// function del_collection(e,idx)
+		function del_collection()
 		{
 			// e.stopPropagation();
 			// e.stopImmediatePropagation();
-			e.preventDefault();
+			// e.preventDefault();
 			if (confirm("선택하신 컬렉션을 삭제 할까요?"))
 			{
 				$.ajax({
@@ -612,11 +613,12 @@
 					url    : "../main_exec.php",
 					data:{
 						"exec"				    : "delete_collection",
-						"collection_idx"       	: idx
+						"collection_idx"       	: "<?=$collection_idx?>"
 					},
 					success: function(response){
-						console.log(response);
-						$("#album_"+idx).hide();
+                        console.log(response);
+                        location.href = "my_vvv.php?idx=<?=$_REQUEST["my"]?>&tab=<?=$_REQUEST["tab"]?>";
+						// $("#album_"+idx).hide();
 					}
 				});					
 			}
