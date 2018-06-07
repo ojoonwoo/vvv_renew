@@ -107,7 +107,8 @@ input, button, select {
 input[type="text"],
 input[type="password"],
 input[type="tel"],
-input[type="file"] {
+input[type="file"],
+textarea {
 	color: #333333;
 }
 select {
@@ -125,7 +126,8 @@ select {
 }
 input:focus,
 button:focus,
-div:focus {
+div:focus,
+textarea:focus {
 	outline: 0;
 }
 input::-webkit-input-placeholder {
@@ -343,6 +345,9 @@ header #gnb .burger-wrap .line.mid {
 	background: url(../images/contact_tel.png) center no-repeat;
 	background-size: cover;
 	margin-right: 6px;
+}
+.global-menu .about-us .contacts .sns {
+	margin-top: 15px;
 }
 .global-menu .about-us .contacts .sns i {
 	margin-right: 18px;
