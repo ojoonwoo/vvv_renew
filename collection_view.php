@@ -373,7 +373,7 @@
 						success: function(response){
 							console.log(response);
 							alert("컬렉션에서 선택하신 영상이 삭제되었습니다.");
-							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>";
+							location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>&my=<?=$_REQUEST["my"]?>";
 						}
 					});			
 					//삭제 완료
