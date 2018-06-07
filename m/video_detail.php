@@ -268,7 +268,7 @@
 									<ul id="my_collection_list">
 <?
 	// 컬렉션 리스트 정보
-	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
+	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."' AND collection_showYN='Y'";
 	$collection_result 	= mysqli_query($my_db, $collection_query);
 
 	while($collection_data = mysqli_fetch_array($collection_result))
