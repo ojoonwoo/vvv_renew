@@ -419,10 +419,10 @@
 	if ($tab)
 	{
 ?>
-				// $(".tab").removeClass("is-active");
+				$(".my_tab").removeClass("is-active");
 				$(".tab.<?=$tab?>").addClass("is-active");
 
-				// $(".aj-content").removeClass("is-active");
+				$(".my_content").removeClass("is-active");
 				$(".aj-content.<?=$tab?>").addClass("is-active");
 <?
 	}

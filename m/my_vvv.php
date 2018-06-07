@@ -68,18 +68,18 @@
 						<div class="user-feed">
 							<div class="wrapper">
 								<div class="tab-wrap">
-									<div class="tab collection"  data-tab-target="collection">
+									<div class="tab my_tab collection"  data-tab-target="collection">
 										<a href="#">Collection</a>
 									</div>
-									<div class="tab favor" data-tab-target="favor">
+									<div class="tab my_tab favor" data-tab-target="favor">
 										<a href="#">Favorite</a>
 									</div>
-									<div class="tab like is-active" data-tab-target="like">
+									<div class="tab my_tab like is-active" data-tab-target="like">
 										<a href="#">Like</a>
 									</div>
 								</div>
 								<div class="inner">
-									<div class="aj-content collection" data-tab-content="collection">
+									<div class="aj-content my_content collection" data-tab-content="collection">
 										<div class="wrapper made">
 <?
 	if ($_SESSION['ss_vvv_idx'] == $my_idx)
@@ -179,7 +179,7 @@
 	$collection_like_count		= mysqli_num_rows($collection_like_result);
 									
 ?>
-									<div class="aj-content favor" data-tab-content="favor">
+									<div class="aj-content my_content favor" data-tab-content="favor">
 										<div class="wrapper liked">
 <? 
 	if($collection_like_count < 1) {
@@ -270,7 +270,7 @@
 ?>
 										</div>
 									</div>
-									<div class="aj-content like is-active" data-tab-content="like">
+									<div class="aj-content my_content like is-active" data-tab-content="like">
 <?
 	if($my_count < 1) {
 ?>
