@@ -297,7 +297,6 @@
 					return false;
 				}
 console.log(videoItems);
-return false;
 
 				$.ajax({
 					type   : "POST",
