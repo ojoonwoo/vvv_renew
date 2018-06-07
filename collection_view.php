@@ -159,7 +159,7 @@
 											<div class="list-container">
 												<div class="video-list">
 <?
-	if ($$collection_item_data["video_items"] == "")
+	if ($$collection_item_data["video_items"] != "")
 	{
 		foreach($collection_item_arr as $key => $val)
 		{
