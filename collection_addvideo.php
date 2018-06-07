@@ -296,7 +296,6 @@
 					location.href = "collection_view.php?cidx=<?=$collection_idx?>&midx=<?=$mb_idx?>&my=<?=$_REQUEST["my"]?>";
 					return false;
 				}
-console.log(videoItems);
 
 				$.ajax({
 					type   : "POST",

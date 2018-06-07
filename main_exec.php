@@ -790,9 +790,14 @@ include_once "./include/autoload.php";
                 $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
                 $add_video_txt              = "";
 
+                $i = 0;
+                $comma_txt  = "";
                 foreach ($add_video_arr as $key => $val)
                 {
                     $dupli_flag = 0;
+                    
+                    if ($i > 0)
+                        $comma_txt = ",";
                     foreach ($collection_item_arr as $c_key => $c_val)
                     {
                         if ($val == $c_val)
@@ -802,10 +807,11 @@ include_once "./include/autoload.php";
                     }
 
                     if ($dupli_flag == 0)
-                        $add_video_txt .= ",".$val;
+                        $add_video_txt .= $comma_txt.$val;
 
                     $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$val."'";
                     $result2	= mysqli_query($my_db, $query2);        
+                    $i++;
                 }
 
                 $add_video_txt = $collection_item_data["video_items"].$add_video_txt;
