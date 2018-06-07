@@ -431,6 +431,22 @@
         $("#order-awards").val("");
         $("#order-sortby").val("new");        
 	});
+	
+	
+	// vue code 
+	var app = new Vue({
+		el: '#app',
+		data: {
+			message: 'vvv vue test'
+		},
+		created: function() {
+//			console.log(this.message);
+			console.log("created");
+		},
+		mounted: function() {
+			console.log('mounted')
+		}
+	});
 
 </script>
 </body>
