@@ -30,12 +30,14 @@
 						<div class="line"></div>
 						<div class="contacts">
 							<p><span>CONTACT US</span></p>
+<!--
 							<p class="tel">
 								<i></i>
 								<span>+82 (02)532-2475</span>
 							</p>
+-->
 							<p class="sns">
-								<a href="mailto:vvv@minivertising.kr">
+								<a href="javascript:void(0)" data-popup="#send-mail">
 									<i class="mail"></i>
 								</a>
 								<a href="https://www.facebook.com/VVV-%EB%B0%94%ED%81%90_%EB%B0%94%EC%9D%B4%EB%9F%B4-%ED%81%90%EB%A0%88%EC%9D%B4%ED%8C%85-344746659385832/" target="_blank">

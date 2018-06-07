@@ -79,6 +79,9 @@
 					<div class="content detail">
 						<div class="inner">
 							<div class="wrapper">
+								<a href="javascript:history.back()" class="list-back">
+									<i><</i>돌아가기
+								</a>
 								<div class="info-wrap">
 									<div class="brand">
 										<?=$detail_data["video_brand"]?>

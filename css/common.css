@@ -90,7 +90,8 @@ button {
 input[type="text"],
 input[type="password"],
 input[type="tel"],
-input[type="file"] {
+input[type="file"],
+textarea {
 	color: #333333;
 	font-family: "Noto Sans Korean", sans-serif, '맑은고딕', 'Malgun Gothic', '돋움', Dotum;
 }
@@ -126,7 +127,8 @@ figure, figcaption {
 	position: absolute; display: block; width: 1px; height: 1px; overflow: hidden; color: transparent; font-size: 1px; line-height: 1px; opacity: 0; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)'; filter: alpha(opacity=0);
 }
 input:focus,
-button:focus {
+button:focus,
+textarea:focus{
 	outline: 0;
 }
 #go-top {
@@ -355,6 +357,9 @@ header .actions .search-wrap > button > span {
 	background: url(../images/contact_tel.png) center no-repeat;
 	background-size: cover;
 	margin-right: 12px;
+}
+.global-menu .about-us .contacts .sns {
+	margin-top: 25px;
 }
 .global-menu .about-us .contacts .sns i {
 	margin-right: 36px;
@@ -777,6 +782,9 @@ html.search-layer-opened .global-search-layer .inner {
 	text-align: left;
 	transform: scale(0);
 	transition: all 0.15s ease;
+}
+.popup .inner .title {
+	text-align: left;
 }
 .popup-wrap.is-opened .popup {
 	transform: scale(1);
