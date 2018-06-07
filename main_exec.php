@@ -864,6 +864,9 @@ include_once "./include/autoload.php";
         break;
 
         case "insert_contact" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+
             $contact_name		= $_REQUEST["contact_name"];
             $contact_email		= $_REQUEST["contact_email"];
             $contact_comment	= $_REQUEST["contact_comment"];
@@ -877,7 +880,7 @@ include_once "./include/autoload.php";
                 $flag = "N";
             }    
 
-            echo $query;
+            echo $flag;
         break;
 
         case "insert_video" :

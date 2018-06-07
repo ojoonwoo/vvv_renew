@@ -122,14 +122,14 @@
 			},
 			success: function(response){
 				console.log(response);
-				// if (response.match("Y") == "Y")
-				// {
-				// 	alert("메일이 발송되었습니다.");
-				// 	location.reload();
-				// }else{
-				// 	alert("다시 입력해 주세요.");
-				// 	location.reload();
-				// }
+				if (response.match("Y") == "Y")
+				{
+					alert("메일이 발송되었습니다.");
+					location.reload();
+				}else{
+					alert("다시 입력해 주세요.");
+					location.reload();
+				}
 			}
 		});			
 	}
