@@ -38,6 +38,13 @@
 	$c_flag_result		= mysqli_query($my_db, $c_flag_query);
 	while ($c_flag_data = mysqli_fetch_array($c_flag_result))
 	{
+		$c_query		= "SELECT * FROM collection_info WHERE idx='".$c_flag_data['c_idx']."'";
+		$c_result		= mysqli_query($my_db, $c_query);
+		$c_data 		= mysqli_fetch_array($c_result);
+
+		if ($c_data["collection_showYN"] == "N")
+			continue;
+
 		$c_flag_arr	= explode(",", $c_flag_data["video_items"]);
 		foreach ($c_flag_arr as $key => $val)
 		{
