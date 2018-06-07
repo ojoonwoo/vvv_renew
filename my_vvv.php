@@ -105,8 +105,6 @@
 												<button type="button" class="btn-create" data-popup="#collection-add">만들기</button>
 <?
 		}
-?>												
-<?
 	}else{
 ?>												
 												<div class="text-block">
