@@ -2233,9 +2233,10 @@
 }
 .layer.collection-pick .content .collection-setting .input-group {
 	font-size: 0;
-}
-.layer.collection-pick .content .collection-setting .input-group:first-child {
 	margin-bottom: 6px;
+}
+.layer.collection-pick .content .collection-setting .input-group:last-child {
+	margin-bottom: 0;
 }
 .layer.collection-pick .content .collection-setting .input-group .guide {
 	display: inline-block;

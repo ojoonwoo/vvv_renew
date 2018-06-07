@@ -45,9 +45,9 @@
 //			메뉴 클로즈 상태
 			var oMotion = new TimelineMax();
 			TweenMax.to($('#gnb .line.mid'), 0.2, {autoAlpha: 0, delay: 0.2}, 'action1');
-			TweenMax.to($('#gnb .line.top'), 0.3, {y: 6}, 'action1');
+			TweenMax.to($('#gnb .line.top'), 0.3, {y: 8}, 'action1');
 			TweenMax.to('#gnb .line.top', 0.47, {rotation: 45, delay: 0.3, ease: Back.easeOut.config(1.7)}, 'action2');
-			TweenMax.to($('#gnb .line.bot'), 0.3, {y: -6}, 'action1');
+			TweenMax.to($('#gnb .line.bot'), 0.3, {y: -8}, 'action1');
 			TweenMax.to('#gnb .line.bot', 0.47, {rotation: -45, delay: 0.3, ease: Back.easeOut.config(1.7)}, 'action2');
 
 		}

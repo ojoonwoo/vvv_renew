@@ -489,12 +489,12 @@
 	padding: 0 22px;
 }
 .content.detail .info-wrap .brand {
-	font-size: 25px;
+	font-size: 20px;
 	color: #666666;
 }
 .content.detail .info-wrap .title {
-	font-size: 35px;
-	margin: 27px 0 14px;
+	font-size: 30px;
+	margin: 8px 0 14px;
 	font-weight: 700;
 }
 .content.detail .info-wrap .date {
@@ -824,7 +824,7 @@
 
 
 .content.user-page .user-feed {
-	margin: 191px auto;
+	margin: 122px auto;
 	max-width: 1270px;
 /*	border: 1px solid #969696;*/
 	position: relative;
@@ -880,15 +880,20 @@
 	position: relative;
 	margin-bottom: 47px;
 	padding: 0 28px;
+	text-align: center;
 }
 .content.user-page .user-feed .aj-content .text-block p {
 	font-size: 18px;
 	font-weight: 500;
 }
 .content.user-page .user-feed .collection .btn-create {
+	display: block;
+/*
 	position: absolute;
 	top: 40px;
 	right: 111px;
+*/
+	margin: 0 auto 48px;
 	width: 106px;
 	height: 48px;
 	padding-right: 22px;
