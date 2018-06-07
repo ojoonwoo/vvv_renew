@@ -885,7 +885,7 @@ include_once "./include/autoload.php";
             $next_v_idx     = $v_idx_data["video_idx"] + 1;
             $query 		= "INSERT INTO video_info2(video_idx, video_brand, video_country, video_category1, video_category2, video_genre, video_link, video_title, video_desc, showYN, video_date, video_regdate) values('".$next_v_idx."','".$video_brand."','".$video_country."','".$video_category1."','".$video_category2."','".$video_genre."','".$video_link."','".$video_title."','".$video_desc."','".$showYN."','".$video_date."','".date("Y-m-d H:i:s")."')";
             $result 	= mysqli_query($my_db, $query);
-
+print_r($query);
             if($result) {
                 $flag = "Y";
             }else{
