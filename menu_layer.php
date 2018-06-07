@@ -88,9 +88,9 @@
 <script>
 	function send_contact()
 	{
-		var contact_name 		= $_REQUEST["contact_name"];
-		var contact_email 		= $_REQUEST["contact_email"];
-		var contact_comment 	= $_REQUEST["contact_comment"];
+		var contact_name 		= $("#contact_name").val();
+		var contact_email 		= $("#contact_email").val();
+		var contact_comment 	= $("#contact_comment").val();
 
 		if (contact_name == "")
 		{
