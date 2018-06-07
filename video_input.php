@@ -206,14 +206,14 @@
             },
             success: function(response){
                 console.log(response);
-                // if (response.match("Y") == "Y")
-                // {
-                //     alert("영상이 등록 되었습니다.");
-                //     location.reload();
-                // }else{
-                //     alert("다시 등록해 주세요.");
-                //     location.reload();
-                // }
+                if (response.match("Y") == "Y")
+                {
+                    alert("영상이 등록 되었습니다.");
+                    location.reload();
+                }else{
+                    alert("다시 등록해 주세요.");
+                    location.reload();
+                }
             }
         });			
     }
