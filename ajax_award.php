@@ -50,7 +50,7 @@
 //        else
 //			$video_title    = $video_data["video_title"];
 		
-		$video_title    = $video_data["video_title"];
+		// $video_title    = $video_data["video_title"];
 ?>										
 										<div class="video">
 											<a href="video_detail.php?idx=<?=$video_data['video_idx']?>">
