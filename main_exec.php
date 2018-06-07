@@ -877,7 +877,7 @@ include_once "./include/autoload.php";
                 $flag = "N";
             }    
 
-            echo $flag;
+            echo $query;
         break;
 
         case "insert_video" :
