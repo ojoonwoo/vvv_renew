@@ -422,34 +422,6 @@ include_once "./include/autoload.php";
 			echo $flag;
 		break;
 		
-		case "insert_video" :
-            $mnv_f          = new mnv_function();
-            $my_db          = $mnv_f->Connect_MySQL();
-            $gubun          = $mnv_f->MobileCheck();
-
-            $video_country		= $_REQUEST["video_country"];
-			$video_title		= addslashes($_REQUEST["video_title"]);
-			$video_company		= addslashes($_REQUEST["video_company"]);
-			$video_category		= $_REQUEST["video_category"];
-			$video_agency		= addslashes($_REQUEST["video_agency"]);
-			$video_production	= addslashes($_REQUEST["video_production"]);
-			$video_date			= $_REQUEST["video_date"];
-			$video_link			= $_REQUEST["video_link"];
-			$video_desc			= addslashes($_REQUEST["video_desc"]);
-			$showYN				= $_REQUEST["showYN"];
-
-			$query 		= "INSERT INTO ".$_gl['video_info_table']."(video_company, video_agency, video_production, video_country, video_category, video_link, video_title, video_desc, showYN, video_date, video_regdate) values('".$video_company."','".$video_agency."','".$video_production."','".$video_country."','".$video_category."','".$video_link."','".$video_title."','".$video_desc."','".$showYN."','".$video_date."','".date("Y-m-d H:i:s")."')";
-			$result 	= mysqli_query($my_db, $query);
-
-			if($result) {
-				$flag = "Y";
-			}else{
-				$flag = "N";
-			}
-
-			echo $flag;
-		break;
-
         case "follow_member" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();
@@ -790,9 +762,14 @@ include_once "./include/autoload.php";
                 $collection_item_arr	    = explode(",", $collection_item_data["video_items"]);
                 $add_video_txt              = "";
 
+                $i = 0;
+                $comma_txt  = "";
                 foreach ($add_video_arr as $key => $val)
                 {
                     $dupli_flag = 0;
+                    
+                    if ($i > 0)
+                        $comma_txt = ",";
                     foreach ($collection_item_arr as $c_key => $c_val)
                     {
                         if ($val == $c_val)
@@ -802,10 +779,11 @@ include_once "./include/autoload.php";
                     }
 
                     if ($dupli_flag == 0)
-                        $add_video_txt .= ",".$val;
+                        $add_video_txt .= $comma_txt.$val;
 
                     $query2		= "UPDATE video_info2 SET collect_count=collect_count+1 WHERE video_idx='".$val."'";
                     $result2	= mysqli_query($my_db, $query2);        
+                    $i++;
                 }
 
                 $add_video_txt = $collection_item_data["video_items"].$add_video_txt;
@@ -884,4 +862,37 @@ include_once "./include/autoload.php";
 
             echo $flag;
         break;
+
+        case "insert_video" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+
+            $video_country		= $_REQUEST["video_country"];
+            $video_title		= addslashes($_REQUEST["video_title"]);
+            $video_brand		= addslashes($_REQUEST["video_brand"]);
+            $video_category1	= $_REQUEST["video_category1"];
+            $video_category2	= $_REQUEST["video_category2"];
+            $video_genre		= $_REQUEST["video_genre"];
+            $video_link			= $_REQUEST["video_link"];
+            $video_desc			= addslashes($_REQUEST["video_desc"]);
+            $video_date			= $_REQUEST["video_date"];
+            $showYN				= $_REQUEST["showYN"];
+
+            $v_idx_query    = "SELECT * FROM video_info2 ORDER BY video_idx DESC LIMIT 1";
+            $v_idx_result 	= mysqli_query($my_db, $v_idx_query);
+            $v_idx_data     = mysqli_fetch_array($v_idx_result);
+            
+            $next_v_idx     = $v_idx_data["video_idx"] + 1;
+            $query 		= "INSERT INTO video_info2(video_idx, video_brand, video_country, video_category1, video_category2, video_genre, video_link, video_title, video_desc, showYN, video_date, video_regdate) values('".$next_v_idx."','".$video_brand."','".$video_country."','".$video_category1."','".$video_category2."','".$video_genre."','".$video_link."','".$video_title."','".$video_desc."','".$showYN."','".$video_date."','".date("Y-m-d H:i:s")."')";
+            $result 	= mysqli_query($my_db, $query);
+
+            if($result) {
+                $flag = "Y";
+            }else{
+                $flag = "N";
+            }
+
+            echo $flag;
+        break;
+
 	}

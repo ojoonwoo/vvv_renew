@@ -100,19 +100,23 @@
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-		$title_count    = mb_strlen($list_data["video_title"],'utf-8');
-        if ($title_count > 20)
-            $video_title    = iconv_substr($list_data["video_title"],0,20)."..";
-        else
-			$video_title    = $list_data["video_title"];
+		// $title_count    = mb_strlen($list_data["video_title"],'utf-8');
+        // if ($title_count > 20)
+        //     $video_title    = iconv_substr($list_data["video_title"],0,20)."..";
+        // else
+		// 	$video_title    = $list_data["video_title"];
 			
-        // 브랜드 줄바꿈 방지 글자 자르기
-        $brand_count    = mb_strlen($list_data["video_brand"],'utf-8');
+        // // 브랜드 줄바꿈 방지 글자 자르기
+        // $brand_count    = mb_strlen($list_data["video_brand"],'utf-8');
 
-        if ($brand_count > 30)
-            $video_brand    = iconv_substr($list_data["video_brand"],0,30)."..";
-        else
+        // if ($brand_count > 30)
+        //     $video_brand    = iconv_substr($list_data["video_brand"],0,30)."..";
+        // else
+        //     $video_brand    = $list_data["video_brand"];
+
+			$video_title    = $list_data["video_title"];
             $video_brand    = $list_data["video_brand"];
+
 ?>                            								
 									<div class="video">
 										<a href="video_detail.php?idx=<?=$list_data["video_idx"]?>">

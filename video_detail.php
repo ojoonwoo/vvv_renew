@@ -38,6 +38,13 @@
 	$c_flag_result		= mysqli_query($my_db, $c_flag_query);
 	while ($c_flag_data = mysqli_fetch_array($c_flag_result))
 	{
+		$c_query		= "SELECT * FROM collection_info WHERE idx='".$c_flag_data['c_idx']."'";
+		$c_result		= mysqli_query($my_db, $c_query);
+		$c_data 		= mysqli_fetch_array($c_result);
+
+		if ($c_data["collection_showYN"] == "N")
+			continue;
+
 		$c_flag_arr	= explode(",", $c_flag_data["video_items"]);
 		foreach ($c_flag_arr as $key => $val)
 		{
@@ -290,7 +297,7 @@
 									<ul id="my_collection_list">
 <?
 	// 컬렉션 리스트 정보
-	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."'";
+	$collection_query	= "SELECT * FROM collection_info WHERE 1 AND collection_mb_idx='".$_SESSION["ss_vvv_idx"]."' AND collection_showYN='Y'";
 	$collection_result 	= mysqli_query($my_db, $collection_query);
 
 	while($collection_data = mysqli_fetch_array($collection_result))

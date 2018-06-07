@@ -170,12 +170,14 @@
         $yt_code_arr2   = explode("&",$yt_code_arr1[1]);
         $yt_thumb       = "https://img.youtube.com/vi/".$yt_code_arr2[0]."/hqdefault.jpg";
 
-        $title_count    = mb_strlen($video_data["video_title"],'utf-8');
+        // $title_count    = mb_strlen($video_data["video_title"],'utf-8');
 
-        if ($title_count > 45)
-            $video_title    = substr($video_data["video_title"],0,45)."...";
-        else
-			$video_title    = $video_data["video_title"];
+        // if ($title_count > 45)
+        //     $video_title    = substr($video_data["video_title"],0,45)."...";
+        // else
+		// 	$video_title    = $video_data["video_title"];
+
+		$video_title    = $video_data["video_title"];
 ?>			
 									<div class="video">
 										<a href="video_detail.php?idx=<?=$video_data["video_idx"]?>">
