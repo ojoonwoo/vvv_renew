@@ -219,9 +219,9 @@ class mnv_page
 			$temp = $this->block_start - 1;
 			
 			if($this->block == 1)
-				$block_str .= '<li class="prev"><a href="javascript: alert('."'맨 처음 페이지입니다.'".');" onclick="return false"></a></li>';
+				$block_str .= '<li class="prev"><a href="javascript: alert('."'맨 처음 페이지입니다.'".');"></a></li>';
 			else
-				$block_str .= '<li class="prev" data-mouse-type="ripple"><a href="javascript:' . $str . $temp . ');" onclick="return false"></a></li>';
+				$block_str .= '<li class="prev" data-mouse-type="ripple"><a href="javascript:' . $str . $temp . ');"></a></li>';
 			
 //			$block_str .= '<li class="prev"><a href="javascript:' . $str . $temp . ');"></a></li>';
 		}
@@ -237,11 +237,11 @@ class mnv_page
 		{
 			if($this->pg != $arrBlock[$i])
 			{
-				$block_str .= '<li><a href="javascript:'. $str.$arrBlock[$i] . ');" onclick="return false">' . $arrBlock[$i] . '</a></li>';
+				$block_str .= '<li><a href="javascript:'. $str.$arrBlock[$i] . ');">' . $arrBlock[$i] . '</a></li>';
 			}
 			else
 			{
-				$block_str .= '<li class="is-active"><a href="javascript:'. $str.$arrBlock[$i] . ');" onclick="return false">' . $arrBlock[$i] . '</a></li>';
+				$block_str .= '<li class="is-active"><a href="javascript:'. $str.$arrBlock[$i] . ');">' . $arrBlock[$i] . '</a></li>';
 			}
 		}
 		
@@ -249,9 +249,9 @@ class mnv_page
 		if($this->tot_no != 0){
 			$temp = $this->block_end + 1;
 			if($this->block != $this->block_count) {
-				$block_str .= '<li class="next" data-mouse-type="ripple"><a href="javascript:'.$str . $temp . ')" onclick="return false"></a></li>';
+				$block_str .= '<li class="next" data-mouse-type="ripple"><a href="javascript:'.$str . $temp . ')"></a></li>';
 			} else {
-				$block_str .= '<li class="next"><a href="javascript: alert('."'맨 끝 페이지입니다.'".');" onclick="return false"></a></li>';
+				$block_str .= '<li class="next"><a href="javascript: alert('."'맨 끝 페이지입니다.'".');"></a></li>';
 			}
 		}
 
