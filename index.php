@@ -471,6 +471,8 @@
 		f = document.frm_execute;
 		f.pg.value = num;
 		f.submit();
+		
+		return false;
 	}
 
 </script>
