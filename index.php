@@ -208,7 +208,7 @@
 	$total_page			= ceil($total_video_num / $view_pg);
 	
 	$PAGE_CLASS = new mnv_page($pg,$total_video_num,$view_pg,$block_size);
-	$BLOCK_LIST = $PAGE_CLASS->blockList5();
+	$BLOCK_LIST = $PAGE_CLASS->blockList6();
 	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
 							
 //	$recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY video_date DESC LIMIT 0, $view_pg";
@@ -471,8 +471,6 @@
 		f = document.frm_execute;
 		f.pg.value = num;
 		f.submit();
-		
-		return false;
 	}
 
 </script>
