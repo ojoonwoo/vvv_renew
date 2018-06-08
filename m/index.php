@@ -271,37 +271,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="popup send-mail" id="send-mail">
-				<button type="button" class="popup-close" data-popup="@close"></button>
-				<div class="inner">
-					<div class="title">
-						<i></i><span>CONTACT US</span>
-					</div>
-					<div class="content">
-						<div class="input-wrap">
-							<div class="input-group">
-								<div class="guide">Name</div>
-								<div class="input">
-									<input type="text">
-								</div>
-							</div>
-							<div class="input-group">
-								<div class="guide">E-mail</div>
-								<div class="input">
-									<input type="text">
-								</div>
-							</div>
-							<div class="input-group">
-								<div class="guide">Comment</div>
-								<div class="input">
-									<textarea name="" id="" cols="30" rows="10"></textarea>
-								</div>
-							</div>
-						</div>
-						<button type="button" class="btn-send">보내기</button>
-					</div>
-				</div>
-			</div>
 			<? 	include_once "cursor.php"; ?>
 		</div>
 		<script>

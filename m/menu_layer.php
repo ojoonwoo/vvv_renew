@@ -66,3 +66,84 @@
 				</div>
 			</div>
 		</div>
+
+			<div class="popup send-mail" id="send-mail">
+				<button type="button" class="popup-close" data-popup="@close"></button>
+				<div class="inner">
+					<div class="title">
+						<i></i><span>CONTACT US</span>
+					</div>
+					<div class="content">
+						<div class="input-wrap">
+							<div class="input-group">
+								<div class="guide">Name</div>
+								<div class="input">
+									<input type="text" id="contact_name">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="guide">E-mail</div>
+								<div class="input">
+									<input type="text" id="contact_email">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="guide">Comment</div>
+								<div class="input">
+									<textarea name="" id="contact_comment" cols="30" rows="10"></textarea>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn-send" onclick="send_contact()">보내기</button>
+					</div>
+				</div>
+			</div>
+			<script>
+	function send_contact()
+	{
+		var contact_name 		= $("#contact_name").val();
+		var contact_email 		= $("#contact_email").val();
+		var contact_comment 	= $("#contact_comment").val();
+
+		if (contact_name == "")
+		{
+			alert("이름을 입력해 주세요");
+			return false;
+		}
+
+		if (contact_email == "")
+		{
+			alert("이메일을 입력해 주세요");
+			return false;
+		}
+		
+		if (contact_comment == "")
+		{
+			alert("코멘트를 입력해 주세요");
+			return false;
+		}
+
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec"				    : "insert_contact",
+				"contact_name"          : contact_name,
+				"contact_email"         : contact_email,
+				"contact_comment"       : contact_comment
+			},
+			success: function(response){
+				console.log(response);
+				if (response.match("Y") == "Y")
+				{
+					alert("담당자에게 메일이 발송되었습니다.");
+					location.reload();
+				}else{
+					alert("다시 입력해 주세요.");
+					location.reload();
+				}
+			}
+		});			
+	}
+</script>

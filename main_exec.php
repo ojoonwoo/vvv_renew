@@ -348,7 +348,7 @@ include_once "./include/autoload.php";
             $sns_media		= $_REQUEST['sns_media'];
 			$sns_flag		= $_REQUEST['sns_flag'];
 
-			$query 		= "INSERT INTO ".$_gl['share_info_table']."(sns_media, sns_gubun, sns_ipaddr, sns_email, inner_media, sns_regdate) values('".$sns_media."','".$gubun."','".$_SERVER['REMOTE_ADDR']."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
+			$query 		= "INSERT INTO share_info(sns_media, sns_gubun, sns_ipaddr, sns_email, inner_media, sns_regdate) values('".$sns_media."','".$gubun."','".$_SERVER['REMOTE_ADDR']."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
 			$result 	= mysqli_query($my_db, $query);
 
 			if($result) {
@@ -360,44 +360,6 @@ include_once "./include/autoload.php";
 			echo $flag;
 		break;
 
-		case "report_comment" :
-            $mnv_f          = new mnv_function();
-            $my_db          = $mnv_f->Connect_MySQL();
-            $gubun          = $mnv_f->MobileCheck();
-
-            $c_idx		= $_REQUEST["c_idx"];
-
-			$query 		= "INSERT INTO ".$_gl['report_info_table']."(c_idx, reporter_email, reporter_ipaddr, report_regdate) values('".$c_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
-			$result 	= mysqli_query($my_db, $query);
-
-			if($result) {
-				$flag = "Y";
-			}else{
-				$flag = "N";
-			}
-
-			echo $flag;
-		break;
-		
-		case "delete_comment" :
-            $mnv_f          = new mnv_function();
-            $my_db          = $mnv_f->Connect_MySQL();
-            $gubun          = $mnv_f->MobileCheck();
-
-            $c_idx		= $_REQUEST["c_idx"];
-
-			$query 		= "UPDATE ".$_gl['comment_info_table']." SET showYN='N' WHERE idx='".$c_idx."'";
-			$result 	= mysqli_query($my_db, $query);
-
-			if($result) {
-				$flag = "Y";
-			}else{
-				$flag = "N";
-			}
-
-			echo $flag;
-		break;
-		
 		case "request_translate" :
             $mnv_f          = new mnv_function();
             $my_db          = $mnv_f->Connect_MySQL();
@@ -852,6 +814,26 @@ include_once "./include/autoload.php";
             }
 
             $query     = "UPDATE collection_item_info SET video_items='".$del_video_txt."', editdate='".date("Y-m-d H:i:s")."' WHERE c_idx='".$c_idx."' AND m_idx='".$m_idx."'";
+            $result    = mysqli_query($my_db, $query);
+
+            if($result) {
+                $flag = "Y";
+            }else{
+                $flag = "N";
+            }    
+
+            echo $flag;
+        break;
+
+        case "insert_contact" :
+            $mnv_f          = new mnv_function();
+            $my_db          = $mnv_f->Connect_MySQL();
+
+            $contact_name		= $_REQUEST["contact_name"];
+            $contact_email		= $_REQUEST["contact_email"];
+            $contact_comment	= $_REQUEST["contact_comment"];
+
+            $query     = "INSERT INTO contact_info(contact_name, contact_email, contact_comment, contact_regdate) values('".$contact_name."','".$contact_email."','".$contact_comment."','".date("Y-m-d H:i:s")."')";
             $result    = mysqli_query($my_db, $query);
 
             if($result) {
