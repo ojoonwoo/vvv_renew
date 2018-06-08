@@ -284,7 +284,7 @@
 							<img src="./images/plus_icon.png" alt="">
 						</button>
 -->
-						<?php echo $BLOCK_LIST?>
+						<div><?php echo $BLOCK_LIST?></div>
 					</div>
 				</div>
 			</div>
@@ -472,7 +472,6 @@
 		f.pg.value = num;
 		f.submit();
 	}
-
 </script>
 </body>
 
