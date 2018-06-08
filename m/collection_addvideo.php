@@ -134,9 +134,10 @@
 						</div>
 					</div>
 				</div>
+<? include_once "footer_layer.php"; ?>
 			</div>
-			<? 	include_once "cursor.php"; ?>
-			<? 	include_once "my_vvv_popup.php"; ?>
+<? 	include_once "cursor.php"; ?>
+<? 	include_once "my_vvv_popup.php"; ?>
 			
 		</div>
 	</body>

@@ -15,6 +15,9 @@
         $rs_tracking   = $mnv_f->InsertTrackingInfo($mobileYN);
 	}
 
+	$pg = $_REQUEST['pg'];
+	if(!$pg) $pg = 1;	// $pg가 없으면 1로 생성
+
     include_once "./head.php";
 ?>
 	<body>
@@ -33,6 +36,9 @@
 <?
     include_once "./header_layer.php";
 ?>			
+				<form name="frm_execute" method="POST" action="index.php#recent_container">
+					<input type="hidden" name="pg" value="<?=$pg?>">
+				</form>
 				<div class="main-container">
 					<div class="content main">
 						<div class="main-banner swiper-container">
@@ -185,7 +191,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="list-container">
+						<div class="list-container" id="recent_container">
 							<div class="title-area">
 								<h2 class="list-title">NEW</h2>
 								<a href="video_list.php?sort=new" class="view-all">전체보기</a>
@@ -193,6 +199,7 @@
 							<div class="video-list" id="recent_video">
 <?
 	$view_pg            = 8;
+	$block_size 		= 3;	// 한 화면에 나타낼 페이지 번호 개수
 	$s_page				= 0;
 
 	// 전체 상품 갯수
@@ -200,9 +207,14 @@
 	$total_result		= mysqli_query($my_db, $total_query);
 	$total_video_num	= mysqli_num_rows($total_result);
 	$total_page			= ceil($total_video_num / $view_pg);
+								
+	$PAGE_CLASS = new mnv_page($pg,$total_video_num,$view_pg,$block_size);
+	$BLOCK_LIST = $PAGE_CLASS->blockList5();
+	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
 	
-    $recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY idx DESC LIMIT 0, 8";
+	$recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY idx DESC LIMIT $PAGE_CLASS->page_start, $view_pg";
     $recent_result 	= mysqli_query($my_db, $recent_query);
+								
     while ($recent_data = mysqli_fetch_array($recent_result))
     {    
         // 유튜브 영상 코드 자르기
@@ -264,14 +276,18 @@
 								<input type="hidden" id="total_page" value="<?=$total_page?>">                     
 								<input type="hidden" id="view_page" value="<?=$view_pg?>">                     								
 							</div>
+<!--
 							<button type="button" class="read-more">
 								<img src="./images/plus_icon.png" alt="">
 							</button>
+-->
+							<?php echo $BLOCK_LIST?>
 						</div>
 					</div>
 				</div>
+<? include_once "footer_layer.php"; ?>
 			</div>
-			<? 	include_once "cursor.php"; ?>
+<? 	include_once "cursor.php"; ?>
 		</div>
 		<script>
 			var video_pg 	        = 0;
@@ -419,6 +435,13 @@
 				$("#order-sortby").val("new");        
 			});
 
+			function pageRun(num)
+			{
+				f = document.frm_execute;
+				f.pg.value = num;
+				f.submit();
+				return false;
+			}
 		</script>
 	</body>
 

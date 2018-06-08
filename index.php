@@ -246,7 +246,7 @@
 							<div class="video col-lg-4 col-md-3 col-sm-2">
 								<a href="video_detail.php?idx=<?=$recent_data['video_idx']?>">
 									<figure>
-                                        <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
+                                        <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52%;"></div>
 										<figcaption>
 											<span class="brand">[<?=$video_brand?>]</span>
 											<span class="title"><?=$video_title?></span>

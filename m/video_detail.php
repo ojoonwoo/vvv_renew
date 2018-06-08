@@ -246,8 +246,9 @@
 						</div>
 					</div>
 				</div>
+<? include_once "footer_layer.php"; ?>
 			</div>
-			<? 	include_once "cursor.php"; ?>
+<? 	include_once "cursor.php"; ?>
 			<div class="layer collection-pick" id="collection-save">
 				<button type="button" class="layer-close" data-layer="@close"></button>
 				<div class="inner">
