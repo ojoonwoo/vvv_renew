@@ -284,7 +284,7 @@
 							<img src="./images/plus_icon.png" alt="">
 						</button>
 -->
-						<div><?php echo $BLOCK_LIST?></div>
+						<?php echo $BLOCK_LIST?>
 					</div>
 				</div>
 			</div>
