@@ -271,8 +271,9 @@
 						</div>
 					</div>
 				</div>
+<? 	include_once "footer_layer.php"; ?>
+<? 	include_once "cursor.php"; ?>
 			</div>
-			<? 	include_once "cursor.php"; ?>
 			<div class="popup collection-pick" id="collection-save">
 				<button type="button" class="popup-close" data-popup="@close"></button>
 				<div class="inner">

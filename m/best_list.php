@@ -100,8 +100,9 @@
 						</div>
 					</div>
 				</div>
+<? include_once "footer_layer.php"; ?>
 			</div>
-			<? 	include_once "cursor.php"; ?>
+<? 	include_once "cursor.php"; ?>
 		</div>
 		<script>
 			// $(function() {

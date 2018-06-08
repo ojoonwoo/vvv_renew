@@ -392,8 +392,9 @@
 						</div>
 					</div>
 				</div>
+<? 	include_once "footer_layer.php"; ?>
 			</div>
-			<? 	include_once "cursor.php"; ?>
+<? 	include_once "cursor.php"; ?>
 			<!--popup-wrap 동적생성-->
 <!--			<div class="popup-wrap">-->
 				<div class="popup my-coll-add mycollection" id="collection-add">

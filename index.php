@@ -288,7 +288,7 @@
 					</div>
 				</div>
 			</div>
-			<? include_once "footer.php"; ?>
+<? include_once "footer_layer.php"; ?>
 		</div>
 <?
 	include_once "cursor.php";

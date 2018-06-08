@@ -196,6 +196,55 @@ header .actions .search-wrap > button > span {
 	height: 20px;
 	background-size: cover;
 }
+.footer-container {
+	position: relative;
+	z-index: 1;
+	background: #fefefe;
+}
+.footer-container footer {
+	height: 100%;
+}
+footer .inner {
+	height: 100%;
+	padding: 50px 0 46px;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+footer .actions {
+	font-size: 0;
+	padding-left: 8px;
+	margin-bottom: 18px;
+}
+footer .actions a {
+	display: inline-block;
+	margin-right: 26px;
+}
+footer .actions a i {
+	display: inline-block;
+	vertical-align: middle;
+}
+footer .actions a:last-child {
+	margin-right: 0;
+}
+footer .mail {
+	width: 23px;
+	height: 17px;
+	background: url(../images/contact_mail.png) center / 23px 17px no-repeat;
+}
+footer .facebook {
+	width: 9px;
+	height: 17px;
+	background: url(../images/contact_fb.png) center / 9px 17px no-repeat;
+}
+footer .instagram {
+	width: 20px;
+	height: 20px;
+	background: url(../images/contact_insta.png) center / 20px 20px no-repeat;
+}
+footer .copyright {
+	font-size: 12px;
+	color: #666666;
+}
 .side-nav {
 	position: fixed;
 	top: 50%;

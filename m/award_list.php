@@ -223,7 +223,7 @@
 					</div>
 				</div>
 			</div>
-			<? 	include_once "cursor.php"; ?>
+<? 	include_once "cursor.php"; ?>
 		</div>
 		<script>
 			$doc = $(document);
