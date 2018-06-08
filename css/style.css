@@ -1,4 +1,6 @@
-
+.content.main .paging-wrap {
+	padding: 36px 0 98px;
+}
 .main-banner .box-content {
 	position: relative;
 }
