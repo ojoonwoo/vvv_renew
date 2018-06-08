@@ -78,23 +78,23 @@
 							<div class="input-group">
 								<div class="guide">Name</div>
 								<div class="input">
-									<input type="text">
+									<input type="text" id="contact_name">
 								</div>
 							</div>
 							<div class="input-group">
 								<div class="guide">E-mail</div>
 								<div class="input">
-									<input type="text">
+									<input type="text" id="contact_email">
 								</div>
 							</div>
 							<div class="input-group">
 								<div class="guide">Comment</div>
 								<div class="input">
-									<textarea name="" id="" cols="30" rows="10"></textarea>
+									<textarea name="" id="contact_comment" cols="30" rows="10"></textarea>
 								</div>
 							</div>
 						</div>
-						<button type="button" class="btn-send">보내기</button>
+						<button type="button" class="btn-send" onclick="send_contact()">보내기</button>
 					</div>
 				</div>
 			</div>
