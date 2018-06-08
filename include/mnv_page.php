@@ -1,6 +1,5 @@
 <?
-// class Page
-class Page
+class mnv_page
 {
 	var $pg; //-- 현제 페이지
 	var $tot_no; //--전체 게시물수
@@ -18,7 +17,7 @@ class Page
 	var $block_list; //--불럭의 내용을 담을 변수
 	var $script; //-- 페이지관련 자바스크립트
 	
-	function Page($class_pg,$class_tot_no,$class_page_size,$class_block_size){
+	function mnv_page($class_pg,$class_tot_no,$class_page_size,$class_block_size){
 		$this->pg = $class_pg;
 		$this->tot_no = $class_tot_no;
 		$this->page_size = $class_page_size;
@@ -201,6 +200,59 @@ class Page
 		if($this->block != $this->block_count && $this->tot_no != 0){
 			$temp = $this->block_end + 1;
 			$block_str .= '<li>&nbsp;<a href="javascript:' .$str . $temp . ')">&gt;</a></li>';
+		}
+
+		$block_str .= '</ul>';
+		return $block_str;
+	}
+	
+	function blockList5( $str = "pageRun(" )
+	{
+		$b_start = $this->block_start;
+		$block_str = "";
+		
+		$block_str .= '<ul class="paging-wrap">';
+		// -- 이전 블럭
+		if($this->block >= 0)
+//		if($this->block != 1)
+		{
+			$temp = $this->block_start - 1;
+			
+			if($this->block == 1)
+				$block_str .= '<li class="prev"><a href="javascript: alert('."'맨 처음 페이지입니다.'".');"></a></li>';
+			else
+				$block_str .= '<li class="prev" data-mouse-type="ripple"><a href="javascript:' . $str . $temp . ');"></a></li>';
+			
+//			$block_str .= '<li class="prev"><a href="javascript:' . $str . $temp . ');"></a></li>';
+		}
+		
+		//-- 블럭 리스트
+		$arrBlock = array();
+		while($b_start <= $this->block_end && $b_start <= $this->page_count)
+		{
+			$arrBlock[] = $b_start++;
+		}
+		
+		for($i = 0; $i < count($arrBlock); $i++)
+		{
+			if($this->pg != $arrBlock[$i])
+			{
+				$block_str .= '<li><a href="javascript:'. $str.$arrBlock[$i] . ');">' . $arrBlock[$i] . '</a></li>';
+			}
+			else
+			{
+				$block_str .= '<li class="is-active"><a href="javascript:'. $str.$arrBlock[$i] . ');">' . $arrBlock[$i] . '</a></li>';
+			}
+		}
+		
+		// 다음 블럭
+		if($this->tot_no != 0){
+			$temp = $this->block_end + 1;
+			if($this->block != $this->block_count) {
+				$block_str .= '<li class="next" data-mouse-type="ripple"><a href="javascript:'.$str . $temp . ')"></a></li>';
+			} else {
+				$block_str .= '<li class="next"><a href="javascript: alert('."'맨 끝 페이지입니다.'".');"></a></li>';
+			}
 		}
 
 		$block_str .= '</ul>';

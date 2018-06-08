@@ -6,9 +6,9 @@
         $prefix = '';
 
         // 네임스페이스 프리픽스를 위한 기본 디렉토리 경로
-        // $base_dir = __DIR__ . '/include/';
+//         $base_dir = __DIR__ . '/include/';
         $base_dir = __DIR__ . '/';
-        // $base_dir = './include/';
+//         $base_dir = './include/';
 
         // 네임스페이스 프리픽스에 해당하는지 검사
         $len = strlen($prefix);

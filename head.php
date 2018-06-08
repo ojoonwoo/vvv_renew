@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<link type="image/icon" rel="shortcut icon" href="http://www.minivertising-test.com/images/vvvlogo_favicon.ico" />
-	<script src="https://unpkg.com/vue"></script>
+<!--	<script src="https://unpkg.com/vue"></script>-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
