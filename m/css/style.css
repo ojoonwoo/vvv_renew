@@ -1571,6 +1571,71 @@
 
 
 /* 팝업 개별 코드*/
+.popup.send-mail {
+	width: 303px;
+	background: #9b9b9b;
+}
+.popup.send-mail .inner {
+	padding: 44px 43px;
+}
+.popup.send-mail .inner .title {
+	font-size: 12px;
+	font-weight: 700;
+	color: #ffffff;
+	padding-left: 3px;
+	margin-bottom: 29px;
+}
+.popup.send-mail .inner .title i {
+	display: inline-block;
+	background: url(../images/contact_mail_white.png) 0 0 / 15px 11px no-repeat;
+	width: 15px;
+	height: 11px;
+	margin-right: 5px;
+}
+.popup.send-mail .inner .title i,
+.popup.send-mail .inner .title span {
+	vertical-align: middle;
+}
+.popup.send-mail .input-group {
+	margin-bottom: 9px;
+}
+.popup.send-mail .input-wrap .input-group:last-child {
+	margin-bottom: 0;
+}
+.popup.send-mail .input-group .guide {
+	font-size: 10px;
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 4px;
+}
+.popup.send-mail .input-group .input {
+	width: 216px;
+}
+.popup.send-mail .input-group .input input[type="text"] {
+	background: rgba(255, 255, 255, 0.8);
+	padding-left: 8px;
+	font-size: 10px;
+	height: 26px;
+	width: 100%;
+}
+.popup.send-mail .input-group .input textarea {
+	background: rgba(255, 255, 255, 0.8);
+	padding: 8px;
+	font-size: 10px;
+	height: 135px;
+	width: 100%;
+	resize: none;
+}
+.popup.send-mail .btn-send {
+	display: block;
+	margin: 15px 0 0 auto;
+	background: #333333;
+	width: 75px;
+	height: 28px;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 700;
+}
 .popup.mycollection {
 	width: 315px;
 }
