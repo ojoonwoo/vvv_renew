@@ -944,7 +944,10 @@ button.btn-light-grey {
 	margin: -9px 0 0 -9px;
 	z-index: 1;
 	border-radius: 50%;
-	background: #417de1;
+/*	background: #417de1;*/
+/*	background: #ff4f4f;*/
+/*	background: #5aba8a;*/
+	background: #ea6625;
 	width: 18px;
 	height: 18px;
 	transition: transform 0.18s ease-out;
@@ -972,8 +975,10 @@ button.btn-light-grey {
 	left: 50%;
 	margin: -9px 0 0 -9px;
 	z-index: 0;
-/*	background: rgba(255, 255, 255, 0);*/
-	background: rgba(65, 125, 225, 1);
+/*	background: rgba(65, 125, 225, 1);*/
+/*	background: rgba(255, 79, 79, 1);*/
+/*	background: rgba(90, 186, 138, 1);*/
+	background: rgba(234, 102, 37, 1);
 	border-radius: 50%;
 	width: 18px;
 	height: 18px;
@@ -996,6 +1001,7 @@ button.btn-light-grey {
 }
 #cursor.text .guideT {
 	opacity: 1;
+	text-transform: lowercase;
 }
 #cursor.hidden {
 	transition: opacity 0.3s ease;
