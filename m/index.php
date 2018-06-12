@@ -36,7 +36,7 @@
 <?
     include_once "./header_layer.php";
 ?>			
-				<form name="frm_execute" method="POST" action="index.php#recent_container">
+				<form name="frm_execute" method="GET" action="index.php#recent_container">
 					<input type="hidden" name="pg" value="<?=$pg?>">
 				</form>
 				<div class="main-container">
