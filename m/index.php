@@ -51,9 +51,10 @@
 											</div>
 											<figcaption>
 												<p class="brand">CANNES 2017 Grand Prix</p>
-												<!--													<p class="award-summ">2017 Grand Prix</p>-->
 												<p class="title">we're the superhumans</p>
-												<a href="video_detail.php?idx=448">
+												<a href="javascript:void(0)">
+<!--												<a href="video_detail.php?idx=448">-->
+<!--
 													<div class="link">
 														<svg class="progress-current">
 															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
@@ -62,11 +63,13 @@
 														</svg>
 														<span class="view">VIEW</span>
 													</div>
+-->
 												</a>
 											</figcaption>
 										</figure>
 									</a>
 								</div>
+<!--
 								<div class="swiper-slide">
 									<a href="">
 										<figure class="box-content">
@@ -75,7 +78,6 @@
 											</div>
 											<figcaption>
 												<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
-												<!--													<p class="award-summ">2017 BEST OF SHOW</p>-->
 												<p class="title">MEET GRAHAM</p>
 												<a href="video_detail.php?idx=438">
 													<div class="link">
@@ -99,7 +101,6 @@
 											</div>
 											<figcaption>
 												<p class="brand">CLIO 2017 Grand</p>
-												<!--													<p class="award-summ">2017 Grand</p>-->
 												<p class="title">fearless girl</p>
 												<a href="video_detail.php?idx=823">
 													<div class="link">
@@ -115,12 +116,15 @@
 										</figure>
 									</a>
 								</div>
+-->
 							</div>
+<!--
 							<div class="number-pagination">
 								<span class="current">1</span>
 								<span class="total">3</span>
 							</div>
 							<div id="main-banner-pagination" class="main-banner-pagination"></div>
+-->
 						</div>
 						<div class="list-container best-area">
 							<div class="title-area">
