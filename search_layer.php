@@ -1,6 +1,6 @@
 <div class="global-search-layer">
 					<div class="inner">
-						<button type="button" class="search-layer-close">
+						<button type="button" class="search-layer-close" data-mouse-type="text" data-text="close">
 							<img src="./images/close_x.png" alt="">
 						</button>
 						<div class="search-wrapper">

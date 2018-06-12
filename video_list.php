@@ -12,11 +12,14 @@
 	$search_prize		= $_REQUEST["prize"];
 	$search_sort		= $_REQUEST["sort"];
 
+	//페이징 코드
+//	$pg = $_REQUEST['pg'];
+//	if(!$pg) $pg = 1;	// $pg가 없으면 1로 생성
+
 	// if ($mobileYN == "MOBILE")
     // {
     //     echo "<script>location.href='m/index.php';</script>";
     // }
-
     include_once "./head.php";
 ?>
 	<body>
@@ -41,6 +44,12 @@
 				<a href="javascript:void(0)" id="go-top">
 					<img src="./images/go_top.png" alt="go top">
 				</a>
+				<!--페이징 코드-->
+<!--
+				<form name="frm_execute" method="POST">
+					<input type="hidden" name="pg" value="<?=$pg?>">
+				</form>
+-->
 				<div class="main-container">
 					<div class="content vid-list">
 						<div class="inner">
@@ -132,6 +141,8 @@
 								<div class="video-list" id="list_video">
 <?
 	$view_pg            = 12;
+	// 페이징 코드
+//	$block_size 		= 9;	// 한 화면에 나타낼 페이지 번호 개수
 	$s_page				= 0;
 
 	$WHERE 				= "";
@@ -184,7 +195,15 @@
 	$total_result		= mysqli_query($my_db, $total_query);
 	$total_video_num	= mysqli_num_rows($total_result);
 	$total_page			= ceil($total_video_num / $view_pg);
+									
+	// 페이징 코드
+//	$PAGE_CLASS = new mnv_page($pg,$total_video_num,$view_pg,$block_size);
+//	$BLOCK_LIST = $PAGE_CLASS->blockList5();
+//	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
+									
 	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$s_page.", ".$view_pg."";
+//	페이징 코드
+//	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$PAGE_CLASS->page_start.", ".$view_pg."";
 	// print_r($list_query);
     $list_result 	= mysqli_query($my_db, $list_query);
     while ($list_data = mysqli_fetch_array($list_result))
@@ -244,13 +263,17 @@
 <?
     }
 ?>									
-									<!-- <input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
+<!--
+									 <input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
 									<input type="hidden" id="total_page" value="<?=$total_page?>">                     
-									<input type="hidden" id="view_page" value="<?=$view_pg?>">                      -->
+									<input type="hidden" id="view_page" value="<?=$view_pg?>">                      
+-->
 								</div>
 								<button type="button" class="read-more <?= ($total_video_num < 12) ? 'hide' : '' ?>">
 									<img src="./images/plus_icon.png" alt="">
 								</button>
+								<!--페이징 코드-->
+<!--							<?php echo $BLOCK_LIST?>-->
 								<div class="result-empty <?= ($total_video_num > 0) ? 'hide' : '' ?>">
 									<p>검색결과가 없습니다</p>
 									<p>다른 키워드로 검색을 시도해보세요!</p>
@@ -431,6 +454,13 @@
 				$("#order-sortby").val("new");        
 			});
 			
+			//페이징 코드
+//			function pageRun(num)
+//			{
+//				f = document.frm_execute;
+//				f.pg.value = num;
+//				f.submit();
+//			}
 		</script>
 	</body>
 

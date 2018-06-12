@@ -3,23 +3,23 @@
 					<div class="list-wrap">
 						<ul class="list anim-blur">
 							<li>
-								<a href="index.php" class="is-active">HOME</a>
+								<a href="index.php" class="is-active" data-mouse-type="ripple">HOME</a>
 							</li>
 						</ul>
 						<ul class="list anim-blur">
 							<li>
-								<a href="video_list.php?sort=new">ALL VVV</a>
+								<a href="video_list.php?sort=new" data-mouse-type="ripple">ALL VVV</a>
 							</li>
 							<li>
-								<a href="best_list.php">BEST</a>
+								<a href="best_list.php" data-mouse-type="ripple">BEST</a>
 							</li>
 							<li>
-								<a href="video_list.php?sort=new">NEW</a>
+								<a href="video_list.php?sort=new" data-mouse-type="ripple">NEW</a>
 							</li>
 						</ul>
 						<ul class="list anim-blur">
 							<li>
-								<a href="award_list.php">AWARDS</a>
+								<a href="award_list.php" data-mouse-type="ripple">AWARDS</a>
 							</li>
 						</ul>
 					</div>

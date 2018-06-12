@@ -66,7 +66,7 @@
 	background: #000000;
 	z-index: 0;
 }
-#.main-banner .box-content .link {
+.main-banner .box-content .link {
 	display: block;
 	/*
 	position: absolute;

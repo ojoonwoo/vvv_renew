@@ -17,6 +17,13 @@
 		$html.removeClass('search-layer-opened');
 	});
 	$doc.on('click', '.button-menu', function() {
+		if($html.hasClass('menu-opened')) {
+			$(this).attr('data-text', 'menu');
+			$('#cursor .guideT').text('menu');
+		} else {
+			$(this).attr('data-text', 'close');
+			$('#cursor .guideT').text('close');
+		}
 		burgerMotion();
 	});
 	$win.on('scroll', function() {
@@ -32,6 +39,7 @@
 	});
 	
 	function burgerMotion() {
+		TweenMax.killAll();
 		if($html.hasClass('menu-opened')) {
 //			메뉴 오픈 상태
 			var cMotion = new TimelineMax();
@@ -40,7 +48,7 @@
 			TweenMax.to($('#gnb .line.top'), 0.3, {y: 0, delay: 0.3}, 'action2');
 			TweenMax.to($('#gnb .line.bot'), 0.3, {y: 0, delay: 0.3}, 'action2');
 			TweenMax.to($('#gnb .line.mid'), 0.2, {autoAlpha: 1, delay: 0.3}, 'action2');
-
+//			$('#gnb .button-menu').attr('data-text', 'menu');
 		} else {
 //			메뉴 클로즈 상태
 			var oMotion = new TimelineMax();
@@ -49,7 +57,7 @@
 			TweenMax.to('#gnb .line.top', 0.47, {rotation: 45, delay: 0.3, ease: Back.easeOut.config(1.7)}, 'action2');
 			TweenMax.to($('#gnb .line.bot'), 0.3, {y: -8}, 'action1');
 			TweenMax.to('#gnb .line.bot', 0.47, {rotation: -45, delay: 0.3, ease: Back.easeOut.config(1.7)}, 'action2');
-
+//			$('#gnb .button-menu').attr('data-text', 'close');
 		}
 		$html.toggleClass('menu-opened');
 	}
@@ -278,7 +286,8 @@
 	$doc.on('mouseenter', '[data-mouse-type]', function(e) {
 		e.stopPropagation();
 		mouseType = $(this).data('mouse-type');
-		(mouseType=='text') ?  mouseText = $(this).data('text') : mouseText = "";
+//		var mouseText = $(this).attr('data-text');
+		(mouseType=='text') ?  mouseText = $(this).attr('data-text') : mouseText = "";
 		if(!($('#cursor').hasClass(mouseType))) {
 			$('#cursor').addClass(mouseType);
 		}
@@ -286,6 +295,7 @@
 		
 	}).on('mouseleave', '[data-mouse-type]', function(e) {
 		$('#cursor').removeClass(mouseType);
+		var mouseText = "";
 		$('#cursor .guideT').text('');
 
 	});
