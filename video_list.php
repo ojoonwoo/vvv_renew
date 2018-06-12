@@ -149,15 +149,31 @@
 
 	if ($search_keyword != "")
 	{
+		$where_q_txt		= "";
 		$cate_query		= "SELECT * FROM category_info WHERE category_name like '%".$search_keyword."%' AND category_level='1'";
 		$cate_result	= mysqli_query($my_db, $cate_query);
-		$cate_q_txt		= "";
 		while ($cate_data = mysqli_fetch_array($cate_result))
 		{
-			$cate_q_txt .= " OR video_category1='".$cate_data["idx"]."'";
+			$where_q_txt .= " OR video_category1='".$cate_data["idx"]."'";
 		}
 		
-		$WHERE	.= " AND (video_brand like '%".$search_keyword."%' OR video_title like '%".$search_keyword."%' OR video_desc like '%".$search_keyword."%'".$cate_q_txt.")";
+		$genre_query	= "SELECT * FROM genre_info WHERE genre_name like '%".$search_keyword."%' AND genre_showYN='Y'";
+		$genre_result	= mysqli_query($my_db, $genre_query);
+		while ($genre_data = mysqli_fetch_array($genre_result))
+		{
+			$where_q_txt .= " OR video_genre='".$genre_data["idx"]."'";
+		}
+
+		if ($search_keyword == "깐느" || $search_keyword == "칸느" || strtolower($search_keyword) == "canne")
+			$where_q_txt .= " OR video_awards='3'";
+		
+		if ($search_keyword == "클리오" || $search_keyword == "끌리오" || strtolower($search_keyword) == "clio")
+			$where_q_txt .= " OR video_awards='1'";
+		
+		if ($search_keyword == "뉴욕" || $search_keyword == "뉴욕페스티발" || strtolower($search_keyword) == "nyf")
+			$where_q_txt .= " OR video_awards='2'";
+		
+		$WHERE	.= " AND (video_brand like '%".$search_keyword."%' OR video_title like '%".$search_keyword."%' OR video_desc like '%".$search_keyword."%'".$where_q_txt.")";
 	}
 	if ($search_year != ""){
 		$WHERE	.= " AND video_date like '%".$search_year."%'";
