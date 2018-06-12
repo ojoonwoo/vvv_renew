@@ -46,17 +46,18 @@
 */
 .main-banner a .box-bg img {
 	position: relative;
-	transition: all 0.3s ease-in-out;
+/*	transition: all 10.3s linear;*/
 	z-index: 1;
 }
 .main-banner a:hover .box-bg img {
-	opacity: 0.9;
+/*	opacity: 0.9;*/
+/*	transform: scale(1.1);*/
 }
 .main-banner .box-bg {
 	position: relative;
 }
 .main-banner .box-bg:before {
-	content: '';
+	content: none;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -105,12 +106,22 @@
 	position: absolute;
 	bottom: 72px;
 	left: 50%;
-	width: 120px;
+	width: 80px;
 	/*	text-align: right;*/
 	z-index: 4;
 	font-size: 0;
 	transform: translateX(-50%);
 }
+.main-banner .number-pagination span {
+	color: #bbbbbb;
+}
+.main-banner .number-pagination span.current {
+	color: #f7dd30;
+}
+.main-banner .swiper-pagination-progressbar {
+	background: rgba(187, 187, 187, 0.5);
+}
+
 /*
 #main-banner-pagination .swiper-pagination-bullet {
 	display: inline-block;
