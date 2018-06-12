@@ -210,6 +210,7 @@
 //	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
 									
 	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$s_page.", ".$view_pg."";
+	print_r($list_query);
 //	페이징 코드
 //	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$PAGE_CLASS->page_start.", ".$view_pg."";
 	// print_r($list_query);
