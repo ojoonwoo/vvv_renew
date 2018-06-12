@@ -42,7 +42,7 @@
 			<a href="javascript:void(0)" id="go-top">
 				<img src="./images/go_top.png" alt="go top">
 			</a>
-			<form name="frm_execute" method="POST">
+			<form name="frm_execute" method="POST" action="index.php#recent_container">
 				<input type="hidden" name="pg" value="<?=$pg?>">
 			</form>
 			<div class="main-container">
@@ -191,7 +191,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="list-container">
+					<div class="list-container" id="recent_container">
 						<div class="title-area">
 							<h2 class="list-title">NEW</h2>
 							<a href="video_list.php?sort=new" class="view-all">전체보기</a>
@@ -209,7 +209,7 @@
 	$total_page			= ceil($total_video_num / $view_pg);
 	
 	$PAGE_CLASS = new mnv_page($pg,$total_video_num,$view_pg,$block_size);
-	$BLOCK_LIST = $PAGE_CLASS->blockList5();
+	$BLOCK_LIST = $PAGE_CLASS->blockList6();
 	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
 							
 //	$recent_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ORDER BY video_date DESC LIMIT 0, $view_pg";
