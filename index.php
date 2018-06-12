@@ -50,16 +50,16 @@
 					<div class="main-banner swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<a href="javascript:void(0)" style="cursor: default">
+								<a href="javascript:void(0)">
 <!--								<a href="video_detail.php?idx=448">-->
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_01.png" alt="">
+											<img src="./images/main_banner_01.jpg" alt="">
 										</div>
+<!--
 										<figcaption>
 											<p class="brand">CANNES 2017 Grand Prix</p>
 											<p class="title">we're the superhumans</p>
-<!--
 											<div class="link">
 												<svg class="progress-current" data-mouse-type="text" data-text="view">
 													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
@@ -67,18 +67,19 @@
 															style="fill:#f7dd30;"/>
 												</svg>
 											</div>
--->
 										</figcaption>
+-->
 									</figure>
 								</a>
 							</div>
-<!--
-							<div class="swiper-slide _02">
-								<a href="video_detail.php?idx=438">
+							<div class="swiper-slide">
+								<a href="javascript:void(0)">
+<!--								<a href="video_detail.php?idx=438">-->
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_02.png" alt="">
+											<img src="./images/main_banner_02.jpg" alt="">
 										</div>
+<!--
 										<figcaption>
 											<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
 											<p class="title">MEET GRAHAM</p>
@@ -90,9 +91,11 @@
 												</svg>
 											</div>
 										</figcaption>
+-->
 									</figure>
 								</a>
 							</div>
+<!--
 							<div class="swiper-slide">
 								<a href="video_detail.php?idx=823">
 									<figure class="box-content">
@@ -115,13 +118,11 @@
 							</div>
 -->
 						</div>
-<!--
 						<div class="number-pagination">
 							<span class="current">1</span>
-							<span class="total">3</span>
+							<span class="total">2</span>
 						</div>
 						<div id="main-banner-pagination" class="main-banner-pagination"></div>
--->
 					</div>
 					<div class="list-container best-area">
 						<div class="title-area">
