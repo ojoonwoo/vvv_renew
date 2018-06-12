@@ -46,7 +46,7 @@
 				</a>
 				<!--페이징 코드-->
 <!--
-				<form name="frm_execute" method="POST">
+				<form name="frm_execute" method="GET">
 					<input type="hidden" name="pg" value="<?=$pg?>">
 				</form>
 -->

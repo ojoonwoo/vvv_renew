@@ -42,7 +42,7 @@
 			<a href="javascript:void(0)" id="go-top">
 				<img src="./images/go_top.png" alt="go top">
 			</a>
-			<form name="frm_execute" method="POST" action="index.php#recent_container">
+			<form name="frm_execute" method="GET" action="index.php#recent_container">
 				<input type="hidden" name="pg" value="<?=$pg?>">
 			</form>
 			<div class="main-container">
