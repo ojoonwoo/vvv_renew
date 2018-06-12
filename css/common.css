@@ -1142,12 +1142,14 @@ button.btn-light-grey {
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	background: #f7dd30;
-}
-.swiper-container-horizontal>.swiper-pagination-progressbar, .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+	top: -1px;
 	height: 4px;
 }
+.swiper-container-horizontal>.swiper-pagination-progressbar, .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+	height: 2px;
+}
 .swiper-pagination-progressbar {
-		background: rgba(255, 255, 255, 0.32);
+	background: rgba(255, 255, 255, 0.32);
 }
 .number-pagination {
 	position: absolute;

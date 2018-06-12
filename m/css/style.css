@@ -90,7 +90,7 @@
 	position: absolute;
 	bottom: 25px;
 	left: 50%;
-	width: 87px;
+	width: 60px;
 	/*	text-align: right;*/
 	z-index: 4;
 	font-size: 0;
@@ -110,6 +110,7 @@
 	cursor: default;
 	margin-bottom: 9px;
 }
+
 
 /*
 #main-banner-pagination {
@@ -867,12 +868,15 @@
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	background: #f7dd30;
+	top: -1px;
+	height: 3px;
 }
 .swiper-container-horizontal>.swiper-pagination-progressbar, .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
-	height: 2px;
+	height: 1px;
 }
 .swiper-pagination-progressbar {
 /*	background: rgba(255, 255, 255, 1);*/
+	background: rgba(187, 187, 187, 0.5);
 }
 .number-pagination {
 	position: absolute;
@@ -884,7 +888,7 @@
 }
 .number-pagination span {
 	font-size: 10px;
-	color: #ffffff;
+	color: #bbbbbb;
 	font-weight: 900;
 	display: inline-block;
 	vertical-align: middle;

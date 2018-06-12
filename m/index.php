@@ -44,17 +44,17 @@
 						<div class="main-banner swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<a href="">
+									<a href="javascript:void(0)">
 										<figure class="box-content">
 											<div class="img box-bg">
-												<img src="./images/cannes_m.png" alt="">
+												<img src="./images/main_banner_01.jpg" alt="">
 											</div>
+<!--
 											<figcaption>
 												<p class="brand">CANNES 2017 Grand Prix</p>
 												<p class="title">we're the superhumans</p>
 												<a href="javascript:void(0)">
-<!--												<a href="video_detail.php?idx=448">-->
-<!--
+												<a href="video_detail.php?idx=448">
 													<div class="link">
 														<svg class="progress-current">
 															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
@@ -63,19 +63,19 @@
 														</svg>
 														<span class="view">VIEW</span>
 													</div>
--->
 												</a>
 											</figcaption>
+-->
 										</figure>
 									</a>
 								</div>
-<!--
 								<div class="swiper-slide">
 									<a href="">
 										<figure class="box-content">
 											<div class="img box-bg">
-												<img src="./images/newyork_m.png" alt="">
+												<img src="./images/main_banner_02.jpg" alt="">
 											</div>
+<!--
 											<figcaption>
 												<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
 												<p class="title">MEET GRAHAM</p>
@@ -90,9 +90,11 @@
 													</div>
 												</a>
 											</figcaption>
+-->
 										</figure>
 									</a>
 								</div>
+<!--
 								<div class="swiper-slide">
 									<a href="">
 										<figure class="box-content">
@@ -118,13 +120,11 @@
 								</div>
 -->
 							</div>
-<!--
 							<div class="number-pagination">
 								<span class="current">1</span>
-								<span class="total">3</span>
+								<span class="total">2</span>
 							</div>
 							<div id="main-banner-pagination" class="main-banner-pagination"></div>
--->
 						</div>
 						<div class="list-container best-area">
 							<div class="title-area">
