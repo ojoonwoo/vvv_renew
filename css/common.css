@@ -556,7 +556,7 @@ footer .copyright {
 .global-search-layer .search-wrapper .sortings .sort-list .sort:last-child {
 	margin-right: 0;
 }
-.global-search-layer .search-wrapper .sortings .button-apply {
+.global-search-layer .search-wrapper .sortings .button-gl-apply {
 	width: 194px;
 	height: 58px;
 	background: #333333;
@@ -1172,7 +1172,7 @@ button.btn-light-grey {
 .number-pagination span.total::before {
 	content: "/";
 	display: inline-block;
-	margin: 0 10px;
+	margin: 0 17px;
 	vertical-align: top;
 }
 /* swiper customize */

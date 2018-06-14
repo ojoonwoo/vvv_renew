@@ -7,14 +7,51 @@
 .main-banner .box-content figcaption {
 	display: block;
 	position: absolute;
-	top: 50%;
+/*	top: 50%;*/
 /*	top: 31%;*/
-	left: 50%;
-	width: 100%;
+/*	left: 50%;*/
+/*	width: 100%;*/
 	z-index: 3;
-	transform: translate(-50%, -50%);
+/*	transform: translate(-50%, -50%);*/
 	text-align: center;
 }
+.main-banner ._01 figcaption {
+	top: 50%;
+	left: 20%;
+	transform: translateY(-50%);
+}
+.main-banner ._01 figcaption .txt1 {
+	font-size: 16px;
+	font-weight: 500;
+}
+.main-banner ._01 figcaption .txt1 b {font-weight: 900;}
+.main-banner ._01 figcaption .txt2 {
+	font-size: 38px;
+	font-weight: 800;
+	line-height: 43px;
+	margin: 24px auto 33px;
+}
+.main-banner ._01 figcaption .txt3 {margin-bottom: 27px;}
+.main-banner ._01 figcaption .txt4 {
+	font-size: 17px;
+	line-height: 23px;
+}
+.main-banner ._02 figcaption {
+	top: 13%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.main-banner ._02 figcaption .txt1 {font-size: 38px;font-weight: 900;margin-bottom: 20px;}
+.main-banner ._02 figcaption .txt2 {font-size: 17px;line-height: 23px;}
+.main-banner ._03 figcaption {
+	top: 29.5%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #ffffff;
+}
+.main-banner ._03 figcaption .txt1 {font-size: 38px;font-weight: 900;}
+.main-banner ._03 figcaption .txt2 {font-size: 17px;margin: 24px auto 70px;line-height: 23px;}
+
 .main-banner .box-content figcaption .brand {
 	font-size: 20px;
 	color: #f7dd30;
@@ -27,15 +64,6 @@
 	font-weight: 800;
 	margin: 15px auto 53px;
 	text-transform: uppercase;
-}
-.main-banner .swiper-slide._02 figcaption {
-	margin-left: 13%;
-	display: inline-block;
-	width: auto;
-	text-align: left;
-}
-.main-banner .swiper-slide._02 .box-content .link span.view {
-	margin-left: 11px;
 }
 /*
 .main-banner .box-content figcaption .summary {
@@ -106,7 +134,7 @@
 	position: absolute;
 	bottom: 72px;
 	left: 50%;
-	width: 80px;
+	width: 120px;
 	/*	text-align: right;*/
 	z-index: 4;
 	font-size: 0;
