@@ -196,7 +196,7 @@
 		$WHERE	.= " AND video_genre = '".$search_genre."'";
 	}
 	if ($search_prize != ""){
-		$where	.= " AND video_awards like '%".$search_prize."%'";
+		$WHERE	.= " AND video_awards like '%".$search_prize."%'";
 	}
 
 	if ($search_sort == "")
@@ -342,7 +342,16 @@
 			$doc = $(document);
 
 			// 검색 APPLY 클릭
+			function nullToBlank(str)
+			{
+				if (str == null)
+					str = "";
+
+				return str;
+			}
+			
 			$doc.on('click', '.button-apply', function() {
+				console.log("asd");
 				var search_keyword      = nullToBlank($("#lc-order-keyword").val());
 				var search_year         = nullToBlank($("#lc-order-date").val());
 				var search_nation       = nullToBlank($("#lc-order-nation").val());
@@ -447,36 +456,6 @@
 				});
 			});
 
-			// 검색 APPLY 클릭
-			$doc.on('click', '#search-layer-submit', function() {
-				var search_keyword      = nullToBlank($("#search_keyword").val());
-				var search_year         = nullToBlank($("#order-date").val());
-				var search_nation       = nullToBlank($("#order-nation").val());
-				var search_category1    = nullToBlank($("#order-industry").val());
-				var search_genre        = nullToBlank($("#order-genre").val());
-				var search_prize        = nullToBlank($("#order-awards").val());
-				var search_sort         = nullToBlank($("#order-sortby").val());
-
-				location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
-			});
-
-			function nullToBlank(str)
-			{
-				if (str == null)
-					str = "";
-					
-				return str;
-			}
-
-			$doc.on('click', '#search-layer-refresh', function() {
-				$("#search_keyword").val("");
-				$("#order-date").val("");
-				$("#order-nation").val("");
-				$("#order-industry").val("");
-				$("#order-genre").val("");
-				$("#order-awards").val("");
-				$("#order-sortby").val("new");        
-			});
 			
 			//페이징 코드
 //			function pageRun(num)

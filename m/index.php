@@ -70,7 +70,7 @@
 									</a>
 								</div>
 								<div class="swiper-slide">
-									<a href="">
+									<a href="javascript:void(0)">
 										<figure class="box-content">
 											<div class="img box-bg">
 												<img src="./images/main_banner_02.jpg" alt="">
@@ -94,17 +94,18 @@
 										</figure>
 									</a>
 								</div>
-<!--
-								<div class="swiper-slide">
-									<a href="">
+								<div class="swiper-slide _03">
+									<a href="javascript:void(0)">
 										<figure class="box-content">
 											<div class="img box-bg">
-												<img src="./images/clio_m.png" alt="">
+												<img src="./images/main_banner_03.jpg" alt="">
 											</div>
 											<figcaption>
+<!--
 												<p class="brand">CLIO 2017 Grand</p>
 												<p class="title">fearless girl</p>
-												<a href="video_detail.php?idx=823">
+-->
+												<a href="award_list.php">
 													<div class="link">
 														<svg class="progress-current">
 															<circle class="prg-circle" cx="15" cy="15" r="14" fill="none" />
@@ -118,11 +119,10 @@
 										</figure>
 									</a>
 								</div>
--->
 							</div>
 							<div class="number-pagination">
 								<span class="current">1</span>
-								<span class="total">2</span>
+								<span class="total">3</span>
 							</div>
 							<div id="main-banner-pagination" class="main-banner-pagination"></div>
 						</div>
@@ -406,37 +406,6 @@
 					}
 				});
 
-			});
-			// 검색 APPLY 클릭
-			$doc.on('click', '#search-layer-submit', function() {
-				console.log("search");
-				var search_keyword      = nullToBlank($("#search_keyword").val());
-				var search_year         = nullToBlank($("#order-date").val());
-				var search_nation       = nullToBlank($("#order-nation").val());
-				var search_category1    = nullToBlank($("#order-industry").val());
-				var search_genre        = nullToBlank($("#order-genre").val());
-				var search_prize        = nullToBlank($("#order-awards").val());
-				var search_sort         = nullToBlank($("#order-sortby").val());
-
-				location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
-			});
-
-			function nullToBlank(str)
-			{
-				if (str == null)
-					str = "";
-					
-				return str;
-			}
-
-			$doc.on('click', '#search-layer-refresh', function() {
-				$("#search_keyword").val("");
-				$("#order-date").val("");
-				$("#order-nation").val("");
-				$("#order-industry").val("");
-				$("#order-genre").val("");
-				$("#order-awards").val("");
-				$("#order-sortby").val("new");        
 			});
 
 			function pageRun(num)

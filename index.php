@@ -49,15 +49,15 @@
 				<div class="content main">
 					<div class="main-banner swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide">
+							<div class="swiper-slide _01">
 								<a href="javascript:void(0)">
 <!--								<a href="video_detail.php?idx=448">-->
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_01.jpg" alt="">
+											<img src="./images/main_banner_01_img.jpg" alt="">
 										</div>
-<!--
 										<figcaption>
+<!--
 											<p class="brand">CANNES 2017 Grand Prix</p>
 											<p class="title">we're the superhumans</p>
 											<div class="link">
@@ -67,20 +67,24 @@
 															style="fill:#f7dd30;"/>
 												</svg>
 											</div>
-										</figcaption>
 -->
+											<p class="txt1"><b>V</b>ALUABLE <b>V</b>IRAL <b>V</b>IDEO</p>
+											<p class="txt2">좋아하는 광고를 모으기에<br>더할 나위 없이 좋은 곳.</p>
+											<p class="txt3"><img src="./images/main_banner_01_icons.png" alt=""></p>
+											<p class="txt4">책갈피 이모티콘을 활용해보세요.<br>컬렉션 기능으로 프로젝트별로 편리하게 구분하여 저장됩니다.</p>
+										</figcaption>
 									</figure>
 								</a>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide _02">
 								<a href="javascript:void(0)">
 <!--								<a href="video_detail.php?idx=438">-->
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_02.jpg" alt="">
+											<img src="./images/main_banner_02_img.jpg" alt="">
 										</div>
-<!--
 										<figcaption>
+<!--
 											<p class="brand">NEWYORK 2017 BEST OF SHOW</p>
 											<p class="title">MEET GRAHAM</p>
 											<div class="link">
@@ -90,37 +94,42 @@
 															style="fill:#f7dd30;"/>
 												</svg>
 											</div>
-										</figcaption>
 -->
+											<p class="txt1">혼자 보관하거나, 함께 공유하거나</p>
+											<p class="txt2">공개 / 비공개 설정으로<br>모아놓은 컬렉션을 자유롭게 보관하거나 공유하세요.</p>
+										</figcaption>
 									</figure>
 								</a>
 							</div>
-<!--
-							<div class="swiper-slide">
-								<a href="video_detail.php?idx=823">
+							<div class="swiper-slide _03">
+								<a href="award_list.php">
 									<figure class="box-content">
 										<div class="img box-bg">
-											<img src="./images/main_banner_03.png" alt="">
+											<img src="./images/main_banner_03_img.jpg" alt="">
 										</div>
 										<figcaption>
+<!--
 											<p class="brand">CLIO 2017 Grand</p>
 											<p class="title">fearless girl</p>
+-->
+											<p class="txt1">해외광고제 수상작을 한 곳에 VVV</p>
+											<p class="txt2">해외3대 광고제 수상작 영상을 연도별로 모았습니다.<br>검색카테고리 광고제 수상작을 확인해보세요.</p>
 											<div class="link">
 												<svg class="progress-current" data-mouse-type="text" data-text="view">
 													<circle class="prg-circle" cx="30" cy="30" r="27.5" fill="none" />
 													<polygon points="23,19 41,29 23,39"
 															style="fill:#f7dd30;"/>
 												</svg>
+												<span class="view">VIEW</span>
 											</div>
 										</figcaption>
 									</figure>
 								</a>
 							</div>
--->
 						</div>
 						<div class="number-pagination">
 							<span class="current">1</span>
-							<span class="total">2</span>
+							<span class="total">3</span>
 						</div>
 						<div id="main-banner-pagination" class="main-banner-pagination"></div>
 					</div>
@@ -418,38 +427,6 @@
 				});
 			}
 		});
-	});
-
-	// 검색 APPLY 클릭
-	$doc.on('click', '#search-layer-submit', function() {
-        var search_keyword      = nullToBlank($("#search_keyword").val());
-        var search_year         = nullToBlank($("#order-date").val());
-        var search_nation       = nullToBlank($("#order-nation").val());
-        var search_category1    = nullToBlank($("#order-industry").val());
-        var search_genre        = nullToBlank($("#order-genre").val());
-        var search_prize        = nullToBlank($("#order-awards").val());
-        var search_sort         = nullToBlank($("#order-sortby").val());
-
-        location.href = "video_list.php?keyword=" + search_keyword + "&year=" + search_year + "&nation=" + search_nation + "&category=" + search_category1 + "&genre=" + search_genre + "&prize=" + search_prize + "&sort=" + search_sort;
-	});
-
-	function nullToBlank(str)
-	{
-		if (str == null)
-			str = "";
-			
-		return str;
-	}
-
-	$doc.on('click', '#search-layer-refresh', function() {
-		console.log($("#order-date").val());
-        $("#search_keyword").val("");
-        $("#order-date").val("");
-        $("#order-nation").val("");
-        $("#order-industry").val("");
-        $("#order-genre").val("");
-        $("#order-awards").val("");
-        $("#order-sortby").val("new");        
 	});
 	
 	

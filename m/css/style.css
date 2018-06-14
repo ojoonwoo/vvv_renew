@@ -52,6 +52,10 @@
 	background: #000000;
 	z-index: 0;
 }
+.main-banner ._03 figcaption {
+	top: 34%;
+	transform: translate(-50%, 0);
+}
 .main-banner .box-content .link {
 	display: block;
 	/*
@@ -60,7 +64,7 @@
 	bottom: 22.3%;
 	transform: translate(-50%, 0);
 	*/
-	margin: 17px auto 0;
+/*	margin: 17px auto 0;*/
 	color: #ffffff;
 	font-size: 10px;
 	font-weight: 300;
@@ -90,7 +94,7 @@
 	position: absolute;
 	bottom: 25px;
 	left: 50%;
-	width: 60px;
+	width: 90px;
 	/*	text-align: right;*/
 	z-index: 4;
 	font-size: 0;

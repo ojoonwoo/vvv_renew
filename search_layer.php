@@ -84,7 +84,7 @@
 										</div>
 									</div>
 								</div>
-								<button type="button" class="button-apply" id="search-layer-submit">
+								<button type="button" class="button-gl-apply" id="search-layer-submit">
 									APPLY
 								</button>
 							</div>
