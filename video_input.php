@@ -96,6 +96,10 @@
             </td>
         </tr>
         <tr>
+            <td>태그</td>
+            <td><input type="text" id="video_tag" class="form-control" style="border:1px solid #ccc" placeholder="영상에 적합한 태그를 입력해 주세요. 여러개일 경우 ,로 구분하여 넣어 주세요. ex)나이키,런닝,마라톤"></td>
+        </tr>
+        <tr>
             <td>* Released Date</td>
             <td><input type="text" id="video_date" class="form-control" style="border:1px solid #ccc" placeholder="영상 등록일을 예제와 같은 형식으로 입력해 주세요. ex)2017-11"></td>
         </tr>
@@ -141,6 +145,7 @@
         var video_category2 	= $("#video_category2").val();
         var video_genre 		= $("#video_genre").val();
         var video_link 	        = $("#video_link").val();
+        var video_tag 	        = $("#video_tag").val();
         var video_desc 			= $("#video_desc").val();
         var video_date 			= $("#video_date").val();
         var showYN 				= $("#showYN").val();
