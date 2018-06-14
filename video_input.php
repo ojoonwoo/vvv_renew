@@ -70,7 +70,7 @@
         <tr>
             <td>장르</td>
             <td>
-                <select id="video_genre" class="form-control" onchange="change_category1(this.value)">
+                <select id="video_genre" class="form-control">
                     <option value="">선택하세요</option>
 <?
     $genre_query	= "SELECT * FROM genre_info WHERE genre_showYN='Y'";
