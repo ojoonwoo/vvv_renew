@@ -120,9 +120,10 @@
 									</a>
 								</div>
 							</div>
+							<div class="button-prev"></div>
+							<div class="button-next"></div>
 							<div class="number-pagination">
 								<span class="current">1</span>
-								<span class="total">3</span>
 							</div>
 							<div id="main-banner-pagination" class="main-banner-pagination"></div>
 						</div>
@@ -311,6 +312,10 @@
 					loop: true,
 					autoplay: {
 						delay: 4000	
+					},
+					navigation: {
+						prevEl: '.button-prev',
+						nextEl: '.button-next'
 					},
 					pagination: {
 						el: '.main-banner-pagination',

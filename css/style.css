@@ -1469,7 +1469,7 @@
 }
 .content.join .block-terms .scroll-box {
 	background: #ffffff;
-	height: 393px;
+	height: 265px;
 	overflow: hidden;
 	padding: 51px 66px 51px 31px;
 }
@@ -1557,7 +1557,20 @@
 	font-size: 27px;
 }
 .content.join .block-input .agree {
-	margin: 20px 0 0 249px;
+	display: block;
+	margin-top: 20px;
+/*	margin: 20px 0 0 249px;*/
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.content.join .block-input .agree .guide {
+	font-size: 20px;
+	color: #666666;
+}
+.content.join .block-input .agree .check-wrap {
+	position: relative;
 }
 .content.join .block-input.nickname {
 	margin-bottom: 120px;
@@ -1567,7 +1580,6 @@
 	margin-top: 23px;
 	font-size: 20px;
 	color: #666666;
-	font-weight: 500;
 }
 .content.join .btn-join {
 	display: block;

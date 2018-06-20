@@ -114,7 +114,26 @@
 	cursor: default;
 	margin-bottom: 9px;
 }
-
+.main-banner .button-prev {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	z-index: 2;
+	background: url(../images/main_banner_arrow_prev.png) center / 24px 24px no-repeat;
+	width: 24px;
+	height: 24px;
+	margin-top: -12px;
+}
+.main-banner .button-next {
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	z-index: 2;
+	background: url(../images/main_banner_arrow_next.png) center / 24px 24px no-repeat;
+	width: 24px;
+	height: 24px;
+	margin-top: -12px;
+}
 
 /*
 #main-banner-pagination {
