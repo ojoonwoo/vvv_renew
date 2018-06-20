@@ -65,6 +65,29 @@
 	margin: 15px auto 53px;
 	text-transform: uppercase;
 }
+@media all and (max-width: 1450px) {
+	.main-banner ._02 figcaption .txt1,
+	.main-banner ._03 figcaption .txt1 { 
+		font-size: 30px;
+	}
+	.main-banner ._01 figcaption .txt2 {
+		font-size: 30px;
+	}
+	.main-banner ._01 figcaption .txt4,
+	.main-banner ._02 figcaption .txt2,
+	.main-banner ._03 figcaption .txt2 {
+		font-size: 16px;
+	}
+	.main-banner .number-pagination {
+		display: none;
+	}
+	.main-banner #main-banner-pagination {
+		display: none;
+	}
+}
+
+	
+}
 /*
 .main-banner .box-content figcaption .summary {
 	font-size: 28px;
@@ -132,7 +155,7 @@
 }
 #main-banner-pagination {
 	position: absolute;
-	bottom: 72px;
+	bottom: 54px;
 	left: 50%;
 	width: 120px;
 	/*	text-align: right;*/
@@ -145,6 +168,22 @@
 }
 .main-banner .number-pagination span.current {
 	color: #f7dd30;
+}
+.main-banner .number-pagination .button-prev {
+	position: absolute;
+	left: -40px;
+	top: 0;
+	background: url(../images/main_banner_arrow_prev.png) center / 10px 16px no-repeat;
+	width: 10px;
+	height: 16px;
+}
+.main-banner .number-pagination .button-next {
+	position: absolute;
+	right: -40px;
+	top: 0;
+	background: url(../images/main_banner_arrow_next.png) center / 10px 16px no-repeat;
+	width: 10px;
+	height: 16px;
 }
 .main-banner .swiper-pagination-progressbar {
 	background: rgba(187, 187, 187, 0.5);
