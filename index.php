@@ -128,8 +128,9 @@
 							</div>
 						</div>
 						<div class="number-pagination">
+							<div class="button-prev" data-mouse-type="ripple"></div>
 							<span class="current">1</span>
-							<span class="total">3</span>
+							<div class="button-next" data-mouse-type="ripple"></div>
 						</div>
 						<div id="main-banner-pagination" class="main-banner-pagination"></div>
 					</div>
@@ -329,6 +330,10 @@
 //				renderBullet: function (index, className) {
 //					return '<span class="' + className + '">' + (index + 1) + '</span>';
 //				},
+			},
+			navigation: {
+				prevEl: '.button-prev',
+				nextEl: '.button-next'
 			},
 			on: {
 				init: function() {
