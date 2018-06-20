@@ -523,9 +523,9 @@ include_once "./include/autoload.php";
             $collection_secret		= $_REQUEST["collection_secret"];
 
             if ($collection_secret == "true")
-                $collection_secret = "Y";
+                $collection_secret = "N";
             else
-                $collection_secret = "N";        
+                $collection_secret = "Y";        
 
             $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
             $name_result    = mysqli_query($my_db, $name_query);
@@ -557,9 +557,9 @@ include_once "./include/autoload.php";
             $collection_secret		= $_REQUEST["collection_secret"];
 
             if ($collection_secret == "true")
-                $collection_secret = "Y";
+                $collection_secret = "N";
             else
-                $collection_secret = "N";        
+                $collection_secret = "Y";        
 
             $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
             $name_result    = mysqli_query($my_db, $name_query);
@@ -593,9 +593,9 @@ include_once "./include/autoload.php";
             $c_idx          		= $_REQUEST["c_idx"];
 
             if ($collection_secret == "true")
-                $collection_secret = "Y";
+                $collection_secret = "N";
             else
-                $collection_secret = "N";        
+                $collection_secret = "Y";        
 
             // $name_query     = "SELECT * FROM collection_info WHERE collection_mb_idx='".$_SESSION['ss_vvv_idx']."' AND collection_name='".$collection_name."' AND collection_showYN='Y'";
             // $name_result    = mysqli_query($my_db, $name_query);

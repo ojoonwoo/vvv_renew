@@ -11,7 +11,7 @@
 								<span>이름</span>
 							</div>
 							<div class="input">
-								<input type="text" placeholder="<?=$mb_data['mb_name']?>님의 5월 컬렉션" id="collection_name">
+								<input type="text" placeholder="<?=$mb_data['mb_name']?>님의 <?=date("n")?>월 컬렉션" id="collection_name">
 							</div>
 						</div>
 						<div class="input-group">
@@ -64,7 +64,7 @@
                     </div>
                     <div class="setting">
                         <span class="secret-guide">비밀 설정</span>
-                        <div class="toggle secret is-active">
+                        <div class="toggle secret <?=$secret_flag?>">
                             <input type="checkbox" type="checkbox" class="secret-toggle toggle-trigger" id="secret" name="secret">
                             <div class="toggle-circle"></div>
                         </div>
@@ -248,11 +248,11 @@
 	if ($mb_f_data['mb_nickname'] == "")
 	{
 ?>										
-										<div class="name"><?=$mb_f_data["mb_name"]?></div>
+										<div class="name"><a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>"><?=$mb_f_data["mb_name"]?></a></div>
 <?
 	}else{
 ?>		
-										<div class="name"><?=$mb_f_data["mb_nickname"]?></div>
+										<div class="name"><a href="my_vvv.php?idx=<?=$mb_f_data["idx"]?>"><?=$mb_f_data["mb_nickname"]?></a></div>
 <?
 	}
 ?>								
@@ -347,11 +347,11 @@
 	if ($mb_fer_data['mb_nickname'] == "")
 	{
 ?>										
-										<div class="name"><?=$mb_fer_data["mb_name"]?></div>
+										<div class="name"><a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>"><?=$mb_fer_data["mb_name"]?></a></div>
 <?
 	}else{
 ?>		
-										<div class="name"><?=$mb_fer_data["mb_nickname"]?></div>
+										<div class="name"><a href="my_vvv.php?idx=<?=$mb_fer_data["idx"]?>"><?=$mb_fer_data["mb_nickname"]?></a></div>
 <?
 	}
 ?>								
@@ -911,5 +911,49 @@
 
 			}
 
+			function edit_collection()
+			{
+				var collection_name		= $("#c_name").val();
+				var collection_desc		= $("#c_desc").val();
+				var collection_secret	= $("input:checkbox[id='secret']").is(":checked");
+
+				if (collection_name == "")
+				{
+					alert("컬렉션 이름을 입력해 주세요.");
+					return false;
+				}
+
+				if (collection_desc == "")
+				{
+					alert("컬렉션 설명을 입력해 주세요.");
+					return false;
+				}
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "../main_exec.php",
+					data:{
+						"exec"				    : "edit_collection",
+						"c_idx"          		: "<?=$collection_idx?>",
+						"collection_name"       : collection_name,
+						"collection_desc"		: collection_desc,
+						"collection_secret"		: collection_secret
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							location.reload();
+						}else if (response.match("D") == "D"){
+							alert("이미 생성된 컬렉션 이름입니다. 다른 이름으로 생성해 주세요.")
+							// location.reload();
+						}else{
+							alert("다시 입력해 주세요.");
+							location.reload();
+						}
+					}
+				});		
+			}
 
 	</script>

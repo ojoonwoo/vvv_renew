@@ -21,7 +21,7 @@
 	$detail_data	= mysqli_fetch_array($detail_result);
 
 	// Like 여부 체크
-	$like_query		= "SELECT * FROM like_info WHERE m_idx='".$_SESSION['ss_vvv_idx']."' AND v_idx='".$video_idx."' AND like_flag='Y'";
+	$like_query		= "SELECT * FROM like_info WHERE mb_idx='".$_SESSION['ss_vvv_idx']."' AND v_idx='".$video_idx."' AND like_flag='Y'";
 	$like_result	= mysqli_query($my_db, $like_query);
 
 	$like_flag = "";
@@ -142,7 +142,7 @@
 									<ul class="share-spread">
 										<li><a href="javascript:void(0)" onclick="sns_share('fb')"><img src="./images/detail_share_fb.png" alt="페이스북 공유"></a></li>
 										<!-- <li><a href="javascript:void(0)" onclick="sns_share('kt')"><img src="./images/detail_share_kt.png" alt="카카오톡 공유"></a></li> -->
-										<li><a href="javascript:void(0)" class="clipboardBtn" onclick="sns_share('lk')" data-clipboard-text="http://minivertising-test.com/video_detail.php?idx=<?=$video_idx?>" data-toggle="tooltip"><img src="./images/detail_share_url.png" alt="링크 공유"></a></li>
+										<li><a href="javascript:void(0)" class="clipboardBtn" onclick="sns_share('lk')" data-clipboard-text="http://valuable-viral-video.com/video_detail.php?idx=<?=$video_idx?>" data-toggle="tooltip"><img src="./images/detail_share_url.png" alt="링크 공유"></a></li>
 									</ul>
 								</div>
 								<div class="block-comment">
@@ -717,7 +717,7 @@
 				if (media == "fb")
 				{
 
-					var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.minivertising-test.com/video_detail.php?idx=<?=$video_idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
+					var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/video_detail.php?idx=<?=$video_idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
 					$.ajax({
 						type   : "POST",
 						async  : false,
@@ -729,7 +729,7 @@
 					});
 				} else if(media == "kt") {
 					Kakao.Link.sendTalkLink({
-						label: "<?='['.$detail_data['video_company'].'] '.$detail_data['video_title']?>",
+						label: "<?='['.$detail_data['video_company'].'] '.addslashes($detail_data['video_title'])?>",
 						image: {
 							src: "<?=$yt_thumb?>",
 							width: '1200',
@@ -737,7 +737,7 @@
 						},
 						webButton: {
 							text: "영상 보러 가기",
-							url: 'http://www.minivertising-test.com/video_detail.php?idx=<?=$video_idx?>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+							url: 'http://www.valuable-viral-video.com/video_detail.php?idx=<?=$video_idx?>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 						}
 					});
 					$.ajax({

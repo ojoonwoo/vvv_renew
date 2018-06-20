@@ -205,6 +205,7 @@
                 "video_category2"	  : video_category2,
                 "video_genre"		  : video_genre,
                 "video_link"		  : video_link,
+                "video_tag"		      : video_tag,
                 "video_desc"          : video_desc,
                 "video_date"		  : video_date,
                 "showYN"			  : showYN
