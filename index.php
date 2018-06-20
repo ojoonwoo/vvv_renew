@@ -320,7 +320,7 @@
 			speed: 650,
 			loop: true,
 			autoplay: {
-				delay: 4000	
+				delay: 4500	
 			},
 			pagination: {
 				el: '.main-banner-pagination',
