@@ -655,7 +655,7 @@
 	background: #ffffff;
 	height: 325px;
 	overflow: hidden;
-	padding: 0 5px;
+	padding: 14px 20px 14px 13px;
 }
 .content.join .block-terms .scroll-box .inner {
 	height: 100%;
@@ -664,7 +664,6 @@
 	line-height: 14px;
 	font-weight: 700;
 	text-align: left;
-	padding: 14px 20px 14px 13px;
 	word-break: break-word;
 	white-space: normal;
 }
@@ -742,8 +741,21 @@
 	font-size: 17px;
 }
 .content.join .block-input .agree {
-	display: inline-block;
-	margin: 20px 0 0;
+	display: block;
+	margin: 10px 0 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+}
+.content.join .block-input .agree .guide {
+	font-size: 11px;
+	color: #666666;
+	line-height: 14px;
+}
+.content.join .block-input .agree .check-wrap {
+	position: relative;
+	flex-shrink: 0;
 }
 .content.join .block-input.nickname {
 	margin-bottom: 55px;
@@ -755,7 +767,6 @@
 	word-break: break-all;
 	font-size: 11px;
 	color: #666666;
-	font-weight: 500;
 }
 .content.join .btn-join {
 	display: block;

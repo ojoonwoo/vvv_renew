@@ -74,9 +74,12 @@
 										</div>
 									</div>
 									<div class="agree">
-										<label for="agree-use3">이메일 수신여부</label>
-										<input type="checkbox" id="agree-use3">
-										<div class="checkbox"></div>
+										<div class="guide">이벤트 및 서비스 안내 등 홍보 마케팅에 활용됩니다</div>
+										<div class="check-wrap">
+											<label for="agree-use3">수신여부</label>
+											<input type="checkbox" id="agree-use3">
+											<div class="checkbox"></div>
+										</div>
 									</div>
 								</div>
 								<div class="block-input nickname">
