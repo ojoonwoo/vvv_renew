@@ -13,7 +13,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+<style>
+    .ui-state-default, .ui-widget-content .ui-state-default {
+        border : 1px solid #c5c5c5;
+    }
+</style>
 <body>
     <h1>영상 정보 등록 페이지</h1>
     <table class="table table-bordered" style="width:80%">
@@ -68,9 +72,45 @@
             </td>
         </tr>
         <tr>
-            <td>장르</td>
+            <td>장르1 (장르가 2개 이상일때만 아래 장르를 순차적으로 선택해 주세요)</td>
             <td>
                 <select id="video_genre" class="form-control">
+                    <option value="">선택하세요</option>
+<?
+    $genre_query	= "SELECT * FROM genre_info WHERE genre_showYN='Y'";
+    $genre_result 	= mysqli_query($my_db, $genre_query);
+    while ($genre_data = mysqli_fetch_array($genre_result))
+    {
+?>
+                    <option value="<?=$genre_data["idx"]?>"><?=$genre_data["genre_name"]?></option>
+<?
+    }    
+?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>장르2</td>
+            <td>
+                <select id="video_genre2" class="form-control">
+                    <option value="">선택하세요</option>
+<?
+    $genre_query	= "SELECT * FROM genre_info WHERE genre_showYN='Y'";
+    $genre_result 	= mysqli_query($my_db, $genre_query);
+    while ($genre_data = mysqli_fetch_array($genre_result))
+    {
+?>
+                    <option value="<?=$genre_data["idx"]?>"><?=$genre_data["genre_name"]?></option>
+<?
+    }    
+?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>장르3</td>
+            <td>
+                <select id="video_genre3" class="form-control">
                     <option value="">선택하세요</option>
 <?
     $genre_query	= "SELECT * FROM genre_info WHERE genre_showYN='Y'";
@@ -101,7 +141,37 @@
         </tr>
         <tr>
             <td>* Released Date</td>
-            <td><input type="text" id="video_date" class="form-control" style="border:1px solid #ccc" placeholder="영상 등록일을 예제와 같은 형식으로 입력해 주세요. ex)2017-11"></td>
+            <!-- <td><input type="text" id="video_date" class="form-control" style="border:1px solid #ccc" placeholder="영상 등록일을 예제와 같은 형식으로 입력해 주세요. ex)2017-11"></td> -->
+            <td>
+                <select id="rdate_year">
+<?
+    $i = 2018;
+    while ($i > 2000)
+    {
+?>                    
+                    <option value="<?=$i?>"><?=$i?></option>
+<?  
+        $i--;
+    }
+?>                    
+                </select>
+                <select id="rdate_day">
+<?
+    $j = 1;
+    while ($j < 32)
+    {
+        if ($j < 10)
+            $day_val    = "0".$j;
+        else
+            $day_val    = $j;
+?>                    
+                    <option value="<?=$day_val?>"><?=$j?></option>
+<?  
+        $j++;
+    }
+?>                    
+                </select>
+            </td>
         </tr>
         <tr>
             <td>노출 여부 선택</td>
@@ -121,6 +191,11 @@
     <? 	include_once "cursor.php"; ?>
     
     <script>
+    // $( function() {
+    //     $( "#video_date" ).datepicker({
+    //         altFormat: "yy-mm"
+    //     });
+    // });
     function change_category1(cate1)
     {
         $.ajax({
@@ -144,11 +219,23 @@
         var video_category1 	= $("#video_category1").val();
         var video_category2 	= $("#video_category2").val();
         var video_genre 		= $("#video_genre").val();
+        var video_genre2 		= $("#video_genre2").val();
+        var video_genre3 		= $("#video_genre3").val();
         var video_link 	        = $("#video_link").val();
         var video_tag 	        = $("#video_tag").val();
         var video_desc 			= $("#video_desc").val();
-        var video_date 			= $("#video_date").val();
+        var video_date 			= $("#rdate_year").val() + "-" + $("#rdate_day").val();
         var showYN 				= $("#showYN").val();
+
+        if (video_genre2 != "")
+        {
+            video_genre = video_genre + "," +video_genre2;
+        }
+        
+        if (video_genre3 != "")
+        {
+            video_genre = video_genre + "," +video_genre3;
+        }
 
         if (video_country == "")
         {

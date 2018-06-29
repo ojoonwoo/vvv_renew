@@ -193,7 +193,7 @@
 		$WHERE	.= " AND video_category1 = '".$search_category."'";
 	}
 	if ($search_genre != ""){
-		$WHERE	.= " AND video_genre = '".$search_genre."'";
+		$WHERE	.= " AND video_genre = '%".$search_genre."%'";
 	}
 	if ($search_prize != ""){
 		$WHERE	.= " AND video_awards like '%".$search_prize."%'";
