@@ -92,7 +92,7 @@
 ?>
 												<div class="result-empty">
 													<p>당신이 저장한 영상들을 컬렉션으로 만들어 보세요!</p>
-													<a class="link-black" href="./video_list.php?sort=new">
+													<a class="link-black" href="javascript:void(0)" data-popup="#collection-add">
 														<span>만들기 +</span>
 													</a>
 												</div>
