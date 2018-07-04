@@ -283,7 +283,7 @@
 	background: #f2f2f2;
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0;
+	padding: 120px 0;
 }
 .app-container.sub .content.awards .inner {
 	max-width: none;
@@ -1382,6 +1382,9 @@
 	height: calc(100vh - 296px);
 	padding: 150px 0;
 	overflow-y: scroll;
+}
+.content.login > .inner {
+	padding: 0 !important;
 }
 @media all and (max-height: 900px) {
 	.content.login {
