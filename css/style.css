@@ -283,7 +283,7 @@
 	background: #f2f2f2;
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 115px 0;
+	padding: 0;
 }
 .app-container.sub .content.awards .inner {
 	max-width: none;
@@ -1380,9 +1380,13 @@
 /* login */
 .content.login {
 	height: calc(100vh - 296px);
+	padding: 150px 0;
+	overflow-y: scroll;
 }
-.content.login > .inner {
-	padding: 155px 0 0;
+@media all and (max-height: 900px) {
+	.content.login {
+		height: auto;
+	}
 }
 .content.login .title {
 	text-align: center;
