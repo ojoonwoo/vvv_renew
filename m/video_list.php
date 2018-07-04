@@ -255,6 +255,13 @@
 //					}
 //				});
 //			});
+			function nullToBlank(str)
+			{
+				if (str == null)
+					str = "";
+
+				return str;
+			}
 
 			// RECENT 더보기 버튼 클릭
 			$doc.on('click', '.read-more', function() {
