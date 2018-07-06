@@ -18,6 +18,8 @@
 
     if ($sort_val == "best")
         $order_by = " ORDER BY like_count DESC, play_count DESC, comment_count DESC";
+    else if ($sort_val == "reg")
+        $order_by = " ORDER BY idx DESC";
     else
         $order_by = " ORDER BY video_date DESC";
 	$view_pg            = $view_page;
@@ -86,6 +88,7 @@
 	$query			= "SELECT * FROM video_info2 WHERE showYN='Y' ".$WHERE." ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
 	$result			= mysqli_query($my_db, $query);
 	$video_count	= mysqli_num_rows($result);
+	// print_r($query);
 
     $i = 0;
 	while ($data = mysqli_fetch_array($result))
@@ -117,6 +120,16 @@
 							<div class="video col-lg-4 col-md-3 col-sm-2 loaded">
 								<a href="video_detail.php?idx=<?=$data['video_idx']?>">
 									<figure>
+<?
+	if (!empty($data["video_awards"]))
+	{
+?>												
+										<div class="prize_icon">
+											<img src="./images/prize_winner.png" alt="수상작">
+										</div>
+<?
+	}
+?>												
                                         <div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 										<figcaption>
 											<span class="brand">[<?=$video_brand?>]</span>
@@ -146,4 +159,4 @@
 <?
     }
 ?>
-    <!-- ||<?=$all_video_num?>||<?=$all_page?>||<?=$view_pg?>||<?=$query?>; -->
+    ||<?=$all_video_num?>||<?=$all_page?>||<?=$view_pg?>||<?=$query?>;

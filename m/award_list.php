@@ -146,6 +146,7 @@
 								<div class="sub-cate">
 									<div class="sort">
 										<select name="lc-order-date" id="lc-order-date" class="lc-order-date" onchange="change_year(this.value)">
+											<option value="2018">2018</option>
 											<option value="2017" selected>2017</option>
 											<option value="2016">2016</option>
 										</select>

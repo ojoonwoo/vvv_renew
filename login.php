@@ -17,7 +17,7 @@
     // {
     //     echo "<script>location.href='m/index.php';</script>";
     // }
-
+// print_r($_SESSION);
     include_once "./head.php";
 ?>
 	<body>

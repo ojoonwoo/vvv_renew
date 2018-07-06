@@ -78,6 +78,7 @@ while ($genre_data = mysqli_fetch_array($genre_result))
 											<option value="" selected>전체</option>
 											<option value="new" <?if($search_sort == "new"){?>selected<?}?>>최신순</option>
 											<option value="best" <?if($search_sort == "best"){?>selected<?}?>>인기순</option>
+											<option value="reg" <?if($search_sort == "reg"){?>selected<?}?>>등록순</option>
 										</select>
 									</div>
 								</div>

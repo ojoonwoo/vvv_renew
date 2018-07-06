@@ -592,6 +592,17 @@ html.search-layer-opened .global-search-layer .inner {
 	padding: 0 0 68px;
 	transition: all 0.4s ease;	
 }
+.content .list-container .video figure{
+	position: relative;
+}
+.content .list-container .video .prize_icon{
+	position: absolute;
+	z-index: 1;
+	width: 28.5px;
+	height: 28.5px;
+	margin: 10px 10px;
+	right: 0;
+}
 .content .list-container .video .box-bg {
 	position: relative;
 }

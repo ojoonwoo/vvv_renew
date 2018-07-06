@@ -106,6 +106,9 @@
 			case "best" :
 				$ORDER	= " ORDER BY like_count DESC, collect_count DESC, play_count DESC";
 			break;
+			case "reg" :
+				$ORDER	= " ORDER BY idx DESC";
+			break;
 		}
 	}
 
@@ -145,6 +148,16 @@
 									<div class="video">
 										<a href="video_detail.php?idx=<?=$list_data["video_idx"]?>">
 											<figure>
+<?
+	if (!empty($list_data["video_awards"]))
+	{
+?>												
+												<div class="prize_icon">
+													<img src="./images/prize_icon.png" alt="수상작">
+												</div>
+<?
+	}
+?>												
 												<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 												<figcaption>
 													<span class="brand">[<?=$video_brand?>]</span>

@@ -30,7 +30,7 @@
 					<div class="content vid-list">
 						<div class="inner">
 							<h4 class="title">
-								BEST
+								Editor's PICK
 							</h4>
 							<div class="list-container">
 								<div class="video-list">

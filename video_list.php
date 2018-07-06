@@ -128,6 +128,7 @@
 												<option value="" disabled selected>분 류</option>
 												<option value="new" <?if($search_sort == "new"){?>selected<?}?>>최신순</option>
 										        <option value="best" <?if($search_sort == "best"){?>selected<?}?>>인기순</option>
+										        <option value="reg" <?if($search_sort == "reg"){?>selected<?}?>>등록순</option>
 											</select>
 										</div>
 									</div>
@@ -211,6 +212,9 @@
 			case "best" :
 				$ORDER	= " ORDER BY like_count DESC, collect_count DESC, play_count DESC";
 			break;
+			case "reg" :
+				$ORDER	= " ORDER BY idx DESC";
+			break;
 		}
 	}
 
@@ -226,6 +230,7 @@
 //	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
 									
 	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$s_page.", ".$view_pg."";
+	// print_r($list_query);
 //	페이징 코드
 //	$list_query	= "SELECT * FROM video_info2 WHERE 1 AND showYN='Y' ".$WHERE." ".$ORDER." LIMIT ".$PAGE_CLASS->page_start.", ".$view_pg."";
 	// print_r($list_query);
@@ -258,6 +263,16 @@
 									<div class="video col-lg-4 col-md-3 col-sm-2">
 										<a href="video_detail.php?idx=<?=$list_data['video_idx']?>">
 											<figure>
+<?
+	if (!empty($list_data["video_awards"]))
+	{
+?>												
+												<div class="prize_icon">
+													<img src="./images/prize_winner.png" alt="수상작">
+												</div>
+<?
+	}
+?>												
 												<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52%;"></div>
 												<figcaption>
 													<span class="brand">[<?=$video_brand?>]</span>
@@ -359,7 +374,8 @@
 				var search_genre        = nullToBlank($("#lc-order-genre").val());
 				var search_prize        = nullToBlank($("#lc-order-awards").val());
 				var search_sort         = nullToBlank($("#lc-order-sortby").val());
-
+				video_pg				= 0;
+				current_page 			= 1;
 				// video_pg = video_pg + Number(view_page);
 				$.ajax({
 					type   : "POST",
@@ -439,6 +455,7 @@
 						// console.log(res_arr[4]);
 						current_page = current_page + 1;
 						// console.log(current_page+"||"+res_arr[2]);
+						console.log(current_page+"///"+res_arr[2]);
 						if (current_page >= res_arr[2])
 							$(".read-more").addClass('hide');
 						else
