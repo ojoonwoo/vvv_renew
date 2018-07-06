@@ -88,13 +88,13 @@
 									</div>
 									<ul>
 										<li>
-											<a href="javascript:sel_award(2)" class="award_name _2 is-active">NEWYORK</a>
+											<a href="javascript:sel_award(2)" class="award_name _2 is-active" data-mouse-type="ripple">NEWYORK</a>
 										</li>
 										<li>
-											<a href="javascript:sel_award(3)" class="award_name _3">CANNES</a>
+											<a href="javascript:sel_award(3)" class="award_name _3" data-mouse-type="ripple">CANNES</a>
 										</li>
 										<li>
-											<a href="javascript:sel_award(1)" class="award_name _1">CLIO</a>
+											<a href="javascript:sel_award(1)" class="award_name _1" data-mouse-type="ripple">CLIO</a>
 										</li>
 									</ul>
 								</div>

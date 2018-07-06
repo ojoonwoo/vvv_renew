@@ -52,7 +52,7 @@ html {
 	font-size: 16px;
 	letter-spacing: -0.5px;
 	-webkit-tap-highlight-color: transparent;
-	cursor: none;
+/*	cursor: none;*/
 }
 html.menu-opened,
 html.popup-opened,
@@ -74,9 +74,10 @@ html, body {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-* {
+html * {
 	cursor: none;
 }
+
 #app {
 	position: relative;
 	overflow-x: hidden;
@@ -924,11 +925,13 @@ button.btn-light-grey {
 
 #cursor {
 	display: block;
+/*	display: none;*/
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 8000;
-	cursor: none;
+/*	z-index: 8000;*/
+	z-index: 99999999999;
+/*	cursor: none;*/
 	pointer-events: none;
 	text-align: center;
 }

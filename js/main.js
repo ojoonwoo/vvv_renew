@@ -4,6 +4,9 @@
 	var $win = $(window),
 		$doc = $(document),
 		$html = $('html');
+	
+	window.fullScreenMode = document.fullscreenElement || document.mozFullScreenElement ||
+		document.webkitFullscreenElement || document.msFullscreenElement;
 
 	window.vvv = {};
 
@@ -314,7 +317,12 @@
 		if(!$cursor.hasClass('default')) {
 			$cursor.addClass('default');
 		}
+//		if(yPos > $('.header-container').offset().top) {
+//			console.log($('.header-container').offset().top);
+//		}
 		TweenMax.to($cursor, 0, {x: xPos-6, y: yPos-6, scale: 1});
+//		TweenMax.to($cursor, 0, {x: xPos, y: yPos, scale: 1});
+		
 	});
 	var mouseType = "";
 	var mouseText = "";
@@ -334,13 +342,9 @@
 		$('#cursor .guideT').text('');
 
 	});
-	$doc.on('mouseleave', function() {
-		var $cursor = $('#cursor');
-		TweenMax.to($cursor, 0.13, {scale: 0});
-	});
 	$win.on('scroll', function() {
 		var $cursor = $('#cursor');
 		TweenMax.to($cursor, 0.13, {scale: 0});
 	});
-
+	
 })(jQuery);
