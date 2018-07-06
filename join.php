@@ -88,7 +88,7 @@
 											이메일 <span>(필수 사항)</span>
 										</div>
 										<div class="input">
-											<input type="text" id="mb_email">
+											<input type="text" id="mb_email" placeholder="이메일">
 										</div>
 									</div>
 									<div class="agree">
@@ -106,7 +106,7 @@
 											닉네임 <span>(선택 사항)</span>
 										</div>
 										<div class="input">
-											<input type="text" id="mb_nickname">
+											<input type="text" id="mb_nickname" placeholder="닉네임">
 										</div>
 									</div>
 									<span class="guide">사용할 닉네임을 입력해주세요! 프로필,친구찾기 등에 사용됩니다</span>

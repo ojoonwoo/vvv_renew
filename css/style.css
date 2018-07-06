@@ -510,6 +510,7 @@
 .awards .cate-wrap .main-cate li a {
 	font-size: 32px;
 	color: #7f7f7f;
+	transition: color 0.8s ease;
 }
 .awards .cate-wrap .sub-cate {
 	position: absolute;
@@ -1547,7 +1548,8 @@
 .content.join .block-input .input-group .input {
 	display: inline-block;
 	font-size: 27px;
-	height: 27px;
+/*	height: 27px;*/
+	vertical-align: middle;
 }
 .content.join .block-input .input-group .guide {
 	width: 186px;
@@ -1562,6 +1564,10 @@
 .content.join .block-input .input-group .input input[type="text"] {
 	height: 100%;
 	font-size: 27px;
+}
+.content.join .block-input .input-group .input input[type="text"]::placeholder {
+	font-size: 22px;
+	color: #969696;
 }
 .content.join .block-input .agree {
 	display: block;
