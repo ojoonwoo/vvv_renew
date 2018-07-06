@@ -70,6 +70,8 @@ class mnv_function extends mnv_dbi
 	public function SaveMedia()
 	{
 		$_SESSION['ss_media']		= $_REQUEST['media'];
+
+		return $_SESSION['ss_media'];
 	}
 
 

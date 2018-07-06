@@ -620,6 +620,15 @@ html.search-layer-opened .global-search-layer .inner {
 .content .list-container .video figure figcaption {
 	padding: 13px 7px;
 }
+.content .list-container .video figure {
+	position: relative;
+}
+.content .list-container .video figure .prize_icon {
+	position: absolute;
+	right: 0;
+	width: 12%;
+	margin: 2%;
+}
 .content .list-container .video figure figcaption span {
 	display: block;
 	letter-spacing: -1px;

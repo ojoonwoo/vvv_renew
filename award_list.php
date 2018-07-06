@@ -45,9 +45,9 @@
 										<figure>
 											<figcaption>
 												<p class="award-name">CANNES</p>
-												<p class="award-summ">2017 Grand Prix</p>
-												<p class="award-title">‘we’re the superhumans’</p>
-												<a href="video_detail.php?idx=448" class="view">VIEW</a>
+												<p class="award-summ">2018 Grand Prix</p>
+												<p class="award-title">‘It's a Tide Ad’</p>
+												<a href="video_detail.php?idx=994" class="view">VIEW</a>
 											</figcaption>
 										</figure>
 									</div>

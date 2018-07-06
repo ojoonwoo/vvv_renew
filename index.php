@@ -11,10 +11,11 @@
     {
         echo "<script>location.href='m/index.php';</script>";
     }else{
-        $saveMedia     = $mnv_f->SaveMedia();
+		if (!$_SESSION['ss_media'])
+			$saveMedia     = $mnv_f->SaveMedia();
         $rs_tracking   = $mnv_f->InsertTrackingInfo($mobileYN);
 	}
-
+// print_r($_SESSION);
 	$pg = $_REQUEST['pg'];
 	if(!$pg) $pg = 1;	// $pg가 없으면 1로 생성
 
@@ -136,7 +137,7 @@
 					</div>
 					<div class="list-container best-area">
 						<div class="title-area">
-							<h2 class="list-title">BEST</h2>
+							<h2 class="list-title">Editor's PICK</h2>
 							<a href="best_list.php" class="view-all">전체보기</a>
 						</div>
 						<div class="video-list">

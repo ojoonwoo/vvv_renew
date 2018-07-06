@@ -80,6 +80,7 @@
 												<option value="" disabled selected>분 류</option>
 												<option value="new">최신순</option>
 										        <option value="best">인기순</option>
+										        <option value="reg">등록순</option>
 											</select>
 										</div>
 									</div>
