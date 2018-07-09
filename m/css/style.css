@@ -1,3 +1,30 @@
+.content.main .mini-banner {
+	display: block;
+	text-align: center;
+	background: #333333;
+	font-size: 0;
+}
+.content.main .mini-banner h5 {
+	display: inline-block;
+	font-size: 12px;
+	letter-spacing: 2.5px;
+	color: #ffffff;
+	padding: 19px 0 17px;
+	font-weight: 300;
+}
+.content.main .mini-banner h5 span {
+	vertical-align: middle;
+}
+.content.main .mini-banner h5 b {
+	font-weight: 700;
+}
+.content.main .mini-banner h5 img {
+	display: inline-block;
+	margin-left: 6px;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
 .main-banner .box-content {
 	position: relative;
 }
