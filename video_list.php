@@ -59,10 +59,10 @@
 									<div class="search-bar">
 										<input type="text" id="lc-order-keyword" value="<?=$search_keyword?>">
 									</div>
-									<button type="button" class="button-refresh" onclick="location.href='video_list.php';">새로고침</button>
 								</div>
 								<div class="wrap sortings">
 									<div class="sort-list">
+										<button type="button" class="button-refresh" onclick="location.href='video_list.php';">새로고침</button>
 										<div class="sort">
 											<select name="lc-order-date" id="lc-order-date">
 												<option value="" selected>연 도</option>
@@ -115,6 +115,7 @@
 ?>
 											</select>
 										</div>
+<!--
 										<div class="sort">
 											<select name="lc-order-awards" id="lc-order-awards">
 												<option value="" selected>광고제</option>
@@ -123,6 +124,7 @@
 												<option value="2" <?if($search_prize == "2"){?>selected<?}?>>NYF</option>
 											</select>
 										</div>
+-->
 										<div class="sort">
 											<select name="lc-order-sortby" id="lc-order-sortby">
 												<option value="" disabled selected>분 류</option>
@@ -366,7 +368,6 @@
 			}
 			
 			$doc.on('click', '.button-apply', function() {
-				console.log("asd");
 				var search_keyword      = nullToBlank($("#lc-order-keyword").val());
 				var search_year         = nullToBlank($("#lc-order-date").val());
 				var search_nation       = nullToBlank($("#lc-order-nation").val());
