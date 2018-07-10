@@ -48,6 +48,9 @@
 			</form>
 			<div class="main-container">
 				<div class="content main">
+					<a class="mini-banner" href="#">
+						<h5><b>바큐 매니저</b>의 <b>큐레이팅</b>을 확인해보세요 ! <img src="./images/mini_banner_arrow.svg" alt=""></h5>
+					</a>
 					<div class="main-banner swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide _01">

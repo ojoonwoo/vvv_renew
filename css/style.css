@@ -1,6 +1,27 @@
 .content.main .paging-wrap {
 	padding: 36px 0 98px;
 }
+.content.main .mini-banner {
+	display: block;
+	text-align: center;
+	background: #333333;
+	font-size: 0;
+}
+.content.main .mini-banner h5 {
+	display: inline-block;
+	font-size: 20px;
+	letter-spacing: 6px;
+	color: #ffffff;
+	padding: 26px 0 25px;
+	font-weight: 300;
+}
+.content.main .mini-banner h5 b {
+	font-weight: 700;
+}
+.content.main .mini-banner h5 img {
+	display: inline-block;
+	margin-left: 10px;
+}
 .main-banner .box-content {
 	position: relative;
 }
