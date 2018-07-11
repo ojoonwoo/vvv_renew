@@ -8,6 +8,13 @@
 							<div class="wrap sortings">
 								<div class="sort-list">
 									<div class="sort">
+										<div class="link-awards">
+											<a href="award_list.php">
+												<img src="./images/m_awards.png" alt="">
+											</a>
+										</div>
+									</div>
+									<div class="sort">
 										<label for="order-date">연도</label>
 										<select name="order-date" id="order-date">
 											<option value="" selected>전체</option>
@@ -63,6 +70,7 @@ while ($genre_data = mysqli_fetch_array($genre_result))
 ?>
 										</select>
 									</div>
+<!--
 									<div class="sort">
 										<label for="order-awards">광고제</label>
 										<select name="order-awards" id="order-awards">
@@ -72,6 +80,7 @@ while ($genre_data = mysqli_fetch_array($genre_result))
 											<option value="2" <?if($search_prize == "2"){?>selected<?}?>>NYF</option>
 										</select>
 									</div>
+-->
 									<div class="sort">
 										<label for="order-sortby">분류</label>
 										<select name="order-sortby" id="order-sortby">

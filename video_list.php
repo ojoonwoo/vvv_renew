@@ -59,6 +59,7 @@
 									<div class="search-bar">
 										<input type="text" id="lc-order-keyword" value="<?=$search_keyword?>">
 									</div>
+									<button type="button" class="button-awards" onclick="location.href='award_list.php';"></button>
 								</div>
 								<div class="wrap sortings">
 									<div class="sort-list">
