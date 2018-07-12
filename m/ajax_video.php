@@ -118,6 +118,16 @@
 								<div class="video loaded">
 									<a href="video_detail.php?idx=<?=$data['video_idx']?>">
 										<figure>
+<?
+	if (!empty($data["video_awards"]))
+	{
+?>												
+											<div class="prize_icon">
+												<img src="./images/prize_icon.png" alt="수상작">
+											</div>
+<?
+	}
+?>												
 											<div class="thumbnail box-bg" style="background: url(<?=$yt_thumb?>) center no-repeat; background-size: cover; padding-bottom: 52.92%;"></div>
 											<figcaption>
 												<span class="brand">[<?=$video_brand?>]</span>
