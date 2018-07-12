@@ -525,6 +525,11 @@ footer .copyright {
 	border-bottom: 1px solid rgba(179, 179, 179, 0.4);
 	text-align: left;
 }
+.global-search-layer .search-wrapper .sortings .sort-list .sort .link-awards img {
+	width: 136px;
+	margin-left: 0;
+	padding-bottom: 15px;
+}
 .global-search-layer .search-wrapper .sortings .sort-list .sort select {
 	border: 0 none;
 	text-align: center;

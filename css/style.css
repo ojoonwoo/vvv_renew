@@ -321,10 +321,23 @@
 	margin-bottom: 33px;
 	font-size: 0;
 }
+.vid-list .search-wrapper .wrap .button-awards {
+	position: absolute;
+	right: 52px;
+	top: 13px;
+	width: 155px;
+	height: 33px;
+	background: url(../images/awards_btn.png) center no-repeat;
+	background-size: 155px 33px;
+}
 .vid-list .search-wrapper .wrap .button-refresh {
+/*
 	position: absolute;
 	right: 0;
 	top: 23px;
+*/
+	vertical-align: top;
+	margin: 8px 30px 0 0;
 	height: 21px;
 	padding-left: 34px;
 	background: url(../images/search_refresh.png) left center no-repeat;
@@ -356,6 +369,7 @@
 }
 .vid-list .search-wrapper .sortings {
 	font-size: 0;
+	text-align: center;
 }
 .vid-list .search-wrapper .sortings > * {
 	vertical-align: top;
