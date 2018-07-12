@@ -42,7 +42,7 @@
 				</form>
 				<div class="main-container">
 					<div class="content main">
-						<a class="mini-banner" href="#">
+						<a class="mini-banner" href="http://www.valuable-viral-video.com/m/my_vvv.php?idx=48">
 							<h5>
 								<span><b>바큐 매니저</b>의 <b>큐레이팅</b>을 확인해보세요 ! <img src="./images/mini_banner_arrow.svg" alt=""></span>
 							</h5>
