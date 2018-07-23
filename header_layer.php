@@ -1,6 +1,15 @@
 			<div class="header-container">
 				<header>
 					<div class="inner">
+						<div class="submit-link">
+							<div class="icon">
+								<img src="./images/submit_icon.svg" alt="">
+							</div>
+							<div class="text">
+								<span>Submit Your VVV</span>
+								<span>새로운 영상을 업로드 해보세요</span>
+							</div>
+						</div>
 						<h1>
 							<a href="index.php" class="logo" data-mouse-type="ripple">
 								<img src="./images/vvv_logo.png" alt="" class="retina">

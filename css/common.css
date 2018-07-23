@@ -166,6 +166,30 @@ header h1 .logo {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+header .submit-link {
+	position: absolute;
+	top: 54px;
+	left: 17px;
+	font-size: 0;
+}
+header .submit-link .icon{
+	float: left;
+}
+header .submit-link .text{
+	float: left;
+	margin: 3px 0 0 12px;
+	text-align: left;
+}
+header .submit-link .text span{
+	display: block;
+	font-size: 17px;
+	padding-bottom: 7px;
+}
+header .submit-link .text span:last-child{
+	display: block;
+	font-size: 13px;
+	padding-bottom: 0;
+}
 header .actions {
 	position: absolute;
 	top: 54px;
