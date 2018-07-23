@@ -48,7 +48,7 @@
 			</form>
 			<div class="main-container">
 				<div class="content main">
-					<a class="mini-banner" href="#">
+					<a class="mini-banner" href="http://www.valuable-viral-video.com/my_vvv.php?idx=48">
 						<h5><b>바큐 매니저</b>의 <b>큐레이팅</b>을 확인해보세요 ! <img src="./images/mini_banner_arrow.svg" alt=""></h5>
 					</a>
 					<div class="main-banner swiper-container">

@@ -11,7 +11,7 @@
 								<a href="video_list.php?sort=new" data-mouse-type="ripple">ALL VVV</a>
 							</li>
 							<li>
-								<a href="best_list.php" data-mouse-type="ripple">BEST</a>
+								<a href="best_list.php" data-mouse-type="ripple">Editor's PICK</a>
 							</li>
 							<li>
 								<a href="video_list.php?sort=new" data-mouse-type="ripple">NEW</a>

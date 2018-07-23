@@ -265,6 +265,7 @@
 		if($mb_f_data["mb_profile_url"] != "") {
 ?>
 											<img src="<?=$mb_f_data["mb_profile_url"]?>" alt="">
+<?											
 		} else {
 ?>
 											<div class="default">

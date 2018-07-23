@@ -29,6 +29,11 @@
 		echo "<script>history.back();</script>";
 	}
 
+	if ($mb_data['mb_nickname'] == "")
+		$mb_name = $mb_data['mb_name'];
+	else
+		$mb_name = $mb_data['mb_nickname'];
+
 	$my_query		= "SELECT * FROM like_info WHERE mb_idx='".$mb_data["idx"]."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
@@ -108,7 +113,7 @@
 	}else{
 ?>												
 												<div class="text-block">
-													<p><?=$mb_data['mb_name']?>님이 만든 컬렉션을 감상해 보세요!</p>
+													<p><?=$mb_name?>님이 만든 컬렉션을 감상해 보세요!</p>
 												</div>
 <?
 	}
@@ -305,8 +310,8 @@
 												<p>당신이 좋아한 영상입니다!</p>
 <?
 		}else{
-?>			
-												<p><?=$mb_data['mb_name']?>님이 좋아한 영상입니다!</p>
+?>			 
+												<p><?=$mb_name?>님이 좋아한 영상입니다!</p>
 <?
 		}
 ?>									

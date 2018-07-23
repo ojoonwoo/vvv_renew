@@ -1075,13 +1075,29 @@
 	object-position: center;
 	max-width: none;
 }
-.content.user-page .user-info .profile-img .default {
+/* .content.user-page .user-info .profile-img .default {
 	background: #f7dd30;
 	position: relative;
 	height: 100%;
 	text-align: center;
 }
 .content.user-page .user-info .profile-img .default span {
+	display: block;
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 13px;
+	font-weight: 500;
+} */
+.user-info .profile-img .default {
+	background: #f7dd30;
+	position: relative;
+	height: 100%;
+	text-align: center;
+}
+.user-info .profile-img .default span {
 	display: block;
 	width: 80%;
 	position: absolute;
@@ -2169,6 +2185,23 @@
 	border-radius: 50%;
 	overflow: hidden;
 }
+.popup.follow-state .area-list .row .img .default {
+	background: #f7dd30;
+	position: relative;
+	height: 100%;
+	text-align: center;
+}
+.popup.follow-state .area-list .row .img .default span {
+	display: block;
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 13px;
+	font-weight: 500;
+}
+
 .popup.follow-state .area-list .row .img a {
 	display: block;
 	height: 100%;
