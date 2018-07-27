@@ -98,8 +98,15 @@
 						<div class="input category">
 							<div class="input-line"></div>
 							<select name="submit_nation" id="submit_category">
-								<option value="">국내</option>
-								<option value="">해외</option>
+<?
+	$category1_query	= "SELECT * FROM category_info WHERE category_level='1' AND category_useYN='Y'";
+	$category1_result 	= mysqli_query($my_db, $category1_query);
+	while ($category1_data = mysqli_fetch_array($category1_result)) {
+?>
+								<option value="<?=$category1_data["idx"]?>"><?=$category1_data["category_name"]?></option>
+<?
+	}
+?>
 							</select>
 							<div class="input-line right"></div>
 						</div>
