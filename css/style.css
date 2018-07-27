@@ -1644,6 +1644,137 @@
 
 
 /* 팝업 개별코드 */
+.popup.send-submit {
+	width: 782px;
+	background: #fff;
+}
+.popup.send-submit .inner {
+	padding: 81px 105px 60px 85px;
+}
+.popup.send-submit .inner .title {
+	font-size: 22px;
+	font-weight: 700;
+	color: #333333;
+	padding-left: 5px;
+	margin-bottom: 15px;
+}
+.popup.send-submit .inner .title i {
+	display: inline-block;
+	background: url(../images/icon_submit.png) 0 0 / 36px 36px no-repeat;
+	width: 36px;
+	height: 36px;
+	margin-right: 11px;
+}
+.popup.send-submit .inner .title i,
+.popup.send-submit .inner .title span {
+	vertical-align: middle;
+}
+.popup.send-submit .inner .notice {
+	padding-left: 59px;
+	left: 0;
+	display: inline-block;
+	margin-bottom: 36px;
+}
+.popup.send-submit .input-group {
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
+	margin-bottom: 10px;
+}
+.popup.send-submit .input-group .guide {
+	font-size: 13px;
+	font-weight: 700;
+	color: #333333;
+	margin-right: 19px;
+	width: 61px;
+	min-width: 61px;
+	text-align: right;
+}
+.popup.send-submit .input-group .input {
+	position: relative;
+	/* width: 100%; */
+	width: 361px;
+	display: flex;
+	/* margin-right: 39px; */
+}
+::-webkit-input-placeholder {
+	color: #c2c2c2;
+	font-size: 11px;
+} 
+:-moz-placeholder {
+	color: #c2c2c2;
+	font-size: 11px;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #c2c2c2;
+	opacity: 1; 
+	font-size: 11px;
+}
+:-ms-input-placeholder {
+	color: #c2c2c2; 
+	font-size: 11px;
+}
+.popup.send-submit .input-group .button {
+	width: 100%;
+}
+.popup.send-submit .input-group .button button {
+	background: #f7dd30;
+	width: 115px;
+	height: 44px;
+	float: right;
+	margin: 22px 5px 0 0;
+}
+.popup.send-submit .input-group .input.brand {
+	width: 233px;
+}
+.popup.send-submit .input-group .input.nation {
+	width: 200px;
+	height: 39px;
+}
+.popup.send-submit .input-group .input.genre {
+	width: 200px;
+	height: 39px;
+}
+.popup.send-submit .input-group .input.category {
+	width: 233px;
+	height: 39px;
+}
+.popup.send-submit .input-group .input.link {
+	width: 264px;
+}
+.popup.send-submit .input-group .input.year {
+	width: 85px;
+	height: 39px;
+	margin-right: 5px;
+}
+.popup.send-submit .input-group .input.month {
+	width: 78px;
+	height: 39px;
+}
+.popup.send-submit .input-group .input.tag {
+	width: 100%;
+}
+.popup.send-submit .input-group .input input[type="text"] {
+	background: rgba(255, 255, 255, 0.8);
+	padding-left: 19px;
+	font-size: 16px;
+	height: 39px;
+	width: 100%;
+	border-bottom: 1px #333333 solid;
+}
+.popup.send-submit .input-group .input .input-line {
+	position: absolute;
+	bottom: 0;
+	width: 1px;
+	height: 5px;
+	background: #333333;
+}
+.popup.send-submit .input-group .input .input-line.right{
+	right: 0;
+}
+
+
 .popup.send-mail {
 	width: 782px;
 	background: #9b9b9b;
