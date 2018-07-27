@@ -63,8 +63,8 @@
 							<div class="input-line"></div>
 							<!-- <input type="text" id=""> -->
 							<select name="submit_nation" id="submit_nation">
-								<option value="">국내</option>
-								<option value="">해외</option>
+								<option value="domestic">국 내</option>
+								<option value="foreign">해 외</option>
 							</select>
 							<div class="input-line right"></div>
 						</div>
@@ -98,6 +98,7 @@
 						<div class="input category">
 							<div class="input-line"></div>
 							<select name="submit_nation" id="submit_category">
+								<option value="" disabled selected>선택</option>
 <?
 	$category1_query	= "SELECT * FROM category_info WHERE category_level='1' AND category_useYN='Y'";
 	$category1_result 	= mysqli_query($my_db, $category1_query);
@@ -114,8 +115,17 @@
 						<div class="input genre">
 							<div class="input-line"></div>
 							<select name="submit_nation" id="submit_genre">
-								<option value="">국내</option>
-								<option value="">해외</option>
+								<option value="" disabled selected>선택</option>
+<?
+	$genre_query	= "SELECT * FROM genre_info WHERE genre_showYN='Y'";
+	$genre_result 	= mysqli_query($my_db, $genre_query);
+	while ($genre_data = mysqli_fetch_array($genre_result))
+	{
+?>
+								<option value="<?=$genre_data["idx"]?>"><?=$genre_data["genre_name"]?></option>
+<?
+	}    
+?>
 							</select>
 							<div class="input-line right"></div>
 						</div>
@@ -131,16 +141,35 @@
 						<div class="input year">
 							<div class="input-line"></div>
 							<select name="submit_year_regdate" id="submit_year_regdate">
-								<option value="">국내</option>
-								<option value="">해외</option>
+<?
+	$s_year = date("Y");
+	while( $s_year > 2010 )
+	{
+?>        
+							<option value="<?=$s_year?>"><?=$s_year?></option>
+<?
+		$s_year--;
+	}
+?>
 							</select>
 							<div class="input-line right"></div>
 						</div>
 						<div class="input month">
 							<div class="input-line"></div>
 							<select name="submit_month_regdate" id="submit_month_regdate">
-								<option value="">국내</option>
-								<option value="">해외</option>
+<?
+//	$s_month = 1;
+	for($i = 1; $i < 13; $i++)
+	{
+		if($i < 10) 
+			$s_month = '0'.$i;
+		else
+			$s_month = $i;
+?>        
+								<option value="<?=$s_month?>"><?=$s_month?></option>
+<?
+	}
+?>
 							</select>
 							<div class="input-line right"></div>
 						</div>
