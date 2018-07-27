@@ -452,6 +452,36 @@
 				$('#order-genre').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 				$('#order-awards').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
 				$('#order-sortby').selectmenu().selectmenu('menuWidget').addClass( "overflow" );
+				$('#submit_nation').selectmenu({
+					create: function(event,ui) {
+						$("#submit_nation-button").css("border","0");
+						$("#submit_nation-button").css("border-bottom","1px solid #333333");
+					}
+				}).selectmenu('menuWidget').addClass( "overflow" );
+				$('#submit_category').selectmenu({
+					create: function(event,ui) {
+						$("#submit_category-button").css("border","0");
+						$("#submit_category-button").css("border-bottom","1px solid #333333");
+					}
+				}).selectmenu('menuWidget').addClass( "overflow" );
+				$('#submit_genre').selectmenu({
+					create: function(event,ui) {
+						$("#submit_genre-button").css("border","0");
+						$("#submit_genre-button").css("border-bottom","1px solid #333333");
+					}
+				}).selectmenu('menuWidget').addClass( "overflow" );
+				$('#submit_year_regdate').selectmenu({
+					create: function(event,ui) {
+						$("#submit_year_regdate-button").css("border","0");
+						$("#submit_year_regdate-button").css("border-bottom","1px solid #333333");
+					}
+				}).selectmenu('menuWidget').addClass( "overflow" );
+				$('#submit_month_regdate').selectmenu({
+					create: function(event,ui) {
+						$("#submit_month_regdate-button").css("border","0");
+						$("#submit_month_regdate-button").css("border-bottom","1px solid #333333");
+					}
+				}).selectmenu('menuWidget').addClass( "overflow" );
 
 <?
 	// collection_view 에서 리스트로 돌아가기 했을때 해당 탭으로 이동
